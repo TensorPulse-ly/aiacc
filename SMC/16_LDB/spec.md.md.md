@@ -116,7 +116,7 @@ module ldb #(
 -   **PARSE**: 解析指令，准备 AXI 请求。
 -   **WAIT_AXI**: 等待 AXI 主设备握手并接受请求。
 -   **DATA**: 接收并处理 AXI 数据，写入 UR。
--   **DONE**: 事务完成，输出响应信号。
+-   **DONE**: 事务完成，输出响应信号。 
 
 ### 5.2 字节使能掩码 (`get_byte_mask`)
 根据 `byte_strb` 的值生成 16 位的字节掩码，用于最后一个 AXI beat 的数据写入控制。
