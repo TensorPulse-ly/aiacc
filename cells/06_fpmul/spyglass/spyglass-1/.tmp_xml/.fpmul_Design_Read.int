@@ -1,0 +1,5 @@
+INPUT@@/home/sunny/cells/06_fpmul/spyglass/spyglass-1/Design_Read/spyglass_reports@@/home/sunny/cells/06_fpmul/spyglass/spyglass-1/html_reports/data_files/@@fpmul@@Design_Read@@
+COPY@@/home/sunny/cells/06_fpmul/spyglass/spyglass-1/Design_Read/spyglass_reports/moresimple.rpt@@data_files/fpmul_Design_Read_moresimple.rpt@@
+COPY@@/home/sunny/cells/06_fpmul/spyglass/spyglass-1/Design_Read/spyglass_reports/no_msg_reporting_rules.rpt@@data_files/fpmul_Design_Read_no_msg_reporting_rules.rpt@@
+PROCESS@@latch@@miscellaneous@@txv@@timing@@constraints@@morelint@@openmore@@starc2005@@clock-reset@@dft@@erc@@const_intern1@@simulation@@power_est@@SpyGlass@@starc@@Audits@@lowpower@@lint@@dft_dsm@@starc2002@@area
+COPY@@/home/sunny/cells/06_fpmul/spyglass/spyglass-1/Design_Read/spyglass.log@@data_files/fpmul_Design_Read_spyglass.log@@

@@ -1,0 +1,7 @@
+Module Name,Module Type,Port Name,Direction,Width,Index,Comment Source,Comment 
+fpmul,Top_Level,clk,INPUT,1,-,module port,全局信号
+fpmul,Top_Level,rst_n,INPUT,1,-,-,-
+fpmul,Top_Level,dvr_fpmul_s0,INPUT,128,[127:0],-,-
+fpmul,Top_Level,dvr_fpmul_s1,INPUT,128,[127:0],-,-
+fpmul,Top_Level,cru_fpmul,INPUT,3,[2:0],-,-
+fpmul,Top_Level,dr_fpmul_d,OUTPUT,128,[127:0],-,-

@@ -1,0 +1,10 @@
+module_start####leading_zero_counter
+module_end####
+module_start####fp16_multiplier
+module_end####
+module_start####leading_zero_counter_fp32
+module_end####
+module_start####fp32_multiplier
+module_end####
+module_start####fpmul
+module_end####

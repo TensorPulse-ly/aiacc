@@ -4,21 +4,6 @@
 #include <stdint.h>
 #include "softfloat.h"
 
-// 设置SoftFloat的舍入模式
-void set_softfloat_rounding_mode(uint32_t mode) {
-    softfloat_roundingMode = mode;
-}
-
-// 清除SoftFloat的异常标志
-void clear_softfloat_flags() {
-    softfloat_exceptionFlags = 0;
-}
-
-// 获取SoftFloat的异常标志
-uint32_t get_softfloat_flags() {
-    return softfloat_exceptionFlags;
-}
-
 
 // FP16 乘法函数
 uint16_t dpi_f16_mul(uint16_t a, uint16_t b) {

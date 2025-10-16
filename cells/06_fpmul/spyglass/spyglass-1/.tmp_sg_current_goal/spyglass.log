@@ -1,0 +1,42 @@
+SpyGlass run started at 09:13:03  on 10 15 2025 
+
+SpyGlass Predictive Analyzer(R) - Version SpyGlass_vO-2018.09-SP1
+Last compiled on Dec  2 2018
+
+All Rights Reserved. Use, disclosure or duplication
+without prior written permission of Synopsys Inc. is prohibited.
+Technical support: email spyglass_support@synopsys.com.
+
+Loading Policy: spyglass (Version: SpyGlass_vO-2018.09-SP1) from path: /usr/software/spyglass/spyglass/SPYGLASS2018.09-SP1/SPYGLASS_HOME/policies/spyglass
+Loading Shared library libspyglassrules-Linux4.spyso from /usr/software/spyglass/spyglass/SPYGLASS2018.09-SP1/SPYGLASS_HOME/lib/libspyglassrules-Linux4.spyso 
+Loading Shared library libsdcInitRules-Linux4.spyso from /usr/software/spyglass/spyglass/SPYGLASS2018.09-SP1/SPYGLASS_HOME/lib/libsdcInitRules-Linux4.spyso 
+Loading Shared library librmerules-Linux4.spyso from /usr/software/spyglass/spyglass/SPYGLASS2018.09-SP1/SPYGLASS_HOME/lib/librmerules-Linux4.spyso 
+Version of Policy 'openmore': SpyGlass_vO-2018.09-SP1
+Loading Shared library libCoreRules-Linux4.spyso from /usr/software/spyglass/spyglass/SPYGLASS2018.09-SP1/SPYGLASS_HOME/lib/libCoreRules-Linux4.spyso 
+Loading Shared library libLexRules-Linux4.spyso from /usr/software/spyglass/spyglass/SPYGLASS2018.09-SP1/SPYGLASS_HOME/lib/libLexRules-Linux4.spyso 
+Loading Shared library libVeLint-Linux4.spyso from /usr/software/spyglass/spyglass/SPYGLASS2018.09-SP1/SPYGLASS_HOME/lib/libVeLint-Linux4.spyso 
+Loading Shared library libVhLint-Linux4.spyso from /usr/software/spyglass/spyglass/SPYGLASS2018.09-SP1/SPYGLASS_HOME/lib/libVhLint-Linux4.spyso 
+Version of Policy 'starc': SpyGlass_vO-2018.09-SP1
+Loading Shared library libVeStarc-Linux4.spyso from /usr/software/spyglass/spyglass/SPYGLASS2018.09-SP1/SPYGLASS_HOME/policies/starc/libVeStarc-Linux4.spyso 
+Loading Shared library libVhStarc-Linux4.spyso from /usr/software/spyglass/spyglass/SPYGLASS2018.09-SP1/SPYGLASS_HOME/policies/starc/libVhStarc-Linux4.spyso 
+Version of Policy 'starc2005': SpyGlass_vO-2018.09-SP1
+Loading Shared library libVeStarc2002-Linux4.spyso from /usr/software/spyglass/spyglass/SPYGLASS2018.09-SP1/SPYGLASS_HOME/policies/starc2002/libVeStarc2002-Linux4.spyso 
+Loading Shared library libVhStarc2002-Linux4.spyso from /usr/software/spyglass/spyglass/SPYGLASS2018.09-SP1/SPYGLASS_HOME/policies/starc2002/libVhStarc2002-Linux4.spyso 
+Loading Shared library libVmixedStarc2002-Linux4.spyso from /usr/software/spyglass/spyglass/SPYGLASS2018.09-SP1/SPYGLASS_HOME/policies/starc2002/libVmixedStarc2002-Linux4.spyso 
+Loading Shared library libVeStarc2005-Linux4.spyso from /usr/software/spyglass/spyglass/SPYGLASS2018.09-SP1/SPYGLASS_HOME/policies/starc2005/libVeStarc2005-Linux4.spyso 
+Loading Shared library libVmixedStarc2005-Linux4.spyso from /usr/software/spyglass/spyglass/SPYGLASS2018.09-SP1/SPYGLASS_HOME/policies/starc2005/libVmixedStarc2005-Linux4.spyso 
+Loading Shared library libVhStarc2005-Linux4.spyso from /usr/software/spyglass/spyglass/SPYGLASS2018.09-SP1/SPYGLASS_HOME/policies/starc2005/libVhStarc2005-Linux4.spyso 
+Version of Policy 'erc': SpyGlass_vO-2018.09-SP1
+Loading Shared library liberc-Linux4.spyso from /usr/software/spyglass/spyglass/SPYGLASS2018.09-SP1/SPYGLASS_HOME/policies/erc/liberc-Linux4.spyso 
+Version of Policy 'simulation': SpyGlass_vO-2018.09-SP1
+Loading Shared library libvcs-Linux4.spyso from /usr/software/spyglass/spyglass/SPYGLASS2018.09-SP1/SPYGLASS_HOME/policies/simulation/libvcs-Linux4.spyso 
+Version of Policy 'lint': SpyGlass_vO-2018.09-SP1
+Version of Policy 'latch': SpyGlass_vO-2018.09-SP1
+Loading Shared library liblatch-Linux4.spyso from /usr/software/spyglass/spyglass/SPYGLASS2018.09-SP1/SPYGLASS_HOME/policies/latch/liblatch-Linux4.spyso 
+Version of Policy 'morelint': SpyGlass_vO-2018.09-SP1
+Loading Shared library libVeMoreLint-Linux4.spyso from /usr/software/spyglass/spyglass/SPYGLASS2018.09-SP1/SPYGLASS_HOME/policies/morelint/libVeMoreLint-Linux4.spyso 
+Loading Shared library libVhMoreLint-Linux4.spyso from /usr/software/spyglass/spyglass/SPYGLASS2018.09-SP1/SPYGLASS_HOME/policies/morelint/libVhMoreLint-Linux4.spyso 
+Version of Policy 'timing': SpyGlass_vO-2018.09-SP1
+Loading Shared library libtiming-Linux4.spyso from /usr/software/spyglass/spyglass/SPYGLASS2018.09-SP1/SPYGLASS_HOME/policies/timing/libtiming-Linux4.spyso 
+Version of Policy 'starc2002': SpyGlass_vO-2018.09-SP1
+0 {Rule-checking completed with warnings}

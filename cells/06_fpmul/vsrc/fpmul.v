@@ -13,8 +13,9 @@ module fpmul (
 );
 
     wire inst_valid = cru_fpmul[2];                  
-    wire src_precision_is_32b = cru_fpmul[1];        
-    wire dst_precision_is_32b = cru_fpmul[0];        
+    wire src_precision_is_32b = cru_fpmul[1];
+    //wire dst_precision_is_32b = cru_fpmul[0];  
+    // dst_precision_is_32b is not used; 
 
     wire [127:0] result_comb;
 
@@ -123,7 +124,7 @@ module fp16_multiplier (
     
     // 前导零计数（用于非规格化数处理）
     wire [4:0] leading_zeros;
-    leading_zero_counter #(
+    leading_zero_counter_fp16 #(
         .DATA_WIDTH(22),
         .COUNT_WIDTH(5)
     ) lzc_inst (
@@ -192,11 +193,7 @@ module fp16_multiplier (
 
     // 对应需要右移的位数
     wire [5:0] denormal_shift = (exp_pre_round <= 0) ? (1 - exp_pre_round) : 6'd0;
-/*
-   wire [25:0] extended_mantissa = result_is_denormal//【24:0】不行50w个有2个错误
-        ? {2'b01, base_mantissa, guard_bit, round_bit, sticky_bit, 11'b0}
-        : 26'h2FFFFFF; // 当不产生非规格化数时，赋一个任意的、能让信号翻转的值
-*/
+
     wire [25:0] extended_mantissa = {2'b01, base_mantissa, guard_bit, round_bit, sticky_bit, 11'b0};
 
     wire [25:0] pre_shifted = (denormal_shift == 0) ? extended_mantissa : (extended_mantissa >> denormal_shift);
@@ -247,29 +244,32 @@ module fp16_multiplier (
 endmodule
 
 // 前导零计数器模块
-module leading_zero_counter #(
+module leading_zero_counter_fp16 #(
     parameter DATA_WIDTH  = 22,
     parameter COUNT_WIDTH = 5
 )(
     input  wire [DATA_WIDTH-1:0]  data_in,
     output wire [COUNT_WIDTH-1:0] leading_zeros
 );
-    
-    reg [COUNT_WIDTH-1:0] count;
-    integer i;
-    
-    always @(*) begin
-        count = DATA_WIDTH;
-        for (i = DATA_WIDTH-1; i >= 0; i = i-1) begin
-            if (data_in[i]) begin
-                count = DATA_WIDTH - 1 - i;
-                break;
+    // 使用函数式组合逻辑，确保对输出只赋值一次，避免同一作用域的多次赋值告警
+    function [COUNT_WIDTH-1:0] lzc_func;
+        input [DATA_WIDTH-1:0] v;
+        integer i;
+        reg done;
+        begin
+            // 默认值：当 v 为全 0 时，返回 DATA_WIDTH
+            lzc_func = DATA_WIDTH;
+            done     = 1'b0;
+            for (i = DATA_WIDTH-1; i >= 0; i = i-1) begin
+                if (!done && v[i]) begin
+                    lzc_func = DATA_WIDTH - 1 - i;
+                    done     = 1'b1; // 逻辑上“break”
+                end
             end
         end
-    end
-    
-    assign leading_zeros = count;
+    endfunction
 
+    assign leading_zeros = lzc_func(data_in);
 endmodule
 
 module fp32_multiplier (
@@ -446,20 +446,23 @@ module leading_zero_counter_fp32 #(
     input  wire [DATA_WIDTH-1:0]  data_in,
     output wire [COUNT_WIDTH-1:0] leading_zeros
 );
-    
-    reg [COUNT_WIDTH-1:0] count;
-    integer i;
-    
-    always @(*) begin
-        count = DATA_WIDTH;
-        for (i = DATA_WIDTH-1; i >= 0; i = i-1) begin
-            if (data_in[i]) begin
-                count = DATA_WIDTH - 1 - i;
-                break;
+    // 函数式实现，避免在同一个 always/for 中对同一信号的多次赋值
+    function [COUNT_WIDTH-1:0] lzc_func;
+        input [DATA_WIDTH-1:0] v;
+        integer i;
+        reg done;
+        begin
+            lzc_func = DATA_WIDTH; // 全 0 时返回 DATA_WIDTH
+            done     = 1'b0;
+            for (i = DATA_WIDTH-1; i >= 0; i = i-1) begin
+                if (!done && v[i]) begin
+                    lzc_func = DATA_WIDTH - 1 - i;
+                    done     = 1'b1; // 只赋值一次
+                end
             end
         end
-    end
-    
-    assign leading_zeros = count;
+    endfunction
+
+    assign leading_zeros = lzc_func(data_in);
 
 endmodule
