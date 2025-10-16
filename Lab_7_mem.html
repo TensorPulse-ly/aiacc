@@ -1,0 +1,1565 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Dialect入门二配套Lab7 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Lab_8_Tensor.html" />
+    
+    
+    <link rel="prev" href="Lab_6.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Example_Page.html">
+            
+                <a href="Example_Page.html">
+            
+                    
+                    Example Page
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="TableGen.html">
+            
+                <a href="TableGen.html">
+            
+                    
+                    TableGen 的用法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="P4tutorial.html">
+            
+                <a href="P4tutorial.html">
+            
+                    
+                    P4基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="MLIR_Dialect.html">
+            
+                <a href="MLIR_Dialect.html">
+            
+                    
+                    Dialect基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="FIFO_study.html">
+            
+                <a href="FIFO_study.html">
+            
+                    
+                    FIFO学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="TPU_MLIR_study.html">
+            
+                <a href="TPU_MLIR_study.html">
+            
+                    
+                    TPU-MLIR代码学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="MLIR_Dialect_Notes_module1.html">
+            
+                <a href="MLIR_Dialect_Notes_module1.html">
+            
+                    
+                    Dialect入门一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="Lab_1_Simple-Dialect.html">
+            
+                <a href="Lab_1_Simple-Dialect.html">
+            
+                    
+                    Dialect入门一配套Lab1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="Lab_2_Simple-Dialect.html">
+            
+                <a href="Lab_2_Simple-Dialect.html">
+            
+                    
+                    Dialect入门一配套Lab2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="MLIR_Dialect_Notes_module2.html">
+            
+                <a href="MLIR_Dialect_Notes_module2.html">
+            
+                    
+                    Dialect入门二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="Lab_4_Builtin_Dialect.html">
+            
+                <a href="Lab_4_Builtin_Dialect.html">
+            
+                    
+                    Dialect入门二配套Lab4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="Lab_5_Arith.html">
+            
+                <a href="Lab_5_Arith.html">
+            
+                    
+                    Dialect入门二配套Lab5
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="Lab_6.html">
+            
+                <a href="Lab_6.html">
+            
+                    
+                    Dialect入门二配套Lab6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.15" data-path="Lab_7_mem.html">
+            
+                <a href="Lab_7_mem.html">
+            
+                    
+                    Dialect入门二配套Lab7
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="Lab_8_Tensor.html">
+            
+                <a href="Lab_8_Tensor.html">
+            
+                    
+                    Dialect入门二配套Lab8
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="Lab_9_Linalg.html">
+            
+                <a href="Lab_9_Linalg.html">
+            
+                    
+                    Dialect入门二配套Lab9
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="MLIR_Dialect_Notes_module3.html">
+            
+                <a href="MLIR_Dialect_Notes_module3.html">
+            
+                    
+                    Dialect入门三
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="Lab_10_Optimization.html">
+            
+                <a href="Lab_10_Optimization.html">
+            
+                    
+                    Dialect入门三配套Lab10
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="Lab_Project_Sheet.html">
+            
+                <a href="Lab_Project_Sheet.html">
+            
+                    
+                    TPU-MLIR Lab Project
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="FIFO_study.html">
+            
+                <a href="FIFO_study.html">
+            
+                    
+                    FIFO学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="TPU_MLIR_study.html">
+            
+                <a href="TPU_MLIR_study.html">
+            
+                    
+                    TPU-MLIR代码学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="Linux_Command_Line.html">
+            
+                <a href="Linux_Command_Line.html">
+            
+                    
+                    Linux系统(服务器)常用指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="shell_study.html">
+            
+                <a href="shell_study.html">
+            
+                    
+                    .sh文件解释/Shell脚本常用语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="VCS_coverage_report_read.html">
+            
+                <a href="VCS_coverage_report_read.html">
+            
+                    
+                    VCS_coverage_report_read
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" >
+            
+                <a target="_blank" href="https://github.com/seclabBupt/aiacc/blob/main/docs/TPU-MLIR%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%80%EF%BC%89.md">
+            
+                    
+                    TPU-MLIR学习记录（一）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" >
+            
+                <a target="_blank" href="https://github.com/seclabBupt/aiacc/blob/main/docs/TPU-MLIR%20%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%BA%8C%EF%BC%89.md">
+            
+                    
+                    TPU-MLIR学习记录（二）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" >
+            
+                <a target="_blank" href="https://github.com/seclabBupt/aiacc/blob/main/docs/TPU-MLIR%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%89%EF%BC%89.md">
+            
+                    
+                    TPU-MLIR学习记录（三）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Dialect入门二配套Lab7</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="lab-7-memory-dialect---mlir-&#x5185;&#x5B58;&#x7BA1;&#x7406;-dialect-&#x5F00;&#x53D1;">Lab 7: Memory-Dialect - MLIR &#x5185;&#x5B58;&#x7BA1;&#x7406; Dialect &#x5F00;&#x53D1;</h1>
+<h2 id="&#x5B9E;&#x9A8C;&#x76EE;&#x6807;">&#x5B9E;&#x9A8C;&#x76EE;&#x6807;</h2>
+<p>&#x901A;&#x8FC7;&#x672C;&#x5B9E;&#x9A8C;&#xFF0C;&#x4F60;&#x5C06;&#xFF1A;</p>
+<ul>
+<li>&#x6DF1;&#x5165;&#x7406;&#x89E3; MLIR &#x7684;&#x5185;&#x5B58;&#x7BA1;&#x7406;&#x673A;&#x5236;&#x548C; memref &#x7C7B;&#x578B;&#x7CFB;&#x7EDF;</li>
+<li>&#x5B66;&#x4F1A;&#x521B;&#x5EFA;&#x5904;&#x7406;&#x591A;&#x7EF4;&#x6570;&#x7EC4;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x64CD;&#x4F5C;</li>
+<li>&#x638C;&#x63E1;&#x64CD;&#x4F5C;&#x6570;&#x3001;&#x7ED3;&#x679C;&#x548C;&#x7D22;&#x5F15;&#x7684;&#x5904;&#x7406;&#x65B9;&#x6CD5;</li>
+<li>&#x5B9E;&#x73B0;&#x5185;&#x5B58;&#x64CD;&#x4F5C;&#x7684;&#x7C7B;&#x578B;&#x9A8C;&#x8BC1;&#x548C;&#x5B89;&#x5168;&#x68C0;&#x67E5;</li>
+<li>&#x7F16;&#x5199; Pass &#x5C06;&#x81EA;&#x5B9A;&#x4E49;&#x64CD;&#x4F5C;&#x8F6C;&#x6362;&#x4E3A;&#x6807;&#x51C6; memref &#x64CD;&#x4F5C;</li>
+<li>&#x7406;&#x89E3; MLIR &#x4E2D;&#x5185;&#x5B58;&#x62BD;&#x8C61;&#x7684;&#x5C42;&#x6B21;&#x7ED3;&#x6784;</li>
+</ul>
+<h2 id="&#x524D;&#x7F6E;&#x6761;&#x4EF6;">&#x524D;&#x7F6E;&#x6761;&#x4EF6;</h2>
+<ul>
+<li>&#x5DF2;&#x6210;&#x529F;&#x5B8C;&#x6210; Lab 1 &#x548C; Lab 2</li>
+<li>&#x7406;&#x89E3; MLIR &#x7684;&#x57FA;&#x672C;&#x6982;&#x5FF5;&#xFF08;Dialect&#x3001;Operation&#x3001;Type&#x3001;Pass&#xFF09;</li>
+<li>&#x719F;&#x6089; C++ &#x7F16;&#x7A0B;&#x548C;&#x6A21;&#x677F;&#x673A;&#x5236;</li>
+<li>&#x4E86;&#x89E3;&#x591A;&#x7EF4;&#x6570;&#x7EC4;&#x548C;&#x5185;&#x5B58;&#x5E03;&#x5C40;&#x7684;&#x57FA;&#x672C;&#x6982;&#x5FF5;</li>
+<li>&#x638C;&#x63E1; memref &#x7C7B;&#x578B;&#x7684;&#x57FA;&#x672C;&#x7528;&#x6CD5;</li>
+</ul>
+<h2 id="&#x5B9E;&#x9A8C;&#x80CC;&#x666F;">&#x5B9E;&#x9A8C;&#x80CC;&#x666F;</h2>
+<h3 id="&#x4E3A;&#x4EC0;&#x4E48;&#x9700;&#x8981;&#x5185;&#x5B58;&#x7BA1;&#x7406;-dialect&#xFF1F;">&#x4E3A;&#x4EC0;&#x4E48;&#x9700;&#x8981;&#x5185;&#x5B58;&#x7BA1;&#x7406; Dialect&#xFF1F;</h3>
+<p>&#x5728; MLIR &#x4E2D;&#xFF0C;&#x5185;&#x5B58;&#x7BA1;&#x7406;&#x662F;&#x4E00;&#x4E2A;&#x6838;&#x5FC3;&#x6982;&#x5FF5;&#x3002;&#x867D;&#x7136; MLIR &#x63D0;&#x4F9B;&#x4E86;&#x6807;&#x51C6;&#x7684; <code>memref</code> dialect&#xFF0C;&#x4F46;&#x5728;&#x67D0;&#x4E9B;&#x573A;&#x666F;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#xFF1A;</p>
+<ol>
+<li><strong>&#x66F4;&#x9AD8;&#x5C42;&#x6B21;&#x7684;&#x62BD;&#x8C61;</strong>&#xFF1A;&#x9690;&#x85CF;&#x5E95;&#x5C42;&#x5185;&#x5B58;&#x5206;&#x914D;&#x7EC6;&#x8282;</li>
+<li><strong>&#x7279;&#x5B9A;&#x9886;&#x57DF;&#x7684;&#x8BED;&#x4E49;</strong>&#xFF1A;&#x4E3A;&#x7279;&#x5B9A;&#x5E94;&#x7528;&#x63D0;&#x4F9B;&#x4E13;&#x95E8;&#x7684;&#x5185;&#x5B58;&#x64CD;&#x4F5C;</li>
+<li><strong>&#x7B80;&#x5316;&#x7684;&#x63A5;&#x53E3;</strong>&#xFF1A;&#x63D0;&#x4F9B;&#x66F4;&#x76F4;&#x89C2;&#x7684;&#x77E9;&#x9635;&#x64CD;&#x4F5C;&#x8BED;&#x6CD5;</li>
+<li><strong>&#x4F18;&#x5316;&#x673A;&#x4F1A;</strong>&#xFF1A;&#x5728;&#x9AD8;&#x5C42;&#x6B21;&#x8FDB;&#x884C;&#x5185;&#x5B58;&#x8BBF;&#x95EE;&#x4F18;&#x5316;</li>
+</ol>
+<h3 id="&#x6211;&#x4EEC;&#x8981;&#x5B9E;&#x73B0;&#x4EC0;&#x4E48;&#xFF1F;">&#x6211;&#x4EEC;&#x8981;&#x5B9E;&#x73B0;&#x4EC0;&#x4E48;&#xFF1F;</h3>
+<p>&#x672C;&#x5B9E;&#x9A8C;&#x5C06;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; <code>memory</code> dialect&#xFF0C;&#x63D0;&#x4F9B;&#x7B80;&#x6D01;&#x7684;&#x77E9;&#x9635;&#x5185;&#x5B58;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<pre><code class="lang-mlir">// &#x76EE;&#x6807;&#x8BED;&#x6CD5;
+%matrix = memory.create_matrix 3, 4 : memref&lt;3x4xf32&gt;
+memory.set %matrix[%i, %j] = %value : memref&lt;3x4xf32&gt;
+%val = memory.get %matrix[%i, %j] : memref&lt;3x4xf32&gt;
+memory.print %matrix : memref&lt;3x4xf32&gt;
+</code></pre>
+<h2 id="&#x5B9E;&#x9A8C;&#x4EFB;&#x52A1;">&#x5B9E;&#x9A8C;&#x4EFB;&#x52A1;</h2>
+<h3 id="&#x4EFB;&#x52A1;-1&#xFF1A;&#x73AF;&#x5883;&#x9A8C;&#x8BC1;&#x548C;&#x7406;&#x8BBA;&#x5B66;&#x4E60;">&#x4EFB;&#x52A1; 1&#xFF1A;&#x73AF;&#x5883;&#x9A8C;&#x8BC1;&#x548C;&#x7406;&#x8BBA;&#x5B66;&#x4E60;</h3>
+<p><strong>1.1 &#x9A8C;&#x8BC1; MLIR &#x73AF;&#x5883;</strong></p>
+<p>&#x9996;&#x5148;&#x9A8C;&#x8BC1;&#x4F60;&#x7684; MLIR &#x73AF;&#x5883;&#x80FD;&#x591F;&#x5904;&#x7406; memref &#x64CD;&#x4F5C;&#xFF1A;</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># &#x521B;&#x5EFA;&#x6D4B;&#x8BD5;&#x6587;&#x4EF6;</span>
+cat &gt; memref_test.mlir &lt;&lt; <span class="hljs-string">&apos;EOF&apos;</span>
+func.func @<span class="hljs-function"><span class="hljs-title">test_memref</span></span>() {
+  %matrix = memref.alloc() : memref&lt;2x3xf32&gt;
+  %c0 = arith.constant 0 : index
+  %c1 = arith.constant 1 : index
+  %val = arith.constant 1.5 : f32
+
+  memref.store %val, %matrix[%c0, %c1] : memref&lt;2x3xf32&gt;
+  %loaded = memref.load %matrix[%c0, %c1] : memref&lt;2x3xf32&gt;
+
+  memref.dealloc %matrix : memref&lt;2x3xf32&gt;
+  <span class="hljs-built_in">return</span>
+}
+EOF
+
+<span class="hljs-comment"># &#x9A8C;&#x8BC1;&#x8BED;&#x6CD5;</span>
+mlir-opt memref_test.mlir
+</code></pre>
+<p><strong>&#x601D;&#x8003;&#x9898;&#xFF1A;</strong></p>
+<ul>
+<li>&#x89C2;&#x5BDF;&#x4E0A;&#x8FF0;&#x4EE3;&#x7801;&#xFF0C;memref &#x64CD;&#x4F5C;&#x7684;&#x57FA;&#x672C;&#x6A21;&#x5F0F;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;</li>
+<li><code>memref&lt;2x3xf32&gt;</code> &#x7C7B;&#x578B;&#x8868;&#x793A;&#x4EC0;&#x4E48;&#x542B;&#x4E49;&#xFF1F;</li>
+<li>&#x4E3A;&#x4EC0;&#x4E48;&#x9700;&#x8981; <code>index</code> &#x7C7B;&#x578B;&#x6765;&#x505A;&#x6570;&#x7EC4;&#x7D22;&#x5F15;&#xFF1F;</li>
+</ul>
+<p><strong>&#x7B54;&#x6848;&#xFF1A;</strong></p>
+<ul>
+<li><strong>memref &#x64CD;&#x4F5C;&#x7684;&#x57FA;&#x672C;&#x6A21;&#x5F0F;</strong>&#xFF1A;&#x9075;&#x5FAA;&quot;&#x5206;&#x914D;-&#x4F7F;&#x7528;-&#x91CA;&#x653E;&quot;&#x7684;&#x6A21;&#x5F0F;&#x3002;&#x5148;&#x7528; <code>alloc</code> &#x5206;&#x914D;&#x5185;&#x5B58;&#xFF0C;&#x7136;&#x540E;&#x7528; <code>load/store</code> &#x8FDB;&#x884C;&#x8BFB;&#x5199;&#x8BBF;&#x95EE;&#xFF0C;&#x6700;&#x540E;&#x7528; <code>dealloc</code> &#x91CA;&#x653E;&#x5185;&#x5B58;&#x3002;&#x8FD9;&#x662F;&#x663E;&#x5F0F;&#x5185;&#x5B58;&#x7BA1;&#x7406;&#x7684;&#x5178;&#x578B;&#x6A21;&#x5F0F;&#x3002;</li>
+<li><strong><code>memref&lt;2x3xf32&gt;</code> &#x7C7B;&#x578B;&#x542B;&#x4E49;</strong>&#xFF1A;&#x8868;&#x793A;&#x4E00;&#x4E2A; 2 &#x884C; 3 &#x5217;&#x7684;&#x4E8C;&#x7EF4;&#x6570;&#x7EC4;&#xFF0C;&#x5143;&#x7D20;&#x7C7B;&#x578B;&#x4E3A; 32 &#x4F4D;&#x6D6E;&#x70B9;&#x6570;&#x3002;<code>memref</code> &#x662F; MLIR &#x4E2D;&#x8868;&#x793A;&#x5185;&#x5B58;&#x5F15;&#x7528;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x5305;&#x542B;&#x5F62;&#x72B6;&#x4FE1;&#x606F;&#x3001;&#x5143;&#x7D20;&#x7C7B;&#x578B;&#x548C;&#x53EF;&#x9009;&#x7684;&#x5185;&#x5B58;&#x7A7A;&#x95F4;/&#x5E03;&#x5C40;&#x4FE1;&#x606F;&#x3002;</li>
+<li><strong><code>index</code> &#x7C7B;&#x578B;&#x7684;&#x5FC5;&#x8981;&#x6027;</strong>&#xFF1A;<code>index</code> &#x662F; MLIR &#x7684;&#x76EE;&#x6807;&#x65E0;&#x5173;&#x6574;&#x6570;&#x7C7B;&#x578B;&#xFF0C;&#x4E13;&#x95E8;&#x7528;&#x4E8E;&#x6570;&#x7EC4;&#x7D22;&#x5F15;&#x548C;&#x5185;&#x5B58;&#x5730;&#x5740;&#x8BA1;&#x7B97;&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x76EE;&#x6807;&#x5E73;&#x53F0;&#x81EA;&#x52A8;&#x9009;&#x62E9;&#x5408;&#x9002;&#x7684;&#x4F4D;&#x5BBD;&#xFF08;32&#x4F4D;&#x6216;64&#x4F4D;&#xFF09;&#xFF0C;&#x786E;&#x4FDD;&#x7D22;&#x5F15;&#x64CD;&#x4F5C;&#x7684;&#x6B63;&#x786E;&#x6027;&#x548C;&#x6548;&#x7387;&#x3002;</li>
+</ul>
+<p><strong>1.2 &#x7406;&#x89E3; memref &#x7C7B;&#x578B;&#x7CFB;&#x7EDF;</strong></p>
+<p>&#x7814;&#x7A76;&#x4EE5;&#x4E0B;&#x4E0D;&#x540C;&#x7684; memref &#x7C7B;&#x578B;&#x58F0;&#x660E;&#xFF1A;</p>
+<pre><code class="lang-mlir">memref&lt;4x4xf32&gt;           // &#x56FA;&#x5B9A;&#x5F62;&#x72B6;
+memref&lt;?x?xf32&gt;           // &#x52A8;&#x6001;&#x5F62;&#x72B6;  
+memref&lt;2x3xf32, 1&gt;        // &#x6307;&#x5B9A;&#x5185;&#x5B58;&#x7A7A;&#x95F4;
+</code></pre>
+<p><strong>&#x5B9E;&#x9A8C;&#x4EFB;&#x52A1;&#xFF1A;</strong></p>
+<ul>
+<li>&#x67E5;&#x9605; MLIR &#x6587;&#x6863;&#xFF0C;&#x7406;&#x89E3;&#x52A8;&#x6001;&#x5F62;&#x72B6; memref &#x7684;&#x7528;&#x9014;</li>
+<li>&#x601D;&#x8003;&#xFF1A;&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x4F7F;&#x7528;&#x56FA;&#x5B9A;&#x5F62;&#x72B6;&#xFF0C;&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x4F7F;&#x7528;&#x52A8;&#x6001;&#x5F62;&#x72B6;&#xFF1F;</li>
+</ul>
+<p><strong>&#x7B54;&#x6848;&#xFF1A;</strong></p>
+<ul>
+<li><strong>&#x52A8;&#x6001;&#x5F62;&#x72B6; memref &#x7684;&#x7528;&#x9014;</strong>&#xFF1A;&#x5F53;&#x6570;&#x7EC4;&#x7684;&#x7EF4;&#x5EA6;&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#x65E0;&#x6CD5;&#x786E;&#x5B9A;&#x65F6;&#x4F7F;&#x7528;&#xFF0C;&#x6BD4;&#x5982;&#x5904;&#x7406;&#x4E0D;&#x540C;&#x5927;&#x5C0F;&#x7684;&#x8F93;&#x5165;&#x6570;&#x636E;&#x3001;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x4E2D;&#x7684;&#x6570;&#x7EC4;&#x7B49;&#x3002;&#x52A8;&#x6001;&#x5F62;&#x72B6;&#x63D0;&#x4F9B;&#x4E86;&#x66F4;&#x5927;&#x7684;&#x7075;&#x6D3B;&#x6027;&#xFF0C;&#x4F46;&#x53EF;&#x80FD;&#x5F71;&#x54CD;&#x67D0;&#x4E9B;&#x7F16;&#x8BD1;&#x65F6;&#x4F18;&#x5316;&#x3002;</li>
+<li><strong>&#x4F7F;&#x7528;&#x573A;&#x666F;&#x9009;&#x62E9;</strong>&#xFF1A;<ul>
+<li><strong>&#x56FA;&#x5B9A;&#x5F62;&#x72B6;</strong>&#xFF1A;&#x5F53;&#x6570;&#x7EC4;&#x5927;&#x5C0F;&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#x5DF2;&#x77E5;&#x4E14;&#x4E0D;&#x53D8;&#x65F6;&#x4F7F;&#x7528;&#xFF0C;&#x5982;&#x56FA;&#x5B9A;&#x5927;&#x5C0F;&#x7684;&#x5377;&#x79EF;&#x6838;&#x3001;&#x9884;&#x5B9A;&#x4E49;&#x7684;&#x67E5;&#x627E;&#x8868;&#x7B49;&#x3002;&#x4F18;&#x70B9;&#x662F;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x66F4;&#x591A;&#x7F16;&#x8BD1;&#x65F6;&#x4F18;&#x5316;&#x3002;</li>
+<li><strong>&#x52A8;&#x6001;&#x5F62;&#x72B6;</strong>&#xFF1A;&#x5F53;&#x6570;&#x7EC4;&#x5927;&#x5C0F;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x786E;&#x5B9A;&#x65F6;&#x4F7F;&#x7528;&#xFF0C;&#x5982;&#x7528;&#x6237;&#x8F93;&#x5165;&#x7684;&#x77E9;&#x9635;&#x3001;batch size &#x4E0D;&#x56FA;&#x5B9A;&#x7684;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x5C42;&#x7B49;&#x3002;&#x63D0;&#x4F9B;&#x66F4;&#x5927;&#x7075;&#x6D3B;&#x6027;&#x4F46;&#x53EF;&#x80FD;&#x727A;&#x7272;&#x90E8;&#x5206;&#x6027;&#x80FD;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<h3 id="&#x4EFB;&#x52A1;-2&#xFF1A;&#x8BBE;&#x8BA1;&#x81EA;&#x5B9A;&#x4E49;&#x64CD;&#x4F5C;&#x63A5;&#x53E3;">&#x4EFB;&#x52A1; 2&#xFF1A;&#x8BBE;&#x8BA1;&#x81EA;&#x5B9A;&#x4E49;&#x64CD;&#x4F5C;&#x63A5;&#x53E3;</h3>
+<p><strong>2.1 &#x64CD;&#x4F5C;&#x8BBE;&#x8BA1;&#x5206;&#x6790;</strong></p>
+<p>&#x5728;&#x5F00;&#x59CB;&#x7F16;&#x7801;&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4ED4;&#x7EC6;&#x8BBE;&#x8BA1;&#x6BCF;&#x4E2A;&#x64CD;&#x4F5C;&#x7684;&#x63A5;&#x53E3;&#x3002;&#x5206;&#x6790;&#x4EE5;&#x4E0B;&#x8BBE;&#x8BA1;&#x51B3;&#x7B56;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x64CD;&#x4F5C;</th>
+<th>&#x8F93;&#x5165;</th>
+<th>&#x8F93;&#x51FA;</th>
+<th>&#x8BBE;&#x8BA1;&#x8003;&#x8651;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>create_matrix</code></td>
+<td>&#x4E24;&#x4E2A; index &#x503C;&#xFF08;&#x884C;&#x3001;&#x5217;&#xFF09;</td>
+<td>memref&lt;?x?xf32&gt;</td>
+<td>&#x4E3A;&#x4EC0;&#x4E48;&#x7528;&#x52A8;&#x6001;&#x5F62;&#x72B6;&#xFF1F;</td>
+</tr>
+<tr>
+<td><code>set</code></td>
+<td>memref + &#x4E24;&#x4E2A; index + f32 &#x503C;</td>
+<td>&#x65E0;</td>
+<td>&#x4E3A;&#x4EC0;&#x4E48;&#x6CA1;&#x6709;&#x8FD4;&#x56DE;&#x503C;&#xFF1F;</td>
+</tr>
+<tr>
+<td><code>get</code></td>
+<td>memref + &#x4E24;&#x4E2A; index</td>
+<td>f32 &#x503C;</td>
+<td>&#x7C7B;&#x578B;&#x5982;&#x4F55;&#x4FDD;&#x8BC1;&#x4E00;&#x81F4;&#xFF1F;</td>
+</tr>
+<tr>
+<td><code>print</code></td>
+<td>memref</td>
+<td>&#x65E0;</td>
+<td>&#x5982;&#x4F55;&#x5904;&#x7406;&#x8C03;&#x8BD5;&#x64CD;&#x4F5C;&#xFF1F;</td>
+</tr>
+</tbody>
+</table>
+<p><strong>&#x601D;&#x8003;&#x9898;&#xFF1A;</strong></p>
+<ul>
+<li>&#x4E3A;&#x4EC0;&#x4E48; <code>create_matrix</code> &#x8FD4;&#x56DE;&#x52A8;&#x6001;&#x5F62;&#x72B6;&#x7684; memref &#x800C;&#x4E0D;&#x662F;&#x56FA;&#x5B9A;&#x5F62;&#x72B6;&#xFF1F;</li>
+<li><code>set</code> &#x64CD;&#x4F5C;&#x5C5E;&#x4E8E;&#x4EC0;&#x4E48;&#x7C7B;&#x578B;&#x7684;&#x64CD;&#x4F5C;&#x7279;&#x5F81;&#xFF08;Trait&#xFF09;&#xFF1F;</li>
+<li>&#x5982;&#x4F55;&#x786E;&#x4FDD; <code>get</code> &#x548C; <code>set</code> &#x64CD;&#x4F5C;&#x7684;&#x7C7B;&#x578B;&#x5B89;&#x5168;&#xFF1F;</li>
+</ul>
+<p><strong>&#x7B54;&#x6848;&#xFF1A;</strong></p>
+<ul>
+<li><strong>&#x4F7F;&#x7528;&#x52A8;&#x6001;&#x5F62;&#x72B6;&#x7684;&#x539F;&#x56E0;</strong>&#xFF1A;&#x56E0;&#x4E3A;&#x77E9;&#x9635;&#x7684;&#x884C;&#x6570;&#x548C;&#x5217;&#x6570;&#x662F;&#x901A;&#x8FC7;&#x8FD0;&#x884C;&#x65F6;&#x7684; <code>index</code> &#x503C;&#x53C2;&#x6570;&#x4F20;&#x5165;&#x7684;&#xFF0C;&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#x65E0;&#x6CD5;&#x786E;&#x5B9A;&#x5177;&#x4F53;&#x6570;&#x503C;&#x3002;&#x5982;&#x679C;&#x4F7F;&#x7528;&#x56FA;&#x5B9A;&#x5F62;&#x72B6;&#xFF0C;&#x5C31;&#x65E0;&#x6CD5;&#x652F;&#x6301;&#x8FD0;&#x884C;&#x65F6;&#x52A8;&#x6001;&#x6307;&#x5B9A;&#x77E9;&#x9635;&#x5927;&#x5C0F;&#x7684;&#x529F;&#x80FD;&#x3002;&#x52A8;&#x6001;&#x5F62;&#x72B6; <code>memref&lt;?x?xf32&gt;</code> &#x53EF;&#x4EE5;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x6839;&#x636E;&#x53C2;&#x6570;&#x786E;&#x5B9A;&#x5B9E;&#x9645;&#x5F62;&#x72B6;&#x3002;</li>
+<li><strong><code>set</code> &#x64CD;&#x4F5C;&#x7684;&#x7279;&#x5F81;</strong>&#xFF1A;&#x5C5E;&#x4E8E; <code>ZeroResults</code> &#x7279;&#x5F81;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x526F;&#x4F5C;&#x7528;&#x64CD;&#x4F5C;&#xFF08;side-effect operation&#xFF09;&#xFF0C;&#x53EA;&#x4FEE;&#x6539;&#x5185;&#x5B58;&#x72B6;&#x6001;&#x800C;&#x4E0D;&#x8FD4;&#x56DE;&#x503C;&#x3002;&#x5B83;&#x8FD8;&#x53EF;&#x80FD;&#x5177;&#x6709; <code>MemWrite</code> &#x7B49;&#x5185;&#x5B58;&#x6548;&#x679C;&#x7279;&#x5F81;&#x3002;</li>
+<li><strong>&#x7C7B;&#x578B;&#x5B89;&#x5168;&#x4FDD;&#x8BC1;</strong>&#xFF1A;<ul>
+<li>&#x5728;&#x89E3;&#x6790;&#x9636;&#x6BB5;&#xFF0C;&#x786E;&#x4FDD; memref &#x7684;&#x5143;&#x7D20;&#x7C7B;&#x578B;&#x4E0E; get/set &#x7684;&#x503C;&#x7C7B;&#x578B;&#x4E00;&#x81F4;&#xFF08;&#x90FD;&#x662F; f32&#xFF09;</li>
+<li>&#x7D22;&#x5F15;&#x5FC5;&#x987B;&#x662F; <code>index</code> &#x7C7B;&#x578B;</li>
+<li>&#x5728;&#x9A8C;&#x8BC1;&#x9636;&#x6BB5;&#x68C0;&#x67E5; memref &#x7684;&#x7EF4;&#x5EA6;&#x4E0E;&#x7D22;&#x5F15;&#x6570;&#x91CF;&#x5339;&#x914D;</li>
+<li>&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x8FD0;&#x884C;&#x65F6;&#x8FB9;&#x754C;&#x68C0;&#x67E5;&#x9632;&#x6B62;&#x8D8A;&#x754C;&#x8BBF;&#x95EE;</li>
+</ul>
+</li>
+</ul>
+<p><strong>2.2 &#x8BED;&#x6CD5;&#x8BBE;&#x8BA1;&#x9A8C;&#x8BC1;</strong></p>
+<p>&#x8BBE;&#x8BA1;&#x5E76;&#x9A8C;&#x8BC1;&#x6BCF;&#x4E2A;&#x64CD;&#x4F5C;&#x7684;&#x6587;&#x672C;&#x8BED;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-mlir">// &#x4F60;&#x8BA4;&#x4E3A;&#x4EE5;&#x4E0B;&#x8BED;&#x6CD5;&#x5408;&#x7406;&#x5417;&#xFF1F;&#x4E3A;&#x4EC0;&#x4E48;&#xFF1F;
+%mat = memory.create_matrix %rows, %cols : memref&lt;?x?xf32&gt;
+memory.set %mat[%i, %j] = %val : memref&lt;?x?xf32&gt;  
+%result = memory.get %mat[%i, %j] : memref&lt;?x?xf32&gt;
+</code></pre>
+<p><strong>&#x5B9E;&#x9A8C;&#x4EFB;&#x52A1;&#xFF1A;</strong></p>
+<ul>
+<li>&#x5206;&#x6790;&#x6BCF;&#x4E2A;&#x64CD;&#x4F5C;&#x7684;&#x89E3;&#x6790;&#x96BE;&#x5EA6;</li>
+<li>&#x601D;&#x8003;&#x5982;&#x4F55;&#x5904;&#x7406;&#x7D22;&#x5F15;&#x7684;&#x65B9;&#x62EC;&#x53F7;&#x8BED;&#x6CD5;</li>
+<li>&#x8003;&#x8651;&#x7C7B;&#x578B;&#x63A8;&#x65AD;&#x7684;&#x53EF;&#x80FD;&#x6027;</li>
+</ul>
+<p><strong>&#x7B54;&#x6848;&#xFF1A;</strong></p>
+<ul>
+<li><strong>&#x89E3;&#x6790;&#x96BE;&#x5EA6;&#x5206;&#x6790;</strong>&#xFF1A;<ul>
+<li><code>create_matrix</code>&#xFF1A;&#x76F8;&#x5BF9;&#x7B80;&#x5355;&#xFF0C;&#x6807;&#x51C6;&#x7684;&#x64CD;&#x4F5C;&#x6570;-&#x7C7B;&#x578B;&#x683C;&#x5F0F;</li>
+<li><code>set</code>&#xFF1A;&#x6700;&#x590D;&#x6742;&#xFF0C;&#x9700;&#x8981;&#x89E3;&#x6790;&#x65B9;&#x62EC;&#x53F7;&#x3001;&#x7B49;&#x53F7;&#x7B49;&#x7279;&#x6B8A;&#x7B26;&#x53F7;</li>
+<li><code>get</code>&#xFF1A;&#x4E2D;&#x7B49;&#x590D;&#x6742;&#x5EA6;&#xFF0C;&#x9700;&#x8981;&#x89E3;&#x6790;&#x65B9;&#x62EC;&#x53F7;&#x8BED;&#x6CD5;</li>
+</ul>
+</li>
+<li><strong>&#x65B9;&#x62EC;&#x53F7;&#x8BED;&#x6CD5;&#x5904;&#x7406;</strong>&#xFF1A;<ul>
+<li>&#x4F7F;&#x7528; <code>parser.parseLSquare()</code> &#x548C; <code>parser.parseRSquare()</code> &#x89E3;&#x6790; <code>[</code> &#x548C; <code>]</code></li>
+<li>&#x5728;&#x65B9;&#x62EC;&#x53F7;&#x5185;&#x4F7F;&#x7528; <code>parser.parseComma()</code> &#x5206;&#x5272;&#x591A;&#x4E2A;&#x7D22;&#x5F15;</li>
+<li>&#x9700;&#x8981;&#x4ED4;&#x7EC6;&#x5904;&#x7406;&#x64CD;&#x4F5C;&#x6570;&#x7684;&#x89E3;&#x6790;&#x987A;&#x5E8F;</li>
+</ul>
+</li>
+<li><strong>&#x7C7B;&#x578B;&#x63A8;&#x65AD;&#x53EF;&#x80FD;&#x6027;</strong>&#xFF1A;<ul>
+<li><code>get</code> &#x64CD;&#x4F5C;&#x7684;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x53EF;&#x4EE5;&#x4ECE; memref &#x7684;&#x5143;&#x7D20;&#x7C7B;&#x578B;&#x63A8;&#x65AD;</li>
+<li><code>set</code> &#x64CD;&#x4F5C;&#x53EF;&#x4EE5;&#x63A8;&#x65AD;&#x51FA;&#x503C;&#x53C2;&#x6570;&#x5E94;&#x8BE5;&#x4E0E; memref &#x5143;&#x7D20;&#x7C7B;&#x578B;&#x5339;&#x914D;</li>
+<li>&#x4F46;&#x4E3A;&#x4E86;&#x6E05;&#x6670;&#x6027;&#x548C;&#x9519;&#x8BEF;&#x68C0;&#x67E5;&#xFF0C;&#x663E;&#x5F0F;&#x7C7B;&#x578B;&#x6807;&#x6CE8;&#x4ECD;&#x7136;&#x6709;&#x4EF7;&#x503C;</li>
+</ul>
+</li>
+</ul>
+<h3 id="&#x4EFB;&#x52A1;-3&#xFF1A;&#x5B9E;&#x73B0;-dialect-&#x6846;&#x67B6;">&#x4EFB;&#x52A1; 3&#xFF1A;&#x5B9E;&#x73B0; Dialect &#x6846;&#x67B6;</h3>
+<p><strong>3.1 &#x521B;&#x5EFA;&#x9879;&#x76EE;&#x7ED3;&#x6784;</strong></p>
+<pre><code class="lang-bash">mkdir memory-dialect &amp;&amp; <span class="hljs-built_in">cd</span> memory-dialect
+<span class="hljs-comment"># &#x521B;&#x5EFA;&#x5FC5;&#x8981;&#x7684;&#x6E90;&#x6587;&#x4EF6;&#xFF08;&#x4F60;&#x9700;&#x8981;&#x54EA;&#x4E9B;&#x6587;&#x4EF6;&#xFF1F;&#xFF09;</span>
+</code></pre>
+<p><strong>3.2 &#x5B9E;&#x73B0; MemoryDialect &#x7C7B;</strong></p>
+<p>&#x521B;&#x5EFA; <code>MemoryDialect.h</code>&#xFF0C;&#x601D;&#x8003;&#x4EE5;&#x4E0B;&#x95EE;&#x9898;&#xFF1A;</p>
+<ul>
+<li>&#x9700;&#x8981;&#x5305;&#x542B;&#x54EA;&#x4E9B; MLIR &#x5934;&#x6587;&#x4EF6;&#xFF1F;</li>
+<li>Dialect &#x7C7B;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x54EA;&#x4E9B;&#x65B9;&#x6CD5;&#xFF1F;</li>
+<li>&#x5982;&#x4F55;&#x6B63;&#x786E;&#x8BBE;&#x7F6E;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#xFF1F;</li>
+</ul>
+<p><strong>&#x63D0;&#x793A;&#xFF1A;</strong></p>
+<ul>
+<li>&#x67E5;&#x770B; Lab 1 &#x548C; Lab 2 &#x4E2D;&#x7684; Dialect &#x5B9E;&#x73B0;&#x6A21;&#x5F0F;</li>
+<li>&#x6CE8;&#x610F; MLIR &#x7248;&#x672C;&#x5DEE;&#x5F02;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x7684;&#x5934;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x53D8;&#x5316;</li>
+<li>&#x786E;&#x4FDD;&#x6B63;&#x786E;&#x7EE7;&#x627F; <code>mlir::Dialect</code> &#x57FA;&#x7C7B;</li>
+</ul>
+<p><strong>&#x7B54;&#x6848;&#xFF1A;</strong></p>
+<ul>
+<li><strong>&#x5FC5;&#x9700;&#x7684;&#x5934;&#x6587;&#x4EF6;</strong>&#xFF1A;<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;mlir/IR/Dialect.h&quot;</span>          // Dialect &#x57FA;&#x7C7B;</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;mlir/IR/OpDefinition.h&quot;</span>     // Op &#x5B9A;&#x4E49;&#x76F8;&#x5173;</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;mlir/IR/OpImplementation.h&quot;</span> // &#x89E3;&#x6790;&#x548C;&#x6253;&#x5370;</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;mlir/IR/Builders.h&quot;</span>         // IR &#x6784;&#x5EFA;&#x5668;</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;mlir/IR/BuiltinTypes.h&quot;</span>     // &#x5185;&#x7F6E;&#x7C7B;&#x578B;&#x5982; MemRefType</span>
+</code></pre>
+</li>
+<li><strong>Dialect &#x7C7B;&#x5FC5;&#x9700;&#x65B9;&#x6CD5;</strong>&#xFF1A;<ul>
+<li>&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF1A;&#x521D;&#x59CB;&#x5316; Dialect &#x5E76;&#x8BBE;&#x7F6E; TypeID</li>
+<li><code>getDialectNamespace()</code>&#xFF1A;&#x8FD4;&#x56DE;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x5B57;&#x7B26;&#x4E32;</li>
+<li><code>initialize()</code>&#xFF1A;&#x6CE8;&#x518C;&#x5305;&#x542B;&#x7684;&#x64CD;&#x4F5C;&#x3001;&#x7C7B;&#x578B;&#x7B49;</li>
+</ul>
+</li>
+<li><strong>&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x8BBE;&#x7F6E;</strong>&#xFF1A;&#x4F7F;&#x7528; <code>namespace memory</code> &#x5305;&#x88C5;&#x6240;&#x6709;&#x81EA;&#x5B9A;&#x4E49;&#x7C7B;&#xFF0C;&#x5728; <code>getDialectNamespace()</code> &#x4E2D;&#x8FD4;&#x56DE; <code>&quot;memory&quot;</code></li>
+</ul>
+<p><strong>3.3 &#x9A8C;&#x8BC1;&#x7F16;&#x8BD1;&#x73AF;&#x5883;</strong></p>
+<p>&#x5728;&#x5B9E;&#x73B0;&#x5177;&#x4F53;&#x64CD;&#x4F5C;&#x524D;&#xFF0C;&#x5148;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6700;&#x5C0F;&#x7684; Dialect&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// &#x53EA;&#x6CE8;&#x518C; Dialect&#xFF0C;&#x4E0D;&#x5305;&#x542B;&#x4EFB;&#x4F55;&#x64CD;&#x4F5C;</span>
+<span class="hljs-keyword">class</span> MemoryDialect : <span class="hljs-keyword">public</span> mlir::Dialect {
+  <span class="hljs-comment">// &#x6700;&#x5C0F;&#x5B9E;&#x73B0;</span>
+};
+</code></pre>
+<p><strong>&#x5B9E;&#x9A8C;&#x4EFB;&#x52A1;&#xFF1A;</strong></p>
+<ul>
+<li>&#x521B;&#x5EFA;&#x7B80;&#x5355;&#x7684;&#x6D4B;&#x8BD5;&#x7A0B;&#x5E8F;&#x9A8C;&#x8BC1; Dialect &#x53EF;&#x4EE5;&#x6CE8;&#x518C;</li>
+<li>&#x89E3;&#x51B3;&#x53EF;&#x80FD;&#x7684;&#x7F16;&#x8BD1;&#x548C;&#x94FE;&#x63A5;&#x95EE;&#x9898;</li>
+<li>&#x786E;&#x8BA4; MLIR &#x5E93;&#x7684;&#x6B63;&#x786E;&#x94FE;&#x63A5;</li>
+</ul>
+<h3 id="&#x4EFB;&#x52A1;-4&#xFF1A;&#x5B9E;&#x73B0;&#x77E9;&#x9635;&#x521B;&#x5EFA;&#x64CD;&#x4F5C;">&#x4EFB;&#x52A1; 4&#xFF1A;&#x5B9E;&#x73B0;&#x77E9;&#x9635;&#x521B;&#x5EFA;&#x64CD;&#x4F5C;</h3>
+<p><strong>4.1 &#x5206;&#x6790; CreateMatrixOp &#x7684;&#x9700;&#x6C42;</strong></p>
+<p>&#x8FD9;&#x4E2A;&#x64CD;&#x4F5C;&#x9700;&#x8981;&#xFF1A;</p>
+<ul>
+<li>&#x63A5;&#x53D7;&#x4E24;&#x4E2A; <code>index</code> &#x7C7B;&#x578B;&#x7684;&#x64CD;&#x4F5C;&#x6570;&#xFF08;&#x884C;&#x6570;&#x3001;&#x5217;&#x6570;&#xFF09;</li>
+<li>&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x52A8;&#x6001;&#x5F62;&#x72B6;&#x7684; <code>memref&lt;?x?xf32&gt;</code></li>
+<li>&#x652F;&#x6301;&#x6587;&#x672C;&#x683C;&#x5F0F;&#x7684;&#x89E3;&#x6790;&#x548C;&#x6253;&#x5370;</li>
+</ul>
+<p><strong>&#x601D;&#x8003;&#x9898;&#xFF1A;</strong></p>
+<ul>
+<li>&#x9009;&#x62E9;&#x4EC0;&#x4E48;&#x64CD;&#x4F5C;&#x7279;&#x5F81;&#xFF08;Traits&#xFF09;&#xFF1F;</li>
+<li>&#x5982;&#x4F55;&#x5728; <code>build</code> &#x65B9;&#x6CD5;&#x4E2D;&#x521B;&#x5EFA;&#x6B63;&#x786E;&#x7684; memref &#x7C7B;&#x578B;&#xFF1F;</li>
+<li>&#x89E3;&#x6790;&#x65F6;&#x5982;&#x4F55;&#x5904;&#x7406;&#x64CD;&#x4F5C;&#x6570;&#x7684;&#x7C7B;&#x578B;&#x89E3;&#x6790;&#xFF1F;</li>
+</ul>
+<p><strong>&#x7B54;&#x6848;&#xFF1A;</strong></p>
+<ul>
+<li><strong>&#x64CD;&#x4F5C;&#x7279;&#x5F81;&#x9009;&#x62E9;</strong>&#xFF1A;<code>mlir::OpTrait::OneResult</code> - &#x8868;&#x793A;&#x64CD;&#x4F5C;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x7ED3;&#x679C;&#x3002;&#x4E0D;&#x9700;&#x8981;&#x5176;&#x4ED6;&#x7279;&#x5F81;&#xFF0C;&#x56E0;&#x4E3A;&#x64CD;&#x4F5C;&#x6570;&#x6570;&#x91CF;&#x662F;&#x56FA;&#x5B9A;&#x7684;&#xFF08;2&#x4E2A;&#xFF09;&#x3002;</li>
+<li><strong>&#x521B;&#x5EFA; memref &#x7C7B;&#x578B;</strong>&#xFF1A;<pre><code class="lang-cpp"><span class="hljs-keyword">auto</span> f32Type = builder.getF32Type();
+<span class="hljs-keyword">auto</span> memrefType = mlir::MemRefType::get({<span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>}, f32Type);
+</code></pre>
+&#x5176;&#x4E2D; <code>{-1, -1}</code> &#x8868;&#x793A;&#x4E24;&#x4E2A;&#x52A8;&#x6001;&#x7EF4;&#x5EA6;&#x3002;</li>
+<li><strong>&#x64CD;&#x4F5C;&#x6570;&#x7C7B;&#x578B;&#x89E3;&#x6790;</strong>&#xFF1A;<pre><code class="lang-cpp"><span class="hljs-keyword">auto</span> indexType = parser.getBuilder().getIndexType();
+<span class="hljs-keyword">if</span> (parser.resolveOperands({rows, cols}, indexType, result.operands))
+  <span class="hljs-keyword">return</span> mlir::failure();
+</code></pre>
+&#x786E;&#x4FDD;&#x4E24;&#x4E2A;&#x64CD;&#x4F5C;&#x6570;&#x90FD;&#x88AB;&#x89E3;&#x6790;&#x4E3A; <code>index</code> &#x7C7B;&#x578B;&#x3002;</li>
+</ul>
+<p><strong>4.2 &#x5B9E;&#x73B0;&#x6B65;&#x9AA4;&#x6307;&#x5BFC;</strong></p>
+<ol>
+<li><p><strong>&#x5B9A;&#x4E49;&#x64CD;&#x4F5C;&#x7C7B;&#x7ED3;&#x6784;</strong></p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">class</span> CreateMatrixOp : <span class="hljs-keyword">public</span> mlir::Op&lt;CreateMatrixOp, <span class="hljs-comment">/* &#x4EC0;&#x4E48;&#x7279;&#x5F81;&#xFF1F; */</span>&gt; {
+  <span class="hljs-comment">// &#x9700;&#x8981;&#x5B9E;&#x73B0;&#x54EA;&#x4E9B;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF1F;</span>
+};
+</code></pre>
+</li>
+<li><p><strong>&#x5B9E;&#x73B0; build &#x65B9;&#x6CD5;</strong></p>
+<ul>
+<li>&#x5982;&#x4F55;&#x521B;&#x5EFA;&#x52A8;&#x6001;&#x5F62;&#x72B6;&#x7684; MemRefType&#xFF1F;</li>
+<li><code>state.addOperands()</code> &#x548C; <code>state.addTypes()</code> &#x7684;&#x4F7F;&#x7528;</li>
+</ul>
+</li>
+<li><p><strong>&#x5B9E;&#x73B0; parse &#x65B9;&#x6CD5;</strong></p>
+<ul>
+<li>&#x89E3;&#x6790;&#x64CD;&#x4F5C;&#x6570;&#x548C;&#x7C7B;&#x578B;&#x7684;&#x987A;&#x5E8F;</li>
+<li>&#x5982;&#x4F55;&#x4F7F;&#x7528; <code>parser.resolveOperands()</code>&#xFF1F;</li>
+</ul>
+</li>
+<li><p><strong>&#x5B9E;&#x73B0; print &#x65B9;&#x6CD5;</strong></p>
+<ul>
+<li>&#x8F93;&#x51FA;&#x683C;&#x5F0F;&#x7684;&#x8BBE;&#x8BA1;</li>
+<li>&#x5982;&#x4F55;&#x83B7;&#x53D6;&#x64CD;&#x4F5C;&#x6570;&#x548C;&#x7ED3;&#x679C;&#x7C7B;&#x578B;&#xFF1F;</li>
+</ul>
+</li>
+</ol>
+<p><strong>&#x9A8C;&#x8BC1;&#x65B9;&#x6CD5;&#xFF1A;</strong>
+&#x521B;&#x5EFA;&#x7B80;&#x5355;&#x7684;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x9A8C;&#x8BC1;&#x64CD;&#x4F5C;&#x53EF;&#x4EE5;&#x88AB;&#x89E3;&#x6790;&#xFF1A;</p>
+<pre><code class="lang-mlir">%c2 = arith.constant 2 : index
+%c3 = arith.constant 3 : index  
+%mat = memory.create_matrix %c2, %c3 : memref&lt;?x?xf32&gt;
+</code></pre>
+<h3 id="&#x4EFB;&#x52A1;-5&#xFF1A;&#x5B9E;&#x73B0;&#x5185;&#x5B58;&#x8BBF;&#x95EE;&#x64CD;&#x4F5C;">&#x4EFB;&#x52A1; 5&#xFF1A;&#x5B9E;&#x73B0;&#x5185;&#x5B58;&#x8BBF;&#x95EE;&#x64CD;&#x4F5C;</h3>
+<p><strong>5.1 &#x5B9E;&#x73B0; SetElementOp</strong></p>
+<p>&#x8FD9;&#x662F;&#x6700;&#x590D;&#x6742;&#x7684;&#x64CD;&#x4F5C;&#x4E4B;&#x4E00;&#xFF0C;&#x9700;&#x8981;&#x5904;&#x7406;&#xFF1A;</p>
+<ul>
+<li>&#x65B9;&#x62EC;&#x53F7;&#x7D22;&#x5F15;&#x8BED;&#x6CD5;&#x7684;&#x89E3;&#x6790;</li>
+<li>&#x591A;&#x4E2A;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x64CD;&#x4F5C;&#x6570;</li>
+<li>&#x65E0;&#x8FD4;&#x56DE;&#x503C;&#x7684;&#x64CD;&#x4F5C;&#x7279;&#x5F81;</li>
+</ul>
+<p><strong>&#x5173;&#x952E;&#x6311;&#x6218;&#xFF1A;</strong></p>
+<ul>
+<li>&#x5982;&#x4F55;&#x89E3;&#x6790; <code>%matrix[%i, %j] = %value</code> &#x8BED;&#x6CD5;&#xFF1F;</li>
+<li>&#x64CD;&#x4F5C;&#x6570;&#x7684;&#x987A;&#x5E8F;&#x5982;&#x4F55;&#x5B89;&#x6392;&#xFF1F;</li>
+<li>&#x5982;&#x4F55;&#x786E;&#x4FDD;&#x7D22;&#x5F15;&#x548C;&#x503C;&#x7684;&#x7C7B;&#x578B;&#x6B63;&#x786E;&#xFF1F;</li>
+</ul>
+<p><strong>&#x5B9E;&#x73B0;&#x63D0;&#x793A;&#xFF1A;</strong></p>
+<ol>
+<li>&#x64CD;&#x4F5C;&#x6570;&#x987A;&#x5E8F;&#x5EFA;&#x8BAE;&#xFF1A;<code>[memref, index1, index2, value]</code></li>
+<li>&#x89E3;&#x6790;&#x65F6;&#x9700;&#x8981;&#x5904;&#x7406;&#xFF1A;<code>[</code>, <code>,</code>, <code>]</code>, <code>=</code> &#x7B49;&#x7279;&#x6B8A;&#x7B26;&#x53F7;</li>
+<li>&#x4F7F;&#x7528; <code>ZeroResults</code> &#x7279;&#x5F81;</li>
+</ol>
+<p><strong>&#x7B54;&#x6848;&#xFF1A;</strong></p>
+<ul>
+<li><strong>&#x89E3;&#x6790;&#x590D;&#x6742;&#x8BED;&#x6CD5;&#x7684;&#x65B9;&#x6CD5;</strong>&#xFF1A;<pre><code class="lang-cpp"><span class="hljs-comment">// &#x6309;&#x987A;&#x5E8F;&#x89E3;&#x6790;&#x6BCF;&#x4E2A;&#x7B26;&#x53F7;</span>
+<span class="hljs-keyword">if</span> (parser.parseOperand(memref) ||          <span class="hljs-comment">// %matrix</span>
+    parser.parseLSquare() ||                <span class="hljs-comment">// [</span>
+    parser.parseOperand(i) ||               <span class="hljs-comment">// %i</span>
+    parser.parseComma() ||                  <span class="hljs-comment">// ,</span>
+    parser.parseOperand(j) ||               <span class="hljs-comment">// %j</span>
+    parser.parseRSquare() ||                <span class="hljs-comment">// ]</span>
+    parser.parseEqual() ||                  <span class="hljs-comment">// =</span>
+    parser.parseOperand(value) ||           <span class="hljs-comment">// %value</span>
+    parser.parseColon() ||                  <span class="hljs-comment">// :</span>
+    parser.parseType(memrefType))           <span class="hljs-comment">// type</span>
+  <span class="hljs-keyword">return</span> mlir::failure();
+</code></pre>
+</li>
+<li><strong>&#x64CD;&#x4F5C;&#x6570;&#x987A;&#x5E8F;</strong>&#xFF1A;<code>[memref, i, j, value]</code> &#x662F;&#x5408;&#x7406;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x6837;&#x5728;&#x6784;&#x5EFA;&#x5668;&#x4E2D;&#x53EF;&#x4EE5;&#x6E05;&#x6670;&#x5730;&#x5206;&#x7EC4;&#x5904;&#x7406;&#x3002;</li>
+<li><strong>&#x7C7B;&#x578B;&#x5B89;&#x5168;&#x4FDD;&#x8BC1;</strong>&#xFF1A;&#x4E3A;&#x6BCF;&#x7C7B;&#x64CD;&#x4F5C;&#x6570;&#x6307;&#x5B9A;&#x6B63;&#x786E;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x5728; <code>resolveOperands</code> &#x65F6;&#x8FDB;&#x884C;&#x68C0;&#x67E5;&#x3002;</li>
+</ul>
+<p><strong>5.2 &#x5B9E;&#x73B0; GetElementOp</strong> </p>
+<p>&#x76F8;&#x5BF9;&#x7B80;&#x5355;&#xFF0C;&#x4F46;&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF1A;</p>
+<ul>
+<li>&#x8FD4;&#x56DE;&#x503C;&#x7C7B;&#x578B;&#x5982;&#x4F55;&#x786E;&#x5B9A;&#xFF1F;</li>
+<li>&#x4E0E; SetElementOp &#x7684;&#x8BED;&#x6CD5;&#x4E00;&#x81F4;&#x6027;</li>
+</ul>
+<p><strong>5.3 &#x5B9E;&#x73B0; PrintMatrixOp</strong></p>
+<p>&#x6700;&#x7B80;&#x5355;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x7528;&#x4E8E;&#x8C03;&#x8BD5;&#xFF1A;</p>
+<ul>
+<li>&#x53EA;&#x63A5;&#x53D7;&#x4E00;&#x4E2A; memref &#x64CD;&#x4F5C;&#x6570;</li>
+<li>&#x65E0;&#x8FD4;&#x56DE;&#x503C;</li>
+<li>&#x5728;&#x8F6C;&#x6362; Pass &#x4E2D;&#x53EF;&#x4EE5;&#x5220;&#x9664;&#x6216;&#x8F6C;&#x6362;&#x4E3A;&#x5176;&#x4ED6;&#x5F62;&#x5F0F;</li>
+</ul>
+<h3 id="&#x4EFB;&#x52A1;-6&#xFF1A;&#x6D4B;&#x8BD5;&#x548C;&#x8C03;&#x8BD5;">&#x4EFB;&#x52A1; 6&#xFF1A;&#x6D4B;&#x8BD5;&#x548C;&#x8C03;&#x8BD5;</h3>
+<p><strong>6.1 &#x521B;&#x5EFA;&#x7EFC;&#x5408;&#x6D4B;&#x8BD5;</strong></p>
+<p>&#x521B;&#x5EFA; <code>test-memory.mlir</code> &#x6587;&#x4EF6;&#xFF0C;&#x5305;&#x542B;&#xFF1A;</p>
+<pre><code class="lang-mlir">module {
+  func.func @matrix_demo() {
+    // &#x6D4B;&#x8BD5;&#x77E9;&#x9635;&#x521B;&#x5EFA;
+    // &#x6D4B;&#x8BD5;&#x5143;&#x7D20;&#x8BBE;&#x7F6E;
+    // &#x6D4B;&#x8BD5;&#x5143;&#x7D20;&#x8BFB;&#x53D6;
+    // &#x6D4B;&#x8BD5;&#x6253;&#x5370;&#x529F;&#x80FD;
+  }
+}
+</code></pre>
+<p><strong>6.2 &#x7F16;&#x8BD1;&#x548C;&#x8FD0;&#x884C;&#x6D4B;&#x8BD5;</strong></p>
+<p>&#x89E3;&#x51B3;&#x53EF;&#x80FD;&#x9047;&#x5230;&#x7684;&#x95EE;&#x9898;&#xFF1A;</p>
+<ul>
+<li>&#x94FE;&#x63A5;&#x9519;&#x8BEF;&#xFF1A;&#x9700;&#x8981;&#x54EA;&#x4E9B; MLIR &#x5E93;&#xFF1F;</li>
+<li>&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x9519;&#x8BEF;&#xFF1A;&#x68C0;&#x67E5; dialect &#x540D;&#x79F0;</li>
+<li>&#x89E3;&#x6790;&#x9519;&#x8BEF;&#xFF1A;&#x9A8C;&#x8BC1;&#x8BED;&#x6CD5;&#x5B9E;&#x73B0;</li>
+</ul>
+<p><strong>&#x5E38;&#x89C1;&#x95EE;&#x9898;&#x6392;&#x67E5;&#xFF1A;</strong></p>
+<ul>
+<li>&#x5982;&#x679C;&#x7F16;&#x8BD1;&#x5931;&#x8D25;&#xFF0C;&#x68C0;&#x67E5;&#x5934;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x548C;&#x5E93;&#x94FE;&#x63A5;</li>
+<li>&#x5982;&#x679C;&#x89E3;&#x6790;&#x5931;&#x8D25;&#xFF0C;&#x68C0;&#x67E5; <code>parse</code> &#x65B9;&#x6CD5;&#x7684;&#x5B9E;&#x73B0;</li>
+<li>&#x5982;&#x679C;&#x8FD0;&#x884C;&#x65F6;&#x9519;&#x8BEF;&#xFF0C;&#x68C0;&#x67E5;&#x64CD;&#x4F5C;&#x7279;&#x5F81;&#x7684;&#x6B63;&#x786E;&#x6027;</li>
+</ul>
+<h3 id="&#x4EFB;&#x52A1;-7&#xFF1A;&#x5B9E;&#x73B0;&#x8F6C;&#x6362;-pass">&#x4EFB;&#x52A1; 7&#xFF1A;&#x5B9E;&#x73B0;&#x8F6C;&#x6362; Pass</h3>
+<p><strong>7.1 &#x7406;&#x89E3;&#x8F6C;&#x6362;&#x76EE;&#x6807;</strong></p>
+<p>&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5C06;&#x81EA;&#x5B9A;&#x4E49;&#x64CD;&#x4F5C;&#x8F6C;&#x6362;&#x4E3A;&#x6807;&#x51C6; memref &#x64CD;&#x4F5C;&#xFF1A;</p>
+<ul>
+<li><code>memory.create_matrix</code> &#x2192; <code>memref.alloc</code></li>
+<li><code>memory.set</code> &#x2192; <code>memref.store</code></li>
+<li><code>memory.get</code> &#x2192; <code>memref.load</code></li>
+<li><code>memory.print</code> &#x2192; &#x5220;&#x9664;&#xFF08;&#x6216;&#x8F6C;&#x6362;&#x4E3A;&#x8C03;&#x8BD5;&#x8F93;&#x51FA;&#xFF09;</li>
+</ul>
+<p><strong>7.2 &#x5B9E;&#x73B0;&#x8F6C;&#x6362; Pass</strong></p>
+<p>&#x521B;&#x5EFA; <code>MemoryPass.cpp</code>&#xFF0C;&#x601D;&#x8003;&#xFF1A;</p>
+<ul>
+<li>Pass &#x7684;&#x57FA;&#x672C;&#x7ED3;&#x6784;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;</li>
+<li>&#x5982;&#x4F55;&#x904D;&#x5386;&#x548C;&#x6536;&#x96C6;&#x9700;&#x8981;&#x8F6C;&#x6362;&#x7684;&#x64CD;&#x4F5C;&#xFF1F;</li>
+<li>&#x8F6C;&#x6362;&#x987A;&#x5E8F;&#x662F;&#x5426;&#x91CD;&#x8981;&#xFF1F;</li>
+</ul>
+<p><strong>&#x5173;&#x952E;&#x6B65;&#x9AA4;&#xFF1A;</strong></p>
+<ol>
+<li>&#x6536;&#x96C6;&#x6240;&#x6709;&#x9700;&#x8981;&#x8F6C;&#x6362;&#x7684;&#x64CD;&#x4F5C;</li>
+<li>&#x9010;&#x4E2A;&#x521B;&#x5EFA;&#x7B49;&#x4EF7;&#x7684;&#x6807;&#x51C6;&#x64CD;&#x4F5C;</li>
+<li>&#x66FF;&#x6362;&#x6240;&#x6709;&#x4F7F;&#x7528;&#x5173;&#x7CFB;</li>
+<li>&#x5220;&#x9664;&#x539F;&#x64CD;&#x4F5C;</li>
+</ol>
+<p><strong>&#x7B54;&#x6848;&#xFF1A;</strong></p>
+<ul>
+<li><strong>Pass &#x57FA;&#x672C;&#x7ED3;&#x6784;</strong>&#xFF1A;&#x7EE7;&#x627F; <code>PassWrapper&lt;ClassName, OperationPass&lt;ModuleOp&gt;&gt;</code>&#xFF0C;&#x5B9E;&#x73B0; <code>runOnOperation()</code> &#x65B9;&#x6CD5;&#x3002;</li>
+<li><strong>&#x904D;&#x5386;&#x548C;&#x6536;&#x96C6;</strong>&#xFF1A;&#x4F7F;&#x7528; <code>getOperation().walk()</code> &#x904D;&#x5386; IR &#x6811;&#xFF0C;&#x7528; <code>dyn_cast</code> &#x8BC6;&#x522B;&#x76EE;&#x6807;&#x64CD;&#x4F5C;&#x7C7B;&#x578B;&#x3002;</li>
+<li><strong>&#x8F6C;&#x6362;&#x987A;&#x5E8F;</strong>&#xFF1A;&#x901A;&#x5E38;&#x5148;&#x6536;&#x96C6;&#x6240;&#x6709;&#x64CD;&#x4F5C;&#xFF0C;&#x518D;&#x6279;&#x91CF;&#x8F6C;&#x6362;&#xFF0C;&#x907F;&#x514D;&#x5728;&#x904D;&#x5386;&#x8FC7;&#x7A0B;&#x4E2D;&#x4FEE;&#x6539; IR &#x5BFC;&#x81F4;&#x8FED;&#x4EE3;&#x5668;&#x5931;&#x6548;&#x3002;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x4E0A;&#xFF0C;&#x5E94;&#x8BE5;&#x5148;&#x5904;&#x7406;&#x6570;&#x636E;&#x751F;&#x4EA7;&#x8005;&#xFF08;create_matrix&#xFF09;&#xFF0C;&#x518D;&#x5904;&#x7406;&#x6D88;&#x8D39;&#x8005;&#xFF08;get/set&#xFF09;&#x3002;</li>
+</ul>
+<p><strong>7.3 &#x6D4B;&#x8BD5;&#x8F6C;&#x6362;&#x6548;&#x679C;</strong></p>
+<p>&#x4F7F;&#x7528;&#x547D;&#x4EE4;&#x884C;&#x6D4B;&#x8BD5;&#x8F6C;&#x6362;&#xFF1A;</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># &#x8F6C;&#x6362;&#x524D;</span>
+./memory-opt <span class="hljs-built_in">test</span>-memory.mlir
+
+<span class="hljs-comment"># &#x8F6C;&#x6362;&#x540E;  </span>
+./memory-opt --convert-memory-to-memref <span class="hljs-built_in">test</span>-memory.mlir
+</code></pre>
+<p>&#x5BF9;&#x6BD4;&#x8F6C;&#x6362;&#x524D;&#x540E;&#x7684; IR&#xFF0C;&#x9A8C;&#x8BC1;&#x8BED;&#x4E49;&#x7B49;&#x4EF7;&#x6027;&#x3002;</p>
+<h3 id="&#x4EFB;&#x52A1;-8&#xFF1A;&#x4F18;&#x5316;&#x548C;&#x6269;&#x5C55;">&#x4EFB;&#x52A1; 8&#xFF1A;&#x4F18;&#x5316;&#x548C;&#x6269;&#x5C55;</h3>
+<p><strong>8.1 &#x6DFB;&#x52A0;&#x9519;&#x8BEF;&#x5904;&#x7406;</strong></p>
+<p>&#x601D;&#x8003;&#x5E76;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<ul>
+<li>&#x7D22;&#x5F15;&#x8D8A;&#x754C;&#x68C0;&#x67E5;</li>
+<li>&#x7C7B;&#x578B;&#x4E0D;&#x5339;&#x914D;&#x68C0;&#x67E5;</li>
+<li>&#x7A7A;&#x6307;&#x9488;&#x68C0;&#x67E5;</li>
+</ul>
+<p><strong>8.2 &#x6027;&#x80FD;&#x4F18;&#x5316;</strong></p>
+<p>&#x8003;&#x8651;&#xFF1A;</p>
+<ul>
+<li>&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x5E38;&#x91CF;&#x6298;&#x53E0;&#xFF1F;</li>
+<li>&#x80FD;&#x5426;&#x4F18;&#x5316;&#x8FDE;&#x7EED;&#x7684;&#x5185;&#x5B58;&#x8BBF;&#x95EE;&#xFF1F;</li>
+<li>&#x5982;&#x4F55;&#x5904;&#x7406;&#x5185;&#x5B58;&#x5BF9;&#x9F50;&#xFF1F;</li>
+</ul>
+<p><strong>8.3 &#x529F;&#x80FD;&#x6269;&#x5C55;</strong></p>
+<p>&#x53EF;&#x9009;&#x7684;&#x6269;&#x5C55;&#x529F;&#x80FD;&#xFF1A;</p>
+<ul>
+<li>&#x652F;&#x6301;&#x4E0D;&#x540C;&#x7684;&#x5143;&#x7D20;&#x7C7B;&#x578B;&#xFF08;&#x4E0D;&#x4EC5;&#x4EC5;&#x662F; f32&#xFF09;</li>
+<li>&#x6DFB;&#x52A0;&#x77E9;&#x9635;&#x8FD0;&#x7B97;&#x64CD;&#x4F5C;&#xFF08;&#x52A0;&#x6CD5;&#x3001;&#x4E58;&#x6CD5;&#x7B49;&#xFF09;</li>
+<li>&#x652F;&#x6301;&#x5B50;&#x77E9;&#x9635;&#x64CD;&#x4F5C;</li>
+</ul>
+<h2 id="&#x5B9E;&#x9A8C;&#x9A8C;&#x6536;">&#x5B9E;&#x9A8C;&#x9A8C;&#x6536;</h2>
+<h3 id="&#x57FA;&#x672C;&#x8981;&#x6C42;&#xFF08;70&#x5206;&#xFF09;">&#x57FA;&#x672C;&#x8981;&#x6C42;&#xFF08;70&#x5206;&#xFF09;</h3>
+<ul>
+<li>[ ] &#x6210;&#x529F;&#x521B;&#x5EFA;&#x5E76;&#x6CE8;&#x518C; MemoryDialect</li>
+<li>[ ] &#x5B9E;&#x73B0;&#x6240;&#x6709;&#x56DB;&#x4E2A;&#x57FA;&#x672C;&#x64CD;&#x4F5C;&#x7684;&#x89E3;&#x6790;&#x548C;&#x6253;&#x5370;</li>
+<li>[ ] &#x901A;&#x8FC7;&#x57FA;&#x672C;&#x7684;&#x8BED;&#x6CD5;&#x6D4B;&#x8BD5;</li>
+<li>[ ] &#x5B9E;&#x73B0;&#x57FA;&#x672C;&#x7684;&#x8F6C;&#x6362; Pass</li>
+</ul>
+<h3 id="&#x8FDB;&#x9636;&#x8981;&#x6C42;&#xFF08;85&#x5206;&#xFF09;">&#x8FDB;&#x9636;&#x8981;&#x6C42;&#xFF08;85&#x5206;&#xFF09;</h3>
+<ul>
+<li>[ ] &#x6DFB;&#x52A0;&#x9002;&#x5F53;&#x7684;&#x9519;&#x8BEF;&#x5904;&#x7406;&#x548C;&#x9A8C;&#x8BC1;</li>
+<li>[ ] &#x5B9E;&#x73B0;&#x5B8C;&#x6574;&#x7684;&#x6D4B;&#x8BD5;&#x5957;&#x4EF6;</li>
+<li>[ ] &#x8F6C;&#x6362; Pass &#x80FD;&#x6B63;&#x786E;&#x5904;&#x7406;&#x6240;&#x6709;&#x64CD;&#x4F5C;</li>
+<li>[ ] &#x4EE3;&#x7801;&#x7ED3;&#x6784;&#x6E05;&#x6670;&#xFF0C;&#x6CE8;&#x91CA;&#x5B8C;&#x6574;</li>
+</ul>
+<h3 id="&#x9AD8;&#x7EA7;&#x8981;&#x6C42;&#xFF08;100&#x5206;&#xFF09;">&#x9AD8;&#x7EA7;&#x8981;&#x6C42;&#xFF08;100&#x5206;&#xFF09;</h3>
+<ul>
+<li>[ ] &#x5B9E;&#x73B0;&#x7C7B;&#x578B;&#x63A8;&#x65AD;&#x6216;&#x6CDB;&#x578B;&#x652F;&#x6301;</li>
+<li>[ ] &#x6DFB;&#x52A0;&#x6027;&#x80FD;&#x4F18;&#x5316;&#x529F;&#x80FD;</li>
+<li>[ ] &#x6269;&#x5C55;&#x529F;&#x80FD;&#xFF08;&#x5982;&#x5B50;&#x77E9;&#x9635;&#x64CD;&#x4F5C;&#xFF09;</li>
+<li>[ ] &#x5B8C;&#x5584;&#x7684;&#x6587;&#x6863;&#x548C;&#x4F7F;&#x7528;&#x793A;&#x4F8B;</li>
+</ul>
+<h2 id="&#x5B66;&#x4E60;&#x603B;&#x7ED3;">&#x5B66;&#x4E60;&#x603B;&#x7ED3;</h2>
+<p>&#x5B8C;&#x6210;&#x5B9E;&#x9A8C;&#x540E;&#xFF0C;&#x601D;&#x8003;&#x4EE5;&#x4E0B;&#x95EE;&#x9898;&#xFF1A;</p>
+<ol>
+<li><strong>&#x8BBE;&#x8BA1;&#x51B3;&#x7B56;</strong>&#xFF1A;&#x4E3A;&#x4EC0;&#x4E48;&#x9009;&#x62E9;&#x52A8;&#x6001;&#x5F62;&#x72B6;&#x7684; memref&#xFF1F;&#x6709;&#x4EC0;&#x4E48;&#x4F18;&#x7F3A;&#x70B9;&#xFF1F;</li>
+<li><strong>&#x62BD;&#x8C61;&#x5C42;&#x6B21;</strong>&#xFF1A;&#x6211;&#x4EEC;&#x7684; memory dialect &#x4E0E;&#x6807;&#x51C6; memref &#x76F8;&#x6BD4;&#xFF0C;&#x63D0;&#x4F9B;&#x4E86;&#x4EC0;&#x4E48;&#x4EF7;&#x503C;&#xFF1F;</li>
+<li><strong>&#x7C7B;&#x578B;&#x5B89;&#x5168;</strong>&#xFF1A;MLIR &#x7684;&#x7C7B;&#x578B;&#x7CFB;&#x7EDF;&#x5982;&#x4F55;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x907F;&#x514D;&#x5185;&#x5B58;&#x5B89;&#x5168;&#x95EE;&#x9898;&#xFF1F;</li>
+<li><strong>&#x4F18;&#x5316;&#x673A;&#x4F1A;</strong>&#xFF1A;&#x5728; dialect &#x5C42;&#x9762;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x54EA;&#x4E9B;&#x4F18;&#x5316;&#xFF1F;</li>
+<li><strong>&#x5B9E;&#x9645;&#x5E94;&#x7528;</strong>&#xFF1A;&#x8FD9;&#x79CD;&#x5185;&#x5B58;&#x62BD;&#x8C61;&#x5728;&#x4EC0;&#x4E48;&#x573A;&#x666F;&#x4E0B;&#x6700;&#x6709;&#x7528;&#xFF1F;</li>
+</ol>
+<p><strong>&#x5B66;&#x4E60;&#x603B;&#x7ED3;&#x7B54;&#x6848;&#xFF1A;</strong></p>
+<ol>
+<li><p><strong>&#x52A8;&#x6001;&#x5F62;&#x72B6;&#x7684;&#x4F18;&#x7F3A;&#x70B9;</strong>&#xFF1A;</p>
+<ul>
+<li><strong>&#x4F18;&#x70B9;</strong>&#xFF1A;&#x7075;&#x6D3B;&#x6027;&#x9AD8;&#xFF0C;&#x652F;&#x6301;&#x8FD0;&#x884C;&#x65F6;&#x786E;&#x5B9A;&#x5927;&#x5C0F;&#xFF1B;&#x63A5;&#x53E3;&#x7EDF;&#x4E00;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x4E3A;&#x6BCF;&#x79CD;&#x5927;&#x5C0F;&#x5B9A;&#x4E49;&#x4E0D;&#x540C;&#x64CD;&#x4F5C;</li>
+<li><strong>&#x7F3A;&#x70B9;</strong>&#xFF1A;&#x8FD0;&#x884C;&#x65F6;&#x5F00;&#x9500;&#x66F4;&#x5927;&#xFF1B;&#x67D0;&#x4E9B;&#x7F16;&#x8BD1;&#x65F6;&#x4F18;&#x5316;&#x65E0;&#x6CD5;&#x8FDB;&#x884C;&#xFF1B;&#x7C7B;&#x578B;&#x68C0;&#x67E5;&#x76F8;&#x5BF9;&#x5BBD;&#x677E;</li>
+</ul>
+</li>
+<li><p><strong>&#x62BD;&#x8C61;&#x4EF7;&#x503C;</strong>&#xFF1A;</p>
+<ul>
+<li>&#x63D0;&#x4F9B;&#x4E86;&#x66F4;&#x76F4;&#x89C2;&#x7684;&#x77E9;&#x9635;&#x64CD;&#x4F5C;&#x8BED;&#x6CD5;&#xFF0C;&#x9690;&#x85CF;&#x4E86;&#x5E95;&#x5C42;&#x5185;&#x5B58;&#x7BA1;&#x7406;&#x7EC6;&#x8282;</li>
+<li>&#x4E3A;&#x7279;&#x5B9A;&#x9886;&#x57DF;&#x63D0;&#x4F9B;&#x4E86;&#x4E13;&#x95E8;&#x7684;&#x8BED;&#x4E49;&#xFF0C;&#x4FBF;&#x4E8E;&#x540E;&#x7EED;&#x4F18;&#x5316;</li>
+<li>&#x5728;&#x9AD8;&#x5C42;&#x8FDB;&#x884C;&#x9519;&#x8BEF;&#x68C0;&#x67E5;&#x548C;&#x7C7B;&#x578B;&#x9A8C;&#x8BC1;&#x66F4;&#x5BB9;&#x6613;</li>
+</ul>
+</li>
+<li><p><strong>&#x7C7B;&#x578B;&#x5B89;&#x5168;</strong>&#xFF1A;</p>
+<ul>
+<li>&#x9759;&#x6001;&#x7C7B;&#x578B;&#x68C0;&#x67E5;&#x9632;&#x6B62;&#x7C7B;&#x578B;&#x4E0D;&#x5339;&#x914D;</li>
+<li>index &#x7C7B;&#x578B;&#x786E;&#x4FDD;&#x7D22;&#x5F15;&#x64CD;&#x4F5C;&#x7684;&#x6B63;&#x786E;&#x6027;</li>
+<li>memref &#x7C7B;&#x578B;&#x5305;&#x542B;&#x7EF4;&#x5EA6;&#x4FE1;&#x606F;&#xFF0C;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x8FB9;&#x754C;&#x68C0;&#x67E5;</li>
+</ul>
+</li>
+<li><p><strong>&#x4F18;&#x5316;&#x673A;&#x4F1A;</strong>&#xFF1A;</p>
+<ul>
+<li>&#x77E9;&#x9635;&#x8BBF;&#x95EE;&#x6A21;&#x5F0F;&#x5206;&#x6790;&#x548C;&#x4F18;&#x5316;</li>
+<li>&#x5185;&#x5B58;&#x5E03;&#x5C40;&#x4F18;&#x5316;</li>
+<li>&#x6279;&#x91CF;&#x64CD;&#x4F5C;&#x5408;&#x5E76;</li>
+<li>&#x5E38;&#x91CF;&#x4F20;&#x64AD;&#x548C;&#x6298;&#x53E0;</li>
+</ul>
+</li>
+<li><p><strong>&#x5B9E;&#x9645;&#x5E94;&#x7528;&#x573A;&#x666F;</strong>&#xFF1A;</p>
+<ul>
+<li>&#x79D1;&#x5B66;&#x8BA1;&#x7B97;&#x5E93;&#x7684;&#x9AD8;&#x5C42;&#x63A5;&#x53E3;</li>
+<li>&#x9886;&#x57DF;&#x7279;&#x5B9A;&#x8BED;&#x8A00;&#x7684;&#x540E;&#x7AEF;</li>
+<li>&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x6846;&#x67B6;&#x7684;&#x4E2D;&#x95F4;&#x8868;&#x793A;</li>
+<li>&#x9700;&#x8981;&#x5185;&#x5B58;&#x8BBF;&#x95EE;&#x4F18;&#x5316;&#x7684;&#x9AD8;&#x6027;&#x80FD;&#x8BA1;&#x7B97;&#x5E94;&#x7528;</li>
+</ul>
+</li>
+</ol>
+<h2 id="&#x53C2;&#x8003;&#x8D44;&#x6E90;">&#x53C2;&#x8003;&#x8D44;&#x6E90;</h2>
+<ul>
+<li><a href="https://mlir.llvm.org/docs/LangRef/" target="_blank">MLIR Language Reference</a></li>
+<li><a href="https://mlir.llvm.org/docs/Tutorials/DefiningAttributesAndTypes/" target="_blank">MLIR Dialect Developer Documentation</a></li>
+<li><a href="https://mlir.llvm.org/docs/Dialects/MemRef/" target="_blank">MemRef Dialect Documentation</a></li>
+</ul>
+<hr>
+<h2 id="&#x53C2;&#x8003;&#x4EE3;&#x7801;">&#x53C2;&#x8003;&#x4EE3;&#x7801;</h2>
+<h3 id="memorydialecth">MemoryDialect.h</h3>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">ifndef</span> MEMORY_DIALECT_H</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> MEMORY_DIALECT_H</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;mlir/IR/Dialect.h&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;mlir/IR/OpDefinition.h&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;mlir/IR/OpImplementation.h&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;mlir/IR/Builders.h&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;mlir/IR/BuiltinTypes.h&quot;</span></span>
+
+<span class="hljs-keyword">namespace</span> memory {
+
+<span class="hljs-comment">/**
+ * MemoryDialect &#x7C7B;
+ * &#x7BA1;&#x7406;&#x5185;&#x5B58;&#x76F8;&#x5173;&#x7684;&#x64CD;&#x4F5C;
+ */</span>
+<span class="hljs-keyword">class</span> MemoryDialect : <span class="hljs-keyword">public</span> mlir::Dialect {
+<span class="hljs-keyword">public</span>:
+  <span class="hljs-function"><span class="hljs-keyword">explicit</span> <span class="hljs-title">MemoryDialect</span><span class="hljs-params">(mlir::MLIRContext *ctx)</span></span>;
+  <span class="hljs-keyword">static</span> llvm::<span class="hljs-function">StringRef <span class="hljs-title">getDialectNamespace</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;memory&quot;</span>; }
+  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">initialize</span><span class="hljs-params">()</span></span>;
+};
+
+<span class="hljs-comment">/**
+ * CreateMatrixOp - &#x521B;&#x5EFA;&#x77E9;&#x9635;&#x64CD;&#x4F5C;
+ * &#x8BED;&#x6CD5;&#xFF1A;%matrix = memory.create_matrix rows, cols : memref&lt;RxCxf32&gt;
+ */</span>
+<span class="hljs-keyword">class</span> CreateMatrixOp : <span class="hljs-keyword">public</span> mlir::Op&lt;CreateMatrixOp, mlir::OpTrait::OneResult&gt; {
+<span class="hljs-keyword">public</span>:
+  <span class="hljs-keyword">using</span> Op::Op;
+  <span class="hljs-keyword">static</span> llvm::<span class="hljs-function">StringRef <span class="hljs-title">getOperationName</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;memory.create_matrix&quot;</span>; }
+
+  <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">build</span><span class="hljs-params">(mlir::OpBuilder &amp;builder, mlir::OperationState &amp;state,
+                    mlir::Value rows, mlir::Value cols)</span> </span>{
+    <span class="hljs-keyword">auto</span> f32Type = builder.getF32Type();
+    <span class="hljs-keyword">auto</span> memrefType = mlir::MemRefType::get({<span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>}, f32Type);
+
+    state.addOperands({rows, cols});
+    state.addTypes(memrefType);
+  }
+
+  <span class="hljs-keyword">static</span> llvm::ArrayRef&lt;llvm::StringRef&gt; getAttributeNames() {
+    <span class="hljs-keyword">return</span> {};
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">(mlir::OpAsmPrinter &amp;p)</span> </span>{
+    <span class="hljs-keyword">auto</span> operands = <span class="hljs-keyword">this</span>-&gt;getOperation()-&gt;getOperands();
+    <span class="hljs-keyword">auto</span> results = <span class="hljs-keyword">this</span>-&gt;getOperation()-&gt;getResults();
+    p &lt;&lt; <span class="hljs-string">&quot; &quot;</span> &lt;&lt; operands[<span class="hljs-number">0</span>] &lt;&lt; <span class="hljs-string">&quot;, &quot;</span> &lt;&lt; operands[<span class="hljs-number">1</span>] 
+      &lt;&lt; <span class="hljs-string">&quot; : &quot;</span> &lt;&lt; results[<span class="hljs-number">0</span>].getType();
+  }
+
+  <span class="hljs-keyword">static</span> mlir::<span class="hljs-function">ParseResult <span class="hljs-title">parse</span><span class="hljs-params">(mlir::OpAsmParser &amp;parser, 
+                                mlir::OperationState &amp;result)</span> </span>{
+    mlir::OpAsmParser::UnresolvedOperand rows, cols;
+    mlir::Type resultType;
+
+    <span class="hljs-keyword">if</span> (parser.parseOperand(rows) ||
+        parser.parseComma() ||
+        parser.parseOperand(cols) ||
+        parser.parseColon() ||
+        parser.parseType(resultType))
+      <span class="hljs-keyword">return</span> mlir::failure();
+
+    <span class="hljs-keyword">auto</span> indexType = parser.getBuilder().getIndexType();
+    <span class="hljs-keyword">if</span> (parser.resolveOperands({rows, cols}, indexType, result.operands))
+      <span class="hljs-keyword">return</span> mlir::failure();
+
+    result.addTypes(resultType);
+    <span class="hljs-keyword">return</span> mlir::success();
+  }
+};
+
+<span class="hljs-comment">/**
+ * SetElementOp - &#x8BBE;&#x7F6E;&#x77E9;&#x9635;&#x5143;&#x7D20;&#x64CD;&#x4F5C;
+ * &#x8BED;&#x6CD5;&#xFF1A;memory.set %matrix[%i, %j] = %value : memref&lt;RxCxf32&gt;
+ */</span>
+<span class="hljs-keyword">class</span> SetElementOp : <span class="hljs-keyword">public</span> mlir::Op&lt;SetElementOp, mlir::OpTrait::ZeroResults&gt; {
+<span class="hljs-keyword">public</span>:
+  <span class="hljs-keyword">using</span> Op::Op;
+  <span class="hljs-keyword">static</span> llvm::<span class="hljs-function">StringRef <span class="hljs-title">getOperationName</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;memory.set&quot;</span>; }
+
+  <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">build</span><span class="hljs-params">(mlir::OpBuilder &amp;builder, mlir::OperationState &amp;state,
+                    mlir::Value memref, mlir::ValueRange indices, mlir::Value value)</span> </span>{
+    state.addOperands({memref});
+    state.addOperands(indices);
+    state.addOperands({value});
+  }
+
+  <span class="hljs-keyword">static</span> llvm::ArrayRef&lt;llvm::StringRef&gt; getAttributeNames() {
+    <span class="hljs-keyword">return</span> {};
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">(mlir::OpAsmPrinter &amp;p)</span> </span>{
+    <span class="hljs-keyword">auto</span> operands = <span class="hljs-keyword">this</span>-&gt;getOperation()-&gt;getOperands();
+    p &lt;&lt; <span class="hljs-string">&quot; &quot;</span> &lt;&lt; operands[<span class="hljs-number">0</span>] &lt;&lt; <span class="hljs-string">&quot;[&quot;</span>
+      &lt;&lt; operands[<span class="hljs-number">1</span>] &lt;&lt; <span class="hljs-string">&quot;, &quot;</span> &lt;&lt; operands[<span class="hljs-number">2</span>] &lt;&lt; <span class="hljs-string">&quot;] = &quot;</span> 
+      &lt;&lt; operands[<span class="hljs-number">3</span>] &lt;&lt; <span class="hljs-string">&quot; : &quot;</span> &lt;&lt; operands[<span class="hljs-number">0</span>].getType();
+  }
+
+  <span class="hljs-keyword">static</span> mlir::<span class="hljs-function">ParseResult <span class="hljs-title">parse</span><span class="hljs-params">(mlir::OpAsmParser &amp;parser, 
+                                mlir::OperationState &amp;result)</span> </span>{
+    mlir::OpAsmParser::UnresolvedOperand memref, i, j, value;
+    mlir::Type memrefType;
+
+    <span class="hljs-keyword">if</span> (parser.parseOperand(memref) ||
+        parser.parseLSquare() ||
+        parser.parseOperand(i) ||
+        parser.parseComma() ||
+        parser.parseOperand(j) ||
+        parser.parseRSquare() ||
+        parser.parseEqual() ||
+        parser.parseOperand(value) ||
+        parser.parseColon() ||
+        parser.parseType(memrefType))
+      <span class="hljs-keyword">return</span> mlir::failure();
+
+    <span class="hljs-keyword">auto</span> indexType = parser.getBuilder().getIndexType();
+    <span class="hljs-keyword">auto</span> f32Type = parser.getBuilder().getF32Type();
+
+    <span class="hljs-keyword">if</span> (parser.resolveOperand(memref, memrefType, result.operands) ||
+        parser.resolveOperands({i, j}, indexType, result.operands) ||
+        parser.resolveOperand(value, f32Type, result.operands))
+      <span class="hljs-keyword">return</span> mlir::failure();
+
+    <span class="hljs-keyword">return</span> mlir::success();
+  }
+};
+
+<span class="hljs-comment">/**
+ * GetElementOp - &#x83B7;&#x53D6;&#x77E9;&#x9635;&#x5143;&#x7D20;&#x64CD;&#x4F5C;
+ * &#x8BED;&#x6CD5;&#xFF1A;%value = memory.get %matrix[%i, %j] : memref&lt;RxCxf32&gt;
+ */</span>
+<span class="hljs-keyword">class</span> GetElementOp : <span class="hljs-keyword">public</span> mlir::Op&lt;GetElementOp, mlir::OpTrait::OneResult&gt; {
+<span class="hljs-keyword">public</span>:
+  <span class="hljs-keyword">using</span> Op::Op;
+  <span class="hljs-keyword">static</span> llvm::<span class="hljs-function">StringRef <span class="hljs-title">getOperationName</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;memory.get&quot;</span>; }
+
+  <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">build</span><span class="hljs-params">(mlir::OpBuilder &amp;builder, mlir::OperationState &amp;state,
+                    mlir::Value memref, mlir::ValueRange indices)</span> </span>{
+    state.addOperands({memref});
+    state.addOperands(indices);
+    state.addTypes(builder.getF32Type());
+  }
+
+  <span class="hljs-keyword">static</span> llvm::ArrayRef&lt;llvm::StringRef&gt; getAttributeNames() {
+    <span class="hljs-keyword">return</span> {};
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">(mlir::OpAsmPrinter &amp;p)</span> </span>{
+    <span class="hljs-keyword">auto</span> operands = <span class="hljs-keyword">this</span>-&gt;getOperation()-&gt;getOperands();
+    p &lt;&lt; <span class="hljs-string">&quot; &quot;</span> &lt;&lt; operands[<span class="hljs-number">0</span>] &lt;&lt; <span class="hljs-string">&quot;[&quot;</span>
+      &lt;&lt; operands[<span class="hljs-number">1</span>] &lt;&lt; <span class="hljs-string">&quot;, &quot;</span> &lt;&lt; operands[<span class="hljs-number">2</span>] &lt;&lt; <span class="hljs-string">&quot;] : &quot;</span> 
+      &lt;&lt; operands[<span class="hljs-number">0</span>].getType();
+  }
+
+  <span class="hljs-keyword">static</span> mlir::<span class="hljs-function">ParseResult <span class="hljs-title">parse</span><span class="hljs-params">(mlir::OpAsmParser &amp;parser, 
+                                mlir::OperationState &amp;result)</span> </span>{
+    mlir::OpAsmParser::UnresolvedOperand memref, i, j;
+    mlir::Type memrefType;
+
+    <span class="hljs-keyword">if</span> (parser.parseOperand(memref) ||
+        parser.parseLSquare() ||
+        parser.parseOperand(i) ||
+        parser.parseComma() ||
+        parser.parseOperand(j) ||
+        parser.parseRSquare() ||
+        parser.parseColon() ||
+        parser.parseType(memrefType))
+      <span class="hljs-keyword">return</span> mlir::failure();
+
+    <span class="hljs-keyword">auto</span> indexType = parser.getBuilder().getIndexType();
+
+    <span class="hljs-keyword">if</span> (parser.resolveOperand(memref, memrefType, result.operands) ||
+        parser.resolveOperands({i, j}, indexType, result.operands))
+      <span class="hljs-keyword">return</span> mlir::failure();
+
+    result.addTypes(parser.getBuilder().getF32Type());
+    <span class="hljs-keyword">return</span> mlir::success();
+  }
+};
+
+<span class="hljs-comment">/**
+ * PrintMatrixOp - &#x6253;&#x5370;&#x77E9;&#x9635;&#x64CD;&#x4F5C;
+ * &#x8BED;&#x6CD5;&#xFF1A;memory.print %matrix : memref&lt;RxCxf32&gt;
+ */</span>
+<span class="hljs-keyword">class</span> PrintMatrixOp : <span class="hljs-keyword">public</span> mlir::Op&lt;PrintMatrixOp, mlir::OpTrait::ZeroResults&gt; {
+<span class="hljs-keyword">public</span>:
+  <span class="hljs-keyword">using</span> Op::Op;
+  <span class="hljs-keyword">static</span> llvm::<span class="hljs-function">StringRef <span class="hljs-title">getOperationName</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;memory.print&quot;</span>; }
+
+  <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">build</span><span class="hljs-params">(mlir::OpBuilder &amp;builder, mlir::OperationState &amp;state,
+                    mlir::Value memref)</span> </span>{
+    state.addOperands({memref});
+  }
+
+  <span class="hljs-keyword">static</span> llvm::ArrayRef&lt;llvm::StringRef&gt; getAttributeNames() {
+    <span class="hljs-keyword">return</span> {};
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">(mlir::OpAsmPrinter &amp;p)</span> </span>{
+    p &lt;&lt; <span class="hljs-string">&quot; &quot;</span> &lt;&lt; <span class="hljs-keyword">this</span>-&gt;getOperation()-&gt;getOperand(<span class="hljs-number">0</span>) 
+      &lt;&lt; <span class="hljs-string">&quot; : &quot;</span> &lt;&lt; <span class="hljs-keyword">this</span>-&gt;getOperation()-&gt;getOperand(<span class="hljs-number">0</span>).getType();
+  }
+
+  <span class="hljs-keyword">static</span> mlir::<span class="hljs-function">ParseResult <span class="hljs-title">parse</span><span class="hljs-params">(mlir::OpAsmParser &amp;parser, 
+                                mlir::OperationState &amp;result)</span> </span>{
+    mlir::OpAsmParser::UnresolvedOperand memref;
+    mlir::Type memrefType;
+
+    <span class="hljs-keyword">if</span> (parser.parseOperand(memref) ||
+        parser.parseColon() ||
+        parser.parseType(memrefType))
+      <span class="hljs-keyword">return</span> mlir::failure();
+
+    <span class="hljs-keyword">if</span> (parser.resolveOperand(memref, memrefType, result.operands))
+      <span class="hljs-keyword">return</span> mlir::failure();
+
+    <span class="hljs-keyword">return</span> mlir::success();
+  }
+};
+
+} <span class="hljs-comment">// namespace memory</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span></span>
+</code></pre>
+<h3 id="memorydialectcpp">MemoryDialect.cpp</h3>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;MemoryDialect.h&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;mlir/IR/Builders.h&quot;</span></span>
+
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> mlir;
+
+<span class="hljs-keyword">namespace</span> memory {
+
+MemoryDialect::MemoryDialect(MLIRContext *ctx)
+    : Dialect(getDialectNamespace(), ctx, TypeID::get&lt;MemoryDialect&gt;()) {
+  initialize();
+}
+
+<span class="hljs-keyword">void</span> MemoryDialect::initialize() {
+  addOperations&lt;CreateMatrixOp, SetElementOp, GetElementOp, PrintMatrixOp&gt;();
+}
+
+} <span class="hljs-comment">// namespace memory</span>
+</code></pre>
+<h3 id="memorypassh">MemoryPass.h</h3>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">ifndef</span> MEMORY_PASS_H</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> MEMORY_PASS_H</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;mlir/Pass/Pass.h&quot;</span></span>
+
+<span class="hljs-keyword">namespace</span> memory {
+
+<span class="hljs-built_in">std</span>::<span class="hljs-built_in">unique_ptr</span>&lt;mlir::Pass&gt; createMemoryToMemRefPass();
+
+} <span class="hljs-comment">// namespace memory</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span></span>
+</code></pre>
+<h3 id="memorypasscpp">MemoryPass.cpp</h3>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;MemoryPass.h&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;MemoryDialect.h&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;mlir/IR/PatternMatch.h&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;mlir/Dialect/MemRef/IR/MemRef.h&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;mlir/Dialect/Arithmetic/IR/Arithmetic.h&quot;</span></span>
+
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> mlir;
+
+<span class="hljs-keyword">namespace</span> memory {
+
+<span class="hljs-keyword">namespace</span> {
+
+<span class="hljs-keyword">struct</span> MemoryToMemRefPass : <span class="hljs-keyword">public</span> PassWrapper&lt;MemoryToMemRefPass, OperationPass&lt;ModuleOp&gt;&gt; {
+
+  <span class="hljs-function">StringRef <span class="hljs-title">getArgument</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> final </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;convert-memory-to-memref&quot;</span>;
+  }
+
+  <span class="hljs-function">StringRef <span class="hljs-title">getDescription</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> final </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Convert memory dialect operations to standard memref operations&quot;</span>;
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">runOnOperation</span><span class="hljs-params">()</span> override </span>{
+    SmallVector&lt;CreateMatrixOp, <span class="hljs-number">4</span>&gt; createOps;
+    SmallVector&lt;SetElementOp, <span class="hljs-number">4</span>&gt; setOps;  
+    SmallVector&lt;GetElementOp, <span class="hljs-number">4</span>&gt; getOps;
+    SmallVector&lt;PrintMatrixOp, <span class="hljs-number">4</span>&gt; printOps;
+
+    getOperation().walk([&amp;](Operation *op) {
+      <span class="hljs-keyword">if</span> (<span class="hljs-keyword">auto</span> createOp = dyn_cast&lt;CreateMatrixOp&gt;(op))
+        createOps.push_back(createOp);
+      <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">auto</span> setOp = dyn_cast&lt;SetElementOp&gt;(op))
+        setOps.push_back(setOp);
+      <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">auto</span> getOp = dyn_cast&lt;GetElementOp&gt;(op))
+        getOps.push_back(getOp);
+      <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">auto</span> printOp = dyn_cast&lt;PrintMatrixOp&gt;(op))
+        printOps.push_back(printOp);
+    });
+
+    <span class="hljs-comment">// &#x8F6C;&#x6362; CreateMatrixOp -&gt; memref.alloc</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> op : createOps) {
+      <span class="hljs-function">OpBuilder <span class="hljs-title">builder</span><span class="hljs-params">(op)</span></span>;
+
+      <span class="hljs-keyword">auto</span> resultType = op-&gt;getResult(<span class="hljs-number">0</span>).getType().cast&lt;MemRefType&gt;();
+      <span class="hljs-keyword">auto</span> operands = op-&gt;getOperands();
+
+      <span class="hljs-keyword">auto</span> allocOp = builder.create&lt;memref::AllocOp&gt;(
+          op.getLoc(), resultType, operands);
+
+      op-&gt;getResult(<span class="hljs-number">0</span>).replaceAllUsesWith(allocOp.getResult());
+      op-&gt;erase();
+
+      llvm::outs() &lt;&lt; <span class="hljs-string">&quot;Converted memory.create_matrix to memref.alloc\n&quot;</span>;
+    }
+
+    <span class="hljs-comment">// &#x8F6C;&#x6362; SetElementOp -&gt; memref.store</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> op : setOps) {
+      <span class="hljs-function">OpBuilder <span class="hljs-title">builder</span><span class="hljs-params">(op)</span></span>;
+      <span class="hljs-keyword">auto</span> operands = op-&gt;getOperands();
+
+      Value memref = operands[<span class="hljs-number">0</span>];
+      Value i = operands[<span class="hljs-number">1</span>]; 
+      Value j = operands[<span class="hljs-number">2</span>];
+      Value value = operands[<span class="hljs-number">3</span>];
+
+      builder.create&lt;memref::StoreOp&gt;(
+          op.getLoc(), value, memref, ValueRange{i, j});
+
+      op-&gt;erase();
+      llvm::outs() &lt;&lt; <span class="hljs-string">&quot;Converted memory.set to memref.store\n&quot;</span>;
+    }
+
+    <span class="hljs-comment">// &#x8F6C;&#x6362; GetElementOp -&gt; memref.load</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> op : getOps) {
+      <span class="hljs-function">OpBuilder <span class="hljs-title">builder</span><span class="hljs-params">(op)</span></span>;
+      <span class="hljs-keyword">auto</span> operands = op-&gt;getOperands();
+
+      Value memref = operands[<span class="hljs-number">0</span>];
+      Value i = operands[<span class="hljs-number">1</span>];
+      Value j = operands[<span class="hljs-number">2</span>];
+
+      <span class="hljs-keyword">auto</span> loadOp = builder.create&lt;memref::LoadOp&gt;(
+          op.getLoc(), memref, ValueRange{i, j});
+
+      op-&gt;getResult(<span class="hljs-number">0</span>).replaceAllUsesWith(loadOp.getResult());
+      op-&gt;erase();
+
+      llvm::outs() &lt;&lt; <span class="hljs-string">&quot;Converted memory.get to memref.load\n&quot;</span>;
+    }
+
+    <span class="hljs-comment">// &#x5220;&#x9664; PrintMatrixOp</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> op : printOps) {
+      llvm::outs() &lt;&lt; <span class="hljs-string">&quot;Removed memory.print (debug operation)\n&quot;</span>;
+      op-&gt;erase();
+    }
+  }
+};
+
+} <span class="hljs-comment">// namespace</span>
+
+<span class="hljs-built_in">std</span>::<span class="hljs-built_in">unique_ptr</span>&lt;Pass&gt; createMemoryToMemRefPass() {
+  <span class="hljs-keyword">return</span> <span class="hljs-built_in">std</span>::make_unique&lt;MemoryToMemRefPass&gt;();
+}
+
+} <span class="hljs-comment">// namespace memory</span>
+</code></pre>
+<h3 id="memory-optcpp">memory-opt.cpp</h3>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;MemoryDialect.h&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;MemoryPass.h&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;mlir/IR/MLIRContext.h&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;mlir/Tools/mlir-opt/MlirOptMain.h&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;mlir/Dialect/Func/IR/FuncOps.h&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;mlir/Dialect/Arithmetic/IR/Arithmetic.h&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;mlir/Dialect/MemRef/IR/MemRef.h&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;mlir/Pass/PassRegistry.h&quot;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">char</span> **argv)</span> </span>{
+  mlir::DialectRegistry registry;
+
+  <span class="hljs-comment">// &#x6807;&#x51C6; Dialect</span>
+  registry.insert&lt;mlir::func::FuncDialect&gt;();
+  registry.insert&lt;mlir::arith::ArithmeticDialect&gt;();
+  registry.insert&lt;mlir::memref::MemRefDialect&gt;();
+
+  <span class="hljs-comment">// &#x81EA;&#x5B9A;&#x4E49; Dialect</span>
+  registry.insert&lt;memory::MemoryDialect&gt;();
+
+  <span class="hljs-comment">// &#x6CE8;&#x518C;&#x81EA;&#x5B9A;&#x4E49; Pass</span>
+  mlir::registerPass([]() -&gt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">unique_ptr</span>&lt;mlir::Pass&gt; {
+    <span class="hljs-keyword">return</span> memory::createMemoryToMemRefPass();
+  });
+
+  <span class="hljs-keyword">return</span> mlir::asMainReturnCode(
+      mlir::MlirOptMain(argc, argv, <span class="hljs-string">&quot;Memory dialect test tool\n&quot;</span>, registry));
+}
+</code></pre>
+<h3 id="&#x6D4B;&#x8BD5;&#x6587;&#x4EF6;-test-memorymlir">&#x6D4B;&#x8BD5;&#x6587;&#x4EF6; (test-memory.mlir)</h3>
+<pre><code class="lang-mlir">// Memory Dialect &#x529F;&#x80FD;&#x6D4B;&#x8BD5;
+module {
+  func.func @matrix_demo() {
+    // &#x521B;&#x5EFA;&#x4E00;&#x4E2A;2x3&#x7684;&#x77E9;&#x9635;
+    %c2 = arith.constant 2 : index
+    %c3 = arith.constant 3 : index
+    %matrix = memory.create_matrix %c2, %c3 : memref&lt;?x?xf32&gt;
+
+    // &#x5B9A;&#x4E49;&#x7D22;&#x5F15;&#x548C;&#x503C;
+    %c0 = arith.constant 0 : index
+    %c1 = arith.constant 1 : index
+    %val1 = arith.constant 1.5 : f32
+    %val2 = arith.constant 2.5 : f32
+    %val3 = arith.constant 3.5 : f32
+
+    // &#x8BBE;&#x7F6E;&#x77E9;&#x9635;&#x5143;&#x7D20;
+    memory.set %matrix[%c0, %c0] = %val1 : memref&lt;?x?xf32&gt;
+    memory.set %matrix[%c0, %c1] = %val2 : memref&lt;?x?xf32&gt;
+    memory.set %matrix[%c1, %c0] = %val3 : memref&lt;?x?xf32&gt;
+
+    // &#x8BFB;&#x53D6;&#x77E9;&#x9635;&#x5143;&#x7D20;
+    %read1 = memory.get %matrix[%c0, %c0] : memref&lt;?x?xf32&gt;
+    %read2 = memory.get %matrix[%c0, %c1] : memref&lt;?x?xf32&gt;
+    %read3 = memory.get %matrix[%c1, %c0] : memref&lt;?x?xf32&gt;
+
+    // &#x6253;&#x5370;&#x77E9;&#x9635;&#xFF08;&#x8C03;&#x8BD5;&#x7528;&#xFF09;
+    memory.print %matrix : memref&lt;?x?xf32&gt;
+
+    return
+  }
+
+  func.func @matrix_computation() -&gt; f32 {
+    // &#x6F14;&#x793A;&#x77E9;&#x9635;&#x8BA1;&#x7B97;&#x573A;&#x666F;
+    %c2 = arith.constant 2 : index
+    %mat = memory.create_matrix %c2, %c2 : memref&lt;?x?xf32&gt;
+
+    %c0 = arith.constant 0 : index
+    %c1 = arith.constant 1 : index
+    %v1 = arith.constant 10.0 : f32
+    %v2 = arith.constant 20.0 : f32
+
+    // &#x8BBE;&#x7F6E;&#x5BF9;&#x89D2;&#x7EBF;&#x5143;&#x7D20;
+    memory.set %mat[%c0, %c0] = %v1 : memref&lt;?x?xf32&gt;
+    memory.set %mat[%c1, %c1] = %v2 : memref&lt;?x?xf32&gt;
+
+    // &#x8BFB;&#x53D6;&#x5E76;&#x8BA1;&#x7B97;
+    %a = memory.get %mat[%c0, %c0] : memref&lt;?x?xf32&gt;
+    %b = memory.get %mat[%c1, %c1] : memref&lt;?x?xf32&gt;
+    %sum = arith.addf %a, %b : f32
+
+    return %sum : f32
+  }
+}
+</code></pre>
+<h3 id="&#x7F16;&#x8BD1;&#x811A;&#x672C;-compile-memorysh">&#x7F16;&#x8BD1;&#x811A;&#x672C; (compile-memory.sh)</h3>
+<pre><code class="lang-bash"><span class="hljs-meta">#!/bin/bash
+</span>
+<span class="hljs-built_in">export</span> LLVM_DIR=/usr/<span class="hljs-built_in">local</span>/Cellar/llvm@15/15.0.7
+
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;&#x7F16;&#x8BD1; memory-opt &#x5DE5;&#x5177;...&quot;</span>
+
+<span class="hljs-comment"># &#x83B7;&#x53D6;&#x6240;&#x6709; MLIR &#x5E93;</span>
+ALL_MLIR_LIBS=$(find <span class="hljs-string">&quot;<span class="hljs-variable">$LLVM_DIR</span>/lib&quot;</span> -name <span class="hljs-string">&quot;libMLIR*.a&quot;</span> | tr <span class="hljs-string">&apos;\n&apos;</span> <span class="hljs-string">&apos; &apos;</span>)
+
+clang++ -std=c++17 \
+  -I<span class="hljs-string">&quot;<span class="hljs-variable">$LLVM_DIR</span>/include&quot;</span> \
+  -L<span class="hljs-string">&quot;<span class="hljs-variable">$LLVM_DIR</span>/lib&quot;</span> \
+  -o memory-opt \
+  MemoryDialect.cpp MemoryPass.cpp memory-opt.cpp \
+  <span class="hljs-variable">$ALL_MLIR_LIBS</span> \
+  <span class="hljs-_">-l</span>LLVMCore \
+  <span class="hljs-_">-l</span>LLVMSupport \
+  <span class="hljs-_">-l</span>LLVMDemangle \
+  -lncurses -lz -lpthread
+
+<span class="hljs-keyword">if</span> [ $? <span class="hljs-_">-eq</span> 0 ]; <span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;&#x2713; &#x7F16;&#x8BD1;&#x6210;&#x529F;&#xFF01;&quot;</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;&#x6D4B;&#x8BD5;&#x7A0B;&#x5E8F;&#xFF1A;&quot;</span>
+    ./memory-opt --help | head -3
+<span class="hljs-keyword">else</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;&#x2717; &#x7F16;&#x8BD1;&#x5931;&#x8D25;&quot;</span>
+<span class="hljs-keyword">fi</span>
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Lab_6.html" class="navigation navigation-prev " aria-label="Previous page: Dialect入门二配套Lab6">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Lab_8_Tensor.html" class="navigation navigation-next " aria-label="Next page: Dialect入门二配套Lab8">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Dialect入门二配套Lab7","level":"1.15","depth":1,"next":{"title":"Dialect入门二配套Lab8","level":"1.16","depth":1,"path":"Lab_8_Tensor.md","ref":"Lab_8_Tensor.md","articles":[]},"previous":{"title":"Dialect入门二配套Lab6","level":"1.14","depth":1,"path":"Lab_6.md","ref":"Lab_6.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"}},"file":{"path":"Lab_7_mem.md","mtime":"2025-10-16T02:23:10.813Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-10-16T02:23:46.454Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

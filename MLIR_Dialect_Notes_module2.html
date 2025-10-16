@@ -1,0 +1,1548 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Dialect入门二 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Lab_4_Builtin_Dialect.html" />
+    
+    
+    <link rel="prev" href="Lab_2_Simple-Dialect.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Example_Page.html">
+            
+                <a href="Example_Page.html">
+            
+                    
+                    Example Page
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="TableGen.html">
+            
+                <a href="TableGen.html">
+            
+                    
+                    TableGen 的用法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="P4tutorial.html">
+            
+                <a href="P4tutorial.html">
+            
+                    
+                    P4基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="MLIR_Dialect.html">
+            
+                <a href="MLIR_Dialect.html">
+            
+                    
+                    Dialect基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="FIFO_study.html">
+            
+                <a href="FIFO_study.html">
+            
+                    
+                    FIFO学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="TPU_MLIR_study.html">
+            
+                <a href="TPU_MLIR_study.html">
+            
+                    
+                    TPU-MLIR代码学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="MLIR_Dialect_Notes_module1.html">
+            
+                <a href="MLIR_Dialect_Notes_module1.html">
+            
+                    
+                    Dialect入门一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="Lab_1_Simple-Dialect.html">
+            
+                <a href="Lab_1_Simple-Dialect.html">
+            
+                    
+                    Dialect入门一配套Lab1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="Lab_2_Simple-Dialect.html">
+            
+                <a href="Lab_2_Simple-Dialect.html">
+            
+                    
+                    Dialect入门一配套Lab2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.11" data-path="MLIR_Dialect_Notes_module2.html">
+            
+                <a href="MLIR_Dialect_Notes_module2.html">
+            
+                    
+                    Dialect入门二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="Lab_4_Builtin_Dialect.html">
+            
+                <a href="Lab_4_Builtin_Dialect.html">
+            
+                    
+                    Dialect入门二配套Lab4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="Lab_5_Arith.html">
+            
+                <a href="Lab_5_Arith.html">
+            
+                    
+                    Dialect入门二配套Lab5
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="Lab_6.html">
+            
+                <a href="Lab_6.html">
+            
+                    
+                    Dialect入门二配套Lab6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="Lab_7_mem.html">
+            
+                <a href="Lab_7_mem.html">
+            
+                    
+                    Dialect入门二配套Lab7
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="Lab_8_Tensor.html">
+            
+                <a href="Lab_8_Tensor.html">
+            
+                    
+                    Dialect入门二配套Lab8
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="Lab_9_Linalg.html">
+            
+                <a href="Lab_9_Linalg.html">
+            
+                    
+                    Dialect入门二配套Lab9
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="MLIR_Dialect_Notes_module3.html">
+            
+                <a href="MLIR_Dialect_Notes_module3.html">
+            
+                    
+                    Dialect入门三
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="Lab_10_Optimization.html">
+            
+                <a href="Lab_10_Optimization.html">
+            
+                    
+                    Dialect入门三配套Lab10
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="Lab_Project_Sheet.html">
+            
+                <a href="Lab_Project_Sheet.html">
+            
+                    
+                    TPU-MLIR Lab Project
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="FIFO_study.html">
+            
+                <a href="FIFO_study.html">
+            
+                    
+                    FIFO学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="TPU_MLIR_study.html">
+            
+                <a href="TPU_MLIR_study.html">
+            
+                    
+                    TPU-MLIR代码学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="Linux_Command_Line.html">
+            
+                <a href="Linux_Command_Line.html">
+            
+                    
+                    Linux系统(服务器)常用指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="shell_study.html">
+            
+                <a href="shell_study.html">
+            
+                    
+                    .sh文件解释/Shell脚本常用语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="VCS_coverage_report_read.html">
+            
+                <a href="VCS_coverage_report_read.html">
+            
+                    
+                    VCS_coverage_report_read
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" >
+            
+                <a target="_blank" href="https://github.com/seclabBupt/aiacc/blob/main/docs/TPU-MLIR%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%80%EF%BC%89.md">
+            
+                    
+                    TPU-MLIR学习记录（一）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" >
+            
+                <a target="_blank" href="https://github.com/seclabBupt/aiacc/blob/main/docs/TPU-MLIR%20%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%BA%8C%EF%BC%89.md">
+            
+                    
+                    TPU-MLIR学习记录（二）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" >
+            
+                <a target="_blank" href="https://github.com/seclabBupt/aiacc/blob/main/docs/TPU-MLIR%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%89%EF%BC%89.md">
+            
+                    
+                    TPU-MLIR学习记录（三）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Dialect入门二</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="mlir-dialect-&#x5B66;&#x4E60;&#x7B14;&#x8BB0;-&#x6A21;&#x5757;&#x4E8C;-mlir&#x9644;&#x5E26;dialect">MLIR Dialect &#x5B66;&#x4E60;&#x7B14;&#x8BB0; &#x6A21;&#x5757;&#x4E8C; MLIR&#x9644;&#x5E26;Dialect</h1>
+<hr>
+<h2 id="1-builtin-dialect-&#x8BE6;&#x89E3;">1. builtin Dialect &#x8BE6;&#x89E3;</h2>
+<h3 id="11-&#x4EC0;&#x4E48;&#x662F;-builtin-dialect&#xFF1F;">1.1 &#x4EC0;&#x4E48;&#x662F; builtin Dialect&#xFF1F;</h3>
+<p><strong>&#x901A;&#x4FD7;&#x89E3;&#x91CA;</strong>&#xFF1A;<br>builtin Dialect &#x662F; MLIR &#x7684;&#x201C;&#x5730;&#x57FA;&#x201D;&#x3002;&#x5B83;&#x63D0;&#x4F9B;&#x4E86; MLIR &#x7A0B;&#x5E8F;&#x6700;&#x57FA;&#x7840;&#x7684;&#x6784;&#x5EFA;&#x5757;&#xFF0C;&#x5C31;&#x50CF;&#x76D6;&#x623F;&#x5B50;&#x65F6;&#x9700;&#x8981;&#x7684;&#x7816;&#x5934;&#x548C;&#x6C34;&#x6CE5;&#x3002;&#x51E0;&#x4E4E;&#x6240;&#x6709;&#x7684; MLIR &#x4EE3;&#x7801;&#x90FD;&#x79BB;&#x4E0D;&#x5F00;&#x5B83;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x5B9A;&#x4E49;&#x4E86;&#x7A0B;&#x5E8F;&#x7684;&#x9876;&#x5C42;&#x7ED3;&#x6784;&#xFF08;&#x6BD4;&#x5982;&#x6A21;&#x5757;&#x548C;&#x51FD;&#x6570;&#xFF09;&#x4EE5;&#x53CA;&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF08;&#x6BD4;&#x5982;&#x6574;&#x6570;&#x3001;&#x6D6E;&#x70B9;&#x6570;&#xFF09;&#x3002;<br>&#x4E0E;&#x5176;&#x4ED6; Dialect &#x4E0D;&#x540C;&#xFF0C;builtin Dialect &#x4E0D;&#x662F;&#x901A;&#x8FC7; TableGen &#x6587;&#x4EF6;&#x52A8;&#x6001;&#x5B9A;&#x4E49;&#x7684;&#xFF0C;&#x800C;&#x662F; MLIR &#x6838;&#x5FC3;&#x4EE3;&#x7801;&#x76F4;&#x63A5;&#x201C;&#x786C;&#x7F16;&#x7801;&#x201D;&#x7684;&#xFF0C;&#x5C31;&#x50CF;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x91CC;&#x7684;&#x6838;&#x5FC3;&#x5E93;&#xFF0C;&#x7279;&#x522B;&#x57FA;&#x7840;&#x3001;&#x7279;&#x522B;&#x91CD;&#x8981;&#x3002;</p>
+<p><strong>&#x4E3A;&#x4EC0;&#x4E48;&#x91CD;&#x8981;&#xFF1F;</strong>  </p>
+<ul>
+<li>&#x5B83;&#x662F; MLIR &#x7A0B;&#x5E8F;&#x7684;&#x201C;&#x9AA8;&#x67B6;&#x201D;&#xFF0C;&#x7528;&#x6765;&#x7EC4;&#x7EC7;&#x4EE3;&#x7801;&#x7ED3;&#x6784;&#x3002;  </li>
+<li>&#x63D0;&#x4F9B;&#x4E86;&#x6700;&#x5E38;&#x7528;&#x7684;&#x7C7B;&#x578B;&#x548C;&#x64CD;&#x4F5C;&#xFF0C;&#x6BD4;&#x5982; <code>module</code>&#xFF08;&#x6A21;&#x5757;&#xFF09;&#x3001;<code>func.func</code>&#xFF08;&#x51FD;&#x6570;&#xFF09;&#x3001;<code>i32</code>&#xFF08;32 &#x4F4D;&#x6574;&#x6570;&#xFF09;&#x7B49;&#x3002;  </li>
+<li>&#x5176;&#x4ED6; Dialect&#xFF08;&#x6BD4;&#x5982; arith&#x3001;scf&#xFF09;&#x90FD;&#x4F1A;&#x4F9D;&#x8D56;&#x5B83;&#x3002;</li>
+</ul>
+<h3 id="12-builtin-dialect-&#x63D0;&#x4F9B;&#x4E86;&#x4EC0;&#x4E48;&#xFF1F;">1.2 builtin Dialect &#x63D0;&#x4F9B;&#x4E86;&#x4EC0;&#x4E48;&#xFF1F;</h3>
+<h4 id="&#x4E3B;&#x8981;&#x64CD;&#x4F5C;&#xFF08;op&#xFF09;">&#x4E3B;&#x8981;&#x64CD;&#x4F5C;&#xFF08;Op&#xFF09;</h4>
+<p>builtin Dialect &#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E9B;&#x6838;&#x5FC3;&#x64CD;&#x4F5C;&#xFF0C;&#x7528;&#x4E8E;&#x7EC4;&#x7EC7;&#x7A0B;&#x5E8F;&#x7ED3;&#x6784;&#x3002;&#x4EE5;&#x4E0B;&#x662F;&#x4E24;&#x4E2A;&#x6700;&#x5E38;&#x7528;&#x7684;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x64CD;&#x4F5C;&#x540D;</th>
+<th>&#x4F5C;&#x7528;</th>
+<th>&#x7C7B;&#x6BD4;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>builtin.module</code></td>
+<td>&#x9876;&#x5C42;&#x5BB9;&#x5668;&#xFF0C;&#x5305;&#x88F9;&#x6574;&#x4E2A; MLIR &#x7A0B;&#x5E8F;&#x7684;&#x4EE3;&#x7801;&#x5757;</td>
+<td>&#x50CF;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x88C5;&#x4E0B;&#x6240;&#x6709;&#x4EE3;&#x7801;</td>
+</tr>
+<tr>
+<td><code>func.func</code></td>
+<td>&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#xFF0C;&#x5305;&#x542B;&#x53C2;&#x6570;&#x3001;&#x8FD4;&#x56DE;&#x503C;&#x548C;&#x51FD;&#x6570;&#x4F53;</td>
+<td>&#x50CF;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x5B9A;&#x4E49;&#xFF0C;&#x6BD4;&#x5982; Python &#x7684; <code>def</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p><strong><code>builtin.module</code></strong>&#xFF1A;  </p>
+<ul>
+<li>&#x8FD9;&#x662F; MLIR &#x7A0B;&#x5E8F;&#x7684;&#x9876;&#x5C42;&#x7ED3;&#x6784;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x4EE3;&#x7801;&#x90FD;&#x5FC5;&#x987B;&#x653E;&#x5728; <code>module { ... }</code> &#x91CC;&#x9762;&#x3002;  </li>
+<li>&#x5B83;&#x4E0D;&#x80FD;&#x5D4C;&#x5957;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x4E00;&#x4E2A; module &#x91CC;&#x9762;&#x4E0D;&#x80FD;&#x518D;&#x6709;&#x53E6;&#x4E00;&#x4E2A; module&#x3002;  </li>
+<li>&#x901A;&#x5E38;&#x662F; <code>mlir-opt</code>&#xFF08;&#x4F18;&#x5316;&#x5DE5;&#x5177;&#xFF09;&#x6216; <code>mlir-translate</code>&#xFF08;&#x8F6C;&#x6362;&#x5DE5;&#x5177;&#xFF09;&#x7684;&#x8F93;&#x5165;&#x5355;&#x5143;&#x3002;  </li>
+<li><strong>&#x6BD4;&#x55BB;</strong>&#xFF1A;&#x5C31;&#x50CF;&#x4E00;&#x4E2A;&#x5927;&#x7BB1;&#x5B50;&#xFF0C;&#x91CC;&#x9762;&#x53EF;&#x4EE5;&#x88C5;&#x51FD;&#x6570;&#x3001;&#x53D8;&#x91CF;&#x7B49;&#xFF0C;&#x4F46;&#x7BB1;&#x5B50;&#x672C;&#x8EAB;&#x4E0D;&#x80FD;&#x518D;&#x88C5;&#x7BB1;&#x5B50;&#x3002;</li>
+</ul>
+</li>
+<li><p><strong><code>func.func</code></strong>&#xFF1A;  </p>
+<ul>
+<li>&#x7528;&#x4E8E;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#xFF0C;&#x5305;&#x542B;&#x51FD;&#x6570;&#x540D;&#x3001;&#x53C2;&#x6570;&#x3001;&#x8FD4;&#x56DE;&#x503C;&#x7C7B;&#x578B;&#x548C;&#x51FD;&#x6570;&#x4F53;&#x3002;  </li>
+<li>&#x5B83;&#x7684;&#x4F5C;&#x7528;&#x7C7B;&#x4F3C;&#x4E8E; C &#x6216; Python &#x4E2D;&#x7684;&#x51FD;&#x6570;&#x5B9A;&#x4E49;&#xFF0C;&#x4F46;&#x7528; MLIR &#x7684;&#x65B9;&#x5F0F;&#x8868;&#x8FBE;&#x3002;  </li>
+<li>&#x901A;&#x5E38;&#x5D4C;&#x5957;&#x5728; <code>builtin.module</code> &#x91CC;&#x9762;&#x3002;  </li>
+<li><strong>&#x6BD4;&#x55BB;</strong>&#xFF1A;&#x50CF;&#x4E00;&#x4E2A;&#x5177;&#x4F53;&#x7684;&#x5DE5;&#x5177;&#x7BB1;&#xFF0C;&#x91CC;&#x9762;&#x88C5;&#x7740;&#x5177;&#x4F53;&#x7684;&#x64CD;&#x4F5C;&#x903B;&#x8F91;&#x3002;</li>
+</ul>
+</li>
+<li><p><strong><code>builtin.unrealized_conversion_cast</code></strong>&#xFF08;&#x9AD8;&#x7EA7;&#x7528;&#x6CD5;&#xFF09;&#xFF1A;  </p>
+<ul>
+<li>&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x64CD;&#x4F5C;&#xFF0C;&#x7528;&#x4E8E;&#x5728; IR &#x53D8;&#x6362;&#x4E2D;&#x5904;&#x7406;&#x7C7B;&#x578B;&#x4E0D;&#x5339;&#x914D;&#x7684;&#x60C5;&#x51B5;&#x3002;  </li>
+<li>&#x521D;&#x5B66;&#x8005;&#x53EF;&#x4EE5;&#x6682;&#x65F6;&#x5FFD;&#x7565;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;&#x201C;&#x5E55;&#x540E;&#x9B54;&#x6CD5;&#x201D;&#xFF0C;&#x5728;&#x9AD8;&#x7EA7;&#x4F18;&#x5316;&#x65F6;&#x624D;&#x4F1A;&#x7528;&#x5230;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<h4 id="&#x4E3B;&#x8981;&#x7C7B;&#x578B;&#xFF08;type&#xFF09;">&#x4E3B;&#x8981;&#x7C7B;&#x578B;&#xFF08;Type&#xFF09;</h4>
+<p>builtin Dialect &#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E9B;&#x57FA;&#x7840;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x8FD9;&#x4E9B;&#x7C7B;&#x578B;&#x662F; MLIR &#x7A0B;&#x5E8F;&#x7684;&#x57FA;&#x7840;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x793A;&#x4F8B;</th>
+<th>&#x4F5C;&#x7528;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x57FA;&#x672C;&#x6807;&#x91CF;&#x7C7B;&#x578B;</td>
+<td><code>i32</code>, <code>i64</code>, <code>f32</code>, <code>f64</code></td>
+<td>&#x8868;&#x793A;&#x6574;&#x6570;&#xFF08;32 &#x4F4D;&#x3001;64 &#x4F4D;&#xFF09;&#x548C;&#x6D6E;&#x70B9;&#x6570;&#xFF08;&#x5355;&#x7CBE;&#x5EA6;&#x3001;&#x53CC;&#x7CBE;&#x5EA6;&#xFF09;</td>
+</tr>
+<tr>
+<td>&#x51FD;&#x6570;&#x7C7B;&#x578B;</td>
+<td><code>(f32, f32) -&gt; f32</code></td>
+<td>&#x8868;&#x793A;&#x51FD;&#x6570;&#x7B7E;&#x540D;&#xFF0C;&#x6BD4;&#x5982;&#x8F93;&#x5165;&#x4E24;&#x4E2A;&#x6D6E;&#x70B9;&#x6570;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6D6E;&#x70B9;&#x6570;</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p><strong>&#x6807;&#x91CF;&#x7C7B;&#x578B;</strong>&#xFF1A;  </p>
+<ul>
+<li><code>i32</code>&#xFF1A;32 &#x4F4D;&#x6574;&#x6570;&#xFF0C;&#x7C7B;&#x4F3C; C &#x7684; <code>int</code>&#x3002;  </li>
+<li><code>f32</code>&#xFF1A;&#x5355;&#x7CBE;&#x5EA6;&#x6D6E;&#x70B9;&#x6570;&#xFF0C;&#x7C7B;&#x4F3C; C &#x7684; <code>float</code>&#x3002;  </li>
+<li>&#x8FD9;&#x4E9B;&#x7C7B;&#x578B;&#x662F; MLIR &#x4E2D;&#x6700;&#x57FA;&#x672C;&#x7684;&#x6570;&#x636E;&#x5355;&#x4F4D;&#xFF0C;&#x522B;&#x7684; Dialect&#xFF08;&#x6BD4;&#x5982; arith&#xFF09;&#x4F1A;&#x7528;&#x5B83;&#x4EEC;&#x6765;&#x5B9A;&#x4E49;&#x64CD;&#x4F5C;&#x3002;</li>
+</ul>
+</li>
+<li><p><strong>&#x51FD;&#x6570;&#x7C7B;&#x578B;</strong>&#xFF1A;  </p>
+<ul>
+<li>&#x7528;&#x6765;&#x63CF;&#x8FF0; <code>func.func</code> &#x7684;&#x8F93;&#x5165;&#x548C;&#x8F93;&#x51FA;&#x7C7B;&#x578B;&#x3002;  </li>
+<li>&#x6BD4;&#x5982; <code>(f32, f32) -&gt; f32</code> &#x8868;&#x793A;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x63A5;&#x6536;&#x4E24;&#x4E2A;&#x5355;&#x7CBE;&#x5EA6;&#x6D6E;&#x70B9;&#x6570;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5355;&#x7CBE;&#x5EA6;&#x6D6E;&#x70B9;&#x6570;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<h4 id="&#x6BD4;&#x55BB;&#x603B;&#x7ED3;">&#x6BD4;&#x55BB;&#x603B;&#x7ED3;</h4>
+<p>builtin Dialect &#x5C31;&#x50CF;&#x662F;&#x4F60;&#x5BB6;&#x91CC;&#x7684;&#x201C;&#x57FA;&#x7840;&#x5DE5;&#x5177;&#x5305;&#x201D;&#xFF0C;&#x91CC;&#x9762;&#x6709;&#x87BA;&#x4E1D;&#x5200;&#xFF08;&#x6807;&#x91CF;&#x7C7B;&#x578B;&#xFF09;&#x3001;&#x6273;&#x624B;&#xFF08;&#x51FD;&#x6570;&#x5B9A;&#x4E49;&#xFF09;&#x548C;&#x5DE5;&#x5177;&#x7BB1;&#xFF08;module&#xFF09;&#x3002;&#x5176;&#x4ED6; Dialect &#x4F1A;&#x5728;&#x8FD9;&#x4E2A;&#x57FA;&#x7840;&#x4E0A;&#x6DFB;&#x52A0;&#x66F4;&#x9AD8;&#x7EA7;&#x7684;&#x5DE5;&#x5177;&#xFF0C;&#x6BD4;&#x5982;&#x8BA1;&#x7B97;&#x5668;&#xFF08;arith&#xFF09;&#x3001;&#x5FAA;&#x73AF;&#x63A7;&#x5236;&#x5668;&#xFF08;scf&#xFF09;&#x7B49;&#x3002;</p>
+<h3 id="13-&#x793A;&#x4F8B;&#x4EE3;&#x7801;">1.3 &#x793A;&#x4F8B;&#x4EE3;&#x7801;</h3>
+<p>&#x4EE5;&#x4E0B;&#x662F;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684; MLIR &#x4EE3;&#x7801;&#xFF0C;&#x5C55;&#x793A;&#x4E86; builtin Dialect &#x7684;&#x7528;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-mlir">module {
+  func.func @add(%arg0: f32, %arg1: f32) -&gt; f32 {
+    %sum = arith.addf %arg0, %arg1 : f32
+    return %sum : f32
+  }
+}
+</code></pre>
+<p><strong>&#x9010;&#x884C;&#x89E3;&#x6790;</strong>&#xFF1A;</p>
+<ol>
+<li><p><code>module { ... }</code>&#xFF1A;  </p>
+<ul>
+<li>&#x8FD9;&#x662F; <code>builtin.module</code> &#x64CD;&#x4F5C;&#xFF0C;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x6A21;&#x5757;&#xFF0C;&#x4F5C;&#x4E3A;&#x6574;&#x4E2A;&#x7A0B;&#x5E8F;&#x7684;&#x5BB9;&#x5668;&#x3002;  </li>
+<li>&#x5C31;&#x50CF;&#x4E00;&#x4E2A;&#x5927;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x91CC;&#x9762;&#x88C5;&#x7740;&#x6240;&#x6709;&#x4EE3;&#x7801;&#x3002;</li>
+</ul>
+</li>
+<li><p><code>func.func @add(%arg0: f32, %arg1: f32) -&gt; f32</code>&#xFF1A;  </p>
+<ul>
+<li>&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x540D;&#x4E3A; <code>add</code> &#x7684;&#x51FD;&#x6570;&#xFF0C;&#x63A5;&#x6536;&#x4E24;&#x4E2A;&#x5355;&#x7CBE;&#x5EA6;&#x6D6E;&#x70B9;&#x6570;&#xFF08;<code>f32</code>&#xFF09;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A; <code>f32</code>&#x3002;  </li>
+<li><code>@add</code> &#x662F;&#x51FD;&#x6570;&#x7684;&#x7B26;&#x53F7;&#x540D;&#xFF0C;<code>%arg0</code> &#x548C; <code>%arg1</code> &#x662F;&#x51FD;&#x6570;&#x7684;&#x8F93;&#x5165;&#x53C2;&#x6570;&#xFF08;SSA &#x53D8;&#x91CF;&#xFF09;&#x3002;  </li>
+<li>SSA&#xFF08;Static Single Assignment&#xFF09;&#x53D8;&#x91CF;&#x662F; MLIR &#x7684;&#x6838;&#x5FC3;&#xFF0C;&#x6BCF;&#x4E2A;&#x53D8;&#x91CF;&#x53EA;&#x80FD;&#x88AB;&#x8D4B;&#x503C;&#x4E00;&#x6B21;&#xFF0C;&#x7C7B;&#x4F3C;&#x6570;&#x5B66;&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#x3002;</li>
+</ul>
+</li>
+<li><p><code>%sum = arith.addf %arg0, %arg1 : f32</code>&#xFF1A;  </p>
+<ul>
+<li>&#x8C03;&#x7528; <code>arith</code> Dialect &#x7684;&#x52A0;&#x6CD5;&#x64CD;&#x4F5C;&#xFF0C;&#x8BA1;&#x7B97; <code>%arg0 + %arg1</code>&#xFF0C;&#x7ED3;&#x679C;&#x5B58;&#x5230; <code>%sum</code> &#x4E2D;&#x3002;  </li>
+<li>&#x6CE8;&#x610F;&#xFF0C;&#x8FD9;&#x91CC;&#x7528;&#x5230;&#x4E86; <code>arith</code> Dialect&#xFF0C;&#x4F46;&#x6574;&#x4E2A;&#x51FD;&#x6570;&#x7ED3;&#x6784;&#x662F;&#x57FA;&#x4E8E; <code>builtin</code> &#x7684; <code>func.func</code>&#x3002;</li>
+</ul>
+</li>
+<li><p><code>return %sum : f32</code>&#xFF1A;  </p>
+<ul>
+<li>&#x8FD4;&#x56DE; <code>%sum</code> &#x7684;&#x503C;&#xFF0C;&#x7C7B;&#x578B;&#x662F; <code>f32</code>&#x3002;  </li>
+<li>&#x8FD9;&#x4E5F;&#x662F; <code>func.func</code> &#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF0C;builtin Dialect &#x63D0;&#x4F9B;&#x4E86; <code>return</code> &#x64CD;&#x4F5C;&#x3002;</li>
+</ul>
+</li>
+</ol>
+<p><strong>&#x8FD0;&#x884C;&#x6548;&#x679C;</strong>&#xFF1A;<br>&#x8FD9;&#x4E2A;&#x4EE3;&#x7801;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x52A0;&#x6CD5;&#x51FD;&#x6570;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E; Python &#x7684;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add</span><span class="hljs-params">(a: float, b: float)</span> -&gt; float:</span>
+    <span class="hljs-keyword">return</span> a + b
+</code></pre>
+<h3 id="14-&#x5C0F;&#x7ED3;">1.4 &#x5C0F;&#x7ED3;</h3>
+<ul>
+<li><strong>builtin Dialect</strong> &#x662F; MLIR &#x7684;&#x6838;&#x5FC3;&#xFF0C;&#x63D0;&#x4F9B;&#x4E86;&#x6A21;&#x5757;&#x3001;&#x51FD;&#x6570;&#x548C;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x3002;  </li>
+<li><strong>module</strong> &#x662F;&#x7A0B;&#x5E8F;&#x7684;&#x9876;&#x5C42;&#x5BB9;&#x5668;&#xFF0C;<strong>func.func</strong> &#x5B9A;&#x4E49;&#x51FD;&#x6570;&#xFF0C;<strong>i32/f32</strong> &#x7B49;&#x662F;&#x57FA;&#x7840;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x3002;  </li>
+<li>&#x5B83;&#x662F;&#x5176;&#x4ED6; Dialect &#x7684;&#x57FA;&#x7840;&#xFF0C;&#x5C31;&#x50CF;&#x623F;&#x5B50;&#x7684;&#x5730;&#x57FA;&#xFF0C;&#x6240;&#x6709;&#x7684; MLIR &#x7A0B;&#x5E8F;&#x90FD;&#x79BB;&#x4E0D;&#x5F00;&#x5B83;&#x3002;</li>
+</ul>
+<hr>
+<h2 id="2-arith-dialect&#xFF08;&#x7B97;&#x672F;&#x8FD0;&#x7B97;-dialect&#xFF09;">2. arith Dialect&#xFF08;&#x7B97;&#x672F;&#x8FD0;&#x7B97; Dialect&#xFF09;</h2>
+<h3 id="21-&#x4EC0;&#x4E48;&#x662F;-arith-dialect&#xFF1F;">2.1 &#x4EC0;&#x4E48;&#x662F; arith Dialect&#xFF1F;</h3>
+<p><strong>&#x901A;&#x4FD7;&#x89E3;&#x91CA;</strong>&#xFF1A;<br>arith Dialect &#x662F; MLIR &#x7684;&#x201C;&#x8BA1;&#x7B97;&#x5668;&#x201D;&#xFF0C;&#x4E13;&#x95E8;&#x5904;&#x7406;&#x6807;&#x91CF;&#x7EA7;&#x522B;&#x7684;&#x6570;&#x5B66;&#x8FD0;&#x7B97;&#xFF0C;&#x6BD4;&#x5982;&#x52A0;&#x3001;&#x51CF;&#x3001;&#x4E58;&#x3001;&#x9664;&#x3001;&#x6BD4;&#x8F83;&#x7B49;&#x3002;<br>&#x5B83;&#x5C31;&#x50CF;&#x4F60;&#x5C0F;&#x5B66;&#x5B66;&#x7684;&#x7B97;&#x672F;&#x5DE5;&#x5177;&#x7BB1;&#xFF0C;&#x91CC;&#x9762;&#x6709; <code>+</code>&#x3001;<code>-</code>&#x3001;<code>*</code>&#x3001;<code>/</code> &#x7B49;&#x57FA;&#x672C;&#x8FD0;&#x7B97;&#xFF0C;&#x4E13;&#x95E8;&#x5904;&#x7406;&#x5355;&#x4E2A;&#x6570;&#x5B57;&#xFF08;&#x6807;&#x91CF;&#xFF09;&#x7684;&#x8BA1;&#x7B97;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x77E9;&#x9635;&#x6216;&#x5F20;&#x91CF;&#x8FD9;&#x6837;&#x7684;&#x5927;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x3002;</p>
+<p><strong>&#x4E3A;&#x4EC0;&#x4E48;&#x91CD;&#x8981;&#xFF1F;</strong>  </p>
+<ul>
+<li>&#x63D0;&#x4F9B;&#x4E86;&#x57FA;&#x7840;&#x7684;&#x6570;&#x5B66;&#x8FD0;&#x7B97;&#xFF0C;&#x4EFB;&#x4F55;&#x9700;&#x8981;&#x8BA1;&#x7B97;&#x7684; MLIR &#x7A0B;&#x5E8F;&#x90FD;&#x4F1A;&#x7528;&#x5230;&#x5B83;&#x3002;  </li>
+<li>&#x5B83;&#x7684;&#x64CD;&#x4F5C;&#x7B80;&#x5355;&#x3001;&#x76F4;&#x63A5;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E; C &#x8BED;&#x8A00;&#x4E2D;&#x7684;&#x57FA;&#x672C;&#x8FD0;&#x7B97;&#x7B26;&#x3002;  </li>
+<li>&#x5E38;&#x7528;&#x4E8E;&#x5B9A;&#x4E49;&#x5E38;&#x91CF;&#x3001;&#x8FDB;&#x884C;&#x6570;&#x503C;&#x8BA1;&#x7B97;&#x6216;&#x6BD4;&#x8F83;&#x903B;&#x8F91;&#x3002;</li>
+</ul>
+<h3 id="22-arith-dialect-&#x63D0;&#x4F9B;&#x4E86;&#x4EC0;&#x4E48;&#xFF1F;">2.2 arith Dialect &#x63D0;&#x4F9B;&#x4E86;&#x4EC0;&#x4E48;&#xFF1F;</h3>
+<h4 id="&#x4E3B;&#x8981;&#x64CD;&#x4F5C;&#xFF08;op&#xFF09;">&#x4E3B;&#x8981;&#x64CD;&#x4F5C;&#xFF08;Op&#xFF09;</h4>
+<p>arith Dialect &#x63D0;&#x4F9B;&#x4E86;&#x4E09;&#x7C7B;&#x4E3B;&#x8981;&#x64CD;&#x4F5C;&#xFF1A;&#x57FA;&#x7840;&#x8FD0;&#x7B97;&#x3001;&#x5E38;&#x91CF;&#x5B9A;&#x4E49;&#x548C;&#x6BD4;&#x8F83;&#x64CD;&#x4F5C;&#x3002;</p>
+<ol>
+<li><p><strong>&#x57FA;&#x7840;&#x8FD0;&#x7B97;&#x7C7B;</strong><br>&#x8FD9;&#x4E9B;&#x64CD;&#x4F5C;&#x5904;&#x7406;&#x6807;&#x91CF;&#x7684;&#x52A0;&#x3001;&#x51CF;&#x3001;&#x4E58;&#x3001;&#x9664;&#x7B49;&#xFF0C;&#x5206;&#x4E3A;&#x6574;&#x6570;&#x8FD0;&#x7B97;&#xFF08;<code>i</code> &#x540E;&#x7F00;&#xFF09;&#x548C;&#x6D6E;&#x70B9;&#x8FD0;&#x7B97;&#xFF08;<code>f</code> &#x540E;&#x7F00;&#xFF09;&#x3002;</p>
+<p>| &#x64CD;&#x4F5C; | &#x64CD;&#x4F5C;&#x540D; | &#x793A;&#x4F8B; | &#x8BF4;&#x660E; |
+| --- | --- | --- | --- |
+| &#x52A0;&#x6CD5; | <code>arith.addi</code> / <code>arith.addf</code> | <code>%r = arith.addi %a, %b : i32</code> | &#x6574;&#x6570;/&#x6D6E;&#x70B9;&#x52A0;&#x6CD5; |
+| &#x51CF;&#x6CD5; | <code>arith.subi</code> / <code>arith.subf</code> | <code>%r = arith.subf %a, %b : f32</code> | &#x6574;&#x6570;/&#x6D6E;&#x70B9;&#x51CF;&#x6CD5; |
+| &#x4E58;&#x6CD5; | <code>arith.muli</code> / <code>arith.mulf</code> | <code>%r = arith.muli %a, %b : i64</code> | &#x6574;&#x6570;/&#x6D6E;&#x70B9;&#x4E58;&#x6CD5; |
+| &#x9664;&#x6CD5; | <code>arith.divsi</code> / <code>arith.divf</code> | <code>%r = arith.divf %a, %b : f32</code> | &#x6709;&#x7B26;&#x53F7;&#x6574;&#x6570;&#x9664;&#x6CD5;/&#x6D6E;&#x70B9;&#x9664;&#x6CD5; |</p>
+<ul>
+<li><strong>&#x8BF4;&#x660E;</strong>&#xFF1A;  <ul>
+<li><code>i</code> &#x8868;&#x793A;&#x6574;&#x6570;&#xFF08;integer&#xFF09;&#xFF0C;&#x5982; <code>i32</code>&#x3001;<code>i64</code>&#x3002;  </li>
+<li><code>f</code> &#x8868;&#x793A;&#x6D6E;&#x70B9;&#xFF08;float&#xFF09;&#xFF0C;&#x5982; <code>f32</code>&#x3001;<code>f64</code>&#x3002;  </li>
+<li>&#x6BCF;&#x4E2A;&#x64CD;&#x4F5C;&#x7684;&#x8F93;&#x5165;&#x548C;&#x8F93;&#x51FA;&#x7C7B;&#x578B;&#x5FC5;&#x987B;&#x4E00;&#x81F4;&#xFF0C;&#x6BD4;&#x5982; <code>arith.addi</code> &#x7684;&#x8F93;&#x5165;&#x548C;&#x8F93;&#x51FA;&#x90FD;&#x662F; <code>i32</code>&#x3002;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>&#x5E38;&#x91CF;&#x5B9A;&#x4E49;&#x7C7B;</strong><br>&#x7528;&#x6765;&#x5B9A;&#x4E49;&#x6807;&#x91CF;&#x5E38;&#x91CF;&#xFF08;&#x6574;&#x6570;&#x6216;&#x6D6E;&#x70B9;&#x6570;&#xFF09;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E; C &#x8BED;&#x8A00;&#x4E2D;&#x7684; <code>int x = 5;</code>&#x3002;</p>
+<p>| &#x64CD;&#x4F5C; | &#x64CD;&#x4F5C;&#x540D; | &#x793A;&#x4F8B; | &#x8BF4;&#x660E; |
+| --- | --- | --- | --- |
+| &#x5E38;&#x91CF; | <code>arith.constant</code> | <code>%c1 = arith.constant 1 : i32</code> | &#x5B9A;&#x4E49;&#x6574;&#x6570;&#x5E38;&#x91CF; |
+| &#x5E38;&#x91CF; | <code>arith.constant</code> | <code>%cf = arith.constant 3.14 : f32</code> | &#x5B9A;&#x4E49;&#x6D6E;&#x70B9;&#x5E38;&#x91CF; |</p>
+<ul>
+<li><strong>&#x8BF4;&#x660E;</strong>&#xFF1A;  <ul>
+<li><code>arith.constant</code> &#x662F;&#x4E00;&#x4E2A;&#x901A;&#x7528;&#x7684;&#x5E38;&#x91CF;&#x5B9A;&#x4E49;&#x64CD;&#x4F5C;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x4EFB;&#x610F;&#x6807;&#x91CF;&#x7C7B;&#x578B;&#xFF08;&#x6574;&#x6570;&#x6216;&#x6D6E;&#x70B9;&#xFF09;&#x3002;  </li>
+<li>&#x7ED3;&#x679C;&#x662F;&#x4E00;&#x4E2A; SSA &#x53D8;&#x91CF;&#xFF0C;&#x6BD4;&#x5982; <code>%c1</code>&#xFF0C;&#x53EF;&#x4EE5;&#x88AB;&#x5176;&#x4ED6;&#x64CD;&#x4F5C;&#x4F7F;&#x7528;&#x3002;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>&#x6BD4;&#x8F83;&#x7C7B;</strong><br>&#x7528;&#x4E8E;&#x6BD4;&#x8F83;&#x4E24;&#x4E2A;&#x6807;&#x91CF;&#x503C;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5E03;&#x5C14;&#x503C;&#xFF08;&#x7C7B;&#x578B;&#x4E3A; <code>i1</code>&#xFF09;&#x3002;</p>
+<p>| &#x64CD;&#x4F5C; | &#x64CD;&#x4F5C;&#x540D; | &#x793A;&#x4F8B; | &#x8BF4;&#x660E; |
+| --- | --- | --- | --- |
+| &#x6574;&#x6570;&#x6BD4;&#x8F83; | <code>arith.cmpi</code> | <code>%cmp = arith.cmpi slt, %a, %b : i32</code> | &#x6BD4;&#x8F83;&#x4E24;&#x4E2A;&#x6574;&#x6570;&#xFF0C;<code>slt</code> &#x8868;&#x793A;&#x201C;&#x5C0F;&#x4E8E;&#x201D; |
+| &#x6D6E;&#x70B9;&#x6BD4;&#x8F83; | <code>arith.cmpf</code> | <code>%cmp = arith.cmpf olt, %a, %b : f32</code> | &#x6BD4;&#x8F83;&#x4E24;&#x4E2A;&#x6D6E;&#x70B9;&#x6570;&#xFF0C;<code>olt</code> &#x8868;&#x793A;&#x201C;&#x4E25;&#x683C;&#x5C0F;&#x4E8E;&#x201D; |</p>
+<ul>
+<li><strong>&#x6BD4;&#x8F83;&#x8C13;&#x8BCD;</strong>&#xFF08;&#x5982; <code>slt</code>, <code>olt</code>&#xFF09;&#xFF1A;  <ul>
+<li><code>slt</code>&#xFF1A;&#x6709;&#x7B26;&#x53F7;&#x5C0F;&#x4E8E;&#xFF08;signed less than&#xFF09;&#x3002;  </li>
+<li><code>olt</code>&#xFF1A;&#x6709;&#x5E8F;&#x5C0F;&#x4E8E;&#xFF08;ordered less than&#xFF0C;&#x6D6E;&#x70B9;&#x6570;&#x4E13;&#x7528;&#xFF09;&#x3002;  </li>
+<li>&#x5176;&#x4ED6;&#x8C13;&#x8BCD;&#x5305;&#x62EC; <code>eq</code>&#xFF08;&#x7B49;&#x4E8E;&#xFF09;&#x3001;<code>ne</code>&#xFF08;&#x4E0D;&#x7B49;&#x4E8E;&#xFF09;&#x3001;<code>sgt</code>&#xFF08;&#x5927;&#x4E8E;&#xFF09;&#x7B49;&#x3002;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="&#x6BD4;&#x55BB;&#x603B;&#x7ED3;">&#x6BD4;&#x55BB;&#x603B;&#x7ED3;</h4>
+<p>arith Dialect &#x5C31;&#x50CF;&#x4E00;&#x4E2A;&#x201C;&#x57FA;&#x7840;&#x8BA1;&#x7B97;&#x5668;&#x201D;&#xFF0C;&#x53EF;&#x4EE5;&#x505A;&#x52A0;&#x51CF;&#x4E58;&#x9664;&#x3001;&#x5B9A;&#x4E49;&#x6570;&#x5B57;&#x3001;&#x6BD4;&#x8F83;&#x5927;&#x5C0F;&#x3002;&#x5B83;&#x7684;&#x64CD;&#x4F5C;&#x7B80;&#x5355;&#x76F4;&#x63A5;&#xFF0C;&#x9002;&#x5408;&#x5904;&#x7406;&#x5355;&#x4E2A;&#x6570;&#x5B57;&#x7684;&#x8BA1;&#x7B97;&#xFF0C;&#x50CF;&#x662F;&#x7F16;&#x7A0B;&#x4E2D;&#x7684; <code>a + b</code> &#x6216; <code>if (a &lt; b)</code>&#x3002;</p>
+<h3 id="23-&#x793A;&#x4F8B;&#x4EE3;&#x7801;">2.3 &#x793A;&#x4F8B;&#x4EE3;&#x7801;</h3>
+<p>&#x4EE5;&#x4E0B;&#x662F;&#x4E09;&#x4E2A;&#x793A;&#x4F8B;&#xFF0C;&#x5C55;&#x793A; arith Dialect &#x7684;&#x5178;&#x578B;&#x7528;&#x6CD5;&#xFF1A;</p>
+<h4 id="&#x793A;&#x4F8B;-1&#xFF1A;&#x7B80;&#x5355;&#x52A0;&#x6CD5;">&#x793A;&#x4F8B; 1&#xFF1A;&#x7B80;&#x5355;&#x52A0;&#x6CD5;</h4>
+<p>&#x8BA1;&#x7B97; <code>5 + 3 = 8</code>&#xFF0C;&#x7C7B;&#x578B;&#x662F; <code>i32</code>&#x3002;</p>
+<pre><code class="lang-mlir">%a = arith.constant 5 : i32
+%b = arith.constant 3 : i32
+%r = arith.addi %a, %b : i32
+</code></pre>
+<p><strong>&#x89E3;&#x6790;</strong>&#xFF1A;</p>
+<ul>
+<li><code>%a</code> &#x548C; <code>%b</code> &#x662F;&#x4E24;&#x4E2A;&#x5E38;&#x91CF;&#xFF0C;&#x5206;&#x522B;&#x8D4B;&#x503C;&#x4E3A; 5 &#x548C; 3&#x3002;  </li>
+<li><code>arith.addi</code> &#x8FDB;&#x884C;&#x6574;&#x6570;&#x52A0;&#x6CD5;&#xFF0C;&#x7ED3;&#x679C;&#x5B58;&#x5230; <code>%r</code>&#xFF0C;&#x503C;&#x4E3A; 8&#x3002;  </li>
+<li>&#x6240;&#x6709;&#x53D8;&#x91CF;&#x90FD;&#x662F; SSA &#x53D8;&#x91CF;&#xFF0C;&#x7C7B;&#x578B;&#x5FC5;&#x987B;&#x662F; <code>i32</code>&#x3002;</li>
+</ul>
+<p><strong>&#x7C7B;&#x6BD4; C &#x4EE3;&#x7801;</strong>&#xFF1A;</p>
+<pre><code class="lang-c"><span class="hljs-keyword">int</span> a = <span class="hljs-number">5</span>;
+<span class="hljs-keyword">int</span> b = <span class="hljs-number">3</span>;
+<span class="hljs-keyword">int</span> r = a + b; <span class="hljs-comment">// r = 8</span>
+</code></pre>
+<h4 id="&#x793A;&#x4F8B;-2&#xFF1A;&#x6D6E;&#x70B9;&#x6570;&#x6BD4;&#x8F83;">&#x793A;&#x4F8B; 2&#xFF1A;&#x6D6E;&#x70B9;&#x6570;&#x6BD4;&#x8F83;</h4>
+<p>&#x6BD4;&#x8F83; <code>3.0 &lt; 5.0</code>&#xFF0C;&#x8FD4;&#x56DE;&#x5E03;&#x5C14;&#x503C;&#xFF08;<code>i1</code>&#xFF09;&#x3002;</p>
+<pre><code class="lang-mlir">%f1 = arith.constant 3.0 : f32
+%f2 = arith.constant 5.0 : f32
+%cond = arith.cmpf olt, %f1, %f2 : f32
+</code></pre>
+<p><strong>&#x89E3;&#x6790;</strong>&#xFF1A;</p>
+<ul>
+<li><code>%f1</code> &#x548C; <code>%f2</code> &#x662F;&#x6D6E;&#x70B9;&#x5E38;&#x91CF;&#xFF0C;&#x503C;&#x5206;&#x522B;&#x662F; 3.0 &#x548C; 5.0&#x3002;  </li>
+<li><code>arith.cmpf olt</code> &#x6BD4;&#x8F83; <code>%f1 &lt; %f2</code>&#xFF0C;&#x7ED3;&#x679C;&#x5B58;&#x5230; <code>%cond</code>&#xFF0C;&#x503C;&#x4E3A; <code>true</code>&#xFF08;<code>i1</code> &#x7C7B;&#x578B;&#xFF09;&#x3002;  </li>
+<li><code>olt</code> &#x8868;&#x793A;&#x201C;&#x4E25;&#x683C;&#x5C0F;&#x4E8E;&#x201D;&#xFF0C;&#x4E13;&#x95E8;&#x7528;&#x4E8E;&#x6D6E;&#x70B9;&#x6570;&#x6BD4;&#x8F83;&#x3002;</li>
+</ul>
+<p><strong>&#x7C7B;&#x6BD4; Python &#x4EE3;&#x7801;</strong>&#xFF1A;</p>
+<pre><code class="lang-python">f1 = <span class="hljs-number">3.0</span>
+f2 = <span class="hljs-number">5.0</span>
+cond = f1 &lt; f2  <span class="hljs-comment"># cond = True</span>
+</code></pre>
+<h4 id="&#x793A;&#x4F8B;-3&#xFF1A;&#x51FD;&#x6570;&#x5185;&#x8BA1;&#x7B97;">&#x793A;&#x4F8B; 3&#xFF1A;&#x51FD;&#x6570;&#x5185;&#x8BA1;&#x7B97;</h4>
+<p>&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x8BA1;&#x7B97;&#x4E24;&#x4E2A;&#x5E38;&#x91CF;&#x7684;&#x548C;&#x5E76;&#x8FD4;&#x56DE;&#x3002;</p>
+<pre><code class="lang-mlir">func.func @example() -&gt; i32 {
+  %c1 = arith.constant 1 : i32
+  %c2 = arith.constant 2 : i32
+  %sum = arith.addi %c1, %c2 : i32
+  return %sum : i32
+}
+</code></pre>
+<p><strong>&#x89E3;&#x6790;</strong>&#xFF1A;</p>
+<ul>
+<li>&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x540D;&#x4E3A; <code>example</code>&#xFF0C;&#x6CA1;&#x6709;&#x8F93;&#x5165;&#x53C2;&#x6570;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A; <code>i32</code> &#x7C7B;&#x578B;&#x7684;&#x503C;&#x3002;  </li>
+<li><code>%c1</code> &#x548C; <code>%c2</code> &#x662F;&#x5E38;&#x91CF;&#xFF0C;&#x503C;&#x5206;&#x522B;&#x662F; 1 &#x548C; 2&#x3002;  </li>
+<li><code>arith.addi</code> &#x8BA1;&#x7B97; <code>1 + 2</code>&#xFF0C;&#x7ED3;&#x679C;&#x5B58;&#x5230; <code>%sum</code>&#x3002;  </li>
+<li><code>return %sum</code> &#x5C06;&#x7ED3;&#x679C;&#x8FD4;&#x56DE;&#xFF0C;&#x503C;&#x662F; 3&#x3002;</li>
+</ul>
+<p><strong>&#x7C7B;&#x6BD4; C &#x4EE3;&#x7801;</strong>&#xFF1A;</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">example</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">int</span> c1 = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">int</span> c2 = <span class="hljs-number">2</span>;
+    <span class="hljs-keyword">int</span> sum = c1 + c2;
+    <span class="hljs-keyword">return</span> sum; <span class="hljs-comment">// &#x8FD4;&#x56DE; 3</span>
+}
+</code></pre>
+<h3 id="24-&#x5C0F;&#x7ED3;">2.4 &#x5C0F;&#x7ED3;</h3>
+<ul>
+<li><strong>arith Dialect</strong> &#x662F; MLIR &#x7684;&#x6570;&#x5B66;&#x8FD0;&#x7B97;&#x6838;&#x5FC3;&#xFF0C;&#x63D0;&#x4F9B;&#x4E86;&#x52A0;&#x3001;&#x51CF;&#x3001;&#x4E58;&#x3001;&#x9664;&#x3001;&#x5E38;&#x91CF;&#x5B9A;&#x4E49;&#x548C;&#x6BD4;&#x8F83;&#x64CD;&#x4F5C;&#x3002;  </li>
+<li>&#x5B83;&#x5904;&#x7406;&#x6807;&#x91CF;&#xFF08;&#x5355;&#x4E2A;&#x6570;&#x5B57;&#xFF09;&#xFF0C;&#x652F;&#x6301;&#x6574;&#x6570;&#xFF08;<code>i32</code>, <code>i64</code>&#xFF09;&#x548C;&#x6D6E;&#x70B9;&#x6570;&#xFF08;<code>f32</code>, <code>f64</code>&#xFF09;&#x3002;  </li>
+<li>&#x5E38;&#x7528;&#x4E8E;&#x57FA;&#x7840;&#x8BA1;&#x7B97;&#x548C;&#x903B;&#x8F91;&#x5224;&#x65AD;&#xFF0C;&#x662F; MLIR &#x7A0B;&#x5E8F;&#x7684;&#x201C;&#x8BA1;&#x7B97;&#x5668;&#x201D;&#x3002;</li>
+</ul>
+<hr>
+<h2 id="3-scf-dialect&#xFF08;&#x7ED3;&#x6784;&#x5316;&#x63A7;&#x5236;&#x6D41;-dialect&#xFF09;">3. scf Dialect&#xFF08;&#x7ED3;&#x6784;&#x5316;&#x63A7;&#x5236;&#x6D41; Dialect&#xFF09;</h2>
+<h3 id="31-&#x4EC0;&#x4E48;&#x662F;-scf-dialect&#xFF1F;">3.1 &#x4EC0;&#x4E48;&#x662F; scf Dialect&#xFF1F;</h3>
+<p><strong>&#x901A;&#x4FD7;&#x89E3;&#x91CA;</strong>&#xFF1A;<br>scf&#xFF08;Structured Control Flow&#xFF09;Dialect &#x662F; MLIR &#x7684;&#x201C;&#x6D41;&#x7A0B;&#x63A7;&#x5236;&#x5668;&#x201D;&#xFF0C;&#x8D1F;&#x8D23;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#x7684;&#x63A7;&#x5236;&#x903B;&#x8F91;&#xFF0C;&#x6BD4;&#x5982;&#x5FAA;&#x73AF;&#xFF08;for&#x3001;while&#xFF09;&#x548C;&#x6761;&#x4EF6;&#x5206;&#x652F;&#xFF08;if-else&#xFF09;&#x3002;<br>&#x5B83;&#x5C31;&#x50CF;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x4E2D;&#x7684; <code>if</code>, <code>for</code>, <code>while</code> &#x8BED;&#x53E5;&#xFF0C;&#x8BA9; MLIR &#x7A0B;&#x5E8F;&#x80FD;&#x591F;&#x8868;&#x8FBE;&#x590D;&#x6742;&#x7684;&#x903B;&#x8F91;&#x6D41;&#x7A0B;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x7B80;&#x5355;&#x7684;&#x7EBF;&#x6027;&#x8BA1;&#x7B97;&#x3002;</p>
+<p><strong>&#x4E3A;&#x4EC0;&#x4E48;&#x91CD;&#x8981;&#xFF1F;</strong>  </p>
+<ul>
+<li>&#x6CA1;&#x6709; scf Dialect&#xFF0C;MLIR &#x7A0B;&#x5E8F;&#x53EA;&#x80FD;&#x505A;&#x76F4;&#x7EBF;&#x6267;&#x884C;&#x7684;&#x8BA1;&#x7B97;&#xFF0C;&#x65E0;&#x6CD5;&#x5B9E;&#x73B0;&#x5FAA;&#x73AF;&#x6216;&#x6761;&#x4EF6;&#x5224;&#x65AD;&#x3002;  </li>
+<li>&#x5B83;&#x7684;&#x64CD;&#x4F5C;&#x662F;&#x7ED3;&#x6784;&#x5316;&#x7684;&#xFF08;&#x50CF;&#x9AD8;&#x7EA7;&#x8BED;&#x8A00;&#xFF09;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x4F4E;&#x7EA7;&#x7684; <code>goto</code> &#x8DF3;&#x8F6C;&#xFF0C;&#x4EE3;&#x7801;&#x66F4;&#x6E05;&#x6670;&#x3001;&#x6613;&#x4F18;&#x5316;&#x3002;  </li>
+<li>&#x5E38;&#x7528;&#x4E8E;&#x5B9E;&#x73B0;&#x7B97;&#x6CD5;&#x7684;&#x5FAA;&#x73AF;&#x903B;&#x8F91;&#x6216;&#x6761;&#x4EF6;&#x9009;&#x62E9;&#x3002;</li>
+</ul>
+<h3 id="32-scf-dialect-&#x63D0;&#x4F9B;&#x4E86;&#x4EC0;&#x4E48;&#xFF1F;">3.2 scf Dialect &#x63D0;&#x4F9B;&#x4E86;&#x4EC0;&#x4E48;&#xFF1F;</h3>
+<h4 id="&#x4E3B;&#x8981;&#x64CD;&#x4F5C;&#xFF08;op&#xFF09;">&#x4E3B;&#x8981;&#x64CD;&#x4F5C;&#xFF08;Op&#xFF09;</h4>
+<p>scf Dialect &#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x7EC4;&#x7ED3;&#x6784;&#x5316;&#x7684;&#x63A7;&#x5236;&#x6D41;&#x64CD;&#x4F5C;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;&#x9AD8;&#x7EA7;&#x8BED;&#x8A00;&#x7684;&#x63A7;&#x5236;&#x7ED3;&#x6784;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x64CD;&#x4F5C;&#x540D;</th>
+<th>&#x4F5C;&#x7528;</th>
+<th>&#x7C7B;&#x6BD4; C &#x8BED;&#x8A00;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>scf.if</code></td>
+<td>&#x6761;&#x4EF6;&#x5206;&#x652F;&#xFF0C;&#x6267;&#x884C; if-else &#x903B;&#x8F91;</td>
+<td><code>if (cond) {...} else {...}</code></td>
+</tr>
+<tr>
+<td><code>scf.for</code></td>
+<td>&#x8BA1;&#x6570;&#x5FAA;&#x73AF;&#xFF0C;&#x6307;&#x5B9A;&#x8D77;&#x70B9;&#x3001;&#x7EC8;&#x70B9;&#x3001;&#x6B65;&#x957F;</td>
+<td><code>for (i = start; i &lt; end; i += step)</code></td>
+</tr>
+<tr>
+<td><code>scf.while</code></td>
+<td>&#x6761;&#x4EF6;&#x5FAA;&#x73AF;&#xFF0C;&#x6839;&#x636E;&#x6761;&#x4EF6;&#x91CD;&#x590D;&#x6267;&#x884C;</td>
+<td><code>while (cond) {...}</code></td>
+</tr>
+<tr>
+<td><code>scf.yield</code></td>
+<td>&#x8FD4;&#x56DE;&#x5FAA;&#x73AF;&#x6216;&#x5206;&#x652F;&#x7684;&#x7ED3;&#x679C;</td>
+<td>&#x7C7B;&#x4F3C; <code>return</code> &#x6216;&#x5FAA;&#x73AF;&#x4F53;&#x7ED3;&#x675F;</td>
+</tr>
+<tr>
+<td><code>scf.execute_region</code></td>
+<td>&#x5C01;&#x95ED;&#x4E00;&#x4E2A;&#x8BA1;&#x7B97;&#x5757;&#xFF0C;&#x652F;&#x6301;&#x5D4C;&#x5957;</td>
+<td>&#x7528;&#x4E8E;&#x7EC4;&#x7EC7;&#x590D;&#x6742;&#x4EE3;&#x7801;&#x5757;</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong><code>scf.if</code></strong>&#xFF1A;&#x6839;&#x636E;&#x6761;&#x4EF6;&#x6267;&#x884C;&#x4E0D;&#x540C;&#x7684;&#x4EE3;&#x7801;&#x5757;&#xFF0C;&#x7C7B;&#x4F3C; <code>if-else</code>&#x3002;  </li>
+<li><strong><code>scf.for</code></strong>&#xFF1A;&#x56FA;&#x5B9A;&#x6B21;&#x6570;&#x7684;&#x5FAA;&#x73AF;&#xFF0C;&#x9002;&#x5408;&#x5DF2;&#x77E5;&#x5FAA;&#x73AF;&#x8303;&#x56F4;&#x7684;&#x573A;&#x666F;&#x3002;  </li>
+<li><strong><code>scf.while</code></strong>&#xFF1A;&#x6839;&#x636E;&#x6761;&#x4EF6;&#x52A8;&#x6001;&#x5FAA;&#x73AF;&#xFF0C;&#x9002;&#x5408;&#x4E0D;&#x786E;&#x5B9A;&#x5FAA;&#x73AF;&#x6B21;&#x6570;&#x7684;&#x573A;&#x666F;&#x3002;  </li>
+<li><strong><code>scf.yield</code></strong>&#xFF1A;&#x5728; <code>if</code>&#x3001;<code>for</code>&#x3001;<code>while</code> &#x4E2D;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#xFF0C;&#x7ED3;&#x675F;&#x4E00;&#x4E2A;&#x4EE3;&#x7801;&#x5757;&#x3002;  </li>
+<li><strong><code>scf.execute_region</code></strong>&#xFF1A;&#x7528;&#x4E8E;&#x5D4C;&#x5957;&#x590D;&#x6742;&#x7684;&#x8BA1;&#x7B97;&#x903B;&#x8F91;&#xFF0C;&#x521D;&#x5B66;&#x8005;&#x53EF;&#x4EE5;&#x5148;&#x5FFD;&#x7565;&#x3002;</li>
+</ul>
+<h4 id="&#x6BD4;&#x55BB;&#x603B;&#x7ED3;">&#x6BD4;&#x55BB;&#x603B;&#x7ED3;</h4>
+<p>scf Dialect &#x5C31;&#x50CF;&#x4E00;&#x4E2A;&#x201C;&#x667A;&#x80FD;&#x9065;&#x63A7;&#x5668;&#x201D;&#xFF0C;&#x53EF;&#x4EE5;&#x63A7;&#x5236;&#x7A0B;&#x5E8F;&#x7684;&#x6267;&#x884C;&#x8DEF;&#x5F84;&#xFF08;&#x8DF3;&#x8F6C;&#x5230;&#x54EA;&#x91CC;&#x3001;&#x5FAA;&#x73AF;&#x591A;&#x5C11;&#x6B21;&#xFF09;&#x3002;&#x5B83;&#x8BA9; MLIR &#x7A0B;&#x5E8F;&#x4ECE;&#x201C;&#x7B80;&#x5355;&#x8BA1;&#x7B97;&#x201D;&#x5347;&#x7EA7;&#x5230;&#x201C;&#x590D;&#x6742;&#x903B;&#x8F91;&#x201D;&#x3002;</p>
+<h3 id="33-&#x793A;&#x4F8B;&#x4EE3;&#x7801;">3.3 &#x793A;&#x4F8B;&#x4EE3;&#x7801;</h3>
+<p>&#x4EE5;&#x4E0B;&#x662F;&#x4E09;&#x4E2A;&#x793A;&#x4F8B;&#xFF0C;&#x5C55;&#x793A; scf Dialect &#x7684;&#x5178;&#x578B;&#x7528;&#x6CD5;&#xFF1A;</p>
+<h4 id="&#x793A;&#x4F8B;-1&#xFF1A;&#x8BA1;&#x6570;&#x5FAA;&#x73AF;">&#x793A;&#x4F8B; 1&#xFF1A;&#x8BA1;&#x6570;&#x5FAA;&#x73AF;</h4>
+<p>&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x5FAA;&#x73AF;&#xFF0C;&#x4ECE; 0 &#x5230; 10&#xFF08;&#x4E0D;&#x542B; 10&#xFF09;&#xFF0C;&#x6BCF;&#x6B21;&#x52A0; 1&#xFF0C;&#x8BA1;&#x7B97; <code>i + i</code>&#x3002;</p>
+<pre><code class="lang-mlir">%zero = arith.constant 0 : i32
+%ten = arith.constant 10 : i32
+%step = arith.constant 1 : i32
+
+scf.for %i = %zero to %ten step %step {
+  %val = arith.addi %i, %i : i32
+}
+</code></pre>
+<p><strong>&#x89E3;&#x6790;</strong>&#xFF1A;</p>
+<ul>
+<li><code>%zero</code>, <code>%ten</code>, <code>%step</code> &#x662F;&#x5E38;&#x91CF;&#xFF0C;&#x5206;&#x522B;&#x8868;&#x793A;&#x5FAA;&#x73AF;&#x8D77;&#x70B9;&#xFF08;0&#xFF09;&#x3001;&#x7EC8;&#x70B9;&#xFF08;10&#xFF09;&#x548C;&#x6B65;&#x957F;&#xFF08;1&#xFF09;&#x3002;  </li>
+<li><code>scf.for %i = %zero to %ten step %step</code> &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5FAA;&#x73AF;&#xFF0C;<code>%i</code> &#x662F;&#x5FAA;&#x73AF;&#x53D8;&#x91CF;&#x3002;  </li>
+<li>&#x5FAA;&#x73AF;&#x4F53;&#x4E2D;&#xFF0C;<code>%val = arith.addi %i, %i</code> &#x8BA1;&#x7B97; <code>i + i</code>&#xFF0C;&#x4F46;&#x7ED3;&#x679C;&#x672A;&#x4F7F;&#x7528;&#xFF08;&#x4EC5;&#x793A;&#x4F8B;&#xFF09;&#x3002;  </li>
+<li>&#x5FAA;&#x73AF;&#x4F1A;&#x6267;&#x884C; 10 &#x6B21;&#xFF08;<code>i</code> &#x4ECE; 0 &#x5230; 9&#xFF09;&#x3002;</li>
+</ul>
+<p><strong>&#x7C7B;&#x6BD4; C &#x4EE3;&#x7801;</strong>&#xFF1A;</p>
+<pre><code class="lang-c"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i += <span class="hljs-number">1</span>) {
+    <span class="hljs-keyword">int</span> val = i + i;
+}
+</code></pre>
+<h4 id="&#x793A;&#x4F8B;-2&#xFF1A;&#x6761;&#x4EF6;&#x8BED;&#x53E5;">&#x793A;&#x4F8B; 2&#xFF1A;&#x6761;&#x4EF6;&#x8BED;&#x53E5;</h4>
+<p>&#x6839;&#x636E;&#x6761;&#x4EF6; <code>a &lt; b</code> &#x6267;&#x884C;&#x52A0;&#x6CD5;&#x6216;&#x51CF;&#x6CD5;&#x3002;</p>
+<pre><code class="lang-mlir">%a = arith.constant 5 : i32
+%b = arith.constant 10 : i32
+%cond = arith.cmpi slt, %a, %b : i32
+
+scf.if %cond {
+  %r = arith.addi %a, %b : i32
+} else {
+  %r = arith.subi %b, %a : i32
+}
+</code></pre>
+<p><strong>&#x89E3;&#x6790;</strong>&#xFF1A;</p>
+<ul>
+<li><code>%a</code> &#x548C; <code>%b</code> &#x662F;&#x5E38;&#x91CF;&#xFF0C;&#x503C;&#x5206;&#x522B;&#x662F; 5 &#x548C; 10&#x3002;  </li>
+<li><code>%cond = arith.cmpi slt, %a, %b</code> &#x6BD4;&#x8F83; <code>5 &lt; 10</code>&#xFF0C;&#x7ED3;&#x679C;&#x662F; <code>true</code>&#xFF08;<code>i1</code> &#x7C7B;&#x578B;&#xFF09;&#x3002;  </li>
+<li><code>scf.if %cond</code> &#x68C0;&#x67E5;&#x6761;&#x4EF6;&#xFF0C;&#x5982;&#x679C;&#x4E3A; <code>true</code>&#xFF0C;&#x6267;&#x884C; <code>%r = arith.addi %a, %b</code>&#xFF08;&#x52A0;&#x6CD5;&#xFF0C;<code>5 + 10 = 15</code>&#xFF09;&#xFF1B;&#x5426;&#x5219;&#x6267;&#x884C;&#x51CF;&#x6CD5;&#x3002;  </li>
+<li>&#x8FD9;&#x91CC;&#x4F1A;&#x6267;&#x884C;&#x52A0;&#x6CD5;&#x5206;&#x652F;&#x3002;</li>
+</ul>
+<p><strong>&#x7C7B;&#x6BD4; C &#x4EE3;&#x7801;</strong>&#xFF1A;</p>
+<pre><code class="lang-c"><span class="hljs-keyword">int</span> a = <span class="hljs-number">5</span>, b = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">int</span> r;
+<span class="hljs-keyword">if</span> (a &lt; b) {
+    r = a + b; <span class="hljs-comment">// r = 15</span>
+} <span class="hljs-keyword">else</span> {
+    r = b - a;
+}
+</code></pre>
+<h4 id="&#x793A;&#x4F8B;-3&#xFF1A;&#x6761;&#x4EF6;&#x5FAA;&#x73AF;">&#x793A;&#x4F8B; 3&#xFF1A;&#x6761;&#x4EF6;&#x5FAA;&#x73AF;</h4>
+<p>&#x5B9E;&#x73B0;&#x4E00;&#x4E2A; while &#x5FAA;&#x73AF;&#xFF0C;&#x5FAA;&#x73AF;&#x53D8;&#x91CF; <code>i</code> &#x4ECE;&#x521D;&#x59CB;&#x503C;&#x5F00;&#x59CB;&#xFF0C;&#x6BCF;&#x6B21;&#x52A0; 1&#xFF0C;&#x76F4;&#x5230; <code>i &gt;= limit</code>&#x3002;</p>
+<pre><code class="lang-mlir">%res = scf.while (%i = %init) : (i32) -&gt; (i32) {
+  %cond = arith.cmpi slt, %i, %limit : i32
+  scf.condition(%cond) %i : i32
+} do {
+  %next = arith.addi %i, %one : i32
+  scf.yield %next : i32
+}
+</code></pre>
+<p><strong>&#x89E3;&#x6790;</strong>&#xFF1A;</p>
+<ul>
+<li><code>scf.while</code> &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x6761;&#x4EF6;&#x5FAA;&#x73AF;&#xFF0C;<code>%i</code> &#x662F;&#x5FAA;&#x73AF;&#x53D8;&#x91CF;&#xFF0C;&#x521D;&#x59CB;&#x503C;&#x4E3A; <code>%init</code>&#x3002;  </li>
+<li>&#x7B2C;&#x4E00;&#x90E8;&#x5206;&#xFF08;<code>{ ... }</code>&#xFF09;&#x68C0;&#x67E5;&#x5FAA;&#x73AF;&#x6761;&#x4EF6;&#xFF1A;<code>%cond = arith.cmpi slt, %i, %limit</code> &#x6BD4;&#x8F83; <code>i &lt; limit</code>&#x3002;  </li>
+<li><code>scf.condition(%cond) %i</code> &#x51B3;&#x5B9A;&#x662F;&#x5426;&#x7EE7;&#x7EED;&#x5FAA;&#x73AF;&#xFF0C;&#x5E76;&#x4F20;&#x9012; <code>%i</code> &#x7ED9;&#x4E0B;&#x4E00;&#x6B21;&#x8FED;&#x4EE3;&#x3002;  </li>
+<li>&#x7B2C;&#x4E8C;&#x90E8;&#x5206;&#xFF08;<code>do { ... }</code>&#xFF09;&#x662F;&#x5FAA;&#x73AF;&#x4F53;&#xFF1A;<code>%next = arith.addi %i, %one</code> &#x8BA1;&#x7B97; <code>i + 1</code>&#xFF0C;<code>scf.yield %next</code> &#x8FD4;&#x56DE;&#x65B0;&#x7684; <code>%i</code>&#x3002;  </li>
+<li>&#x5FAA;&#x73AF;&#x76F4;&#x5230; <code>%cond</code> &#x4E3A; <code>false</code>&#x3002;</li>
+</ul>
+<p><strong>&#x7C7B;&#x6BD4; C &#x4EE3;&#x7801;</strong>&#xFF1A;</p>
+<pre><code class="lang-c"><span class="hljs-keyword">int</span> i = init;
+<span class="hljs-keyword">while</span> (i &lt; limit) {
+    i = i + <span class="hljs-number">1</span>;
+}
+</code></pre>
+<h3 id="34-&#x5C0F;&#x7ED3;">3.4 &#x5C0F;&#x7ED3;</h3>
+<ul>
+<li><strong>scf Dialect</strong> &#x63D0;&#x4F9B;&#x7ED3;&#x6784;&#x5316;&#x7684;&#x63A7;&#x5236;&#x6D41;&#x64CD;&#x4F5C;&#xFF0C;&#x5305;&#x62EC; <code>if</code>&#x3001;<code>for</code>&#x3001;<code>while</code> &#x548C; <code>yield</code>&#x3002;  </li>
+<li>&#x5B83;&#x8BA9; MLIR &#x7A0B;&#x5E8F;&#x53EF;&#x4EE5;&#x8868;&#x8FBE;&#x590D;&#x6742;&#x7684;&#x903B;&#x8F91;&#x6D41;&#x7A0B;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;&#x9AD8;&#x7EA7;&#x8BED;&#x8A00;&#x7684;&#x63A7;&#x5236;&#x7ED3;&#x6784;&#x3002;  </li>
+<li>&#x5E38;&#x7528;&#x4E8E;&#x5FAA;&#x73AF;&#x548C;&#x6761;&#x4EF6;&#x5224;&#x65AD;&#xFF0C;&#x662F;&#x7A0B;&#x5E8F;&#x903B;&#x8F91;&#x7684;&#x6838;&#x5FC3;&#x3002;</li>
+</ul>
+<hr>
+<h2 id="4-memref-dialect&#xFF08;&#x5185;&#x5B58;&#x5F15;&#x7528;-dialect&#xFF09;">4. memref Dialect&#xFF08;&#x5185;&#x5B58;&#x5F15;&#x7528; Dialect&#xFF09;</h2>
+<h3 id="41-&#x4EC0;&#x4E48;&#x662F;-memref-dialect&#xFF1F;">4.1 &#x4EC0;&#x4E48;&#x662F; memref Dialect&#xFF1F;</h3>
+<p><strong>&#x901A;&#x4FD7;&#x89E3;&#x91CA;</strong>&#xFF1A;<br>memref&#xFF08;Memory Reference&#xFF09;Dialect &#x662F; MLIR &#x7684;&#x201C;&#x5185;&#x5B58;&#x7BA1;&#x7406;&#x5458;&#x201D;&#xFF0C;&#x8D1F;&#x8D23;&#x7BA1;&#x7406;&#x7A0B;&#x5E8F;&#x4E2D;&#x7684;&#x5185;&#x5B58;&#x5206;&#x914D;&#x3001;&#x8BFB;&#x5199;&#x64CD;&#x4F5C;&#x3002;<br>&#x5B83;&#x5C31;&#x50CF;&#x4E00;&#x4E2A;&#x4ED3;&#x5E93;&#x7BA1;&#x7406;&#x5458;&#xFF0C;&#x544A;&#x8BC9;&#x4F60;&#x5982;&#x4F55;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x5B58;&#x50A8;&#x6570;&#x636E;&#xFF08;&#x5206;&#x914D;&#x7A7A;&#x95F4;&#xFF09;&#x3001;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#xFF08;load&#xFF09;&#x3001;&#x5199;&#x5165;&#x6570;&#x636E;&#xFF08;store&#xFF09;&#xFF0C;&#x4EE5;&#x53CA;&#x5982;&#x4F55;&#x7BA1;&#x7406;&#x5185;&#x5B58;&#x7684;&#x5F62;&#x72B6;&#x548C;&#x5E03;&#x5C40;&#x3002;</p>
+<p><strong>&#x4E3A;&#x4EC0;&#x4E48;&#x91CD;&#x8981;&#xFF1F;</strong>  </p>
+<ul>
+<li>MLIR &#x9700;&#x8981;&#x663E;&#x5F0F;&#x7BA1;&#x7406;&#x5185;&#x5B58;&#xFF08;&#x4E0D;&#x50CF; Python &#x81EA;&#x52A8;&#x7BA1;&#x7406;&#xFF09;&#xFF0C;memref &#x63D0;&#x4F9B;&#x4E86;&#x8FD9;&#x4E9B;&#x529F;&#x80FD;&#x3002;  </li>
+<li>&#x5B83;&#x652F;&#x6301;&#x591A;&#x7EF4;&#x6570;&#x7EC4;&#xFF08;&#x7C7B;&#x4F3C; NumPy &#x7684;&#x6570;&#x7EC4;&#xFF09;&#xFF0C;&#x53EF;&#x4EE5;&#x7CBE;&#x786E;&#x63A7;&#x5236;&#x5185;&#x5B58;&#x5E03;&#x5C40;&#xFF0C;&#x6BD4;&#x5982;&#x6B65;&#x957F;&#xFF08;strides&#xFF09;&#x6216;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#xFF08;CPU/GPU&#xFF09;&#x3002;  </li>
+<li>&#x5E38;&#x7528;&#x4E8E;&#x9700;&#x8981;&#x9AD8;&#x6548;&#x5185;&#x5B58;&#x64CD;&#x4F5C;&#x7684;&#x573A;&#x666F;&#xFF0C;&#x6BD4;&#x5982;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x6216;&#x9AD8;&#x6027;&#x80FD;&#x8BA1;&#x7B97;&#x3002;</li>
+</ul>
+<h3 id="42-memref-dialect-&#x63D0;&#x4F9B;&#x4E86;&#x4EC0;&#x4E48;&#xFF1F;">4.2 memref Dialect &#x63D0;&#x4F9B;&#x4E86;&#x4EC0;&#x4E48;&#xFF1F;</h3>
+<h4 id="&#x4E3B;&#x8981;&#x64CD;&#x4F5C;&#xFF08;op&#xFF09;">&#x4E3B;&#x8981;&#x64CD;&#x4F5C;&#xFF08;Op&#xFF09;</h4>
+<p>memref Dialect &#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x7EC4;&#x64CD;&#x4F5C;&#xFF0C;&#x7528;&#x4E8E;&#x5206;&#x914D;&#x3001;&#x91CA;&#x653E;&#x548C;&#x8BBF;&#x95EE;&#x5185;&#x5B58;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x64CD;&#x4F5C;&#x540D;</th>
+<th>&#x4F5C;&#x7528;</th>
+<th>&#x7C7B;&#x6BD4;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>memref.alloc</code></td>
+<td>&#x5728;&#x5806;&#x4E0A;&#x5206;&#x914D;&#x5185;&#x5B58;</td>
+<td>&#x50CF; <code>malloc</code> &#x6216; <code>new</code></td>
+</tr>
+<tr>
+<td><code>memref.alloca</code></td>
+<td>&#x5728;&#x6808;&#x4E0A;&#x5206;&#x914D;&#x5185;&#x5B58;</td>
+<td>&#x50CF;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x5206;&#x914D;</td>
+</tr>
+<tr>
+<td><code>memref.dealloc</code></td>
+<td>&#x91CA;&#x653E;&#x5806;&#x4E0A;&#x5185;&#x5B58;</td>
+<td>&#x50CF; <code>free</code> &#x6216; <code>delete</code></td>
+</tr>
+<tr>
+<td><code>memref.load</code></td>
+<td>&#x4ECE;&#x5185;&#x5B58;&#x8BFB;&#x53D6;&#x6570;&#x636E;</td>
+<td>&#x50CF; <code>array[i]</code></td>
+</tr>
+<tr>
+<td><code>memref.store</code></td>
+<td>&#x5411;&#x5185;&#x5B58;&#x5199;&#x5165;&#x6570;&#x636E;</td>
+<td>&#x50CF; <code>array[i] = value</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x4E3B;&#x8981;&#x7C7B;&#x578B;&#xFF08;type&#xFF09;">&#x4E3B;&#x8981;&#x7C7B;&#x578B;&#xFF08;Type&#xFF09;</h4>
+<p>memref &#x7C7B;&#x578B;&#x63CF;&#x8FF0;&#x591A;&#x7EF4;&#x6570;&#x7EC4;&#x7684;&#x5F62;&#x72B6;&#x3001;&#x5143;&#x7D20;&#x7C7B;&#x578B;&#x548C;&#x5185;&#x5B58;&#x5E03;&#x5C40;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x793A;&#x4F8B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x56FA;&#x5B9A;&#x5F62;&#x72B6;</td>
+<td><code>memref&lt;4x4xf32&gt;</code></td>
+<td>4x4 &#x7684;&#x6D6E;&#x70B9;&#x6570;&#x7EC4;</td>
+</tr>
+<tr>
+<td>&#x52A8;&#x6001;&#x5F62;&#x72B6;</td>
+<td><code>memref&lt;?x?xi32&gt;</code></td>
+<td>&#x52A8;&#x6001;&#x5927;&#x5C0F;&#x7684;&#x6574;&#x6570;&#x6570;&#x7EC4;&#xFF0C;<code>?</code> &#x8868;&#x793A;&#x8FD0;&#x884C;&#x65F6;&#x786E;&#x5B9A;</td>
+</tr>
+<tr>
+<td>&#x5E26;&#x5E03;&#x5C40;</td>
+<td><code>memref&lt;2x3xf32, affine_map&lt;...&gt;&gt;</code></td>
+<td>&#x81EA;&#x5B9A;&#x4E49;&#x5185;&#x5B58;&#x8BBF;&#x95EE;&#x89C4;&#x5219;</td>
+</tr>
+<tr>
+<td>&#x5E26;&#x6B65;&#x957F;</td>
+<td><code>memref&lt;2x3xf32, strided&lt;[?, ?], offset: ?&gt;&gt;</code></td>
+<td>&#x6307;&#x5B9A;&#x5185;&#x5B58;&#x6B65;&#x957F;&#x548C;&#x504F;&#x79FB;</td>
+</tr>
+<tr>
+<td>&#x5E26;&#x5185;&#x5B58;&#x7A7A;&#x95F4;</td>
+<td><code>memref&lt;4xf32, 1&gt;</code></td>
+<td>&#x6307;&#x5B9A;&#x5185;&#x5B58;&#x4F4D;&#x7F6E;&#xFF08;&#x6BD4;&#x5982; GPU &#x5185;&#x5B58;&#xFF09;</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>&#x56FA;&#x5B9A;&#x5F62;&#x72B6;</strong>&#xFF1A;&#x660E;&#x786E;&#x6307;&#x5B9A;&#x6570;&#x7EC4;&#x7684;&#x7EF4;&#x5EA6;&#xFF0C;&#x6BD4;&#x5982; <code>4x4</code>&#x3002;  </li>
+<li><strong>&#x52A8;&#x6001;&#x5F62;&#x72B6;</strong>&#xFF1A;&#x7528; <code>?</code> &#x8868;&#x793A;&#x7EF4;&#x5EA6;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x786E;&#x5B9A;&#xFF0C;&#x7C7B;&#x4F3C;&#x52A8;&#x6001;&#x6570;&#x7EC4;&#x3002;  </li>
+<li><strong>&#x6B65;&#x957F;&#x548C;&#x5E03;&#x5C40;</strong>&#xFF1A;&#x63A7;&#x5236;&#x5185;&#x5B58;&#x7684;&#x7269;&#x7406;&#x5E03;&#x5C40;&#xFF0C;&#x6BD4;&#x5982;&#x8DF3;&#x8DC3;&#x5F0F;&#x8BBF;&#x95EE;&#xFF08;strides&#xFF09;&#x6216;&#x504F;&#x79FB;&#x3002;  </li>
+<li><strong>&#x5185;&#x5B58;&#x7A7A;&#x95F4;</strong>&#xFF1A;&#x6307;&#x5B9A;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x6BD4;&#x5982; CPU &#x5185;&#x5B58;&#xFF08;0&#xFF09;&#x6216; GPU &#x5185;&#x5B58;&#xFF08;1&#xFF09;&#x3002;</li>
+</ul>
+<h4 id="&#x6BD4;&#x55BB;&#x603B;&#x7ED3;">&#x6BD4;&#x55BB;&#x603B;&#x7ED3;</h4>
+<p>memref Dialect &#x5C31;&#x50CF;&#x4E00;&#x4E2A;&#x201C;&#x667A;&#x80FD;&#x4ED3;&#x5E93;&#x201D;&#xFF0C;&#x4E0D;&#x4EC5;&#x80FD;&#x5206;&#x914D;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#xFF0C;&#x8FD8;&#x80FD;&#x7CBE;&#x786E;&#x63A7;&#x5236;&#x5982;&#x4F55;&#x5B58;&#x53D6;&#x8D27;&#x7269;&#xFF08;&#x6570;&#x636E;&#xFF09;&#x3002;&#x5B83;&#x6BD4; tensor Dialect &#x66F4;&#x5E95;&#x5C42;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x76F4;&#x63A5;&#x7BA1;&#x7406;&#x5185;&#x5B58;&#x3002;</p>
+<h3 id="43-&#x793A;&#x4F8B;&#x4EE3;&#x7801;">4.3 &#x793A;&#x4F8B;&#x4EE3;&#x7801;</h3>
+<p>&#x4EE5;&#x4E0B;&#x662F;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684;&#x793A;&#x4F8B;&#xFF0C;&#x5C55;&#x793A; memref &#x7684;&#x5185;&#x5B58;&#x5206;&#x914D;&#x3001;&#x8BFB;&#x5199;&#x548C;&#x5B50;&#x89C6;&#x56FE;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<pre><code class="lang-mlir">module {
+  func.func @matrix_example() {
+    // &#x5206;&#x914D;&#x4E00;&#x4E2A; 4x4 &#x7684;&#x6D6E;&#x70B9;&#x77E9;&#x9635;
+    %matrix = memref.alloc() : memref&lt;4x4xf32&gt;
+
+    // &#x5B9A;&#x4E49;&#x5E38;&#x6570;
+    %cst = arith.constant 1.0 : f32
+    %c0 = arith.constant 0 : index
+    %c1 = arith.constant 1 : index
+    %c2 = arith.constant 2 : index
+    %c3 = arith.constant 3 : index
+
+    // &#x5199;&#x5165;&#xFF1A;&#x77E9;&#x9635;[0,0] = 1.0
+    memref.store %cst, %matrix[%c0, %c0] : memref&lt;4x4xf32&gt;
+
+    // &#x8BFB;&#x53D6;&#xFF1A;&#x4ECE;[0,0]&#x8BFB;&#x53D6;&#x5E76;&#x5199;&#x5165;[1,1]
+    %val = memref.load %matrix[%c0, %c0] : memref&lt;4x4xf32&gt;
+    memref.store %val, %matrix[%c1, %c1] : memref&lt;4x4xf32&gt;
+
+    // &#x63D0;&#x53D6; 2x2 &#x5B50;&#x77E9;&#x9635;&#xFF0C;&#x4ECE;[1,1]&#x5F00;&#x59CB;
+    %sub = memref.subview %matrix[%c1, %c1] [2, 2] [1, 1] :
+      memref&lt;4x4xf32&gt; to memref&lt;2x2xf32, strided&lt;[?, ?], offset: ?&gt;&gt;
+
+    // &#x83B7;&#x53D6;&#x77E9;&#x9635;&#x7B2C;&#x4E00;&#x4E2A;&#x7EF4;&#x5EA6;&#x5927;&#x5C0F;
+    %dim0 = memref.dim %matrix, %c0 : memref&lt;4x4xf32&gt;
+
+    // &#x7C7B;&#x578B;&#x8F6C;&#x6362;&#xFF1A;&#x9759;&#x6001;&#x5F62;&#x72B6;&#x8F6C;&#x52A8;&#x6001;&#x5F62;&#x72B6;
+    %casted = memref.cast %matrix : memref&lt;4x4xf32&gt; to memref&lt;?x?xf32&gt;
+
+    // &#x91CA;&#x653E;&#x5185;&#x5B58;
+    memref.dealloc %matrix : memref&lt;4x4xf32&gt;
+
+    return
+  }
+}
+</code></pre>
+<p><strong>&#x89E3;&#x6790;</strong>&#xFF1A;</p>
+<ol>
+<li><p><code>%matrix = memref.alloc() : memref&lt;4x4xf32&gt;</code>&#xFF1A;  </p>
+<ul>
+<li>&#x5206;&#x914D;&#x4E00;&#x4E2A; 4x4 &#x7684;&#x6D6E;&#x70B9;&#x77E9;&#x9635;&#xFF0C;&#x7C7B;&#x4F3C; C &#x7684; <code>float matrix[4][4]</code>&#x3002;  </li>
+<li>&#x5185;&#x5B58;&#x662F;&#x52A8;&#x6001;&#x5206;&#x914D;&#x7684;&#xFF08;&#x5806;&#x4E0A;&#xFF09;&#x3002;</li>
+</ul>
+</li>
+<li><p><code>%cst = arith.constant 1.0 : f32</code> &#x7B49;&#xFF1A;  </p>
+<ul>
+<li>&#x5B9A;&#x4E49;&#x5E38;&#x91CF;&#xFF0C;&#x7528;&#x4E8E;&#x7D22;&#x5F15;&#x548C;&#x8D4B;&#x503C;&#x3002;  </li>
+<li><code>index</code> &#x7C7B;&#x578B;&#x662F; MLIR &#x7684;&#x7D22;&#x5F15;&#x7C7B;&#x578B;&#xFF0C;&#x4E13;&#x95E8;&#x7528;&#x4E8E;&#x6570;&#x7EC4;&#x4E0B;&#x6807;&#x3002;</li>
+</ul>
+</li>
+<li><p><code>memref.store %cst, %matrix[%c0, %c0]</code>&#xFF1A;  </p>
+<ul>
+<li>&#x5C06; 1.0 &#x5199;&#x5165;&#x77E9;&#x9635;&#x7684; [0,0] &#x4F4D;&#x7F6E;&#xFF0C;&#x7C7B;&#x4F3C; <code>matrix[0][0] = 1.0</code>&#x3002;</li>
+</ul>
+</li>
+<li><p><code>%val = memref.load %matrix[%c0, %c0]</code>&#xFF1A;  </p>
+<ul>
+<li>&#x4ECE; [0,0] &#x8BFB;&#x53D6;&#x503C;&#xFF0C;&#x5B58;&#x5230; <code>%val</code>&#x3002;</li>
+</ul>
+</li>
+<li><p><code>memref.subview</code>&#xFF1A;  </p>
+<ul>
+<li>&#x63D0;&#x53D6;&#x4E00;&#x4E2A; 2x2 &#x7684;&#x5B50;&#x77E9;&#x9635;&#xFF0C;&#x4ECE; [1,1] &#x5F00;&#x59CB;&#x3002;  </li>
+<li>&#x7C7B;&#x4F3C;&#x4E8E; NumPy &#x7684;&#x5207;&#x7247;&#x64CD;&#x4F5C; <code>matrix[1:3, 1:3]</code>&#x3002;</li>
+</ul>
+</li>
+<li><p><code>memref.dim</code>&#xFF1A;  </p>
+<ul>
+<li>&#x83B7;&#x53D6;&#x77E9;&#x9635;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x7EF4;&#x5EA6;&#x5927;&#x5C0F;&#xFF08;&#x8FD9;&#x91CC;&#x662F; 4&#xFF09;&#x3002;</li>
+</ul>
+</li>
+<li><p><code>memref.cast</code>&#xFF1A;  </p>
+<ul>
+<li>&#x5C06;&#x56FA;&#x5B9A;&#x5F62;&#x72B6;&#x7684; <code>memref&lt;4x4xf32&gt;</code> &#x8F6C;&#x6362;&#x4E3A;&#x52A8;&#x6001;&#x5F62;&#x72B6;&#x7684; <code>memref&lt;?x?xf32&gt;</code>&#x3002;</li>
+</ul>
+</li>
+<li><p><code>memref.dealloc</code>&#xFF1A;  </p>
+<ul>
+<li>&#x91CA;&#x653E;&#x5185;&#x5B58;&#xFF0C;&#x9632;&#x6B62;&#x5185;&#x5B58;&#x6CC4;&#x6F0F;&#x3002;</li>
+</ul>
+</li>
+</ol>
+<p><strong>&#x7C7B;&#x6BD4; C &#x4EE3;&#x7801;</strong>&#xFF1A;</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">matrix_example</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">float</span> (*matrix)[<span class="hljs-number">4</span>] = <span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">float</span>) * <span class="hljs-number">4</span> * <span class="hljs-number">4</span>);
+    <span class="hljs-keyword">float</span> cst = <span class="hljs-number">1.0</span>;
+    <span class="hljs-keyword">int</span> c0 = <span class="hljs-number">0</span>, c1 = <span class="hljs-number">1</span>;
+
+    matrix[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] = cst;           <span class="hljs-comment">// store</span>
+    <span class="hljs-keyword">float</span> val = matrix[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>];     <span class="hljs-comment">// load</span>
+    matrix[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>] = val;           <span class="hljs-comment">// store</span>
+    <span class="hljs-built_in">free</span>(matrix);                 <span class="hljs-comment">// dealloc</span>
+}
+</code></pre>
+<h3 id="44-&#x5C0F;&#x7ED3;">4.4 &#x5C0F;&#x7ED3;</h3>
+<ul>
+<li><strong>memref Dialect</strong> &#x8D1F;&#x8D23;&#x5185;&#x5B58;&#x7BA1;&#x7406;&#xFF0C;&#x5305;&#x62EC;&#x5206;&#x914D;&#x3001;&#x8BFB;&#x5199;&#x548C;&#x91CA;&#x653E;&#x3002;  </li>
+<li>&#x63D0;&#x4F9B;&#x591A;&#x7EF4;&#x6570;&#x7EC4;&#x7C7B;&#x578B;&#xFF08;<code>memref&lt;...&gt;</code>&#xFF09;&#xFF0C;&#x652F;&#x6301;&#x56FA;&#x5B9A;/&#x52A8;&#x6001;&#x5F62;&#x72B6;&#x3001;&#x81EA;&#x5B9A;&#x4E49;&#x5E03;&#x5C40;&#x548C;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#x3002;  </li>
+<li>&#x5E38;&#x7528;&#x4E8E;&#x9700;&#x8981;&#x7CBE;&#x786E;&#x63A7;&#x5236;&#x5185;&#x5B58;&#x7684;&#x573A;&#x666F;&#xFF0C;&#x6BD4;&#x5982;&#x9AD8;&#x6027;&#x80FD;&#x8BA1;&#x7B97;&#x6216;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x3002;</li>
+</ul>
+<hr>
+<h2 id="5-tensor-dialect">5. tensor Dialect</h2>
+<h3 id="51-&#x4EC0;&#x4E48;&#x662F;-tensor-dialect&#xFF1F;">5.1 &#x4EC0;&#x4E48;&#x662F; tensor Dialect&#xFF1F;</h3>
+<p><strong>&#x901A;&#x4FD7;&#x89E3;&#x91CA;</strong>&#xFF1A;<br>tensor Dialect &#x662F; MLIR &#x7684;&#x201C;&#x6570;&#x636E;&#x5BB9;&#x5668;&#x201D;&#xFF0C;&#x4E13;&#x95E8;&#x5904;&#x7406;&#x4E0D;&#x53EF;&#x53D8;&#x7684;&#x5F20;&#x91CF;&#xFF08;&#x591A;&#x7EF4;&#x6570;&#x7EC4;&#xFF09;&#x3002;<br>&#x5B83;&#x5C31;&#x50CF;&#x4E00;&#x4E2A;&#x201C;&#x53EA;&#x8BFB;&#x76F8;&#x518C;&#x201D;&#xFF0C;&#x91CC;&#x9762;&#x7684;&#x6570;&#x636E;&#x53EF;&#x4EE5;&#x8BFB;&#x53D6;&#x3001;&#x5207;&#x7247;&#x3001;&#x91CD;&#x7EC4;&#xFF0C;&#x4F46;&#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x4FEE;&#x6539;&#xFF08;&#x9700;&#x8981;&#x751F;&#x6210;&#x65B0;&#x7684;&#x5F20;&#x91CF;&#xFF09;&#x3002;<br>&#x76F8;&#x6BD4; memref&#xFF0C;tensor &#x662F;&#x66F4;&#x9AD8;&#x7EA7;&#x7684;&#x62BD;&#x8C61;&#xFF0C;&#x4E13;&#x6CE8;&#x4E8E;&#x6570;&#x636E;&#x64CD;&#x4F5C;&#x800C;&#x975E;&#x5E95;&#x5C42;&#x7684;&#x5185;&#x5B58;&#x7BA1;&#x7406;&#x3002;</p>
+<p><strong>&#x4E3A;&#x4EC0;&#x4E48;&#x91CD;&#x8981;&#xFF1F;</strong>  </p>
+<ul>
+<li>tensor &#x662F;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x548C;&#x79D1;&#x5B66;&#x8BA1;&#x7B97;&#x7684;&#x6838;&#x5FC3;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x7C7B;&#x4F3C; NumPy &#x7684;&#x6570;&#x7EC4;&#x3002;  </li>
+<li>&#x5B83;&#x7684;&#x64CD;&#x4F5C;&#x662F;&#x4E0D;&#x53EF;&#x53D8;&#x7684;&#xFF0C;&#x9002;&#x5408;&#x8868;&#x8FBE;&#x6570;&#x5B66;&#x8FD0;&#x7B97;&#xFF08;&#x5982;&#x77E9;&#x9635;&#x4E58;&#x6CD5;&#x3001;&#x5377;&#x79EF;&#xFF09;&#x3002;  </li>
+<li>&#x5E38;&#x4E0E; linalg Dialect &#x914D;&#x5408;&#xFF0C;&#x7528;&#x4E8E;&#x9AD8;&#x5C42;&#x6B21;&#x7684;&#x5F20;&#x91CF;&#x64CD;&#x4F5C;&#x3002;</li>
+</ul>
+<h3 id="52-tensor-dialect-&#x63D0;&#x4F9B;&#x4E86;&#x4EC0;&#x4E48;&#xFF1F;">5.2 tensor Dialect &#x63D0;&#x4F9B;&#x4E86;&#x4EC0;&#x4E48;&#xFF1F;</h3>
+<h4 id="&#x4E3B;&#x8981;&#x64CD;&#x4F5C;&#xFF08;op&#xFF09;">&#x4E3B;&#x8981;&#x64CD;&#x4F5C;&#xFF08;Op&#xFF09;</h4>
+<p>tensor Dialect &#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x7EC4;&#x64CD;&#x4F5C;&#xFF0C;&#x7528;&#x4E8E;&#x521B;&#x5EFA;&#x3001;&#x8BFB;&#x53D6;&#x3001;&#x4FEE;&#x6539;&#x548C;&#x91CD;&#x7EC4;&#x5F20;&#x91CF;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x64CD;&#x4F5C;&#x540D;</th>
+<th>&#x4F5C;&#x7528;</th>
+<th>&#x7C7B;&#x6BD4;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tensor.empty</code></td>
+<td>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7A7A;&#x5F20;&#x91CF;</td>
+<td>&#x50CF; <code>np.zeros()</code></td>
+</tr>
+<tr>
+<td><code>tensor.extract</code></td>
+<td>&#x4ECE;&#x5F20;&#x91CF;&#x4E2D;&#x8BFB;&#x53D6;&#x4E00;&#x4E2A;&#x5143;&#x7D20;</td>
+<td>&#x50CF; <code>array[i]</code></td>
+</tr>
+<tr>
+<td><code>tensor.insert</code></td>
+<td>&#x5411;&#x5F20;&#x91CF;&#x63D2;&#x5165;&#x5143;&#x7D20;&#xFF08;&#x751F;&#x6210;&#x65B0;&#x5F20;&#x91CF;&#xFF09;</td>
+<td>&#x50CF; <code>array[i] = value</code></td>
+</tr>
+<tr>
+<td><code>tensor.generate</code></td>
+<td>&#x7528;&#x51FD;&#x6570;&#x751F;&#x6210;&#x5F20;&#x91CF;</td>
+<td>&#x50CF; <code>np.fromfunction()</code></td>
+</tr>
+<tr>
+<td><code>tensor.cast</code></td>
+<td>&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#xFF08;&#x9759;&#x6001;/&#x52A8;&#x6001;&#x5F62;&#x72B6;&#xFF09;</td>
+<td>&#x50CF;&#x7C7B;&#x578B;&#x8F6C;&#x6362;</td>
+</tr>
+<tr>
+<td><code>tensor.extract_slice</code></td>
+<td>&#x63D0;&#x53D6;&#x5F20;&#x91CF;&#x5B50;&#x96C6;</td>
+<td>&#x50CF; <code>array[1:3]</code></td>
+</tr>
+<tr>
+<td><code>tensor.insert_slice</code></td>
+<td>&#x63D2;&#x5165;&#x5F20;&#x91CF;&#x5B50;&#x96C6;</td>
+<td>&#x50CF; <code>array[1:3] = subarray</code></td>
+</tr>
+<tr>
+<td><code>tensor.dim</code></td>
+<td>&#x83B7;&#x53D6;&#x5F20;&#x91CF;&#x7EF4;&#x5EA6;&#x5927;&#x5C0F;</td>
+<td>&#x50CF; <code>array.shape[0]</code></td>
+</tr>
+<tr>
+<td><code>tensor.reshape</code></td>
+<td>&#x91CD;&#x5851;&#x5F20;&#x91CF;&#x5F62;&#x72B6;</td>
+<td>&#x50CF; <code>np.reshape()</code></td>
+</tr>
+<tr>
+<td><code>tensor.expand_shape</code></td>
+<td>&#x589E;&#x52A0;&#x7EF4;&#x5EA6;</td>
+<td>&#x50CF; <code>np.expand_dims()</code></td>
+</tr>
+<tr>
+<td><code>tensor.collapse_shape</code></td>
+<td>&#x964D;&#x4F4E;&#x7EF4;&#x5EA6;</td>
+<td>&#x50CF; <code>np.squeeze()</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x4E3B;&#x8981;&#x7C7B;&#x578B;&#xFF08;type&#xFF09;">&#x4E3B;&#x8981;&#x7C7B;&#x578B;&#xFF08;Type&#xFF09;</h4>
+<p>tensor &#x7C7B;&#x578B;&#x63CF;&#x8FF0;&#x4E0D;&#x53EF;&#x53D8;&#x7684;&#x591A;&#x7EF4;&#x6570;&#x7EC4;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x793A;&#x4F8B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x56FA;&#x5B9A;&#x5F62;&#x72B6;</td>
+<td><code>tensor&lt;4x4xf32&gt;</code></td>
+<td>4x4 &#x6D6E;&#x70B9;&#x5F20;&#x91CF;</td>
+</tr>
+<tr>
+<td>&#x52A8;&#x6001;&#x5F62;&#x72B6;</td>
+<td><code>tensor&lt;?x?xf32&gt;</code></td>
+<td>&#x52A8;&#x6001;&#x5927;&#x5C0F;&#x5F20;&#x91CF;</td>
+</tr>
+<tr>
+<td>&#x4E0D;&#x5B9A;&#x79E9;</td>
+<td><code>tensor&lt;*xf32&gt;</code></td>
+<td>&#x4EFB;&#x610F;&#x7EF4;&#x5EA6;&#x7684;&#x5F20;&#x91CF;&#xFF0C;&#x7C7B;&#x4F3C;&#x5360;&#x4F4D;&#x7B26;</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>&#x56FA;&#x5B9A;&#x5F62;&#x72B6;</strong>&#xFF1A;&#x660E;&#x786E;&#x6307;&#x5B9A;&#x5F20;&#x91CF;&#x7684;&#x7EF4;&#x5EA6;&#x3002;  </li>
+<li><strong>&#x52A8;&#x6001;&#x5F62;&#x72B6;</strong>&#xFF1A;&#x7528; <code>?</code> &#x8868;&#x793A;&#x7EF4;&#x5EA6;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x786E;&#x5B9A;&#x3002;  </li>
+<li><strong>&#x4E0D;&#x5B9A;&#x79E9;</strong>&#xFF1A;&#x7528; <code>*</code> &#x8868;&#x793A;&#x5F20;&#x91CF;&#x7684;&#x79E9;&#xFF08;&#x7EF4;&#x5EA6;&#x6570;&#x91CF;&#xFF09;&#x4E0D;&#x786E;&#x5B9A;&#xFF0C;&#x5E38;&#x7528;&#x4E8E;&#x901A;&#x7528;&#x51FD;&#x6570;&#x3002;</li>
+</ul>
+<h4 id="&#x6BD4;&#x55BB;&#x603B;&#x7ED3;">&#x6BD4;&#x55BB;&#x603B;&#x7ED3;</h4>
+<p>tensor Dialect &#x5C31;&#x50CF;&#x4E00;&#x4E2A;&#x201C;&#x53EA;&#x8BFB;&#x76F8;&#x518C;&#x201D;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x7FFB;&#x770B;&#x7167;&#x7247;&#xFF08;&#x8BFB;&#x53D6;&#xFF09;&#x3001;&#x526A;&#x5207;&#x7167;&#x7247;&#xFF08;&#x5207;&#x7247;&#xFF09;&#x3001;&#x91CD;&#x7EC4;&#x7167;&#x7247;&#xFF08;&#x91CD;&#x5851;&#xFF09;&#xFF0C;&#x4F46;&#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x5728;&#x539F;&#x7167;&#x7247;&#x4E0A;&#x6D82;&#x6539;&#xFF08;&#x9700;&#x8981;&#x751F;&#x6210;&#x65B0;&#x5F20;&#x91CF;&#xFF09;&#x3002;</p>
+<h3 id="53-&#x793A;&#x4F8B;&#x4EE3;&#x7801;">5.3 &#x793A;&#x4F8B;&#x4EE3;&#x7801;</h3>
+<p>&#x4EE5;&#x4E0B;&#x662F;&#x4E00;&#x4E2A;&#x793A;&#x4F8B;&#xFF0C;&#x5C55;&#x793A; tensor &#x7684;&#x521B;&#x5EFA;&#x3001;&#x63D2;&#x5165;&#x3001;&#x63D0;&#x53D6;&#x548C;&#x5207;&#x7247;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<pre><code class="lang-mlir">func.func @tensor_example(%arg0: index, %arg1: index) -&gt; tensor&lt;4xf32&gt; {
+  %c0 = arith.constant 0 : index
+  %c1 = arith.constant 1 : index
+  %cst = arith.constant 1.0 : f32
+
+  // &#x521B;&#x5EFA;&#x7A7A;&#x5F20;&#x91CF;
+  %tensor = tensor.empty() : tensor&lt;4xf32&gt;
+
+  // &#x63D2;&#x5165;&#x5143;&#x7D20;&#x5230; index=1
+  %tensor2 = tensor.insert %cst into %tensor[%c1] : tensor&lt;4xf32&gt;
+
+  // &#x63D0;&#x53D6; index=1 &#x7684;&#x503C;
+  %val = tensor.extract %tensor2[%c1] : tensor&lt;4xf32&gt;
+
+  // &#x83B7;&#x53D6;&#x5F20;&#x91CF;&#x7EF4;&#x5EA6;
+  %dim = tensor.dim %tensor2, %c0 : tensor&lt;4xf32&gt;
+
+  // &#x63D0;&#x53D6;&#x5207;&#x7247;&#xFF08;&#x4ECE; index=1 &#x5F00;&#x59CB;&#xFF0C;&#x957F;&#x5EA6;&#x4E3A; 2&#xFF09;
+  %slice = tensor.extract_slice %tensor2[1] [2] [1] :
+      tensor&lt;4xf32&gt; to tensor&lt;2xf32&gt;
+
+  return %tensor2 : tensor&lt;4xf32&gt;
+}
+</code></pre>
+<p><strong>&#x89E3;&#x6790;</strong>&#xFF1A;</p>
+<ol>
+<li><p><code>%tensor = tensor.empty() : tensor&lt;4xf32&gt;</code>&#xFF1A;  </p>
+<ul>
+<li>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7A7A;&#x7684; 4 &#x7EF4;&#x6D6E;&#x70B9;&#x5F20;&#x91CF;&#xFF0C;&#x7C7B;&#x4F3C; <code>np.zeros(4)</code>&#x3002;  </li>
+<li>&#x6CE8;&#x610F;&#xFF1A;&#x5185;&#x5BB9;&#x672A;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x53EF;&#x80FD;&#x5305;&#x542B;&#x968F;&#x673A;&#x503C;&#x3002;</li>
+</ul>
+</li>
+<li><p><code>%tensor2 = tensor.insert %cst into %tensor[%c1]</code>&#xFF1A;  </p>
+<ul>
+<li>&#x5C06; 1.0 &#x63D2;&#x5165;&#x5230;&#x5F20;&#x91CF;&#x7684; index=1 &#x4F4D;&#x7F6E;&#xFF0C;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x65B0;&#x5F20;&#x91CF; <code>%tensor2</code>&#x3002;  </li>
+<li>tensor &#x662F;&#x4E0D;&#x53EF;&#x53D8;&#x7684;&#xFF0C;&#x63D2;&#x5165;&#x64CD;&#x4F5C;&#x4F1A;&#x8FD4;&#x56DE;&#x65B0;&#x5F20;&#x91CF;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x4FEE;&#x6539;&#x539F;&#x5F20;&#x91CF;&#x3002;</li>
+</ul>
+</li>
+<li><p><code>%val = tensor.extract %tensor2[%c1]</code>&#xFF1A;  </p>
+<ul>
+<li>&#x4ECE; <code>%tensor2</code> &#x7684; index=1 &#x8BFB;&#x53D6;&#x503C;&#xFF0C;&#x5F97;&#x5230; 1.0&#x3002;</li>
+</ul>
+</li>
+<li><p><code>%dim = tensor.dim %tensor2, %c0</code>&#xFF1A;  </p>
+<ul>
+<li>&#x83B7;&#x53D6;&#x5F20;&#x91CF;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x7EF4;&#x5EA6;&#x5927;&#x5C0F;&#xFF08;&#x8FD9;&#x91CC;&#x662F; 4&#xFF09;&#x3002;</li>
+</ul>
+</li>
+<li><p><code>%slice = tensor.extract_slice %tensor2[1] [2] [1]</code>&#xFF1A;  </p>
+<ul>
+<li>&#x63D0;&#x53D6;&#x4ECE; index=1 &#x5F00;&#x59CB;&#x7684;&#x957F;&#x5EA6;&#x4E3A; 2 &#x7684;&#x5207;&#x7247;&#xFF0C;&#x5F97;&#x5230; <code>tensor&lt;2xf32&gt;</code>&#x3002;  </li>
+<li>&#x7C7B;&#x4F3C;&#x4E8E; NumPy &#x7684; <code>tensor[1:3]</code>&#x3002;</li>
+</ul>
+</li>
+</ol>
+<p><strong>&#x7C7B;&#x6BD4; Python &#x4EE3;&#x7801;&#xFF08;&#x4F7F;&#x7528; NumPy&#xFF09;</strong>&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">tensor_example</span><span class="hljs-params">(arg0, arg1)</span>:</span>
+    tensor = np.zeros(<span class="hljs-number">4</span>, dtype=np.float32)  <span class="hljs-comment"># empty</span>
+    tensor[<span class="hljs-number">1</span>] = <span class="hljs-number">1.0</span>                        <span class="hljs-comment"># insert</span>
+    val = tensor[<span class="hljs-number">1</span>]                        <span class="hljs-comment"># extract</span>
+    dim = tensor.shape[<span class="hljs-number">0</span>]                  <span class="hljs-comment"># dim</span>
+    slice = tensor[<span class="hljs-number">1</span>:<span class="hljs-number">3</span>]                    <span class="hljs-comment"># slice</span>
+    <span class="hljs-keyword">return</span> tensor
+</code></pre>
+<h3 id="54-&#x5C0F;&#x7ED3;">5.4 &#x5C0F;&#x7ED3;</h3>
+<ul>
+<li><strong>tensor Dialect</strong> &#x63D0;&#x4F9B;&#x4E0D;&#x53EF;&#x53D8;&#x5F20;&#x91CF;&#x7684;&#x64CD;&#x4F5C;&#x548C;&#x7C7B;&#x578B;&#xFF0C;&#x9002;&#x5408;&#x6570;&#x5B66;&#x8FD0;&#x7B97;&#x548C;&#x6570;&#x636E;&#x5904;&#x7406;&#x3002;  </li>
+<li>&#x652F;&#x6301;&#x521B;&#x5EFA;&#x3001;&#x8BFB;&#x53D6;&#x3001;&#x5207;&#x7247;&#x3001;&#x91CD;&#x5851;&#x7B49;&#x64CD;&#x4F5C;&#xFF0C;&#x7C7B;&#x4F3C; NumPy &#x7684;&#x6570;&#x7EC4;&#x64CD;&#x4F5C;&#x3002;  </li>
+<li>&#x6BD4; memref &#x66F4;&#x9AD8;&#x7EA7;&#xFF0C;&#x4E13;&#x6CE8;&#x4E8E;&#x6570;&#x636E;&#x64CD;&#x4F5C;&#x800C;&#x975E;&#x5185;&#x5B58;&#x7BA1;&#x7406;&#x3002;</li>
+</ul>
+<hr>
+<h2 id="6-linalg-dialect&#xFF08;&#x7EBF;&#x6027;&#x4EE3;&#x6570;-dialect&#xFF09;">6. linalg Dialect&#xFF08;&#x7EBF;&#x6027;&#x4EE3;&#x6570; Dialect&#xFF09;</h2>
+<h3 id="61-&#x4EC0;&#x4E48;&#x662F;-linalg-dialect&#xFF1F;">6.1 &#x4EC0;&#x4E48;&#x662F; linalg Dialect&#xFF1F;</h3>
+<p><strong>&#x901A;&#x4FD7;&#x89E3;&#x91CA;</strong>&#xFF1A;<br>linalg&#xFF08;Linear Algebra&#xFF09;Dialect &#x662F; MLIR &#x7684;&#x201C;&#x7EBF;&#x6027;&#x4EE3;&#x6570;&#x4E13;&#x5BB6;&#x201D;&#xFF0C;&#x4E13;&#x95E8;&#x5904;&#x7406;&#x5F20;&#x91CF;&#x548C;&#x77E9;&#x9635;&#x7684;&#x9AD8;&#x5C42;&#x6B21;&#x64CD;&#x4F5C;&#xFF0C;&#x6BD4;&#x5982;&#x77E9;&#x9635;&#x4E58;&#x6CD5;&#x3001;&#x5377;&#x79EF;&#x3001;&#x8F6C;&#x7F6E;&#x7B49;&#x3002;<br>&#x5B83;&#x5C31;&#x50CF;&#x4E00;&#x4E2A;&#x9AD8;&#x7EA7;&#x8BA1;&#x7B97;&#x5668;&#xFF0C;&#x4E13;&#x6CE8;&#x4E8E;&#x77E9;&#x9635;&#x548C;&#x5F20;&#x91CF;&#x7684;&#x8FD0;&#x7B97;&#xFF0C;&#x7279;&#x522B;&#x9002;&#x5408;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x548C;&#x79D1;&#x5B66;&#x8BA1;&#x7B97;&#x3002;</p>
+<p><strong>&#x4E3A;&#x4EC0;&#x4E48;&#x91CD;&#x8981;&#xFF1F;</strong>  </p>
+<ul>
+<li>linalg &#x662F;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x6A21;&#x578B;&#xFF08;&#x5982;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#xFF09;&#x7684;&#x6838;&#x5FC3;&#x4E2D;&#x95F4;&#x8868;&#x793A;&#xFF0C;&#x8868;&#x8FBE;&#x590D;&#x6742;&#x7684;&#x5F20;&#x91CF;&#x8FD0;&#x7B97;&#x3002;  </li>
+<li>&#x5B83;&#x63D0;&#x4F9B;&#x4E86;&#x9AD8;&#x5C42;&#x6B21;&#x7684;&#x64CD;&#x4F5C;&#xFF08;&#x6BD4;&#x5982; <code>matmul</code>&#xFF09;&#xFF0C;&#x6BD4; arith&#xFF08;&#x6807;&#x91CF;&#x8FD0;&#x7B97;&#xFF09;&#x6216; tensor&#xFF08;&#x57FA;&#x672C;&#x5F20;&#x91CF;&#x64CD;&#x4F5C;&#xFF09;&#x66F4;&#x62BD;&#x8C61;&#x3002;  </li>
+<li>&#x5E38;&#x7528;&#x4E8E;&#x4F18;&#x5316;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7684;&#x8BA1;&#x7B97;&#xFF0C;&#x6BD4;&#x5982;&#x5377;&#x79EF;&#x6216;&#x77E9;&#x9635;&#x4E58;&#x6CD5;&#x3002;</li>
+</ul>
+<h3 id="62-linalg-dialect-&#x63D0;&#x4F9B;&#x4E86;&#x4EC0;&#x4E48;&#xFF1F;">6.2 linalg Dialect &#x63D0;&#x4F9B;&#x4E86;&#x4EC0;&#x4E48;&#xFF1F;</h3>
+<h4 id="&#x4E3B;&#x8981;&#x64CD;&#x4F5C;&#xFF08;op&#xFF09;">&#x4E3B;&#x8981;&#x64CD;&#x4F5C;&#xFF08;Op&#xFF09;</h4>
+<p>linalg Dialect &#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x7EC4;&#x9AD8;&#x5C42;&#x6B21;&#x7684;&#x5F20;&#x91CF;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x64CD;&#x4F5C;&#x540D;</th>
+<th>&#x4F5C;&#x7528;</th>
+<th>&#x7C7B;&#x6BD4;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>linalg.matmul</code></td>
+<td>&#x77E9;&#x9635;&#x4E58;&#x6CD5; (2D * 2D -&gt; 2D)</td>
+<td>&#x50CF; <code>np.matmul()</code></td>
+</tr>
+<tr>
+<td><code>linalg.batch_matmul</code></td>
+<td>&#x6279;&#x5904;&#x7406;&#x77E9;&#x9635;&#x4E58;&#x6CD5;</td>
+<td>&#x50CF;&#x6279;&#x91CF; <code>np.matmul()</code></td>
+</tr>
+<tr>
+<td><code>linalg.fill</code></td>
+<td>&#x7528;&#x5E38;&#x6570;&#x586B;&#x5145;&#x5F20;&#x91CF;</td>
+<td>&#x50CF; <code>np.full()</code></td>
+</tr>
+<tr>
+<td><code>linalg.generic</code></td>
+<td>&#x901A;&#x7528;&#x5F20;&#x91CF;&#x64CD;&#x4F5C;&#xFF08;&#x81EA;&#x5B9A;&#x4E49;&#x8BA1;&#x7B97;&#xFF09;</td>
+<td>&#x50CF;&#x81EA;&#x5B9A;&#x4E49; NumPy &#x8FD0;&#x7B97;</td>
+</tr>
+<tr>
+<td><code>linalg.indexed_generic</code></td>
+<td>&#x5E26;&#x7D22;&#x5F15;&#x7684;&#x901A;&#x7528;&#x64CD;&#x4F5C;</td>
+<td>&#x50CF;&#x5E26;&#x7D22;&#x5F15;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x8FD0;&#x7B97;</td>
+</tr>
+<tr>
+<td><code>linalg.conv_2d_nhwc_hwcf</code></td>
+<td>2D &#x5377;&#x79EF;&#xFF08;&#x5E38;&#x89C1;&#x4E8E; CNN&#xFF09;</td>
+<td>&#x50CF;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x4E2D;&#x7684;&#x5377;&#x79EF;</td>
+</tr>
+<tr>
+<td><code>linalg.transpose</code></td>
+<td>&#x5F20;&#x91CF;&#x8F6C;&#x7F6E;</td>
+<td>&#x50CF; <code>np.transpose()</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>&#x6CE8;&#x610F;</strong>&#xFF1A;linalg &#x4E0D;&#x5B9A;&#x4E49;&#x65B0;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x800C;&#x662F;&#x590D;&#x7528; tensor &#x548C; memref &#x7684;&#x7C7B;&#x578B;&#x3002;</li>
+</ul>
+<h4 id="&#x6BD4;&#x55BB;&#x603B;&#x7ED3;">&#x6BD4;&#x55BB;&#x603B;&#x7ED3;</h4>
+<p>linalg Dialect &#x5C31;&#x50CF;&#x4E00;&#x4E2A;&#x201C;&#x77E9;&#x9635;&#x8BA1;&#x7B97;&#x5927;&#x5E08;&#x201D;&#xFF0C;&#x53EF;&#x4EE5;&#x5FEB;&#x901F;&#x6267;&#x884C;&#x77E9;&#x9635;&#x4E58;&#x6CD5;&#x3001;&#x5377;&#x79EF;&#x7B49;&#x590D;&#x6742;&#x8FD0;&#x7B97;&#x3002;&#x5B83;&#x7AD9;&#x5728; tensor &#x548C; memref &#x7684;&#x80A9;&#x8180;&#x4E0A;&#xFF0C;&#x4E13;&#x6CE8;&#x4E8E;&#x9AD8;&#x5C42;&#x6B21;&#x7684;&#x6570;&#x5B66;&#x64CD;&#x4F5C;&#x3002;</p>
+<h3 id="63-&#x793A;&#x4F8B;&#x4EE3;&#x7801;">6.3 &#x793A;&#x4F8B;&#x4EE3;&#x7801;</h3>
+<p>&#x4EE5;&#x4E0B;&#x662F;&#x4E00;&#x4E2A;&#x793A;&#x4F8B;&#xFF0C;&#x5C55;&#x793A;&#x7528; <code>linalg.fill</code> &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5E38;&#x91CF;&#x5F20;&#x91CF;&#xFF1A;</p>
+<pre><code class="lang-mlir">func.func @fill_tensor(%cst: f32) -&gt; tensor&lt;4x4xf32&gt; {
+  %empty = tensor.empty() : tensor&lt;4x4xf32&gt;
+  %filled = linalg.fill ins(%cst: f32) outs(%empty: tensor&lt;4x4xf32&gt;) -&gt; tensor&lt;4x4xf32&gt;
+  return %filled : tensor&lt;4x4xf32&gt;
+}
+</code></pre>
+<p><strong>&#x89E3;&#x6790;</strong>&#xFF1A;</p>
+<ol>
+<li><p><code>%empty = tensor.empty() : tensor&lt;4x4xf32&gt;</code>&#xFF1A;  </p>
+<ul>
+<li>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7A7A;&#x7684; 4x4 &#x6D6E;&#x70B9;&#x5F20;&#x91CF;&#x3002;</li>
+</ul>
+</li>
+<li><p><code>%filled = linalg.fill ins(%cst: f32) outs(%empty: tensor&lt;4x4xf32&gt;)</code>&#xFF1A;  </p>
+<ul>
+<li>&#x7528;&#x5E38;&#x91CF; <code>%cst</code> &#x586B;&#x5145;&#x6574;&#x4E2A;&#x5F20;&#x91CF; <code>%empty</code>&#xFF0C;&#x751F;&#x6210;&#x65B0;&#x5F20;&#x91CF; <code>%filled</code>&#x3002;  </li>
+<li><code>ins</code> &#x8868;&#x793A;&#x8F93;&#x5165;&#xFF08;&#x586B;&#x5145;&#x503C;&#xFF09;&#xFF0C;<code>outs</code> &#x8868;&#x793A;&#x8F93;&#x51FA;&#x5F20;&#x91CF;&#x3002;</li>
+</ul>
+</li>
+<li><p><code>return %filled</code>&#xFF1A;  </p>
+<ul>
+<li>&#x8FD4;&#x56DE;&#x586B;&#x5145;&#x540E;&#x7684;&#x5F20;&#x91CF;&#x3002;</li>
+</ul>
+</li>
+</ol>
+<p><strong>&#x7C7B;&#x6BD4; Python &#x4EE3;&#x7801;&#xFF08;&#x4F7F;&#x7528; NumPy&#xFF09;</strong>&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fill_tensor</span><span class="hljs-params">(cst)</span>:</span>
+    empty = np.zeros((<span class="hljs-number">4</span>, <span class="hljs-number">4</span>), dtype=np.float32)
+    filled = np.full((<span class="hljs-number">4</span>, <span class="hljs-number">4</span>), cst, dtype=np.float32)
+    <span class="hljs-keyword">return</span> filled
+</code></pre>
+<h3 id="64-&#x5C0F;&#x7ED3;">6.4 &#x5C0F;&#x7ED3;</h3>
+<ul>
+<li><strong>linalg Dialect</strong> &#x63D0;&#x4F9B;&#x9AD8;&#x5C42;&#x6B21;&#x7684;&#x7EBF;&#x6027;&#x4EE3;&#x6570;&#x64CD;&#x4F5C;&#xFF0C;&#x9002;&#x5408;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x548C;&#x79D1;&#x5B66;&#x8BA1;&#x7B97;&#x3002;  </li>
+<li>&#x5E38;&#x89C1;&#x64CD;&#x4F5C;&#x5305;&#x62EC;&#x77E9;&#x9635;&#x4E58;&#x6CD5;&#x3001;&#x5377;&#x79EF;&#x3001;&#x586B;&#x5145;&#x7B49;&#xFF0C;&#x590D;&#x7528; tensor &#x548C; memref &#x7C7B;&#x578B;&#x3002;  </li>
+<li>&#x5B83;&#x662F; MLIR &#x4E2D;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x6A21;&#x578B;&#x7684;&#x6838;&#x5FC3;&#x4E2D;&#x95F4;&#x8868;&#x793A;&#x3002;</li>
+</ul>
+<hr>
+<h2 id="7-&#x603B;&#x7ED3;&#x4E0E;&#x5BF9;&#x6BD4;">7. &#x603B;&#x7ED3;&#x4E0E;&#x5BF9;&#x6BD4;</h2>
+<table>
+<thead>
+<tr>
+<th>Dialect</th>
+<th>&#x4F5C;&#x7528;</th>
+<th>&#x6838;&#x5FC3;&#x64CD;&#x4F5C;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x5178;&#x578B;&#x573A;&#x666F;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>builtin</strong></td>
+<td>&#x63D0;&#x4F9B;&#x7A0B;&#x5E8F;&#x7ED3;&#x6784;&#x548C;&#x57FA;&#x672C;&#x7C7B;&#x578B;</td>
+<td><code>module</code>, <code>func.func</code></td>
+<td><code>i32</code>, <code>f32</code>, &#x51FD;&#x6570;&#x7C7B;&#x578B;</td>
+<td>&#x7EC4;&#x7EC7;&#x4EE3;&#x7801;&#x7ED3;&#x6784;</td>
+</tr>
+<tr>
+<td><strong>arith</strong></td>
+<td>&#x6807;&#x91CF;&#x6570;&#x5B66;&#x8FD0;&#x7B97;</td>
+<td><code>addi</code>, <code>addf</code>, <code>constant</code>, <code>cmpi</code></td>
+<td>&#x65E0;&#xFF08;&#x7528; builtin &#x7C7B;&#x578B;&#xFF09;</td>
+<td>&#x57FA;&#x7840;&#x8BA1;&#x7B97;</td>
+</tr>
+<tr>
+<td><strong>scf</strong></td>
+<td>&#x7ED3;&#x6784;&#x5316;&#x63A7;&#x5236;&#x6D41;</td>
+<td><code>if</code>, <code>for</code>, <code>while</code>, <code>yield</code></td>
+<td>&#x65E0;&#xFF08;&#x7528; builtin &#x7C7B;&#x578B;&#xFF09;</td>
+<td>&#x5FAA;&#x73AF;&#x548C;&#x6761;&#x4EF6;&#x903B;&#x8F91;</td>
+</tr>
+<tr>
+<td><strong>memref</strong></td>
+<td>&#x5185;&#x5B58;&#x7BA1;&#x7406;</td>
+<td><code>alloc</code>, <code>load</code>, <code>store</code></td>
+<td><code>memref&lt;...&gt;</code></td>
+<td>&#x9AD8;&#x6548;&#x5185;&#x5B58;&#x64CD;&#x4F5C;</td>
+</tr>
+<tr>
+<td><strong>tensor</strong></td>
+<td>&#x4E0D;&#x53EF;&#x53D8;&#x5F20;&#x91CF;&#x64CD;&#x4F5C;</td>
+<td><code>empty</code>, <code>extract</code>, <code>insert</code>, <code>slice</code></td>
+<td><code>tensor&lt;...&gt;</code></td>
+<td>&#x5F20;&#x91CF;&#x8BA1;&#x7B97;</td>
+</tr>
+<tr>
+<td><strong>linalg</strong></td>
+<td>&#x7EBF;&#x6027;&#x4EE3;&#x6570;&#x64CD;&#x4F5C;</td>
+<td><code>matmul</code>, <code>fill</code>, <code>conv_2d</code></td>
+<td>&#x65E0;&#xFF08;&#x7528; tensor/memref &#x7C7B;&#x578B;&#xFF09;</td>
+<td>&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x548C;&#x77E9;&#x9635;&#x8FD0;&#x7B97;</td>
+</tr>
+</tbody>
+</table>
+<p><strong>&#x6BD4;&#x55BB;&#x603B;&#x89C8;</strong>&#xFF1A;</p>
+<ul>
+<li>builtin&#xFF1A;&#x623F;&#x5B50;&#x7684;&#x5730;&#x57FA;&#xFF0C;&#x5B9A;&#x4E49;&#x7ED3;&#x6784;&#x3002;  </li>
+<li>arith&#xFF1A;&#x8BA1;&#x7B97;&#x5668;&#xFF0C;&#x5904;&#x7406;&#x5355;&#x4E2A;&#x6570;&#x5B57;&#x3002;  </li>
+<li>scf&#xFF1A;&#x9065;&#x63A7;&#x5668;&#xFF0C;&#x63A7;&#x5236;&#x6267;&#x884C;&#x6D41;&#x7A0B;&#x3002;  </li>
+<li>memref&#xFF1A;&#x4ED3;&#x5E93;&#x7BA1;&#x7406;&#x5458;&#xFF0C;&#x7BA1;&#x7406;&#x5185;&#x5B58;&#x3002;  </li>
+<li>tensor&#xFF1A;&#x53EA;&#x8BFB;&#x76F8;&#x518C;&#xFF0C;&#x5904;&#x7406;&#x5F20;&#x91CF;&#x6570;&#x636E;&#x3002;  </li>
+<li>linalg&#xFF1A;&#x77E9;&#x9635;&#x5927;&#x5E08;&#xFF0C;&#x6267;&#x884C;&#x590D;&#x6742;&#x6570;&#x5B66;&#x8FD0;&#x7B97;&#x3002;</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Lab_2_Simple-Dialect.html" class="navigation navigation-prev " aria-label="Previous page: Dialect入门一配套Lab2">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Lab_4_Builtin_Dialect.html" class="navigation navigation-next " aria-label="Next page: Dialect入门二配套Lab4">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Dialect入门二","level":"1.11","depth":1,"next":{"title":"Dialect入门二配套Lab4","level":"1.12","depth":1,"path":"Lab_4_Builtin_Dialect.md","ref":"Lab_4_Builtin_Dialect.md","articles":[]},"previous":{"title":"Dialect入门一配套Lab2","level":"1.10","depth":1,"path":"Lab_2_Simple-Dialect.md","ref":"Lab_2_Simple-Dialect.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"}},"file":{"path":"MLIR_Dialect_Notes_module2.md","mtime":"2025-10-16T02:23:10.814Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-10-16T02:23:46.454Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

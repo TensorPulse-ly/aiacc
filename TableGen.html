@@ -1,0 +1,1378 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>TableGen 的用法 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="P4tutorial.html" />
+    
+    
+    <link rel="prev" href="Example_Page.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Example_Page.html">
+            
+                <a href="Example_Page.html">
+            
+                    
+                    Example Page
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="TableGen.html">
+            
+                <a href="TableGen.html">
+            
+                    
+                    TableGen 的用法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="P4tutorial.html">
+            
+                <a href="P4tutorial.html">
+            
+                    
+                    P4基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="MLIR_Dialect.html">
+            
+                <a href="MLIR_Dialect.html">
+            
+                    
+                    Dialect基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="FIFO_study.html">
+            
+                <a href="FIFO_study.html">
+            
+                    
+                    FIFO学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="TPU_MLIR_study.html">
+            
+                <a href="TPU_MLIR_study.html">
+            
+                    
+                    TPU-MLIR代码学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="MLIR_Dialect_Notes_module1.html">
+            
+                <a href="MLIR_Dialect_Notes_module1.html">
+            
+                    
+                    Dialect入门一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="Lab_1_Simple-Dialect.html">
+            
+                <a href="Lab_1_Simple-Dialect.html">
+            
+                    
+                    Dialect入门一配套Lab1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="Lab_2_Simple-Dialect.html">
+            
+                <a href="Lab_2_Simple-Dialect.html">
+            
+                    
+                    Dialect入门一配套Lab2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="MLIR_Dialect_Notes_module2.html">
+            
+                <a href="MLIR_Dialect_Notes_module2.html">
+            
+                    
+                    Dialect入门二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="Lab_4_Builtin_Dialect.html">
+            
+                <a href="Lab_4_Builtin_Dialect.html">
+            
+                    
+                    Dialect入门二配套Lab4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="Lab_5_Arith.html">
+            
+                <a href="Lab_5_Arith.html">
+            
+                    
+                    Dialect入门二配套Lab5
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="Lab_6.html">
+            
+                <a href="Lab_6.html">
+            
+                    
+                    Dialect入门二配套Lab6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="Lab_7_mem.html">
+            
+                <a href="Lab_7_mem.html">
+            
+                    
+                    Dialect入门二配套Lab7
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="Lab_8_Tensor.html">
+            
+                <a href="Lab_8_Tensor.html">
+            
+                    
+                    Dialect入门二配套Lab8
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="Lab_9_Linalg.html">
+            
+                <a href="Lab_9_Linalg.html">
+            
+                    
+                    Dialect入门二配套Lab9
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="MLIR_Dialect_Notes_module3.html">
+            
+                <a href="MLIR_Dialect_Notes_module3.html">
+            
+                    
+                    Dialect入门三
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="Lab_10_Optimization.html">
+            
+                <a href="Lab_10_Optimization.html">
+            
+                    
+                    Dialect入门三配套Lab10
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="Lab_Project_Sheet.html">
+            
+                <a href="Lab_Project_Sheet.html">
+            
+                    
+                    TPU-MLIR Lab Project
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="FIFO_study.html">
+            
+                <a href="FIFO_study.html">
+            
+                    
+                    FIFO学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="TPU_MLIR_study.html">
+            
+                <a href="TPU_MLIR_study.html">
+            
+                    
+                    TPU-MLIR代码学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="Linux_Command_Line.html">
+            
+                <a href="Linux_Command_Line.html">
+            
+                    
+                    Linux系统(服务器)常用指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="shell_study.html">
+            
+                <a href="shell_study.html">
+            
+                    
+                    .sh文件解释/Shell脚本常用语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="VCS_coverage_report_read.html">
+            
+                <a href="VCS_coverage_report_read.html">
+            
+                    
+                    VCS_coverage_report_read
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" >
+            
+                <a target="_blank" href="https://github.com/seclabBupt/aiacc/blob/main/docs/TPU-MLIR%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%80%EF%BC%89.md">
+            
+                    
+                    TPU-MLIR学习记录（一）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" >
+            
+                <a target="_blank" href="https://github.com/seclabBupt/aiacc/blob/main/docs/TPU-MLIR%20%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%BA%8C%EF%BC%89.md">
+            
+                    
+                    TPU-MLIR学习记录（二）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" >
+            
+                <a target="_blank" href="https://github.com/seclabBupt/aiacc/blob/main/docs/TPU-MLIR%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%89%EF%BC%89.md">
+            
+                    
+                    TPU-MLIR学习记录（三）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >TableGen 的用法</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="tablegen-&#x7684;&#x8BED;&#x6CD5;">TableGen &#x7684;&#x8BED;&#x6CD5;</h1>
+<p>TableGen &#x8BED;&#x6CD5;&#x7684;&#x5B98;&#x65B9;&#x6587;&#x6863;&#x94FE;&#x63A5;&#xFF1A;<a href="https://llvm.org/docs/TableGen/ProgRef.html" target="_blank">https://llvm.org/docs/TableGen/ProgRef.html</a> &#xFF08;&#x9644;&#x5F55;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x53C2;&#x8003;&#x8FD9;&#x4E2A;&#x94FE;&#x63A5;&#xFF09;</p>
+<h2 id="11-&#x7B80;&#x4ECB;">1.1 &#x7B80;&#x4ECB;</h2>
+<p>LLVM &#x7684; TableGen&#xFF08;&#x901A;&#x5E38;&#x7F29;&#x5199;&#x4E3A;tblgen&#xFF09;&#x662F;&#x4E00;&#x4E2A;&#x5F3A;&#x5927;&#x7684;&#x9886;&#x57DF;&#x7279;&#x5B9A;&#x8BED;&#x8A00;&#xFF08;DSL&#xFF09;&#x548C;&#x4EE3;&#x7801;&#x751F;&#x6210;&#x5DE5;&#x5177;&#xFF0C;&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x63CF;&#x8FF0;&#x548C;&#x751F;&#x6210;&#x4E0E;&#x67B6;&#x6784;&#x3001;&#x6307;&#x4EE4;&#x96C6;&#x3001;&#x65B9;&#x8A00;&#xFF08;Dialect&#xFF09;&#x3001;Pass &#x7B49;&#x76F8;&#x5173;&#x7684;&#x4EE3;&#x7801;&#x3002;TableGen &#x7684;&#x76EE;&#x7684;&#x662F;&#x6839;&#x636E;&#x6E90;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x4FE1;&#x606F;&#x751F;&#x6210;&#x590D;&#x6742;&#x7684;&#x8F93;&#x51FA;&#x6587;&#x4EF6;&#xFF0C;&#x8FD9;&#x4E9B;&#x6E90;&#x6587;&#x4EF6;&#x6BD4;&#x8F93;&#x51FA;&#x6587;&#x4EF6;&#x66F4;&#x5BB9;&#x6613;&#x7F16;&#x7801;&#xFF0C;&#x5E76;&#x4E14;&#x968F;&#x7740;&#x65F6;&#x95F4;&#x7684;&#x63A8;&#x79FB;&#x4E5F;&#x66F4;&#x5BB9;&#x6613;&#x7EF4;&#x62A4;&#x548C;&#x4FEE;&#x6539;&#x3002;&#x8BE5;&#x4FE1;&#x606F;&#x4EE5;&#x6D89;&#x53CA;&#x7C7B;&#x548C;&#x8BB0;&#x5F55;&#x7684;&#x58F0;&#x660E;&#x5F0F;&#x6837;&#x5F0F;&#x8FDB;&#x884C;&#x7F16;&#x7801;&#xFF0C;&#x7136;&#x540E;&#x7531; TableGen &#x5904;&#x7406;&#x3002;&#x8FD9;&#x4E9B;&#x8F93;&#x51FA;&#x6587;&#x4EF6;&#x901A;&#x5E38;&#x662F; <code>.inc</code> &#x6587;&#x4EF6;&#xFF0C;&#x6E90;&#x6587;&#x4EF6;&#x7684;&#x4E00;&#x822C;&#x662F; <code>.td</code> &#x6587;&#x4EF6;&#x3002;&#x5177;&#x4F53;&#x7684;&#x5185;&#x5BB9;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x4E0A;&#x65B9;&#x7684;&#x94FE;&#x63A5;&#x3002;</p>
+<h3 id="111-&#x6982;&#x5FF5;">1.1.1 &#x6982;&#x5FF5;</h3>
+<p><code>TableGen</code> &#x6E90;&#x6587;&#x4EF6;&#x4E3B;&#x8981;&#x5305;&#x542B; <code>&#x62BD;&#x8C61;&#x8BB0;&#x5F55;&#xFF08;abstract records&#xFF09;</code> &#x548C; <code>&#x5177;&#x4F53;&#x8BB0;&#x5F55;&#xFF08;concrete records&#xFF09;</code> &#x4E24;&#x7C7B;&#x5143;&#x7D20;&#xFF0C;&#x5176;&#x4E2D;&#x62BD;&#x8C61;&#x8BB0;&#x5F55;&#x5728;&#x6587;&#x6863;&#x4E2D;&#x88AB;&#x79F0;&#x4E3A; <code>&#x201C;&#x7C7B;&#x201D;&#xFF08;classes&#xFF0C;&#x4E0E; C++ &#x7C7B;&#x4E0D;&#x540C;&#xFF0C;&#x65E0;&#x76F4;&#x63A5;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#xFF09;</code>&#xFF0C;&#x5177;&#x4F53;&#x8BB0;&#x5F55;&#x5219;&#x5E38;&#x7B80;&#x79F0;&#x4E3A; <code>&#x201C;&#x8BB0;&#x5F55;&#x201D;&#xFF08;records&#xFF09;</code>&#xFF0C;&#x4E0D;&#x8FC7; <code>&#x201C;record&#x201D;</code> &#x4E00;&#x8BCD;&#x6709;&#x65F6;&#x4F1A;&#x540C;&#x65F6;&#x6307;&#x4EE3;&#x8FD9;&#x4E24;&#x8005;&#xFF0C;&#x9700;&#x7ED3;&#x5408;&#x4E0A;&#x4E0B;&#x6587;&#x533A;&#x5206;&#x3002;&#x7C7B;&#x548C;&#x5177;&#x4F53;&#x8BB0;&#x5F55;&#x90FD;&#x6709;&#x552F;&#x4E00;&#x540D;&#x79F0;&#xFF0C;&#x8BE5;&#x540D;&#x79F0;&#x53EF;&#x7531;&#x7A0B;&#x5E8F;&#x5458;&#x8BBE;&#x5B9A;&#x6216;&#x7531; <code>TableGen</code> &#x751F;&#x6210;&#xFF0C;&#x5B83;&#x4EEC;&#x5747;&#x5173;&#x8054;&#x7740;&#x5E26;&#x503C;&#x7684;&#x5B57;&#x6BB5;&#x5217;&#x8868;&#xFF0C;&#x4E14;&#x53EF;&#x62E5;&#x6709;&#x53EF;&#x9009;&#x7684;&#x7236;&#x7C7B;&#x5217;&#x8868;&#xFF08;&#x201C;&#x7236;&#x7C7B;&#x201D; &#x65E2;&#x53EF;&#x4EE5;&#x6307;&#x7C7B;&#x7684;&#x7236;&#x7C7B;&#xFF0C;&#x4E5F;&#x80FD;&#x6307;&#x5177;&#x4F53;&#x8BB0;&#x5F55;&#x7EE7;&#x627F;&#x7684;&#x7C7B;&#xFF0C;&#x8FD9;&#x79CD;&#x975E;&#x6807;&#x51C6;&#x7528;&#x6CD5;&#x6E90;&#x4E8E; <code>TableGen</code> &#x5BF9;&#x7C7B;&#x548C;&#x5177;&#x4F53;&#x8BB0;&#x5F55;&#x7684;&#x76F8;&#x4F3C;&#x5904;&#x7406;&#x65B9;&#x5F0F;&#xFF09;&#x3002;&#x5B57;&#x6BB5;&#x7684;&#x5177;&#x4F53;&#x542B;&#x4E49;&#x5B8C;&#x5168;&#x7531; <code>&#x540E;&#x7AEF;&#xFF08;backend&#xFF09;</code> &#x53CA;&#x4F7F;&#x7528;&#x540E;&#x7AEF;&#x8F93;&#x51FA;&#x7684;&#x7A0B;&#x5E8F;&#x51B3;&#x5B9A;&#xFF0C;<code>TableGen</code> &#x672C;&#x8EAB;&#x4E0D;&#x8D4B;&#x4E88;&#x5176;&#x610F;&#x4E49;&#x3002;</p>
+<p>&#x540E;&#x7AEF;&#x4F1A;&#x5904;&#x7406; <code>TableGen</code> &#x89E3;&#x6790;&#x5668;&#x6784;&#x5EFA;&#x7684;&#x90E8;&#x5206;&#x5177;&#x4F53;&#x8BB0;&#x5F55;&#xFF0C;&#x5E76;&#x751F;&#x6210;&#x8F93;&#x51FA;&#x6587;&#x4EF6;&#xFF0C;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x901A;&#x5E38;&#x662F; C++ &#x7684;.inc &#x6587;&#x4EF6;&#xFF0C;&#x4F9B;&#x9700;&#x8981;&#x8BB0;&#x5F55;&#x6570;&#x636E;&#x7684;&#x7A0B;&#x5E8F;&#x5305;&#x542B;&#xFF0C;&#x5F53;&#x7136;&#x540E;&#x7AEF;&#x4E5F;&#x80FD;&#x751F;&#x6210;&#x4EFB;&#x610F;&#x7C7B;&#x578B;&#x7684;&#x8F93;&#x51FA;&#x6587;&#x4EF6;&#x3002;&#x4EE5; LLVM &#x4EE3;&#x7801;&#x751F;&#x6210;&#x5668;&#x8FD9;&#x7C7B;&#x590D;&#x6742;&#x573A;&#x666F;&#x4E3A;&#x4F8B;&#xFF0C;&#x53EF;&#x80FD;&#x5B58;&#x5728;&#x5927;&#x91CF;&#x5177;&#x4F53;&#x8BB0;&#x5F55;&#xFF0C;&#x4E14;&#x90E8;&#x5206;&#x8BB0;&#x5F55;&#x7684;&#x5B57;&#x6BB5;&#x6570;&#x91CF;&#x8D85;&#x4E4E;&#x9884;&#x671F;&#xFF0C;&#x8FDB;&#x800C;&#x5BFC;&#x81F4;&#x8F93;&#x51FA;&#x6587;&#x4EF6;&#x4F53;&#x79EF;&#x8F83;&#x5927;&#x3002;</p>
+<p>&#x4E3A;&#x964D;&#x4F4E; <code>TableGen</code> &#x6587;&#x4EF6;&#x7684;&#x590D;&#x6742;&#x5EA6;&#xFF0C;&#x7C7B;&#x88AB;&#x7528;&#x4E8E;&#x62BD;&#x8C61;&#x8BB0;&#x5F55;&#x5B57;&#x6BB5;&#x7EC4;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x90E8;&#x5206;&#x7C7B;&#x53EF;&#x62BD;&#x8C61;&#x673A;&#x5668;&#x5BC4;&#x5B58;&#x5668;&#x6587;&#x4EF6;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x5176;&#x4ED6;&#x7C7B;&#x53EF;&#x62BD;&#x8C61;&#x6307;&#x4EE4;&#x683C;&#x5F0F;&#xFF0C;&#x8FD8;&#x6709;&#x7C7B;&#x80FD;&#x62BD;&#x8C61;&#x5355;&#x4E2A;&#x6307;&#x4EE4;&#x3002;<code>TableGen</code> &#x652F;&#x6301;&#x7C7B;&#x7684;&#x4EFB;&#x610F;&#x5C42;&#x6B21;&#x7ED3;&#x6784;&#xFF0C;&#x4F7F;&#x5F97;&#x4E24;&#x4E2A;&#x6982;&#x5FF5;&#x7684;&#x62BD;&#x8C61;&#x7C7B;&#x53EF;&#x5171;&#x4EAB;&#x7B2C;&#x4E09;&#x4E2A;&#x8D85;&#x7C7B;&#xFF0C;&#x4EE5;&#x4ECE;&#x8FD9;&#x4E24;&#x4E2A;&#x539F;&#x59CB;&#x6982;&#x5FF5;&#x4E2D;&#x62BD;&#x8C61;&#x51FA;&#x5171;&#x540C;&#x7684; &#x201C;&#x5B50;&#x6982;&#x5FF5;&#x201D;&#x3002;&#x6B64;&#x5916;&#xFF0C;&#x5177;&#x4F53;&#x8BB0;&#x5F55;&#xFF08;&#x6216;&#x5176;&#x4ED6;&#x7C7B;&#xFF09;&#x53EF;&#x5C06;&#x67D0;&#x4E2A;&#x7C7B;&#x4F5C;&#x4E3A;&#x7236;&#x7C7B;&#x5E76;&#x4F20;&#x9012; <code>&#x6A21;&#x677F;&#x53C2;&#x6570;&#xFF08;template arguments&#xFF09;</code>&#xFF0C;&#x7236;&#x7C7B;&#x5B57;&#x6BB5;&#x80FD;&#x901A;&#x8FC7;&#x8FD9;&#x4E9B;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x8FDB;&#x884C;&#x81EA;&#x5B9A;&#x4E49;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x5373;&#x4E0D;&#x540C;&#x7684;&#x8BB0;&#x5F55;&#x6216;&#x7C7B;&#x53EF;&#x5411;&#x540C;&#x4E00;&#x7236;&#x7C7B;&#x4F20;&#x9012;&#x4E0D;&#x540C;&#x7684;&#x6A21;&#x677F;&#x53C2;&#x6570;&#xFF0C;&#x907F;&#x514D;&#x4E86;&#x4E3A;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x7684;&#x6BCF;&#x4E2A;&#x7EC4;&#x5408;&#x90FD;&#x5355;&#x72EC;&#x5B9A;&#x4E49;&#x7C7B;&#x7684;&#x60C5;&#x51B5;&#x3002;</p>
+<p>&#x7C7B;&#x548C;&#x5177;&#x4F53;&#x8BB0;&#x5F55;&#x90FD;&#x53EF;&#x80FD;&#x5305;&#x542B;&#x672A;&#x521D;&#x59CB;&#x5316;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;&#x672A;&#x521D;&#x59CB;&#x5316;&#x7684;&#x503C;&#x7528; &#x201C;<code>&#xFF1F;</code>&#x201D; &#x8868;&#x793A;&#xFF0C;&#x7C7B;&#x4E2D;&#x7684;&#x672A;&#x521D;&#x59CB;&#x5316;&#x5B57;&#x6BB5;&#x901A;&#x5E38;&#x671F;&#x671B;&#x5728;&#x88AB;&#x5177;&#x4F53;&#x8BB0;&#x5F55;&#x7EE7;&#x627F;&#x65F6;&#x586B;&#x5145;&#xFF0C;&#x4F46;&#x5177;&#x4F53;&#x8BB0;&#x5F55;&#x7684;&#x67D0;&#x4E9B;&#x5B57;&#x6BB5;&#x4E5F;&#x53EF;&#x80FD;&#x4FDD;&#x6301;&#x672A;&#x521D;&#x59CB;&#x5316;&#x72B6;&#x6001;&#x3002;TableGen &#x8FD8;&#x63D0;&#x4F9B;&#x4E86; <code>&#x201C;&#x591A;&#x7C7B;&#x201D;&#xFF08;multiclasses&#xFF09;</code> &#x6765;&#x96C6;&#x4E2D;&#x6536;&#x96C6;&#x4E00;&#x7EC4;&#x8BB0;&#x5F55;&#x5B9A;&#x4E49;&#xFF0C;&#x591A;&#x7C7B;&#x7C7B;&#x4F3C;&#x5B8F;&#xFF0C;&#x53EF;&#x901A;&#x8FC7; &#x201C;&#x8C03;&#x7528;&#x201D; &#x4E00;&#x6B21;&#x6027;&#x5B9A;&#x4E49;&#x591A;&#x4E2A;&#x5177;&#x4F53;&#x8BB0;&#x5F55;&#xFF0C;&#x5E76;&#x4E14;&#x591A;&#x7C7B;&#x80FD;&#x7EE7;&#x627F;&#x5176;&#x4ED6;&#x591A;&#x7C7B;&#xFF0C;&#x4ECE;&#x800C;&#x7EE7;&#x627F;&#x7236;&#x591A;&#x7C7B;&#x7684;&#x6240;&#x6709;&#x5B9A;&#x4E49;&#x3002;</p>
+<h2 id="12-source-files">1.2 Source Files</h2>
+<p>TableGen &#x6E90;&#x6587;&#x4EF6;&#x662F;&#x7EAF; <code>ASCII</code> &#x6587;&#x672C;&#x6587;&#x4EF6;&#x3002;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x8BED;&#x53E5;&#x3001;&#x6CE8;&#x91CA;&#x548C;&#x7A7A;&#x884C;&#x3002;<code>TableGen</code> &#x6587;&#x4EF6;&#x7684;&#x6807;&#x51C6;&#x6587;&#x4EF6;&#x6269;&#x5C55;&#x540D;&#x662F; <code>.td</code>&#x3002;</p>
+<p>TableGen &#x6587;&#x4EF6;&#x53EF;&#x80FD;&#x4F1A;&#x53D8;&#x5F97;&#x975E;&#x5E38;&#x5927;&#xFF0C;&#x56E0;&#x6B64;&#x6709;&#x4E00;&#x79CD;&#x5305;&#x542B;&#x673A;&#x5236;&#xFF0C;&#x5141;&#x8BB8;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5305;&#x542B;&#x53E6;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x7684;&#x5185;&#x5BB9;&#x3002;&#x8FD9;&#x5141;&#x8BB8;&#x5C06;&#x5927;&#x6587;&#x4EF6;&#x5206;&#x89E3;&#x4E3A;&#x8F83;&#x5C0F;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x4E14;&#x8FD8;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x7B80;&#x5355;&#x7684;&#x5E93;&#x673A;&#x5236;&#xFF0C;&#x5176;&#x4E2D;&#x591A;&#x4E2A;&#x6E90;&#x6587;&#x4EF6;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x76F8;&#x540C;&#x7684;&#x5E93;&#x6587;&#x4EF6;&#x3002;</p>
+<p>TableGen &#x652F;&#x6301;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x9884;&#x5904;&#x7406;&#x5668;&#xFF0C;&#x8BE5;&#x9884;&#x5904;&#x7406;&#x5668;&#x53EF;&#x7528;&#x4E8E;&#x5BF9; <code>.td</code> &#x6587;&#x4EF6;&#x7684;&#x67D0;&#x4E9B;&#x90E8;&#x5206;&#x8FDB;&#x884C;&#x6761;&#x4EF6;&#x5316;&#x3002;</p>
+<h2 id="13-&#x8BCD;&#x6CD5;&#x5206;&#x6790;">1.3 &#x8BCD;&#x6CD5;&#x5206;&#x6790;</h2>
+<p>&#x6B64;&#x5904;&#x4F7F;&#x7528;&#x7684;&#x8BCD;&#x6CD5;&#x548C;&#x8BED;&#x6CD5;&#x8868;&#x793A;&#x6CD5;&#x65E8;&#x5728;&#x6A21;&#x4EFF; Python &#x7684;&#x8868;&#x793A;&#x6CD5;&#x3002;&#x7279;&#x522B;&#x662F;&#xFF0C;&#x5BF9;&#x4E8E;&#x8BCD;&#x6CD5;&#x5B9A;&#x4E49;&#xFF0C;&#x751F;&#x4EA7;&#x5728;&#x5B57;&#x7B26;&#x7EA7;&#x522B;&#x8FD0;&#x884C;&#xFF0C;&#x5143;&#x7D20;&#x4E4B;&#x95F4;&#x6CA1;&#x6709;&#x9690;&#x542B;&#x7684;&#x7A7A;&#x683C;&#x3002;&#x8BED;&#x6CD5;&#x5B9A;&#x4E49;&#x5728;&#x4EE4;&#x724C;&#x7EA7;&#x522B;&#x8FD0;&#x884C;&#xFF0C;&#x56E0;&#x6B64;&#x4EE4;&#x724C;&#x4E4B;&#x95F4;&#x5B58;&#x5728;&#x9690;&#x542B;&#x7684;&#x7A7A;&#x683C;&#x3002;</p>
+<p>TableGen &#x652F;&#x6301; BCPL &#x6837;&#x5F0F;&#x7684;&#x6CE8;&#x91CA; &#xFF08;<code>//``...</code>&#xFF09; &#x548C;&#x53EF;&#x5D4C;&#x5957;&#x7684; C &#x6837;&#x5F0F;&#x7684;&#x6CE8;&#x91CA; &#xFF08;<code>/* ...*/</code>&#xFF09;&#x3002;TableGen &#x8FD8;&#x63D0;&#x4F9B;&#x4E86;&#x7B80;&#x5355;&#x7684;&#x9884;&#x5904;&#x7406;&#x5DE5;&#x5177;&#x3002;</p>
+<p>&#x5728;&#x6253;&#x5370;&#x6587;&#x4EF6;&#x4EE5;&#x4F9B;&#x5BA1;&#x9605;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x6587;&#x4EF6;&#x4E2D;&#x81EA;&#x7531;&#x4F7F;&#x7528;&#x6362;&#x9875;&#x7B26;&#x4EE5;&#x751F;&#x6210;&#x5206;&#x9875;&#x7B26;&#x3002;</p>
+<p>&#x4EE5;&#x4E0B;&#x662F;&#x57FA;&#x672C;&#x7684;&#x6807;&#x70B9;&#x7B26;&#x53F7;&#xFF1A;</p>
+<pre><code>- + [ ] { } ( ) &lt; &gt; : ; . ... = ? #
+</code></pre><h3 id="131-literals">1.3.1 Literals</h3>
+<p>&#x6570;&#x5B57;&#x6587;&#x672C;&#x7684;&#x683C;&#x5F0F;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-go">**TokInteger    ** ::=  **DecimalInteger** | **HexInteger** | **BinInteger**** **<span class="hljs-comment">//&#x6574;&#x6570;&#x5E38;&#x91CF;&#x53EF;&#x4EE5;&#x662F;&#x5341;&#x8FDB;&#x5236;&#x3001;&#x5341;&#x516D;&#x8FDB;&#x5236;&#x6216;&#x4E8C;&#x8FDB;&#x5236;&#x4E2D;&#x7684;&#x4EFB;&#x610F;&#x4E00;&#x79CD;</span>
+**DecimalInteger** ::=  [<span class="hljs-string">&quot;+&quot;</span> | <span class="hljs-string">&quot;-&quot;</span>] (<span class="hljs-string">&quot;0&quot;</span>...<span class="hljs-string">&quot;9&quot;</span>)+ <span class="hljs-comment">//&#x5341;&#x8FDB;&#x5236;&#x6574;&#x6570;&#xFF0C;&#x524D;&#x7F00;&#x4E3A;+/-&#xFF0C;&#x4E0D;&#x53EF;&#x540C;&#x65F6;&#x51FA;&#x73B0;&#xFF0C;&#x6700;&#x540E;&#x7684;+&#x53F7;&#x4EE3;&#x8868;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x80FD;&#x524D;&#x5BFC;&#x4E3A;0</span>
+**HexInteger    ** ::=  <span class="hljs-string">&quot;0x&quot;</span> (<span class="hljs-string">&quot;0&quot;</span>...<span class="hljs-string">&quot;9&quot;</span> | <span class="hljs-string">&quot;a&quot;</span>...<span class="hljs-string">&quot;f&quot;</span> | <span class="hljs-string">&quot;A&quot;</span>...<span class="hljs-string">&quot;F&quot;</span>)+ <span class="hljs-comment">//&#x5341;&#x516D;&#x8FDB;&#x5236;&#x6574;&#x6570;&#xFF0C;&#x524D;&#x7F00;&#x5FC5;&#x987B;&#x4E3A;0x&#xFF0C;0X&#x4E0D;&#x6B63;&#x786E;&#xFF0C;&#x800C;&#x4E14;&#x8981;&#x6CE8;&#x610F;&#x540E;&#x9762;&#x5B57;&#x7B26;&#x7684;&#x8303;&#x56F4;</span>
+**BinInteger    ** ::=  <span class="hljs-string">&quot;0b&quot;</span> (<span class="hljs-string">&quot;0&quot;</span> | <span class="hljs-string">&quot;1&quot;</span>)+ <span class="hljs-comment">//&#x4E8C;&#x8FDB;&#x5236;&#x6574;&#x6570;&#xFF0C;&#x524D;&#x7F00;&#x5FC5;&#x987B;&#x4E3A;0b&#xFF0C;0B&#x4E0D;&#x6B63;&#x786E;&#xFF0C;&#x800C;&#x4E14;&#x8981;&#x6CE8;&#x610F;&#x540E;&#x9762;&#x5B57;&#x7B26;&#x7684;&#x8303;&#x56F4;</span>
+</code></pre>
+<p>&#x5B57;&#x7B26;&#x4E32;&#x6587;&#x672C;&#x7684;&#x683C;&#x5F0F;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-go">**TokString** ::=  <span class="hljs-string">&apos;&quot;&apos;</span> (non-<span class="hljs-string">&apos;&quot;&apos;</span> characters and escapes) <span class="hljs-string">&apos;&quot;&apos;</span> <span class="hljs-comment">//&#x5B57;&#x7B26;&#x4E32;</span>
+**TokCode  ** ::=  <span class="hljs-string">&quot;[{&quot;</span> (text not containing <span class="hljs-string">&quot;}]&quot;</span>) <span class="hljs-string">&quot;}]&quot;</span> <span class="hljs-comment">//&#x4EE3;&#x7801;&#x5757;</span>
+</code></pre>
+<p>&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x5B9A;&#x754C;&#x7B26;&#x662F;&#x7531;&#x53CC;&#x5F15;&#x53F7; <code>&quot;</code> &#x5305;&#x88F9;&#xFF0C;&#x5185;&#x5BB9;&#x53EF;&#x4EE5;&#x662F;&#x9664;&#x53CC;&#x5F15;&#x53F7; <code>&quot;</code> &#x4E4B;&#x5916;&#x7684;&#x4EFB;&#x610F;&#x5B57;&#x7B26;&#xFF0C;&#x5B83;&#x5141;&#x8BB8;&#x8F6C;&#x4E49;&#x5E8F;&#x5217;&#x3002;</p>
+<p>&#x5F53;&#x524D;&#x5B9E;&#x73B0;&#x63A5;&#x53D7;&#x4EE5;&#x4E0B;&#x8F6C;&#x4E49;&#x5E8F;&#x5217;&#xFF1A;<code>\\ \&apos; \&quot; \t \n</code>&#x3002;</p>
+<p>&#x4EE3;&#x7801;&#x5757;&#x662F;&#x7531; <code>[{&quot;</code> &#x5F00;&#x5934;&#xFF0C;<code>&quot;}]</code> &#x7ED3;&#x5C3E;&#xFF0C;&#x5176;&#x5185;&#x5BB9;&#x53EF;&#x4EE5;&#x662F;&#x4EFB;&#x610F;&#x6587;&#x672C;&#xFF0C;&#x4F46;&#x4E0D;&#x80FD;&#x5305;&#x542B; <code>&quot;}]&quot;</code>&#x3002;</p>
+<h3 id="132-identifiers">1.3.2 Identifiers</h3>
+<p>TableGen &#x5141;&#x8BB8; <code>TokIdentifier</code> &#x4EE5;&#x6574;&#x6570;&#x5F00;&#x5934;&#xFF0C;&#x4E14;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;&#x3002;</p>
+<pre><code class="lang-go">**ualpha       ** ::=  <span class="hljs-string">&quot;a&quot;</span>...<span class="hljs-string">&quot;z&quot;</span> | <span class="hljs-string">&quot;A&quot;</span>...<span class="hljs-string">&quot;Z&quot;</span> | <span class="hljs-string">&quot;_&quot;</span>  <span class="hljs-comment">//&#x5B57;&#x6BCD;&#x5B57;&#x7B26;</span>
+**TokIdentifier** ::=  (<span class="hljs-string">&quot;0&quot;</span>...<span class="hljs-string">&quot;9&quot;</span>)* **ualpha** (**ualpha** | <span class="hljs-string">&quot;0&quot;</span>...<span class="hljs-string">&quot;9&quot;</span>)* <span class="hljs-comment">//&#x6807;&#x8BC6;&#x7B26;</span>
+**TokVarName   ** ::=  <span class="hljs-string">&quot;$&quot;</span> **ualpha** (**ualpha** |  <span class="hljs-string">&quot;0&quot;</span>...<span class="hljs-string">&quot;9&quot;</span>)* <span class="hljs-comment">//&#x53D8;&#x91CF;&#x540D;</span>
+</code></pre>
+<p>TableGen &#x6709;&#x4EE5;&#x4E0B;&#x4FDD;&#x7559;&#x5173;&#x952E;&#x5B57;&#xFF0C;&#x4E0D;&#x80FD;&#x7528;&#x4F5C;&#x6807;&#x8BC6;&#x7B26;&#xFF1A;</p>
+<p><strong> assert</strong><code>bit         bits</code> <strong>class</strong> <code>` **code**</code>dag        <code>**def**</code>        dump     `</p>
+<p><strong> else</strong><code>falseforeach   defm        defset      defvar        field</code> <strong>if</strong> <code>` **in**</code>      `</p>
+<p><code>include     int        letlist    multiclass    string        then          true</code></p>
+<h3 id="133-bang-operators">1.3.3 Bang operators</h3>
+<p>TableGen &#x63D0;&#x4F9B;&#x4E86;&#x5177;&#x6709;&#x591A;&#x79CD;&#x7528;&#x9014;&#x7684; bang operator&#x3002;</p>
+<pre><code class="lang-yaml">**BangOperator** ::=  one of
+                  !add         !and         !cast        !con         !dag
+                  !div         !empty       !eq          !exists      !filter
+                  !find        !foldl       !foreach     !ge          !getdagarg
+                  !getdagname  !getdagop    !gt          !head        !if
+                  !initialized !instances   !interleave  !isa         !le
+                  !listconcat  !listflatten !listremove  !listsplat   !logtwo
+                  !lt          !match       !mul         !ne          !not
+                  !or          !range       !repr        !setdagarg   !setdagname
+                  !setdagop    !shl         !size        !sra         !srl
+                  !strconcat   !sub         !subst       !substr      !tail
+                  !tolower     !toupper     !xor
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x5982;&#x4E0B;&#x94FE;&#x63A5;&#xFF1A;<a href="https://llvm.org/docs/TableGen/ProgRef.html#appendix-a-bang-operators" target="_blank">https://llvm.org/docs/TableGen/ProgRef.html#appendix-a-bang-operators</a> &#x53BB;&#x67E5;&#x770B;&#x6BCF;&#x4E2A; bang operator &#x7684;&#x76F8;&#x5173;&#x63CF;&#x8FF0;&#x3002;</p>
+<p>cond operator &#x7684;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>**CondOperator** ::=  !cond
+</code></pre><h3 id="134-include-files">1.3.4 Include files</h3>
+<p>TableGen &#x5177;&#x6709; include &#x673A;&#x5236;&#xFF0C;&#x5305;&#x542B;&#x6587;&#x4EF6;&#x7684;&#x5185;&#x5BB9;&#x5728;&#x8BCD;&#x6CD5;&#x4E0A;&#x66FF;&#x6362; <code>include</code> &#x6307;&#x4EE4;&#xFF0C;&#x7136;&#x540E;&#x50CF;&#x6700;&#x521D;&#x5728;&#x4E3B;&#x6587;&#x4EF6;&#x4E2D;&#x4E00;&#x6837;&#x8FDB;&#x884C;&#x89E3;&#x6790;&#x3002;</p>
+<pre><code>**IncludeDirective** ::=  &quot;include&quot; **TokString** //&#x5176;&#x4E2D;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x7531;TokString&#x8868;&#x793A;&#xFF0C;&#x5173;&#x952E;&#x8BCD;&#x4E3A;include&#xFF0C;&#x4E0D;&#x5E26;#
+</code></pre><p>&#x63A5;&#x4E0B;&#x6765;&#x7684;&#x4EE3;&#x7801;&#x5B9A;&#x4E49;&#x4E86; TableGen &#x8BED;&#x8A00;&#x4E2D;&#x7684;&#x9884;&#x5904;&#x7406;&#x6307;&#x4EE4;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E; C/C++ &#x4E2D;&#x7684;&#x9884;&#x5904;&#x7406;&#x673A;&#x5236;&#xFF0C;&#x7528;&#x4E8E;&#x5728;&#x7F16;&#x8BD1;&#xFF08;&#x89E3;&#x6790;&#xFF09;&#x524D;&#x5BF9;&#x4EE3;&#x7801;&#x8FDB;&#x884C;&#x6587;&#x672C;&#x66FF;&#x6362;&#x6216;&#x6761;&#x4EF6;&#x8FC7;&#x6EE4;&#x3002;</p>
+<pre><code>**PreprocessorDirective** ::=  &quot;#define&quot; | &quot;#ifdef&quot; | &quot;#ifndef&quot;
+</code></pre><p><code>#define</code> &#x662F;&#x5B9A;&#x4E49;&#x5B8F;&#xFF08;&#x7C7B;&#x4F3C;&#x6587;&#x672C;&#x66FF;&#x6362;);<code>#ifdef</code> &#x8868;&#x793A;&#x5982;&#x679C;&#x5B8F;&#x5DF2;&#x5B9A;&#x4E49;&#x5219;&#x6267;&#x884C;&#x540E;&#x7EED;&#x4EE3;&#x7801;&#xFF1B;<code>#ifndef</code> &#x5219;&#x8868;&#x793A;&#x5982;&#x679C;&#x5B8F;&#x672A;&#x5B9A;&#x4E49;&#x5219;&#x6267;&#x884C;&#x540E;&#x7EED;&#x4EE3;&#x7801;&#x3002;</p>
+<h2 id="14-&#x7C7B;&#x578B;">1.4 &#x7C7B;&#x578B;</h2>
+<p>TableGen &#x8BED;&#x8A00;&#x662F;&#x9759;&#x6001;&#x7C7B;&#x578B;&#x7684;&#xFF0C;&#x4F7F;&#x7528;&#x7B80;&#x5355;&#x4F46;&#x5B8C;&#x6574;&#x7684;&#x7C7B;&#x578B;&#x7CFB;&#x7EDF;&#x3002;&#x7C7B;&#x578B;&#x7528;&#x4E8E;&#x68C0;&#x67E5;&#x9519;&#x8BEF;&#x3001;&#x6267;&#x884C;&#x9690;&#x5F0F;&#x8F6C;&#x6362;&#x4EE5;&#x53CA;&#x5E2E;&#x52A9;&#x754C;&#x9762;&#x8BBE;&#x8BA1;&#x4EBA;&#x5458;&#x9650;&#x5236;&#x5141;&#x8BB8;&#x7684;&#x8F93;&#x5165;&#x3002;&#x6BCF;&#x4E2A;&#x503C;&#x90FD;&#x9700;&#x8981;&#x5177;&#x6709;&#x5173;&#x8054;&#x7684;&#x7C7B;&#x578B;&#x3002;TableGen &#x652F;&#x6301;&#x4F4E;&#x7EA7;&#x7C7B;&#x578B;&#xFF08;&#x4F8B;&#x5982; <code>bit</code>&#xFF09;&#x548C;&#x9AD8;&#x7EA7;&#x7C7B;&#x578B;&#xFF08;&#x4F8B;&#x5982; <code>dag</code>&#xFF09;&#x7684;&#x6DF7;&#x5408;&#x3002;&#x8FD9;&#x79CD;&#x7075;&#x6D3B;&#x6027;&#x4F7F;&#x60A8;&#x80FD;&#x591F;&#x65B9;&#x4FBF;&#x3001;&#x7D27;&#x51D1;&#x5730;&#x63CF;&#x8FF0;&#x5404;&#x79CD;&#x8BB0;&#x5F55;&#x3002;</p>
+<pre><code class="lang-python">**Type   ** ::=  <span class="hljs-string">&quot;bit&quot;</span> | <span class="hljs-string">&quot;int&quot;</span> | <span class="hljs-string">&quot;string&quot;</span> | <span class="hljs-string">&quot;dag&quot;</span> | <span class="hljs-string">&quot;code&quot;</span>
+            | <span class="hljs-string">&quot;bits&quot;</span> <span class="hljs-string">&quot;&lt;&quot;</span> **TokInteger** <span class="hljs-string">&quot;&gt;&quot;</span>
+            | <span class="hljs-string">&quot;list&quot;</span> <span class="hljs-string">&quot;&lt;&quot;</span> **Type** <span class="hljs-string">&quot;&gt;&quot;</span>
+            | **ClassID****ClassID** ::=  **TokIdentifier**
+</code></pre>
+<p><code>bit</code> &#x662F;&#x53EF;&#x4EE5;&#x662F; 0 &#x6216; 1 &#x7684;&#x5E03;&#x5C14;&#x503C;&#xFF1B;<code>int</code> &#x7C7B;&#x578B;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684; 64 &#x4F4D;&#x6574;&#x6570;&#x503C;&#xFF0C;&#x4F8B;&#x5982; 5 &#x6216; -42&#xFF1B;<code>string</code> &#x7C7B;&#x578B;&#x8868;&#x793A;&#x4EFB;&#x610F;&#x957F;&#x5EA6;&#x7684;&#x6709;&#x5E8F;&#x5B57;&#x7B26;&#x5E8F;&#x5217;&#xFF1B;&#x5173;&#x952E;&#x5B57; <code>code</code> &#x662F; <code>string</code> &#x7684;&#x522B;&#x540D;&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x6307;&#x793A;&#x4E3A; code &#x7684;&#x5B57;&#x7B26;&#x4E32;&#x503C;&#x3002;</p>
+<p><code>bits&lt;</code> <em>n</em> <code>&gt;</code> &#x7C7B;&#x578B;&#x662F;&#x4EFB;&#x610F;&#x957F;&#x5EA6; <em>n</em> &#x7684;&#x56FA;&#x5B9A;&#x5927;&#x5C0F;&#x6574;&#x6570;&#xFF0C;&#x88AB;&#x89C6;&#x4E3A;&#x5355;&#x72EC;&#x7684;&#x4F4D;&#xFF0C;&#x8FD9;&#x4E9B;&#x4F4D;&#x53EF;&#x4EE5;&#x5355;&#x72EC;&#x8BBF;&#x95EE;&#x3002;&#x8FD9;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x5B57;&#x6BB5;&#x53EF;&#x7528;&#x4E8E;&#x8868;&#x793A;&#x6307;&#x4EE4;&#x4F5C;&#x4EE3;&#x7801;&#x3001;&#x5BC4;&#x5B58;&#x5668;&#x53F7;&#x6216;&#x5730;&#x5740;&#x6A21;&#x5F0F;/&#x5BC4;&#x5B58;&#x5668;/&#x4F4D;&#x79FB;&#xFF0C;&#x5B57;&#x6BB5;&#x7684;&#x4F4D;&#x53EF;&#x4EE5;&#x5355;&#x72EC;&#x8BBE;&#x7F6E;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x5B50;&#x5B57;&#x6BB5;&#x8BBE;&#x7F6E;&#xFF0C;&#x4F8B;&#x5982;&#xFF0C;&#x5728;&#x6307;&#x4EE4;&#x5730;&#x5740;&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x5355;&#x72EC;&#x8BBE;&#x7F6E;&#x5BFB;&#x5740;&#x6A21;&#x5F0F;&#x3001;&#x57FA;&#x5740;&#x5BC4;&#x5B58;&#x5668;&#x53F7;&#x548C;&#x4F4D;&#x79FB;&#x3002;</p>
+<p><code>list&lt;</code> <em>type</em> <code>&gt;</code> &#x6B64;&#x7C7B;&#x578B;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x5217;&#x8868;&#xFF0C;&#x5176;&#x5143;&#x7D20;&#x5C5E;&#x4E8E;&#x5C16;&#x62EC;&#x53F7;&#x4E2D;&#x6307;&#x5B9A;&#x7684;&#x7C7B;&#x578B;&#x3002;&#x5143;&#x7D20;&#x7C7B;&#x578B;&#x662F;&#x4EFB;&#x610F;&#x7684;;&#x5B83;&#x751A;&#x81F3;&#x53EF;&#x4EE5;&#x662F;&#x53E6;&#x4E00;&#x79CD;&#x5217;&#x8868;&#x7C7B;&#x578B;&#x3002;&#x5217;&#x8868;&#x5143;&#x7D20;&#x4ECE; 0 &#x5F00;&#x59CB;&#x7D22;&#x5F15;&#x3002;</p>
+<p>&#x6B64;&#x7C7B;&#x578B;&#x8868;&#x793A;&#x8282;&#x70B9;&#x7684;&#x53EF;&#x5D4C;&#x5957;&#x6709;&#x5411;&#x65E0;&#x73AF;&#x56FE; &#xFF08;DAG&#xFF09;&#x3002;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x90FD;&#x6709;&#x4E00;&#x4E2A;<em>&#x8FD0;&#x7B97;&#x7B26;</em>&#x548C;&#x96F6;&#x4E2A;&#x6216;&#x591A;&#x4E2A;<em>&#x53C2;&#x6570; </em>&#xFF08;&#x6216;<em>&#x4F5C;&#x6570; </em>&#xFF09;&#x3002;&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x662F;&#x53E6;&#x4E00;&#x4E2A; <code>DAG</code> &#x5BF9;&#x8C61;&#xFF0C;&#x5141;&#x8BB8;&#x4EFB;&#x610F;&#x8282;&#x70B9;&#x548C;&#x8FB9;&#x6811;&#x3002;&#x4F8B;&#x5982;&#xFF0C;DAG &#x7528;&#x4E8E;&#x8868;&#x793A;&#x4EE3;&#x7801;&#x6A21;&#x5F0F;&#xFF0C;&#x4F9B;&#x4EE3;&#x7801;&#x751F;&#x6210;&#x5668;&#x6307;&#x4EE4;&#x9009;&#x62E9;&#x7B97;&#x6CD5;&#x4F7F;&#x7528;&#x3002;</p>
+<p><code>ClassID</code> &#x5728;&#x7C7B;&#x578B;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x6307;&#x5B9A;&#x7C7B;&#x540D;&#x8868;&#x793A;&#x5B9A;&#x4E49;&#x503C;&#x7684;&#x7C7B;&#x578B;&#x5FC5;&#x987B;&#x662F;&#x6307;&#x5B9A;&#x7C7B;&#x7684;&#x5B50;&#x7C7B;&#x3002;&#x8FD9;&#x4E0E; <code>list&lt;</code> <em>type</em> <code>&gt;</code> &#x7C7B;&#x578B;&#x7ED3;&#x5408;&#x4F7F;&#x7528;&#x5F88;&#x6709;&#x7528;;&#x4F8B;&#x5982;&#xFF0C;&#x8981;&#x5C06;&#x5217;&#x8868;&#x7684;&#x5143;&#x7D20;&#x7EA6;&#x675F;&#x5230;&#x516C;&#x5171;&#x57FA;&#x7C7B;&#xFF08;&#x4F8B;&#x5982;&#xFF0C;<code>list&lt;Register&gt;</code> &#x53EA;&#x80FD;&#x5305;&#x542B;&#x4ECE; <code>Register</code> &#x7C7B;&#x6D3E;&#x751F;&#x7684;&#x5B9A;&#x4E49;&#xFF09;&#x3002;<code>ClassID</code> &#x5FC5;&#x987B;&#x547D;&#x540D;&#x5148;&#x524D;&#x58F0;&#x660E;&#x6216;&#x5B9A;&#x4E49;&#x7684;&#x7C7B;&#x3002;</p>
+<h2 id="15-values-and-expression">1.5 Values and Expression</h2>
+<p><code>TableGen</code> &#x8BED;&#x53E5;&#x4E2D;&#x6709;&#x8BB8;&#x591A;&#x4E0A;&#x4E0B;&#x6587;&#x9700;&#x8981; <code>values</code>&#x3002;&#x4E00;&#x4E2A;&#x5E38;&#x89C1;&#x7684;&#x793A;&#x4F8B;&#x662F;&#x5728; <code>record</code> &#x7684;&#x5B9A;&#x4E49;&#x4E2D;&#xFF0C;&#x5176;&#x4E2D;&#x6BCF;&#x4E2A;&#x5B57;&#x6BB5;&#x90FD;&#x7531;&#x540D;&#x79F0;&#x548C;&#x53EF;&#x9009;&#x503C;&#x6307;&#x5B9A;&#x3002;<code>TableGen</code> &#x5728;&#x6784;&#x5EFA;&#x503C;&#x8868;&#x8FBE;&#x5F0F;&#x65F6;&#x5141;&#x8BB8;&#x5408;&#x7406;&#x6570;&#x91CF;&#x7684;&#x4E0D;&#x540C;&#x5F62;&#x5F0F;&#x3002;&#x8FD9;&#x4E9B;&#x5F62;&#x5F0F;&#x5141;&#x8BB8;&#x4EE5;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x81EA;&#x7136;&#x7684;&#x8BED;&#x6CD5;&#x7F16;&#x5199; <code>TableGen</code> &#x6587;&#x4EF6;&#x3002;</p>
+<pre><code class="lang-go">**Value        ** ::=  **SimpleValue** **ValueSuffix***
+                  | **Value** <span class="hljs-string">&quot;#&quot;</span> [**Value**]
+**ValueSuffix  ** ::=  <span class="hljs-string">&quot;{&quot;</span> **RangeList** <span class="hljs-string">&quot;}&quot;</span>
+                  | <span class="hljs-string">&quot;[&quot;</span> **SliceElements** <span class="hljs-string">&quot;]&quot;</span>
+                  | <span class="hljs-string">&quot;.&quot;</span> **TokIdentifier****RangeList    ** ::=  **RangePiece** (<span class="hljs-string">&quot;,&quot;</span> **RangePiece**)*
+**RangePiece   ** ::=  **TokInteger**
+                  | **TokInteger** <span class="hljs-string">&quot;...&quot;</span> **TokInteger**
+                  | **TokInteger** <span class="hljs-string">&quot;-&quot;</span> **TokInteger**
+                  | **TokInteger** **TokInteger****SliceElements** ::=  (**SliceElement** <span class="hljs-string">&quot;,&quot;</span>)* **SliceElement** <span class="hljs-string">&quot;,&quot;</span>?
+**SliceElement ** ::=  **Value**
+                  | **Value** <span class="hljs-string">&quot;...&quot;</span> **Value**
+                  | **Value** <span class="hljs-string">&quot;-&quot;</span> **Value**
+                  | **Value** **TokInteger**
+</code></pre>
+<h3 id="151-simple-values">1.5.1 Simple values</h3>
+<p><strong>SimpleValue</strong> &#x6709;&#x591A;&#x79CD;&#x5F62;&#x5F0F;&#x3002;</p>
+<pre><code>**SimpleValue ** ::=  **SimpleValue1**
+                 | **SimpleValue2**
+                 | **SimpleValue3**
+                 | **SimpleValue4**
+                 | **SimpleValue5**
+                 | **SimpleValue6**
+                 | **SimpleValue7**
+                 | **SimpleValue8**
+                 | **SimpleValue9**
+</code></pre><pre><code>**SimpleValue1** ::=  **TokInteger** | **TokString**+ | **TokCode**
+</code></pre><p>Value &#x53EF;&#x4EE5;&#x662F;&#x6574;&#x6570;&#x6587;&#x672C;&#x3001;&#x5B57;&#x7B26;&#x4E32;&#x6587;&#x672C;&#x6216;&#x4EE3;&#x7801;&#x6587;&#x672C;&#x3002;&#x591A;&#x4E2A;&#x76F8;&#x90BB;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x6587;&#x672C;&#x4E0E; C/C++ &#x4E2D;&#x4E00;&#x6837;&#x8FDE;&#x63A5;;&#x7B80;&#x5355;&#x503C;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x8FDE;&#x63A5;&#x3002;&#x4EE3;&#x7801;&#x6587;&#x672C;&#x53D8;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x7136;&#x540E;&#x4E0E;&#x5B83;&#x4EEC;&#x65E0;&#x6CD5;&#x533A;&#x5206;&#x3002;</p>
+<pre><code>**SimpleValue2** ::=  &quot;true&quot; | &quot;false&quot;
+</code></pre><p><code>true</code> &#x548C; <code>false</code> &#x6587;&#x5B57;&#x672C;&#x8D28;&#x4E0A;&#x662F;&#x6574;&#x6570;&#x503C; 1 &#x548C; 0 &#x7684;&#x8BED;&#x6CD5;&#x7CD6;&#x3002;&#x5F53;&#x5E03;&#x5C14;&#x503C;&#x7528;&#x4E8E;&#x5B57;&#x6BB5;&#x521D;&#x59CB;&#x5316;&#x3001;&#x4F4D;&#x5E8F;&#x5217;&#xFF0C;if &#x8BED;&#x53E5;&#x65F6;&#xFF0C;&#x5B83;&#x4EEC;&#x63D0;&#x9AD8;&#x4E86; TableGen &#x6587;&#x4EF6;&#x7684;&#x53EF;&#x8BFB;&#x6027;&#xFF0C;&#x89E3;&#x6790;&#x65F6;&#xFF0C;&#x8FD9;&#x4E9B; Literals &#x5C06;&#x8F6C;&#x6362;&#x4E3A;&#x6574;&#x6570;&#x3002;</p>
+<pre><code>**SimpleValue3** ::=  &quot;?&quot;
+</code></pre><p>&#x95EE;&#x53F7;&#x8868;&#x793A;&#x672A;&#x521D;&#x59CB;&#x5316;&#x7684;&#x503C;&#x3002;</p>
+<pre><code>**SimpleValue4** ::=  &quot;{&quot; [**ValueList**] &quot;}&quot;
+**ValueList   ** ::=  **ValueListNE**
+**ValueListNE ** ::=  **Value** (&quot;,&quot; **Value**)*
+</code></pre><p>&#x8FD9;&#x65F6; Value &#x8868;&#x793A;&#x4E00;&#x4E2A;&#x4F4D;&#x5E8F;&#x5217;&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x521D;&#x59CB;&#x5316; <code>bits&lt;</code> <em>n</em> <code>&gt;</code> &#x5B57;&#x6BB5;&#xFF08;&#x6CE8;&#x610F;&#x5927;&#x62EC;&#x53F7;&#xFF09;&#x3002;&#x6267;&#x884C;&#x6B64;&#x64CD;&#x4F5C;&#x65F6;&#xFF0C;&#x8FD9;&#x4E9B;&#x503C;&#x5FC5;&#x987B;&#x8868;&#x793A;&#x603B;&#x5171; <em>n</em> &#x4F4D;&#x3002;</p>
+<pre><code>**SimpleValue5** ::=  &quot;[&quot; **ValueList** &quot;]&quot; [&quot;&lt;&quot; **Type** &quot;&gt;&quot;]
+</code></pre><p>&#x8FD9;&#x65F6; Value &#x662F;&#x5217;&#x8868;&#x521D;&#x59CB;&#x503C;&#x8BBE;&#x5B9A;&#x9879;&#xFF08;&#x6CE8;&#x610F;&#x62EC;&#x53F7;&#xFF09;&#xFF0C;&#x62EC;&#x53F7;&#x4E2D;&#x7684;&#x503C;&#x662F;&#x5217;&#x8868;&#x7684;&#x5143;&#x7D20;&#x3002;&#x53EF;&#x9009;&#x7684; <strong>Type</strong> &#x53EF;&#x7528;&#x4E8E;&#x6307;&#x793A;&#x7279;&#x5B9A;&#x7684;&#x5143;&#x7D20;&#x7C7B;&#x578B;;&#x5426;&#x5219;&#xFF0C;&#x5C06;&#x4ECE;&#x7ED9;&#x5B9A;&#x7684;&#x503C;&#x63A8;&#x65AD;&#x5143;&#x7D20;&#x7C7B;&#x578B;&#x3002;TableGen &#x901A;&#x5E38;&#x53EF;&#x4EE5;&#x63A8;&#x65AD;&#x7C7B;&#x578B;&#xFF0C;&#x4F46;&#x6709;&#x65F6;&#x5F53;&#x503C;&#x4E3A;&#x7A7A;&#x5217;&#x8868; &#xFF08;<code>[]</code>&#xFF09; &#x65F6;&#x4E0D;&#x80FD;&#x63A8;&#x65AD;&#x3002;</p>
+<pre><code class="lang-go">**SimpleValue6** ::=  <span class="hljs-string">&quot;(&quot;</span> **DagArg** [**DagArgList**] <span class="hljs-string">&quot;)&quot;</span>
+**DagArgList  ** ::=  **DagArg** (<span class="hljs-string">&quot;,&quot;</span> **DagArg**)*
+**DagArg      ** ::=  **Value** [<span class="hljs-string">&quot;:&quot;</span> **TokVarName**] | **TokVarName**
+</code></pre>
+<p>&#x8FD9;&#x8868;&#x793A; DAG &#x521D;&#x59CB;&#x503C;&#x8BBE;&#x5B9A;&#x9879;&#xFF08;&#x6CE8;&#x610F;&#x62EC;&#x53F7;&#xFF09;&#x3002;&#x7B2C;&#x4E00;&#x4E2A; <strong>DagArg</strong> &#x79F0;&#x4E3A; DAG &#x7684;&#x201C;&#x8FD0;&#x7B97;&#x7B26;&#x201D;&#xFF0C;&#x5E76;&#x4E14;&#x5FC5;&#x987B;&#x662F; <code>record</code>&#x3002;</p>
+<pre><code>**SimpleValue7** ::=  **TokIdentifier**
+</code></pre><p>&#x6807;&#x8BC6;&#x7B26;&#xFF08;<code>TokIdentifier</code>&#xFF09;&#x5F15;&#x7528;&#x4E0D;&#x540C;&#x4F5C;&#x7528;&#x57DF;&#x7684;&#x5B9E;&#x4F53;&#x3002;</p>
+<p><strong>&#x5F15;&#x7528;&#x7C7B;&#x5B9A;&#x4E49;&#x4E2D;&#x58F0;&#x660E;&#x7684;&#x6A21;&#x677F;&#x53C2;&#x6570;</strong></p>
+<pre><code>class Foo &lt;int Bar&gt; {  // &#x6A21;&#x677F;&#x53C2;&#x6570;Bar
+  int Baz = Bar;  // &#x5F15;&#x7528;&#x6A21;&#x677F;&#x53C2;&#x6570;Bar&#x7684;&#x503C;
+}
+
+def Inst : Foo&lt;10&gt;;  // &#x5B9E;&#x4F8B;&#x5316;&#x65F6;Bar=10&#xFF0C;Baz=10
+</code></pre><p><strong>&#x5F15;&#x7528;&#x7C7B;&#x4F53;&#x5185;&#x90E8;&#x5B9A;&#x4E49;&#x7684;&#x5B57;&#x6BB5;</strong></p>
+<pre><code class="lang-java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span> </span>{
+  <span class="hljs-keyword">int</span> Bar = <span class="hljs-number">5</span>;  <span class="hljs-comment">// &#x7C7B;&#x672C;&#x5730;&#x5B57;&#x6BB5;Bar</span>
+  <span class="hljs-keyword">int</span> Baz = Bar;  <span class="hljs-comment">// &#x5F15;&#x7528;&#x672C;&#x5730;&#x5B57;&#x6BB5;Bar</span>
+}
+
+<span class="hljs-keyword">int</span> Val = Foo&lt;&gt;.Bar;  <span class="hljs-comment">// &#x533F;&#x540D;&#x5B9E;&#x4F8B;&#x5316;&#xFF0C;&#x83B7;&#x53D6;Bar=5</span>
+</code></pre>
+<p><strong>&#x5F15;&#x7528;&#x5DF2;&#x5B9A;&#x4E49;&#x7684;&#x8BB0;&#x5F55;&#xFF08;**</strong>def<strong>**&#xFF09;&#x540D;&#x79F0;</strong></p>
+<pre><code>def Bar : SomeClass {  // &#x8BB0;&#x5F55;&#x5B9A;&#x4E49;Bar
+  int X = 5;
+}
+
+def Foo {
+  SomeClass Baz = Bar;  // &#x5F15;&#x7528;&#x8BB0;&#x5F55;Bar
+}
+</code></pre><p><strong>&#x5F15;&#x7528;&#x8BB0;&#x5F55;&#x4F53;&#x5185;&#x90E8;&#x5B9A;&#x4E49;&#x7684;&#x5B57;&#x6BB5;</strong></p>
+<pre><code>def Foo {
+  int Bar = 5;  // &#x8BB0;&#x5F55;&#x672C;&#x5730;&#x5B57;&#x6BB5;Bar
+  int Baz = Bar;  // &#x5F15;&#x7528;&#x672C;&#x5730;&#x5B57;&#x6BB5;Bar
+}
+
+int Val = Foo.Bar;  // &#x901A;&#x8FC7;&#x8BB0;&#x5F55;&#x540D;&#x8BBF;&#x95EE;&#x5B57;&#x6BB5;
+</code></pre><p>&#x53EF;&#x4EE5;&#x91C7;&#x7528;&#x76F8;&#x540C;&#x7684;&#x65B9;&#x5F0F;&#x8BBF;&#x95EE;&#x4ECE; <code>record</code> &#x7684;&#x7236;&#x7C7B;&#x7EE7;&#x627F;&#x7684;&#x5B57;&#x6BB5;&#x3002;</p>
+<p><strong>&#x5F15;&#x7528;&#x591A;&#x7C7B;&#xFF08;**</strong>multiclass<strong>**&#xFF09;&#x5B9A;&#x4E49;&#x4E2D;&#x7684;&#x6A21;&#x677F;&#x53C2;&#x6570;</strong></p>
+<pre><code>multiclass Foo &lt;int Bar&gt; {  // &#x591A;&#x7C7B;&#x6A21;&#x677F;&#x53C2;&#x6570;Bar
+  def : SomeClass&lt;Bar&gt;;  // &#x4F7F;&#x7528;&#x6A21;&#x677F;&#x53C2;&#x6570;Bar
+}
+
+def Inst : Foo&lt;20&gt;;  // &#x5B9E;&#x4F8B;&#x5316;&#x65F6;Bar=20
+</code></pre><p><strong>&#x5F15;&#x7528;&#x901A;&#x8FC7;**</strong>defvar<strong><strong>/</strong></strong>defset<strong>**&#x5B9A;&#x4E49;&#x7684;&#x53D8;&#x91CF;</strong></p>
+<pre><code>defvar GlobalVar = 100;  // &#x5168;&#x5C40;&#x53D8;&#x91CF;
+
+def Record {
+  defset localVar = 20;  // &#x8BB0;&#x5F55;&#x5185;&#x5C40;&#x90E8;&#x53D8;&#x91CF;
+  int Val = localVar;
+}
+</code></pre><p><strong>&#x5F15;&#x7528; foreach &#x5FAA;&#x73AF;&#x4E2D;&#x7684;&#x8FED;&#x4EE3;&#x53D8;&#x91CF;</strong></p>
+<pre><code>foreach i = 0...5 in {  // &#x8FED;&#x4EE3;&#x53D8;&#x91CF;i
+  def Foo#i : Instruction {
+    int Opcode = i;  // &#x4F7F;&#x7528;&#x8FED;&#x4EE3;&#x53D8;&#x91CF;i
+  }
+}
+</code></pre><pre><code>**SimpleValue8** ::=  **ClassID** &quot;&lt;&quot; **ArgValueList** &quot;&gt;&quot;
+</code></pre><p>&#x6B64;&#x8868;&#x5355;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x533F;&#x540D;&#x8BB0;&#x5F55;&#x5B9A;&#x4E49;&#xFF08;&#x5C31;&#x50CF;&#x7531;&#x4E00;&#x4E2A;&#x672A;&#x547D;&#x540D;&#x7684; <code>def</code>&#xFF0C;&#x7EE7;&#x627F;&#x81EA;&#x6307;&#x5B9A;&#x7C7B;&#x5E76;&#x4F20;&#x9012;&#x6A21;&#x677F;&#x53C2;&#x6570;&#xFF09;&#xFF0C;<code>value</code> &#x5C31;&#x662F;&#x8BE5;&#x8BB0;&#x5F55;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x540E;&#x7F00;&#x83B7;&#x53D6;&#x8BB0;&#x5F55;&#x7684;&#x5B57;&#x6BB5;&#x3002;</p>
+<pre><code class="lang-go">**SimpleValue9** ::=  **BangOperator** [<span class="hljs-string">&quot;&lt;&quot;</span> **Type** <span class="hljs-string">&quot;&gt;&quot;</span>] <span class="hljs-string">&quot;(&quot;</span> **ValueListNE** <span class="hljs-string">&quot;)&quot;</span>
+                 | **CondOperator** <span class="hljs-string">&quot;(&quot;</span> **CondClause** (<span class="hljs-string">&quot;,&quot;</span> **CondClause**)* <span class="hljs-string">&quot;)&quot;</span>
+**CondClause  ** ::=  **Value** <span class="hljs-string">&quot;:&quot;</span> **Value**
+</code></pre>
+<p><code>bang operators</code> &#x63D0;&#x4F9B;&#x5176;&#x4ED6;&#x7B80;&#x5355;&#x503C;&#x4E0D;&#x53EF;&#x7528;&#x7684;&#x51FD;&#x6570;&#x3002;&#x9664; <code>&#xFF01;cond</code> &#x7684;&#x60C5;&#x51B5;&#x5916;&#xFF0C;<code>bang operators</code> &#x91C7;&#x7528;&#x62EC;&#x53F7;&#x4E2D;&#x7684;&#x53C2;&#x6570;&#x5217;&#x8868;&#xFF0C;&#x5E76;&#x5BF9;&#x8FD9;&#x4E9B;&#x53C2;&#x6570;&#x6267;&#x884C;&#x67D0;&#x4E9B;&#x529F;&#x80FD;&#xFF0C;&#x4ECE;&#x800C;&#x4E3A;&#x8BE5; <code>bang operators</code> &#x751F;&#x6210;&#x4E00;&#x4E2A;&#x503C;&#x3002;<code>&#xFF01;cond</code> &#x8FD0;&#x7B97;&#x7B26;&#x91C7;&#x7528;&#x7531;&#x5192;&#x53F7;&#x5206;&#x9694;&#x7684;&#x53C2;&#x6570;&#x5BF9;&#x7684;&#x5217;&#x8868;&#x3002;Type &#x4EC5;&#x63A5;&#x53D7;&#x67D0;&#x4E9B; <code>bang operators</code>&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x5F97;&#x4E3A; <code>code</code>&#x3002;</p>
+<h3 id="152-suffixed-values">1.5.2 Suffixed values</h3>
+<p><strong>SimpleValue</strong> &#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x67D0;&#x4E9B;&#x540E;&#x7F00;&#x6307;&#x5B9A;&#xFF0C;&#x540E;&#x7F00;&#x7684;&#x76EE;&#x7684;&#x662F;&#x83B7;&#x53D6;&#x4E3B;&#x503C;&#x7684;&#x5B50;&#x503C;&#xFF0C;&#x4EE5;&#x4E0B;&#x662F;&#x67D0;&#x4E9B;&#x4E3B;&#x503C;&#x7684;&#x53EF;&#x80FD;&#x540E;&#x7F00;&#x3002;</p>
+<ol>
+<li>&#x4F4D;&#x63D0;&#x53D6;&#x64CD;&#x4F5C;&#xFF08;&#x5927;&#x62EC;&#x53F7; <code>{}</code>&#xFF09;<ol>
+<li>&#x5355;&#x6BD4;&#x7279;&#x63D0;&#x53D6;&#x8BED;&#x6CD5;&#x683C;&#x5F0F;&#x4E3A; <code>value{bit}</code>&#x3002;</li>
+</ol>
+</li>
+</ol>
+<pre><code>defvar x = 0b10101010;  // &#x4E8C;&#x8FDB;&#x5236;10101010&#xFF08;&#x5341;&#x8FDB;&#x5236;170&#xFF09;
+int bit7 = x{7};        // &#x63D0;&#x53D6;&#x7B2C;7&#x4F4D;&#xFF08;&#x6700;&#x9AD8;&#x4F4D;&#xFF09;&#xFF0C;&#x7ED3;&#x679C;1
+</code></pre><pre><code>defvar x = 0b1111000011110000;  // 16&#x4F4D;&#x503C;
+int bits8_15 = x{8...15};       // &#x63D0;&#x53D6;&#x7B2C;8-15&#x4F4D;&#xFF0C;&#x503C;&#x4E3A;0b11110000
+int reversed = x{15...8};       // &#x53CD;&#x8F6C;&#x987A;&#x5E8F;&#xFF0C;&#x503C;&#x4E3A;0b00001111
+</code></pre><ol>
+<li><p>&#x5217;&#x8868;&#x5207;&#x7247;&#x64CD;&#x4F5C;&#xFF08;&#x65B9;&#x62EC;&#x53F7; <code>[]</code>&#xFF09;</p>
+<ol>
+<li>&#x5355;&#x5143;&#x7D20;&#x7D22;&#x5F15;&#x8BED;&#x6CD5;&#x683C;&#x5F0F;&#x4E3A; <code>value[i]</code>&#xFF0C;&#x83B7;&#x53D6;&#x5217;&#x8868;&#x4E2D;&#x7B2C; i &#x4E2A;&#x5143;&#x7D20;&#xFF08;0-based &#x7D22;&#x5F15;&#xFF09;&#x3002;</li>
+</ol>
+<p><code>
+</code></p>
+</li>
+</ol>
+<p>defvar list = [10, 20, 30];
+int elem1 = list[1];  // &#x83B7;&#x53D6;&#x7B2C; 1 &#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x7ED3;&#x679C; 20</p>
+<pre><code>
+    1. &#x5355;&#x5143;&#x7D20;&#x5207;&#x7247;&#x8BED;&#x6CD5;&#x683C;&#x5F0F;&#x4E3A;`value[i,]`&#xFF0C;&#x672B;&#x5C3E;&#x9017;&#x53F7;&#x4E0D;&#x53EF;&#x7701;&#x7565;&#x3002;
+</code></pre><p>defvar list = [10, 20, 30];
+list single = list[1,];  // &#x7ED3;&#x679C;[20]&#xFF0C;&#x7C7B;&#x578B;&#x4E3A; list<int></int></p>
+<pre><code>
+
+</code></pre><p>defvar nums = [1,2,3,4,5,6,7,8];
+list slice = nums[4...7,17,2...3,4];
+// &#x7B49;&#x6548;&#x4E8E; nums[4], nums[5], nums[6], nums[7], nums[17]&#xFF08;&#x8D8A;&#x754C;&#x5FFD;&#x7565;&#xFF09;, nums[2], nums[3], nums[4]
+// &#x7ED3;&#x679C;&#xFF1A;[5,6,7,8,3,4,5]</p>
+<pre><code>
+1. &#x8BB0;&#x5F55;&#x5B57;&#x6BB5;&#x8BBF;&#x95EE;&#xFF08;&#x70B9;&#x53F7;`.`&#xFF09;`value.field`&#x83B7;&#x53D6;&#x8BB0;&#x5F55;&#x503C;&#x4E2D;&#x6307;&#x5B9A;&#x5B57;&#x6BB5;&#x7684;&#x503C;&#x3002;
+
+```java
+class Reg {
+  int Width = 32;
+  string Name = &quot;X0&quot;;
+}
+
+def reg : Reg;
+int w = reg.Width;     // &#x83B7;&#x53D6;Width&#x5B57;&#x6BB5;&#xFF0C;&#x7ED3;&#x679C;32
+string n = reg.Name;   // &#x83B7;&#x53D6;Name&#x5B57;&#x6BB5;&#xFF0C;&#x7ED3;&#x679C;&quot;X0&quot;
+</code></pre><h3 id="153-the-paste-operator">1.5.3 The paste operator</h3>
+<p>&#x7C98;&#x8D34;&#x8FD0;&#x7B97;&#x7B26; &#xFF08;<code>#</code>&#xFF09; &#x662F; TableGen &#x8868;&#x8FBE;&#x5F0F;&#x4E2D;&#x552F;&#x4E00;&#x53EF;&#x7528;&#x7684;&#x4E2D;&#x7F00;&#x8FD0;&#x7B97;&#x7B26;&#x3002;&#x5B83;&#x5141;&#x8BB8;&#x60A8;&#x8FDE;&#x63A5;&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x5217;&#x8868;&#xFF0C;&#x4F46;&#x5177;&#x6709;&#x4E00;&#x4E9B;&#x4E0D;&#x5BFB;&#x5E38;&#x7684;&#x529F;&#x80FD;&#x3002;&#x5728; <strong>Def</strong> &#x6216; <strong>Defm</strong> &#x8BED;&#x53E5;&#xFF0C;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5B83;&#x5FC5;&#x987B;&#x6784;&#x9020;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x5982;&#x679C;&#x4F5C;&#x6570;&#x662F;&#x672A;&#x5B9A;&#x4E49;&#x7684;&#x540D;&#x79F0; &#xFF08;<strong>TokIdentifier</strong>&#xFF09; &#x6216;&#x5168;&#x5C40; <strong>Defvar</strong> &#x6216; <strong>Defset</strong> &#x7684;&#x540D;&#x79F0;&#xFF0C;&#x5219;&#x5C06;&#x5176;&#x89C6;&#x4E3A;&#x9010;&#x5B57;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x4E0D;&#x4F7F;&#x7528;&#x5168;&#x5C40;&#x540D;&#x79F0;&#x7684;&#x503C;&#x3002;paste &#x8FD0;&#x7B97;&#x7B26;&#x53EF;&#x7528;&#x4E8E;&#x6240;&#x6709;&#x5176;&#x4ED6;&#x503C;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x6784;&#x9020;&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x5217;&#x8868;&#x3002;&#x76F8;&#x5F53;&#x5947;&#x602A;&#xFF0C;&#x4F46;&#x4E0E;&#x524D;&#x4E00;&#x79CD;&#x60C5;&#x51B5;&#x4E00;&#x81F4;&#xFF0C;&#x5982;&#x679C;&#x53F3;&#x4FA7;&#x64CD;&#x4F5C;&#x6570;&#x662F;&#x672A;&#x5B9A;&#x4E49;&#x540D;&#x79F0;&#x6216;&#x5168;&#x5C40;&#x540D;&#x79F0;&#xFF0C;&#x5219;&#x5C06;&#x5176;&#x89C6;&#x4E3A;&#x9010;&#x5B57;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x5DE6;&#x4FA7;&#x64CD;&#x4F5C;&#x6570;&#x88AB;&#x6B63;&#x5E38;&#x5904;&#x7406;&#x3002;<u>&#x9644;&#x5F55; B&#xFF1A;&#x7C98;&#x8D34;&#x8FD0;&#x7B97;&#x7B26;&#x793A;&#x4F8B; </u>&#x63D0;&#x4F9B;&#x4E86;&#x7C98;&#x8D34;&#x8FD0;&#x7B97;&#x7B26;&#x7684;&#x884C;&#x4E3A;&#x793A;&#x4F8B;&#x3002;</p>
+<h2 id="16-statements">1.6 Statements</h2>
+<p>&#x4EE5;&#x4E0B;&#x8BED;&#x53E5;&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x5728; TableGen &#x6E90;&#x6587;&#x4EF6;&#x7684;&#x9876;&#x5C42;&#x3002;</p>
+<pre><code>**TableGenFile** ::=  (**Statement** | **IncludeDirective**
+                 | **PreprocessorDirective**)*
+**Statement   ** ::=  **Assert** | **Class** | **Def** | **Defm** | **Defset** | **Deftype**
+                 | **Defvar** | **Dump**  | **Foreach** | **If** | **Let** | **MultiClass**
+</code></pre><h3 id="161-class-&#x2014;-define-an-abstract-record-class">1.6.1 class &#x2014; define an abstract record class</h3>
+<p><code>class</code> &#x8BED;&#x53E5;&#x5B9A;&#x4E49;&#x5176;&#x4ED6;&#x7C7B;&#x548C;&#x8BB0;&#x5F55;&#x53EF;&#x4EE5;&#x4ECE;&#x4E2D;&#x7EE7;&#x627F;&#x7684;&#x62BD;&#x8C61;&#x8BB0;&#x5F55;&#x7C7B;&#x3002;</p>
+<pre><code class="lang-go">**Class          ** ::=  <span class="hljs-string">&quot;class&quot;</span> **ClassID** [**TemplateArgList**] **RecordBody** <span class="hljs-comment">//ClassID&#xFF1A;&#x7C7B;&#x540D;&#xFF1B;RecordBody&#xFF1A;&#x7C7B;&#x7684;&#x4E3B;&#x4F53;</span>
+**TemplateArgList** ::=  <span class="hljs-string">&quot;&lt;&quot;</span> **TemplateArgDecl** (<span class="hljs-string">&quot;,&quot;</span> **TemplateArgDecl**)* <span class="hljs-string">&quot;&gt;&quot;</span> <span class="hljs-comment">//[TemplateArgList]&#xFF1A;&#x53EF;&#x9009;&#x7684;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x5217;&#x8868;&#xFF08;&#x7528;&lt;&gt;&#x5305;&#x88F9;&#xFF09;</span>
+**TemplateArgDecl** ::=  **Type** **TokIdentifier** [<span class="hljs-string">&quot;=&quot;</span> **Value**] <span class="hljs-comment">//TemplateArgDecl&#xFF1A;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x58F0;&#x660E;&#xFF08;&#x53EF;&#x591A;&#x4E2A;&#xFF0C;&#x7528;&#x9017;&#x53F7;&#x5206;&#x9694;&#xFF09;&#xFF1B;Type&#xFF1A;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#xFF1B;TokIdentifier&#xFF1A;&#x53C2;&#x6570;&#x540D;&#x79F0;&#xFF1B;[&quot;=&quot; Value]&#xFF1A;&#x53EF;&#x9009;&#x7684;&#x9ED8;&#x8BA4;&#x503C;</span>
+</code></pre>
+<p>&#x7C7B;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x201C;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x201D;&#x5217;&#x8868;&#x8FDB;&#x884C;&#x53C2;&#x6570;&#x5316;&#xFF0C;&#x5176;&#x503C;&#x53EF;&#x4EE5;&#x5728;&#x7C7B;&#x7684;&#x8BB0;&#x5F55;&#x6B63;&#x6587;&#x4E2D;&#x4F7F;&#x7528;&#x3002;&#x6BCF;&#x6B21;&#x7C7B;&#x88AB;&#x53E6;&#x4E00;&#x4E2A;&#x7C7B;&#x6216;&#x8BB0;&#x5F55;&#x7EE7;&#x627F;&#x65F6;&#xFF0C;&#x90FD;&#x4F1A;&#x6307;&#x5B9A;&#x8FD9;&#x4E9B;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x672A;&#x4F7F;&#x7528; <code>=</code> &#x4E3A;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x5206;&#x914D;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x5219;&#x8BE5;&#x53C2;&#x6570;&#x672A;&#x521D;&#x59CB;&#x5316;&#xFF08;&#x5177;&#x6709; &#x201C;value&#x201D; <code>&#xFF1F;</code>&#xFF09;&#xFF0C;&#x5E76;&#x4E14;&#x5FC5;&#x987B;&#x5728;&#x7EE7;&#x627F;&#x7C7B;&#x65F6;&#x5728;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x5217;&#x8868;&#x4E2D;&#x6307;&#x5B9A;&#xFF08;&#x5FC5;&#x9700;&#x53C2;&#x6570;&#xFF09;&#x3002;&#x5982;&#x679C;&#x4E3A;&#x53C2;&#x6570;&#x5206;&#x914D;&#x4E86;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x5219;&#x65E0;&#x9700;&#x5728;&#x53C2;&#x6570;&#x5217;&#x8868;&#x4E2D;&#x6307;&#x5B9A;&#x8BE5;&#x53C2;&#x6570;&#xFF08;&#x53EF;&#x9009;&#x53C2;&#x6570;&#xFF09;&#x3002;&#x5728;&#x58F0;&#x660E;&#x4E2D;&#xFF0C;&#x6240;&#x6709;&#x5FC5;&#x9700;&#x7684;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x5FC5;&#x987B;&#x4F4D;&#x4E8E;&#x4EFB;&#x4F55;&#x53EF;&#x9009;&#x53C2;&#x6570;&#x4E4B;&#x524D;&#x3002;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x9ED8;&#x8BA4;&#x503C;&#x4ECE;&#x5DE6;&#x5230;&#x53F3;&#x8FDB;&#x884C;&#x8BC4;&#x4F30;&#x3002;</p>
+<h4 id="1611-record-bodies">1.6.1.1 Record Bodies</h4>
+<p>Record Bodies &#x540C;&#x65F6;&#x51FA;&#x73B0;&#x5728; class &#x548C; record &#x7684;&#x5B9A;&#x4E49;&#x4E2D;&#x3002;Record Bodies &#x53EF;&#x4EE5;&#x5305;&#x542B;&#x7236;&#x7C7B;&#x5217;&#x8868;&#xFF0C;&#x8BE5;&#x5217;&#x8868;&#x6307;&#x5B9A;&#x5F53;&#x524D; class &#x6216; record &#x4ECE;&#x4E2D;&#x7EE7;&#x627F;&#x5B57;&#x6BB5;&#x7684;&#x7C7B;&#x3002;&#x6B64;&#x7C7B;&#x7C7B;&#x79F0;&#x4E3A;&#x7C7B;&#x6216;&#x8BB0;&#x5F55;&#x7684;&#x7236;&#x7C7B;&#x3002;&#x8BB0;&#x5F55;&#x6B63;&#x6587;&#x8FD8;&#x5305;&#x62EC;&#x5B9A;&#x4E49;&#x7684;&#x4E3B;&#x4F53;&#xFF0C;&#x8BE5;&#x4E3B;&#x4F53;&#x5305;&#x542B;&#x7C7B;&#x6216;&#x8BB0;&#x5F55;&#x7684;&#x5B57;&#x6BB5;&#x7684;&#x89C4;&#x8303;&#x3002;</p>
+<pre><code class="lang-go">**RecordBody           ** ::=  **ParentClassList** **Body**
+**ParentClassList      ** ::=  [<span class="hljs-string">&quot;:&quot;</span> **ParentClassListNE**]
+**ParentClassListNE    ** ::=  **ClassRef** (<span class="hljs-string">&quot;,&quot;</span> **ClassRef**)*
+**ClassRef             ** ::=  (**ClassID** | **MultiClassID**) [<span class="hljs-string">&quot;&lt;&quot;</span> [**ArgValueList**] <span class="hljs-string">&quot;&gt;&quot;</span>]
+**ArgValueList         ** ::=  **PostionalArgValueList** [<span class="hljs-string">&quot;,&quot;</span>] **NamedArgValueList**
+**PostionalArgValueList** ::=  [**Value** {<span class="hljs-string">&quot;,&quot;</span> **Value**}*]
+**NamedArgValueList    ** ::=  [**NameValue** <span class="hljs-string">&quot;=&quot;</span> **Value** {<span class="hljs-string">&quot;,&quot;</span> **NameValue** <span class="hljs-string">&quot;=&quot;</span> **Value**}*]
+</code></pre>
+<p>&#x5305;&#x542B; <strong>MultiClassID</strong> &#x7684; <strong>ParentClassList</strong> &#x4EC5;&#x5728; <code>defm</code> &#x8BED;&#x53E5;&#x7684;&#x7C7B;&#x5217;&#x8868;&#x4E2D;&#x6709;&#x6548;&#x3002;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;<code>ID</code> &#x5FC5;&#x987B;&#x662F; <code>multiclass</code> &#x7684;&#x540D;&#x79F0;&#x3002;</p>
+<p>&#x53C2;&#x6570;&#x503C;&#x53EF;&#x4EE5;&#x4EE5;&#x4E24;&#x79CD;&#x5F62;&#x5F0F;&#x6307;&#x5B9A;&#xFF1A;</p>
+<ul>
+<li>&#x4F4D;&#x7F6E;&#x53C2;&#x6570;&#xFF1A;&#x4F4D;&#x7F6E;&#x53C2;&#x6570;&#x662F;&#x6309;&#x987A;&#x5E8F;&#x5339;&#x914D;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x3002;</li>
+</ul>
+<pre><code>class C&lt;int X, string S&gt;;
+def R : C&lt;10, &quot;test&quot;&gt;;  // X=10, S=&quot;test&quot;
+</code></pre><ul>
+<li>&#x547D;&#x540D;&#x53C2;&#x6570;&#xFF1A;&#x547D;&#x540D;&#x53C2;&#x6570;&#x662F;&#x901A;&#x8FC7;&#x540D;&#x79F0;&#x5339;&#x914D;&#x6A21;&#x677F;&#x53C2;&#x6570;&#xFF08;&#x53EF;&#x6253;&#x4E71;&#x987A;&#x5E8F;&#xFF09;&#x3002;</li>
+</ul>
+<pre><code>def R : C&lt;S=&quot;test&quot;, X=10&gt;;  // &#x7B49;&#x6548;&#x4E8E;&#x4E0A;&#x4F8B;
+</code></pre><p>&#x5F53;&#x6DF7;&#x5408;&#x4F7F;&#x7528;&#x65F6;&#xFF0C;&#x4F4D;&#x7F6E;&#x53C2;&#x6570;&#x5FC5;&#x987B;&#x5728;&#x524D;&#xFF0C;&#x4E14;&#x65E0;&#x8BBA;&#x4EE5;&#x4F55;&#x79CD;&#x65B9;&#x5F0F;&#xFF08;&#x547D;&#x540D;&#x6216;&#x4F4D;&#x7F6E;&#xFF09;&#x6307;&#x5B9A;&#xFF0C;&#x53C2;&#x6570;&#x90FD;&#x53EA;&#x80FD;&#x6307;&#x5B9A;&#x4E00;&#x6B21;&#x3002;</p>
+<pre><code class="lang-python">class C&lt;int X, int Y, string S&gt;;
+def R : C&lt;10, S=&quot;test&quot;, Y=20&gt;;  // &#x5408;&#x6CD5;&#xFF1A;X=10, Y=20, S=&quot;test&quot;
+def R : C&lt;10, X=20&gt;;           // &#x975E;&#x6CD5;&#xFF1A;X&#x88AB;&#x91CD;&#x590D;&#x8D4B;&#x503C;
+</code></pre>
+<pre><code class="lang-go">Body     ::=  <span class="hljs-string">&quot;;&quot;</span> | <span class="hljs-string">&quot;{&quot;</span> BodyItem* <span class="hljs-string">&quot;}&quot;</span>**
+**BodyItem ::=  Type TokIdentifier [<span class="hljs-string">&quot;=&quot;</span> Value] <span class="hljs-string">&quot;;&quot;</span>           <span class="hljs-comment">// &#x5B57;&#x6BB5;&#x5B9A;&#x4E49;**</span>
+**             | <span class="hljs-string">&quot;let&quot;</span> TokIdentifier [<span class="hljs-string">&quot;{&quot;</span> RangeList <span class="hljs-string">&quot;}&quot;</span>] <span class="hljs-string">&quot;=&quot;</span> Value <span class="hljs-string">&quot;;&quot;</span>  <span class="hljs-comment">// &#x5B57;&#x6BB5;&#x91CD;&#x7F6E;**</span>
+**             | <span class="hljs-string">&quot;defvar&quot;</span> TokIdentifier <span class="hljs-string">&quot;=&quot;</span> Value <span class="hljs-string">&quot;;&quot;</span>       <span class="hljs-comment">// &#x4E34;&#x65F6;&#x53D8;&#x91CF;**</span>
+**             | Assert                                      <span class="hljs-comment">// &#x65AD;&#x8A00;</span>
+</code></pre>
+<p>&#x5B57;&#x6BB5;&#x5B9A;&#x4E49;&#x89C4;&#x5219;&#x4E3A;&#xFF1A;&#x5FC5;&#x987B;&#x663E;&#x5F0F;&#x6307;&#x5B9A;&#x5B57;&#x6BB5;&#x7C7B;&#x578B;&#xFF0C;<code>TableGen</code> &#x4E0D;&#x652F;&#x6301;&#x7C7B;&#x578B;&#x63A8;&#x65AD;&#xFF0C;&#x672A;&#x6307;&#x5B9A;&#x521D;&#x59CB;&#x503C;&#x7684;&#x5B57;&#x6BB5;&#x4E3A;&#x672A;&#x521D;&#x59CB;&#x5316;&#x72B6;&#x6001;&#xFF0C;&#x5B9E;&#x4F8B;&#x5316;&#x65F6;&#x9700;&#x8D4B;&#x503C;&#x3002;</p>
+<pre><code>class Register {
+  int Width = 32;    // &#x521D;&#x59CB;&#x5316;&#x5B57;&#x6BB5;
+  string Name;       // &#x672A;&#x521D;&#x59CB;&#x5316;&#x5B57;&#x6BB5;&#xFF0C;&#x9700;&#x5728;&#x5B9E;&#x4F8B;&#x5316;&#x65F6;&#x8D4B;&#x503C;
+}
+</code></pre><p><code>let</code> &#x8BED;&#x53E5;&#x53EF;&#x91CD;&#x7F6E;&#x5F53;&#x524D;&#x7C7B;&#x6216;&#x7236;&#x7C7B;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;&#x652F;&#x6301;&#x5BF9; <code>bit&lt;n&gt;</code> &#x5B57;&#x6BB5;&#x7684;&#x90E8;&#x5206;&#x6BD4;&#x7279;&#x4F4D;&#x91CD;&#x7F6E;&#x3002;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-javascript">def R : Register {
+  <span class="hljs-keyword">let</span> Name = <span class="hljs-string">&quot;X0&quot;</span>;          <span class="hljs-comment">// &#x91CD;&#x7F6E;&#x5B57;&#x7B26;&#x4E32;&#x5B57;&#x6BB5;</span>
+  <span class="hljs-keyword">let</span> Width = <span class="hljs-number">64</span>;           <span class="hljs-comment">// &#x91CD;&#x7F6E;&#x6574;&#x6570;&#x5B57;&#x6BB5;</span>
+  <span class="hljs-keyword">let</span> Flags{<span class="hljs-number">0.</span>.<span class="hljs-number">.3</span>} = <span class="hljs-number">0xF</span>;   <span class="hljs-comment">// &#x4EC5;&#x91CD;&#x7F6E;Flags&#x5B57;&#x6BB5;&#x7684;&#x4F4E;4&#x4F4D;</span>
+}
+</code></pre>
+<p><code>defvar</code> &#x8BED;&#x53E5;&#x4EC5;&#x53EF;&#x5B9A;&#x4E49;&#x5728;&#x8BB0;&#x5F55;&#x4F53;&#x5185;&#x4F7F;&#x7528;&#x7684;&#x4E34;&#x65F6;&#x53D8;&#x91CF;&#xFF0C;&#x4E0D;&#x6210;&#x4E3A; <code>class / record</code> &#x7684;&#x5B57;&#x6BB5;&#x3002;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code>class Calc {
+  defvar temp = 10 + 5;     // &#x4E34;&#x65F6;&#x53D8;&#x91CF;
+  int result = temp * 2;    // &#x4F7F;&#x7528;&#x4E34;&#x65F6;&#x53D8;&#x91CF;&#x8BA1;&#x7B97;
+}
+</code></pre><p>&#x7EE7;&#x627F;&#x4E0E;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x5C55;&#x5F00;&#x539F;&#x5219;&#xFF1A;&#x5F53;&#x7C7B; <code>C2</code> &#x7EE7;&#x627F;&#x81EA; <code>C1</code> &#x65F6;&#xFF0C;<code>C2</code> &#x83B7;&#x53D6; <code>C1</code> &#x7684;&#x6240;&#x6709;&#x5B57;&#x6BB5;&#x5B9A;&#x4E49;&#xFF0C;&#x4E14; <code>C2</code> &#x4F20;&#x9012;&#x7ED9; <code>C1</code> &#x7684;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x4F1A;&#x66FF;&#x6362; <code>C1</code> &#x5B9A;&#x4E49;&#x4E2D;&#x7684;&#x62BD;&#x8C61;&#x5B57;&#x6BB5;&#xFF0C;&#x518D;&#x5408;&#x5E76;&#x5230; <code>C2</code> &#x4E2D;&#x3002;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-java">class C1&lt;int X&gt; {
+  int field = X * 2;
+}
+class C2 : C1&lt;5&gt; {  // &#x4F20;&#x9012;X=5
+  int newField = field + 10;  // field&#x88AB;&#x5C55;&#x5F00;&#x4E3A;10&#xFF0C;newField=20
+}
+</code></pre>
+<p>&#x5C55;&#x5F00;&#x540E; <code>C2</code> &#x7B49;&#x6548;&#x4E8E;&#xFF1A;</p>
+<pre><code>class C2 {
+  int field = 10;
+  int newField = 20;
+}
+</code></pre><h3 id="162-def-&#x2014;-define-a-concrete-record">1.6.2 def &#x2014; define a concrete record</h3>
+<p><code>def</code> &#x8BED;&#x53E5;&#x5B9A;&#x4E49;&#x65B0;&#x7684;&#x5177;&#x4F53;&#x7684; <code>record</code>&#x3002;</p>
+<pre><code>**Def      ** ::=  &quot;def&quot; [**NameValue**] **RecordBody**  // Def &#x7684;&#x8BED;&#x6CD5;&#x7ED3;&#x6784;&#xFF0C;&#x5176;&#x4E2D;[]&#x7684;&#x90E8;&#x5206;&#x4E3A;&#x53EF;&#x9009;&#x90E8;&#x5206;
+**NameValue** ::=  **Value** (parsed in a special mode)
+</code></pre><p><code>NameValue</code> &#x662F;&#x53EF;&#x9009;&#x7684;&#x3002;&#x5982;&#x679C;&#x6307;&#x5B9A;&#xFF0C;&#x5219;&#x4EE5;&#x7279;&#x6B8A;&#x6A21;&#x5F0F;&#x89E3;&#x6790;&#x5B83;&#xFF0C;&#x5176;&#x4E2D;&#x672A;&#x5B9A;&#x4E49;&#xFF08;&#x65E0;&#x6CD5;&#x8BC6;&#x522B;&#xFF09;&#x7684;&#x6807;&#x8BC6;&#x7B26;&#x88AB;&#x89E3;&#x91CA;&#x4E3A;&#x6587;&#x672C;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x7279;&#x522B;&#x662F;&#xFF0C;&#x5168;&#x5C40;&#x6807;&#x8BC6;&#x7B26;&#x88AB;&#x89C6;&#x4E3A;&#x65E0;&#x6CD5;&#x8BC6;&#x522B;&#x3002;&#x5176;&#x4E2D;&#x5305;&#x62EC;&#x7531; <code>defvar</code> &#x548C; <code>defset</code> &#x5B9A;&#x4E49;&#x7684;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x3002;&#x8BB0;&#x5F55;&#x540D;&#x79F0;&#x53EF;&#x4EE5;&#x662F; null &#x5B57;&#x7B26;&#x4E32;&#x3002;</p>
+<p>&#x5982;&#x679C; <code>NameValue</code> &#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x8BB0;&#x5F55;&#x4E3A;&#x533F;&#x540D;&#x8BB0;&#x5F55;&#x3002;&#x533F;&#x540D;&#x8BB0;&#x5F55;&#x7684;&#x6700;&#x7EC8;&#x540D;&#x79F0;&#x672A;&#x6307;&#x5B9A;&#xFF0C;&#x4F46;&#x5168;&#x5C40;&#x552F;&#x4E00;&#x3002;</p>
+<p>&#x5982;&#x679C; <code>def</code> &#x51FA;&#x73B0;&#x5728; <code>multiclass</code> &#x4E2D;&#xFF0C;&#x5219;&#x4F1A;&#x53D1;&#x751F;&#x7279;&#x6B8A;&#x5904;&#x7406;&#x3002;</p>
+<p><code>record</code> &#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6307;&#x5B9A; <strong>ParentClassList</strong> &#x5B50;&#x53E5;&#x3002;&#x7236;&#x7C7B;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x5B57;&#x6BB5;&#x90FD;&#x5C06;&#x6DFB;&#x52A0;&#x5230;&#x8BB0;&#x5F55;&#x4E2D;&#x3002;&#x5982;&#x679C;&#x4E24;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x7236;&#x7C7B;&#x63D0;&#x4F9B;&#x76F8;&#x540C;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;&#x5219;&#x8BB0;&#x5F55;&#x5C06;&#x4EE5;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x7236;&#x7C7B;&#x7684;&#x5B57;&#x6BB5;&#x503C;&#x7ED3;&#x675F;&#x3002;</p>
+<p>&#x4F5C;&#x4E3A;&#x7279;&#x6B8A;&#x60C5;&#x51B5;&#xFF0C;<code>record</code> &#x7684;&#x540D;&#x79F0;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x7ED9;&#x8BE5;&#x8BB0;&#x5F55;&#x7684;&#x7236;&#x7C7B;&#x3002;</p>
+<pre><code>class A &lt;dag d&gt; {
+  dag the_dag = d;
+} 
+
+def rec1 : A&lt;(ops rec1)&gt;; //&#x5B9A;&#x4E49;&#x8BB0;&#x5F55; rec1&#xFF0C;&#x5B83;&#x7EE7;&#x627F;&#x81EA;&#x7C7B; A;&#x5B9E;&#x4F8B;&#x5316;&#x7236;&#x7C7B; A &#x65F6;&#xFF0C;&#x4F20;&#x9012;&#x4E86;&#x6A21;&#x677F;&#x53C2;&#x6570; (ops rec1)&#x3002;
+</code></pre><h3 id="163-examples--class-and-reports">1.6.3 Examples : class and reports</h3>
+<p>&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684; <code>TableGen</code> &#x6587;&#x4EF6;&#xFF0C;&#x5176;&#x4E2D;&#x5305;&#x542B;&#x4E00;&#x4E2A; <code>class</code> &#x548C;&#x4E24;&#x4E2A; <code>reports</code> &#x5B9A;&#x4E49;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">C</span> </span>{
+  bit V = <span class="hljs-keyword">true</span>;
+} <span class="hljs-comment">//&#x5B9A;&#x4E49;&#x4E86;class C&#xFF1B;&#x6709;bit&#x7684;&#x53D8;&#x91CF;v&#xFF0C;&#x521D;&#x59CB;&#x5316;&#x72B6;&#x6001;&#x4E3A;true&#xFF1B;</span>
+
+def X : C;
+def Y : C {
+  let V = <span class="hljs-keyword">false</span>;
+  string Greeting = <span class="hljs-string">&quot;Hello!&quot;</span>;
+} <span class="hljs-comment">//&#x4F7F;&#x7528; C &#x4F5C;&#x4E3A;&#x5B83;&#x4EEC;&#x7684;&#x7236;&#x7C7B;&#x3002;&#x56E0;&#x6B64;&#x5B83;&#x4EEC;&#x90FD;&#x7EE7;&#x627F;&#x4E86; V &#x5B57;&#x6BB5;&#x3002;Y &#x4F1A;&#x8986;&#x76D6;&#x7EE7;&#x627F;&#x7684; V &#x5B57;&#x6BB5;&#xFF0C;&#x5C06;&#x5176;&#x8BBE;&#x7F6E;&#x4E3A; false&#x3002;</span>
+<span class="hljs-comment">//record Y &#x8FD8;&#x5B9A;&#x4E49;&#x4E86;&#x53E6;&#x4E00;&#x4E2A;string&#x7C7B;&#x578B;&#x7684;&#x53D8;&#x91CF;Greeting&#xFF0C;&#x8BE5;&#x5B57;&#x6BB5;&#x521D;&#x59CB;&#x5316;&#x4E3A; &#x201C;Hello&#xFF01;&#x201D; &#x7684;&#x5B57;&#x6BB5;&#x3002;</span>
+</code></pre>
+<p><code>Class</code> &#x53EF;&#x7528;&#x4E8E;&#x5C06; <code>multiple records</code> &#x7684;&#x516C;&#x5171;&#x529F;&#x80FD;&#x9694;&#x79BB;&#x5728;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#x3002;&#x7C7B;&#x53EF;&#x4EE5;&#x5C06;&#x516C;&#x5171;&#x5B57;&#x6BB5;&#x521D;&#x59CB;&#x5316;&#x4E3A;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x4F46;&#x4ECE;&#x8BE5;&#x7C7B;&#x7EE7;&#x627F;&#x7684;&#x8BB0;&#x5F55;&#x53EF;&#x4EE5;&#x8986;&#x76D6;&#x9ED8;&#x8BA4;&#x503C;&#x3002;TableGen &#x652F;&#x6301;&#x53C2;&#x6570;&#x5316;&#x7C7B;&#x548C;&#x975E;&#x53C2;&#x6570;&#x5316;&#x7C7B;&#x7684;&#x5B9A;&#x4E49;&#x3002;&#x53C2;&#x6570;&#x5316;&#x7C7B;&#x6307;&#x5B9A;&#x53D8;&#x91CF;&#x58F0;&#x660E;&#x5217;&#x8868;&#xFF0C;&#x8FD9;&#x4E9B;&#x58F0;&#x660E;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x5177;&#x6709;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x5F53; <code>class</code> &#x88AB;&#x6307;&#x5B9A;&#x4E3A;&#x53E6;&#x4E00;&#x4E2A; <code>class</code> &#x6216; <code>record</code> &#x7684;&#x7236;&#x7C7B;&#x65F6;&#xFF0C;&#x8FD9;&#x4E9B;&#x58F0;&#x660E;&#x5C06;&#x88AB;&#x53C2;&#x6570;&#x5B9E;&#x4F8B;&#x5316;&#x3002;</p>
+<pre><code class="lang-python">class FPFormat &lt;bits&lt;3&gt; val&gt; {
+  bits&lt;3&gt; Value = val;
+}
+
+def NotFP      : FPFormat&lt;0&gt;;
+def ZeroArgFP  : FPFormat&lt;1&gt;;
+def OneArgFP   : FPFormat&lt;2&gt;;
+def OneArgFPRW : FPFormat&lt;3&gt;;
+def TwoArgFP   : FPFormat&lt;4&gt;;
+def CompareFP  : FPFormat&lt;5&gt;;
+def CondMovFP  : FPFormat&lt;6&gt;;
+def SpecialFP  : FPFormat&lt;7&gt;;
+</code></pre>
+<p><code>FPFormat</code> &#x7C7B;&#x7684;&#x7528;&#x9014;&#x662F;&#x5145;&#x5F53;&#x4E00;&#x79CD;&#x679A;&#x4E3E;&#x7C7B;&#x578B;&#x3002;&#x5B83;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x53D8;&#x91CF; <code>Value</code>&#xFF0C;Value &#x5305;&#x542B;&#x4E00;&#x4E2A; 3 &#x4F4D;&#x6570;&#x5B57;&#x3002;&#x5176;&#x6A21;&#x677F;&#x53C2;&#x6570; <code>val</code> &#x7528;&#x4E8E;&#x8BBE;&#x7F6E; <code>Value</code> &#x3002;&#x516B;&#x6761;&#x8BB0;&#x5F55;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x6761;&#x90FD;&#x4F7F;&#x7528; <code>FPFormat</code> &#x4F5C;&#x4E3A;&#x5176;&#x7236;&#x7C7B;&#x8FDB;&#x884C;&#x5B9A;&#x4E49;&#x3002;&#x679A;&#x4E3E;&#x503C;&#x4F5C;&#x4E3A;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x5728;&#x5C16;&#x62EC;&#x53F7;&#x4E2D;&#x4F20;&#x9012;&#x3002;&#x6BCF;&#x6761;&#x8BB0;&#x5F55;&#x90FD;&#x5C06;&#x5728; <code>Value</code> &#x5B57;&#x6BB5;&#x4E2D;&#x56FA;&#x6709;&#x76F8;&#x5E94;&#x7684;&#x679A;&#x4E3E;&#x503C;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x66F4;&#x590D;&#x6742;&#x7684;&#x5E26;&#x6709;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x7684;&#x7C7B;&#x793A;&#x4F8B;&#x3002;&#x9996;&#x5148;&#xFF0C;&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7C7B;&#x4F3C;&#x4E8E;&#x4E0A;&#x9762;&#x7684; <code>FPFormat</code> &#x7C7B;&#x7684;&#x7C7B;&#x3002;&#x5B83;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;&#x6A21;&#x677F;&#x53C2;&#x6570;&#xFF0C;&#x5E76;&#x4F7F;&#x7528;&#x5B83;&#x6765;&#x521D;&#x59CB;&#x5316;&#x4E00;&#x4E2A;&#x540D;&#x4E3A; <code>Value</code> &#x7684;&#x3002;&#x7136;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x56DB;&#x4E2A; <code>records</code>&#xFF0C;&#x8FD9;&#x4E9B; <code>records</code> &#x7EE7;&#x627F; <code>Value</code> &#x5B57;&#x6BB5;&#x53CA;&#x5176;&#x56DB;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x6574;&#x6570;&#x503C;&#x3002;</p>
+<pre><code>class ModRefVal &lt;bits&lt;2&gt; val&gt; {
+  bits&lt;2&gt; Value = val;
+}
+
+def None   : ModRefVal&lt;0&gt;;
+def Mod    : ModRefVal&lt;1&gt;;
+def Ref    : ModRefVal&lt;2&gt;;
+def ModRef : ModRefVal&lt;3&gt;;
+</code></pre><p>&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x60F3;&#x72EC;&#x7ACB;&#x68C0;&#x67E5; <code>Value</code> &#x5B57;&#x6BB5;&#x7684;&#x4E24;&#x4E2A;&#x4F4D;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7C7B;&#xFF0C;&#x8BE5;&#x7C7B;&#x63A5;&#x53D7; <code>ModRefVal</code> &#x8BB0;&#x5F55;&#x4F5C;&#x4E3A;&#x6A21;&#x677F;&#x53C2;&#x6570;&#xFF0C;&#x5E76;&#x5C06;&#x5176; value &#x8F6C;&#x6362;&#x4E3A;&#x4E24;&#x4E2A;&#x5B57;&#x6BB5;&#xFF0C;&#x6BCF;&#x4E2A;&#x5B57;&#x6BB5; 1 &#x4F4D;&#x3002;&#x7136;&#x540E;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x7EE7;&#x627F;&#x81EA; <code>ModRefBits &#x7684; Bits</code> &#x4E2D;&#x83B7;&#x53D6;&#x4E24;&#x4E2A;&#x5B57;&#x6BB5;&#xFF0C;&#x4E00;&#x4E2A;&#x5B57;&#x6BB5;&#x5BF9;&#x5E94; &#x4F5C;&#x4E3A;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x7684; <code>ModRefVal</code> &#x8BB0;&#x5F55;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ModRefBits</span> &lt;<span class="hljs-title">ModRefVal</span> <span class="hljs-title">mrv</span>&gt; </span>{
+  <span class="hljs-comment">// Break the value up into its bits, which can provide a nice</span>
+  <span class="hljs-comment">// interface to the ModRefVal values.</span>
+  bit isMod = mrv.Value{<span class="hljs-number">0</span>};
+  bit isRef = mrv.Value{<span class="hljs-number">1</span>};
+}
+
+<span class="hljs-comment">// Example uses.</span>
+def foo   : ModRefBits&lt;Mod&gt;;
+def bar   : ModRefBits&lt;Ref&gt;;
+def snork : ModRefBits&lt;ModRef&gt;;
+
+<span class="hljs-comment">//&#x4F7F;&#x7528;llvm-tblge&#x6253;&#x5370;&#x8F93;&#x51FA;&#x7ED3;&#x679C;</span>
+def bar {      <span class="hljs-comment">// Value</span>
+  bit isMod = <span class="hljs-number">0</span>;
+  bit isRef = <span class="hljs-number">1</span>;
+}
+def foo {      <span class="hljs-comment">// Value</span>
+  bit isMod = <span class="hljs-number">1</span>;
+  bit isRef = <span class="hljs-number">0</span>;
+}
+def snork {      <span class="hljs-comment">// Value</span>
+  bit isMod = <span class="hljs-number">1</span>;
+  bit isRef = <span class="hljs-number">1</span>;
+}
+</code></pre>
+<h3 id="164-let-&#x2014;-override-fields-in-classes-or-records">1.6.4 let &#x2014; override fields in classes or records</h3>
+<p><code>let</code> &#x8BED;&#x53E5;&#x6536;&#x96C6;&#x4E00;&#x7EC4;&#x5B57;&#x6BB5;&#x503C;&#xFF08;&#x6709;&#x65F6;&#x79F0;&#x4E3A; <code>bindings</code>&#xFF09;&#x5E76;&#x5C06;&#x5B83;&#x4EEC;&#x5E94;&#x7528;&#x4E8E; <code>let</code> &#x8303;&#x56F4;&#x5185;&#x8BED;&#x53E5;&#x5B9A;&#x4E49;&#x7684;&#x6240;&#x6709; <code>class</code> &#x548C; <code>record</code>&#x3002;let &#x8BED;&#x53E5;&#x7684;&#x6838;&#x5FC3;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#x4E34;&#x65F6;&#x4FEE;&#x6539; class &#x548C; record &#x7684;&#x5B57;&#x6BB5;&#x503C;&#x3002;</p>
+<pre><code class="lang-go">**Let    ** ::=   <span class="hljs-string">&quot;let&quot;</span> **LetList** <span class="hljs-string">&quot;in&quot;</span> <span class="hljs-string">&quot;{&quot;</span> **Statement*** <span class="hljs-string">&quot;}&quot;</span>
+            | <span class="hljs-string">&quot;let&quot;</span> **LetList** <span class="hljs-string">&quot;in&quot;</span> **Statement**
+**LetList** ::=  **LetItem** (<span class="hljs-string">&quot;,&quot;</span> **LetItem**)*
+**LetItem** ::=  **TokIdentifier** [<span class="hljs-string">&quot;&lt;&quot;</span> **RangeList** <span class="hljs-string">&quot;&gt;&quot;</span>] <span class="hljs-string">&quot;=&quot;</span> **Value**  <span class="hljs-comment">//TokIdentifier&#xFF1A;&#x53D8;&#x91CF;&#x540D;&#xFF08;&#x5982; x, max_value&#xFF09;[&quot;&lt;&quot; RangeList &quot;&gt;&quot;]&#xFF1A;&#x53EF;&#x9009;&#x7684;&#x8303;&#x56F4;&#x7EA6;&#x675F;</span>
+</code></pre>
+<p><strong>LetList</strong> &#x4E2D;&#x7684;&#x5B57;&#x6BB5;&#x540D;&#x79F0;&#x5FC5;&#x987B;&#x547D;&#x540D;&#x8BED;&#x53E5;&#x4E2D;&#x5B9A;&#x4E49;&#x7684; <code>class</code> &#x548C; <code>record</code> &#x7EE7;&#x627F;&#x7684; <code>class</code> &#x4E2D;&#x7684;&#x5B57;&#x6BB5;&#x3002;&#x5728;&#x8BB0;&#x5F55;&#x4ECE;&#x5176;&#x7236;&#x7C7B;&#x7EE7;&#x627F;&#x6240;&#x6709;&#x5B57;&#x6BB5;&#x540E; &#xFF0C;&#x5B57;&#x6BB5;&#x503C;&#x5C06;&#x5E94;&#x7528;&#x4E8E; <code>class</code> &#x548C; <code>record</code>&#x3002;&#x56E0;&#x6B64;&#xFF0C;<code>let</code> &#x7684;&#x4F5C;&#x7528;&#x662F;&#x8986;&#x76D6;&#x7EE7;&#x627F;&#x7684;&#x5B57;&#x6BB5;&#x503C;&#x3002;<code>let</code> &#x4E0D;&#x80FD;&#x8986;&#x76D6;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x7684;&#x503C;&#x3002;</p>
+<p>&#x5F53;&#x9700;&#x8981;&#x5728;&#x591A;&#x4E2A;&#x8BB0;&#x5F55;&#x4E2D;&#x8986;&#x76D6;&#x51E0;&#x4E2A;&#x5B57;&#x6BB5;&#x65F6;&#xFF0C;&#x9876;&#x5C42; <code>let</code> &#x8BED;&#x53E5;&#x901A;&#x5E38;&#x5F88;&#x6709;&#x7528;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x4E24;&#x4E2A;&#x793A;&#x4F8B;&#x3002;&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;<code>let</code> &#x8BED;&#x53E5;&#x53EF;&#x4EE5;&#x5D4C;&#x5957;&#x3002;</p>
+<pre><code class="lang-bash"><span class="hljs-built_in">let</span> isTerminator = <span class="hljs-literal">true</span>, isReturn = <span class="hljs-literal">true</span>, isBarrier = <span class="hljs-literal">true</span>, hasCtrlDep = <span class="hljs-literal">true</span> <span class="hljs-keyword">in</span>
+  def RET : I&lt;0xC3, RawFrm, (outs), (ins), <span class="hljs-string">&quot;ret&quot;</span>, [(X86retflag 0)]&gt;;
+
+<span class="hljs-built_in">let</span> isCall = <span class="hljs-literal">true</span> <span class="hljs-keyword">in</span>
+  // All calls clobber the non-callee saved registers...
+  <span class="hljs-built_in">let</span> Defs = [EAX, ECX, EDX, FP0, FP1, FP2, FP3, FP4, FP5, FP6, ST0,
+              MM0, MM1, MM2, MM3, MM4, MM5, MM6, MM7, XMM0, XMM1, XMM2,
+              XMM3, XMM4, XMM5, XMM6, XMM7, EFLAGS] <span class="hljs-keyword">in</span> {
+    def CALLpcrel32 : Ii32&lt;0xE8, RawFrm, (outs), (ins i32imm:<span class="hljs-variable">$dst</span>, variable_ops),
+                           <span class="hljs-string">&quot;call\t<span class="hljs-variable">${dst:call}</span>&quot;</span>, []&gt;;
+    def CALL32r     : I&lt;0xFF, MRM2r, (outs), (ins GR32:<span class="hljs-variable">$dst</span>, variable_ops),
+                        <span class="hljs-string">&quot;call\t{*}<span class="hljs-variable">$dst</span>&quot;</span>, [(X86call GR32:<span class="hljs-variable">$dst</span>)]&gt;;
+    def CALL32m     : I&lt;0xFF, MRM2m, (outs), (ins i32mem:<span class="hljs-variable">$dst</span>, variable_ops),
+                        <span class="hljs-string">&quot;call\t{*}<span class="hljs-variable">$dst</span>&quot;</span>, []&gt;;
+  }
+</code></pre>
+<p>&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x9876;&#x5C42; <code>let</code> &#x4E0D;&#x4F1A;&#x8986;&#x76D6; <code>class</code> &#x6216; <code>record</code> &#x672C;&#x8EAB;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x5B57;&#x6BB5;&#x3002;&#x9876;&#x5C42; <code>let</code> &#x7684;&#x4F5C;&#x7528;&#x57DF;&#xFF1A;&#x4EC5;&#x5F71;&#x54CD;&#x672A;&#x5728; <code>class/ record</code> &#x81EA;&#x8EAB;&#x663E;&#x5F0F;&#x5B9A;&#x4E49;&#x7684;&#x5B57;&#x6BB5;&#x3002;&#x4F18;&#x5148;&#x7EA7;&#x987A;&#x5E8F;&#xFF1A;&#x8BB0;&#x5F55;&#x81EA;&#x8EAB;&#x5B9A;&#x4E49;&#x7684;&#x5B57;&#x6BB5; &gt; &#x9876;&#x5C42; <code>let</code> &gt; &#x7C7B;&#x9ED8;&#x8BA4;&#x503C;&#x3002;</p>
+<h3 id="165-multiclass-&#x2014;-define-multiple-records">1.6.5 multiclass &#x2014; define multiple records</h3>
+<p>&#x867D;&#x7136;&#x5E26;&#x6709;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x7684; <code>class</code> &#x662F;&#x6D88;&#x9664;&#x591A;&#x6761;&#x8BB0;&#x5F55;&#x4E4B;&#x95F4;&#x901A;&#x7528;&#x6027;&#x7684;&#x597D;&#x65B9;&#x6CD5;&#xFF0C;&#x4F46; <code>multiclass</code> &#x5141;&#x8BB8;&#x4E00;&#x79CD;&#x4E00;&#x6B21;&#x5B9A;&#x4E49;&#x591A;&#x6761;&#x8BB0;&#x5F55;&#x7684;&#x4FBF;&#x6377;&#x65B9;&#x6CD5;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x8003;&#x8651;&#x4E00;&#x4E2A; 3 &#x5730;&#x5740;&#x7684;&#x6307;&#x4EE4;&#x4F53;&#x7CFB;&#x7ED3;&#x6784;&#xFF0C;&#x5176;&#x6307;&#x4EE4;&#x6709;&#x4E24;&#x79CD;&#x683C;&#x5F0F;&#xFF1A;<code>reg = reg op reg</code> &#x548C; <code>reg = reg op imm</code>&#xFF08;&#x4F8B;&#x5982;&#xFF0C;SPARC&#xFF09;&#x3002;&#x6211;&#x4EEC;&#x60F3;&#x5728;&#x4E00;&#x4E2A;&#x5730;&#x65B9;&#x6307;&#x5B9A;&#x8FD9;&#x4E24;&#x79CD;&#x5E38;&#x89C1;&#x683C;&#x5F0F;&#x7684;&#x5B58;&#x5728;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x53E6;&#x4E00;&#x5904;&#x6307;&#x5B9A;&#x6240;&#x6709;&#x64CD;&#x4F5C;&#x662F;&#x4EC0;&#x4E48;&#x3002;<code>multiclass</code> &#x548C; <code>defm</code> &#x8BED;&#x53E5;&#x5B9E;&#x73B0;&#x6B64;&#x76EE;&#x6807;&#x3002;&#x60A8;&#x53EF;&#x4EE5;&#x5C06; <code>multiclass</code> &#x89C6;&#x4E3A;&#x5B8F;&#x6216;&#x6269;&#x5C55;&#x4E3A;&#x591A;&#x6761; <code>record</code> &#x7684;&#x6A21;&#x677F;&#x3002;</p>
+<pre><code>**MultiClass         ** ::=  &quot;multiclass&quot; **TokIdentifier** [**TemplateArgList**]
+                         **ParentClassList**
+                         &quot;{&quot; **MultiClassStatement**+ &quot;}&quot;
+**MultiClassID       ** ::=  **TokIdentifier****MultiClassStatement** ::=  **Assert** | **Def** | **Defm** | **Defvar** | **Foreach** | **If** | **Let**
+</code></pre><p>&#x4E0E;&#x5E38;&#x89C4;&#x7C7B;&#x4E00;&#x6837;&#xFF0C;<code>multiclass</code> &#x5177;&#x6709;&#x540D;&#x79F0;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x63A5;&#x53D7;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x3002;<code>multiclass</code> &#x53EF;&#x4EE5;&#x4ECE;&#x5176;&#x4ED6; <code>multiclasses</code> &#x7EE7;&#x627F;&#xFF0C;&#x8FD9;&#x4F1A;&#x5BFC;&#x81F4;&#x5176;&#x4ED6; <code>multiclasses</code> &#x88AB;&#x6269;&#x5C55;&#x5E76;&#x6709;&#x52A9;&#x4E8E;&#x7EE7;&#x627F; <code>multiclass</code> &#x4E2D;&#x7684;&#x8BB0;&#x5F55;&#x5B9A;&#x4E49;&#x3002;<code>multiclass</code> &#x7684;&#x4E3B;&#x4F53;&#x5305;&#x542B;&#x4E00;&#x7CFB;&#x5217;&#x5B9A;&#x4E49;&#x8BB0;&#x5F55;&#x7684;&#x8BED;&#x53E5;&#xFF0C;&#x4F7F;&#x7528; <strong>Def</strong> &#xFF0C;<strong>Defm</strong> &#xFF0C;<code>Def</code> &#x548C; <strong>Let</strong> &#x8BED;&#x53E5;&#x53EF;&#x7528;&#x4E8E;&#x5206;&#x89E3;&#x51FA;&#x66F4;&#x5E38;&#x89C1;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <strong>If</strong> &#x548C; <strong>Assert</strong> &#x8BED;&#x53E5;&#x3002;</p>
+<p>&#x540C;&#x6837;&#x4E0E;&#x5E38;&#x89C4;&#x7C7B;&#x4E00;&#x6837;&#xFF0C;multiclass &#x5177;&#x6709;&#x9690;&#x5F0F;&#x6A21;&#x677F;&#x53C2;&#x6570; <code>NAME</code>&#x3002;&#x5F53;&#x5728; <code>multiclass</code> &#x4E2D;&#x5B9A;&#x4E49;&#x547D;&#x540D;&#xFF08;&#x975E;&#x533F;&#x540D;&#xFF09;&#x8BB0;&#x5F55;&#x5E76;&#x4E14;&#x8BB0;&#x5F55;&#x7684;&#x540D;&#x79F0;&#x4E0D;&#x5305;&#x62EC;&#x6A21;&#x677F;&#x53C2;&#x6570; <code>NAME</code> &#x7684;&#x4F7F;&#x7528;&#x65F6;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x5C06;&#x6B64;&#x7C7B;&#x4F7F;&#x7528;&#x6DFB;&#x52A0;&#x5230;&#x524D;&#x9762;&#x6DFB;&#x52A0;&#x5230;&#x540D;&#x79F0;&#x4E2D;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x4EE5;&#x4E0B;&#x5185;&#x5BB9;&#x5728; multiclass &#x4E2D;&#x662F;&#x7B49;&#x6548;&#x7684;&#xFF1A;</p>
+<pre><code>**def** Foo ...
+**def** NAME _# Foo ..._
+</code></pre><p>&#x5F53;&#x591A;&#x7C7B;&#x88AB;&#x591A;&#x7C7B;&#x5B9A;&#x4E49;&#x5916;&#x90E8;&#x7684; <code>defm</code> &#x8BED;&#x53E5;&#x201C;&#x5B9E;&#x4F8B;&#x5316;&#x201D;&#x6216;&#x201C;&#x8C03;&#x7528;&#x201D;&#x65F6;&#xFF0C;&#x5C06;&#x521B;&#x5EFA;&#x591A;&#x7C7B;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x8BB0;&#x5F55;&#x3002;&#x591A;&#x7C7B;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A; <code>def</code> &#x8BED;&#x53E5;&#x90FD;&#x4F1A;&#x751F;&#x6210;&#x4E00;&#x6761;&#x8BB0;&#x5F55;&#x3002;&#x4E0E;&#x9876;&#x5C42; <code>def</code> &#x8BED;&#x53E5;&#x4E00;&#x6837;&#xFF0C;&#x8FD9;&#x4E9B;&#x5B9A;&#x4E49;&#x53EF;&#x4EE5;&#x4ECE;&#x591A;&#x4E2A;&#x7236;&#x7C7B;&#x7EE7;&#x627F;&#x3002;</p>
+<h3 id="166-defm-&#x2014;-invoke-multiclasses-to-define-multiple-records">1.6.6 defm &#x2014; invoke multiclasses to define multiple records</h3>
+<p>&#x5B9A;&#x4E49;&#x591A;&#x7C7B;&#x540E;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>defm</code> &#x8BED;&#x53E5;&#x201C;&#x8C03;&#x7528;&#x201D;&#x5B83;&#x4EEC;&#x5E76;&#x5904;&#x7406;&#x8FD9;&#x4E9B; <code>multiple</code> &#x4E2D;&#x7684;&#x591A;&#x4E2A;&#x8BB0;&#x5F55;&#x5B9A;&#x4E49;&#x3002;&#x8FD9;&#x4E9B;&#x8BB0;&#x5F55;&#x5B9A;&#x4E49;&#x7531; <code>def</code> &#x6307;&#x5B9A;&#x8BED;&#x53E5;&#xFF0C;&#x4EE5;&#x53CA;&#x95F4;&#x63A5;&#x901A;&#x8FC7; <code>defm</code> &#x8BED;&#x53E5;&#x3002;</p>
+<pre><code>**Defm** ::=  &quot;defm&quot; [**NameValue**] **ParentClassList** &quot;;&quot; //[**NameValue**]&#x8FD9;&#x90E8;&#x5206;&#x662F;&#x53EF;&#x9009;&#x7684;
+</code></pre><p><strong>ParentClassList</strong> &#x662F;&#x4E00;&#x4E2A;&#x5192;&#x53F7;&#xFF0C;&#x540E;&#x8DDF;&#x81F3;&#x5C11;&#x4E00;&#x4E2A; multiclass &#x548C;&#x4EFB;&#x610F;&#x6570;&#x91CF;&#x7684; <code>regular</code> &#x7C7B;&#x7684;&#x5217;&#x8868;&#x3002;<code>multiclasses</code> &#x5FC5;&#x987B;&#x4F4D;&#x4E8E;&#x5E38;&#x89C4;&#x7C7B;&#x4E4B;&#x524D;&#x3002;&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;<code>defm</code> &#x6CA1;&#x6709; body&#x3002;&#x6B64;&#x8BED;&#x53E5;&#x76F4;&#x63A5;&#x901A;&#x8FC7; <code>def</code> &#x8BED;&#x53E5;&#x6216;&#x901A;&#x8FC7; <code>defm</code> &#x8BED;&#x53E5;&#x3002;&#x8FD9;&#x4E9B; <code>record</code> &#x8FD8;&#x63A5;&#x6536;&#x7236;&#x7C7B;&#x5217;&#x8868;&#x4E2D;&#x5305;&#x542B;&#x7684;&#x4EFB;&#x4F55;&#x5E38;&#x89C4;&#x7C7B;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x5B57;&#x6BB5;&#x3002;&#x8FD9;&#x5BF9;&#x4E8E;&#x5411; <code>defm</code> &#x521B;&#x5EFA;&#x7684;&#x6240;&#x6709;&#x8BB0;&#x5F55;&#x6DFB;&#x52A0;&#x4E00;&#x7EC4;&#x901A;&#x7528;&#x5B57;&#x6BB5;&#x975E;&#x5E38;&#x6709;&#x7528;&#x3002;</p>
+<p>&#x8BE5;&#x540D;&#x79F0;&#x4EE5; <code>def</code> &#x4F7F;&#x7528;&#x7684;&#x76F8;&#x540C;&#x7279;&#x6B8A;&#x6A21;&#x5F0F;&#x8FDB;&#x884C;&#x89E3;&#x6790;&#x3002;&#x5982;&#x679C;&#x4E0D;&#x5305;&#x542B;&#x8BE5;&#x540D;&#x79F0;&#xFF0C;&#x5219;&#x63D0;&#x4F9B;&#x672A;&#x6307;&#x5B9A;&#x4F46;&#x5168;&#x5C40;&#x552F;&#x4E00;&#x7684;&#x540D;&#x79F0;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x4EE5;&#x4E0B;&#x793A;&#x4F8B;&#x4EE5;&#x4E0D;&#x540C;&#x7684;&#x540D;&#x79F0;&#x7ED3;&#x675F;&#xFF1A;</p>
+<pre><code>defm    : SomeMultiClass&lt;...&gt;;   // A globally unique name.
+defm &quot;&quot; : SomeMultiClass&lt;...&gt;;   // An empty name.
+</code></pre><p><code>defm</code> &#x8BED;&#x53E5;&#x53EF;&#x4EE5;&#x5728;&#x591A;&#x7C7B;&#x4E3B;&#x4F53;&#x4E2D;&#x4F7F;&#x7528;&#x3002;&#x53D1;&#x751F;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x65F6;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x53D8;&#x4F53;&#x7B49;&#x6548;&#x4E8E;&#xFF1A;</p>
+<pre><code>defm NAME : SomeMultiClass&lt;...&gt;;
+</code></pre><p>&#x66F4;&#x4E00;&#x822C;&#x5730;&#x8BF4;&#xFF0C;&#x5F53; <code>defm</code> &#x51FA;&#x73B0;&#x5728;&#x591A;&#x7C7B;&#x4E2D;&#x5E76;&#x4E14;&#x5176;&#x540D;&#x79F0;&#x4E0D;&#x5305;&#x62EC;&#x9690;&#x5F0F;&#x6A21;&#x677F;&#x53C2;&#x6570; <code>NAME</code> &#x7684;&#x4F7F;&#x7528;&#x65F6;&#xFF0C;&#x5C06;&#x81EA;&#x52A8;&#x9884;&#x7F6E; <code>NAME</code>&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x4EE5;&#x4E0B;&#x5185;&#x5BB9;&#x5728;&#x591A;&#x7C7B;&#x4E2D;&#x662F;&#x7B49;&#x6548;&#x7684;&#xFF1A;</p>
+<pre><code>defm Foo        : SomeMultiClass&lt;...&gt;;
+defm NAME _# Foo : SomeMultiClass&lt;...&gt;;_
+</code></pre><h3 id="167-examples-multiclasses-and-defms">1.6.7 Examples: multiclasses and defms</h3>
+<p>&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x4F7F;&#x7528; <code>multiclass</code> &#x548C; <code>defm</code> &#x7684;&#x7B80;&#x5355;&#x793A;&#x4F8B;&#x3002;&#x8003;&#x8651;&#x4E00;&#x4E2A; 3 &#x5730;&#x5740;&#x6307;&#x4EE4;&#x67B6;&#x6784;&#xFF0C;&#x5176;&#x6307;&#x4EE4;&#x6709;&#x4E24;&#x79CD;&#x683C;&#x5F0F;&#xFF1A; <code>reg = reg op reg</code> &#x548C; <code>reg = reg op imm</code>&#x3002;SPARC &#x5C31;&#x662F;&#x8FD9;&#x79CD;&#x4F53;&#x7CFB;&#x7ED3;&#x6784;&#x7684;&#x4E00;&#x4E2A;&#x793A;&#x4F8B;&#x3002;</p>
+<pre><code class="lang-bash">def ops; // &#x5B9A;&#x4E49;&#x64CD;&#x4F5C;&#x7B26;&#x7C7B;&#x578B;
+def GPR; // &#x5B9A;&#x4E49;&#x901A;&#x7528;&#x5BC4;&#x5B58;&#x5668;&#x7C7B;&#x578B;
+def Imm; // &#x5B9A;&#x4E49;&#x7ACB;&#x5373;&#x6570;&#x7C7B;&#x578B;
+class inst &lt;int opc, string asmstr, dag operandlist&gt;; // &#x5B9A;&#x4E49;&#x6307;&#x4EE4;&#x57FA;&#x7C7B;&#xFF1A;&#x5305;&#x542B;&#x64CD;&#x4F5C;&#x7801;&#x3001;&#x6C47;&#x7F16;&#x5B57;&#x7B26;&#x4E32;&#x548C;&#x64CD;&#x4F5C;&#x6570;&#x5217;&#x8868;
+
+multiclass ri_inst &lt;int opc, string asmstr&gt; {
+  def _rr : inst&lt;opc, !strconcat(asmstr, <span class="hljs-string">&quot; <span class="hljs-variable">$dst</span>, <span class="hljs-variable">$src1</span>, <span class="hljs-variable">$src2</span>&quot;</span>),
+                   (ops GPR:<span class="hljs-variable">$dst</span>, GPR:<span class="hljs-variable">$src1</span>, GPR:<span class="hljs-variable">$src2</span>)&gt;;
+  def _ri : inst&lt;opc, !strconcat(asmstr, <span class="hljs-string">&quot; <span class="hljs-variable">$dst</span>, <span class="hljs-variable">$src1</span>, <span class="hljs-variable">$src2</span>&quot;</span>),
+                   (ops GPR:<span class="hljs-variable">$dst</span>, GPR:<span class="hljs-variable">$src1</span>, Imm:<span class="hljs-variable">$src2</span>)&gt;;
+}
+
+// Define records <span class="hljs-keyword">for</span> each instruction <span class="hljs-keyword">in</span> the RR and RI formats.
+defm ADD : ri_inst&lt;0b111, <span class="hljs-string">&quot;add&quot;</span>&gt;;
+defm SUB : ri_inst&lt;0b101, <span class="hljs-string">&quot;sub&quot;</span>&gt;;
+defm MUL : ri_inst&lt;0b100, <span class="hljs-string">&quot;mul&quot;</span>&gt;;
+</code></pre>
+<p>&#x6BCF;&#x6B21;&#x4F7F;&#x7528; <code>ri_inst</code> &#x591A;&#x7C7B;&#x90FD;&#x4F1A;&#x5B9A;&#x4E49;&#x4E24;&#x6761;&#x8BB0;&#x5F55;&#xFF0C;&#x4E00;&#x6761;&#x8BB0;&#x5F55;&#x7684; <code>_rr</code> &#x540E;&#x7F00;&#x548C;&#x4E00;&#x4E2A;&#x5E26;&#x6709; <code>_ri</code> &#x7684;&#x540E;&#x7F00;&#x3002;&#x56DE;&#x60F3;&#x4E00;&#x4E0B;&#xFF0C;<code>defm</code> &#x7684;&#x540D;&#x79F0; &#x7684; MultiClass &#x7684; that multiclass &#x7684; MultiClass &#x4E2D;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x751F;&#x6210;&#x7684;&#x5B9A;&#x4E49;&#x88AB;&#x547D;&#x540D;&#x4E3A;&#xFF1A;</p>
+<pre><code>ADD_rr, ADD_ri
+SUB_rr, SUB_ri
+MUL_rr, MUL_ri
+</code></pre><p>&#x5982;&#x679C;&#x6CA1;&#x6709; <code>multiclass</code> &#x529F;&#x80FD;&#xFF0C;&#x5219;&#x5FC5;&#x987B;&#x6309;&#x5982;&#x4E0B;&#x65B9;&#x5F0F;&#x5B9A;&#x4E49;&#x8BF4;&#x660E;&#x3002;</p>
+<pre><code class="lang-python">def ops;
+def GPR;
+def Imm;
+class inst &lt;int opc, string asmstr, dag operandlist&gt;;
+
+class rrinst &lt;int opc, string asmstr&gt;
+  : inst&lt;opc, !strconcat(asmstr, &quot; $dst, $src1, $src2&quot;),
+           (ops GPR:$dst, GPR:$src1, GPR:$src2)&gt;;
+
+class riinst &lt;int opc, string asmstr&gt;
+  : inst&lt;opc, !strconcat(asmstr, &quot; $dst, $src1, $src2&quot;),
+           (ops GPR:$dst, GPR:$src1, Imm:$src2)&gt;;
+
+// Define records for each instruction in the RR and RI formats.
+def ADD_rr : rrinst&lt;0b111, &quot;add&quot;&gt;;
+def ADD_ri : riinst&lt;0b111, &quot;add&quot;&gt;;
+def SUB_rr : rrinst&lt;0b101, &quot;sub&quot;&gt;;
+def SUB_ri : riinst&lt;0b101, &quot;sub&quot;&gt;;
+def MUL_rr : rrinst&lt;0b100, &quot;mul&quot;&gt;;
+def MUL_ri : riinst&lt;0b100, &quot;mul&quot;&gt;;
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x5728;&#x591A;&#x7C7B;&#x4E2D;&#x4F7F;&#x7528; <code>defm</code> &#x6765;&#x201C;&#x8C03;&#x7528;&#x201D;&#x5176;&#x4ED6;&#x591A;&#x7C7B;&#xFF0C;&#x5E76;&#x521B;&#x5EFA;&#x8FD9;&#x4E9B;&#x591A;&#x7C7B;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x8BB0;&#x5F55;&#x4EE5;&#x53CA;&#x5F53;&#x524D;&#x591A;&#x7C7B;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x8BB0;&#x5F55;&#x3002;&#x5728;&#x4EE5;&#x4E0B;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;<code>basic_s basic_p MultiClasses</code> &#x90FD;&#x5305;&#x542B;&#x5F15;&#x7528; <code>basic_r multiclass</code> &#x4E2D;&#x3002;<code>basic_r multiclass</code> &#x4EC5;&#x5305;&#x542B; <code>def</code> &#x8BED;&#x53E5;&#x3002;</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">class</span> Instruction &lt;bits&lt;<span class="hljs-number">4</span>&gt; opc, <span class="hljs-built_in">string</span> Name&gt; {
+  bits&lt;<span class="hljs-number">4</span>&gt; opcode = opc;
+  <span class="hljs-built_in">string</span> name = Name;
+}
+<span class="hljs-comment">//basic_r &#x751F;&#x6210;&#x4E24;&#x79CD;&#x6307;&#x4EE4;&#x683C;&#x5F0F;&#xFF08;&#x5BC4;&#x5B58;&#x5668; - &#x5BC4;&#x5B58;&#x5668;&#x3001;&#x5BC4;&#x5B58;&#x5668; - &#x5185;&#x5B58;&#xFF09;</span>
+multiclass basic_r &lt;bits&lt;<span class="hljs-number">4</span>&gt; opc&gt; {
+  def rr : Instruction&lt;opc, <span class="hljs-string">&quot;rr&quot;</span>&gt;;
+  def rm : Instruction&lt;opc, <span class="hljs-string">&quot;rm&quot;</span>&gt;;
+}
+
+multiclass basic_s &lt;bits&lt;<span class="hljs-number">4</span>&gt; opc&gt; {
+  defm SS : basic_r&lt;opc&gt;;
+  defm SD : basic_r&lt;opc&gt;;
+  def X : Instruction&lt;opc, <span class="hljs-string">&quot;x&quot;</span>&gt;;
+}
+
+multiclass basic_p &lt;bits&lt;<span class="hljs-number">4</span>&gt; opc&gt; {
+  defm PS : basic_r&lt;opc&gt;;
+  defm PD : basic_r&lt;opc&gt;;
+  def Y : Instruction&lt;opc, <span class="hljs-string">&quot;y&quot;</span>&gt;;
+}
+
+defm ADD : basic_s&lt;<span class="hljs-number">0xf</span>&gt;, basic_p&lt;<span class="hljs-number">0xf</span>&gt;;
+</code></pre>
+<p>&#x6700;&#x7EC8;&#x7684; <code>defm</code> &#x521B;&#x5EFA;&#x4EE5;&#x4E0B;&#x8BB0;&#x5F55;&#xFF0C;&#x5176;&#x4E2D; 5 &#x6761;&#x8BB0;&#x5F55;&#x6765;&#x81EA; <code>basic_s multiclass</code> &#xFF0C;5 &#x6761;&#x8BB0;&#x5F55;&#x6765;&#x81EA; <code>basic_p multiclass</code>&#x3002;</p>
+<pre><code>ADDSSrr, ADDSSrm
+ADDSDrr, ADDSDrm
+ADDX
+ADDPSrr, ADDPSrm
+ADDPDrr, ADDPDrm
+ADDY
+</code></pre><p>&#x9664;&#x4E86; <code>multiclasses</code> &#x4E4B;&#x5916;&#xFF0C;&#x9876;&#x5C42;&#x548C;&#x591A;&#x7C7B;&#x4E2D;&#x7684; <code>defm</code> &#x8BED;&#x53E5;&#x8FD8;&#x53EF;&#x4EE5;&#x4ECE;&#x5E38;&#x89C4;&#x7C7B;&#x7EE7;&#x627F;&#x3002;&#x89C4;&#x5219;&#x662F;&#x5E38;&#x89C4;&#x7C7B;&#x5FC5;&#x987B;&#x5728; multiclasses &#x4E4B;&#x540E;&#x5217;&#x51FA;&#xFF0C;&#x5E76;&#x4E14;&#x5FC5;&#x987B;&#x81F3;&#x5C11;&#x6709;&#x4E00;&#x4E2A; <code>multiclass</code>&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">XD</span> </span>{
+  bits&lt;<span class="hljs-number">4</span>&gt; Prefix = <span class="hljs-number">11</span>;
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">XS</span> </span>{
+  bits&lt;<span class="hljs-number">4</span>&gt; Prefix = <span class="hljs-number">12</span>;
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">I</span> &lt;<span class="hljs-title">bits</span>&lt;4&gt; <span class="hljs-title">op</span>&gt; </span>{
+  bits&lt;<span class="hljs-number">4</span>&gt; opcode = op;
+}
+
+multiclass R {
+  def rr : I&lt;<span class="hljs-number">4</span>&gt;;
+  def rm : I&lt;<span class="hljs-number">2</span>&gt;;
+}
+
+multiclass Y {
+  defm SS : R, XD;    <span class="hljs-comment">// First multiclass R, then regular class XD.</span>
+  defm SD : R, XS;
+}
+
+defm Instr : Y;
+</code></pre>
+<p>&#x6B64;&#x793A;&#x4F8B;&#x5C06;&#x521B;&#x5EFA;&#x56DB;&#x6761;&#x8BB0;&#x5F55;&#xFF0C;&#x6B64;&#x5904;&#x6309;&#x5B57;&#x6BCD;&#x987A;&#x5E8F;&#x663E;&#x793A;&#x5176;&#x5B57;&#x6BB5;&#x3002;</p>
+<pre><code>def InstrSDrm {
+  bits&lt;4&gt; opcode = { 0, 0, 1, 0 };
+  bits&lt;4&gt; Prefix = { 1, 1, 0, 0 };
+}
+
+def InstrSDrr {
+  bits&lt;4&gt; opcode = { 0, 1, 0, 0 };
+  bits&lt;4&gt; Prefix = { 1, 1, 0, 0 };
+}
+
+def InstrSSrm {
+  bits&lt;4&gt; opcode = { 0, 0, 1, 0 };
+  bits&lt;4&gt; Prefix = { 1, 0, 1, 1 };
+}
+
+def InstrSSrr {
+  bits&lt;4&gt; opcode = { 0, 1, 0, 0 };
+  bits&lt;4&gt; Prefix = { 1, 0, 1, 1 };
+}
+</code></pre><p>&#x4E5F;&#x53EF;&#x4EE5;&#x5728; <code>multiclasses</code> &#x4E2D;&#x4F7F;&#x7528; <code>let</code> &#x8BED;&#x53E5;&#xFF0C;&#x4ECE;&#x800C;&#x63D0;&#x4F9B;&#x53E6;&#x4E00;&#x79CD;&#x4ECE;&#x8BB0;&#x5F55;&#x4E2D;&#x6392;&#x9664;&#x5171;&#x6027;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x5728;&#x4F7F;&#x7528;&#x591A;&#x4E2A;&#x7EA7;&#x522B;&#x7684; <code>multiclass</code> &#x5B9E;&#x4F8B;&#x5316;&#x65F6;&#x3002;</p>
+<pre><code class="lang-javascript">multiclass basic_r &lt;bits&lt;<span class="hljs-number">4</span>&gt; opc&gt; {
+  <span class="hljs-keyword">let</span> Predicates = [HasSSE2] <span class="hljs-keyword">in</span> {
+    def rr : Instruction&lt;opc, <span class="hljs-string">&quot;rr&quot;</span>&gt;;
+    def rm : Instruction&lt;opc, <span class="hljs-string">&quot;rm&quot;</span>&gt;;
+  }
+  <span class="hljs-keyword">let</span> Predicates = [HasSSE3] <span class="hljs-keyword">in</span>
+    def rx : Instruction&lt;opc, <span class="hljs-string">&quot;rx&quot;</span>&gt;;
+}
+
+multiclass basic_ss &lt;bits&lt;<span class="hljs-number">4</span>&gt; opc&gt; {
+  <span class="hljs-keyword">let</span> IsDouble = <span class="hljs-literal">false</span> <span class="hljs-keyword">in</span>
+    defm SS : basic_r&lt;opc&gt;;
+
+  <span class="hljs-keyword">let</span> IsDouble = <span class="hljs-literal">true</span> <span class="hljs-keyword">in</span>
+    defm SD : basic_r&lt;opc&gt;;
+}
+
+defm ADD : basic_ss&lt;<span class="hljs-number">0xf</span>&gt;;
+</code></pre>
+<h3 id="168-defset-&#x2014;-create-a-definition-set">1.6.8 defset &#x2014; create a definition set</h3>
+<p><code>defset</code> &#x8BED;&#x53E5;&#x7528;&#x4E8E;&#x5C06;&#x4E00;&#x7EC4; <code>record</code> &#x6536;&#x96C6;&#x5230;&#x5168;&#x5C40;&#x8BB0;&#x5F55;&#x5217;&#x8868;&#x4E2D;&#x3002;</p>
+<pre><code>**Defset** ::=  &quot;defset&quot; **Type** **TokIdentifier** &quot;=&quot; &quot;{&quot; **Statement*** &quot;}&quot;
+</code></pre><p>&#x901A;&#x8FC7; <code>def</code> &#x548C; <code>defm</code> &#x5728;&#x5927;&#x62EC;&#x53F7;&#x5185;&#x5B9A;&#x4E49;&#x7684;&#x6240;&#x6709;&#x8BB0;&#x5F55;&#x90FD;&#x7167;&#x5E38;&#x5B9A;&#x4E49;&#xFF0C;&#x5E76;&#x4E14;&#x5B83;&#x4EEC;&#x4E5F;&#x88AB;&#x6536;&#x96C6;&#x5728;&#x7ED9;&#x5B9A;&#x540D;&#x79F0; &#xFF08;<strong>TokIdentifier&#xFF09;</strong> &#x7684;&#x5168;&#x5C40;&#x5217;&#x8868;&#x4E2D;&#x3002;</p>
+<p>&#x6307;&#x5B9A;&#x7684;&#x7C7B;&#x578B;&#x5FC5;&#x987B;&#x662F; <code>list&lt;</code> <em>class</em> <code>&gt;</code>&#xFF0C;&#x5176;&#x4E2D;<em>class</em> &#x662F;&#x67D0;&#x4E2A;&#x8BB0;&#x5F55;&#x7C7B;&#x3002; <code>defset</code> &#x8BED;&#x53E5;&#x53EF;&#x4EE5;&#x5D4C;&#x5957;&#x3002;&#x5185;&#x90E8; <code>defset</code> &#x5C06;&#x8BB0;&#x5F55;&#x6DFB;&#x52A0;&#x5230;&#x81EA;&#x5DF1;&#x7684;&#x96C6;&#x4E2D;&#xFF0C;&#x6240;&#x6709;&#x8FD9;&#x4E9B;&#x8BB0;&#x5F55;&#x4E5F;&#x6DFB;&#x52A0;&#x5230;&#x5916;&#x90E8;&#x96C6;&#x4E2D;&#x3002;</p>
+<p>&#x5728;&#x521D;&#x59CB;&#x5316;&#x8868;&#x8FBE;&#x5F0F;&#x4E2D;&#x4F7F;&#x7528; <code>ClassID&lt;...&gt;</code> &#x8BED;&#x6CD5;&#x672A;&#x6536;&#x96C6;&#x5230;&#x96C6;&#x5408;&#x4E2D;&#x3002;</p>
+<h3 id="169-deftype-&#x2014;-define-a-type">1.6.9 deftype &#x2014; define a type</h3>
+<p><code>deftype</code> &#x8BED;&#x53E5;&#x5B9A;&#x4E49;&#x7C7B;&#x578B;&#x3002;&#x8BE5;&#x7C7B;&#x578B;&#x53EF;&#x4EE5;&#x5728;&#x5B9A;&#x4E49;&#x540E;&#x9762;&#x7684;&#x6574;&#x4E2A;&#x8BED;&#x53E5;&#x4E2D;&#x4F7F;&#x7528;&#x3002;</p>
+<pre><code>**Deftype** ::=  &quot;deftype&quot; **TokIdentifier** &quot;=&quot; **Type** &quot;;&quot;
+</code></pre><p><code>=</code> &#x5DE6;&#x4FA7;&#x7684;&#x6807;&#x8BC6;&#x7B26;&#x5B9A;&#x4E49;&#x4E3A;&#x7C7B;&#x578B;&#x540D;&#x79F0;&#xFF0C;&#x5B9E;&#x9645;&#x7C7B;&#x578B;&#x7531; <code>=</code> &#x53F3;&#x4FA7;&#x7684;&#x7C7B;&#x578B;&#x8868;&#x8FBE;&#x5F0F;&#x7ED9;&#x51FA;&#x3002;</p>
+<p>&#x76EE;&#x524D;&#xFF0C;&#x4EC5;&#x652F;&#x6301;&#x5C06;&#x539F;&#x59CB;&#x7C7B;&#x578B;&#x548C;&#x7C7B;&#x578B;&#x522B;&#x540D;&#x4F5C;&#x4E3A;&#x6E90;&#x7C7B;&#x578B;&#xFF0C;<em> </em>&#x5E76;&#x4E14; <code>deftype</code> &#x8BED;&#x53E5;&#x53EA;&#x80FD;&#x51FA;&#x73B0;&#x5728;&#x9876;&#x5C42;&#x3002;</p>
+<h3 id="1610-defvar-&#x2014;-define-a-variable">1.6.10 defvar &#x2014; define a variable</h3>
+<p><code>defvar</code> &#x8BED;&#x53E5;&#x5B9A;&#x4E49;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x3002;&#x5176;&#x503C;&#x53EF;&#x7528;&#x4E8E;&#x5B9A;&#x4E49;&#x540E;&#x9762;&#x7684;&#x6574;&#x4E2A;&#x8BED;&#x53E5;&#x3002;</p>
+<pre><code>**Defvar** ::=  &quot;defvar&quot; **TokIdentifier** &quot;=&quot; **Value** &quot;;&quot;
+</code></pre><p><code>=</code> &#x5DE6;&#x4FA7;&#x7684;&#x6807;&#x8BC6;&#x7B26;&#x5B9A;&#x4E49;&#x4E3A;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#xFF0C;&#x5176;&#x503C;&#x7531; <code>=</code> &#x53F3;&#x4FA7;&#x7684;&#x503C;&#x8868;&#x8FBE;&#x5F0F;&#x7ED9;&#x51FA;&#xFF0C;&#x53D8;&#x91CF;&#x7684;&#x7C7B;&#x578B;&#x4F1A;&#x81EA;&#x52A8;&#x63A8;&#x65AD;&#x3002;</p>
+<p>&#x5B9A;&#x4E49;&#x53D8;&#x91CF;&#x540E;&#xFF0C;&#x4E0D;&#x80FD;&#x5C06;&#x5176;&#x8BBE;&#x7F6E;&#x4E3A;&#x5176;&#x4ED6;&#x503C;&#x3002;</p>
+<p>&#x5728;&#x9876;&#x7EA7; <code>foreach</code> &#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x53D8;&#x91CF;&#x5728;&#x6BCF;&#x6B21;&#x5FAA;&#x73AF;&#x8FED;&#x4EE3;&#x7ED3;&#x675F;&#x65F6;&#x8D85;&#x51FA;&#x8303;&#x56F4;&#xFF0C;&#x56E0;&#x6B64;&#x5B83;&#x4EEC;&#x5728;&#x4E00;&#x6B21;&#x8FED;&#x4EE3;&#x4E2D;&#x7684;&#x503C;&#x5728;&#x4E0B;&#x4E00;&#x6B21;&#x8FED;&#x4EE3;&#x4E2D;&#x4E0D;&#x53EF;&#x7528;&#x3002;&#x4EE5;&#x4E0B; <code>defvar</code> &#x5C06;&#x4E0D;&#x8D77;&#x4F5C;&#x7528;&#xFF1A;</p>
+<pre><code>defvar i = !add(i, 1); //defvar &#x7528;&#x4E8E;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x53EA;&#x80FD;&#x5728;&#x6587;&#x4EF6;&#x9876;&#x5C42;&#x5B9A;&#x4E49;&#xFF0C;&#x4E0D;&#x80FD;&#x5728;&#x5FAA;&#x73AF;&#x5185;&#x4FEE;&#x6539;&#x3002;
+</code></pre><p>&#x8FD8;&#x53EF;&#x4EE5;&#x5728; <code>record</code> &#x6B63;&#x6587;&#x4E2D;&#x4F7F;&#x7528; <code>defvar</code> &#x5B9A;&#x4E49;&#x53D8;&#x91CF;&#x3002;</p>
+<h3 id="1611-foreach-&#x2014;-iterate-over-a-sequence-of-statements">1.6.11 foreach &#x2014; iterate over a sequence of statements</h3>
+<p><code>foreach</code> &#x8BED;&#x53E5;&#x5FAA;&#x73AF;&#x8BBF;&#x95EE;&#x4E00;&#x7CFB;&#x5217;&#x8BED;&#x53E5;&#xFF0C;&#x5728;&#x4E00;&#x7CFB;&#x5217;&#x503C;&#x4E0A;&#x6539;&#x53D8;&#x53D8;&#x91CF;&#x3002;</p>
+<pre><code class="lang-go">**Foreach        ** ::=  <span class="hljs-string">&quot;foreach&quot;</span> **ForeachIterator** <span class="hljs-string">&quot;in&quot;</span> <span class="hljs-string">&quot;{&quot;</span> **Statement*** <span class="hljs-string">&quot;}&quot;</span>
+                    | <span class="hljs-string">&quot;foreach&quot;</span> **ForeachIterator** <span class="hljs-string">&quot;in&quot;</span> **Statement**
+**ForeachIterator** ::=  **TokIdentifier** <span class="hljs-string">&quot;=&quot;</span> (<span class="hljs-string">&quot;{&quot;</span> **RangeList** <span class="hljs-string">&quot;}&quot;</span> | **RangePiece** | **Value**)
+</code></pre>
+<p><code>foreach</code> &#x7684;&#x4E3B;&#x4F53;&#x662F;&#x4E00;&#x7CFB;&#x5217;&#x5E26;&#x5927;&#x62EC;&#x53F7;&#x7684;&#x8BED;&#x53E5;&#x6216;&#x6CA1;&#x6709;&#x5927;&#x62EC;&#x53F7;&#x7684;&#x5355;&#x4E2A;&#x8BED;&#x53E5;&#x3002;&#x5BF9;&#x4E8E;&#x8303;&#x56F4;&#x5217;&#x8868;&#x3001;&#x8303;&#x56F4;&#x7247;&#x6BB5;&#x6216;&#x5355;&#x4E2A;&#x503C;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x503C;&#xFF0C;&#x8FD9;&#x4E9B;&#x8BED;&#x53E5;&#x5C06;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x4E00;&#x6B21;&#x3002;&#x5728;&#x6BCF;&#x6B21;&#x8FED;&#x4EE3;&#x4E2D;&#xFF0C;<strong>TokIdentifier</strong> &#x53D8;&#x91CF;&#x5C06;&#x8BBE;&#x7F6E;&#x4E3A;&#x8BE5;&#x503C;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x5728;&#x8BED;&#x53E5;&#x4E2D;&#x4F7F;&#x7528;&#x3002;</p>
+<p>Foreach &#x5FAA;&#x73AF;&#x53EF;&#x4EE5;&#x5D4C;&#x5957;&#xFF0C;&#x4E14;&#x6BCF;&#x6B21;&#x8FED;&#x4EE3;&#x521B;&#x5EFA;&#x65B0;&#x53D8;&#x91CF;&#xFF0C;&#x8FED;&#x4EE3;&#x7ED3;&#x675F;&#x540E;&#x53D8;&#x91CF;&#x9500;&#x6BC1;&#x3002;</p>
+<pre><code>foreach i = [0, 1, 2, 3] in {
+  def R#i : Register&lt;...&gt;;
+  def F#i : Register&lt;...&gt;;
+}
+</code></pre><p>&#x6B64;&#x5FAA;&#x73AF;&#x5B9A;&#x4E49;&#x540D;&#x4E3A; <code>R0</code>&#x3001;<code>R1</code>&#x3001;<code>R2</code> &#x548C; <code>R3</code> &#x4EE5;&#x53CA; <code>F0</code>&#x3001;<code>F1</code>&#x3001;<code>F2</code> &#x548C; <code>F3</code> &#x7684; <code>record</code>&#x3002;</p>
+<h3 id="1612-dump-&#x2014;-print-messages-to-stderr">1.6.12 dump &#x2014; print messages to stderr</h3>
+<p><code>dump</code> &#x8BED;&#x53E5;&#x5C06; <code>input</code> &#x5B57;&#x7B26;&#x4E32;&#x6253;&#x5370;&#x5230;&#x6807;&#x51C6;&#x9519;&#x8BEF;&#x8F93;&#x51FA;&#x3002;&#x5B83;&#x7528;&#x4E8E;&#x8C03;&#x8BD5;&#x76EE;&#x7684;&#x3002;&#x8BE5;&#x8BED;&#x53E5;&#x6709;&#x4E24;&#x4E2A;&#x4F5C;&#x7528;&#xFF1A;&#x5728;&#x9876;&#x5C42;&#xFF0C;&#x5C06;&#x7ACB;&#x5373;&#x6253;&#x5370;&#x6D88;&#x606F;&#xFF1B;&#x5728; <code>record/class/multiclass</code> &#x4E2D;&#xFF0C;<code>dump</code> &#x5728;&#x5305;&#x542B; <code>record</code> &#x7684;&#x6BCF;&#x4E2A;&#x5B9E;&#x4F8B;&#x5316;&#x70B9;&#x8FDB;&#x884C;&#x8BC4;&#x4F30;&#x3002;</p>
+<pre><code>**Dump** ::=  &quot;dump&quot; **Value** &quot;;&quot;
+</code></pre><p><strong>Value</strong> &#x662F;&#x4EFB;&#x610F;&#x5B57;&#x7B26;&#x4E32;&#x8868;&#x8FBE;&#x5F0F;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x4E0E; <code>&#xFF01;repr</code> &#x7ED3;&#x5408;&#x4F7F;&#x7528;&#xFF0C;&#x4EE5;&#x8C03;&#x67E5;&#x4F20;&#x9012;&#x7ED9;&#x591A;&#x7C7B;&#x7684;&#x503C;&#xFF1A;</p>
+<pre><code>multiclass MC&lt;dag s&gt; {
+  dump &quot;s = &quot; # !repr(s);
+}
+</code></pre><h3 id="1613-if-&#x2014;-select-statements-based-on-a-test">1.6.13 if &#x2014; select statements based on a test</h3>
+<p><code>if</code> &#x8BED;&#x53E5;&#x662F;&#x5224;&#x65AD;&#x8BED;&#x53E5;&#xFF0C;&#x5B83;&#x6839;&#x636E;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x503C;&#xFF0C;&#x9009;&#x62E9;&#x76F8;&#x5E94;&#x7684;&#x4E24;&#x4E2A;&#x8BED;&#x53E5;&#x7EC4;&#x4E4B;&#x4E00;&#x3002;</p>
+<pre><code class="lang-go">**If    ** ::=  <span class="hljs-string">&quot;if&quot;</span> **Value** <span class="hljs-string">&quot;then&quot;</span> **IfBody**
+           | <span class="hljs-string">&quot;if&quot;</span> **Value** <span class="hljs-string">&quot;then&quot;</span> **IfBody** <span class="hljs-string">&quot;else&quot;</span> **IfBody**
+**IfBody** ::=  <span class="hljs-string">&quot;{&quot;</span> **Statement*** <span class="hljs-string">&quot;}&quot;</span> | **Statement**
+</code></pre>
+<p>&#x5BF9; <code>value</code> &#x8868;&#x8FBE;&#x5F0F;&#x8FDB;&#x884C;&#x8BA1;&#x7B97;&#x3002;&#x5982;&#x679C;&#x8BA1;&#x7B97;&#x7ED3;&#x679C;&#x4E3A; <code>true</code>&#xFF0C;&#x5219; <code>then</code> &#x5904;&#x7406; <code>reserved word</code>&#x3002;&#x5426;&#x5219;&#xFF0C;&#x5982;&#x679C;&#x5B58;&#x5728; <code>else</code> &#xFF0C;&#x5219;&#x5904;&#x7406; <code>else</code> &#x540E;&#x9762;&#x7684;&#x8BED;&#x53E5;&#x3002;&#x5982;&#x679C;&#x503C;&#x4E3A; <code>false</code> &#x4E14;&#x6CA1;&#x6709; <code>else</code> &#xFF0C;&#x5219;&#x4E0D;&#x5904;&#x7406;&#x4EFB;&#x4F55;&#x8BED;&#x53E5;&#x3002;</p>
+<p>&#x7531;&#x4E8E; <code>then</code> &#x8BED;&#x53E5;&#x5468;&#x56F4;&#x7684;&#x5927;&#x62EC;&#x53F7;&#x662F;&#x53EF;&#x9009;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x6B64;&#x8BED;&#x6CD5;&#x89C4;&#x5219;&#x4E0E; &#x201C;dangling else&#x201D; &#x5B50;&#x53E5;&#x5177;&#x6709;&#x901A;&#x5E38;&#x7684;&#x6B67;&#x4E49;&#xFF0C;&#x5E76;&#x4E14;&#x4EE5;&#x901A;&#x5E38;&#x7684;&#x65B9;&#x5F0F;&#x89E3;&#x51B3;&#xFF1A;&#x5728;&#x7C7B;&#x4F3C; <code>if v1 then if v2 then {...} else {...} then</code> &#x8BED;&#x53E5;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C; <code>else</code> &#x4E0E;&#x5185;&#x90E8; <code>if</code> &#x5173;&#x8054;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x4E0E;&#x5916;&#x90E8; <code>if</code> &#x5173;&#x8054;&#x3002;</p>
+<pre><code>if v1 then 
+  if v2 then 
+    def A : Inst; 
+  else 
+    def B : Inst; //&#x8FD9;&#x4E2A;else&#x662F;&#x4E0E;if v2 then&#x5173;&#x8054;&#x7684;
+</code></pre><p><code>if</code> &#x8BED;&#x53E5;&#x4E5F;&#x53EF;&#x4EE5;&#x5728; <code>record</code> <strong>Body</strong> <code> </code> &#x4E2D;&#x4F7F;&#x7528;&#x3002;</p>
+<h3 id="1614-assert-&#x2014;-check-that-a-condition-is-true">1.6.14 assert &#x2014; check that a condition is true</h3>
+<p><code>assert</code> &#x8BED;&#x53E5;&#x68C0;&#x67E5;&#x5E03;&#x5C14;&#x6761;&#x4EF6;&#x4EE5;&#x786E;&#x4FDD;&#x5B83;&#x4E3A; <code>true</code>&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x662F;&#xFF0C;&#x5219;&#x6253;&#x5370;&#x9519;&#x8BEF;&#x6D88;&#x606F;&#x3002;</p>
+<pre><code>**Assert** ::=  &quot;assert&quot; **Value** &quot;,&quot; **Value** &quot;;&quot;
+</code></pre><p>&#x7B2C;&#x4E00;&#x4E2A; <strong>Value</strong> &#x662F;&#x5E03;&#x5C14;&#x6761;&#x4EF6;&#x3002;&#x5982;&#x679C;&#x4E3A; true&#xFF0C;&#x5219;&#x8BED;&#x53E5;&#x4E0D;&#x6267;&#x884C;&#x4EFB;&#x4F55;&#x4F5C;&#x3002;&#x5982;&#x679C;&#x6761;&#x4EF6;&#x4E3A; false&#xFF0C;&#x5219;&#x6253;&#x5370;&#x975E;&#x81F4;&#x547D;&#x9519;&#x8BEF;&#x6D88;&#x606F;&#x3002;&#x7B2C;&#x4E8C;&#x4E2A; <strong>Value</strong> &#x662F;&#x4E00;&#x6761;&#x6D88;&#x606F;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#x4EFB;&#x610F;&#x5B57;&#x7B26;&#x4E32;&#x8868;&#x8FBE;&#x5F0F;&#x3002;&#x5B83;&#x4F5C;&#x4E3A;&#x6CE8;&#x91CA;&#x5305;&#x542B;&#x5728;&#x9519;&#x8BEF;&#x6D88;&#x606F;&#x4E2D;&#x3002;<code>assert</code> &#x8BED;&#x53E5;&#x7684;&#x786E;&#x5207;&#x884C;&#x4E3A;&#x53D6;&#x51B3;&#x4E8E;&#x5176;&#x4F4D;&#x7F6E;&#x3002;</p>
+<p>&#x5728;&#x9876;&#x5C42;&#xFF0C;&#x4F1A;&#x7ACB;&#x5373;&#x68C0;&#x67E5; <code>assertion</code>&#xFF1B;&#x5728; <code>record</code> &#x5B9A;&#x4E49;&#x4E2D;&#xFF0C;&#x5C06;&#x4FDD;&#x5B58;&#x8BED;&#x53E5;&#xFF0C;&#x5E76;&#x5728;&#x5B8C;&#x5168;&#x6784;&#x5EFA; <code>record</code> &#x540E;&#x68C0;&#x67E5;&#x6240;&#x6709; <code>assertion</code>&#xFF1B;&#x5728;&#x7C7B;&#x5B9A;&#x4E49;&#x4E2D;&#xFF0C;<code>assertion</code> &#x7531;&#x4ECE;&#x7EE7;&#x627F;&#x7684;&#x6240;&#x6709;&#x5B50;&#x7C7B;&#x548C;&#x8BB0;&#x5F55;&#x4FDD;&#x5B58;&#x548C;&#x7EE7;&#x627F;&#xFF0C;&#x5F53;&#x8BB0;&#x5F55;&#x5B8C;&#x5168;&#x6784;&#x5EFA;&#x65F6;&#xFF0C;&#x5C06;&#x68C0;&#x67E5; <code>assertion</code>&#xFF1B;&#x5728;&#x591A;&#x7C7B;&#x5B9A;&#x4E49;&#x4E2D;&#xFF0C;<code>assertion</code> &#x4E0E; <code>muliticlass</code> &#x7684;&#x5176;&#x4ED6;&#x7EC4;&#x4EF6;&#x4E00;&#x8D77;&#x4FDD;&#x5B58;&#xFF0C;&#x7136;&#x540E;&#x6BCF;&#x6B21;&#x4F7F;&#x7528; <code>defm</code> &#x5B9E;&#x4F8B;&#x5316;&#x591A;&#x7C7B;&#x65F6;&#x8FDB;&#x884C;&#x68C0;&#x67E5;&#x3002;</p>
+<p>&#x5728; <code>TableGen</code> &#x6587;&#x4EF6;&#x4E2D;&#x4F7F;&#x7528; <code>assertion</code> &#x53EF;&#x4EE5;&#x7B80;&#x5316; <code>TableGen</code> &#x540E;&#x7AEF;&#x4E2D;&#x7684;&#x8BB0;&#x5F55;&#x68C0;&#x67E5;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x4E24;&#x4E2A;&#x7C7B;&#x5B9A;&#x4E49;&#x4E2D;&#x7684; <code>assertion</code> &#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-python">class PersonName&lt;string name&gt; {
+  assert !le(!size(name), 32), &quot;person name is too long: &quot; # name;!le(a, b)&#xFF1A;&#x5224;&#x65AD; a &#x2264; b
+  string Name = name;
+}
+
+class Person&lt;string name, int age&gt; : PersonName&lt;name&gt; {
+  assert !and(!ge(age, 1), !le(age, 120)), &quot;person age is invalid: &quot; # age;!ge(a, b)&#xFF1A;&#x5224;&#x65AD; a &#x2265; b
+  int Age = age;
+}
+
+def Rec20 : Person&lt;&quot;Donald Knuth&quot;, 60&gt; {
+  ...
+}
+</code></pre>
+<h2 id="17-additional-details">1.7 Additional Details</h2>
+<h3 id="171-directed-acyclic-graphs&#xFF08;dags&#xFF09;">1.7.1 Directed acyclic graphs&#xFF08;DAGs&#xFF09;</h3>
+<p>&#x6709;&#x5411;&#x65E0;&#x73AF;&#x56FE;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5728; TableGen &#x4E2D;&#x4F7F;&#x7528; <code>DAG</code> &#x6570;&#x636E;&#x7C7B;&#x578B;&#x3002;<code>DAG</code> &#x8282;&#x70B9;&#x7531;&#x4E00;&#x4E2A;&#x8FD0;&#x7B97;&#x7B26;&#x548C;&#x96F6;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x53C2;&#x6570;&#xFF08;&#x6216;&#x4F5C;&#x6570;&#xFF09;&#x7EC4;&#x6210;&#x3002;&#x6BCF;&#x4E2A;&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x662F;&#x4EFB;&#x4F55;&#x6240;&#x9700;&#x7684;&#x7C7B;&#x578B;&#x3002;&#x901A;&#x8FC7;&#x4F7F;&#x7528;&#x53E6;&#x4E00;&#x4E2A; <code>DAG</code> &#x8282;&#x70B9;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x6784;&#x5EFA; <code>DAG</code> &#x8282;&#x70B9;&#x7684;&#x4EFB;&#x610F;&#x56FE;&#x5F62;&#x3002;</p>
+<p><code>dag</code> &#x5B9E;&#x4F8B;&#x7684;&#x8BED;&#x6CD5;&#x4E3A;&#xFF1A;<code>(</code> <em>operator</em> <code>` _argument1_</code>, <code>_argument2_</code>, &#x2026; )<code>&#xFF0C;&#x8FD0;&#x7B97;&#x7B26;&#x5FC5;&#x987B;&#x5B58;&#x5728;&#xFF0C;&#x5E76;&#x4E14;&#x5FC5;&#x987B;&#x662F;</code>record`&#xFF0C;&#x53EF;&#x4EE5;&#x6709;&#x96F6;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x7528;&#x9017;&#x53F7;&#x5206;&#x9694;&#x3002;</p>
+<p>&#x8FD0;&#x7B97;&#x7B26;&#x548C;&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x6709;&#x4E09;&#x79CD;&#x683C;&#x5F0F;&#xFF1A;</p>
+<p><code>Value</code> &#x53EF;&#x4EE5;&#x662F;&#x4EFB;&#x4F55; <code>TableGen</code> &#x503C;&#x3002;<em> </em><code>name</code>&#xFF08;&#x5982;&#x679C;&#x5B58;&#x5728;&#xFF09;&#x5FC5;&#x987B;&#x662F; <strong>TokVarName</strong>&#xFF0C;&#x4EE5;&#x7F8E;&#x5143;&#x7B26;&#x53F7; &#xFF08;<code>$</code>&#xFF09; &#x5F00;&#x5934;&#x3002;&#x540D;&#x79F0;&#x7684;&#x76EE;&#x7684;&#x662F;&#x5728; <code>DAG</code> &#x4E2D;&#x6807;&#x8BB0;&#x5177;&#x6709;&#x7279;&#x5B9A;&#x542B;&#x4E49;&#x7684;&#x8FD0;&#x7B97;&#x7B26;&#x6216;&#x53C2;&#x6570;&#xFF0C;&#x6216;&#x8005;&#x5C06;&#x4E00;&#x4E2A; <code>DAG</code> &#x4E2D;&#x7684;&#x53C2;&#x6570;&#x4E0E;&#x53E6;&#x4E00;&#x4E2A; <code>DAG</code> &#x4E2D;&#x540D;&#x79F0;&#x76F8;&#x4F3C;&#x7684;&#x53C2;&#x6570;&#x76F8;&#x5173;&#x8054;&#x3002;</p>
+<p>&#x4EE5;&#x4E0B; bang &#x8FD0;&#x7B97;&#x7B26;&#x5BF9;&#x4E8E;&#x4F7F;&#x7528; <code>DAG</code> &#x975E;&#x5E38;&#x6709;&#x7528;&#xFF1A;<code>&#xFF01;con&#xFF0C;&#xFF01;dag&#xFF0C;&#xFF01;empty&#xFF0C;&#xFF01;foreach&#xFF0C;&#xFF01;getdagarg&#xFF0C;&#xFF01;getdagname&#xFF0C;&#xFF01;getdagop&#xFF0C;&#xFF01;setdagarg&#xFF0C;&#xFF01;setdagname&#xFF0C;&#xFF01;setdagop&#xFF0C;&#xFF01;size</code>.</p>
+<h3 id="172-defvar-in-a-record-body">1.7.2 Defvar in a record body</h3>
+<p>&#x9664;&#x4E86;&#x5B9A;&#x4E49;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x4E4B;&#x5916;&#xFF0C;<code>defvar</code> &#x8BED;&#x53E5;&#x8FD8;&#x53EF;&#x4EE5;&#x5728;&#x7C7B;&#x6216;&#x8BB0;&#x5F55;&#x5B9A;&#x4E49;&#x7684; <strong>Body</strong> &#x4E2D;&#x4F7F;&#x7528;&#x6765;&#x5B9A;&#x4E49;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x3002;<code>class</code> &#x6216; <code>multiclass</code> &#x7684;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x662F;&#x5728; <code>value</code> &#x8868;&#x8FBE;&#x5F0F;&#x4E2D;&#x4F7F;&#x7528;&#x3002;&#x53D8;&#x91CF;&#x7684;&#x8303;&#x56F4;&#x4ECE; <code>defvar</code> &#x8BED;&#x53E5;&#x6DFB;&#x52A0;&#x5230;&#x6B63;&#x6587;&#x7684;&#x672B;&#x5C3E;&#x3002;&#x4E0D;&#x80FD;&#x5728;&#x5176;&#x8303;&#x56F4;&#x5185;&#x5C06;&#x5176;&#x8BBE;&#x7F6E;&#x4E3A;&#x5176;&#x4ED6;&#x503C;&#x3002;<code>defvar</code> &#x8BED;&#x53E5;&#x8FD8;&#x53EF;&#x4EE5;&#x5728; <code>foreach</code> &#x7684;&#x8BED;&#x53E5;&#x5217;&#x8868;&#x4E2D;&#x4F7F;&#x7528;&#xFF0C;&#x4ECE;&#x800C;&#x5EFA;&#x7ACB;&#x8303;&#x56F4;&#x3002;</p>
+<p>TableGen &#x4E2D;&#x53D8;&#x91CF;&#x4F5C;&#x7528;&#x57DF;&#x7684;&#x9690;&#x85CF;&#x89C4;&#x5219;&#xFF0C;&#x5373;&#x5185;&#x5C42;&#x4F5C;&#x7528;&#x57DF;&#x7684;&#x540C;&#x540D;&#x53D8;&#x91CF;&#x4F1A;&#x5C4F;&#x853D;&#x5916;&#x5C42;&#x4F5C;&#x7528;&#x57DF;&#x7684;&#x540C;&#x540D;&#x53D8;&#x91CF;&#xFF0C;&#x89C4;&#x5219;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li>&#x8BB0;&#x5F55;&#x4F53;&#x9690;&#x85CF;&#x5168;&#x5C40;&#x53D8;&#x91CF;</li>
+</ul>
+<pre><code class="lang-java">defvar GlobalV = <span class="hljs-number">10</span>;  <span class="hljs-comment">// &#x5168;&#x5C40;&#x53D8;&#x91CF;</span>
+
+def Record {
+  <span class="hljs-keyword">int</span> V = <span class="hljs-number">20</span>;  <span class="hljs-comment">// &#x8BB0;&#x5F55;&#x4F53;&#x5185;&#x5C42;&#x4F5C;&#x7528;&#x57DF;&#x5B9A;&#x4E49;&#x540C;&#x540D;&#x53D8;&#x91CF;</span>
+  <span class="hljs-keyword">int</span> UseV = V;  <span class="hljs-comment">// &#x4F7F;&#x7528;&#x5185;&#x5C42;&#x53D8;&#x91CF; (20)</span>
+}
+
+<span class="hljs-comment">// &#x5168;&#x5C40;&#x4F5C;&#x7528;&#x57DF;&#x4E2D;&#xFF0C;GlobalV &#x4ECD;&#x4E3A; 10</span>
+</code></pre>
+<ul>
+<li>&#x8BB0;&#x5F55;&#x4F53;&#x9690;&#x85CF;&#x6A21;&#x677F;&#x53C2;&#x6570;</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">C</span>&lt;<span class="hljs-title">int</span> <span class="hljs-title">V</span>&gt; </span>{  <span class="hljs-comment">// &#x6A21;&#x677F;&#x53C2;&#x6570; V</span>
+  let V = <span class="hljs-number">99</span> in {  <span class="hljs-comment">// &#x8BB0;&#x5F55;&#x4F53;&#x4E2D;&#x4F7F;&#x7528;let&#x8986;&#x76D6;V&#xFF0C;&#x9690;&#x85CF;&#x6A21;&#x677F;&#x53C2;&#x6570;</span>
+    <span class="hljs-keyword">int</span> UseV = V;  <span class="hljs-comment">// &#x4F7F;&#x7528;&#x8986;&#x76D6;&#x540E;&#x7684;V (99)</span>
+  }
+}
+
+def Inst : C&lt;<span class="hljs-number">5</span>&gt;;  <span class="hljs-comment">// &#x5B9E;&#x4F8B;&#x5316;&#x65F6;&#x4F20;&#x9012; V=5&#xFF0C;&#x4F46;&#x88AB;&#x5185;&#x90E8; let &#x8986;&#x76D6;</span>
+</code></pre>
+<ul>
+<li>&#x6A21;&#x677F;&#x53C2;&#x6570;&#x9690;&#x85CF;&#x5168;&#x5C40;&#x53D8;&#x91CF;</li>
+</ul>
+<pre><code class="lang-java">defvar GlobalV = <span class="hljs-number">100</span>;  <span class="hljs-comment">// &#x5168;&#x5C40;&#x53D8;&#x91CF;</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">C</span>&lt;<span class="hljs-title">int</span> <span class="hljs-title">GlobalV</span>&gt; </span>{  <span class="hljs-comment">// &#x6A21;&#x677F;&#x53C2;&#x6570;&#x9690;&#x85CF;&#x5168;&#x5C40;V</span>
+  <span class="hljs-keyword">int</span> UseV = GlobalV;  <span class="hljs-comment">// &#x4F7F;&#x7528;&#x6A21;&#x677F;&#x53C2;&#x6570; (&#x7531;&#x5B9E;&#x4F8B;&#x5316;&#x51B3;&#x5B9A;)</span>
+}
+
+def Inst : C&lt;<span class="hljs-number">5</span>&gt;;  <span class="hljs-comment">// &#x5B9E;&#x4F8B;&#x5316;&#x65F6;&#xFF0C;UseV = 5 (&#x800C;&#x975E;&#x5168;&#x5C40;&#x7684;100)</span>
+</code></pre>
+<ul>
+<li>foreach &#x9690;&#x85CF;&#x5916;&#x90E8;&#x53D8;&#x91CF;</li>
+</ul>
+<pre><code class="lang-java">defvar GlobalV = <span class="hljs-number">5</span>;  <span class="hljs-comment">// &#x5168;&#x5C40;&#x53D8;&#x91CF;</span>
+
+def Record {
+  <span class="hljs-keyword">int</span> OuterV = <span class="hljs-number">10</span>;  <span class="hljs-comment">// &#x8BB0;&#x5F55;&#x7EA7;&#x53D8;&#x91CF;</span>
+
+  foreach OuterV = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>] in {  <span class="hljs-comment">// foreach&#x9690;&#x85CF;&#x5916;&#x90E8;OuterV</span>
+    <span class="hljs-keyword">int</span> UseV = OuterV;  <span class="hljs-comment">// &#x4F7F;&#x7528;foreach&#x4E2D;&#x7684;OuterV (1/2/3)</span>
+  }
+}
+</code></pre>
+<p>&#x5728; <code>foreach</code> &#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x53D8;&#x91CF;&#x5728;&#x6BCF;&#x6B21;&#x5FAA;&#x73AF;&#x8FED;&#x4EE3;&#x7ED3;&#x675F;&#x65F6;&#x8D85;&#x51FA;&#x8303;&#x56F4;&#xFF0C;&#x56E0;&#x6B64;&#x5B83;&#x4EEC;&#x5728;&#x4E00;&#x6B21;&#x8FED;&#x4EE3;&#x4E2D;&#x7684;&#x503C;&#x5728;&#x4E0B;&#x4E00;&#x6B21;&#x8FED;&#x4EE3;&#x4E2D;&#x4E0D;&#x53EF;&#x7528;&#x3002;&#x4EE5;&#x4E0B; <code>defvar</code> &#x5C06;&#x4E0D;&#x8D77;&#x4F5C;&#x7528;&#xFF1A;</p>
+<pre><code>defvar i = !add(i, 1)
+</code></pre><h3 id="173-how-records-are-built">1.7.3 How records are built</h3>
+<p>&#x5728;&#x6784;&#x5EFA;&#x8BB0;&#x5F55;&#x65F6;&#xFF0C;<code>TableGen</code> &#x5C06;&#x6267;&#x884C;&#x4EE5;&#x4E0B;&#x6B65;&#x9AA4;&#x3002;&#x7C7B;&#x53EA;&#x662F;&#x62BD;&#x8C61;&#x8BB0;&#x5F55;&#xFF0C;&#x56E0;&#x6B64;&#x6267;&#x884C;&#x76F8;&#x540C;&#x7684;&#x6B65;&#x9AA4;&#x3002;</p>
+<ol>
+<li>&#x6784;&#x5EFA;&#x8BB0;&#x5F55;&#x540D;&#x79F0; &#xFF08;<strong>NameValue</strong>&#xFF09; &#x5E76;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7A7A;&#x8BB0;&#x5F55;&#x3002;</li>
+<li><p>&#x4ECE;&#x5DE6;&#x5230;&#x53F3;&#x89E3;&#x6790; <strong>ParentClassList</strong> &#x4E2D;&#x7684;&#x7236;&#x7C7B;&#xFF0C;&#x4ECE;&#x4E0A;&#x5230;&#x4E0B;&#x8BBF;&#x95EE;&#x6BCF;&#x4E2A;&#x7236;&#x7C7B;&#x7684;&#x7956;&#x5148;&#x7C7B;&#x3002;</p>
+<ol>
+<li>&#x5C06;&#x7236;&#x7C7B;&#x4E2D;&#x7684;&#x5B57;&#x6BB5;&#x6DFB;&#x52A0;&#x5230;&#x8BB0;&#x5F55;&#x4E2D;&#x3002;</li>
+<li>&#x5C06;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x66FF;&#x6362;&#x4E3A;&#x8FD9;&#x4E9B;&#x5B57;&#x6BB5;&#x3002;</li>
+<li>&#x5C06;&#x7236;&#x7C7B;&#x6DFB;&#x52A0;&#x5230;&#x8BB0;&#x5F55;&#x7684;&#x7EE7;&#x627F;&#x7C7B;&#x5217;&#x8868;&#x4E2D;&#x3002;</li>
+</ol>
+</li>
+<li>&#x5C06;&#x4EFB;&#x4F55;&#x9876;&#x5C42; <code>let</code> &#x7ED1;&#x5B9A;&#x5E94;&#x7528;&#x4E8E; <code>record</code>&#x3002;&#x9876;&#x5C42; <code>let</code> &#x7ED1;&#x5B9A;&#x4EC5;&#x9002;&#x7528;&#x4E8E;&#x7EE7;&#x627F;&#x7684;&#x5B57;&#x6BB5;&#x3002;</li>
+<li><p>&#x89E3;&#x6790; <code>record</code> &#x7684;&#x6B63;&#x6587;&#x3002;</p>
+<ol>
+<li>&#x5C06;&#x4EFB;&#x4F55;&#x5B57;&#x6BB5;&#x6DFB;&#x52A0;&#x5230;&#x8BB0;&#x5F55;&#x4E2D;&#x3002;</li>
+<li>&#x6839;&#x636E;&#x672C;&#x5730; <code>let</code> &#x8BED;&#x53E5;&#x4FEE;&#x6539;&#x5B57;&#x6BB5;&#x7684;&#x503C;&#x3002;</li>
+<li>&#x5B9A;&#x4E49;&#x4EFB;&#x4F55; <code>defvar</code> &#x53D8;&#x91CF;&#x3002;</li>
+</ol>
+</li>
+<li>&#x904D;&#x5386;&#x6240;&#x6709;&#x5B57;&#x6BB5;&#x4EE5;&#x89E3;&#x6790;&#x4EFB;&#x4F55;&#x5B57;&#x6BB5;&#x95F4;&#x5F15;&#x7528;&#x3002;</li>
+<li>&#x5C06;&#x8BB0;&#x5F55;&#x6DFB;&#x52A0;&#x5230;&#x6700;&#x7EC8;&#x8BB0;&#x5F55;&#x5217;&#x8868;&#x4E2D;&#x3002;</li>
+</ol>
+<p>&#x7531;&#x4E8E;&#x5728;&#x5E94;&#x7528; <code>let</code> &#x7ED1;&#x5B9A;&#xFF08;&#x6B65;&#x9AA4; 3&#xFF09;&#x540E;&#x89E3;&#x6790;&#x5B57;&#x6BB5;&#x4E4B;&#x95F4;&#x7684;&#x5F15;&#x7528;&#xFF08;&#x6B65;&#x9AA4; 5&#xFF09;&#xFF0C; &#x56E0;&#x6B64; <code>let</code> &#x8BED;&#x53E5;&#x5177;&#x6709;&#x4E0D;&#x5BFB;&#x5E38;&#x7684;&#x529F;&#x80FD;&#x3002; &#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code class="lang-python">class C &lt;int x&gt; {
+  int Y = x;
+  int Yplus1 = !add(Y, 1);
+  int xplus1 = !add(x, 1);
+}
+
+let Y = 10 in {
+  def rec1 : C&lt;5&gt; {
+  }
+}
+
+def rec2 : C&lt;5&gt; {
+  let Y = 10;
+}
+</code></pre>
+<p>&#x5728;&#x8FD9;&#x4E24;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4E00;&#x79CD;&#x662F;&#x4F7F;&#x7528;&#x9876;&#x5C42; <code>let</code> &#x6765;&#x7ED1;&#x5B9A; <code>Y</code>&#xFF0C;&#x53E6;&#x4E00;&#x79CD;&#x662F;&#x672C;&#x5730; <code>let</code> &#x6267;&#x884C;&#x76F8;&#x540C;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x7ED3;&#x679C;&#x662F;&#xFF1A;</p>
+<pre><code class="lang-python">def rec1 {      // C
+  int Y = 10;
+  int Yplus1 = 11;
+  int xplus1 = 6;
+}
+def rec2 {      // C
+  int Y = 10;
+  int Yplus1 = 11;
+  int xplus1 = 6;
+}
+</code></pre>
+<h2 id="18-using-classes-as-subroutines">1.8 Using Classes as Subroutines</h2>
+<p>&#x5982; <code>Simple values</code> &#x4E2D;&#x6240;&#x8FF0;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x8868;&#x8FBE;&#x5F0F;&#x4E2D;&#x8C03;&#x7528;&#x7C7B;&#x5E76;&#x4F20;&#x9012;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x3002;&#x8FD9;&#x4F1A;&#x5BFC;&#x81F4; TableGen &#x521B;&#x5EFA;&#x4ECE;&#x8BE5;&#x7C7B;&#x7EE7;&#x627F;&#x7684;&#x65B0;&#x533F;&#x540D;&#x8BB0;&#x5F55;&#xFF0C;&#x800C;&#x4E14; <code>record</code> &#x63A5;&#x6536;&#x7C7B;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x6240;&#x6709;&#x5B57;&#x6BB5;&#xFF0C;&#x6B64;&#x529F;&#x80FD;&#x53EF;&#x4EE5;&#x7528;&#x4F5C;&#x7B80;&#x5355;&#x7684;&#x5B50;&#x4F8B;&#x7A0B;&#x5DE5;&#x5177;&#x3002;</p>
+<p>&#x8BE5;&#x7C7B;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6A21;&#x677F;&#x53C2;&#x6570;&#x6765;&#x5B9A;&#x4E49;&#x5404;&#x79CD;&#x53D8;&#x91CF;&#x548C;&#x5B57;&#x6BB5;&#xFF0C;&#x8FD9;&#x4E9B;&#x53D8;&#x91CF;&#x548C;&#x5B57;&#x6BB5;&#x6700;&#x7EC8;&#x4F4D;&#x4E8E;&#x533F;&#x540D;&#x8BB0;&#x5F55;&#x4E2D;&#x3002;&#x7136;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x8C03;&#x7528;&#x8BE5;&#x7C7B;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#x4E2D;&#x68C0;&#x7D22;&#x8FD9;&#x4E9B;&#x5B57;&#x6BB5;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF0C;&#x5047;&#x8BBE;&#x5B57;&#x6BB5; <code>ret</code> &#x5305;&#x542B;&#x5B50;&#x4F8B;&#x7A0B;&#x7684;&#x6700;&#x7EC8;&#x503C;&#x3002;</p>
+<pre><code>int Result = ... CalcValue&lt;arg&gt;.ret ...;
+</code></pre><p><code>CalcValue</code> &#x7C7B;&#x4F7F;&#x7528;&#x6A21;&#x677F;&#x53C2;&#x6570; <code>arg</code> &#x8C03;&#x7528;&#x3002;&#x5B83;&#x8BA1;&#x7B97; <code>ret</code> &#x5B57;&#x6BB5;&#x7684;&#x503C;&#xFF0C;&#x7136;&#x540E;&#x5728; <code>Result</code> &#x5B57;&#x6BB5;&#x521D;&#x59CB;&#x5316;&#x7684;&#x201C;point of call&#x201D;&#x68C0;&#x7D22;&#x8BE5;&#x503C;&#x3002;&#x5728;&#x6B64;&#x793A;&#x4F8B;&#x4E2D;&#x521B;&#x5EFA;&#x7684;&#x533F;&#x540D;&#x8BB0;&#x5F55;&#x9664;&#x4E86;&#x643A;&#x5E26; <code>result</code> &#x503C;&#x4E4B;&#x5916;&#xFF0C;&#x6CA1;&#x6709;&#x5176;&#x4ED6;&#x7528;&#x9014;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x5B9E;&#x9645;&#x793A;&#x4F8B;&#xFF0C;&#x7C7B; <code>isValidSize</code> &#x786E;&#x5B9A;&#x6307;&#x5B9A;&#x7684;&#x5B57;&#x8282;&#x6570;&#x662F;&#x5426;&#x8868;&#x793A;&#x6709;&#x6548;&#x7684;&#x6570;&#x636E;&#x5927;&#x5C0F;&#x3002;<code>bit ret</code> &#x8BBE;&#x7F6E;&#x5F97;&#x5F53;&#x3002;&#x5B57;&#x6BB5; <code>ValidSize</code> &#x901A;&#x8FC7;&#x8C03;&#x7528;&#x5177;&#x6709;&#x6570;&#x636E;&#x5927;&#x5C0F;&#x7684; <code>isValidSize</code> &#x5E76;&#x4ECE;&#x751F;&#x6210;&#x7684;&#x533F;&#x540D;&#x8BB0;&#x5F55;&#x4E2D;&#x68C0;&#x7D22; <code>ret</code> &#x5B57;&#x6BB5;&#x6765;&#x83B7;&#x53D6;&#x5176;&#x521D;&#x59CB;&#x503C;&#x3002;</p>
+<pre><code class="lang-yaml">class isValidSize&lt;int size&gt; {
+  bit ret = !cond(!eq(size,  <span class="hljs-number">1</span>): <span class="hljs-number">1</span>,   //&#xFF01;cond&#x4E3A;&#x591A;&#x8DEF;&#x6761;&#x4EF6;&#x5224;&#x65AD;&#xFF1B;&#xFF01;eq&#x5224;&#x65AD;&#x76F8;&#x7B49;&#xFF1B;&#x8BE5;&#x53E5;&#x610F;&#x601D;&#x4E3A;&#xFF1A;&#x5982;&#x679C; size == <span class="hljs-number">1</span>&#xFF0C;&#x8FD4;&#x56DE; <span class="hljs-number">1</span> (<span class="hljs-literal">true</span>)
+                  !eq(size,  <span class="hljs-number">2</span>): <span class="hljs-number">1</span>,
+                  !eq(size,  <span class="hljs-number">4</span>): <span class="hljs-number">1</span>,
+                  !eq(size,  <span class="hljs-number">8</span>): <span class="hljs-number">1</span>,
+                  !eq(size, <span class="hljs-number">16</span>): <span class="hljs-number">1</span>,
+<span class="hljs-attr">                  true:</span> <span class="hljs-number">0</span>);
+}
+
+def Data1 {
+  int Size = ...;
+  bit ValidSize = isValidSize&lt;Size&gt;.ret;
+}
+</code></pre>
+<h2 id="19-preprocessing-facilities">1.9 Preprocessing Facilities</h2>
+<p>&#x5D4C;&#x5165;&#x5728; <code>TableGen</code> &#x4E2D;&#x7684;&#x9884;&#x5904;&#x7406;&#x5668;&#x4EC5;&#x7528;&#x4E8E;&#x7B80;&#x5355;&#x7684;&#x6761;&#x4EF6;&#x7F16;&#x8BD1;&#x3002;&#x5B83;&#x652F;&#x6301;&#x4EE5;&#x4E0B;&#x6307;&#x4EE4;&#xFF0C;&#x8FD9;&#x4E9B;&#x6307;&#x4EE4;&#x5728;&#x67D0;&#x79CD;&#x7A0B;&#x5EA6;&#x4E0A;&#x662F;&#x975E;&#x6B63;&#x5F0F;&#x6307;&#x5B9A;&#x7684;&#x3002;</p>
+<pre><code class="lang-go">**LineBegin             ** ::=  beginning of line <span class="hljs-comment">//&#x884C;&#x7684;&#x5F00;&#x59CB;&#x4F4D;&#x7F6E;</span>
+**LineEnd               ** ::=  newline | <span class="hljs-keyword">return</span> | EOF  <span class="hljs-comment">//&#x884C;&#x7684;&#x7ED3;&#x675F;&#xFF08;&#x6362;&#x884C;&#x7B26;&#x3001;&#x56DE;&#x8F66;&#x7B26;&#x6216;&#x6587;&#x4EF6;&#x7ED3;&#x675F;&#x7B26;&#xFF09;</span>
+**WhiteSpace            ** ::=  space | tab  <span class="hljs-comment">//&#x7A7A;&#x683C;&#x6216;&#x5236;&#x8868;&#x7B26;</span>
+**CComment              ** ::=  <span class="hljs-string">&quot;/*&quot;</span> ... <span class="hljs-string">&quot;*/&quot;</span>  <span class="hljs-comment">//C &#x98CE;&#x683C;&#x6CE8;&#x91CA;&#xFF08;/* ... */&#xFF09;</span>
+**BCPLComment           ** ::=  <span class="hljs-string">&quot;//&quot;</span> ... **LineEnd** <span class="hljs-comment">//BCPL &#x98CE;&#x683C;&#x6CE8;&#x91CA;&#xFF08;// ...&#xFF09;</span>
+**WhiteSpaceOrCComment  ** ::=  **WhiteSpace** | **CComment**  <span class="hljs-comment">//&#x7A7A;&#x683C;&#x6216; C &#x98CE;&#x683C;&#x6CE8;&#x91CA;</span>
+**WhiteSpaceOrAnyComment** ::=  **WhiteSpace** | **CComment** | **BCPLComment** <span class="hljs-comment">//&#x7A7A;&#x683C;&#x6216;&#x4EFB;&#x610F;&#x7C7B;&#x578B;&#x6CE8;&#x91CA;</span>
+**MacroName             ** ::=  **ualpha** (**ualpha** | <span class="hljs-string">&quot;0&quot;</span>...<span class="hljs-string">&quot;9&quot;</span>)* <span class="hljs-comment">//&#x5B8F;&#x540D;&#x79F0;&#xFF08;&#x4EE5;&#x5927;&#x5199;&#x5B57;&#x6BCD;&#x5F00;&#x5934;&#xFF0C;&#x540E;&#x9762;&#x53EF;&#x8DDF;&#x5B57;&#x6BCD;&#x6216;&#x6570;&#x5B57;&#xFF09;</span>
+**PreDefine             ** ::=  **LineBegin** (**WhiteSpaceOrCComment**)* 
+                            <span class="hljs-string">&quot;#define&quot;</span> (**WhiteSpace**)+ **MacroName**
+                            (**WhiteSpaceOrAnyComment**)* **LineEnd**
+**PreIfdef              ** ::=  **LineBegin** (**WhiteSpaceOrCComment**)* <span class="hljs-comment">//</span>
+                            (<span class="hljs-string">&quot;#ifdef&quot;</span> | <span class="hljs-string">&quot;#ifndef&quot;</span>) (**WhiteSpace**)+ **MacroName**
+                            (**WhiteSpaceOrAnyComment**)* **LineEnd**
+**PreElse               ** ::=  **LineBegin** (**WhiteSpaceOrCComment**)*
+                            <span class="hljs-string">&quot;#else&quot;</span> (**WhiteSpaceOrAnyComment**)* **LineEnd**
+**PreEndif              ** ::=  **LineBegin** (**WhiteSpaceOrCComment**)*
+                            <span class="hljs-string">&quot;#endif&quot;</span> (**WhiteSpaceOrAnyComment**)* **LineEnd**
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x5728; TableGen &#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x4F4D;&#x7F6E;&#x5B9A;&#x4E49; <strong>MacroName</strong>&#x3002;&#x540D;&#x79F0;&#x6CA1;&#x6709;&#x503C;;&#x53EA;&#x80FD;&#x6D4B;&#x8BD5;&#x5B83;&#x4EE5;&#x67E5;&#x770B;&#x5B83;&#x662F;&#x5426;&#x5DF2;&#x5B9A;&#x4E49;&#x3002;</p>
+<p>&#x5B8F;&#x6D4B;&#x8BD5;&#x533A;&#x57DF;&#x4EE5; <code>#ifdef</code> &#x6216; <code>#ifndef</code> &#x6307;&#x4EE4;&#x5F00;&#x5934;&#x3002;&#x5982;&#x679C;&#x5B8F;&#x540D;&#x79F0;&#x662F; defined &#xFF08;<code>#ifdef</code>&#xFF09; &#x6216; undefined &#xFF08;<code>#ifndef</code>&#xFF09;&#xFF0C;&#x5219;&#x6307;&#x4EE4;&#x4E0E;&#x76F8;&#x5E94; <code>#else</code> &#x4E4B;&#x95F4;&#x7684;&#x6E90;&#x4EE3;&#x7801;&#x6216; <code>#endif</code> &#x5C06;&#x88AB;&#x5904;&#x7406;&#x3002;&#x5982;&#x679C;&#x6D4B;&#x8BD5;&#x5931;&#x8D25;&#xFF0C;&#x4F46;&#x5B58;&#x5728; <code>#else</code> &#x5B50;&#x53E5;&#xFF0C;&#x5219;&#x5904;&#x7406; <code>#else</code> &#x548C; <code>#endif</code> &#x4E4B;&#x95F4;&#x7684;&#x6E90;&#x4EE3;&#x7801;&#x3002;&#x5982;&#x679C;&#x6D4B;&#x8BD5;&#x5931;&#x8D25;&#x4E14;&#x6CA1;&#x6709; <code>#else</code> &#x5B50;&#x53E5;&#xFF0C;&#x5219;&#x4E0D;&#x4F1A;&#x5904;&#x7406;&#x6D4B;&#x8BD5;&#x533A;&#x57DF;&#x4E2D;&#x7684;&#x6E90;&#x4EE3;&#x7801;&#x3002;</p>
+<p>&#x6D4B;&#x8BD5;&#x533A;&#x57DF;&#x53EF;&#x4EE5;&#x5D4C;&#x5957;&#xFF0C;&#x4F46;&#x5FC5;&#x987B;&#x6B63;&#x786E;&#x5D4C;&#x5957;&#x3002;<code>Region</code> &#x5FC5;&#x987B;&#x5728;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x4E2D;&#x5F00;&#x59CB;&#x4E14;&#x7ED3;&#x675F;&#xFF0C;&#x6240;&#x4EE5;&#x4E00;&#x5B9A;&#x5177;&#x6709; <code>#endif</code>&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Example_Page.html" class="navigation navigation-prev " aria-label="Previous page: Example Page">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="P4tutorial.html" class="navigation navigation-next " aria-label="Next page: P4基础">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"TableGen 的用法","level":"1.3","depth":1,"next":{"title":"P4基础","level":"1.4","depth":1,"path":"P4tutorial.md","ref":"P4tutorial.md","articles":[]},"previous":{"title":"Example Page","level":"1.2","depth":1,"path":"Example_Page.md","ref":"Example_Page.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"}},"file":{"path":"TableGen.md","mtime":"2025-10-16T02:23:10.827Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-10-16T02:23:46.454Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

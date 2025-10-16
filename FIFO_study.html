@@ -1,0 +1,1102 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>FIFO学习 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="TPU_MLIR_study.html" />
+    
+    
+    <link rel="prev" href="MLIR_Dialect.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Example_Page.html">
+            
+                <a href="Example_Page.html">
+            
+                    
+                    Example Page
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="TableGen.html">
+            
+                <a href="TableGen.html">
+            
+                    
+                    TableGen 的用法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="P4tutorial.html">
+            
+                <a href="P4tutorial.html">
+            
+                    
+                    P4基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="MLIR_Dialect.html">
+            
+                <a href="MLIR_Dialect.html">
+            
+                    
+                    Dialect基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6" data-path="FIFO_study.html">
+            
+                <a href="FIFO_study.html">
+            
+                    
+                    FIFO学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="TPU_MLIR_study.html">
+            
+                <a href="TPU_MLIR_study.html">
+            
+                    
+                    TPU-MLIR代码学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="MLIR_Dialect_Notes_module1.html">
+            
+                <a href="MLIR_Dialect_Notes_module1.html">
+            
+                    
+                    Dialect入门一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="Lab_1_Simple-Dialect.html">
+            
+                <a href="Lab_1_Simple-Dialect.html">
+            
+                    
+                    Dialect入门一配套Lab1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="Lab_2_Simple-Dialect.html">
+            
+                <a href="Lab_2_Simple-Dialect.html">
+            
+                    
+                    Dialect入门一配套Lab2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="MLIR_Dialect_Notes_module2.html">
+            
+                <a href="MLIR_Dialect_Notes_module2.html">
+            
+                    
+                    Dialect入门二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="Lab_4_Builtin_Dialect.html">
+            
+                <a href="Lab_4_Builtin_Dialect.html">
+            
+                    
+                    Dialect入门二配套Lab4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="Lab_5_Arith.html">
+            
+                <a href="Lab_5_Arith.html">
+            
+                    
+                    Dialect入门二配套Lab5
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="Lab_6.html">
+            
+                <a href="Lab_6.html">
+            
+                    
+                    Dialect入门二配套Lab6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="Lab_7_mem.html">
+            
+                <a href="Lab_7_mem.html">
+            
+                    
+                    Dialect入门二配套Lab7
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="Lab_8_Tensor.html">
+            
+                <a href="Lab_8_Tensor.html">
+            
+                    
+                    Dialect入门二配套Lab8
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="Lab_9_Linalg.html">
+            
+                <a href="Lab_9_Linalg.html">
+            
+                    
+                    Dialect入门二配套Lab9
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="MLIR_Dialect_Notes_module3.html">
+            
+                <a href="MLIR_Dialect_Notes_module3.html">
+            
+                    
+                    Dialect入门三
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="Lab_10_Optimization.html">
+            
+                <a href="Lab_10_Optimization.html">
+            
+                    
+                    Dialect入门三配套Lab10
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="Lab_Project_Sheet.html">
+            
+                <a href="Lab_Project_Sheet.html">
+            
+                    
+                    TPU-MLIR Lab Project
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.21" data-path="FIFO_study.html">
+            
+                <a href="FIFO_study.html">
+            
+                    
+                    FIFO学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="TPU_MLIR_study.html">
+            
+                <a href="TPU_MLIR_study.html">
+            
+                    
+                    TPU-MLIR代码学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="Linux_Command_Line.html">
+            
+                <a href="Linux_Command_Line.html">
+            
+                    
+                    Linux系统(服务器)常用指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="shell_study.html">
+            
+                <a href="shell_study.html">
+            
+                    
+                    .sh文件解释/Shell脚本常用语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="VCS_coverage_report_read.html">
+            
+                <a href="VCS_coverage_report_read.html">
+            
+                    
+                    VCS_coverage_report_read
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" >
+            
+                <a target="_blank" href="https://github.com/seclabBupt/aiacc/blob/main/docs/TPU-MLIR%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%80%EF%BC%89.md">
+            
+                    
+                    TPU-MLIR学习记录（一）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" >
+            
+                <a target="_blank" href="https://github.com/seclabBupt/aiacc/blob/main/docs/TPU-MLIR%20%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%BA%8C%EF%BC%89.md">
+            
+                    
+                    TPU-MLIR学习记录（二）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" >
+            
+                <a target="_blank" href="https://github.com/seclabBupt/aiacc/blob/main/docs/TPU-MLIR%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%89%EF%BC%89.md">
+            
+                    
+                    TPU-MLIR学习记录（三）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >FIFO学习</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="fifo&#x5B66;&#x4E60;">FIFO&#x5B66;&#x4E60;</h1>
+<h2 id="&#x4EC0;&#x4E48;&#x662F;fifo">&#x4EC0;&#x4E48;&#x662F;FIFO</h2>
+<p>FIFO&#xFF08;First-In, First-Out&#xFF0C;&#x5148;&#x5165;&#x5148;&#x51FA;&#x961F;&#x5217;&#xFF09;&#x662F;&#x4E00;&#x79CD;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x3002;\
+FIFO&#x5B58;&#x50A8;&#x5668;&#x662F;&#x7CFB;&#x7EDF;&#x7684;&#x7F13;&#x51B2;&#x73AF;&#x8282;&#xFF0C;&#x4E3B;&#x8981;&#x6709;&#x51E0;&#x65B9;&#x9762;&#x7684;&#x529F;&#x80FD;&#xFF1A;</p>
+<ol>
+<li>&#x5BF9;&#x8FDE;&#x7EED;&#x7684;&#x6570;&#x636E;&#x6D41;&#x8FDB;&#x884C;&#x7F13;&#x5B58;&#xFF0C;&#x9632;&#x6B62;&#x5728;&#x8FDB;&#x673A;&#x548C;&#x5B58;&#x50A8;&#x64CD;&#x4F5C;&#x65F6;&#x4E22;&#x5931;&#x6570;&#x636E;&#xFF1B;</li>
+<li>&#x6570;&#x636E;&#x96C6;&#x4E2D;&#x8D77;&#x6765;&#x8FDB;&#x884C;&#x8FDB;&#x6808;&#x548C;&#x5B58;&#x50A8;&#xFF0C;&#x53EF;&#x907F;&#x514D;&#x9891;&#x7E41;&#x7684;&#x603B;&#x7EBF;&#x64CD;&#x4F5C;&#xFF0C;&#x51CF;&#x8F7B;CPU&#x7684;&#x8D1F;&#x62C5;&#xFF1B;</li>
+<li>&#x5141;&#x8BB8;&#x7CFB;&#x7EDF;&#x8FDB;&#x884C;DMA&#x64CD;&#x4F5C;&#xFF0C;&#x63D0;&#x9AD8;&#x6570;&#x636E;&#x7684;&#x4F20;&#x8F93;&#x901F;&#x5EA6;&#x3002;&#x8FD9;&#x662F;&#x81F3;&#x5173;&#x91CD;&#x8981;&#x7684;&#x4E00;&#x70B9;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x91C7;&#x7528;DMA&#x64CD;&#x4F5C;&#xFF0C;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x5C06;&#x8FBE;&#x4E0D;&#x5230;&#x4F20;&#x8F93;&#x8981;&#x6C42;&#xFF0C;&#x800C;&#x4E14;&#x5927;&#x5927;&#x589E;&#x52A0;CPU&#x7684;&#x8D1F;&#x62C5;&#xFF0C;&#x65E0;&#x6CD5;&#x540C;&#x65F6;&#x5B8C;&#x6210;&#x6570;&#x636E;&#x7684;&#x5B58;&#x50A8;&#x5DE5;&#x4F5C;&#x3002;</li>
+</ol>
+<hr>
+<h2 id="fifo&#x6709;&#x4EC0;&#x4E48;&#x7528;">FIFO&#x6709;&#x4EC0;&#x4E48;&#x7528;</h2>
+<ol>
+<li>&#x4F5C;&#x4E3A;&#x6570;&#x636E;&#x7F13;&#x5B58;</li>
+<li>&#x5904;&#x7406;&#x6570;&#x636E;&#x8DE8;&#x65F6;&#x949F;&#x57DF;&#x95EE;&#x9898;</li>
+</ol>
+<blockquote>
+<p>&#x89E3;&#x51B3;&#x4E00;&#x4E2A;&#x7CFB;&#x7EDF;&#x591A;&#x4E2A;&#x65F6;&#x949F;&#x6240;&#x5E26;&#x6765;&#x7684;&#x95EE;&#x9898;&#xFF1A;&#x5F02;&#x6B65;&#x65F6;&#x949F;&#x4E4B;&#x95F4;&#x7684;&#x63A5;&#x53E3;&#x7535;&#x8DEF;&#x3002;<br>&#x5BF9;&#x4E8E;&#x4E0D;&#x540C;&#x5BBD;&#x5EA6;&#x7684;&#x6570;&#x636E;&#x63A5;&#x53E3;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;FIFO&#x3002;</p>
+</blockquote>
+<hr>
+<h2 id="fifo&#x7684;&#x539F;&#x7406;">FIFO&#x7684;&#x539F;&#x7406;</h2>
+<h3 id="fifo&#x8981;&#x89E3;&#x51B3;&#x7684;&#x95EE;&#x9898;">FIFO&#x8981;&#x89E3;&#x51B3;&#x7684;&#x95EE;&#x9898;</h3>
+<ol>
+<li>&#x600E;&#x4E48;&#x505A;&#x8DE8;&#x65F6;&#x949F;&#x57DF;&#x5904;&#x7406;&#xFF1F;&#x8BFB;&#x5199;&#x6A21;&#x5757;&#x65F6;&#x949F;&#x4E0D;&#x540C;&#x3002;&#x27A1;&#x5982;&#x4F55;&#x4FDD;&#x8BC1;&#x8BFB;&#x5199;&#x6570;&#x636E;&#x6B63;&#x786E;&#xFF1F;&#x662F;FIFO&#x4E3B;&#x8981;&#x89E3;&#x51B3;&#x7684;&#x95EE;&#x9898;&#x3002;&#x2B05;&#x7528;&#x683C;&#x96F7;&#x7801;&#x6765;&#x5BF9;&#x4ED8;&#x3002;&#x5728;&#x8DE8;&#x65F6;&#x949F;&#x57DF;&#x95EE;&#x9898;&#x6570;&#x636E;&#x5F88;&#x5BB9;&#x6613;&#x51FA;&#x73B0;&#x4E9A;&#x7A33;&#x6001;&#x72B6;&#x6001;&#x3002;&#xFF08;&#x6570;&#x503C;&#x8DF3;&#x53D8;&#x4E0D;&#x662F;&#x77AC;&#x65F6;&#x53D8;&#x5316;&#xFF0C;&#x4E0A;&#x5347;&#x6CBF;&#x662F;&#x4E00;&#x4E2A;&#x8FC7;&#x7A0B;&#xFF0C;&#x8DE8;&#x65F6;&#x949F;&#x57DF;&#x6570;&#x636E;&#x5BFC;&#x81F4;&#x91C7;&#x6837;&#x70B9;&#x51FA;&#x73B0;&#x5728;&#x4E0A;&#x5347;&#x6CBF;&#x4F4D;&#x7F6E;&#xFF0C;&#x65F6;&#x949F;&#x4E4B;&#x95F4;&#x6709;&#x5EF6;&#x65F6;&#xFF0C;&#x5BFC;&#x81F4;&#x4FE1;&#x53F7;&#x4E0D;&#x786E;&#x5B9A;&#x662F;0&#x6216;1&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x5C31;&#x662F;&#x4E9A;&#x7A33;&#x6001;&#x3002;&#xFF09;&#x683C;&#x96F7;&#x7801;&#x6BCF;&#x4E2A;&#x7801;&#x4E4B;&#x95F4;&#x53EA;&#x6709;&#x4E00;&#x4E2A;bit&#x7684;&#x53D8;&#x5316;&#xFF0C;&#x964D;&#x4F4E;&#x4E86;&#x4E9A;&#x7A33;&#x6001;&#x7684;&#x51E0;&#x7387;&#x3002;</li>
+<li>&#x8BFB;&#x5199;&#x6570;&#x636E;&#x7684;&#x63A7;&#x5236;&#x4EE5;&#x53CA;&#x7A7A;&#x6EE1;&#x4FE1;&#x53F7;&#x7684;&#x51C6;&#x786E;&#x751F;&#x6210;&#x3002;&#x901A;&#x8FC7;&#x4E00;&#x8BFB;&#x4E00;&#x5199;&#x4E24;&#x4E2A;&#x6A21;&#x5757;&#x5B9E;&#x73B0;<a href="#&#x7A7A;&#x6EE1;&#x4FE1;&#x53F7;&#x4EA7;&#x751F;&#x903B;&#x8F91;">&#x7A7A;&#x3001;&#x6EE1;&#x4FE1;&#x53F7;&#x4EA7;&#x751F;&#x903B;&#x8F91;</a>&#x3002;</li>
+</ol>
+<h3 id="&#x683C;&#x96F7;&#x7801;">&#x683C;&#x96F7;&#x7801;</h3>
+<p>&#x683C;&#x96F7;&#x7801;&#xFF0C;&#x53C8;&#x53EB;&#x5FAA;&#x73AF;&#x4E8C;&#x8FDB;&#x5236;&#x7801;&#x6216;&#x53CD;&#x5C04;&#x4E8C;&#x8FDB;&#x5236;&#x7801;&#xFF0C;&#x683C;&#x96F7;&#x7801;&#x662F;&#x6211;&#x4EEC;&#x5728;&#x5DE5;&#x7A0B;&#x4E2D;&#x5E38;&#x4F1A;&#x9047;&#x5230;&#x7684;&#x4E00;&#x79CD;&#x7F16;&#x7801;&#x65B9;&#x5F0F;&#xFF0C;&#x5B83;&#x7684;&#x57FA;&#x672C;&#x7684;&#x7279;&#x70B9;&#x5C31;&#x662F;&#x4EFB;&#x610F;&#x4E24;&#x4E2A;&#x76F8;&#x90BB;&#x7684;&#x4EE3;&#x7801;&#x53EA;&#x6709;&#x4E00;&#x4F4D;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x4E0D;&#x540C;&#x3002;&#x683C;&#x96F7;&#x7801;&#x5E94;&#x7528;&#x5728;&#x7CFB;&#x7EDF;&#x4E2D;&#x53EF;&#x4EE5;&#x63D0;&#x9AD8;&#x6570;&#x636E;&#x8BFB;&#x53D6;&#x7684;&#x7A33;&#x5B9A;&#x6027;&#x3002;&#x4E3A;&#x4E86;&#x5E94;&#x7528;&#x683C;&#x96F7;&#x7801;&#x5C31;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x666E;&#x901A;&#x4E8C;&#x8FDB;&#x5236;&#x7801;&#x5230;&#x683C;&#x96F7;&#x7801;&#x7684;&#x8F6C;&#x6362;&#x3002;</p>
+<h4 id="&#x4E8C;&#x8FDB;&#x5236;&#x7801;&#x8F6C;&#x5316;&#x4E3A;&#x683C;&#x96F7;&#x7801;&#x7684;&#x89C4;&#x5219;">&#x4E8C;&#x8FDB;&#x5236;&#x7801;&#x8F6C;&#x5316;&#x4E3A;&#x683C;&#x96F7;&#x7801;&#x7684;&#x89C4;&#x5219;</h4>
+<ol>
+<li>&#x4E8C;&#x8FDB;&#x5236;&#x7801;&#x53F3;&#x79FB;&#x4E00;&#x4F4D;&#xFF1B;</li>
+<li>&#x53F3;&#x79FB;&#x540E;&#x7ED3;&#x679C;&#x4E0E;&#x6E90;&#x7801;&#x5F02;&#x6216;&#x52A0;/&#x6A21;&#x4E8C;&#x52A0;&#x3002;\
+&#x6839;&#x636E;&#x89C4;&#x5219;&#x5199;&#x51FA;&#x5BF9;&#x5E94;&#x4EE3;&#x7801;<a href="#&#x4E8C;&#x8FDB;&#x5236;&#x7801;&#x8F6C;&#x683C;&#x96F7;&#x7801;">&#x8DF3;&#x8F6C;&#x5230;&#x4EE3;&#x7801;</a>&#x3002;</li>
+</ol>
+<h3 id="&#x7A7A;&#x3001;&#x6EE1;&#x4FE1;&#x53F7;&#x4EA7;&#x751F;&#x903B;&#x8F91;">&#x7A7A;&#x3001;&#x6EE1;&#x4FE1;&#x53F7;&#x4EA7;&#x751F;&#x903B;&#x8F91;</h3>
+<p>&#x6838;&#x5FC3;&#x662F;&#x5199;&#x7AEF;&#x53E3;&amp;&#x8BFB;&#x7AEF;&#x53E3;&#xFF1B;&#x8BFB;&#x7684;&#x5730;&#x5740;&#x4F20;&#x7ED9;&#x5199;&#x6A21;&#x5757;&#xFF0C;&#x5199;&#x7684;&#x5730;&#x5740;&#x4F20;&#x7ED9;&#x8BFB;&#x6A21;&#x5757;&#xFF0C;&#x7528;&#x6765;&#x4EA7;&#x751F;&#x6EE1;&#x4FE1;&#x53F7;&amp;&#x7A7A;&#x4FE1;&#x53F7;&#x3002;&#x8BFB;&#x5730;&#x5740;&#x8FFD;&#x4E0A;&#x4E86;&#x5199;&#x5730;&#x5740;&#x5C31;&#x662F;&#x6EE1;&#x4FE1;&#x53F7;&#xFF1B;&#x5199;&#x5730;&#x5740;&#x8FFD;&#x4E0A;&#x4E86;&#x8BFB;&#x5730;&#x5740;&#x5C31;&#x662F;&#x7A7A;&#x4FE1;&#x53F7;&#x3002;</p>
+<h4 id="&#x6570;&#x636E;&#x5730;&#x5740;&#x63A7;&#x5236;">&#x6570;&#x636E;&#x5730;&#x5740;&#x63A7;&#x5236;</h4>
+<p>&#x8BFB;/&#x5199;&#x4E00;&#x4F4D;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x8BFB;/&#x5199;&#x5730;&#x5740;&#x540C;&#x6B65;+1&#xFF0C;&#x518D;&#x8F6C;&#x5316;&#x6210;&#x683C;&#x96F7;&#x7801;&#x3002;&#x8BFB;&#x3001;&#x5199;&#x5730;&#x5740;&#x4E92;&#x76F8;&#x8FFD;&#x8D76;&#xFF0C;&#x4EE5;&#x5B83;&#x4EEC;&#x7684;&#x76F8;&#x5BF9;&#x4F4D;&#x7F6E;&#x5224;&#x65AD;&#x7A7A;&#x3001;&#x6EE1;&#x4FE1;&#x53F7;&#x3002;&#x8BFB;&#x5730;&#x5740;rd_addr&#x8FFD;&#x4E0A;&#x4E86;&#x5199;&#x5730;&#x5740;wr_addr&#x5C31;&#x662F;&#x7A7A;&#x4FE1;&#x53F7;&#xFF1B;&#x5199;&#x5730;&#x5740;&#x8FFD;&#x4E0A;&#x4E86;&#x8BFB;&#x5730;&#x5740;&#x5C31;&#x662F;&#x6EE1;&#x4FE1;&#x53F7;&#x3002;&#x5730;&#x5740;&#x524D;&#x52A0;&#x4E00;&#x4F4D;&#x7528;&#x6765;&#x5224;&#x65AD;&#x7A7A;/&#x6EE1;&#x4FE1;&#x53F7;&#xFF0C;&#x4E0D;&#x540C;&#x7801;&#xFF08;&#x666E;&#x901A;&#x4E8C;&#x8FDB;&#x5236;&#x7801;/&#x683C;&#x96F7;&#x7801;&#xFF09;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x5224;&#x65AD;&#x6807;&#x51C6;&#xFF0C;&#x76F8;&#x6BD4;&#x989D;&#x5916;&#x6DFB;&#x52A0;&#x6807;&#x5FD7;&#x7B26;&#x66F4;&#x80FD;&#x4F53;&#x73B0;&#x4E8C;&#x8FDB;&#x5236;&#x7684;&#x4F18;&#x52BF;&#xFF0C;&#x4F18;&#x96C5;&#x7B80;&#x6D01;&#x3002;
+<img src="images/FIFO_signal.png" alt="&#x7A7A;&#x6EE1;&#x4FE1;&#x53F7;&#x4EA7;&#x751F;&#x903B;&#x8F91;">\
+&#x6CE8;&#xFF1A;&#x76F8;&#x540C;&#x4F4D;&#x7F6E;/&#x7801;&#x76F8;&#x540C;&#x5219;&#x4E3A;&#x7A7A;&#x4FE1;&#x53F7;&#xFF1B;&#xFF08;&#x4E8C;&#x8FDB;&#x5236;&#xFF09;&#x6700;&#x9AD8;&#x4F4D;&#x76F8;&#x53CD;&#x3001;&#x5176;&#x4F59;&#x4F4D;&#x76F8;&#x540C;/&#xFF08;&#x683C;&#x96F7;&#x7801;&#xFF09;&#x9AD8;&#x4E24;&#x4F4D;&#x76F8;&#x53CD;&#x3001;&#x4F4E;&#x4E24;&#x4F4D;&#x76F8;&#x540C;&#xFF0C;&#x5219;&#x4E3A;&#x6EE1;&#x4FE1;&#x53F7;&#x3002;&#xFF08;&#x4EE5;4bit&#x6570;&#x636E;&#x4E3A;&#x4F8B;&#xFF09;</p>
+<h3 id="fifo&#x7684;&#x5B9E;&#x73B0;">FIFO&#x7684;&#x5B9E;&#x73B0;</h3>
+<p>&#x9996;&#x5148;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x7F13;&#x5B58;<a href="#ram&#x6A21;&#x5757;">RAM&#x6A21;&#x5757;</a>&#xFF0C;&#x4E3B;&#x8981;&#x529F;&#x80FD;&#x662F;&#x6839;&#x636E;&#x8BFB;&#x63A7;&#x5236;&#x4FE1;&#x53F7;&#x3001;&#x5199;&#x63A7;&#x5236;&#x4FE1;&#x53F7;&#x4EE5;&#x53CA;&#x7A7A;&#x4FE1;&#x53F7;&#x548C;&#x6EE1;&#x4FE1;&#x53F7;&#x8BFB;&#x51FA;&#x548C;&#x5199;&#x5165;&#x6570;&#x636E;&#x3002;\
+&#x5176;&#x6B21;&#x9700;&#x8981;&#x4E00;&#x8BFB;&#x4E00;&#x5199;&#x4E24;&#x4E2A;&#x63A7;&#x5236;&#x6A21;&#x5757;&#xFF0C;&#x4E3B;&#x8981;&#x529F;&#x80FD;&#x662F;&#x8BB0;&#x5F55;&#x8BFB;/&#x5199;&#x5730;&#x5740;&#x53D8;&#x5316;&#x3001;&#x751F;&#x6210;&#x7A7A;&#x6EE1;&#x4FE1;&#x53F7;&#x3002;//empty&#x4FE1;&#x53F7;&#x7531;<a href="#&#x8BFB;&#x6A21;&#x5757;">&#x8BFB;&#x6A21;&#x5757;</a>&#x63A7;&#x5236;&#xFF0C;full&#x4FE1;&#x53F7;&#x7531;<a href="#&#x5199;&#x6A21;&#x5757;">&#x5199;&#x6A21;&#x5757;</a>&#x63A7;&#x5236;&#x3002;\
+<img src="images/FIFO_module.png" alt="FIFO&#x6A21;&#x5757;">\</p>
+<blockquote>
+<p>//&#x8BFB;&#x5199;&#x6A21;&#x5757;&#x4E2D;&#x8FD8;&#x6D89;&#x53CA;&#x4E8C;&#x8FDB;&#x5236;&#x7801;&#x5230;&#x683C;&#x96F7;&#x7801;&#x7684;&#x8F6C;&#x6362;&#xFF0C;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x989D;&#x5916;&#x7684;&#x5B50;&#x6A21;&#x5757;bin2grey_module<a href="#&#x4E8C;&#x8FDB;&#x5236;&#x7801;&#x8F6C;&#x683C;&#x96F7;&#x7801;">&#x8DF3;&#x8F6C;&#x5230;&#x4EE3;&#x7801;</a>&#x3002;\
+//&#x6700;&#x7EC8;&#x63A7;&#x5236;&#x8BFB;&#x5199;&#x6570;&#x636E;&#x7684;&#x4F7F;&#x80FD;&#x4FE1;&#x53F7;&#x7531;&#x8BFB;&#x5199;&#x63A7;&#x5236;&#x6307;&#x4EE4;&#x548C;&#x7A7A;&#x6EE1;&#x4FE1;&#x53F7;&#x5171;&#x540C;&#x51B3;&#x5B9A;&#xFF0C;&#x5373;&#x7A7A;&#x4E0D;&#x80FD;&#x8BFB;&#xFF0C;&#x6EE1;&#x4E0D;&#x80FD;&#x5199;&#x3002;&#x8FD9;&#x4E00;&#x529F;&#x80FD;&#x53EF;&#x4EE5;&#x653E;&#x5728;RAM&#x6A21;&#x5757;&#x4E2D;&#x5B9E;&#x73B0;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x653E;&#x5728;&#x8BFB;&#x5199;&#x6A21;&#x5757;&#x4E2D;&#x5B9E;&#x73B0;&#x3002;</p>
+</blockquote>
+<hr>
+<h2 id="verilog-&#x7F16;&#x7A0B;&#x7EC3;&#x4E60;&#xFF1A;&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x5316;&#x7684;&#x540C;&#x6B65;fifo">Verilog &#x7F16;&#x7A0B;&#x7EC3;&#x4E60;&#xFF1A;&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x5316;&#x7684;&#x540C;&#x6B65;FIFO</h2>
+<p>&#x4EE5;Verilog&#x7F16;&#x7A0B;&#x7EC3;&#x4E60;&#x4E3A;&#x4F8B;&#x5B66;&#x4E60;FIFO&#x3002;</p>
+<h3 id="&#x76EE;&#x6807;">&#x76EE;&#x6807;</h3>
+<ul>
+<li>&#x638C;&#x63E1;&#x540C;&#x6B65;&#x65F6;&#x5E8F;&#x903B;&#x8F91;&#x8BBE;&#x8BA1;&#x3002;</li>
+<li>&#x5B66;&#x4E60;&#x4F7F;&#x7528;&#x53C2;&#x6570;&#xFF08;parameter&#xFF09;&#x8FDB;&#x884C;&#x6A21;&#x5757;&#x5316;&#x548C;&#x53EF;&#x91CD;&#x7528;&#x8BBE;&#x8BA1;&#x3002;</li>
+<li>&#x7406;&#x89E3;FIFO&#xFF08;First-In, First-Out&#xFF0C;&#x5148;&#x5165;&#x5148;&#x51FA;&#x961F;&#x5217;&#xFF09;&#x7684;&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#x3002;</li>
+<li>&#x638C;&#x63E1;&#x57FA;&#x672C;&#x72B6;&#x6001;&#x4FE1;&#x53F7;&#xFF08;&#x7A7A;&#x3001;&#x6EE1;&#xFF09;&#x7684;&#x4EA7;&#x751F;&#x903B;&#x8F91;&#x3002;</li>
+<li>&#x7EC3;&#x4E60;&#x7F16;&#x5199;&#x7B80;&#x5355;&#x7684;Verilog&#x6D4B;&#x8BD5;&#x5E73;&#x53F0;&#xFF08;Testbench&#xFF09;&#x3002;</li>
+</ul>
+<h3 id="&#x540C;&#x6B65;&#x65F6;&#x5E8F;&#x7535;&#x8DEF;&#x8BBE;&#x8BA1;&#x57FA;&#x672C;&#x6B65;&#x9AA4;">&#x540C;&#x6B65;&#x65F6;&#x5E8F;&#x7535;&#x8DEF;&#x8BBE;&#x8BA1;&#x57FA;&#x672C;&#x6B65;&#x9AA4;</h3>
+<p><img src="images/FIFO_study.png" alt="&#x540C;&#x6B65;&#x65F6;&#x5E8F;&#x7535;&#x8DEF;&#x8BBE;&#x8BA1;&#x57FA;&#x672C;&#x6B65;&#x9AA4;">\</p>
+<h3 id="&#x4E3B;&#x8981;&#x53C2;&#x6570;">&#x4E3B;&#x8981;&#x53C2;&#x6570;</h3>
+<p><strong>&#x5BBD;&#x5EA6;&#xFF08;WIDTH&#xFF09;&#xFF1A;</strong>FIFO&#x6BCF;&#x4E2A;&#x5730;&#x5740;&#x7684;&#x6570;&#x636E;&#x4F4D;&#x5BBD;&#xFF08;W&#xFF09;&#xFF1B;\
+<strong>&#x6DF1;&#x5EA6;&#xFF08;DEEPTH&#xFF09;&#xFF1A;</strong>FIFO&#x53EF;&#x4EE5;&#x5B58;&#x50A8;&#x591A;&#x5C11;&#x4E2A;W&#x4F4D;&#x7684;&#x6570;&#x636E;&#xFF1B;//&#x9ED8;&#x8BA4;&#x662F;2&#x7684;&#x5E42;&#x6B21;&#x65B9;\
+<strong>&#x6EE1;&#xFF08;full&#xFF09;&#x6807;&#x5FD7;&#xFF1A;</strong>FIFO&#x5DF2;&#x6EE1;&#x65F6;&#xFF0C;&#x4F1A;&#x8F93;&#x51FA;&#x4E00;&#x4E2A;&#x5BF9;&#x5199;&#x64CD;&#x4F5C;&#x7684;&#x53CD;&#x538B;&#x4FE1;&#x53F7;&#xFF0C;&#x4EE5;&#x963B;&#x6B62;&#x88AB;&#x7EE7;&#x7EED;&#x5199;&#x5165;&#x6570;&#x636E;&#x800C;&#x6EA2;&#x51FA;&#xFF1B;\
+<strong>&#x7A7A;&#xFF08;empty&#xFF09;&#x6807;&#x5FD7;&#xFF1A;</strong>FIFO&#x5DF2;&#x7A7A;&#x65F6;&#xFF0C;&#x4F1A;&#x8F93;&#x51FA;&#x4E00;&#x4E2A;&#x5BF9;&#x8BFB;&#x64CD;&#x4F5C;&#x7684;&#x53CD;&#x538B;&#x4FE1;&#x53F7;&#xFF0C;&#x4EE5;&#x907F;&#x514D;&#x88AB;&#x7EE7;&#x7EED;&#x8BFB;&#x51FA;&#x65E0;&#x6548;&#x6570;&#x636E;&#xFF1B;\
+<strong>&#x8BFB;/&#x5199;&#x65F6;&#x949F;&#xFF1A;</strong>&#x8BFB;/&#x5199;&#x64CD;&#x4F5C;&#x6240;&#x9075;&#x5FAA;&#x7684;&#x65F6;&#x949F;&#xFF0C;&#x6BCF;&#x4E2A;&#x65F6;&#x949F;&#x6CBF;&#x89E6;&#x53D1;&#x3002;\</p>
+<blockquote>
+<p>WIDTH&#xD7;DEEPTH=&#x603B;&#x6570;&#x636E;</p>
+</blockquote>
+<hr>
+<h2 id="fifo&#x7684;verilog&#x4EE3;&#x7801;">FIFO&#x7684;Verilog&#x4EE3;&#x7801;</h2>
+<p>&#x5B9E;&#x73B0;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#x3002;\
+&#x4E3B;&#x8981;&#x5206;&#x6210;3&#x4E2A;&#x6A21;&#x5757;&#x5B9E;&#x73B0;+&#x4E00;&#x4E2A;top_module&#x9876;&#x5C42;&#x6A21;&#x5757;+&#x4E00;&#x4E2A;bin2gray_module&#x5B50;&#x6A21;&#x5757;</p>
+<h3 id="&#x5199;&#x6A21;&#x5757;">&#x5199;&#x6A21;&#x5757;</h3>
+<pre><code class="lang-verilog"><span class="hljs-comment">//code</span>
+`<span class="hljs-keyword">timescale</span> <span class="hljs-number">1</span>ns / <span class="hljs-number">1</span>ps
+<span class="hljs-keyword">module</span> write_ctrl#(
+    <span class="hljs-keyword">parameter</span>   DATA_DEEPTH     =   <span class="hljs-number">&apos;d8</span>
+)(
+    <span class="hljs-keyword">input</span>       i_wr_clk        ,
+    <span class="hljs-keyword">input</span>       i_wr_rst        ,
+
+    <span class="hljs-keyword">input</span>       i_wr_en         ,
+    <span class="hljs-keyword">output</span>      o_wr_full       ,
+    <span class="hljs-keyword">output</span>      o_ram_addr      ,
+    <span class="hljs-keyword">output</span>      o_ram_en        ,
+
+    <span class="hljs-keyword">input</span>       i_rd2wr_addr    ,   <span class="hljs-comment">//&#x6536;&#x5199;&#x6A21;&#x5757;&#x4E00;&#x4E2A;&#x8BFB;&#x5730;&#x5740;&#xFF0C;&#x7528;&#x6765;&#x5224;&#x65AD;&#x7A7A;&#x6EE1;&#x4FE1;&#x53F7;</span>
+    <span class="hljs-keyword">output</span>      o_wr2rd_addr        <span class="hljs-comment">//&#x7ED9;&#x8BFB;&#x6A21;&#x5757;&#x4E00;&#x4E2A;&#x5199;&#x5730;&#x5740;&#xFF0C;&#x7528;&#x6765;&#x5224;&#x65AD;&#x7A7A;&#x6EE1;&#x4FE1;&#x53F7;</span>
+    );
+    <span class="hljs-comment">/*************start****************/</span>  
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">integer</span> clogb2(<span class="hljs-keyword">input</span> <span class="hljs-keyword">integer</span> number);             <span class="hljs-comment">//&#x8BA1;&#x7B97;&#x5730;&#x5740;&#x4F4D;&#x5BBD;&#x7684;&#x51FD;&#x6570;&#xFF0C;vivado&#x53EF;&#x7528;</span>
+        <span class="hljs-keyword">for</span>(clogb2 = <span class="hljs-number">0</span> ; number &gt; <span class="hljs-number">0</span> ; clogb2 = clogb2 + <span class="hljs-number">1</span>)
+        <span class="hljs-keyword">begin</span>
+            number = number &gt;&gt; <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">endfunction</span>
+    <span class="hljs-comment">/************parameter*************/</span>
+    localparam ADDR_WIDTH = clogb2(DATA_DEEPTH - <span class="hljs-number">1</span>);            <span class="hljs-comment">//8&#x662F;1000&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x4ECE;0&#x5F00;&#x59CB;&#xFF0C;&#x4EE5;111&#xFF08;7&#xFF09;&#x8868;&#x793A;8&#xFF0C;&#x6240;&#x4EE5;DATA_DEEPTH - 1//&apos;d3;//</span>
+    <span class="hljs-comment">/**************port****************/</span>
+    <span class="hljs-keyword">wire</span>                            i_wr_clk        ;
+    <span class="hljs-keyword">wire</span>                            i_wr_rst        ;
+    <span class="hljs-keyword">wire</span>                            i_wr_en         ;
+    <span class="hljs-keyword">wire</span>                            o_wr_full       ;
+    <span class="hljs-keyword">wire</span>      [ADDR_WIDTH - <span class="hljs-number">0</span> : <span class="hljs-number">0</span>]  o_ram_addr      ;
+    <span class="hljs-keyword">wire</span>                            o_ram_en        ;
+    <span class="hljs-keyword">wire</span>      [ADDR_WIDTH - <span class="hljs-number">0</span> : <span class="hljs-number">0</span>]  i_rd2wr_addr    ;
+    <span class="hljs-keyword">wire</span>      [ADDR_WIDTH - <span class="hljs-number">0</span> : <span class="hljs-number">0</span>]  o_wr2rd_addr    ;
+    <span class="hljs-comment">/*************machine**************/</span>
+
+    <span class="hljs-comment">/**************reg*****************/</span>
+    <span class="hljs-keyword">reg</span>       [ADDR_WIDTH - <span class="hljs-number">0</span> : <span class="hljs-number">0</span>]  r_addr_cnt      ;       <span class="hljs-comment">//&#x8BA1;&#x6570;&#x5668;&#xFF0C;&#x9700;&#x8981;&#x8F6C;&#x5316;&#x6210;Gray&#x7801;</span>
+    <span class="hljs-keyword">reg</span>       [ADDR_WIDTH - <span class="hljs-number">0</span> : <span class="hljs-number">0</span>]  r_gray_addr     ;
+    <span class="hljs-comment">/**************wire****************/</span>  
+    <span class="hljs-keyword">wire</span>      [ADDR_WIDTH - <span class="hljs-number">0</span> : <span class="hljs-number">0</span>]  w_gray_addr     ;
+    <span class="hljs-comment">/*************assign***************/</span>
+    <span class="hljs-keyword">assign</span> o_ram_addr   =   r_addr_cnt              ;       <span class="hljs-comment">//ram&#x7684;&#x4E24;&#x4E2A;&#x63A7;&#x5236;&#x4F4D;&#xFF0C;&#x4F20;&#x8FDB;&#x6765;</span>
+    <span class="hljs-keyword">assign</span> o_ram_en     =   i_wr_en &amp; !o_wr_full    ;
+    <span class="hljs-keyword">assign</span> o_wr2rd_addr =   r_gray_addr             ;
+    <span class="hljs-keyword">assign</span> o_wr_full    =   (w_gray_addr == {~i_rd2wr_addr[ADDR_WIDTH],~i_rd2wr_addr[ADDR_WIDTH - <span class="hljs-number">1</span>],i_rd2wr_addr[ADDR_WIDTH - <span class="hljs-number">2</span>:<span class="hljs-number">0</span>]});
+    <span class="hljs-comment">//assign o_wr_full    =   (i_rd2wr_addr == {~w_gray_addr[ADDR_WIDTH],~w_gray_addr[ADDR_WIDTH - 1],w_gray_addr[ADDR_WIDTH - 2:0]});</span>
+                                                            <span class="hljs-comment">//&#x6EE1;&#x4FE1;&#x53F7;&#x5224;&#x65AD;,&#x9AD8;&#x4E24;&#x4F4D;&#x76F8;&#x53CD;&#xFF0C;&#x4F4E;&#x4E24;&#x4F4D;&#x76F8;&#x540C;&#xFF0C;&#x5219;&#x6EE1;</span>
+    <span class="hljs-comment">/************component*************/</span>
+    bin2gray_module#(
+        .WIDTH          (ADDR_WIDTH     )
+    )
+    bin2gray_module_u0                                      <span class="hljs-comment">//&#x8BA1;&#x6570;&#x5668;&#x4E8C;&#x8FDB;&#x5236;&#x7801;-&gt;&#x5199;&#x5730;&#x5740;&#x683C;&#x96F7;&#x7801;</span>
+    (
+        .i_bin          (r_addr_cnt     ),
+        .o_gray         (w_gray_addr   )
+    );
+    <span class="hljs-comment">/*************always***************/</span>
+    <span class="hljs-keyword">always</span>@(<span class="hljs-keyword">posedge</span> i_wr_clk)              <span class="hljs-comment">//&#x5199;&#x5165;&#x4F7F;&#x80FD;&#x4FE1;&#x53F7;&#xFF0C;&#x5730;&#x5740;&#x8BA1;&#x6570;&#x5668;+1</span>
+        <span class="hljs-keyword">if</span>(i_wr_rst)
+            r_addr_cnt &lt;= <span class="hljs-number">&apos;d0</span>;
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(i_wr_en)
+            r_addr_cnt &lt;= r_addr_cnt + <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">else</span>
+            r_addr_cnt &lt;= r_addr_cnt;
+    <span class="hljs-keyword">always</span>@(<span class="hljs-keyword">posedge</span> i_wr_clk)              <span class="hljs-comment">//&#x5730;&#x5740;&#x683C;&#x96F7;&#x7801;o_wr2rd_addr = r_gray_addr &lt;= w_gray_addr</span>
+        <span class="hljs-keyword">if</span>(i_wr_rst)
+            r_gray_addr &lt;= <span class="hljs-number">&apos;d0</span>;
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(i_wr_en)
+            r_gray_addr &lt;= w_gray_addr;
+        <span class="hljs-keyword">else</span>
+            r_gray_addr &lt;= r_gray_addr;
+<span class="hljs-keyword">endmodule</span>
+</code></pre>
+<h3 id="&#x8BFB;&#x6A21;&#x5757;">&#x8BFB;&#x6A21;&#x5757;</h3>
+<pre><code class="lang-verilog"><span class="hljs-comment">//code</span>
+`<span class="hljs-keyword">timescale</span> <span class="hljs-number">1</span>ns / <span class="hljs-number">1</span>ps
+<span class="hljs-keyword">module</span> read_ctrl#(
+    <span class="hljs-keyword">parameter</span>   DATA_DEEPTH     =   <span class="hljs-number">&apos;d8</span>
+)(
+    <span class="hljs-keyword">input</span>       i_rd_clk        ,
+    <span class="hljs-keyword">input</span>       i_rd_rst        ,
+
+    <span class="hljs-keyword">input</span>       i_rd_en         ,
+    <span class="hljs-keyword">output</span>      o_rd_empty      ,
+    <span class="hljs-keyword">output</span>      o_ram_addr      ,
+    <span class="hljs-keyword">output</span>      o_ram_en        ,
+
+    <span class="hljs-keyword">input</span>       i_wr2rd_addr    ,   <span class="hljs-comment">//&#x6536;&#x8BFB;&#x6A21;&#x5757;&#x4E00;&#x4E2A;&#x5199;&#x5730;&#x5740;&#xFF0C;&#x7528;&#x6765;&#x5224;&#x65AD;&#x7A7A;&#x6EE1;&#x4FE1;&#x53F7;</span>
+    <span class="hljs-keyword">output</span>      o_rd2wr_addr        <span class="hljs-comment">//&#x7ED9;&#x5199;&#x6A21;&#x5757;&#x4E00;&#x4E2A;&#x8BFB;&#x5730;&#x5740;&#xFF0C;&#x7528;&#x6765;&#x5224;&#x65AD;&#x7A7A;&#x6EE1;&#x4FE1;&#x53F7;</span>
+    );
+    <span class="hljs-comment">/*************start****************/</span>  
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">integer</span> clogb2(<span class="hljs-keyword">input</span> <span class="hljs-keyword">integer</span> number);             <span class="hljs-comment">//&#x8BA1;&#x7B97;&#x5730;&#x5740;&#x4F4D;&#x5BBD;&#x7684;&#x51FD;&#x6570;&#xFF0C;vivado&#x53EF;&#x7528;</span>
+        <span class="hljs-keyword">for</span>(clogb2 = <span class="hljs-number">0</span> ; number &gt; <span class="hljs-number">0</span> ; clogb2 = clogb2 + <span class="hljs-number">1</span>)
+        <span class="hljs-keyword">begin</span>
+            number = number &gt;&gt; <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">endfunction</span>
+    <span class="hljs-comment">/************parameter*************/</span>
+    localparam ADDR_WIDTH = clogb2(DATA_DEEPTH - <span class="hljs-number">1</span>);            <span class="hljs-comment">//8&#x662F;1000&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x4ECE;0&#x5F00;&#x59CB;&#xFF0C;&#x4EE5;111&#xFF08;7&#xFF09;&#x8868;&#x793A;8&#xFF0C;&#x6240;&#x4EE5;DATA_DEEPTH - 1</span>
+    <span class="hljs-comment">/**************port****************/</span>
+    <span class="hljs-keyword">wire</span>                            i_rd_clk        ;
+    <span class="hljs-keyword">wire</span>                            i_rd_rst        ;
+    <span class="hljs-keyword">wire</span>                            i_rd_en         ;
+    <span class="hljs-keyword">wire</span>                            o_rd_empty      ;
+    <span class="hljs-keyword">wire</span>      [ADDR_WIDTH - <span class="hljs-number">0</span> : <span class="hljs-number">0</span>]  o_ram_addr      ;
+    <span class="hljs-keyword">wire</span>                            o_ram_en        ;
+    <span class="hljs-keyword">wire</span>      [ADDR_WIDTH - <span class="hljs-number">0</span> : <span class="hljs-number">0</span>]  i_wr2rd_addr    ;
+    <span class="hljs-keyword">wire</span>      [ADDR_WIDTH - <span class="hljs-number">0</span> : <span class="hljs-number">0</span>]  o_rd2wr_addr    ;
+    <span class="hljs-comment">/*************machine**************/</span>
+
+    <span class="hljs-comment">/**************reg*****************/</span>
+    <span class="hljs-keyword">reg</span>       [ADDR_WIDTH - <span class="hljs-number">0</span> : <span class="hljs-number">0</span>]  r_addr_cnt      ;       <span class="hljs-comment">//&#x8BA1;&#x6570;&#x5668;&#xFF0C;&#x9700;&#x8981;&#x8F6C;&#x5316;&#x6210;Gray&#x7801;</span>
+    <span class="hljs-keyword">reg</span>       [ADDR_WIDTH - <span class="hljs-number">0</span> : <span class="hljs-number">0</span>]  r_gray_addr     ;
+    <span class="hljs-comment">/**************wire****************/</span>  
+    <span class="hljs-keyword">wire</span>      [ADDR_WIDTH - <span class="hljs-number">0</span> : <span class="hljs-number">0</span>]  w_gray_addr    ;
+    <span class="hljs-comment">/*************assign***************/</span>
+    <span class="hljs-keyword">assign</span> o_ram_addr   =   r_addr_cnt              ;       <span class="hljs-comment">//ram&#x7684;&#x4E24;&#x4E2A;&#x63A7;&#x5236;&#x4F4D;&#xFF0C;&#x4F20;&#x8FDB;&#x6765;</span>
+    <span class="hljs-keyword">assign</span> o_ram_en     =   i_rd_en &amp; !o_rd_empty   ;
+    <span class="hljs-keyword">assign</span> o_rd2wr_addr =   r_gray_addr             ;
+    <span class="hljs-comment">//assign o_rd_empty   =   (o_rd2wr_addr == i_wr2rd_addr);   //&#x6EE1;&#x4FE1;&#x53F7;&#x5224;&#x65AD;,&#x76F8;&#x540C;&#x5219;&#x7A7A;</span>
+    <span class="hljs-keyword">assign</span> o_rd_empty   =   (r_gray_addr == i_wr2rd_addr);   <span class="hljs-comment">//&#x6EE1;&#x4FE1;&#x53F7;&#x5224;&#x65AD;,&#x76F8;&#x540C;&#x5219;&#x7A7A;</span>
+    <span class="hljs-comment">//assign o_rd_empty   =   0;</span>
+    <span class="hljs-comment">/************component*************/</span>
+    bin2gray_module#(
+        .WIDTH          (ADDR_WIDTH     )
+    )
+    bin2gray_module_u0                                      <span class="hljs-comment">//&#x8BA1;&#x6570;&#x5668;&#x4E8C;&#x8FDB;&#x5236;&#x7801;-&gt;&#x5199;&#x5730;&#x5740;&#x683C;&#x96F7;&#x7801;</span>
+    (
+        .i_bin          (r_addr_cnt     ),
+        .o_gray         (w_gray_addr    )
+    );
+    <span class="hljs-comment">/*************always***************/</span>
+    <span class="hljs-keyword">always</span>@(<span class="hljs-keyword">posedge</span> i_rd_clk)              <span class="hljs-comment">//&#x8BFB;&#x51FA;&#x4F7F;&#x80FD;&#x4FE1;&#x53F7;&#xFF0C;&#x5730;&#x5740;&#x8BA1;&#x6570;&#x5668;+1</span>
+        <span class="hljs-keyword">if</span>(i_rd_rst)
+            r_addr_cnt &lt;= <span class="hljs-number">&apos;d0</span>;
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(i_rd_en)
+            r_addr_cnt &lt;= r_addr_cnt + <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">else</span>
+            r_addr_cnt &lt;= r_addr_cnt;
+    <span class="hljs-keyword">always</span>@(<span class="hljs-keyword">posedge</span> i_rd_clk)
+        <span class="hljs-keyword">if</span>(i_rd_rst)
+            r_gray_addr &lt;= <span class="hljs-number">&apos;d0</span>;
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(i_rd_en)
+            r_gray_addr &lt;= w_gray_addr;
+        <span class="hljs-keyword">else</span>
+            r_gray_addr &lt;= r_gray_addr;
+<span class="hljs-keyword">endmodule</span>
+</code></pre>
+<h3 id="ram&#x6A21;&#x5757;">RAM&#x6A21;&#x5757;</h3>
+<pre><code class="lang-verilog"><span class="hljs-comment">//code</span>
+`<span class="hljs-keyword">timescale</span> <span class="hljs-number">1</span>ns / <span class="hljs-number">1</span>ps
+<span class="hljs-keyword">module</span> ram_core_module#(
+    <span class="hljs-keyword">parameter</span>       DATA_WIDTH      =   <span class="hljs-number">&apos;d8</span>     ,
+    <span class="hljs-keyword">parameter</span>       DATA_DEEPTH     =   <span class="hljs-number">&apos;d8</span> 
+    )(
+    <span class="hljs-keyword">input</span>           i_wr_data                     ,
+    <span class="hljs-keyword">input</span>           i_wr_addr                     ,
+    <span class="hljs-keyword">input</span>           i_wr_en                       ,
+    <span class="hljs-keyword">input</span>           i_wr_clk                      ,
+
+    <span class="hljs-keyword">output</span>          o_rd_data                     ,
+    <span class="hljs-keyword">input</span>           i_rd_addr                     ,
+    <span class="hljs-keyword">input</span>           i_rd_en                       ,
+    <span class="hljs-keyword">input</span>           i_rd_clk                      
+    );
+    <span class="hljs-comment">/**************start***************/</span>
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">integer</span> clogb2(<span class="hljs-keyword">input</span> <span class="hljs-keyword">integer</span> number);             <span class="hljs-comment">//&#x8BA1;&#x7B97;&#x5730;&#x5740;&#x4F4D;&#x5BBD;&#x7684;&#x51FD;&#x6570;&#xFF0C;vivado&#x53EF;&#x7528;&apos;d3;//</span>
+        <span class="hljs-keyword">for</span>(clogb2 = <span class="hljs-number">0</span> ; number &gt; <span class="hljs-number">0</span> ; clogb2 = clogb2 + <span class="hljs-number">1</span>)
+        <span class="hljs-keyword">begin</span>
+            number = number &gt;&gt; <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">endfunction</span>
+     <span class="hljs-comment">/************parameter*************/</span>
+    localparam ADDR_WIDTH = clogb2(DATA_DEEPTH - <span class="hljs-number">1</span>);
+     <span class="hljs-comment">/**************port****************/</span>
+    <span class="hljs-keyword">wire</span>    [DATA_WIDTH - <span class="hljs-number">1</span> :<span class="hljs-number">0</span>]     i_wr_data       ;
+    <span class="hljs-keyword">wire</span>    [ADDR_WIDTH - <span class="hljs-number">0</span> :<span class="hljs-number">0</span>]     i_wr_addr       ;
+    <span class="hljs-keyword">wire</span>                            i_wr_en         ;
+    <span class="hljs-keyword">wire</span>                            i_wr_clk        ;
+    <span class="hljs-keyword">wire</span>    [DATA_WIDTH - <span class="hljs-number">1</span> :<span class="hljs-number">0</span>]     o_rd_data       ;
+    <span class="hljs-keyword">wire</span>    [ADDR_WIDTH - <span class="hljs-number">0</span> :<span class="hljs-number">0</span>]     i_rd_addr       ;
+    <span class="hljs-keyword">wire</span>                            i_rd_en         ;
+    <span class="hljs-keyword">wire</span>                            i_rd_clk        ;
+    <span class="hljs-comment">/**************machine**************/</span> 
+
+    <span class="hljs-comment">/****************reg****************/</span>
+    <span class="hljs-keyword">reg</span> [ADDR_WIDTH - <span class="hljs-number">0</span> :<span class="hljs-number">0</span>]         r_ram_core[<span class="hljs-number">0</span> : DATA_DEEPTH - <span class="hljs-number">1</span>];    <span class="hljs-comment">//&#x4E0D;&#x662F;&#x6570;&#x7EC4;&#xFF0C;&#x662F;&#x5185;&#x5B58;&#x5757;ram</span>
+    <span class="hljs-keyword">reg</span> [ADDR_WIDTH - <span class="hljs-number">0</span> :<span class="hljs-number">0</span>]         r_rd_data;                        <span class="hljs-comment">//&#x8BFB;&#x6F5C;&#x4F0F;&#x671F;&#x662F;1&#x4E2A;&#x5468;&#x671F;</span>
+    <span class="hljs-comment">/****************wire***************/</span>
+    <span class="hljs-keyword">wire</span> [ADDR_WIDTH   - <span class="hljs-number">1</span> : <span class="hljs-number">0</span>] w_wr_addr   ;
+    <span class="hljs-keyword">wire</span> [ADDR_WIDTH   - <span class="hljs-number">1</span> : <span class="hljs-number">0</span>] w_rd_addr   ;
+    <span class="hljs-comment">/***************asssign*************/</span>
+    <span class="hljs-keyword">assign</span> o_rd_data = r_rd_data            ;
+    <span class="hljs-keyword">assign</span> w_wr_addr = i_wr_addr[ADDR_WIDTH   - <span class="hljs-number">1</span> : <span class="hljs-number">0</span>];
+    <span class="hljs-keyword">assign</span> w_rd_addr = i_rd_addr[ADDR_WIDTH   - <span class="hljs-number">1</span> : <span class="hljs-number">0</span>];
+    <span class="hljs-comment">/**************component************/</span>
+
+    <span class="hljs-comment">/***************always**************/</span>
+    <span class="hljs-keyword">always</span>@(<span class="hljs-keyword">posedge</span> i_wr_clk)
+        <span class="hljs-keyword">if</span>(i_wr_en)
+            r_ram_core[w_wr_addr] &lt;= i_wr_data;                 <span class="hljs-comment">//&#x5199;&#x5165;&#x6570;&#x636E;</span>
+        <span class="hljs-keyword">else</span>
+            r_ram_core[w_wr_addr] &lt;= r_ram_core[w_wr_addr];     <span class="hljs-comment">//else&#x4E0D;&#x5199;&#x4E5F;&#x884C;</span>
+    <span class="hljs-keyword">always</span>@(<span class="hljs-keyword">posedge</span> i_rd_clk)
+        <span class="hljs-keyword">if</span>(i_rd_en)
+            r_rd_data &lt;= r_ram_core[w_rd_addr];               <span class="hljs-comment">//&#x8BFB;&#x51FA;&#x6570;&#x636E;</span>
+        <span class="hljs-keyword">else</span>
+            r_rd_data &lt;= r_rd_data;                         <span class="hljs-comment">//else&#x4E0D;&#x5199;&#x4E5F;&#x884C;</span>
+
+<span class="hljs-comment">//always@(posedge i_wr_clk)</span>
+<span class="hljs-comment">//    r_ram_core[w_wr_addr] &lt;= i_wr_en ? i_wr_data : r_ram_core[w_wr_addr]; </span>
+
+<span class="hljs-comment">//always@(posedge i_rd_clk)</span>
+<span class="hljs-comment">//    r_rd_data &lt;= i_rd_en ? r_ram_core[w_rd_addr] : r_rd_data;</span>
+<span class="hljs-keyword">endmodule</span>
+</code></pre>
+<h3 id="&#x4E8C;&#x8FDB;&#x5236;&#x7801;&#x8F6C;&#x683C;&#x96F7;&#x7801;">&#x4E8C;&#x8FDB;&#x5236;&#x7801;&#x8F6C;&#x683C;&#x96F7;&#x7801;</h3>
+<pre><code class="lang-verilog"><span class="hljs-comment">//code</span>
+`<span class="hljs-keyword">timescale</span> <span class="hljs-number">1</span>ns / <span class="hljs-number">1</span>ps
+
+<span class="hljs-keyword">module</span> bin2gray_module#(
+    <span class="hljs-keyword">parameter</span>       WIDTH = <span class="hljs-number">&apos;d8</span>
+)(
+    <span class="hljs-keyword">input</span>   [WIDTH : <span class="hljs-number">0</span>]     i_bin       ,
+    <span class="hljs-keyword">output</span>  [WIDTH : <span class="hljs-number">0</span>]     o_gray      
+    );
+
+    <span class="hljs-keyword">assign</span> o_gray = (i_bin &gt;&gt; <span class="hljs-number">1</span>) ^ i_bin    ;
+
+<span class="hljs-keyword">endmodule</span>
+</code></pre>
+<h3 id="topmodule">top_module</h3>
+<pre><code class="lang-verilog"><span class="hljs-comment">//code</span>
+`<span class="hljs-keyword">timescale</span> <span class="hljs-number">1</span>ns / <span class="hljs-number">1</span>ps
+<span class="hljs-keyword">module</span> fifo_top#(
+    <span class="hljs-keyword">parameter</span>       DATA_WIDTH      =   <span class="hljs-number">&apos;d8</span>     ,
+    <span class="hljs-keyword">parameter</span>       DATA_DEEPTH     =   <span class="hljs-number">&apos;d8</span> 
+)
+(
+    <span class="hljs-keyword">input</span>               i_wr_clk                ,
+    <span class="hljs-keyword">input</span>               i_wr_rst                ,
+    <span class="hljs-keyword">input</span>               i_wr_en                 ,
+    <span class="hljs-keyword">input</span>               i_wr_data               ,
+    <span class="hljs-keyword">output</span>              o_wr_full               ,
+
+    <span class="hljs-keyword">input</span>               i_rd_clk                ,
+    <span class="hljs-keyword">input</span>               i_rd_rst                ,
+    <span class="hljs-keyword">input</span>               i_rd_en                 ,
+    <span class="hljs-keyword">output</span>              o_rd_data               ,
+    <span class="hljs-keyword">output</span>              o_rd_empty      
+
+);
+<span class="hljs-comment">/****************function******************/</span>
+<span class="hljs-keyword">function</span> <span class="hljs-keyword">integer</span> clogb2(<span class="hljs-keyword">integer</span> number);
+    <span class="hljs-keyword">for</span>(clogb2 = <span class="hljs-number">0</span> ; number &gt; <span class="hljs-number">0</span> ; clogb2 = clogb2 + <span class="hljs-number">1</span>)
+    <span class="hljs-keyword">begin</span>
+        number = number &gt;&gt; <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">endfunction</span>
+
+<span class="hljs-comment">/****************localmeter****************/</span>
+localparam ADDR_WIDTH     = clogb2(DATA_DEEPTH - <span class="hljs-number">1</span>);
+
+<span class="hljs-comment">/****************io port*******************/</span>
+<span class="hljs-keyword">wire</span>                        i_wr_clk            ;
+<span class="hljs-keyword">wire</span>                        i_wr_rst            ;
+<span class="hljs-keyword">wire</span>                        i_wr_en             ;
+<span class="hljs-keyword">wire</span> [DATA_WIDTH - <span class="hljs-number">1</span> : <span class="hljs-number">0</span>]   i_wr_data           ;
+<span class="hljs-keyword">wire</span>                        o_wr_full           ;
+<span class="hljs-keyword">wire</span>                        i_rd_clk            ;
+<span class="hljs-keyword">wire</span>                        i_rd_rst            ;
+<span class="hljs-keyword">wire</span>                        i_rd_en             ;
+<span class="hljs-keyword">wire</span> [DATA_WIDTH - <span class="hljs-number">1</span> : <span class="hljs-number">0</span>]   o_rd_data           ;
+<span class="hljs-keyword">wire</span>                        o_rd_empty          ;
+<span class="hljs-comment">/****************mechine*******************/</span>
+
+<span class="hljs-comment">/****************reg***********************/</span>
+
+<span class="hljs-comment">/****************wire**********************/</span>
+<span class="hljs-keyword">wire</span> [ADDR_WIDTH - <span class="hljs-number">0</span> : <span class="hljs-number">0</span>]   w_rd2wr_addr    ;
+<span class="hljs-keyword">wire</span> [ADDR_WIDTH - <span class="hljs-number">0</span> : <span class="hljs-number">0</span>]   w_wr2rd_addr    ;
+<span class="hljs-keyword">wire</span>                        w_wr_ram_en     ;
+<span class="hljs-keyword">wire</span> [ADDR_WIDTH - <span class="hljs-number">1</span> : <span class="hljs-number">0</span>]   w_wr_ram_addr   ;
+<span class="hljs-keyword">wire</span>                        w_rd_ram_en     ;
+<span class="hljs-keyword">wire</span> [ADDR_WIDTH - <span class="hljs-number">1</span> : <span class="hljs-number">0</span>]   w_rd_ram_addr   ;
+
+<span class="hljs-comment">/****************assign********************/</span>
+<span class="hljs-comment">//assign w_wr_ram_en = i_wr_en ;</span>
+<span class="hljs-comment">//assign w_rd_ram_en = i_rd_en ;</span>
+<span class="hljs-comment">/****************component*****************/</span>
+ram_core_module#(
+    .DATA_WIDTH      (DATA_WIDTH    ),
+    .DATA_DEEPTH     (DATA_DEEPTH   )
+)
+ram_core_module_u0
+(
+    .i_wr_data       (i_wr_data     ),
+    .i_wr_addr       (w_wr_ram_addr ),
+    .i_wr_en         (w_wr_ram_en   ),
+    .i_wr_clk        (i_wr_clk      ),
+
+    .o_rd_data       (o_rd_data     ),
+    .i_rd_addr       (w_rd_ram_addr ),
+    .i_rd_en         (w_rd_ram_en   ),
+    .i_rd_clk        (i_rd_clk      )
+
+);
+
+write_ctrl#(
+    .DATA_DEEPTH     (DATA_DEEPTH   )   
+)
+write_ctrl_u0
+(
+    .i_wr_clk        (i_wr_clk      ),
+    .i_wr_rst        (i_wr_rst      ),
+
+    .i_wr_en         (i_wr_en       ),
+    .o_wr_full       (o_wr_full     ),
+    .o_ram_addr      (w_wr_ram_addr ),
+    .o_ram_en        (w_wr_ram_en   ),
+
+    .i_rd2wr_addr    (w_rd2wr_addr  ),
+    .o_wr2rd_addr    (w_wr2rd_addr  )
+);
+
+read_ctrl#(
+    .DATA_DEEPTH     (DATA_DEEPTH   )
+)
+read_ctrl_u0
+(
+    .i_rd_clk        (i_rd_clk      ),
+    .i_rd_rst        (i_rd_rst      ),
+
+    .i_rd_en         (i_rd_en       ),
+    .o_rd_empty      (o_rd_empty    ),
+    .o_ram_addr      (w_rd_ram_addr ),
+    .o_ram_en        (w_rd_ram_en   ),
+
+    .i_wr2rd_addr    (w_wr2rd_addr  ),
+    .o_rd2wr_addr    (w_rd2wr_addr  )
+);
+<span class="hljs-keyword">endmodule</span>
+</code></pre>
+<p>&#x6700;&#x540E;&#x7684;testbench&#x4E3B;&#x8981;&#x5305;&#x542B;&#x4E00;&#x6B21;&#x5199;&#x6EE1;&#x64CD;&#x4F5C;+&#x4E00;&#x6B21;&#x8BFB;&#x7A7A;&#x64CD;&#x4F5C;&#x3002;</p>
+<h3 id="testbench&#x6587;&#x4EF6;">testbench&#x6587;&#x4EF6;</h3>
+<pre><code class="lang-verilog"><span class="hljs-comment">//code</span>
+`<span class="hljs-keyword">timescale</span> <span class="hljs-number">1</span>ns / <span class="hljs-number">100</span>ps
+
+<span class="hljs-keyword">module</span> FIFO_TB();
+
+<span class="hljs-keyword">reg</span> clk,rst;
+<span class="hljs-keyword">reg</span> clk2,rst2;
+
+<span class="hljs-keyword">initial</span>
+<span class="hljs-keyword">begin</span>
+    clk = <span class="hljs-number">0</span>;
+    rst = <span class="hljs-number">1</span>;
+    #<span class="hljs-number">100</span>;
+    @(<span class="hljs-keyword">posedge</span> clk)#<span class="hljs-number">0</span> rst = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-keyword">initial</span>
+<span class="hljs-keyword">begin</span>
+    clk2 = <span class="hljs-number">0</span>;
+    rst2 = <span class="hljs-number">1</span>;
+    #<span class="hljs-number">100</span>;
+    @(<span class="hljs-keyword">posedge</span> clk2)#<span class="hljs-number">0</span> rst2 = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-keyword">always</span>#<span class="hljs-number">10</span> clk = ~clk;
+<span class="hljs-keyword">always</span>#<span class="hljs-number">20</span> clk2 = ~clk2;
+<span class="hljs-comment">/**************************************************/</span>
+<span class="hljs-keyword">reg</span>        r_wr_en   ;  
+<span class="hljs-keyword">reg</span>  [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] r_wr_data ;
+<span class="hljs-keyword">wire</span>       w_wr_full ;
+<span class="hljs-keyword">reg</span>        r_rd_en   ;
+<span class="hljs-keyword">wire</span> [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] w_rd_data ;
+<span class="hljs-keyword">wire</span>       w_rd_empty ;
+
+localparam DATA_WIDTH = <span class="hljs-number">&apos;d8</span>;
+localparam DATA_DEEPTH = <span class="hljs-number">&apos;d8</span>;
+
+fifo_top#(
+    .DATA_WIDTH      (DATA_WIDTH    ),
+    .DATA_DEEPTH     (DATA_DEEPTH   )
+)
+fifo_top_u0
+(
+    .i_wr_clk               (clk        )            ,
+    .i_wr_rst               (rst        )            ,
+    .i_wr_en                (r_wr_en    )            ,
+    .i_wr_data              (r_wr_data  )            ,
+    .o_wr_full              (w_wr_full  )            ,
+
+    .i_rd_clk               (clk2       )            ,
+    .i_rd_rst               (rst2       )            ,
+    .i_rd_en                (r_rd_en    )            ,
+    .o_rd_data              (w_rd_data  )            ,
+    .o_rd_empty             (w_rd_empty )    
+);
+<span class="hljs-comment">/**************************************************/</span>
+<span class="hljs-keyword">initial</span>
+<span class="hljs-keyword">begin</span>
+    r_wr_en   = <span class="hljs-number">0</span>;
+    r_wr_data = <span class="hljs-number">0</span>;
+    r_rd_en   = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">wait</span>(!rst);
+    <span class="hljs-keyword">wait</span>(!rst2);
+    <span class="hljs-keyword">fork</span>
+        <span class="hljs-keyword">begin</span>
+            fifo_write_task();
+            fifo_read_task();
+        <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">join</span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-keyword">task</span> fifo_write_task();
+    int  i;
+    @(<span class="hljs-keyword">posedge</span> clk);
+    <span class="hljs-keyword">for</span>(i = <span class="hljs-number">0</span> ; i &lt; <span class="hljs-number">8</span> ; i = i + <span class="hljs-number">1</span>)
+    <span class="hljs-keyword">begin</span>
+        r_wr_en   &lt;= <span class="hljs-number">&apos;d1</span>;
+        r_wr_data &lt;= i;
+        @(<span class="hljs-keyword">posedge</span> clk);
+    <span class="hljs-keyword">end</span>
+    r_wr_en   &lt;= <span class="hljs-number">&apos;d0</span>;
+    r_wr_data &lt;= <span class="hljs-number">0</span>;
+    @(<span class="hljs-keyword">posedge</span> clk);
+<span class="hljs-keyword">endtask</span>
+
+<span class="hljs-keyword">task</span> fifo_read_task();
+    int i;
+    @(<span class="hljs-keyword">posedge</span> clk2);
+    <span class="hljs-keyword">for</span>(i = <span class="hljs-number">0</span> ; i &lt; <span class="hljs-number">8</span>; i = i + <span class="hljs-number">1</span>)
+    <span class="hljs-keyword">begin</span>
+        r_rd_en   &lt;= <span class="hljs-number">&apos;d1</span>;
+        @(<span class="hljs-keyword">posedge</span> clk2);
+    <span class="hljs-keyword">end</span>
+    r_rd_en   &lt;= <span class="hljs-number">&apos;d0</span>;
+    @(<span class="hljs-keyword">posedge</span> clk2);
+<span class="hljs-keyword">endtask</span>
+
+<span class="hljs-keyword">endmodule</span>
+</code></pre>
+<p><img src="images/FIFO_out.png" alt="FIFO_testbench&#x9A8C;&#x8BC1;&#x7ED3;&#x679C;&#x65F6;&#x5E8F;&#x56FE;"></p>
+<hr>
+<h2 id="over">over</h2>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="MLIR_Dialect.html" class="navigation navigation-prev " aria-label="Previous page: Dialect基础">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="TPU_MLIR_study.html" class="navigation navigation-next " aria-label="Next page: TPU-MLIR代码学习">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"FIFO学习","level":"1.6","depth":1,"next":{"title":"TPU-MLIR代码学习","level":"1.7","depth":1,"path":"TPU_MLIR_study.md","ref":"TPU_MLIR_study.md","articles":[]},"previous":{"title":"Dialect基础","level":"1.5","depth":1,"path":"MLIR_Dialect.md","ref":"MLIR_Dialect.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"}},"file":{"path":"FIFO_study.md","mtime":"2025-10-16T02:23:10.812Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-10-16T02:23:46.454Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

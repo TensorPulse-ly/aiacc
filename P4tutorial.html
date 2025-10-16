@@ -1,0 +1,2251 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>P4基础 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="MLIR_Dialect.html" />
+    
+    
+    <link rel="prev" href="TableGen.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Example_Page.html">
+            
+                <a href="Example_Page.html">
+            
+                    
+                    Example Page
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="TableGen.html">
+            
+                <a href="TableGen.html">
+            
+                    
+                    TableGen 的用法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="P4tutorial.html">
+            
+                <a href="P4tutorial.html">
+            
+                    
+                    P4基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="MLIR_Dialect.html">
+            
+                <a href="MLIR_Dialect.html">
+            
+                    
+                    Dialect基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="FIFO_study.html">
+            
+                <a href="FIFO_study.html">
+            
+                    
+                    FIFO学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="TPU_MLIR_study.html">
+            
+                <a href="TPU_MLIR_study.html">
+            
+                    
+                    TPU-MLIR代码学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="MLIR_Dialect_Notes_module1.html">
+            
+                <a href="MLIR_Dialect_Notes_module1.html">
+            
+                    
+                    Dialect入门一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="Lab_1_Simple-Dialect.html">
+            
+                <a href="Lab_1_Simple-Dialect.html">
+            
+                    
+                    Dialect入门一配套Lab1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="Lab_2_Simple-Dialect.html">
+            
+                <a href="Lab_2_Simple-Dialect.html">
+            
+                    
+                    Dialect入门一配套Lab2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="MLIR_Dialect_Notes_module2.html">
+            
+                <a href="MLIR_Dialect_Notes_module2.html">
+            
+                    
+                    Dialect入门二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="Lab_4_Builtin_Dialect.html">
+            
+                <a href="Lab_4_Builtin_Dialect.html">
+            
+                    
+                    Dialect入门二配套Lab4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="Lab_5_Arith.html">
+            
+                <a href="Lab_5_Arith.html">
+            
+                    
+                    Dialect入门二配套Lab5
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="Lab_6.html">
+            
+                <a href="Lab_6.html">
+            
+                    
+                    Dialect入门二配套Lab6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="Lab_7_mem.html">
+            
+                <a href="Lab_7_mem.html">
+            
+                    
+                    Dialect入门二配套Lab7
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="Lab_8_Tensor.html">
+            
+                <a href="Lab_8_Tensor.html">
+            
+                    
+                    Dialect入门二配套Lab8
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="Lab_9_Linalg.html">
+            
+                <a href="Lab_9_Linalg.html">
+            
+                    
+                    Dialect入门二配套Lab9
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="MLIR_Dialect_Notes_module3.html">
+            
+                <a href="MLIR_Dialect_Notes_module3.html">
+            
+                    
+                    Dialect入门三
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="Lab_10_Optimization.html">
+            
+                <a href="Lab_10_Optimization.html">
+            
+                    
+                    Dialect入门三配套Lab10
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="Lab_Project_Sheet.html">
+            
+                <a href="Lab_Project_Sheet.html">
+            
+                    
+                    TPU-MLIR Lab Project
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="FIFO_study.html">
+            
+                <a href="FIFO_study.html">
+            
+                    
+                    FIFO学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="TPU_MLIR_study.html">
+            
+                <a href="TPU_MLIR_study.html">
+            
+                    
+                    TPU-MLIR代码学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="Linux_Command_Line.html">
+            
+                <a href="Linux_Command_Line.html">
+            
+                    
+                    Linux系统(服务器)常用指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="shell_study.html">
+            
+                <a href="shell_study.html">
+            
+                    
+                    .sh文件解释/Shell脚本常用语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="VCS_coverage_report_read.html">
+            
+                <a href="VCS_coverage_report_read.html">
+            
+                    
+                    VCS_coverage_report_read
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" >
+            
+                <a target="_blank" href="https://github.com/seclabBupt/aiacc/blob/main/docs/TPU-MLIR%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%80%EF%BC%89.md">
+            
+                    
+                    TPU-MLIR学习记录（一）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" >
+            
+                <a target="_blank" href="https://github.com/seclabBupt/aiacc/blob/main/docs/TPU-MLIR%20%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%BA%8C%EF%BC%89.md">
+            
+                    
+                    TPU-MLIR学习记录（二）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" >
+            
+                <a target="_blank" href="https://github.com/seclabBupt/aiacc/blob/main/docs/TPU-MLIR%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%89%EF%BC%89.md">
+            
+                    
+                    TPU-MLIR学习记录（三）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >P4基础</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="p4-tutorial">p4 Tutorial</h1>
+<p>&#x76F8;&#x5173;&#x6559;&#x7A0B;&#xFF1A;</p>
+<ul>
+<li><a href="https://github.com/nsg-ethz/p4-learning" target="_blank">https://github.com/nsg-ethz/p4-learning</a> &#xFF08;&#x4E3B;&#x8981;&#xFF09;</li>
+<li><a href="https://github.com/p4lang" target="_blank">https://github.com/p4lang</a> &#xFF08;&#x6587;&#x6863;&#x7B49;&#xFF09;</li>
+<li><a href="https://google.com" target="_blank">https://google.com</a> &#xFF08;&#x4E2D;&#x6587;&#x793E;&#x533A;&#x8D28;&#x91CF;&#x8F83;&#x4F4E;&#xFF0C;&#x4E00;&#x822C;&#x4E0D;&#x5BB9;&#x6613;&#x641C;&#x5230;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF09;</li>
+</ul>
+<p>&#x7F51;&#x7EDC;&#x6280;&#x672F;&#x76F8;&#x5173;&#x7684;&#x8D44;&#x6E90;&#xFF1A;</p>
+<ul>
+<li><a href="https://feisky.gitbooks.io/sdn/content/" target="_blank">https://feisky.gitbooks.io/sdn/content/</a></li>
+</ul>
+<hr>
+<p>&#xFF08;&#x76EE;&#x524D;&#xFF0C;&#x57FA;&#x4E8E;&#x5DF2;&#x6709;&#x5E73;&#x53F0;&#xFF0C;&#x5982;&#x4E0B;&#x7B2C;&#x4E00;&#x90E8;&#x5206;&#x73AF;&#x5883;&#x5B89;&#x88C5;&#x5185;&#x5BB9;&#xFF0C;&#x4EC5;&#x4F9B;&#x53C2;&#x8003;&#xFF09;</p>
+<h2 id="1-p4-&#x73AF;&#x5883;&#x5B89;&#x88C5;">1. p4 &#x73AF;&#x5883;&#x5B89;&#x88C5;</h2>
+<p><strong>OS</strong>&#xFF1A;ubuntu 20.04.4</p>
+<p><strong>depends&#xFF1A;</strong></p>
+<ul>
+<li><strong>PI</strong> &#xFF1A;p4runtime api&#xFF0C;&#x7F51;&#x7EDC;&#x62D3;&#x6251;&#x4E2D;&#x6709;p4&#x4EA4;&#x6362;&#x673A;&#x65F6;&#xFF0C;&#x5FC5;&#x987B;&#x5B89;&#x88C5;&#x8BE5;&#x6A21;&#x5757;&#xFF1B;</li>
+<li><strong>BMv2</strong>&#xFF1A; p4&#x4EA4;&#x6362;&#x673A;&#x865A;&#x62DF;&#x673A; &#xFF1B;</li>
+<li><strong>P4C</strong>&#xFF1A;p4&#x7A0B;&#x5E8F;&#x7F16;&#x8BD1;&#x5668;&#xFF0C;&#x652F;&#x6301;p4_14 &amp; p4_16&#xFF1B;</li>
+<li><strong>Mininet</strong>&#xFF1A;&#x57FA;&#x4E8E;namespace&#x7684;linux&#x7F51;&#x7EDC;&#x4EFF;&#x771F;&#x8F6F;&#x4EF6;&#xFF0C;&#x5BF9;&#x5916;&#x63D0;&#x4F9B;python api&#xFF1B;</li>
+<li><strong>FRRouting</strong> &#xFF1A;&#x7F51;&#x7EDC;&#x534F;&#x8BAE;&#x6808;&#x4EFF;&#x771F;&#x8F6F;&#x4EF6;&#xFF1B;</li>
+<li><strong>P4-Utils</strong>&#xFF1A;</li>
+</ul>
+<p><strong>&#x53EF;&#x4F18;&#x5148;&#x4F7F;&#x7528;&#x5B89;&#x88C5;&#x811A;&#x672C;&#x5B89;&#x88C5;</strong>&#xFF1A;<code>https://github.com/nsg-ethz/p4-utils/blob/master/install-tools/install-p4-dev.sh</code></p>
+<p>PI&#x3001;BMv2&#x9700;&#x8981;&#x7F16;&#x8BD1;&#x5B89;&#x88C5;&#xFF0C;&#x6709;&#x4E00;&#x5B9A;&#x7684;&#x5B89;&#x88C5;&#x96BE;&#x5EA6;&#x3002;</p>
+<p>P4C&#x3001;Mininet&#x3001;FRRouting&#x652F;&#x6301;&#x7528;&#x5305;&#x7BA1;&#x7406;&#x5668;&#x5B89;&#x88C5;&#xFF0C;&#x975E;&#x5E38;&#x5BB9;&#x6613;&#x64CD;&#x4F5C;&#x3002;</p>
+<h3 id="11-pi-&#x5B89;&#x88C5;">1.1 PI &#x5B89;&#x88C5;</h3>
+<blockquote>
+<p>&#x5EFA;&#x8BAE;&#x6BCF;&#x4E00;&#x4E2A;&#x6A21;&#x5757;&#x90FD;&#x5728;home&#x8DEF;&#x5F84;&#x4E0B;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#x5B58;&#x653E;&#x6587;&#x4EF6;&#x3002;</p>
+<p>PI&#x90E8;&#x5206;&#x5B89;&#x88C5;&#x8F83;&#x4E3A;&#x7E41;&#x7410;&#xFF0C;&#x5982;&#x6709;&#x7279;&#x6B8A;&#x62A5;&#x9519;&#x9700;&#x6839;&#x636E;&#x672C;&#x5730;&#x5177;&#x4F53;&#x73AF;&#x5883;&#x8FDB;&#x884C;&#x67E5;&#x9605;</p>
+</blockquote>
+<h4 id="111-&#x5B50;&#x6A21;&#x5757;&#x5B89;&#x88C5;">1.1.1 &#x5B50;&#x6A21;&#x5757;&#x5B89;&#x88C5;</h4>
+<h5 id="1111-&#x65E0;&#x9700;&#x7F16;&#x8BD1;&#x6A21;&#x5757;">1.1.1.1 &#x65E0;&#x9700;&#x7F16;&#x8BD1;&#x6A21;&#x5757;</h5>
+<pre><code class="lang-bash">apt install libreadline-dev valgrind libtool-bin libboost-dev libboost-system-dev libboost-thread-dev
+</code></pre>
+<h5 id="1112-prtobuf-v3181">1.1.1.2 prtobuf v3.18.1</h5>
+<blockquote>
+<p><a href="https://github.com/p4lang/PI" target="_blank">https://github.com/p4lang/PI</a>     <em>protbuf&#x90E8;&#x5206;</em></p>
+</blockquote>
+<ul>
+<li>&#x5B89;&#x88C5;&#x6B65;&#x9AA4;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-bash"><span class="hljs-built_in">cd</span> <span class="hljs-comment">#&#x56DE;&#x5230;home</span>
+git <span class="hljs-built_in">clone</span> --depth=1 -b v3.18.1 https://github.com/google/protobuf.git
+<span class="hljs-built_in">cd</span> protobuf/
+./autogen.sh
+./configure
+make
+[sudo] make install
+[sudo] ldconfig
+</code></pre>
+<ul>
+<li>&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x7684;&#x95EE;&#x9898;&#xFF1A;
+&#x663E;&#x793A;&#x672A;&#x5B89;&#x88C5;googletest, &#x6216;&#x662F;&#x8B66;&#x544A;No configuration information is in third_party/googletest in version1.10
+&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF1A;<a href="https://github.com/google/protobuf.git" target="_blank">https://github.com/google/protobuf.git</a> &#x4ECE;&#x8FD9;&#x4E2A;&#x4E0A;&#x9762;&#x627E;&#x5230;thrid_party&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x7136;&#x540E;&#x627E;&#x5230;&#x91CC;&#x9762;&#x7684;googletest&#x6587;&#x4EF6;&#x5939;&#x5E76;&#x5C06;&#x5176;&#x4E2D;&#x7684;&#x6587;&#x4EF6;&#x4E0B;&#x8F7D;&#x4E0B;&#x6765;&#xFF0C;&#x653E;&#x5165;/protobuf/thrid_party/googletest&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#xFF0C;&#x4FBF;&#x53EF;&#x89E3;&#x51B3;&#x95EE;&#x9898;</li>
+</ul>
+<h5 id="1113-grpc-v1432">1.1.1.3 gRPC v1.43.2</h5>
+<blockquote>
+<p><a href="https://github.com/p4lang/PI" target="_blank">https://github.com/p4lang/PI</a>     <em>grpc&#x90E8;&#x5206;</em></p>
+</blockquote>
+<ul>
+<li>&#x5B89;&#x88C5;&#x6B65;&#x9AA4;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-shell">apt-get install build-essential autoconf libtool pkg-config
+apt-get install cmake
+apt-get install clang libc++-dev
+apt-get install zlib1g-dev
+
+cd #&#x56DE;&#x5230;home
+git clone --depth=1 -b v1.43.2 https://github.com/google/grpc.git 
+cd grpc
+git submodule update --init --recursive 
+mkdir -p cmake/build
+cd cmake/build
+cmake ../..
+make
+make install
+ldconfig
+</code></pre>
+<ul>
+<li><p>&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x7684;&#x95EE;&#x9898;&#xFF1A;</p>
+<ol>
+<li><p><code>git submodule update --init --recursive</code> &#x5931;&#x8D25;</p>
+<p>&#x7F51;&#x7EDC;&#x539F;&#x56E0;&#xFF0C;&#x4E00;&#x76F4;&#x91CD;&#x590D;&#x76F4;&#x5230;&#x5168;&#x90E8;&#x6210;&#x529F;&#xFF08;&#x6BD4;&#x8F83;&#x8D39;&#x4E8B;&#x95F4;&#xFF0C;&#x5EFA;&#x8BAE;&#x540C;&#x6B65;&#x6267;&#x884C; 1.1.1.4 bmv2&#x53CA;&#x5176;&#x4F9D;&#x8D56;&#xFF09;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5C06;github&#x4E2D;&#x7684;grpc&#x5E93;clone&#x5230;gitee&#xFF0C;&#x518D;&#x4ECE;gitee clone&#xFF1B;</p>
+</li>
+<li><p>&#x6309;&#x7167;<a href="https://github.com/p4lang/PI" target="_blank">https://github.com/p4lang/PI</a> grpc&#x90E8;&#x5206;&#x5B89;&#x88C5;&#x4F1A;&#x63D0;&#x793A;&#x4E0D;&#x652F;&#x6301;make&#x7F16;&#x8BD1;&#xFF0C;&#x5EFA;&#x8BAE;&#x7528;cmake</p>
+<p>&#x53C2;&#x8003;&#x4E0A;&#x8FF0;&#x5B89;&#x88C5;&#x6B65;&#x9AA4;&#x5373;&#x53EF;&#xFF1B;</p>
+</li>
+</ol>
+</li>
+</ul>
+<h5 id="1114-bmv2&#x4F9D;&#x8D56;">1.1.1.4 bmv2&#x4F9D;&#x8D56;</h5>
+<blockquote>
+<p><a href="https://github.com/p4lang/behavioral-model/blob/main/README.md" target="_blank">https://github.com/p4lang/behavioral-model/blob/main/README.md</a></p>
+</blockquote>
+<ul>
+<li>&#x5B89;&#x88C5;&#x6B65;&#x9AA4;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-bash"><span class="hljs-built_in">cd</span> <span class="hljs-comment">#&#x56DE;&#x5230;home</span>
+git <span class="hljs-built_in">clone</span> https://github.com/p4lang/behavioral-model.git
+
+sudo apt-get install -y automake cmake libgmp-dev \
+    libpcap-dev libboost-dev libboost-test-dev libboost-program-options-dev \
+    libboost-system-dev libboost-filesystem-dev libboost-thread-dev \
+    libevent-dev libtool flex bison pkg-config g++ libssl-dev
+
+<span class="hljs-built_in">cd</span> ci
+[sudo] chmod +x install-*
+[sudo]./install-nanomsg.sh
+[sudo]./install-thrift.sh
+
+./autogen.sh
+./configure
+make
+[sudo] make install   <span class="hljs-comment"># if you need to install bmv2</span>
+</code></pre>
+<ul>
+<li><p>&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x7684;&#x95EE;&#x9898;&#xFF1A;</p>
+<ol>
+<li><p><code>git clone https://github.com/p4lang/behavioral-model.git</code>&#x5931;&#x8D25;</p>
+<p>&#x7F51;&#x7EDC;&#x95EE;&#x9898;&#xFF0C;&#x91CD;&#x590D;&#x6267;&#x884C;git clone&#x76F4;&#x5230;&#x6210;&#x529F;&#x3002;</p>
+</li>
+</ol>
+</li>
+</ul>
+<h5 id="1114-sysrepo">1.1.1.4 sysrepo</h5>
+<h6 id="11141-&#x5B50;&#x6A21;&#x5757;-libyang-&#x7F16;&#x8BD1;&#x5B89;&#x88C5;">1.1.1.4.1 &#x5B50;&#x6A21;&#x5757; libyang &#x7F16;&#x8BD1;&#x5B89;&#x88C5;</h6>
+<blockquote>
+<p><a href="https://github.com/CESNET/libyang" target="_blank">https://github.com/CESNET/libyang</a></p>
+</blockquote>
+<ul>
+<li>&#x6B65;&#x9AA4;</li>
+</ul>
+<pre><code class="lang-bash"> <span class="hljs-built_in">cd</span> <span class="hljs-comment">#&#x56DE;&#x5230;home</span>
+ git <span class="hljs-built_in">clone</span> --depth=1 -b v0.16-r1 https://github.com/CESNET/libyang.git
+  <span class="hljs-built_in">cd</span> libyang
+  mkdir build
+  <span class="hljs-built_in">cd</span> build
+  cmake ..
+  make
+  make install
+</code></pre>
+<ul>
+<li><p>&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x7684;&#x95EE;&#x9898;&#xFF1A;</p>
+<ol>
+<li>&#x7F3A;&#x5C11; pcre&#xFF1A;</li>
+</ol>
+<pre><code class="lang-bash">sudo apt-get update
+sudo apt-get install libpcre3 libpcre3-dev
+<span class="hljs-comment"># or</span>
+sudo apt-get install openssl libssl-dev
+</code></pre>
+</li>
+</ul>
+<h6 id="11142-&#x672C;&#x4F53;&#x7F16;&#x8BD1;&#x5B89;&#x88C5;">1.1.1.4.2 &#x672C;&#x4F53;&#x7F16;&#x8BD1;&#x5B89;&#x88C5;</h6>
+<blockquote>
+<p><a href="https://github.com/p4lang/PI/blob/main/proto/README.md" target="_blank">https://github.com/p4lang/PI/blob/main/proto/README.md</a></p>
+</blockquote>
+<ul>
+<li>&#x5B89;&#x88C5;&#x6B65;&#x9AA4;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-bash"><span class="hljs-built_in">cd</span> <span class="hljs-comment">#&#x56DE;&#x5230;home</span>
+git <span class="hljs-built_in">clone</span> --depth=1 -b v0.7.5 https://github.com/sysrepo/sysrepo.git
+<span class="hljs-built_in">cd</span> sysrepo
+mkdir build
+<span class="hljs-built_in">cd</span> build
+cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_EXAMPLES=Off -DCALL_TARGET_BINS_DIRECTLY=Off ..
+make
+[sudo] make install
+</code></pre>
+<p>-----------------------#&#x76EE;&#x524D;&#x4ECD;&#x4E0D;&#x786E;&#x5B9A;&#x662F;&#x5426;&#x5B89;&#x88C5;&#x5B8C;&#x6210;</p>
+<ul>
+<li><p>&#x53EF;&#x80FD;&#x4F1A;&#x51FA;&#x73B0;&#x7684;&#x95EE;&#x9898;&#xFF1A;</p>
+<ol>
+<li><p>&#x8BE5;&#x90E8;&#x5206;&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x7684;&#x95EE;&#x9898;&#x5F88;&#x591A;&#xFF0C;&#x4E3B;&#x8981;&#x96C6;&#x4E2D;&#x5728;&#x6267;&#x884C;<code>cmake -DCMAKE...</code>&#x9636;&#x6BB5;&#xFF0C;&#x4F1A;&#x51FA;&#x73B0;&#x7F3A;&#x5C11;&#x5E93;&#x7684;&#x95EE;&#x9898;</p>
+<p>&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF0C;&#x5982;&#x62A5;&#x9519;&#x7F3A;&#x5C11;xxx&#xFF0C;&#x6267;&#x884C;<code>apt install xxx</code>&#xFF1B;</p>
+<p>&#x5982;&#x679C;&#x62A5;&#x9519;&#x63D0;&#x793A;&#x65E0;&#x6CD5;&#x5B9A;&#x4F4D;&#x5230;xxx&#x5E93;&#xFF0C;&#x6267;&#x884C;<code>apt install libxxx-dev&#xFF1B;</code></p>
+<p>&#x5982;&#x679C;&#x4ECD;&#x7136;&#x627E;&#x4E0D;&#x5230;&#x8BE5;&#x5E93;&#xFF0C;&#x767E;&#x5EA6;&amp;google&#x641C;ubuntu&#x5B89;&#x88C5;xxx&#xFF1B;</p>
+</li>
+</ol>
+</li>
+<li><p>&#x53EF;&#x80FD;&#x9700;&#x8981;&#x6267;&#x884C;&#x5982;&#x4E0B;&#x547D;&#x4EE4;&#xFF1A;
+sudo apt install libpython2-dev
+sudo apt install liblua5.1-0
+sudo apt-get install lua5.1-0-dev
+sudo apt install swig
+sudo apt install libavl-dev  #&#x8FD9;&#x53E5;&#x4E0D;&#x592A;&#x786E;&#x5B9A;&#x662F;&#x5426;&#x6B63;&#x786E;
+sudo apt-get install libev-dev
+sudo apt install python3-virtualenv</p>
+<p>redblack&#x7684;&#x5B89;&#x88C5;&#xFF08;&#x4E0B;&#x8F7D;&#x5730;&#x5740;&#xFF1A;<a href="https://sourceforge.net/projects/libredblack/files/&#xFF09;" target="_blank">https://sourceforge.net/projects/libredblack/files/&#xFF09;</a>
+&#x4E0B;&#x8F7D;&#x5B8C;&#x6210;&#x540E;&#x76F4;&#x63A5;&#x5BF9;tar.gz&#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x89E3;&#x538B;&#xFF0C;&#x518D;&#x8FDB;&#x884C;&#x5B89;&#x88C5;&#x5373;&#x53EF;&#xFF0C;&#x9700;&#x8981;&#x53EF;&#x4EE5;&#x68C0;&#x67E5;&#x66F4;&#x65B0;</p>
+<p>Cmocka&#x7684;&#x5B89;&#x88C5;&#xFF08;&#x4E0B;&#x8F7D;&#x5730;&#x5740;&#xFF1A;<a href="https://cmocka.org/files/1.1/&#xFF09;" target="_blank">https://cmocka.org/files/1.1/&#xFF09;</a>
+&#x4E0B;&#x8F7D;&#x5B8C;&#x6210;&#x540E;&#x89E3;&#x538B;&#xFF0C;&#x7136;&#x540E;&#x521B;&#x5EFA;build&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x518D;./configure&#xFF0C;&#x4E4B;&#x540E;&#x6309;&#x7167;&#x91CC;&#x9762;INSTALL&#x6587;&#x4EF6;&#x7684;&#x8BF4;&#x660E;&#x8FDB;&#x884C;&#x5B89;&#x88C5;</p>
+</li>
+</ul>
+<pre><code> &#x76F4;&#x5230;cmake&#x6210;&#x529F;
+</code></pre><h4 id="112-pi-&#x7F16;&#x8BD1;&#x5B89;&#x88C5;">1.1.2 pi &#x7F16;&#x8BD1;&#x5B89;&#x88C5;</h4>
+<blockquote>
+<p><a href="https://github.com/p4lang/PI" target="_blank">https://github.com/p4lang/PI</a></p>
+</blockquote>
+<ul>
+<li>&#x5B89;&#x88C5;&#x6B65;&#x9AA4;</li>
+</ul>
+<pre><code class="lang-bash"><span class="hljs-built_in">cd</span> <span class="hljs-comment">#&#x56DE;&#x5230;home</span>
+
+git <span class="hljs-built_in">clone</span> https://github.com/p4lang/PI.git
+<span class="hljs-built_in">cd</span> PI
+git submodule update --init --recursive
+./autogen.sh
+./configure --with-proto --with-bmv2 --with-cli
+make
+make check
+[sudo] make install
+</code></pre>
+<ul>
+<li><p>&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x7684;&#x95EE;&#x9898;</p>
+<ol>
+<li><p>&#x7F16;&#x8BD1;&#x65F6;&#x62A5;&#x9519;&#x7F3A;&#x5C11;xxx&#x5934;&#x6587;&#x4EF6;</p>
+<p>&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#x540C;1.1.1.4.2 sysrepo&#x90E8;&#x5206;&#xFF1B;</p>
+</li>
+<li><p>&#x6267;&#x884C;<code>git submodule update --init --recursive</code> &#x6BD4;&#x8F83;&#x8D39;&#x65F6;&#x95F4;&#xFF0C;&#x5EFA;&#x8BAE;&#x540C;&#x6B65;&#x5B89;&#x88C5;p4c&#x6216;&#x8005;mininet</p>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="121-bmv2-&#x5B89;&#x88C5;">1.2.1 bmv2 &#x5B89;&#x88C5;</h3>
+<p>&#x5982;&#x5728;1.1.1.4 bmv2&#x4F9D;&#x8D56; &#x90E8;&#x5206;&#x6267;&#x884C;&#x4E86;<code>[sudo] make install</code> &#x90A3;&#x4E48;&#x8BE5;&#x90E8;&#x5206;&#x53EF;&#x4EE5;&#x8DF3;&#x8FC7;&#xFF0C;&#x5426;&#x5219;&#x8FD4;&#x56DE; 1.1.1.4 bmv2&#x4F9D;&#x8D56; &#x90E8;&#x5206;&#x6267;&#x884C;&#x76F8;&#x5173;&#x64CD;&#x4F5C;&#x3002;</p>
+<h3 id="122-p4c-&#x5B89;&#x88C5;">1.2.2 P4C &#x5B89;&#x88C5;</h3>
+<blockquote>
+<p><a href="https://github.com/p4lang/p4c" target="_blank">https://github.com/p4lang/p4c</a></p>
+</blockquote>
+<ul>
+<li>&#x5B89;&#x88C5;&#x6B65;&#x9AA4;</li>
+</ul>
+<pre><code class="lang-bash">sudo apt-get install cmake g++ git automake libtool libgc-dev bison flex \
+libfl-dev libgmp-dev libboost-dev libboost-iostreams-dev \
+libboost-graph-dev llvm pkg-config python3 python3-pip \
+tcpdump
+
+pip3 install ipaddr scapy ply
+sudo apt-get install -y doxygen graphviz texlive-full
+
+&#x5B89;&#x88C5;&#x65B9;&#x6CD5;1&#xFF1A;
+. /etc/os-release
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;deb http://download.opensuse.org/repositories/home:/p4lang/xUbuntu_<span class="hljs-variable">${VERSION_ID}</span>/ /&quot;</span> | sudo tee /etc/apt/sources.list.d/home:p4lang.list
+curl -L <span class="hljs-string">&quot;http://download.opensuse.org/repositories/home:/p4lang/xUbuntu_<span class="hljs-variable">${VERSION_ID}</span>/Release.key&quot;</span> | sudo apt-key add -
+sudo apt-get update
+sudo apt install p4lang-p4c
+</code></pre>
+<pre><code>&#x5B89;&#x88C5;&#x65B9;&#x6CD5;2&#xFF1A;
+git clone --recursive https://github.com/p4lang/p4c.git
+mkdir build
+cd build
+cmake .. &lt;optional arguments&gt;
+make -j4
+make -j4 check  
+&#xFF08;check&#x9700;&#x8981;100&#x6210;&#x529F;&#xFF0C;&#x5982;&#x679C;&#x51FA;&#x73B0;&#x95EE;&#x9898;&#x53C2;&#x8003;/home/wly/p4c/build/Testing/Temporary/LastTest.log&#x7684;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#xFF09;
+</code></pre><ul>
+<li><p>&#x53EF;&#x80FD;&#x9700;&#x8981;&#x989D;&#x5916;&#x6267;&#x884C;&#x7684;&#x547D;&#x4EE4;&#xFF1A;
+sudo apt-get install scapy
+pip install thrift
+1.&#x82E5;&#x5728;LastTest.Log&#x4E2D;&#x53D1;&#x73B0;   ImportError: cannot import name &apos;Thrift&apos; from &apos;thrift&apos; (unknown location) ubuntu  &#x8FD9;&#x4E2A;&#x9519;&#x8BEF;
+&#x5219;&#x5378;&#x8F7D;thrift&#xFF08;pip uninstall thrift&#xFF09;, &#x7136;&#x540E;&#x91CD;&#x65B0;&#x5B89;&#x88C5;</p>
+<p>2.&#x82E5;&#x5728;LastTest.Log&#x4E2D;&#x53D1;&#x73B0;  /usr/bin/ld: cannot find /home/wly/p4c/backends/ebpf/runtime/usr/lib64/libbpf.a: No such file or directory  &#x8FD9;&#x4E2A;&#x9519;&#x8BEF;
+&#x5219;&#x8868;&#x660E;&#x9700;&#x8981;&#x5B89;&#x88C5; libbpf&#xFF0C;&#x5728; p4c &#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x8FD0;&#x884C; python3 backends/ebpf/build_libbpf</p>
+</li>
+<li><p>&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x7684;&#x95EE;&#x9898;</p>
+<ol>
+<li><code>sudo apt-get install -y doxygen graphviz texlive-full</code> &#x975E;&#x5E38;&#x8D39;&#x65F6;&#x95F4;&#xFF0C;&#x5EFA;&#x8BAE;&#x4E0E;&#x7F16;&#x8BD1;gRPC&#x6216;&#x8005;&#x7F16;&#x8BD1;prtobuf&#x540C;&#x65F6;&#x8FDB;&#x884C;</li>
+</ol>
+</li>
+</ul>
+<h3 id="123-mininet-&#x5B89;&#x88C5;">1.2.3 mininet &#x5B89;&#x88C5;</h3>
+<pre><code class="lang-bash">sudo apt install mininet
+</code></pre>
+<h3 id="124-frrouting-&#x5B89;&#x88C5;">1.2.4 FRRouting &#x5B89;&#x88C5;</h3>
+<blockquote>
+<p><a href="https://deb.frrouting.org" target="_blank">https://deb.frrouting.org</a></p>
+</blockquote>
+<ul>
+<li>&#x5B89;&#x88C5;&#x6B65;&#x9AA4;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-bash"><span class="hljs-comment"># add GPG key</span>
+curl <span class="hljs-_">-s</span> https://deb.frrouting.org/frr/keys.asc | sudo apt-key add -
+
+<span class="hljs-comment"># possible values for FRRVER: frr-6 frr-7 frr-8 frr-stable</span>
+<span class="hljs-comment"># frr-stable will be the latest official stable release</span>
+FRRVER=<span class="hljs-string">&quot;frr-stable&quot;</span>
+<span class="hljs-built_in">echo</span> deb https://deb.frrouting.org/frr $(lsb_release <span class="hljs-_">-s</span> -c) <span class="hljs-variable">$FRRVER</span> | sudo tee <span class="hljs-_">-a</span> /etc/apt/sources.list.d/frr.list
+
+<span class="hljs-comment"># update and install FRR</span>
+sudo apt update &amp;&amp; sudo apt install frr frr-pythontools
+</code></pre>
+<ul>
+<li><p>&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x7684;&#x95EE;&#x9898;</p>
+<ol>
+<li><p>apt update&#x62A5;&#x9519;</p>
+<p>&#x5220;&#x9664;<code>/etc/apt/sources.list.d/frr.list</code>&#xFF0C;&#x6267;&#x884C;<code>sudo apt update &amp;&amp; sudo apt install frr frr-pythontools</code></p>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="125-p4-utils">1.2.5 p4-utils</h3>
+<blockquote>
+<p><a href="https://github.com/nsg-ethz/p4-utils" target="_blank">https://github.com/nsg-ethz/p4-utils</a></p>
+</blockquote>
+<ul>
+<li>&#x5B89;&#x88C5;&#x6B65;&#x9AA4;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-bash"><span class="hljs-built_in">cd</span> <span class="hljs-comment">#&#x56DE;&#x5230;home</span>
+git <span class="hljs-built_in">clone</span> https://github.com/nsg-ethz/p4-utils.git
+<span class="hljs-built_in">cd</span> p4-utils
+sudo ./install.sh
+
+<span class="hljs-built_in">cd</span>
+git <span class="hljs-built_in">clone</span> https://github.com/mininet/mininet mininet
+<span class="hljs-built_in">cd</span> mininet
+<span class="hljs-comment"># Build mininet</span>
+sudo PYTHON=python3 ./util/install.sh -nwv
+
+apt-get install bridge-utils
+</code></pre>
+<ul>
+<li>&#x53EF;&#x80FD;&#x9047;&#x5230;&#x7684;&#x95EE;&#x9898;&#xFF1A;<ol>
+<li><code>./install.sh</code> &#x90E8;&#x5206;&#x62A5;&#x9519;&#x7F3A;&#x5C11;xxx&#x5E93;&#xFF0C;&#x53C2;&#x8003;1.1.1.4.2 sysrepo&#x90E8;&#x5206;&#xFF1B;</li>
+</ol>
+</li>
+</ul>
+<h3 id="13-&#x8FD0;&#x884C;&#x65F6;&#x51FA;&#x73B0;&#x7684;bug">1.3 &#x8FD0;&#x884C;&#x65F6;&#x51FA;&#x73B0;&#x7684;BUG</h3>
+<blockquote>
+<p>Under maintenance&#x2026;&#x2026;</p>
+</blockquote>
+<h4 id="131-&#x65E0;&#x6CD5;&#x8C03;&#x7528;xterm">1.3.1 &#x65E0;&#x6CD5;&#x8C03;&#x7528;xterm</h4>
+<ul>
+<li>&#x62A5;&#x9519;&#xFF1A;</li>
+</ul>
+<blockquote>
+<p>xterm: Xt error: Can&apos;t open display: %s
+xterm: DISPLAY is not set</p>
+</blockquote>
+<ul>
+<li><strong>&#x539F;&#x56E0;</strong>&#xFF1A;<a href="https://github.com/mininet/mininet/wiki/FAQ#x11-forwarding" target="_blank">https://github.com/mininet/mininet/wiki/FAQ#x11-forwarding</a></li>
+</ul>
+<blockquote>
+<p>&#x6CA1;&#x6709;&#x6B63;&#x786E;&#x5F00;&#x542F;<strong>X11 forwarding</strong></p>
+</blockquote>
+<ul>
+<li><strong>MAC OS X &#x89E3;&#x51B3;&#x65B9;&#x6CD5;</strong>&#xFF1A;<a href="https://zhuanlan.zhihu.com/p/265207166&#xFF08;&#x4E0B;&#x8F7D;XQuartz&#xFF09;" target="_blank">https://zhuanlan.zhihu.com/p/265207166&#xFF08;&#x4E0B;&#x8F7D;XQuartz&#xFF09;</a></li>
+</ul>
+<pre><code class="lang-zsh">$ brew install XQuartz
+$ XQuartz
+$ <span class="hljs-built_in">export</span> DISPLAY=:0
+
+$ ssh -Y root@xxx.xxx.xxx.xxx
+
+<span class="hljs-comment">#&#x8FDE;&#x63A5;linux&#x670D;&#x52A1;&#x5668;&#x7AEF;</span>
+$ xterm
+</code></pre>
+<pre><code>1. `export DISPLAY=:0` &#x4EC5;&#x5BF9;&#x5F53;&#x524D;shell&#x8D77;&#x4F5C;&#x7528;.
+1. &#x6700;&#x7B80;&#x5355;&#x7684;&#x529E;&#x6CD5;&#xFF1A;&#x4E0D;&#x5B89;&#x88C5;X11&#xFF0C;&#x76F4;&#x63A5;&#x518D;&#x591A;&#x5F00;&#x4E00;&#x4E2A;shell
+</code></pre><hr>
+<h2 id="2-p4&#x57FA;&#x7840;&#x77E5;&#x8BC6;">2. P4&#x57FA;&#x7840;&#x77E5;&#x8BC6;</h2>
+<h3 id="21-p4&#x7A0B;&#x5E8F;&#x57FA;&#x672C;&#x7ED3;&#x6784;&#xFF08;&#x7EC4;&#x4EF6;&#xFF09;&#x4ECB;&#x7ECD;">2.1 p4&#x7A0B;&#x5E8F;&#x57FA;&#x672C;&#x7ED3;&#x6784;&#xFF08;&#x7EC4;&#x4EF6;&#xFF09;&#x4ECB;&#x7ECD;</h3>
+<blockquote>
+<p>&#x53C2;&#x8003;&#x8D44;&#x6599;&#xFF1A;</p>
+<ul>
+<li>&#x5B98;&#x65B9;&#x6587;&#x6863;&#xFF1A;<ul>
+<li><a href="https://p4.org/specs/" target="_blank">https://p4.org/specs/</a></li>
+</ul>
+</li>
+<li>&#x7F51;&#x7EDC;&amp;&#x535A;&#x5BA2;&#x6587;&#x6863;&#xFF1A;<ul>
+<li><a href="https://www.sdnlab.com/17882.html" target="_blank">https://www.sdnlab.com/17882.html</a></li>
+<li><a href="https://www.zhihu.com/column/c_1336207793033015296" target="_blank">https://www.zhihu.com/column/c_1336207793033015296</a></li>
+<li><a href="https://bbs.huaweicloud.com/blogs/288890" target="_blank">https://bbs.huaweicloud.com/blogs/288890</a></li>
+<li><a href="http://www.nfvschool.cn" target="_blank">http://www.nfvschool.cn</a></li>
+</ul>
+</li>
+<li>&#x4E00;&#x4E9B;&#x91CD;&#x8981;&#x7684;&#x6587;&#x6863;&#xFF1A;<ul>
+<li>BMv2&#x4E2D;&#x4E00;&#x4E9B;&#x53C2;&#x6570;&#x5B9A;&#x4E49;&#x7684;&#x4ECB;&#x7ECD;&#xFF1A;<a href="https://github.com/nsg-ethz/p4-learning/wiki/BMv2-Simple-Switch#creating-multicast-groups" target="_blank">https://github.com/nsg-ethz/p4-learning/wiki/BMv2-Simple-Switch#creating-multicast-groups</a></li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li>&#x9996;&#x90E8;&#xFF08;Headers&#xFF09;</li>
+<li>&#x89E3;&#x6790;&#x5668;&#xFF08;parsers&#xFF09;</li>
+<li>&#x8868;&#xFF08;tables&#xFF09;</li>
+<li>&#x52A8;&#x4F5C;&#xFF08;actions&#xFF09;</li>
+<li>&#x63A7;&#x5236;&#x5668;&#xFF08;control&#xFF09;</li>
+</ul>
+<blockquote>
+<p>&#x8BE5;&#x90E8;&#x5206;&#x5185;&#x5BB9;&#x8BF7;&#x8BE6;&#x7EC6;&#x9605;&#x8BFB;&#x53C2;&#x8003;&#x8D44;&#x6599;&#xFF0C;&#x53C2;&#x8003;&#x8D44;&#x6599;&#x4E2D;<strong>sdnlab&#x7684;&#x6587;&#x7AE0;</strong>&#x4E2D;&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;&#x4E86;p4&#x57FA;&#x672C;&#x8BED;&#x6CD5;&#x3001;p4&#x5404;&#x4E2A;&#x7EC4;&#x4EF6;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x5EFA;&#x8BAE;&#x4E0E;&#x53C2;&#x8003;&#x8D44;&#x6599;&#x4E2D;<strong>&#x77E5;&#x4E4E;&#x7684;&#x6587;&#x7AE0;</strong>&#x4E00;&#x8D77;&#x9605;&#x8BFB;&#xFF0C;&#x4E92;&#x76F8;&#x501F;&#x9274;&#x7406;&#x89E3;&#x3002;nfvschool&#x7684;p4&#x6587;&#x7AE0;&#x5BF9;&#x5404;&#x4E2A;&#x6A21;&#x5757;&#x7684;&#x603B;&#x7ED3;&#x4E5F;&#x5F88;&#x5230;&#x4F4D;&#xFF0C;&#x975E;&#x5E38;&#x5177;&#x6709;&#x53C2;&#x8003;&#x4EF7;&#x503C;&#x3002;</p>
+</blockquote>
+<hr>
+<h3 id="22-p4&#x7A0B;&#x5E8F;&#x89E3;&#x8BFB;">2.2 P4&#x7A0B;&#x5E8F;&#x89E3;&#x8BFB;</h3>
+<blockquote>
+<p>&#x8BE5;&#x90E8;&#x5206;&#x4E3B;&#x8981;&#x53C2;&#x8003;&#x82CF;&#x9ECE;&#x4E16;&#x8054;&#x90A6;&#x7406;&#x5DE5;&#x5B66;&#x9662;&#x7684;<em>Advanced Topics in Communication Networks</em> lecture&#xFF1A;<a href="https://github.com/nsg-ethz/p4-learning/tree/master/examples" target="_blank">https://github.com/nsg-ethz/p4-learning/tree/master/examples</a>
+&#x91CC;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x90FD;&#x975E;&#x5E38;&#x6709;&#x4EE3;&#x8868;&#x6027;&#xFF0C;&#x5EFA;&#x8BAE;&#x4ED4;&#x7EC6;&#x7406;&#x89E3;&#xFF0C;&#x672C;&#x8282;&#x4EC5;&#x5206;&#x6790;&#x7EFC;&#x5408;&#x5EA6;&#x76F8;&#x5BF9;&#x9AD8;&#x7684;&#x51E0;&#x4E2A;&#x5B9E;&#x4F8B;&#x3002;</p>
+<p>&#x8BE5;&#x90E8;&#x5206;&#x6BCF;&#x5C0F;&#x8282;&#x5F00;&#x5934;&#x90FD;&#x4F1A;&#x8D34;&#x51FA;&#x5BF9;&#x5E94;&#x5185;&#x5BB9;&#x7684;&#x5B8C;&#x6574;&#x6E90;&#x7801;&#xFF0C;&#x4E4B;&#x540E;&#x4F1A;&#x5BF9;&#x6E90;&#x7801;&#x9010;&#x6BB5;&#x5206;&#x6790;&#xFF08;&#x6216;&#x5BF9;&#x91CD;&#x70B9;&#x51FD;&#x6570;&#x8FDB;&#x884C;&#x5206;&#x6790;&#xFF09;&#x3002;&#x9605;&#x8BFB;&#x65F6;&#x53EF;&#x4EE5;&#x5148;&#x5927;&#x81F4;&#x6D4F;&#x89C8;&#x4E00;&#x904D;&#x6E90;&#x7801;&#xFF0C;&#x4E86;&#x89E3;&#x5176;&#x5927;&#x81F4;&#x7ED3;&#x6784;&#x53CA;&#x903B;&#x8F91;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x5BF9;&#x7167;&#x540E;&#x7EED;&#x7684;&#x8BB2;&#x89E3;&#x8FDB;&#x884C;&#x7406;&#x89E3;&#x3002;&#x7531;&#x4E8E;&#x6211;&#x4EEC;&#x7684;&#x6C34;&#x5E73;&#x6709;&#x9650;&#xFF0C;&#x7A0B;&#x5E8F;&#x89E3;&#x8BFB;&#x53EF;&#x80FD;&#x4F1A;&#x5B58;&#x5728;&#x4E00;&#x5B9A;&#x7684;&#x5DEE;&#x9519;&#xFF0C;&#x5982;&#x5B58;&#x5728;&#x4EFB;&#x4F55;&#x6B67;&#x4E49;&#xFF0C;&#x8BF7;&#x4EE5;&#x5B98;&#x65B9;&#x6587;&#x6863;&#x4E2D;&#x7684;&#x5B9A;&#x4E49;&#x53CA;&#x63CF;&#x8FF0;&#x4E3A;&#x4E3B;&#x3002;</p>
+</blockquote>
+<hr>
+<h4 id="&#x4EE5;source-routing&#x4E3A;&#x4F8B;">&#x4EE5;Source Routing&#x4E3A;&#x4F8B;</h4>
+<blockquote>
+<p><a href="https://github.com/nsg-ethz/p4-learning/tree/master/examples/source_routing" target="_blank">https://github.com/nsg-ethz/p4-learning/tree/master/examples/source_routing</a></p>
+<p>&#x6E90;&#x8DEF;&#x7531;&#x5B9E;&#x4F8B;&#x662F;&#x901A;&#x8FC7;&#x5728;&#x6570;&#x636E;&#x5305;&#x5305;&#x5934;&#x6DFB;&#x52A0;&#x6E90;&#x8DEF;&#x7531;&#x5B57;&#x6BB5;&#xFF08;&#x7528;&#x4E8E;&#x6307;&#x5B9A;&#x6570;&#x636E;&#x5305;&#x9700;&#x8981;&#x7ECF;&#x8FC7;&#x7684;&#x4EA4;&#x6362;&#x673A;&#x8282;&#x70B9;&#xFF09;&#xFF0C;p4&#x4EA4;&#x6362;&#x673A;&#x89E3;&#x6790;&#x6E90;&#x8DEF;&#x7531;&#x5B57;&#x6BB5;&#x5E76;&#x5224;&#x65AD;&#x5982;&#x4F55;&#x8F6C;&#x53D1;&#x6570;&#x636E;&#x5305;&#xFF0C;&#x4ECE;&#x800C;&#x5B9E;&#x73B0;&#x6570;&#x636E;&#x5305;&#x6307;&#x5B9A;&#x8DEF;&#x5F84;&#x8F6C;&#x53D1;&#x3002;</p>
+</blockquote>
+<h5 id="1-includeheaderp4">(1) include/header.p4</h5>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> MAX_HOPS 127</span>
+
+<span class="hljs-keyword">const</span> bit&lt;<span class="hljs-number">16</span>&gt; TYPE_IPV4 = <span class="hljs-number">0x800</span>;
+<span class="hljs-keyword">const</span> bit&lt;<span class="hljs-number">16</span>&gt; TYPE_SOURCE_ROUTING = <span class="hljs-number">0x1111</span>;
+...
+
+header <span class="hljs-keyword">ethernet_t</span> {
+    ...
+}
+
+header <span class="hljs-keyword">source_routing_t</span> {
+    bit&lt;<span class="hljs-number">1</span>&gt; last_header;
+    bit&lt;<span class="hljs-number">7</span>&gt; switch_id;
+}
+
+header <span class="hljs-keyword">ipv4_t</span> {
+    ...
+  ...
+}
+
+<span class="hljs-keyword">struct</span> metadata {
+    <span class="hljs-comment">/* empty */</span>
+}
+
+<span class="hljs-keyword">struct</span> headers {
+    <span class="hljs-keyword">ethernet_t</span>   ethernet;
+    <span class="hljs-keyword">source_routing_t</span>[MAX_HOPS] source_routes;
+    <span class="hljs-keyword">ipv4_t</span>       ipv4;
+}
+</code></pre>
+<p>p4&#x7A0B;&#x5E8F;&#x5B9A;&#x4E49;&#x6570;&#x636E;&#x5305;&#x5934;&#x90E8;&#x662F;&#x7528;header&#x5206;&#x522B;&#x5B9A;&#x4E49;&#x5404;&#x4E2A;&#x5B57;&#x6BB5;&#x7684;&#x5934;&#x90E8;&#x6A21;&#x7248;&#xFF0C;&#x6700;&#x540E;&#x518D;&#x5728;&#x7ED3;&#x6784;&#x4F53;headers&#x4E2D;&#x4F7F;&#x7528;&#x62A5;&#x6587;&#x5934;&#x90E8;&#x6A21;&#x7248;&#x5B9E;&#x4F8B;&#x5316;&#x5404;&#x4E2A;&#x62A5;&#x6587;&#x5934;&#x90E8;&#xFF0C;&#x8FD9;&#x91CC;&#x7684;header&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;c&#x8BED;&#x8A00;&#x4E2D;&#x7684;struct&#x3002;</p>
+<p>ethernt&#x5934;&#x90E8;&#x548C;ipv4&#x5934;&#x90E8;&#x5B9A;&#x4E49;&#x6BD4;&#x8F83;&#x57FA;&#x7840;&#xFF0C;&#x8FD9;&#x91CC;&#x4E0D;&#x518D;&#x8FC7;&#x591A;&#x8D58;&#x8FF0;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x91CD;&#x70B9;&#x5206;&#x6790;source_routing_t&#x548C;headers&#x7684;&#x5B9A;&#x4E49;&#x3002;</p>
+<ul>
+<li><strong>source_routing_t</strong></li>
+</ul>
+<pre><code class="lang-c">header <span class="hljs-keyword">source_routing_t</span> {
+    bit&lt;<span class="hljs-number">1</span>&gt; last_header;
+    bit&lt;<span class="hljs-number">7</span>&gt; switch_id;
+}
+</code></pre>
+<p>&#x9996;&#x5148;&#x5206;&#x6790; <code>header source_routing_t</code> &#xFF0C;&#x91CC;&#x9762;&#x5305;&#x62EC;&#x4E24;&#x4E2A;&#x53D8;&#x91CF;&#xFF1A;last_header&#xFF1A;&#x7528;&#x4E8E;&#x5224;&#x65AD;&#x5F53;&#x524D;&#x62A5;&#x6587;&#x5934;&#x90E8;&#x662F;&#x5426;&#x662F;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5934;&#x90E8;&#xFF1B;switch_id&#xFF1A;&#x7528;&#x4E8E;&#x5224;&#x65AD;&#x5F53;&#x524D;&#x4EA4;&#x6362;&#x673A;&#x662F;&#x5426;&#x662F;&#x6211;&#x4EEC;&#x5236;&#x5B9A;&#x8DEF;&#x5F84;&#x4E2D;&#x7684;&#x6307;&#x5B9A;&#x4EA4;&#x6362;&#x673A;&#x3002;</p>
+<ul>
+<li><strong>headers</strong></li>
+</ul>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> MAX_HOPS 127</span>
+...
+...
+<span class="hljs-keyword">struct</span> headers {
+    <span class="hljs-keyword">ethernet_t</span>   ethernet;
+    <span class="hljs-keyword">source_routing_t</span>[MAX_HOPS] source_routes;
+    <span class="hljs-keyword">ipv4_t</span>       ipv4;
+}
+</code></pre>
+<p>&#x7136;&#x540E;&#x8FD8;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;<code>struct headers</code> &#x4E2D;&#x7684; <code>source_routing_t[MAX_HOPS] source_routes;</code> &#x5728;&#x7A0B;&#x5E8F;&#x7684;&#x5F00;&#x5934;&#x5B9A;&#x4E49;&#x4E86;&#x5B8F;<code>#define MAX_HOPS 127</code> &#xFF0C;&#x6240;&#x4EE5;&#x6574;&#x4E2A;&#x6570;&#x636E;&#x5305;&#x5305;&#x5934;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#xFF1A;</p>
+<p><code>ethernet + source_routers[0] + source_routers[1] + ... + source_routers[n] + ipv4</code></p>
+<p>&#x8FD9;&#x91CC;&#x7684;n&#x7531;&#x6211;&#x4EEC;&#x8BBE;&#x5B9A;&#x7684;&#x8DEF;&#x5F84;&#x51B3;&#x5B9A;&#xFF0C;&#x6700;&#x591A;&#x80FD;&#x7ECF;&#x8FC7;128&#x4E2A;&#x4EA4;&#x6362;&#x673A;&#x3002;&#x4F7F;&#x7528; <a href="https://github.com/nsg-ethz/p4-learning/tree/master/examples/source_routing" target="_blank">https://github.com/nsg-ethz/p4-learning/tree/master/examples/source_routing</a> &#x7684;send.py&#x7A0B;&#x5E8F;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x6E90;&#x8DEF;&#x7531;&#x5934;&#x90E8;&#x7684;&#x6570;&#x636E;&#x5305;&#xFF0C;&#x5177;&#x4F53;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x53C2;&#x8003;&#x94FE;&#x63A5;&#x3002;&#x5047;&#x8BBE;&#x5728;&#x6267;&#x884C;send.py&#x540E;&#x8F93;&#x5165; 2 3 2 2 1&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x4F1A;&#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x8FD9;&#x6837;&#x7684;&#x5305;&#x5934;&#xFF1A;</p>
+<pre><code class="lang-c">ETH    | <span class="hljs-number">0</span> <span class="hljs-number">2</span> | <span class="hljs-number">0</span> <span class="hljs-number">3</span> | <span class="hljs-number">0</span> <span class="hljs-number">2</span> | <span class="hljs-number">0</span> <span class="hljs-number">2</span> | <span class="hljs-number">1</span> <span class="hljs-number">1</span> | IPV4 |
+         &#x2193;     &#x2193;     &#x2193;     &#x2193;     &#x2193;
+       SR[<span class="hljs-number">0</span>] SR[<span class="hljs-number">1</span>] SR[<span class="hljs-number">2</span>] SR[<span class="hljs-number">3</span>] SR[<span class="hljs-number">4</span>]
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;SR[0]&#x5230;SR[3]&#x7684;last_header&#x90FD;&#x662F;0&#xFF08;&#x4E24;&#x4E2A;&#x6570;&#x5B57;&#x4E2D;&#x7684;&#x524D;&#x4E00;&#x4E2A;&#xFF09;&#xFF0C;SR[4]&#x7684;last_header&#x662F;1&#x3002;</p>
+<p>&#x5728;parser&#x9636;&#x6BB5;&#xFF0C;&#x6BCF;&#x4E00;&#x6B21;&#x6267;&#x884C;extract&#xFF0C;&#x6307;&#x9488;&#x5C31;&#x6307;&#x5411;&#x4E0B;&#x4E00;&#x62A5;&#x6587;&#x5934;&#x90E8;&#xFF0C;&#x5728;&#x6267;&#x884C;&#x4E00;&#x5B9A;&#x6B21;&#x6570;extract&#x540E;&#xFF0C;&#x6307;&#x9488;&#x6700;&#x540E;&#x6307;&#x5411;ipv4&#x5934;&#x90E8;&#x5BF9;ipv4&#x8FDB;&#x884C;&#x89E3;&#x6790;&#xFF0C;&#x6700;&#x7EC8;accept&#x8BE5;&#x6570;&#x636E;&#x5305;&#x3002;</p>
+<hr>
+<h5 id="2-includeparserp4">(2) include/parser.p4</h5>
+<pre><code class="lang-c"><span class="hljs-function">parser <span class="hljs-title">MyParser</span><span class="hljs-params">(packet_in packet,
+                out headers hdr,
+                inout metadata meta,
+                inout standard_metadata_t standard_metadata)</span> </span>{
+
+    state start {
+
+        transition parse_ethernet;
+
+    }
+
+    state parse_ethernet {
+
+        packet.extract(hdr.ethernet);
+        <span class="hljs-function">transition <span class="hljs-title">select</span><span class="hljs-params">(hdr.ethernet.etherType)</span></span>{
+            TYPE_IPV4: parse_ipv4;
+            TYPE_SOURCE_ROUTING: parse_source_routing;
+            <span class="hljs-keyword">default</span>: accept;
+        }
+    }
+
+    state parse_source_routing {
+        packet.extract(hdr.source_routes.next);
+        <span class="hljs-function">transition <span class="hljs-title">select</span><span class="hljs-params">(hdr.source_routes.last.last_header)</span></span>{
+            <span class="hljs-number">1</span>: parse_ipv4;
+            <span class="hljs-keyword">default</span>: parse_source_routing;
+        }
+    }
+
+    state parse_ipv4 {
+        packet.extract(hdr.ipv4);
+        transition accept;
+    }
+}
+
+<span class="hljs-comment">/*************************************************************************
+***********************  D E P A R S E R  *******************************
+*************************************************************************/</span>
+
+<span class="hljs-function">control <span class="hljs-title">MyDeparser</span><span class="hljs-params">(packet_out packet, in headers hdr)</span> </span>{
+    apply {
+
+        <span class="hljs-comment">//parsed headers have to be added again into the packet.</span>
+        packet.emit(hdr.ethernet);
+        packet.emit(hdr.source_routes);
+        packet.emit(hdr.ipv4);
+
+    }
+}
+</code></pre>
+<p>parser&#x90E8;&#x5206;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#x5B9E;&#x73B0;&#x4E86;&#x628A;&#x8F93;&#x5165;&#x6570;&#x636E;&#x5305;&#x7684;&#x5934;&#x90E8;&#x5265;&#x79BB;&#x51FA;&#x6765;&#x7684;&#x529F;&#x80FD;&#xFF0C;parser&#x672C;&#x8D28;&#x4E0A;&#x662F;&#x4E00;&#x4E2A;&#x7531;&#x591A;&#x79CD;&#x72B6;&#x6001;&#x7EC4;&#x6210;&#x7684;&#x72B6;&#x6001;&#x673A;&#x3002;&#x6240;&#x6709;&#x6570;&#x636E;&#x5305;&#x7684;&#x72B6;&#x6001;&#x90FD;&#x4ECE;start&#x72B6;&#x6001;&#x51FA;&#x53D1;&#xFF0C;&#x6839;&#x636E;&#x5F53;&#x524D;&#x62A5;&#x5934;&#x7684;TYPE&#x5B57;&#x6BB5;&#x4E0D;&#x540C;&#x4ECE;&#x800C;&#x8F6C;&#x79FB;&#x5230;&#x4E0D;&#x540C;&#x7684;&#x72B6;&#x6001;&#x4E0B;&#x8FDB;&#x884C;&#x89E3;&#x6790;&#xFF1B;&#x800C;deparser&#x90E8;&#x5206;&#xFF08;&#x9700;&#x8981;&#x6CE8;&#x610F;deparser&#x672C;&#x8EAB;&#x5C5E;&#x4E8E;conrtol&#xFF0C;&#x4E0D;&#x662F;paser&#xFF09;&#x4F1A;&#x5C06;&#x5265;&#x79BB;&#x7684;&#x62A5;&#x5934;&#x91CD;&#x65B0;&#x6DFB;&#x52A0;&#x5230;&#x6570;&#x636E;&#x5305;&#x4E2D;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x5148;&#x770B;<strong>Myparser&#x7684;&#x51FD;&#x6570;&#x5B9A;&#x4E49;</strong>&#xFF0C;&#x7406;&#x89E3;&#x51FD;&#x6570;&#x5B9A;&#x4E49;&#x53EF;&#x4EE5;&#x4FBF;&#x4E8E;&#x6211;&#x4EEC;&#x7406;&#x89E3;p4&#x7A0B;&#x5E8F;&#x7684;&#x5904;&#x7406;&#x903B;&#x8F91;&#x3002;</p>
+<pre><code class="lang-c"><span class="hljs-comment">// Myparser&#x7684;&#x51FD;&#x6570;&#x5B9A;&#x4E49;</span>
+<span class="hljs-function">parser <span class="hljs-title">MyParser</span><span class="hljs-params">(packet_in packet,
+                out headers hdr,
+                inout metadata meta,
+                inout standard_metadata_t standard_metadata)</span> </span>{
+  ...
+  ...
+}
+</code></pre>
+<ul>
+<li><p><strong>packet_in</strong>&#xFF1A;packet_in&#x662F;&#x5B9A;&#x4E49;&#x5728;core.p4&#x4E2D;&#x7684;extern&#x6A21;&#x7248;&#xFF0C;packet_in&#x5B9E;&#x4F8B;&#x5316;&#x7684;&#x5BF9;&#x8C61;packet&#x4E2D;&#x5305;&#x542B;&#x4E86;&#x5F53;&#x524D;&#x5230;&#x8FBE;&#x4EA4;&#x6362;&#x673A;&#x7684;&#x6570;&#x636E;&#x5305;&#x4E2D;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#x7531;packert_in&#x5B9E;&#x4F8B;&#x5316;&#x7684;&#x5BF9;&#x8C61;packet&#x4E0D;&#x9700;&#x8981;&#x4F7F;&#x7528;in&#x3001;out&#x6216;&#x8005;inout&#x7B49;&#x5173;&#x952E;&#x5B57;&#x4FEE;&#x9970;&#xFF0C;&#x5B83;&#x672C;&#x8EAB;&#x5C5E;&#x4E8E;in&#x7C7B;&#x578B;&#x7684;&#x5BF9;&#x8C61;&#x3002;&#x800C;&#x540E;&#x9762;&#x4E09;&#x4E2A;&#x5F62;&#x53C2;&#x90FD;&#x5728;&#x5B9A;&#x4E49;&#x65F6;&#x58F0;&#x660E;&#x4E86;out&#x3001;inout&#x7684;&#x5C5E;&#x6027;&#x3002;&#x5728;p4&#x4E2D;&#xFF0C;&#x88AB;in&#x4FEE;&#x9970;&#x7684;&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#x4EC5;&#x53EF;&#x8BFB;&#xFF0C;&#x88AB;out&#x4FEE;&#x9970;&#x7684;&#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#x4EC5;&#x53EF;&#x5199;&#xFF0C;inout&#x4E3A;&#x53EF;&#x8BFB;&#x53EF;&#x5199;&#x3002;</p>
+</li>
+<li><p><strong>headers</strong>&#xFF1A;headers&#x662F;&#x5728;header.p4&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x6570;&#x636E;&#x5305;&#x5934;&#x90E8;&#x7ED3;&#x6784;&#x4F53;&#x3002;<code>out headers hdr</code> &#x4E2D;&#x58F0;&#x660E;&#x7684;&#x53D8;&#x91CF;hdr&#x662F;&#x4E00;&#x4E2A;out&#x7C7B;&#x578B;&#x3001;&#x4E14;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E3A;header&#x7C7B;&#x578B;&#x7684;&#x53D8;&#x91CF;&#xFF0C;hdr&#x7528;&#x6765;&#x5B58;&#x653E;&#x5728;parser&#x8FC7;&#x7A0B;&#x4E2D;&#x89E3;&#x6790;packet&#x5F97;&#x5230;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+</li>
+<li><p><strong>metadata</strong>&#xFF1A;metadata&#x662F;&#x5728;header.p4&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF08;&#x901A;&#x5E38;&#x7528;&#x6765;&#x5B58;&#x653E;&#x5BC4;&#x5B58;&#x5668;&#x3001;&#x8BA1;&#x6570;&#x5668;&#x4E0E;&#x53CA;Meter&#x7684;&#x6570;&#x636E;&#xFF09;&#x3002;&#x540E;&#x7EED;&#x7684;&#x51E0;&#x4E2A;&#x4F8B;&#x5B50;&#x4F1A;&#x4ECB;&#x7ECD;&#x8BE5;&#x5B57;&#x6BB5;&#x7684;&#x8BE6;&#x7EC6;&#x7528;&#x6CD5;&#x3002;</p>
+</li>
+<li><p><strong>standard_metadata_t</strong>&#xFF1A;standard_metadata_t&#x662F;&#x5728;&#x4EA4;&#x6362;&#x673A;runtime&#x5B9A;&#x4E49;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x7528;&#x6765;&#x5B58;&#x50A8;&#x6570;&#x636E;&#x5305;&#x8F6C;&#x53D1;&#x65F6;&#x7684;ingress_port&#x3001;packet_length&#x3001;egress_spec&#x3001;egress_port&#x7B49;&#x4FE1;&#x606F;&#x3002;&#x6211;&#x4EEC;&#x8FD9;&#x91CC;&#x662F;&#x7528;&#x7684;p4 runtime&#x662F;BMv2&#xFF0C;standard_metadata_t&#x7684;&#x8BE6;&#x7EC6;&#x5B9A;&#x4E49;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#xFF1A;<a href="https://github.com/p4lang/behavioral-model/blob/main/docs/simple_switch.md" target="_blank">https://github.com/p4lang/behavioral-model/blob/main/docs/simple_switch.md</a> &#xFF0C;&#x4E0D;&#x540C;&#x5382;&#x5546;&#x7684;p4&#x8BBE;&#x5907;standard_metadata_t&#x5B9A;&#x4E49;&#x53EF;&#x80FD;&#x4E0D;&#x540C;&#xFF0C;&#x56E0;&#x6B64;&#x9700;&#x8981;&#x6839;&#x636E;&#x5177;&#x4F53;&#x7684;runtime&#x5B9A;&#x4E49;&#x8BBE;&#x8BA1;p4&#x7A0B;&#x5E8F;&#x3002;</p>
+</li>
+</ul>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x5206;&#x6790;<strong>MYparser&#x4E2D;&#x7684;&#x5404;&#x4E2A;&#x72B6;&#x6001;</strong>&#x3002;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x8FC7;&#x7A0B;&#x51B3;&#x5B9A;&#x4E86;&#x6570;&#x636E;&#x5305;&#x5305;&#x5934;&#x7684;&#x5904;&#x7406;&#x987A;&#x5E8F;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4ED4;&#x7EC6;&#x5206;&#x6790;&#x5404;&#x4E2A;&#x72B6;&#x6001;&#x4E0B;&#x7684;parser&#x5206;&#x522B;&#x505A;&#x4E86;&#x4EC0;&#x4E48;&#x5904;&#x7406;&#xFF0C;&#x624D;&#x80FD;&#x7406;&#x89E3;&#x6700;&#x540E;&#x5F97;&#x5230;&#x4E86;&#x4E00;&#x4E2A;&#x4EC0;&#x4E48;&#x6837;&#x7684;&#x6570;&#x636E;&#x5305;&#x3002;</p>
+<ul>
+<li><strong>start</strong></li>
+</ul>
+<pre><code class="lang-c"><span class="hljs-comment">// start&#x72B6;&#x6001;</span>
+state start {
+  transition parse_ethernet;
+}
+</code></pre>
+<p>start&#x72B6;&#x6001;&#x4E0D;&#x533A;&#x5206;&#x6570;&#x636E;&#x5305;&#x7C7B;&#x578B;&#xFF0C;&#x76F4;&#x63A5;&#x5C06;&#x6240;&#x6709;&#x6570;&#x636E;&#x5305;&#x72B6;&#x6001;&#x8F6C;&#x79FB;&#x5230;parse_ethernet&#x72B6;&#x6001;&#x3002;&#x901A;&#x5E38;&#x6BCF;&#x4E2A;p4&#x7A0B;&#x5E8F;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;parser&#x90FD;&#x662F;start&#x72B6;&#x6001;&#xFF0C;&#x6574;&#x4E2A;parser&#x8FC7;&#x7A0B;&#x7531;start&#x72B6;&#x6001;&#x5F00;&#x59CB;&#xFF0C;&#x4EE5;accept&#x6216;reject&#x7ED3;&#x675F;&#x3002;</p>
+<ul>
+<li><strong>parse_ethernet</strong></li>
+</ul>
+<pre><code class="lang-c"><span class="hljs-comment">// parse_ethernet&#x72B6;&#x6001;</span>
+state parse_ethernet {
+  packet.extract(hdr.ethernet);
+  <span class="hljs-function">transition <span class="hljs-title">select</span><span class="hljs-params">(hdr.ethernet.etherType)</span></span>{
+    TYPE_IPV4: parse_ipv4;
+    TYPE_SOURCE_ROUTING: parse_source_routing;
+    <span class="hljs-keyword">default</span>: accept;
+  }
+}
+</code></pre>
+<p>parse_ethernet&#xFF1A;parse_ethernet&#x72B6;&#x6001;&#x4E0B;&#xFF0C;&#x7A0B;&#x5E8F;&#x9996;&#x5148;&#x8C03;&#x7528;packet&#x7684;extract&#x51FD;&#x6570;&#xFF0C;&#x5C06;packet&#x4E2D;index&#x6307;&#x9488;&#x6307;&#x5411;&#x7684;&#x6570;&#x636E;&#x5757;&#x63D0;&#x53D6;&#x51FA;&#x6765;&#xFF08;&#x9996;&#x5148;&#x8BA1;&#x7B97;&#x9700;&#x8981;&#x63D0;&#x53D6;&#x7684;&#x6BD4;&#x7279;&#x6570;&#x76EE;n&#xFF0C;&#x7136;&#x540E;&#x5C06;packet&#x5F53;&#x524D;index&#x4F4D;&#x7F6E;&#x540E;n&#x4E2A;bit&#x63D0;&#x53D6;&#x51FA;&#x6765;&#x5B58;&#x5165;hdr&#x7684;index&#x6307;&#x5411;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x6B64;&#x5904;&#x9700;&#x8981;&#x6CE8;&#x610F;hdr&#x4E3A;out&#x7C7B;&#x578B;&#xFF0C;&#x4EC5;&#x53EF;&#x4EE5;&#x5199;&#x5165;&#xFF09;&#xFF0C;&#x7136;&#x540E;packet&#x7684;index&#x6307;&#x9488;&#x540E;&#x79FB;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x62A5;&#x6587;&#x5934;&#x90E8;&#x7684;&#x9996;&#x5B57;&#x8282;&#xFF0C;&#x5E76;&#x540C;&#x65F6;&#x64CD;&#x4F5C;hdr.ethernet&#x7684;index&#x6307;&#x9488;&#x540E;&#x79FB;&#x4E00;&#x4F4D;&#xFF0C;&#x6574;&#x4E2A;&#x8FC7;&#x7A0B;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF08;&#x5B98;&#x65B9;&#x6587;&#x6863;&#x4E2D;&#x7684;extract&#x51FD;&#x6570;&#x5B9A;&#x4E49;&#xFF09;&#xFF0C;&#x6240;&#x4EE5;extract&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A; <em>&#x5373;&#x6539;&#x53D8;&#x4E86;header&#x7684;index&#xFF0C;&#x53C8;&#x6539;&#x53D8;&#x4E86;hdr&#x7684;index</em>&#x3002;</p>
+<pre><code class="lang-c"><span class="hljs-comment">// extract&#x51FD;&#x6570;&#x5B9A;&#x4E49;&#xFF08;&#x4F2A;&#x4EE3;&#x7801;&#xFF09;</span>
+<span class="hljs-keyword">void</span> packet_in.extract&lt;T&gt;(out T headerLValue) { 
+  bitsToExtract = sizeofInBits(headerLValue);
+  lastBitNeeded = <span class="hljs-keyword">this</span>.nextBitIndex + bitsToExtract; 
+  ParserModel.verify(<span class="hljs-keyword">this</span>.lengthInBits &gt;= lastBitNeeded, error.PacketTooShort); 
+  headerLValue = <span class="hljs-keyword">this</span>.data.extractBits(<span class="hljs-keyword">this</span>.nextBitIndex, bitsToExtract); 
+  headerLValue.valid$ = <span class="hljs-literal">true</span>;
+    <span class="hljs-keyword">if</span> headerLValue.isNext$ {
+        verify(headerLValue.nextIndex$ &lt; headerLValue.size, error.StackOutOfBounds);
+        headerLValue.nextIndex$ = headerLValue.nextIndex$ + <span class="hljs-number">1</span>; 
+  }
+  <span class="hljs-keyword">this</span>.nextBitIndex += bitsToExtract;
+}
+</code></pre>
+<ul>
+<li><strong>parse_source_routing</strong></li>
+</ul>
+<pre><code class="lang-c">state parse_source_routing {
+  packet.extract(hdr.source_routes.next);
+  <span class="hljs-function">transition <span class="hljs-title">select</span><span class="hljs-params">(hdr.source_routes.last.last_header)</span></span>{
+    <span class="hljs-number">1</span>: parse_ipv4;
+    <span class="hljs-keyword">default</span>: parse_source_routing;
+  }
+}
+</code></pre>
+<p>&#x5728;parse_source_routing&#x72B6;&#x6001;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x6CE8;&#x610F; <code>packet.extract(hdr.source_routes.next)</code>&#xFF0C;&#x8FD9;&#x91CC;out&#x7C7B;&#x578B;&#x7684;&#x53D8;&#x91CF;&#x662F;source_routes&#x4E0B;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#x3002;&#x521D;&#x59CB;&#x65F6;&#xFF0C;next &#x6307;&#x5411;&#x5806;&#x6808;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x5F53;&#x6210;&#x529F;&#x8C03;&#x7528;extract&#x65B9;&#x6CD5;&#x540E;&#xFF0C;next&#x5C06;&#x81EA;&#x52A8;&#x5411;&#x524D;&#x504F;&#x79FB;&#xFF0C;&#x6307;&#x5411;&#x4E0B;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x3002;last&#x6307;&#x5411; next &#x524D;&#x9762;&#x7684;&#x90A3;&#x4E2A;&#x5143;&#x7D20;&#xFF08;&#x5982;&#x679C;&#x5143;&#x7D20;&#x5B58;&#x5728;&#xFF09;&#xFF0C;&#x5373;&#x6700;&#x8FD1; extract &#x51FA;&#x6765;&#x7684;&#x90A3;&#x4E2A;&#x5143;&#x7D20;&#x3002;</p>
+<pre><code class="lang-c"><span class="hljs-comment">//&#x521D;&#x59CB;&#xFF1A;</span>
+                  packet.index
+               &#x2193;
+        packet: ETH |<span class="hljs-number">0</span> <span class="hljs-number">2</span> | <span class="hljs-number">0</span> <span class="hljs-number">3</span> | <span class="hljs-number">0</span> <span class="hljs-number">2</span> | <span class="hljs-number">0</span> <span class="hljs-number">2</span> | <span class="hljs-number">1</span> <span class="hljs-number">1</span> | IPV4 |
+
+                      next
+                       &#x2193;
+        hdr:     ETH|      |     |     |     |     |      |
+
+<span class="hljs-comment">//&#x7B2C;&#x4E00;&#x6B21;&#x6267;&#x884C;&#x5B8C;extract&#xFF1A;</span>
+                       packet.index
+                &#x2193;
+        packet: ETH |<span class="hljs-number">0</span> <span class="hljs-number">2</span> | <span class="hljs-number">0</span> <span class="hljs-number">3</span> | <span class="hljs-number">0</span> <span class="hljs-number">2</span> | <span class="hljs-number">0</span> <span class="hljs-number">2</span> | <span class="hljs-number">1</span> <span class="hljs-number">1</span> | IPV4 |
+
+                last  next
+                  &#x2193;    &#x2193;
+        hdr:     ETH| <span class="hljs-number">0</span> <span class="hljs-number">2</span> |     |     |     |     |     |
+</code></pre>
+<p>&#x6267;&#x884C;&#x5B8C;extract&#x540E;&#xFF0C;&#x5982;&#x679C;&#x5F53;&#x524D;hdr.source_routes.last.last_header&#x4ECD;&#x4E3A;0&#xFF0C;&#x90A3;&#x4E48;&#x6570;&#x636E;&#x5305;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#x4ECD;&#x4E3A;parse_source_routing&#x3002;&#x7A0B;&#x5E8F;&#x4F1A;&#x4E00;&#x76F4;&#x6301;&#x7EED;&#x8BE5;&#x5FAA;&#x73AF;&#xFF0C;&#x76F4;&#x5230;&#x5F53;&#x524D;hdr.source_routes.last.last_header&#x4E3A;1&#xFF0C;&#x90A3;&#x4E48;&#x8FDB;&#x5165;parse_ipv4&#x72B6;&#x6001;&#x3002;&#x5728;parse_ipv4&#x72B6;&#x6001;&#x4E2D;&#xFF0C;&#x7A0B;&#x5E8F;&#x6267;&#x884C;&#x5B8C;&#x4E00;&#x6B21;extract&#x4E4B;&#x540E;&#xFF0C;&#x6570;&#x636E;&#x5305;&#x62A5;&#x6587;&#x5934;&#x90E8;&#x7684;&#x89E3;&#x6790;&#x5C31;&#x7ED3;&#x675F;&#x4E86;&#xFF0C;&#x4E4B;&#x540E;&#x7A0B;&#x5E8F;&#x8FDB;&#x5165;&#x5230;control&#x6D41;&#x7A0B;&#xFF0C;control&#x90E8;&#x5206;&#x7684;&#x5904;&#x7406;&#x5C06;&#x4F1A;&#x5728;source_routing.p4&#x90E8;&#x5206;&#x4E2D;&#x5206;&#x6790;&#x3002;</p>
+<ul>
+<li><strong>Deparser</strong></li>
+</ul>
+<pre><code class="lang-c"><span class="hljs-function">control <span class="hljs-title">MyDeparser</span><span class="hljs-params">(packet_out packet, in headers hdr)</span> </span>{
+    apply {
+
+        <span class="hljs-comment">//parsed headers have to be added again into the packet.</span>
+        packet.emit(hdr.ethernet);
+        packet.emit(hdr.source_routes);
+        packet.emit(hdr.ipv4);
+
+    }
+}
+</code></pre>
+<p>&#x5728;deparser&#x9636;&#x6BB5;&#xFF0C;control&#x4F1A;&#x5C06;hdr&#xFF08;in&#x7C7B;&#x578B;&#xFF09;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x5199;&#x5165;packet&#x4E2D;&#xFF08;packet_out&#x7C7B;&#x578B;&#xFF0C;&#x4E0E;packet_in&#x4E00;&#x6837;&#x5728;core.p4&#x4E2D;&#x5B9A;&#x4E49;&#xFF0C;&#x4F46;&#x662F;&#x5176;&#x672C;&#x8EAB;&#x662F;out&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#xFF09;&#x3002;&#x8FD9;&#x91CC;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;<code>emit</code>&#x51FD;&#x6570;&#xFF0C;&#x8BE5;&#x51FD;&#x6570;&#x540C;extract&#x51FD;&#x6570;&#x4E00;&#x6837;&#xFF0C;&#x9700;&#x8981;&#x6211;&#x4EEC;&#x4ED4;&#x7EC6;&#x7406;&#x89E3;&#xFF0C;emit&#x51FD;&#x6570;&#x7684;&#x4F2A;&#x4EE3;&#x7801;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-c"><span class="hljs-comment">//emi&#x51FD;&#x6570;&#x5B9A;&#x4E49;&#xFF1A;</span>
+<span class="hljs-keyword">void</span> emit&lt;T&gt;(T data) {
+        <span class="hljs-keyword">if</span> (isHeader(T))
+            <span class="hljs-keyword">if</span>(data.valid$) {
+                <span class="hljs-keyword">this</span>.data.append(data);
+                                <span class="hljs-keyword">this</span>.lengthInBits += data.lengthInBits; 
+            }
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (isHeaderStack(T)){
+            <span class="hljs-keyword">for</span> (e : data){
+                 emit(e);
+            }
+        }
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (isHeaderUnion(T) || isStruct(T)){
+            <span class="hljs-keyword">for</span> (f : data.fields$){
+                 emit(e.f)
+            }
+        }
+        <span class="hljs-comment">// Other cases for T are illegal</span>
+}
+</code></pre>
+<p>&#x5BF9;&#x4E8E;<code>packet.emit(hdr.ethernet)</code>&#x8BED;&#x53E5;&#xFF0C;emit&#x51FD;&#x6570;&#x7684;&#x8F93;&#x5165;&#x53D8;&#x91CF;hdr.ethernet&#x5C5E;&#x4E8E;header&#x7C7B;&#x578B;&#xFF0C;&#x8C03;&#x7528;&#x51FD;&#x6570;&#x540E;&#x4F1A;&#x76F4;&#x63A5;&#x8FDB;&#x5165;&#x7B2C;&#x4E00;&#x4E2A;if&#x5206;&#x652F;&#xFF0C;&#x7531;&#x4E8E;hdr.ethernet&#x975E;&#x7A7A;&#xFF0C;&#x540C;&#x6837;&#x6EE1;&#x8DB3;&#x7B2C;&#x4E8C;&#x4E2A;if&#x5206;&#x652F;&#x5224;&#x5B9A;&#xFF0C;&#x51FD;&#x6570;&#x6700;&#x7EC8;&#x4F1A;&#x5728;packet&#x7684;&#x9996;&#x90E8;&#x76F4;&#x63A5;&#x586B;&#x5145;&#x8BE5;&#x90E8;&#x5206;&#x5185;&#x5BB9;&#xFF0C;&#x5E76;&#x5C06;packet&#x7684;index&#x6307;&#x9488;&#x79FB;&#x52A8;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#x3002;</p>
+<p>&#x800C;<code>packet.emit(hdr.source_routes)</code>&#x8BED;&#x53E5;&#x6BD4;&#x8F83;&#x590D;&#x6742;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;hdr.source_routes&#x662F;&#x4E00;&#x4E2A;header stack&#xFF08;&#x8BE6;&#x60C5;&#x89C1;header.p4&#x4E2D;&#x7684;&#x5B9A;&#x4E49;<code>source_routing_t[MAX_HOPS] source_routes</code>&#xFF09;&#xFF0C;&#x6267;&#x884C;emit&#x540E;&#x7A0B;&#x5E8F;&#x5C06;&#x4F1A;&#x8FDB;&#x5165;&#x7B2C;&#x4E00;&#x4E2A;else if&#x8BED;&#x53E5;&#xFF0C;&#x7136;&#x540E;&#x5FAA;&#x73AF;&#x904D;&#x5386;hdr.source_routes&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x5143;&#x7D20;hdr.source_routes[i]&#xFF0C;&#x5E76;&#x4E14;&#x4EE5;hdr.source_routes[i]&#x4E3A;&#x8F93;&#x5165;&#xFF0C;&#x9012;&#x5F52;&#x8C03;&#x7528;emit&#x51FD;&#x6570;&#x3002;&#x5F88;&#x663E;&#x7136;hdr.source_routes[i]&#x662F;header&#x7C7B;&#x578B;&#x53D8;&#x91CF;&#xFF0C;&#x4F46;&#x4E0E;hdr.ethernet&#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;&#x6B64;&#x65F6;hdr.source_routes[i]&#x4E2D;&#x5E76;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x5185;&#x5BB9;&#xFF08;source_routing.p4&#x4E2D;<code>control MyIngress{}</code>&#x8C03;&#x7528;pop_front()&#x51FD;&#x6570;&#x53BB;&#x6389;&#x4E86;hdr.source_routes&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x8BE6;&#x60C5;&#x53EF;&#x4EE5;&#x53C2;&#x8003;source_routing.p4&#x90E8;&#x5206;&#x7684;&#x5206;&#x6790;&#xFF09;&#xFF0C;&#x5E76;&#x4E14;&#x5728;source_routing.p4&#x7684;control&#x6D41;&#x7A0B;&#x4E2D;&#x4E5F;&#x6CA1;&#x6709;&#x8C03;&#x7528;<code>setvalid</code>&#x51FD;&#x6570;&#x4F7F;hdr.source_routes&#x7684;&#x6709;&#x6548;&#x4F4D;&#x7F6E;&#x4E3A;1&#xFF0C;&#x56E0;&#x6B64;&#x5728;&#x9012;&#x5F52;&#x8C03;&#x7528;emit&#x51FD;&#x6570;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x7A0B;&#x5E8F;&#x8FDB;&#x5165;&#x7B2C;&#x4E00;&#x4E2A;if&#x5206;&#x652F;&#x5224;&#x5B9A;&#x540E;&#x4E0D;&#x6EE1;&#x8DB3;&#x7B2C;&#x4E8C;&#x4E2A;if&#x5206;&#x652F;&#x5224;&#x5B9A;&#x7684;&#x6761;&#x4EF6;&#xFF0C;&#x6700;&#x7EC8;&#x4E0D;&#x4F1A;&#x5F80;header&#x4E2D;&#x586B;&#x5145;&#x4EFB;&#x4F55;&#x5185;&#x5BB9;&#x3002;</p>
+<p>&#x6700;&#x540E;&#x7684;<code>packet.emit(hdr.ipv4)</code>&#x8BED;&#x53E5;&#x540C;<code>packet.emit(hdr.ethernet)</code>&#x7684;&#x5904;&#x7406;&#x6D41;&#x7A0B;&#x4E00;&#x6837;&#xFF0C;&#x8FD9;&#x91CC;&#x4E0D;&#x518D;&#x8FC7;&#x591A;&#x8D58;&#x8FF0;&#x3002;</p>
+<hr>
+<h5 id="3-sourceroutingp4">(3) source_routing.p4</h5>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;core.p4&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;v1model.p4&gt;</span></span>
+
+<span class="hljs-comment">//My includes</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;include/headers.p4&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;include/parsers.p4&quot;</span></span>
+
+
+<span class="hljs-comment">/*************************************************************************
+************   C H E C K S U M    V E R I F I C A T I O N   *************
+*************************************************************************/</span>
+
+<span class="hljs-function">control <span class="hljs-title">MyVerifyChecksum</span><span class="hljs-params">(inout headers hdr, inout metadata meta)</span> </span>{
+    apply {  }
+}
+
+
+<span class="hljs-comment">/*************************************************************************
+**************  I N G R E S S   P R O C E S S I N G   *******************
+*************************************************************************/</span>
+
+<span class="hljs-function">control <span class="hljs-title">MyIngress</span><span class="hljs-params">(inout headers hdr,
+                  inout metadata meta,
+                  inout standard_metadata_t standard_metadata)</span> </span>{
+
+    <span class="hljs-function">action <span class="hljs-title">drop</span><span class="hljs-params">()</span> </span>{
+        mark_to_drop(standard_metadata);
+    }
+
+    <span class="hljs-function">action <span class="hljs-title">set_normal_ethernet</span><span class="hljs-params">()</span></span>{
+        hdr.ethernet.etherType = TYPE_IPV4;
+    }
+
+    <span class="hljs-function">action <span class="hljs-title">ipv4_forward</span><span class="hljs-params">(macAddr_t dstAddr, egressSpec_t port)</span> </span>{
+
+        <span class="hljs-comment">//set the src mac address as the previous dst, this is not correct right?</span>
+        hdr.ethernet.srcAddr = hdr.ethernet.dstAddr;
+
+       <span class="hljs-comment">//set the destination mac address that we got from the match in the table</span>
+        hdr.ethernet.dstAddr = dstAddr;
+
+        <span class="hljs-comment">//set the output port that we also get from the table</span>
+        standard_metadata.egress_spec = port;
+
+        <span class="hljs-comment">//decrease ttl by 1</span>
+        hdr.ipv4.ttl = hdr.ipv4.ttl - <span class="hljs-number">1</span>;
+
+    }
+
+    table ipv4_lpm {
+        key = {
+            hdr.ipv4.dstAddr: lpm;
+        }
+        actions = {
+            ipv4_forward;
+            drop;
+            NoAction;
+        }
+        size = <span class="hljs-number">1024</span>;
+        default_action = NoAction();
+    }
+
+    table device_to_port {
+
+        key = {
+            hdr.source_routes[<span class="hljs-number">0</span>].switch_id: exact;
+        }
+
+        actions = {
+            ipv4_forward;
+            NoAction;
+        }
+        size = <span class="hljs-number">128</span>;
+        default_action = NoAction();
+
+    }
+
+    apply {
+
+        <span class="hljs-comment">//only if IPV4 the rule is applied. Therefore other packets will not be forwarded.</span>
+        <span class="hljs-keyword">if</span> (hdr.source_routes[<span class="hljs-number">0</span>].isValid() &amp;&amp; device_to_port.apply().hit){
+            <span class="hljs-comment">//if it is the last header then.</span>
+            <span class="hljs-keyword">if</span> (hdr.source_routes[<span class="hljs-number">0</span>].last_header == <span class="hljs-number">1</span> ){
+               set_normal_ethernet();
+            }
+            hdr.source_routes.pop_front(<span class="hljs-number">1</span>);
+        }
+
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (hdr.ipv4.isValid()){
+            ipv4_lpm.apply();
+            <span class="hljs-comment">//it means that it did not hit but that there is something to remove..</span>
+            <span class="hljs-keyword">if</span> (hdr.source_routes[<span class="hljs-number">0</span>].isValid()){
+                <span class="hljs-comment">//if it is the last header then.</span>
+                <span class="hljs-keyword">if</span> (hdr.source_routes[<span class="hljs-number">0</span>].last_header == <span class="hljs-number">1</span> ){
+                   set_normal_ethernet();
+                }
+                hdr.source_routes.pop_front(<span class="hljs-number">1</span>);
+
+            }
+        }
+    }
+}
+
+<span class="hljs-comment">/*************************************************************************
+****************  E G R E S S   P R O C E S S I N G   *******************
+*************************************************************************/</span>
+
+<span class="hljs-function">control <span class="hljs-title">MyEgress</span><span class="hljs-params">(inout headers hdr,
+                 inout metadata meta,
+                 inout standard_metadata_t standard_metadata)</span> </span>{
+
+    apply {}
+
+}
+
+<span class="hljs-comment">/*************************************************************************
+*************   C H E C K S U M    C O M P U T A T I O N   **************
+*************************************************************************/</span>
+
+<span class="hljs-function">control <span class="hljs-title">MyComputeChecksum</span><span class="hljs-params">(inout headers hdr, inout metadata meta)</span> </span>{
+     apply {
+    update_checksum(
+        hdr.ipv4.isValid(),
+            { hdr.ipv4.version,
+          hdr.ipv4.ihl,
+              hdr.ipv4.dscp,
+              hdr.ipv4.ecn,
+              hdr.ipv4.totalLen,
+              hdr.ipv4.identification,
+              hdr.ipv4.flags,
+              hdr.ipv4.fragOffset,
+              hdr.ipv4.ttl,
+              hdr.ipv4.protocol,
+              hdr.ipv4.srcAddr,
+              hdr.ipv4.dstAddr },
+            hdr.ipv4.hdrChecksum,
+            HashAlgorithm.csum16);
+    }
+}
+
+
+
+
+<span class="hljs-comment">/*************************************************************************
+***********************  S W I T C H  *******************************
+*************************************************************************/</span>
+
+<span class="hljs-comment">//switch architecture</span>
+V1Switch(
+MyParser(),
+MyVerifyChecksum(),
+MyIngress(),
+MyEgress(),
+MyComputeChecksum(),
+MyDeparser()
+) main;
+</code></pre>
+<p>&#x89C2;&#x5BDF;p4&#x4EE3;&#x7801;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x8FD9;&#x90E8;&#x5206;&#x4EE3;&#x7801;&#x4E3B;&#x8981;&#x7531;4&#x4E2A;control&#x6784;&#x6210;&#xFF1A;<code>MyVerifyChecksum</code>&#x3001;<code>MyIngress</code>&#x3001;<code>MyEgress</code>&#x3001;<code>MyComputeChecksum</code>&#x3002;&#x5728;&#x8FD9;&#x56DB;&#x4E2A;control&#x4E2D;&#xFF0C;<code>MyVerifyChecksum</code> &#x3001;<code>MyEgress</code>&#x90E8;&#x5206;&#x4EC5;&#x7ED9;&#x51FA;&#x4E86;&#x5B9A;&#x4E49;&#xFF0C;&#x65E0;&#x4EFB;&#x4F55;apply&#x5B9E;&#x73B0;&#xFF0C;&#x56E0;&#x6B64;&#x8FD9;&#x51E0;&#x4E2A;control&#x53EF;&#x4EE5;&#x6682;&#x65F6;&#x5FFD;&#x7565;&#x3002;&#x5269;&#x4E0B;&#x7684;&#x4E24;&#x4E2A;conrtol&#x4E2D;&#x9700;&#x8981;&#x91CD;&#x70B9;&#x5173;&#x6CE8;&#x7684;&#x662F;<code>MyIngress</code>&#xFF0C;&#x6E90;&#x8DEF;&#x7531;p4&#x7A0B;&#x5E8F;&#x4E2D;&#x7684;&#x5927;&#x90E8;&#x5206;&#x63A7;&#x5236;&#x903B;&#x8F91;&#x90FD;&#x662F;&#x7531;<code>MyIngress</code>&#x5B9E;&#x73B0;&#x7684;&#x3002;</p>
+<ul>
+<li><strong>control MyIngress</strong></li>
+</ul>
+<pre><code class="lang-c"><span class="hljs-comment">// MyIngress&#x5B9A;&#x4E49;</span>
+<span class="hljs-function">control <span class="hljs-title">MyIngress</span><span class="hljs-params">(inout headers hdr,
+                  inout metadata meta,
+                  inout standard_metadata_t standard_metadata)</span> </span>{
+    ...
+  ...
+}
+</code></pre>
+<p>&#x540C;parser&#x4E00;&#x6837;&#xFF0C;&#x5728;&#x5206;&#x6790;<code>control MyIngress</code>&#x7684;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x524D;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x5B83;&#x7684;&#x5B9A;&#x4E49;</p>
+<pre><code class="lang-c"><span class="hljs-comment">// action&#x5B9A;&#x4E49;</span>
+<span class="hljs-function">action <span class="hljs-title">drop</span><span class="hljs-params">()</span> </span>{
+  ...
+}
+
+<span class="hljs-function">action <span class="hljs-title">set_normal_ethernet</span><span class="hljs-params">()</span></span>{
+  ...
+}
+
+<span class="hljs-function">action <span class="hljs-title">ipv4_forward</span><span class="hljs-params">(macAddr_t dstAddr, egressSpec_t port)</span> </span>{
+    ...
+}
+</code></pre>
+<p><code>control MyIngress</code>&#x5B9A;&#x4E49;&#x4E86;&#x4E09;&#x4E2A;action&#xFF0C;action&#x53EF;&#x4EE5;&#x6309;&#x7167;c&#x8BED;&#x8A00;&#x4E2D;&#x7684;&#x51FD;&#x6570;&#x8FDB;&#x884C;&#x7406;&#x89E3;&#xFF0C;action&#x53EF;&#x4EE5;&#x5728;apply&#x4E2D;&#x901A;&#x8FC7;&#x5339;&#x914D;table&#x89E6;&#x53D1;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5728;apply&#x76F4;&#x63A5;&#x8C03;&#x7528;&#x51FD;&#x6570;&#x89E6;&#x53D1;&#x3002;</p>
+<pre><code class="lang-c"><span class="hljs-comment">// table&#x5B9A;&#x4E49;</span>
+table ipv4_lpm {
+  key = {
+    hdr.ipv4.dstAddr: lpm;
+  }
+  actions = {
+    ipv4_forward;
+    drop;
+    NoAction;
+  }
+  size = <span class="hljs-number">1024</span>;
+  default_action = NoAction();
+}
+
+table device_to_port {
+
+  key = {
+    hdr.source_routes[<span class="hljs-number">0</span>].switch_id: exact;
+  }
+
+  actions = {
+    ipv4_forward;
+    NoAction;
+  }
+  size = <span class="hljs-number">128</span>;
+  default_action = NoAction();
+
+}
+</code></pre>
+<p><code>control MyIngress</code>&#x5B9A;&#x4E49;&#x4E86;&#x4E24;&#x4E2A;table&#xFF0C;&#x901A;&#x8FC7;&#x5339;&#x914D;key&#x53BB;&#x89E6;&#x53D1;&#x76F8;&#x5E94;&#x7684;action&#xFF0C;key&#x4EE5;&#x53CA;action&#x7684;&#x53C2;&#x6570;&#x7B49;&#x53EF;&#x5728;&#x8868;&#x9879;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x5B9A;&#x4E49;&#x3002;</p>
+<pre><code class="lang-c"><span class="hljs-comment">// header&#x5BF9;&#x8C61;&#x7684;push&#x548C;pop&#x51FD;&#x6570;&#x5B9A;&#x4E49;&#xFF08;&#x4F2A;&#x4EE3;&#x7801;&#xFF09;</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">push_front</span><span class="hljs-params">(<span class="hljs-keyword">int</span> count)</span> </span>{
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-keyword">this</span>.size<span class="hljs-number">-1</span>; i &gt;= <span class="hljs-number">0</span>; i -= <span class="hljs-number">1</span>) {
+        <span class="hljs-keyword">if</span> (i &gt;= count) {
+            <span class="hljs-keyword">this</span>[i] = <span class="hljs-keyword">this</span>[i-count];
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">this</span>[i].setInvalid();
+} }
+<span class="hljs-keyword">this</span>.nextIndex = <span class="hljs-keyword">this</span>.nextIndex + count;
+<span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.nextIndex &gt; <span class="hljs-keyword">this</span>.size) <span class="hljs-keyword">this</span>.nextIndex = <span class="hljs-keyword">this</span>.size;
+<span class="hljs-comment">// Note: this.last, this.next, and this.lastIndex adjust with this.nextIndex</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">pop_front</span><span class="hljs-params">(<span class="hljs-keyword">int</span> count)</span> </span>{
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-keyword">this</span>.size; i++) {
+        <span class="hljs-keyword">if</span> (i + count &lt; <span class="hljs-keyword">this</span>.size) {
+            <span class="hljs-keyword">this</span>[i] = <span class="hljs-keyword">this</span>[i+count];
+        } 
+          <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">this</span>[i].setInvalid();
+                    }
+    }
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.nextIndex &gt;= count) {
+        <span class="hljs-keyword">this</span>.nextIndex = <span class="hljs-keyword">this</span>.nextIndex - count;
+    } 
+      <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">this</span>.nextIndex = <span class="hljs-number">0</span>;
+    }
+<span class="hljs-comment">// Note: this.last, this.next, and this.lastIndex adjust with this.nextIndex</span>
+}
+</code></pre>
+<p>push&#x4E0E;pop&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x4EE5;&#x4E0A;&#x4F2A;&#x4EE3;&#x7801;&#x8FDB;&#x884C;&#x7406;&#x89E3;&#x3002;</p>
+<h1 id="p4&#x5B9E;&#x9A8C;&#x76F8;&#x5173;&#xFF08;&#x6301;&#x7EED;&#x66F4;&#x65B0;&#xFF09;-hamid-clannd">p4&#x5B9E;&#x9A8C;&#x76F8;&#x5173;&#xFF08;&#x6301;&#x7EED;&#x66F4;&#x65B0;&#xFF09; @Hamid @Clannd</h1>
+<h2 id="simplel3&#x8FD0;&#x884C;&#x793A;&#x4F8B;">simple_l3&#x8FD0;&#x884C;&#x793A;&#x4F8B;</h2>
+<h3 id="&#x5E38;&#x7528;&#x811A;&#x672C;&#x7B80;&#x4ECB;">&#x5E38;&#x7528;&#x811A;&#x672C;&#x7B80;&#x4ECB;</h3>
+<ul>
+<li>set_sde.bash &#x662F;&#x8BBE;&#x7F6E;P4&#x8FD0;&#x884C;&#x73AF;&#x5883;&#x7684;&#x811A;&#x672C;&#x3002;&#x6BCF;&#x6B21;&#x505A;&#x5B9E;&#x9A8C;&#x4E4B;&#x524D;&#x9700;&#x8981;&#x8FD0;&#x884C;&#x6B64;&#x811A;&#x672C;&#x8BBE;&#x7F6E;&#x8FD0;&#x884C;&#x73AF;&#x5883;&#x624D;&#x80FD;&#x7EE7;&#x7EED;&#x8FDB;&#x884C;&#x5B9E;&#x9A8C;&#x3002;</li>
+<li>run_tofino_model.sh &#x662F;&#x5728;&#x786C;&#x4EF6;&#x4E2D;&#x8FDB;&#x884C;&#x8F6F;&#x8BBF;&#x7684;&#x811A;&#x672C;&#x3002;&#x53EF;&#x4EE5;&#x4E0D;&#x542F;&#x52A8;&#x786C;&#x4EF6;&#x4EA4;&#x6362;&#x673A;&#xFF0C;&#x542F;&#x7528;&#x865A;&#x62DF;&#x73AF;&#x5883;&#xFF0C;&#x751F;&#x6210;&#x4E00;&#x4E9B;&#x865A;&#x62DF;&#x7F51;&#x5361;&#x4EE5;&#x53CA;&#x865A;&#x62DF;&#x4EA4;&#x6362;&#x673A;&#x73AF;&#x5883;&#xFF0C;&#x4F9B;&#x6211;&#x4EEC;&#x8C03;&#x8BD5;&#x3002;</li>
+<li>run_switchd.sh &#x662F;&#x542F;&#x52A8;&#x4EA4;&#x6362;&#x673A;&#x628A;P4&#x7A0B;&#x5E8F;&#x70E7;&#x5F55;&#x5230;&#x4EA4;&#x6362;&#x673A;&#x7684;&#x811A;&#x672C;&#x3002;</li>
+<li>run_bfshell.sh&#x662F;&#x542F;&#x52A8;&#x4EA4;&#x6362;&#x673A;&#x63A7;&#x5236;&#x547D;&#x4EE4;&#x884C;&#x7684;&#x811A;&#x672C;&#x3002;</li>
+<li>p4_build.sh &#x662F;&#x7F16;&#x8BD1;P4&#x6587;&#x4EF6;&#x7684;&#x811A;&#x672C;&#x3002;</li>
+</ul>
+<p><img src="images/p4_script.png" alt="picture 1"></p>
+<h3 id="&#x4EA4;&#x6362;&#x673A;&#x914D;&#x7F6E;">&#x4EA4;&#x6362;&#x673A;&#x914D;&#x7F6E;</h3>
+<pre><code class="lang-shell">cd onl-bf-sde
+. set_sde.bash
+./p4_build.sh simple_l3/simple_l3.p4
+</code></pre>
+<p>&#x7ED3;&#x679C;&#x663E;&#x793A;DONE&#x5373;&#x7F16;&#x8BD1;&#x6210;&#x529F;&#x3002;&#x7F16;&#x8BD1;&#x5B8C;&#x4E4B;&#x540E;&#xFF0C;&#x786C;&#x4EF6;&#x4EA4;&#x6362;&#x673A;&#x5C31;&#x4F1A;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x548C; .p4&#x6587;&#x4EF6;&#x540C;&#x540D;&#x7684;&#x4EA4;&#x6362;&#x673A;&#x7A0B;&#x5E8F;&#x3002;</p>
+<p> <img src="images/p4_compile.png" alt="picture 2"></p>
+<pre><code class="lang-shell">./run_switchd.sh -p simple_l3
+</code></pre>
+<p>&#x8FD9;&#x6837;&#x5C31;&#x628A;&#x7A0B;&#x5E8F;&#x70E7;&#x5F55;&#x5230;&#x4EA4;&#x6362;&#x673A;&#x4E2D;&#xFF0C;&#x4EA4;&#x6362;&#x673A;&#x5C31;&#x542F;&#x52A8;&#x4E86;&#xFF0C;&#x8FD9;&#x4E2A;&#x754C;&#x9762;&#x5C31;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x540E;&#x53F0;&#x8FDB;&#x884C;&#x7BA1;&#x7406;&#xFF0C;&#x5173;&#x6389;&#x7684;&#x8BDD;&#x4EA4;&#x6362;&#x673A;&#x5C31;&#x5173;&#x95ED;&#x4E86;&#x3002;&#x518D;&#x590D;&#x5236;&#x4E00;&#x4E2A;&#x754C;&#x9762;&#x8FDB;&#x884C;&#x4E00;&#x4E9B;&#x914D;&#x7F6E;&#x3002;</p>
+<p><img src="images/p4_config.png" alt="picture 3"></p>
+<ul>
+<li>&#x53EF;&#x80FD;&#x4F1A;&#x51FA;&#x73B0;&#x7AEF;&#x53E3;&#x5360;&#x7528;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x5982;&#x679C;&#x62A5;&#x9519;&#x7AEF;&#x53E3;&#x88AB;&#x5360;&#x7528;&#xFF0C;&#x7528;sudo lsof -i :9090&#x547D;&#x4EE4;&#x67E5;&#x770B;&#x5360;&#x7528;&#x8FDB;&#x7A0B;&#x7684;PID&#xFF0C;&#x518D;&#x7528;sudo kill -9 <pid>&#x547D;&#x4EE4;&#x6765;&#x5F3A;&#x5236;&#x7EC8;&#x6B62;&#x5BF9;&#x5E94;&#x8FDB;&#x7A0B;&#xFF0C;&#x518D;&#x8FD0;&#x884C;&#x5373;&#x53EF;</pid></li>
+</ul>
+<p>&#x5F00;&#x4E00;&#x65B0;&#x7684;&#x8FDE;&#x63A5;&#xFF0C;&#x5728;&#x65B0;&#x7684;&#x754C;&#x9762;&#x4E2D;&#x542F;&#x52A8;&#x547D;&#x4EE4;&#x884C;</p>
+<pre><code class="lang-shell">cd onl-bf-sde
+. set_sde.bash
+./run_bfshell.sh
+</code></pre>
+<p><img src="images/p4_control.png" alt="picture 4"></p>
+<p>&#x542F;&#x52A8;&#x4EA4;&#x6362;&#x673A;&#x7AEF;&#x53E3;</p>
+<pre><code class="lang-shell">ucli
+Pm
+
+port-add -/- 100G RS
+an-set -/- 2
+port-enb -/-
+show
+</code></pre>
+<p>&#x663E;&#x793A;&#x7AEF;&#x53E3;&#x4FE1;&#x606F;&#xFF0C;&#x770B;&#x5230;&#x8FD9;&#x4E9B;&#x7AEF;&#x53E3;up&#x5C31;&#x662F;&#x542F;&#x52A8;&#x6210;&#x529F;&#x4E86;</p>
+<p><img src="images/p4_port.png" alt="picture 5"></p>
+<ul>
+<li>&#x4EA4;&#x6362;&#x673A;&#x901A;&#x5E38;&#x662F;&#x6709;32&#x4E2A;&#x677F;&#x5361;&#xFF0C;&#x6BCF;&#x4E2A;&#x677F;&#x5361;&#x6709;4&#x4E2A;&#x7AEF;&#x53E3;&#x3002;32/-&#x5C31;&#x662F;&#x542F;&#x52A8;32&#x4E0B;&#x6240;&#x6709;&#x7AEF;&#x53E3;&#xFF0C;32/0&#x5C31;&#x662F;&#x542F;&#x52A8;32&#x4E0B;&#x7B2C;&#x4E00;&#x4E2A;&#x7AEF;&#x53E3;&#x3002;&#x6211;&#x4EEC;&#x7684;&#x4EA4;&#x6362;&#x673A;&#x7684;&#x786C;&#x4EF6;&#x8FDE;&#x63A5;&#x662F;&#x4E09;&#x4E2A;&#x670D;&#x52A1;&#x5668;&#x8FDE;&#x63A5;&#x5728;&#x4EA4;&#x6362;&#x673A;&#x4E0A;&#x3002;210.12.140.209:1021&#x8FDE;&#x63A5;&#x5728;31&#x4E0A;&#xFF0C;210.12.140.209:1022&#x8FDE;&#x63A5;&#x5728;32&#x4E0A;&#xFF0C;210.12.140.209:1023&#x8FDE;&#x63A5;&#x5728;28&#x4E0A;
+100G&#x4E3A;&#x7AEF;&#x53E3;&#x901F;&#x7387;&#xFF0C;&#x5FC5;&#x987B;&#x8BBE;&#x7F6E;&#x4E3A;1&#xFF0C;10&#xFF0C;25&#xFF0C;40&#xFF0C;50&#xFF0C;100&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#xFF0C;&#x800C;&#x4E14;&#x5FC5;&#x987B;&#x548C;&#x670D;&#x52A1;&#x5668;&#x7684;&#x7F51;&#x5361;&#x901F;&#x7387;&#x5339;&#x914D;&#xFF0C;&#x4F7F;&#x7528;&#x7684;&#x4EA4;&#x6362;&#x673A;&#x4E0A;&#x53EA;&#x6709;-/0&#x7AEF;&#x53E3;&#x652F;&#x6301;100G&#x901F;&#x7387;&#x3002;</li>
+</ul>
+<h3 id="&#x670D;&#x52A1;&#x5668;&#x914D;&#x7F6E;">&#x670D;&#x52A1;&#x5668;&#x914D;&#x7F6E;</h3>
+<p>&#x4EA4;&#x6362;&#x673A;&#x7AEF;&#x53E3;&#x542F;&#x52A8;&#x4E4B;&#x540E;&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x7684;ip&#x5730;&#x5740;&#x548C;arp
+&#x5728;&#x670D;&#x52A1;&#x5668;&#x4E2D;&#x67E5;&#x770B;&#x7F51;&#x5361;</p>
+<pre><code class="lang-shell">sudo ip a
+</code></pre>
+<p>&#x5B9E;&#x9A8C;&#x5BA4;&#x4EA4;&#x6362;&#x673A;&#x548C;&#x670D;&#x52A1;&#x5668;&#x786C;&#x4EF6;&#x8FDE;&#x63A5;&#x4E3A;
+210.12.140.209:1021&#x7684;enp131s0&#x8FDE;&#x63A5;28/0 160&#x53F7;&#x7AEF;&#x53E3;
+210.12.140.209:1022&#x7684;enp130s0f0np0&#x8FDE;&#x63A5;32/0 136&#x53F7;&#x7AEF;&#x53E3;
+210.12.140.209:1023&#x7684;enp130s0f0np0&#x8FDE;&#x63A5;31/0 128&#x53F7;&#x7AEF;&#x53E3;</p>
+<pre><code class="lang-shell">sudo ip a
+sudo ifconfig enp131s0 192.168.100.3
+sudo ifconfig enp130s0f0np0 192.168.100.2
+sudo ifconfig enp130s0f0np0 192.168.100.1
+</code></pre>
+<p>arp&#x662F;&#x628A;&#x5C40;&#x57DF;&#x7F51;&#x5185;&#x7684;ip&#x5730;&#x5740;&#x89E3;&#x6790;&#x4E3A;mac&#x5730;&#x5740;&#xFF0C;&#x8BBE;&#x7F6E;&#x76EE;&#x7684;&#x5730;&#x7684;mac&#x5730;&#x5740;&#x3002;
+&#x5728;203.207.106.7&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x914D;&#x7F6E;arp&#xFF0C;&#x5C31;&#x662F;&#x8981;&#x8BA9;&#x670D;&#x52A1;&#x5668;&#x628A;203.207.106.8&#x7684;ip&#x5730;&#x5740;&#x548C;&#x76EE;&#x7684;&#x5730;&#x4E3A;&#x8BE5;ip&#x5730;&#x5740;&#x7684;&#x4E0B;&#x4E00;&#x8DF3;&#x7684;mac&#x5730;&#x5740;&#x5BF9;&#x5E94;&#x8D77;&#x6765;&#x3002;
+&#x4E0B;&#x9762;&#x8FD8;&#x9700;&#x8981;&#x83B7;&#x53D6;&#x4E00;&#x4E0B;&#x7AEF;&#x53E3;&#x7684;mac&#x5730;&#x5740;</p>
+<pre><code class="lang-shell">ucli
+bf_pltfm
+chss_mgmt
+port_mac_get 28 0 
+port_mac_get 32 0 
+port_mac_get 31 0
+</code></pre>
+<p>&#x6709;&#x4E86;mac&#x5730;&#x5740;&#x5C31;&#x53EF;&#x4EE5;&#x914D;&#x7F6E;arp&#x4E86;
+210.12.140.209:1021&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x914D;&#x7F6E;arp</p>
+<pre><code class="lang-shell">sudo arp -s 192.168.100.1 ec:b9:70:b3:a0:c9
+sudo arp -s 192.168.100.2 ec:b9:70:b3:a0:c9
+</code></pre>
+<p>210.12.140.209:1022&#x670D;&#x52A1;&#x5668;&#x4E0A;arp&#x914D;&#x7F6E;&#x4E5F;&#x4E00;&#x6837;</p>
+<pre><code class="lang-shell">sudo arp -s 192.168.100.1 ec:b9:70:b3:a0:c9
+sudo arp -s 192.168.100.3 ec:b9:70:b3:a0:c9
+</code></pre>
+<p>210.12.140.209:1023&#x670D;&#x52A1;&#x5668;&#x4E0A;arp&#x914D;&#x7F6E;</p>
+<pre><code class="lang-shell">sudo arp -s 192.168.100.2 ec:b9:70:b3:a0:c9
+sudo arp -s 192.168.100.3 ec:b9:70:b3:a0:c9
+</code></pre>
+<h3 id="&#x63A7;&#x5236;&#x9762;&#x8868;&#x8C61;&#x4E0B;&#x53D1;">&#x63A7;&#x5236;&#x9762;&#x8868;&#x8C61;&#x4E0B;&#x53D1;</h3>
+<p>&#x8FD8;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x4E00;&#x4E0B;&#x4EA4;&#x6362;&#x673A;&#x63A7;&#x5236;&#x9762;&#x7A0B;&#x5E8F;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5728;&#x4EA4;&#x6362;&#x673A;&#x4E0A;&#x914D;&#x7F6E;arp&#x3002;</p>
+<p><img src="images/p4_arp.png" alt="picture 6"></p>
+<p>&#x518D;&#x590D;&#x5236;&#x4E00;&#x4E2A;&#x4EA4;&#x6362;&#x673A;&#x754C;&#x9762;&#xFF0C;&#x542F;&#x52A8;&#x4EA4;&#x6362;&#x673A;&#x63A7;&#x5236;&#x547D;&#x4EE4;&#x884C;&#xFF0C;&#x4E0B;&#x53D1;&#x8868;&#x8C61;&#x3002;</p>
+<pre><code class="lang-shell">bfrt_python simple_l3/set_up.py
+</code></pre>
+<p>&#x8868;&#x8C61;&#x5C31;&#x4E0B;&#x53D1;&#x6210;&#x529F;&#x4E86;&#x3002;
+&#x5230;&#x8FD9;&#x91CC;&#xFF0C;&#x672C;&#x5B9E;&#x9A8C;&#x5C31;&#x57FA;&#x672C;&#x7ED3;&#x675F;&#x4E86;&#xFF0C;&#x53EF;&#x4EE5;&#x5C1D;&#x8BD5;&#x4E00;&#x4E0B;&#x4EFB;&#x610F;&#x4E24;&#x4E2A;&#x670D;&#x52A1;&#x5668;&#x76F8;&#x4E92;&#x53D1;&#x5305;&#x3002;
+&#x53EF;&#x4EE5;&#x6536;&#x5230;&#x5305;&#x5C31;&#x8BF4;&#x660E;l3&#x5B9E;&#x9A8C;&#x5B8C;&#x6210;&#x4E86;&#x3002;</p>
+<h2 id="simplel3acl&#x5B9E;&#x9A8C;">simple_l3_acl&#x5B9E;&#x9A8C;</h2>
+<p>&#x672C;&#x5B9E;&#x9A8C;&#x7684;&#x76EE;&#x7684;&#x662F;&#x5728;simple_l3&#x7A0B;&#x5E8F;&#x57FA;&#x7840;&#x4E0A;&#x6269;&#x5C55;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x7B80;&#x6613;&#x9632;&#x706B;&#x5899;&#x3002;&#x901A;&#x8FC7;&#x8BE5;&#x5B9E;&#x9A8C;&#xFF0C;&#x60A8;&#x5C06;&#x638C;&#x63E1;&#x4FEE;&#x6539;&#x548C;&#x5B8C;&#x5584;P4&#x7A0B;&#x5E8F;&#x5E76;&#x5B8C;&#x6210;&#x5B8C;&#x6574;&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;&#x7684;&#x6280;&#x80FD;&#x3002;</p>
+<p>&#x5B9E;&#x9A8C;&#x91CD;&#x70B9;&#x5728;&#x4E8E;&#x6B63;&#x786E;&#x89E3;&#x6790;IPv4&#x6570;&#x636E;&#x5305;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x5B58;&#x5728;&#x9009;&#x9879;&#x65F6;&#x7684;&#x7B2C;&#x56DB;&#x5C42;&#x5934;&#x90E8;&#x5904;&#x7406;&#x3002;&#x60A8;&#x9700;&#x8981;&#x6269;&#x5C55;&#x89E3;&#x6790;&#x5668;&#x5E76;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;ACL&#x8868;&#x529F;&#x80FD;&#x3002;&#x76EE;&#x5F55;&#x4E2D;&#x7684;&#x521D;&#x59CB;&#x7A0B;&#x5E8F;&#x5DF2;&#x9884;&#x5B9A;&#x4E49;&#x6240;&#x6709;&#x5934;&#x90E8;&#x7ED3;&#x6784;&#xFF08;&#x4EE5;&#x51CF;&#x5C11;&#x4EE3;&#x7801;&#x91CF;&#xFF09;&#x3002;</p>
+<h3 id="&#x6D4B;&#x8BD5;&#x7A0B;&#x5E8F;">&#x6D4B;&#x8BD5;&#x7A0B;&#x5E8F;</h3>
+<p>&#x81F3;&#x5C11;&#x5B89;&#x88C5;&#x4E00;&#x6761;&#x4E3B;&#x673A;&#x6216;&#x8DEF;&#x7531;&#x6761;&#x76EE;&#xFF08;&#x4F8B;&#x5982;&#x5C06;&#x76EE;&#x6807;IP&#x4E3A;192.168.1.1&#x7684;&#x6D41;&#x91CF;&#x53D1;&#x9001;&#x5230;&#x7AEF;&#x53E3;1&#xFF09;&#xFF0C;&#x5E76;&#x914D;&#x7F6E;ACL&#x6761;&#x76EE;&#xFF08;&#x4F8B;&#x5982;&#x62D2;&#x7EDD;&#x6E90;&#x7AEF;&#x53E3;&#x4E3A;7&#x7684;UDP&#x6570;&#x636E;&#x5305;&#xFF09;&#x3002;</p>
+<p>&#x4F7F;&#x7528;&#x591A;&#x79CD;&#x6D4B;&#x8BD5;&#x6570;&#x636E;&#x5305;&#x9A8C;&#x8BC1;ACL&#x529F;&#x80FD;&#xFF1A;</p>
+<pre><code class="lang-text">p1 = &#x4EE5;&#x592A;&#x7F51;&#x5934;/IP(&#x6E90;IP=&quot;10.10.10.1&quot;, &#x76EE;&#x6807;IP=&quot;192.168.1.1&quot;)/UDP(&#x6E90;&#x7AEF;&#x53E3;=7, &#x76EE;&#x6807;&#x7AEF;&#x53E3;=77)/&quot;&#x8F7D;&#x8377;&quot;
+
+p2 = &#x4EE5;&#x592A;&#x7F51;&#x5934;/IP(&#x6E90;IP=&quot;10.10.10.1&quot;, &#x76EE;&#x6807;IP=&quot;192.168.1.1&quot;, &#x9009;&#x9879;=IP&#x9009;&#x9879;(&quot;abcdefgh&quot;))/UDP(&#x6E90;&#x7AEF;&#x53E3;=7, &#x76EE;&#x6807;&#x7AEF;&#x53E3;=77)/&quot;&#x8F7D;&#x8377;&quot;
+
+# &#x601D;&#x8003;&#x8BE5;&#x6570;&#x636E;&#x5305;&#x662F;&#x5426;&#x5E94;&#x88AB;&#x653E;&#x884C;
+p3 = &#x4EE5;&#x592A;&#x7F51;&#x5934;/IP(&#x6E90;IP=&quot;10.10.10.1&quot;, &#x76EE;&#x6807;IP=&quot;192.168.1.1&quot;, &#x5206;&#x7247;=23)/UDP(&#x6E90;&#x7AEF;&#x53E3;=7, &#x76EE;&#x6807;&#x7AEF;&#x53E3;=77)/&quot;&#x8F7D;&#x8377;&quot;
+
+# &#x8FD9;&#x4E2A;&#x5462;&#xFF1F;
+p4 = &#x4EE5;&#x592A;&#x7F51;&#x5934;/IP(&#x6E90;IP=&quot;10.10.10.1&quot;, &#x76EE;&#x6807;IP=&quot;192.168.1.1&quot;, &#x5206;&#x7247;=23)/&quot;\x00\x07\x00\xc5    &#x8F7D;&#x8377;&quot;
+</code></pre>
+<ul>
+<li>pkt/send.py&#x9ED8;&#x8BA4;&#x53D1;&#x9001;&#x7C7B;&#x4F3C;p1&#x7684;&#x7B80;&#x5355;&#x6570;&#x636E;&#x5305;&#x3002;&#x5EFA;&#x8BAE;&#x76F4;&#x63A5;&#x4F7F;&#x7528;scapy&#x751F;&#x6210;&#x591A;&#x6837;&#x5316;&#x6D4B;&#x8BD5;&#x6570;&#x636E;&#x5305;&#x3002;&#x6D4B;&#x8BD5;&#x672A;&#x663E;&#x5F0F;&#x89E3;&#x6790;&#x7684;&#x534F;&#x8BAE;&#xFF08;&#x5982;SCTP&#xFF0C;ipv4.protocol=132&#xFF09;&#xFF1A;<pre><code class="lang-text">p4 = &#x4EE5;&#x592A;&#x7F51;&#x5934;/IP(&#x6E90;IP=&quot;10.10.10.1&quot;, &#x76EE;&#x6807;IP=&quot;192.168.1.1&quot;)/SCTP(&#x6E90;&#x7AEF;&#x53E3;=7, &#x76EE;&#x6807;&#x7AEF;&#x53E3;=77)/&quot;&#x8F7D;&#x8377;&quot;
+</code></pre>
+</li>
+</ul>
+<h3 id="&#x62D3;&#x5C55;&#x7EC3;&#x4E60;">&#x62D3;&#x5C55;&#x7EC3;&#x4E60;</h3>
+<ul>
+<li>&#x6DFB;&#x52A0;&#x51FA;&#x53E3;acl&#x529F;&#x80FD;</li>
+<li>&#x5B8C;&#x5584;ipv4&#x5206;&#x7247;&#x5305;&#x5904;&#x7406;</li>
+<li>&#x589E;&#x52A0;ipv6&#x652F;&#x6301;</li>
+</ul>
+<h2 id="simplel3rewrite">simple_l3_rewrite</h2>
+<p>&#x672C;&#x5B9E;&#x9A8C;&#x7684;&#x76EE;&#x7684;&#x662F;&#x6269;&#x5C55;simple_l3&#x7A0B;&#x5E8F;&#xFF0C;&#x5B9E;&#x73B0;&#x66F4;&#x7CBE;&#x7EC6;&#x7684;&#x8F6C;&#x53D1;&#x52A8;&#x4F5C;&#xFF1A;&#x65E2;&#x80FD;&#x91CD;&#x5199;L2&#x5934;&#x90E8;&#xFF0C;&#x53C8;&#x80FD;&#x901A;&#x8FC7;&#x9012;&#x51CF;TTL&#x6765;&#x66F4;&#x65B0;L3&#x5934;&#x90E8;&#x3002;</p>
+<p>&#x5B9E;&#x9A8C;&#x91CD;&#x70B9;&#x5728;&#x4E8E;&#x6B63;&#x786E;&#x5904;&#x7406;IPv4&#x6570;&#x636E;&#x5305;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x6821;&#x9A8C;&#x548C;&#xFF08;&#x5728;TTL&#x9012;&#x51CF;&#x540E;&#x5FC5;&#x987B;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#xFF09;&#x548C;TTL&#xFF08;&#x5FC5;&#x987B;&#x6B63;&#x786E;&#x5904;&#x7406;&#x6570;&#x503C;&#x56DE;&#x7ED5;&#xFF0C;&#x4E14;TTL&#x4E3A;0&#x6216;1&#x7684;&#x6570;&#x636E;&#x5305;&#x4E0D;&#x5E94;&#x88AB;&#x8F6C;&#x53D1;&#xFF09;&#x3002;</p>
+<p>&#x4F60;&#x7684;&#x4EFB;&#x52A1;&#x662F;&#x76F8;&#x5E94;&#x5730;&#x6269;&#x5C55;&#x89E3;&#x6790;&#x5668;&#xFF0C;&#x5E76;&#x6DFB;&#x52A0;&#x5FC5;&#x8981;&#x7684;&#x68C0;&#x67E5;&#x903B;&#x8F91;&#x3002;&#x76EE;&#x5F55;&#x4E2D;&#x5DF2;&#x63D0;&#x4F9B;&#x5E26;&#x6709;&#x5FC5;&#x8981;&#x6CE8;&#x91CA;&#x7684;&#x521D;&#x59CB;&#x7A0B;&#x5E8F;&#x3002;</p>
+<h3 id="&#x6D4B;&#x8BD5;&#x7A0B;&#x5E8F;">&#x6D4B;&#x8BD5;&#x7A0B;&#x5E8F;</h3>
+<ul>
+<li>&#x81F3;&#x5C11;&#x5B89;&#x88C5;&#x4E00;&#x6761;&#x4F7F;&#x7528;&#x65B0;&#x52A8;&#x4F5C;&#x7684;&#x4E3B;&#x673A;&#x6216;&#x8DEF;&#x7531;&#x6761;&#x76EE;</li>
+<li>&#x53D1;&#x9001;&#x6570;&#x636E;&#x5305;&#x5E76;&#x786E;&#x8BA4;&#xFF1A;</li>
+<li>&#x6700;&#x7B80;&#x5355;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x7528;Wireshark&#x6355;&#x83B7;&#x6570;&#x636E;&#x5305;&#xFF1A;&#x8BE5;&#x5DE5;&#x5177;&#x9ED8;&#x8BA4;&#x4F1A;&#x6821;&#x9A8C;IPv4&#x6821;&#x9A8C;&#x548C;</li>
+<li>&#x5BF9;&#x4E8E;TTL&#xFF0C;&#x76F4;&#x63A5;&#x6BD4;&#x8F83;&#x6355;&#x83B7;&#x5305;&#x4E2D;&#x7684;&#x6570;&#x503C;&#x5373;&#x53EF;</li>
+<li>&#x786E;&#x4FDD;TTL=0&#x548C;/&#x6216;TTL=1&#x7684;&#x6570;&#x636E;&#x5305;&#x4E0D;&#x88AB;&#x8F6C;&#x53D1;</li>
+</ul>
+<h3 id="&#x989D;&#x5916;&#x6D4B;&#x8BD5;">&#x989D;&#x5916;&#x6D4B;&#x8BD5;</h3>
+<p>&#x89C2;&#x5BDF;&#x7A0B;&#x5E8F;&#x7684;&#x53EF;&#x89C6;&#x5316;&#x56FE;&#x8868;&#xFF0C;&#x6BD4;&#x8F83;&#x5176;&#x4E0E;simple_l3&#x7A0B;&#x5E8F;&#x6240;&#x9700;&#x7684;SRAM&#x548C;TCAM&#x8D44;&#x6E90;&#xFF08;&#x5047;&#x8BBE;&#x8868;&#x5927;&#x5C0F;&#x76F8;&#x540C;&#xFF09;&#x3002;&#x54EA;&#x4E9B;&#x8D44;&#x6E90;&#x4F7F;&#x7528;&#x91CF;&#x589E;&#x52A0;&#x4E86;&#xFF1F;&#x54EA;&#x4E9B;&#x4FDD;&#x6301;&#x4E0D;&#x53D8;&#xFF1F;&#x4E3A;&#x4EC0;&#x4E48;&#xFF1F;</p>
+<p>&#x4F60;&#x8FD8;&#x80FD;&#x6CE8;&#x610F;&#x5230;&#x5176;&#x4ED6;&#x8D44;&#x6E90;&#x4F7F;&#x7528;&#x91CF;&#x589E;&#x52A0;&#x7684;&#x60C5;&#x51B5;&#x5417;&#xFF1F;&#x539F;&#x56E0;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;</p>
+<h2 id="simplel3nexthop">simple_l3_nexthop</h2>
+<p>&#x672C;&#x5B9E;&#x9A8C;&#x65E8;&#x5728;&#x4FEE;&#x6539;simple_l3_rewrite&#x7A0B;&#x5E8F;&#xFF0C;&#x901A;&#x8FC7;&#x5141;&#x8BB8;&#x591A;&#x4E2A;&#x4E3B;&#x673A;/&#x8DEF;&#x7531;&#x6761;&#x76EE;&#x5171;&#x4EAB;&#x76F8;&#x540C;&#x7684;&#x4E0B;&#x4E00;&#x8DF3;&#x4FE1;&#x606F;&#xFF0C;&#x4ECE;&#x800C;&#x51CF;&#x5C11;&#x5176;&#x52A8;&#x4F5C;SRAM&#xFF08;&#x9759;&#x6001;&#x968F;&#x673A;&#x5B58;&#x53D6;&#x5B58;&#x50A8;&#x5668;&#xFF09;&#x7684;&#x8D44;&#x6E90;&#x9700;&#x6C42;&#x3002;</p>
+<p>&#x76EE;&#x5F55;&#x4E2D;&#x5305;&#x542B;&#x5E26;&#x6709;&#x5FC5;&#x8981;&#x6CE8;&#x91CA;&#x7684;&#x521D;&#x59CB;&#x7A0B;&#x5E8F;&#x3002;</p>
+<h3 id="&#x6D4B;&#x8BD5;&#x7A0B;&#x5E8F;">&#x6D4B;&#x8BD5;&#x7A0B;&#x5E8F;</h3>
+<p>&#x7531;&#x4E8E;&#x8BE5;&#x7A0B;&#x5E8F;&#x7684;&#x529F;&#x80FD;&#x4E0E;simple_l3_rewrite&#x76F8;&#x540C;&#xFF0C;&#x57FA;&#x672C;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x7C7B;&#x4F3C;&#xFF1A;</p>
+<ul>
+<li>&#x5B89;&#x88C5;&#x81F3;&#x5C11;&#x4E00;&#x4E2A;&#x4F7F;&#x7528;&#x65B0;&#x52A8;&#x4F5C;&#x7684;&#x4E3B;&#x673A;&#x6216;&#x8DEF;&#x7531;&#x6761;&#x76EE;<ul>
+<li>&#x53D1;&#x9001;&#x6570;&#x636E;&#x5305;&#x5E76;&#x9A8C;&#x8BC1;&#xFF1A;
+TTL &#x662F;&#x5426;&#x786E;&#x5B9E;&#x9012;&#x51CF;
+IP &#x6821;&#x9A8C;&#x548C;&#x662F;&#x5426;&#x6B63;&#x786E;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;
+&#x6700;&#x7B80;&#x5355;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x5728; Wireshark &#x4E2D;&#x6355;&#x83B7;&#x6570;&#x636E;&#x5305;&#xFF08;&#x8BE5;&#x5DE5;&#x5177;&#x9ED8;&#x8BA4;&#x4F1A;&#x6821;&#x9A8C; IPv4 &#x6821;&#x9A8C;&#x548C;&#xFF09;</li>
+</ul>
+</li>
+</ul>
+<p>&#x5BF9;&#x4E8E; TTL&#xFF0C;&#x53EA;&#x9700;&#x6BD4;&#x8F83;&#x6355;&#x83B7;&#x5305;&#x4E2D;&#x7684;&#x6570;&#x503C;</p>
+<ul>
+<li>&#x786E;&#x4FDD; TTL=0 &#x6216; TTL=1 &#x7684;&#x6570;&#x636E;&#x5305;&#x4E0D;&#x88AB;&#x8F6C;&#x53D1;</li>
+<li>&#x4F60;&#x8FD8;&#x53EF;&#x4EE5;&#x8FDB;&#x4E00;&#x6B65;&#x4F18;&#x5316;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&quot;&#x65B0;&#x6E90; MAC &#x5730;&#x5740;&quot;&#x7684;&#x4E0D;&#x540C;&#x53D6;&#x503C;&#x901A;&#x5E38;&#x5F88;&#x5C11;&#xFF0C;&#x56E0;&#x6B64;&#x53EF;&#x4EE5;&#xFF1A;
+&#x6539;&#x7528;&#x7D22;&#x5F15;&#x8868;&#xFF1A;&#x65E0;&#x9700;&#x4E3A;&#x6BCF;&#x4E2A;&#x6761;&#x76EE;&#x5B58;&#x50A8; 48 &#x4F4D;&#x7684; MAC &#x5730;&#x5740;&#xFF0C;&#x800C;&#x662F;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684;&#x8868;&#xFF0C;&#x5E76;&#x4F7F;&#x7528;&#x8F83;&#x5C0F;&#x7684;&#x7D22;&#x5F15;&#xFF08;&#x5982; 8 &#x4F4D;&#xFF09;&#x8FDB;&#x884C;&#x67E5;&#x627E;&#x3002;</li>
+</ul>
+<h3 id="&#x989D;&#x5916;&#x5B9E;&#x9A8C;">&#x989D;&#x5916;&#x5B9E;&#x9A8C;</h3>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x591A;&#x4E2A;&#x6307;&#x5411;&#x540C;&#x4E00;&#x4E0B;&#x4E00;&#x8DF3;&#x7684;&#x4E3B;&#x673A;/&#x8DEF;&#x7531;&#x6761;&#x76EE;&#xFF1A;</p>
+<ul>
+<li>&#x6D4B;&#x8BD5;&#x5171;&#x4EAB;&#x4E0B;&#x4E00;&#x8DF3;&#xFF1A;</li>
+</ul>
+<p>&#x53D1;&#x9001;&#x6570;&#x636E;&#x5305;&#xFF0C;&#x786E;&#x8BA4;&#x4E0B;&#x4E00;&#x8DF3;&#x88AB;&#x6B63;&#x786E;&#x4F7F;&#x7528;&#x4E14;&#x6570;&#x636E;&#x5305;&#x6309;&#x9884;&#x671F;&#x8F6C;&#x53D1;</p>
+<p>&#x4FEE;&#x6539;&#x4E0B;&#x4E00;&#x8DF3;&#x4FE1;&#x606F;&#xFF0C;&#x89C2;&#x5BDF;&#x6240;&#x6709;&#x76F8;&#x5173;&#x8DEF;&#x7531;&#x662F;&#x5426;&#x5747;&#x53D7;&#x5F71;&#x54CD;&#xFF08;&#x901A;&#x8FC7;&#x5411;&#x5171;&#x4EAB;&#x8BE5;&#x4E0B;&#x4E00;&#x8DF3;&#x7684;&#x5176;&#x4ED6;&#x6761;&#x76EE;&#x53D1;&#x9001;&#x6570;&#x636E;&#x5305;&#x9A8C;&#x8BC1;&#xFF09;</p>
+<ul>
+<li>&#x8D44;&#x6E90;&#x5BF9;&#x6BD4;&#xFF1A;</li>
+</ul>
+<p>&#x89C2;&#x5BDF;&#x7A0B;&#x5E8F;&#x7684;&#x53EF;&#x89C6;&#x5316;&#x56FE;&#x8868;&#xFF0C;&#x6BD4;&#x8F83;&#x5176;&#x4E0E; simple_l3_rewrite &#x5728;&#x76F8;&#x540C;&#x8868;&#x5927;&#x5C0F;&#x4E0B;&#x7684; SRAM &#x548C; TCAM &#x8D44;&#x6E90;&#x5360;&#x7528;&#x60C5;&#x51B5;</p>
+<p>&#x5173;&#x952E;&#x4EE3;&#x4EF7;&#xFF1A;&#x8FD9;&#x79CD;&#x4F18;&#x5316;&#x65B9;&#x6848;&#x6700;&#x4E3B;&#x8981;&#x7684;&#x4EE3;&#x4EF7;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;&#x4E3A;&#x4EC0;&#x4E48;&#xFF1F;</p>
+<p>&#xFF08;&#x6CE8;&#xFF1A;&#x6700;&#x540E;&#x4E00;&#x53E5;&#x63D0;&#x95EE;&#x6697;&#x793A;&#x8BFB;&#x8005;&#x601D;&#x8003;&#x5171;&#x4EAB;&#x4E0B;&#x4E00;&#x8DF3;&#x53EF;&#x80FD;&#x5E26;&#x6765;&#x7684;&#x989D;&#x5916;&#x67E5;&#x8868;&#x5F00;&#x9500;&#x6216;&#x7075;&#x6D3B;&#x6027;&#x9650;&#x5236;&#xFF0C;&#x4F8B;&#x5982;&#x9700;&#x8981;&#x989D;&#x5916;&#x67E5;&#x8BE2; nexthop &#x8868;&#xFF0C;&#x6216;&#x5728;&#x4FEE;&#x6539;&#x5171;&#x4EAB; nexthop &#x65F6;&#x5F71;&#x54CD;&#x591A;&#x6761;&#x8DEF;&#x7531;&#x3002;&#xFF09;</p>
+<h2 id="simplel3arping">simple_l3_arping</h2>
+<h3 id="&#x5B9E;&#x9A8C;&#x76EE;&#x6807;">&#x5B9E;&#x9A8C;&#x76EE;&#x6807;</h3>
+<p>&#x672C;&#x5B9E;&#x9A8C;&#x65E8;&#x5728;&#x5C55;&#x793A;&#x4E00;&#x4E2A;&#x5178;&#x578B;&#x7684; L3 &#x4EA4;&#x6362;&#x673A;&#x5982;&#x4F55;&#x540C;&#x65F6;&#x4F5C;&#x4E3A; &#x81EA;&#x52A8; ARP &#x548C; ICMP &#x54CD;&#x5E94;&#x5668;&#xFF0C;&#x4ECE;&#x800C;&#x51CF;&#x8F7B;&#x5176;&#x540E;&#x65B9;&#x4E3B;&#x673A;&#x5904;&#x7406;&#x8FD9;&#x4E9B;&#x7279;&#x5B9A;&#x6570;&#x636E;&#x5305;&#x7684;&#x8D1F;&#x62C5;&#x3002;&#x8FD9;&#x79CD;&#x673A;&#x5236;&#x53EF;&#x4EE5;&#xFF1A;</p>
+<p>&#x9632;&#x5FA1;&#x57FA;&#x7840;&#x7684; DoS &#x653B;&#x51FB;</p>
+<p>&#x9690;&#x85CF;&#x540E;&#x7AEF;&#x7F51;&#x7EDC;&#xFF08;&#x4F7F;&#x5916;&#x90E8;&#x65E0;&#x6CD5;&#x63A2;&#x6D4B;&#x5B9E;&#x9645;&#x5B58;&#x5728;&#x7684;&#x8BBE;&#x5907;&#xFF09;</p>
+<p>&#x5B8C;&#x6210;&#x5B9E;&#x9A8C;&#xFF08;&#x7F16;&#x5199;&#x7A0B;&#x5E8F;&#x5E76;&#x6B63;&#x786E;&#x914D;&#x7F6E;&#x8868;&#x9879;&#xFF09;&#x540E;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A; veth &#x63A5;&#x53E3;&#x4E0A;&#x914D;&#x7F6E; IP &#x5730;&#x5740;&#xFF0C;&#x5E76;&#x6210;&#x529F; Ping &#x901A;&#x5B9E;&#x9645;&#x5E76;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x4E3B;&#x673A;&#x3002;</p>
+<h3 id="&#x5B9E;&#x9A8C;&#x914D;&#x7F6E;">&#x5B9E;&#x9A8C;&#x914D;&#x7F6E;</h3>
+<p>&#x5047;&#x8BBE;&#x4F60;&#x7F16;&#x7A0B;&#x4E86;&#x4EE5;&#x4E0B;&#x4E3B;&#x673A;&#x548C;&#x8DEF;&#x7531;&#x8868;&#x9879;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>IP address (prefix)</th>
+<th style="text-align:right">Port</th>
+<th style="text-align:center">Destination MAC</th>
+<th style="text-align:center">Source MAC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>192.168.1.1</td>
+<td style="text-align:right">1</td>
+<td style="text-align:center">00:00:00:00:00:01</td>
+<td style="text-align:center">00:12:34:56:78:9A</td>
+</tr>
+<tr>
+<td>192.168.1.2</td>
+<td style="text-align:right">2</td>
+<td style="text-align:center">00:00:00:00:00:02</td>
+<td style="text-align:center">00:AA:BB:CC:DD:EE</td>
+</tr>
+<tr>
+<td>192.168.1.5</td>
+<td style="text-align:right">2</td>
+<td style="text-align:center">00:00:00:00:00:05</td>
+<td style="text-align:center">00:AA:BB:CC:DD:EE</td>
+</tr>
+<tr>
+<td>192.168.1.0/24</td>
+<td style="text-align:right">64</td>
+<td style="text-align:center">00:00:00:00:00:01</td>
+<td style="text-align:center">00:12:34:56:78:9A</td>
+</tr>
+<tr>
+<td>192.168.3.0/24</td>
+<td style="text-align:right">64</td>
+<td style="text-align:center">00:00:00:00:00:01</td>
+<td style="text-align:center">00:12:34:56:78:9A</td>
+</tr>
+</tbody>
+</table>
+<p>&#x7136;&#x540E;&#x5728; veth1 &#x4E0A;&#x914D;&#x7F6E; IP &#x5730;&#x5740; 192.168.1.254/24&#xFF0C;&#x5E76;&#x6307;&#x5B9A; 192.168.1.100 &#x4F5C;&#x4E3A; 192.168.3.0/24 &#x7F51;&#x7EDC;&#x7684;&#x7F51;&#x5173;&#xFF1A;</p>
+<pre><code>sudo ip addr add 192.168.1.254/24 dev veth1
+sudo ip route add 192.168.3.0/24 via 192.168.1.100
+</code></pre><p>&#x5982;&#x679C;&#x7A0B;&#x5E8F;&#x6B63;&#x786E;&#x8FD0;&#x884C;&#xFF0C;&#x5373;&#x4F7F; 192.168.1.0/24 &#x548C; 192.168.3.0/24 &#x7F51;&#x7EDC;&#x4E2D;&#x7684;&#x4E3B;&#x673A;&#x5B9E;&#x9645;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x4F60;&#x4E5F;&#x80FD;&#x6210;&#x529F; Ping &#x901A;&#x5B83;&#x4EEC;&#x3002;</p>
+<p>&#x672C;&#x76EE;&#x5F55;&#x4E2D;&#x7684; do_ping.sh &#x811A;&#x672C;&#x4F1A;&#x81EA;&#x52A8;&#x5B8C;&#x6210;&#x4E0A;&#x8FF0;&#x6D4B;&#x8BD5;&#xFF08;&#x5E76;&#x5728;&#x6700;&#x540E;&#x6E05;&#x7406; veth1 &#x7684;&#x914D;&#x7F6E;&#xFF09;&#xFF0C;&#x53EF;&#x4F5C;&#x4E3A;&#x6D4B;&#x8BD5;&#x53C2;&#x8003;&#x3002;</p>
+<h3 id="&#x7406;&#x8BBA;&#x80CC;&#x666F;">&#x7406;&#x8BBA;&#x80CC;&#x666F;</h3>
+<p>&#x5F53;&#x4F60; Ping &#x4E00;&#x4E2A; IP &#x5730;&#x5740;&#x65F6;&#xFF0C;Linux &#x4E3B;&#x673A;&#x4F1A;&#x6267;&#x884C;&#x4EE5;&#x4E0B;&#x6B65;&#x9AA4;&#xFF1A;
+&#x67E5;&#x8BE2;&#x8DEF;&#x7531;&#x8868;&#xFF0C;&#x53EF;&#x80FD;&#x7684;&#x7ED3;&#x679C;&#xFF1A;</p>
+<p>a. &#x65E0;&#x8DEF;&#x7531; &#x2192; Ping &#x5931;&#x8D25;</p>
+<p>b. &#x76EE;&#x6807;&#x4F4D;&#x4E8E;&#x76F4;&#x8FDE;&#x7F51;&#x7EDC;&#xFF08;&#x540C;&#x5B50;&#x7F51;&#xFF09; &#x2192; &#x5148;&#x53D1;&#x9001; ARP &quot;Who-has&quot; &#x8BF7;&#x6C42; &#x89E3;&#x6790;&#x76EE;&#x6807; MAC</p>
+<p>c. &#x76EE;&#x6807;&#x4F4D;&#x4E8E;&#x8FDC;&#x7A0B;&#x7F51;&#x7EDC; &#x2192; &#x5148;&#x53D1;&#x9001; ARP &#x8BF7;&#x6C42;&#x89E3;&#x6790;&#x7F51;&#x5173; MAC</p>
+<p>&#x83B7;&#x53D6;&#x76EE;&#x6807; MAC &#x540E;&#xFF0C;&#x53D1;&#x9001; ICMP Echo &#x8BF7;&#x6C42; &#x81F3;&#x8BE5; MAC &#x5730;&#x5740;&#x3002;</p>
+<p>&#x56E0;&#x6B64;&#xFF0C;&#x4EA4;&#x6362;&#x673A;&#xFF08;&#x54CD;&#x5E94;&#x5668;&#xFF09;&#x5FC5;&#x987B;&#x80FD;&#x540C;&#x65F6;&#x5904;&#x7406; ARP &#x548C; ICMP &#x8BF7;&#x6C42;&#xFF0C;&#x624D;&#x80FD;&#x6B63;&#x786E;&#x6A21;&#x62DF;&#x4E3B;&#x673A;&#x54CD;&#x5E94;&#x3002;</p>
+<h3 id="&#x9644;&#x52A0;&#x5B9E;&#x9A8C;">&#x9644;&#x52A0;&#x5B9E;&#x9A8C;</h3>
+<ul>
+<li><p>&#x6D4B;&#x8BD5;&#x4E0D;&#x540C;&#x5B50;&#x7F51;&#x7684; Ping&#xFF1A;
+&#x5C1D;&#x8BD5; Ping 192.168.3.0/24 &#x4E2D;&#x7684;&#x5730;&#x5740;&#xFF0C;&#x89C2;&#x5BDF;&#x4EA4;&#x6362;&#x673A;&#x5982;&#x4F55;&#x4EE3;&#x7406;&#x54CD;&#x5E94;&#x3002;</p>
+</li>
+<li><p>&#x4FEE;&#x6539; ARP &#x8868;&#x9879;&#xFF1A;
+&#x66F4;&#x6539;&#x67D0;&#x4E2A; IP &#x7684; MAC &#x5730;&#x5740;&#xFF0C;&#x89C2;&#x5BDF; Ping &#x662F;&#x5426;&#x4ECD;&#x7136;&#x6210;&#x529F;&#xFF08;&#x9A8C;&#x8BC1;&#x4EA4;&#x6362;&#x673A;&#x662F;&#x5426;&#x52A8;&#x6001;&#x54CD;&#x5E94;&#xFF09;&#x3002;</p>
+</li>
+<li>&#x6A21;&#x62DF; DoS &#x9632;&#x5FA1;&#xFF1A;
+&#x5411;&#x4EA4;&#x6362;&#x673A;&#x53D1;&#x9001;&#x5927;&#x91CF; ARP &#x8BF7;&#x6C42;&#xFF0C;&#x89C2;&#x5BDF;&#x662F;&#x5426;&#x4ECD;&#x80FD;&#x7A33;&#x5B9A;&#x54CD;&#x5E94;&#xFF08;&#x9A8C;&#x8BC1;&#x8D44;&#x6E90;&#x5360;&#x7528;&#x60C5;&#x51B5;&#xFF09;&#x3002;</li>
+</ul>
+<p>&#x901A;&#x8FC7;&#x672C;&#x5B9E;&#x9A8C;&#xFF0C;&#x4F60;&#x5C06;&#x66F4;&#x6DF1;&#x5165;&#x7406;&#x89E3; L3 &#x4EA4;&#x6362;&#x673A;&#x5982;&#x4F55;&#x4F18;&#x5316;&#x7F51;&#x7EDC;&#x6D41;&#x91CF;&#x5E76;&#x589E;&#x5F3A;&#x5B89;&#x5168;&#x6027;&#x3002;</p>
+<h2 id="simplel3dircntr">simple_l3_dir_cntr</h2>
+<h3 id="&#x5B9E;&#x9A8C;&#x76EE;&#x6807;">&#x5B9E;&#x9A8C;&#x76EE;&#x6807;</h3>
+<p>&#x672C;&#x5B9E;&#x9A8C;&#x65E8;&#x5728;&#x63A2;&#x7D22; &#x76F4;&#x63A5;&#x8BA1;&#x6570;&#x5668;&#xFF08;direct counter&#xFF09; &#x529F;&#x80FD;&#xFF0C;&#x901A;&#x8FC7;&#x5728;&#x73B0;&#x6709; P4 &#x7A0B;&#x5E8F;&#x4E2D;&#x6DFB;&#x52A0;&#x8BA1;&#x6570;&#x5668;&#x6765;&#x7EDF;&#x8BA1;&#x5173;&#x952E;&#x8868;&#x9879;&#x7684;&#x5339;&#x914D;&#x60C5;&#x51B5;&#x3002;</p>
+<p>&#x53EF;&#x9009;&#x6269;&#x5C55;&#x65B9;&#x6848;</p>
+<ul>
+<li>&#x5728; simple_l3.p4 &#x6216;&#x5176;&#x884D;&#x751F;&#x7248;&#x672C;&#x4E2D;&#xFF0C;&#x4E3A; ipv4_host &#x8868;&#x6DFB;&#x52A0;&#x76F4;&#x63A5;&#x8BA1;&#x6570;&#x5668;&#xFF0C;&#x7EDF;&#x8BA1;&#x6BCF;&#x4E2A;&#x4E3B;&#x673A;&#x8868;&#x9879;&#x7684;&#x547D;&#x4E2D;&#x6B21;&#x6570;&#x3002;</li>
+<li>&#x5728; simple_l3_nexthop.p4&#x4E2D;&#x4E3A; nexthop &#x8868;&#x6DFB;&#x52A0;&#x8BA1;&#x6570;&#x5668;&#xFF0C;&#x7EDF;&#x8BA1;&#x6BCF;&#x4E2A;&#x4E0B;&#x4E00;&#x8DF3;&#x7684;&#x4F7F;&#x7528;&#x6B21;&#x6570;&#x3002;</li>
+<li>&#x5728; simple_l3_acl.p4 &#x4E2D; &#x4E3A; ACL &#x8868;&#x9879;&#x6DFB;&#x52A0;&#x8BA1;&#x6570;&#x5668;&#xFF0C;&#x7EDF;&#x8BA1;&#x6BCF;&#x6761;&#x89C4;&#x5219;&#x7684;&#x5339;&#x914D;&#x6B21;&#x6570;&#x3002;</li>
+</ul>
+<h3 id="&#x8BA1;&#x6570;&#x5668;&#x8BFB;&#x53D6;&#x65B9;&#x6CD5;">&#x8BA1;&#x6570;&#x5668;&#x8BFB;&#x53D6;&#x65B9;&#x6CD5;</h3>
+<p>&#x7531;&#x4E8E;&#x8BFB;&#x53D6;&#x8BA1;&#x6570;&#x5668;&#x9700;&#x8981;&#x77E5;&#x9053;&#x8868;&#x9879;&#x7684;&#x53E5;&#x67C4;&#xFF08;handles&#xFF09;&#xFF0C;&#x672C;&#x5B9E;&#x9A8C;&#x8FD8;&#x8981;&#x6C42;&#x5B66;&#x4E60;&#x5982;&#x4F55;&#x901A;&#x8FC7;&#x4EE5;&#x4E0B;&#x65B9;&#x5F0F;&#x83B7;&#x53D6;&#x6570;&#x636E;&#xFF1A;</p>
+<ul>
+<li>Python + run_pd_rpc &#x5DE5;&#x5177;&#xFF1A; &#x4F7F;&#x7528; get_entries() &#x51FD;&#x6570;&#x83B7;&#x53D6;&#x8868;&#x4E2D;&#x6240;&#x6709;&#x6761;&#x76EE;&#x7684;&#x53E5;&#x67C4;&#xFF0C;&#x518D;&#x901A;&#x8FC7;&#x53E5;&#x67C4;&#x8BFB;&#x53D6;&#x8BA1;&#x6570;&#x5668;&#x3002;</li>
+<li>PTF &#x6D4B;&#x8BD5;&#x6846;&#x67B6;&#xFF1A;&#x7F16;&#x5199;&#x6D4B;&#x8BD5;&#x811A;&#x672C;&#x9A8C;&#x8BC1;&#x8BA1;&#x6570;&#x5668;&#x529F;&#x80FD;&#x3002;</li>
+</ul>
+<h3 id="&#x989D;&#x5916;&#x5B9E;&#x9A8C;">&#x989D;&#x5916;&#x5B9E;&#x9A8C;</h3>
+<ul>
+<li>&#x901A;&#x7528;&#x8BA1;&#x6570;&#x5668;&#x67E5;&#x8BE2;&#x51FD;&#x6570; &#x7F16;&#x5199;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x8F93;&#x5165;&#x8868;&#x540D;&#x548C;&#x8BA1;&#x6570;&#x5668;&#x540D;&#xFF0C;&#x81EA;&#x52A8;&#x663E;&#x793A;&#x6240;&#x6709;&#x8868;&#x9879;&#x7684;&#x8BA1;&#x6570;&#x5668;&#x503C;&#xFF08;&#x53EF;&#x9644;&#x5E26;&#x53E5;&#x67C4;&#x548C;&#x5339;&#x914D;&#x89C4;&#x5219;&#xFF09;&#x3002;</li>
+<li>&#x6269;&#x5C55;&#x529F;&#x80FD;&#xFF1A;&#x4EC5;&#x663E;&#x793A;&#x975E;&#x96F6;&#x8BA1;&#x6570;&#x5668;&#xFF0C;&#x6216;&#x5BF9;&#x6BD4;&#x4E0A;&#x6B21;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x53EA;&#x8F93;&#x51FA;&#x53D8;&#x5316;&#x7684;&#x503C;&#x3002;</li>
+<li>&#x8D44;&#x6E90;&#x5360;&#x7528;&#x5206;&#x6790;&#xFF1A;&#x89C2;&#x5BDF;&#x6DFB;&#x52A0;&#x8BA1;&#x6570;&#x5668;&#x540E;&#x7684;&#x8D44;&#x6E90;&#x53EF;&#x89C6;&#x5316;&#x56FE;&#x8868;&#xFF0C;&#x5206;&#x6790; SRAM/TCAM &#x7684;&#x4F7F;&#x7528;&#x53D8;&#x5316;&#xFF1B;&#x5B9E;&#x9A8C; min_width &#x5C5E;&#x6027;&#xFF0C;&#x7814;&#x7A76;&#x5176;&#x5BF9; SRAM &#x5360;&#x7528;&#x7684;&#x5F71;&#x54CD;&#xFF08;&#x4F8B;&#x5982;&#x8C03;&#x6574;&#x8BA1;&#x6570;&#x5668;&#x4F4D;&#x5BBD;&#xFF09;&#x3002;</li>
+</ul>
+<h3 id="&#x5B9E;&#x9A8C;&#x610F;&#x4E49;">&#x5B9E;&#x9A8C;&#x610F;&#x4E49;</h3>
+<ul>
+<li>&#x7F51;&#x7EDC;&#x76D1;&#x63A7;&#xFF1A;&#x5B9E;&#x65F6;&#x4E86;&#x89E3;&#x6D41;&#x91CF;&#x5339;&#x914D;&#x60C5;&#x51B5;&#xFF08;&#x5982;&#x70ED;&#x95E8;&#x8DEF;&#x7531;&#x3001;ACL &#x89C4;&#x5219;&#x89E6;&#x53D1;&#x9891;&#x7387;&#xFF09;&#x3002;</li>
+<li>&#x8C03;&#x8BD5;&#x4F18;&#x5316;&#xFF1A;&#x901A;&#x8FC7;&#x8BA1;&#x6570;&#x5668;&#x5B9A;&#x4F4D;&#x672A;&#x9884;&#x671F;&#x7684;&#x8868;&#x9879;&#x5339;&#x914D;&#x6216;&#x8D44;&#x6E90;&#x74F6;&#x9888;&#x3002;</li>
+<li>&#x8D44;&#x6E90;&#x6743;&#x8861;&#xFF1A;&#x7406;&#x89E3;&#x8BA1;&#x6570;&#x5668;&#x4F4D;&#x5BBD;&#xFF08;&#x5982; 8bit vs 32bit&#xFF09;&#x5BF9;&#x786C;&#x4EF6;&#x8D44;&#x6E90;&#x7684;&#x5F71;&#x54CD;&#x3002;</li>
+</ul>
+<p>&#x901A;&#x8FC7;&#x672C;&#x5B9E;&#x9A8C;&#xFF0C;&#x4F60;&#x5C06;&#x638C;&#x63E1; P4 &#x6570;&#x636E;&#x5E73;&#x9762;&#x7684;&#x7EDF;&#x8BA1;&#x80FD;&#x529B;&#xFF0C;&#x5E76;&#x5B66;&#x4F1A;&#x9AD8;&#x6548;&#x7BA1;&#x7406;&#x8BA1;&#x6570;&#x5668;&#x8D44;&#x6E90;&#x3002;</p>
+<h2 id="simplel3indcntr">simple_l3_ind_cntr</h2>
+<h3 id="&#x5B9E;&#x9A8C;&#x76EE;&#x6807;">&#x5B9E;&#x9A8C;&#x76EE;&#x6807;</h3>
+<p>&#x672C;&#x5B9E;&#x9A8C;&#x65E8;&#x5728;&#x63A2;&#x7D22; &#x95F4;&#x63A5;&#x8BA1;&#x6570;&#x5668;&#xFF08;indirect counter&#xFF09; &#x529F;&#x80FD;&#xFF0C;&#x901A;&#x8FC7;&#x6269;&#x5C55; simple_l3.p4 &#x6216;&#x5176;&#x884D;&#x751F;&#x7248;&#x672C;&#xFF0C;&#x5B9E;&#x73B0; IPv4 &#x4E3B;&#x673A;&#x548C;&#x8DEF;&#x7531;&#x8868;&#x6761;&#x76EE;&#x5171;&#x4EAB;&#x8BA1;&#x6570;&#x5668;&#xFF0C;&#x4ECE;&#x800C;&#x6309;&#x76EE;&#x6807;&#x5B50;&#x7F51;&#x7EDF;&#x8BA1;&#x6570;&#x636E;&#x5305;&#x3002;</p>
+<ul>
+<li>&#x6838;&#x5FC3;&#x9700;&#x6C42;:</li>
+</ul>
+<p>&#x5728; ipv4_host &#x548C; ipv4_route &#x8868;&#x4E2D;&#x6DFB;&#x52A0;&#x95F4;&#x63A5;&#x8BA1;&#x6570;&#x5668;,&#x76F8;&#x540C;&#x5B50;&#x7F51;&#x7684;&#x4E0D;&#x540C;&#x6761;&#x76EE;&#x5E94;&#x5171;&#x4EAB;&#x8BA1;&#x6570;&#x5668;&#x7D22;&#x5F15;</p>
+<p>&#x4F8B;&#x5982;&#xFF1A;</p>
+<p>&#x4E3B;&#x673A;&#x6761;&#x76EE;&#xFF1A;192.168.1.1&#x3001;192.168.1.2&#x3001;192.168.1.10
+&#x8DEF;&#x7531;&#x6761;&#x76EE;&#xFF1A;192.168.1.0/24
+&#x4EE5;&#x4E0A;&#x6240;&#x6709;&#x6761;&#x76EE;&#x5E94;&#x6307;&#x5411;&#x540C;&#x4E00;&#x4E2A;&#x8BA1;&#x6570;&#x5668;&#xFF0C;&#x7EDF;&#x8BA1;&#x53D1;&#x5F80; 192.168.1.0/24 &#x7684;&#x6240;&#x6709;&#x6570;&#x636E;&#x5305;</p>
+<h3 id="&#x5B9E;&#x73B0;&#x8981;&#x70B9;">&#x5B9E;&#x73B0;&#x8981;&#x70B9;</h3>
+<ul>
+<li><p>&#x8BA1;&#x6570;&#x5668;&#x751F;&#x6210;&#x903B;&#x8F91;&#xFF1A;&#x5BF9;&#x4E3B;&#x673A; IP&#xFF0C;&#x63D0;&#x53D6;&#x5B50;&#x7F51;&#x524D;&#x7F00;&#xFF08;&#x5982; 192.168.1.0/24&#xFF09;&#x4F5C;&#x4E3A;&#x7D22;&#x5F15;&#xFF1B;&#x5BF9;&#x8DEF;&#x7531;&#x6761;&#x76EE;&#xFF0C;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x5176;&#x5B50;&#x7F51;&#x4F5C;&#x4E3A;&#x7D22;&#x5F15;</p>
+</li>
+<li><p>P4&#x5173;&#x952E;&#x4FEE;&#x6539;
+```P4
+counter(1024, CounterType.packets) ipv4_subnet_counter;  // &#x58F0;&#x660E;&#x95F4;&#x63A5;&#x8BA1;&#x6570;&#x5668;</p>
+</li>
+</ul>
+<p>action count_subnet_traffic() {
+    ipv4_subnet_counter.count(/<em> &#x52A8;&#x6001;&#x8BA1;&#x7B97;&#x5B50;&#x7F51;&#x7D22;&#x5F15; </em>/);<br>}</p>
+<pre><code>- &#x8868;&#x9879;&#x5173;&#x8054;&#xFF1A;&#x5728; ipv4_host &#x548C; ipv4_route &#x7684;&#x52A8;&#x4F5C;&#x4E2D;&#x8C03;&#x7528; count_subnet_traffic
+
+### &#x989D;&#x5916;&#x5B9E;&#x9A8C;
+
+- &#x8D44;&#x6E90;&#x5BF9;&#x6BD4;&#x5206;&#x6790;
+
+&#x4E0E; simple_l3_dir_cntr.p4 &#x7684;&#x53EF;&#x89C6;&#x5316;&#x5BF9;&#x6BD4;
+
+&#x4E3B;&#x8981;&#x5DEE;&#x5F02;&#xFF1A;&#x95F4;&#x63A5;&#x8BA1;&#x6570;&#x5668;&#x901A;&#x8FC7;&#x5171;&#x4EAB;&#x7D22;&#x5F15;&#x51CF;&#x5C11; SRAM &#x5360;&#x7528;&#xFF0C;&#x4F46;&#x9700;&#x989D;&#x5916;&#x903B;&#x8F91;&#x8BA1;&#x7B97;&#x7D22;&#x5F15;
+
+&#x4F18;&#x52BF;&#xFF1A;&#x9002;&#x5408;&#x5927;&#x89C4;&#x6A21;&#x5B50;&#x7F51;&#x7EDF;&#x8BA1;&#xFF1B;&#x52A3;&#x52BF;&#xFF1A;&#x7D22;&#x5F15;&#x8BA1;&#x7B97;&#x53EF;&#x80FD;&#x589E;&#x52A0;&#x5904;&#x7406;&#x5EF6;&#x8FDF;
+
+- &#x8BA1;&#x6570;&#x5668;&#x6570;&#x91CF;&#x6781;&#x9650;&#x6D4B;&#x8BD5;
+
+&#x9ED8;&#x8BA4;&#x9650;&#x5236;&#xFF1A;&#x901A;&#x5E38;&#x53D7;&#x9650;&#x4E8E;&#x8BA1;&#x6570;&#x5668;&#x5757;&#x5927;&#x5C0F;&#xFF08;&#x5982; 1024 &#x4E2A;&#xFF09;
+
+&#x7A81;&#x7834;&#x9650;&#x5236;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;
+
+&#x5206;&#x5C42;&#x8BA1;&#x6570;&#xFF1A;&#x5C06;&#x5927;&#x5B50;&#x7F51;&#x62C6;&#x5206;&#x4E3A;&#x66F4;&#x5C0F;&#x5B50;&#x7F51;&#xFF0C;&#x5408;&#x5E76;&#x7EDF;&#x8BA1;&#x65F6;&#x7D2F;&#x52A0;
+
+&#x91C7;&#x6837;&#x8BA1;&#x6570;&#xFF1A;&#x6BCF; N &#x4E2A;&#x6570;&#x636E;&#x5305;&#x66F4;&#x65B0;&#x4E00;&#x6B21;&#x8BA1;&#x6570;&#x5668;
+
+&#x52A8;&#x6001;&#x5206;&#x914D;&#xFF1A;&#x8FD0;&#x884C;&#x65F6;&#x6309;&#x9700;&#x5206;&#x914D;&#x8BA1;&#x6570;&#x5668;&#xFF08;&#x9700;&#x786C;&#x4EF6;&#x652F;&#x6301;&#xFF09;
+
+### &#x5B9E;&#x9A8C;&#x610F;&#x4E49;
+&#x6D41;&#x91CF;&#x5206;&#x6790;&#xFF1A;&#x7CBE;&#x51C6;&#x7EDF;&#x8BA1;&#x5B50;&#x7F51;&#x7EA7;&#x6D41;&#x91CF;&#xFF0C;&#x4F18;&#x5316;&#x7F51;&#x7EDC;&#x89C4;&#x5212;
+
+&#x8D44;&#x6E90;&#x6548;&#x7387;&#xFF1A;&#x95F4;&#x63A5;&#x8BA1;&#x6570;&#x5668;&#x6BD4;&#x76F4;&#x63A5;&#x8BA1;&#x6570;&#x5668;&#x66F4;&#x8282;&#x7701;&#x5185;&#x5B58;&#xFF08;&#x9002;&#x5408;&#x5171;&#x4EAB;&#x7EDF;&#x8BA1;&#x573A;&#x666F;&#xFF09;
+
+&#x6269;&#x5C55;&#x6027;&#x601D;&#x8003;&#xFF1A;&#x7406;&#x89E3;&#x8BA1;&#x6570;&#x5668;&#x89C4;&#x6A21;&#x4E0E;&#x786C;&#x4EF6;&#x8D44;&#x6E90;&#x7684;&#x6743;&#x8861;&#x5173;&#x7CFB;
+
+&#x901A;&#x8FC7;&#x672C;&#x5B9E;&#x9A8C;&#xFF0C;&#x4F60;&#x5C06;&#x638C;&#x63E1;&#x95F4;&#x63A5;&#x8BA1;&#x6570;&#x5668;&#x7684;&#x8BBE;&#x8BA1;&#x54F2;&#x5B66;&#x53CA;&#x5176;&#x5728;&#x7F51;&#x7EDC;&#x76D1;&#x63A7;&#x4E2D;&#x7684;&#x9AD8;&#x6548;&#x5E94;&#x7528;&#x3002;
+
+
+## simple_l3_histogram
+
+### &#x5B9E;&#x9A8C;&#x76EE;&#x6807;
+&#x672C;&#x5B9E;&#x9A8C;&#x76EE;&#x6807;&#x662F;&#x63A2;&#x7D22;&#x5982;&#x4F55;&#x7ED3;&#x5408;&#x76F4;&#x63A5;&#x8BA1;&#x6570;&#x5668;&#x548C;&#x8303;&#x56F4;&#x5339;&#x914D;&#x529F;&#x80FD;&#x6765;&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5305;&#x957F;&#x5EA6;&#x7684;&#x76F4;&#x65B9;&#x56FE;&#x3002;
+
+&#x601D;&#x8003;&#xFF1A;&#x6267;&#x884C;&#x8BA1;&#x6570;&#x529F;&#x80FD;&#x7684;&#x8868;&#x5E94;&#x8BE5;&#x653E;&#x7F6E;&#x5728;&#x6D41;&#x6C34;&#x7EBF;&#x7684;&#x54EA;&#x4E2A;&#x4F4D;&#x7F6E;&#xFF1F;&#x662F;&#x5165;&#x53E3;(ingress)&#x8FD8;&#x662F;&#x51FA;&#x53E3;(egress)&#xFF1F;&#x4E3A;&#x4EC0;&#x4E48;&#xFF1F;
+
+&#x8FD9;&#x4E2A;&#x8868;&#x7684;&#x7F16;&#x7A0B;&#x65B9;&#x5F0F;&#x6709;&#x591A;&#x79CD;&#x9009;&#x62E9;&#xFF1A;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7C7B;&#x4F3C;SNMP&#x7684;&#x6307;&#x6570;&#x7EA7;&#x6269;&#x5927;&#x7684;&#x8303;&#x56F4;&#x533A;&#x95F4;&#xFF08;&#x4F8B;&#x5982;[0..64]&#x3001;[65..128]&#x3001;[129..256]&#x7B49;&#xFF09;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x91C7;&#x7528;&#x7EBF;&#x6027;&#x533A;&#x95F4;&#xFF08;&#x4F8B;&#x5982;[64..75]&#x3001;[74..85]&#x7B49;&#xFF09;&#x3002;
+
+pkt/send.py&#x811A;&#x672C;&#x6F14;&#x793A;&#x4E86;&#x5982;&#x4F55;&#x53D1;&#x9001;&#x968F;&#x673A;&#x957F;&#x5EA6;&#x7684;&#x6570;&#x636E;&#x5305;&#x3002;&#x5B83;&#x4F1A;&#x53D1;&#x9001;1000&#x4E2A;&#x6570;&#x636E;&#x5305;&#x5E76;&#x8BB0;&#x5F55;&#x5176;&#x957F;&#x5EA6;&#xFF0C;&#x4EE5;&#x4FBF;&#x60A8;&#x5C06;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x4E0E;&#x8FD9;&#x4E9B;&#x8BB0;&#x5F55;&#x8FDB;&#x884C;&#x6BD4;&#x5BF9;&#x3002;
+
+### &#x6269;&#x5C55;&#x5B9E;&#x9A8C;
+
+&#x89C2;&#x5BDF;&#x53EF;&#x89C6;&#x5316;&#x754C;&#x9762;&#xFF1A;&#x8303;&#x56F4;&#x5339;&#x914D;&#x8868;&#x5360;&#x7528;&#x4E86;&#x54EA;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x786C;&#x4EF6;&#x8D44;&#x6E90;&#xFF1F;
+
+&#x5BF9;&#x6BD4;&#x53D1;&#x73B0;&#x6240;&#x9700;&#x6D41;&#x6C34;&#x7EBF;&#x9636;&#x6BB5;&#x6570;&#x662F;&#x589E;&#x52A0;&#x4E86;&#x8FD8;&#x662F;&#x4FDD;&#x6301;&#x4E0D;&#x53D8;&#xFF1F;&#x539F;&#x56E0;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;
+
+
+## simple_l3_lag_ecmp
+
+### &#x5B9E;&#x9A8C;&#x76EE;&#x6807;
+
+&#x672C;&#x5B9E;&#x9A8C;&#x65E8;&#x5728;&#x5B66;&#x4E60;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x52A8;&#x6001;&#x9009;&#x62E9;&#x52A8;&#x4F5C;&#x914D;&#x7F6E;(action profiles)&#x5B9E;&#x73B0;LAG(&#x94FE;&#x8DEF;&#x805A;&#x5408;&#x7EC4;)&#x548C;ECMP(&#x7B49;&#x4EF7;&#x591A;&#x8DEF;&#x5F84;&#x8DEF;&#x7531;)&#x3002;&#x6211;&#x4EEC;&#x5C06;&#x57FA;&#x4E8E;simple_l3_nexthop.p4&#x7A0B;&#x5E8F;&#x8FDB;&#x884C;&#x589E;&#x5F3A;&#xFF0C;&#x4F7F;&#x5176;&#x80FD;&#x591F;&#xFF1A;
+
+- &#x4E3A;&#x6BCF;&#x4E2A;&#x4E0B;&#x4E00;&#x8DF3;ID&#x5173;&#x8054;&#x591A;&#x4E2A;&#x52A8;&#x4F5C;&#x6570;&#x636E;&#x96C6;
+
+- &#x901A;&#x8FC7;&#x52A8;&#x4F5C;&#x9009;&#x62E9;&#x5668;(action selector)&#x52A8;&#x6001;&#x9009;&#x62E9;&#x52A8;&#x4F5C;
+
+### &#x4E3B;&#x8981;&#x4EFB;&#x52A1;
+1. &#x8F6C;&#x6362;nexthop&#x8868;&#x7ED3;&#x6784;
+&#x5C06;&#x666E;&#x901A;&#x5339;&#x914D;&#x52A8;&#x4F5C;&#x8868;&#x6539;&#x4E3A;&#x4F7F;&#x7528;action_profile&#x548C;action_selector&#x7684;&#x52A8;&#x6001;&#x8868;
+2.  &#x5B9E;&#x73B0;&#x6D41;&#x54C8;&#x5E0C;&#x8BA1;&#x7B97;
+&#x9009;&#x62E9;&#x9002;&#x5F53;&#x7684;&#x5B57;&#x6BB5;&#x7EC4;&#x5408;&#x8BA1;&#x7B97;&#x54C8;&#x5E0C;&#x503C;&#x4EE5;&#x5B9E;&#x73B0;&#x6D41;&#x5206;&#x914D;&#xFF1B;IPv4/IPv6&#x53EF;&#x5206;&#x522B;&#x5B9E;&#x73B0;&#x54C8;&#x5E0C;&#x8BA1;&#x7B97;(&#x53EF;&#x9009;)
+3. &#x6D4B;&#x8BD5;&#x6D41;&#x91CF;&#x5206;&#x914D;
+&#x4F7F;&#x7528;send.py&#x53D1;&#x9001;&#x591A;&#x79CD;&#x6D41;&#x7279;&#x5F81;&#x7684;&#x6570;&#x636E;&#x5305;&#xFF1B;&#x89C2;&#x5BDF;&#x5404;&#x7AEF;&#x53E3;&#x7684;&#x5305;&#x8BA1;&#x6570;&#x5206;&#x5E03;
+
+### &#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;
+#### &#x624B;&#x52A8;&#x6D4B;&#x8BD5;
+1. &#x4F7F;&#x7528;pm show&#x547D;&#x4EE4;&#x67E5;&#x770B;&#x7AEF;&#x53E3;&#x8BA1;&#x6570;&#x5668;
+</code></pre><p>bfshell&gt; ucli
+bf-sde&gt; pm
+bf-sde.pm&gt; show 1/-</p>
+<pre><code>
+2. &#x4F7F;&#x7528;send.py&#x53D1;&#x9001;&#x6D4B;&#x8BD5;&#x6D41;&#x91CF;
+</code></pre><p>python send.py &lt;&#x76EE;&#x6807;IP&gt; &lt;&#x5305;&#x6570;&#x91CF;&gt;</p>
+<pre><code>
+#### &#x81EA;&#x52A8;&#x5316;&#x6D4B;&#x8BD5;
+
+&#x4F7F;&#x7528;verify_packet_any_port()&#x9A8C;&#x8BC1;&#x5305;&#x5206;&#x53D1;
+
+### &#x8FDB;&#x9636;&#x5B9E;&#x9A8C;
+1. &#x52A8;&#x4F5C;&#x914D;&#x7F6E;API&#x63A2;&#x7D22;
+- &#x52A8;&#x6001;&#x542F;&#x7528;/&#x7981;&#x7528;&#x6210;&#x5458;
+
+- &#x89C2;&#x5BDF;&#x6D41;&#x91CF;&#x91CD;&#x5206;&#x5E03;&#x60C5;&#x51B5;
+
+2. &#x975E;&#x6807;&#x51C6;&#x6D41;&#x91CF;&#x5206;&#x914D;&#x65B9;&#x6CD5;
+- &#x968F;&#x673A;&#x5206;&#x914D;&#xFF1A;&#x4F7F;&#x7528;TNA&#x7684;Random extern
+```P4
+Random&lt;bit&lt;14&gt;&gt;() my_rng;
+hash = my_rng.get();
+</code></pre><ul>
+<li><p>&#x8F6E;&#x8BE2;&#x5206;&#x914D;&#xFF1A;(&#x9700;&#x4F7F;&#x7528;&#x5BC4;&#x5B58;&#x5668;&#xFF0C;&#x8F83;&#x590D;&#x6742;)</p>
+</li>
+<li><p>&#x6743;&#x91CD;&#x5206;&#x914D;&#x5B9E;&#x73B0;</p>
+</li>
+<li><p>&#x901A;&#x8FC7;&#x91CD;&#x590D;&#x6DFB;&#x52A0;&#x6210;&#x5458;&#x5B9E;&#x73B0;&#x6743;&#x91CD;&#x5206;&#x914D;</p>
+</li>
+<li><p>&#x4FEE;&#x6539;PTF&#x6D4B;&#x8BD5;&#x9A8C;&#x8BC1;&#x6743;&#x91CD;&#x5206;&#x5E03;</p>
+</li>
+</ul>
+<h3 id="&#x8D44;&#x6E90;&#x5206;&#x6790;">&#x8D44;&#x6E90;&#x5206;&#x6790;</h3>
+<ul>
+<li><p>&#x5BF9;&#x6BD4;&#x53EF;&#x89C6;&#x5316;&#x7ED3;&#x679C;&#xFF0C;&#x89C2;&#x5BDF;&#x65B0;&#x589E;&#x8D44;&#x6E90;&#x4F7F;&#x7528;&#x60C5;&#x51B5;</p>
+</li>
+<li><p>&#x7279;&#x522B;&#x6CE8;&#x610F;action profile&#x548C;selector&#x7684;&#x8D44;&#x6E90;&#x5360;&#x7528;&#x3002;</p>
+</li>
+</ul>
+<h3 id="&#x5B9E;&#x9A8C;&#x63D0;&#x793A;">&#x5B9E;&#x9A8C;&#x63D0;&#x793A;</h3>
+<ul>
+<li><p>&#x54C8;&#x5E0C;&#x5B57;&#x6BB5;&#x9009;&#x62E9;&#x5E94;&#x8003;&#x8651;&#x5B9E;&#x9645;&#x6D41;&#x91CF;&#x7279;&#x5F81;</p>
+</li>
+<li><p>&#x6D4B;&#x8BD5;&#x65F6;&#x6CE8;&#x610F;&#x89C2;&#x5BDF;&#x4E0D;&#x540C;&#x6D41;&#x7C7B;&#x578B;&#x7684;&#x5206;&#x5E03;&#x5747;&#x5300;&#x6027;</p>
+</li>
+<li><p>&#x6743;&#x91CD;&#x5B9E;&#x73B0;&#x65F6;&#x6CE8;&#x610F;&#x6210;&#x5458;&#x914D;&#x7F6E;&#x6BD4;&#x4F8B;</p>
+</li>
+</ul>
+<p>&#x901A;&#x8FC7;&#x672C;&#x5B9E;&#x9A8C;&#xFF0C;&#x60A8;&#x5C06;&#x638C;&#x63E1;&#x73B0;&#x4EE3;&#x4EA4;&#x6362;&#x82AF;&#x7247;&#x5B9E;&#x73B0;&#x9AD8;&#x7EA7;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x529F;&#x80FD;&#x7684;&#x6838;&#x5FC3;&#x6280;&#x672F;&#x3002;</p>
+<h2 id="simplel3mcast">simple_l3_mcast</h2>
+<h3 id="&#x5B9E;&#x9A8C;&#x76EE;&#x6807;">&#x5B9E;&#x9A8C;&#x76EE;&#x6807;</h3>
+<p>&#x5B66;&#x4E60;&#x4F7F;&#x7528;Tofino&#x7684;PRE(&#x6570;&#x636E;&#x5305;&#x590D;&#x5236;&#x5F15;&#x64CE;)&#x5B9E;&#x73B0;&#x7EC4;&#x64AD;&#x529F;&#x80FD;&#xFF0C;&#x638C;&#x63E1;&#x4ECE;&#x5165;&#x7AD9;&#x63A7;&#x5236;&#x5230;&#x51FA;&#x7AD9;&#x5904;&#x7406;&#x7684;&#x5B8C;&#x6574;&#x7EC4;&#x64AD;&#x5DE5;&#x4F5C;&#x6D41;&#x3002;</p>
+<h3 id="&#x6838;&#x5FC3;&#x5B9E;&#x73B0;&#x6B65;&#x9AA4;">&#x6838;&#x5FC3;&#x5B9E;&#x73B0;&#x6B65;&#x9AA4;</h3>
+<ol>
+<li>&#x5165;&#x7AD9;&#x63A7;&#x5236;&#x5C42;&#x914D;&#x7F6E;
+```P4
+// &#x5728;ipv4_host&#x548C;ipv4_lpm&#x8868;&#x4E2D;&#x6DFB;&#x52A0;&#x7EC4;&#x64AD;&#x52A8;&#x4F5C;
+action set_multicast(bit<16> mcast_grp) {
+ ig_intr_md_for_tm.mcast_grp_a = mcast_grp;
+}</16></li>
+</ol>
+<p>// &#x8868;&#x9879;&#x5339;&#x914D;&#x65F6;&#x8C03;&#x7528;&#x7EC4;&#x64AD;&#x52A8;&#x4F5C;
+table ipv4_lpm {
+    actions = {
+        set_multicast;  // &#x65B0;&#x589E;&#x7EC4;&#x64AD;&#x52A8;&#x4F5C;
+        ipv4_forward;
+        drop;
+    }
+    // ...&#x5176;&#x4ED6;&#x914D;&#x7F6E;
+}</p>
+<pre><code>
+2. PRE&#x5F15;&#x64CE;&#x7F16;&#x7A0B;
+&#x4F7F;&#x7528;Python&#x63A7;&#x5236;&#x5E73;&#x9762;API&#x914D;&#x7F6E;&#x7EC4;&#x64AD;&#x7EC4;
+```python
+# &#x521B;&#x5EFA;&#x7EC4;&#x64AD;&#x7EC4;
+mc.conn_mgr.mc.create_group(device, mc_group_id)
+
+# &#x521B;&#x5EFA;&#x7EC4;&#x64AD;&#x8282;&#x70B9;(&#x6CE8;&#x610F;&#x7AEF;&#x53E3;&#x53F7;&#x8F6C;&#x6362;)
+port_list = [devport_to_mcport(p) for p in target_ports]
+mc_bitmap = devports_to_mcbitmap(port_list)
+mc.conn_mgr.mc.create_node(device, rid, mc_bitmap)
+
+# &#x5173;&#x8054;&#x8282;&#x70B9;&#x4E0E;&#x7EC4;
+mc.conn_mgr.mc.associate_node(device, mc_group_id, rid)
+</code></pre><p>3.&#x51FA;&#x7AD9;&#x5904;&#x7406;&#x4F18;&#x5316;</p>
+<pre><code class="lang-P4">// &#x4F7F;&#x7528;&#x51FA;&#x7AD9;&#x5143;&#x6570;&#x636E;&#x533A;&#x5206;&#x4E0D;&#x540C;&#x590D;&#x5236;&#x5305;
+control Egress(...) {
+    action modify_based_on_rid(bit&lt;16&gt; rid) {
+        // &#x6839;&#x636E;rid&#x8FDB;&#x884C;&#x4E0D;&#x540C;&#x4FEE;&#x6539;
+    }
+
+    table egress_processing {
+        key = {
+            eg_intr_md.egress_rid : exact;
+            eg_intr_md.egress_port : exact;
+        }
+        actions = { modify_based_on_rid; ... }
+    }
+
+    apply {
+        if(eg_intr_md.egress_rid_first) {
+            // &#x7EC4;&#x64AD;&#x7EC4;&#x7EA7;&#x522B;&#x7684;&#x8BA1;&#x6570;&#x5904;&#x7406;
+        }
+        egress_processing.apply();
+    }
+}
+</code></pre>
+<h3 id="&#x5173;&#x952E;&#x95EE;&#x9898;&#x89E3;&#x51B3;&#x65B9;&#x6848;">&#x5173;&#x952E;&#x95EE;&#x9898;&#x89E3;&#x51B3;&#x65B9;&#x6848;</h3>
+<ol>
+<li><p>&#x6821;&#x9A8C;&#x548C;&#x95EE;&#x9898;&#x4FEE;&#x590D;</p>
+<pre><code class="lang-P4">control Egress(...) {
+ apply {
+     if(ig_intr_md_for_tm.mcast_grp_a != 0) {
+         // &#x7EC4;&#x64AD;&#x5305;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x6821;&#x9A8C;&#x548C;
+         ipv4.hdrChecksum = ipv4_checksum.update();
+         if(udp.isValid()) {
+             udp.checksum = udp_checksum.update();
+         }
+     }
+ }
+}
+</code></pre>
+</li>
+<li><p>LAG&#x5B9E;&#x73B0;&#x8FDB;&#x9636;</p>
+</li>
+<li>PRE&#x5C42;LAG&#x914D;&#x7F6E;
+```python<h1 id="&#x521B;&#x5EFA;lag&#x7EC4;">&#x521B;&#x5EFA;LAG&#x7EC4;</h1>
+mc.conn_mgr.mc.create_lag(device, lag_id)</li>
+</ol>
+<h1 id="&#x6DFB;&#x52A0;&#x6210;&#x5458;&#x7AEF;&#x53E3;">&#x6DFB;&#x52A0;&#x6210;&#x5458;&#x7AEF;&#x53E3;</h1>
+<p>for port in lag_members:
+    mc_port = devport_to_mcport(port)
+    mc.conn_mgr.mc.create_lag_member(device, lag_id, mc_port)</p>
+<pre><code>
+- P4&#x7A0B;&#x5E8F;&#x9700;&#x8981;&#x76F8;&#x5E94;&#x4FEE;&#x6539;&#xFF1A;
+1. &#x6DFB;&#x52A0;LAG&#x9009;&#x62E9;&#x903B;&#x8F91;
+2. &#x53EF;&#x80FD;&#x9700;&#x8981;&#x989D;&#x5916;&#x7684;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x54C8;&#x5E0C;&#x8BA1;&#x7B97;
+
+### &#x5B9E;&#x9A8C;&#x5EFA;&#x8BAE;
+1. &#x7AEF;&#x53E3;&#x53F7;&#x8F6C;&#x6362;&#x5DE5;&#x5177;
+```python
+from run_pd_rpc import devport_to_mcport, devports_to_mcbitmap
+
+# &#x793A;&#x4F8B;&#x8F6C;&#x6362;
+mc_port = devport_to_mcport(128)  # &#x7BA1;&#x9053;0&#x7AEF;&#x53E3;0
+bitmap = devports_to_mcbitmap([1, 2, 3])
+</code></pre><ol>
+<li>&#x8C03;&#x8BD5;&#x6280;&#x5DE7;</li>
+<li>&#x4F7F;&#x7528;egress_rid_first&#x6807;&#x8BC6;&#x9996;&#x5305;&#x8FDB;&#x884C;&#x7EC4;&#x7EA7;&#x7EDF;&#x8BA1;</li>
+<li><p>&#x901A;&#x8FC7;bfshell&#x7684;tm.mc&#x547D;&#x4EE4;&#x67E5;&#x770B;PRE&#x72B6;&#x6001;</p>
+</li>
+<li><p>&#x6D41;&#x91CF;&#x89C2;&#x5BDF;</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># &#x5728;bfshell&#x4E2D;&#x67E5;&#x770B;&#x7EC4;&#x64AD;&#x7EDF;&#x8BA1;</span>
+bfshell&gt; tm.mc.group_stats_get &lt;group_id&gt;
+</code></pre>
+</li>
+</ol>
+<p>&#x901A;&#x8FC7;&#x672C;&#x5B9E;&#x9A8C;&#xFF0C;&#x60A8;&#x5C06;&#x6DF1;&#x5165;&#x7406;&#x89E3;Tofino&#x82AF;&#x7247;&#x7684;&#x7EC4;&#x64AD;&#x5904;&#x7406;&#x67B6;&#x6784;&#xFF0C;&#x638C;&#x63E1;&#x4ECE;&#x6570;&#x636E;&#x5E73;&#x9762;&#x5230;&#x63A7;&#x5236;&#x5E73;&#x9762;&#x7684;&#x5B8C;&#x6574;&#x7EC4;&#x64AD;&#x5B9E;&#x73B0;&#x65B9;&#x6848;&#x3002;</p>
+<h2 id="simplel3mirror">simple_l3_mirror</h2>
+<h3 id="&#x5B9E;&#x9A8C;&#x76EE;&#x6807;">&#x5B9E;&#x9A8C;&#x76EE;&#x6807;</h3>
+<p>&#x638C;&#x63E1;Tofino&#x8BBE;&#x5907;&#x7684;&#x955C;&#x50CF;&#x529F;&#x80FD;&#xFF0C;&#x5B9E;&#x73B0;&#x6570;&#x636E;&#x5305;&#x7684;&#x955C;&#x50CF;&#x590D;&#x5236;&#xFF08;&#x7528;&#x4E8E;&#x8FDC;&#x7A0B;&#x89C2;&#x6D4B;&#x6216;&#x53D1;&#x9001;&#x81F3;CPU&#xFF09;.</p>
+<h3 id="&#x6838;&#x5FC3;&#x5B9E;&#x73B0;&#x6B65;&#x9AA4;">&#x6838;&#x5FC3;&#x5B9E;&#x73B0;&#x6B65;&#x9AA4;</h3>
+<ol>
+<li>&#x57FA;&#x7840;&#x955C;&#x50CF;&#x914D;&#x7F6E;&#xFF08;&#x5165;&#x53E3;&#x955C;&#x50CF;&#xFF09;
+```p4
+// &#x5B9A;&#x4E49;&#x955C;&#x50CF;&#x4F1A;&#x8BDD;&#x52A8;&#x4F5C;
+action mirror_packet(mirror_id_t session_id) {
+ ig_intr_md.force_mirror = true;
+ ig_intr_md.mirror_session_id = session_id;
+}</li>
+</ol>
+<p>// &#x5728;&#x9700;&#x8981;&#x955C;&#x50CF;&#x7684;&#x8868;&#x9879;&#x4E2D;&#x8C03;&#x7528;
+table monitor_table {
+    actions = {
+        mirror_packet;
+        normal_forwarding;
+        drop;
+    }
+    // ... &#x8868;&#x914D;&#x7F6E;
+}</p>
+<pre><code>
+2. &#x51FA;&#x53E3;&#x955C;&#x50CF;&#x6269;&#x5C55;&#x5B9E;&#x73B0;&#xFF08;&#x8FDB;&#x9636;&#xFF09;
+```P4
+// &#x4F7F;&#x7528;clone_e2e&#x5B9E;&#x73B0;&#x51FA;&#x53E3;&#x955C;&#x50CF;
+action egress_mirror(mirror_id_t session_id) {
+    eg_intr_md_for_tm.mirror_session = session_id;
+    eg_intr_md_for_tm.mirror_enable = true;
+}
+
+control Egress(...) {
+    apply {
+        if(/* &#x955C;&#x50CF;&#x6761;&#x4EF6; */) {
+            egress_mirror(MIRROR_SESSION_EGRESS);
+        }
+    }
+}
+</code></pre><ol>
+<li>&#x63A7;&#x5236;&#x5E73;&#x9762;&#x914D;&#x7F6E;&#x793A;&#x4F8B;
+```python<h1 id="&#x914D;&#x7F6E;&#x955C;&#x50CF;&#x4F1A;&#x8BDD;">&#x914D;&#x7F6E;&#x955C;&#x50CF;&#x4F1A;&#x8BDD;</h1>
+def setup_mirror_session(conn_mgr, session_id, dest_port, dir=&quot;INGRESS&quot;):
+ if dir == &quot;INGRESS&quot;:<pre><code> conn_mgr.mirror.session_create(
+     session_id,
+     destination_port=dest_port,
+     direction=conn_mgr.mirror.DIRECTION_INGRESS
+ )
+</code></pre> else:<pre><code> # &#x51FA;&#x53E3;&#x955C;&#x50CF;&#x9700;&#x8981;&#x989D;&#x5916;&#x914D;&#x7F6E;
+ conn_mgr.mirror.session_create(
+     session_id,
+     destination_port=dest_port,
+     direction=conn_mgr.mirror.DIRECTION_EGRESS,
+     egress_type=conn_mgr.mirror.EGRESS_TYPE_TRUE
+ )
+</code></pre></li>
+</ol>
+<h1 id="&#x8C03;&#x7528;&#x793A;&#x4F8B;">&#x8C03;&#x7528;&#x793A;&#x4F8B;</h1>
+<p>setup_mirror_session(conn_mgr, 1, 128)  # &#x5165;&#x53E3;&#x955C;&#x50CF;&#x5230;&#x7AEF;&#x53E3;128
+setup_mirror_session(conn_mgr, 2, 129, &quot;EGRESS&quot;) # &#x51FA;&#x53E3;&#x955C;&#x50CF;</p>
+<pre><code>
+4. &#x955C;&#x50CF;&#x6570;&#x636E;&#x5305;&#x5904;&#x7406;&#x8981;&#x70B9;
+- &#x5143;&#x6570;&#x636E;&#x4FDD;&#x7559;&#xFF1A;&#x955C;&#x50CF;&#x5305;&#x4F1A;&#x4FDD;&#x7559;&#x539F;&#x59CB;&#x5305;&#x7684;&#x5143;&#x6570;&#x636E;
+
+- &#x6027;&#x80FD;&#x5F71;&#x54CD;&#xFF1A;&#x9AD8;&#x9891;&#x955C;&#x50CF;&#x53EF;&#x80FD;&#x5F71;&#x54CD;&#x8F6C;&#x53D1;&#x6027;&#x80FD;
+
+- &#x591A;&#x5C42;&#x955C;&#x50CF;&#xFF1A;&#x652F;&#x6301;&#x5D4C;&#x5957;&#x955C;&#x50CF;&#xFF08;&#x955C;&#x50CF;&#x7684;&#x955C;&#x50CF;&#xFF09;
+
+### &#x9A8C;&#x8BC1;&#x65B9;&#x6CD5;
+1. &#x7AEF;&#x53E3;&#x7EDF;&#x8BA1;&#x68C0;&#x67E5;
+
+```bash
+bfshell&gt; pm show
+# &#x89C2;&#x5BDF;&#x76EE;&#x6807;&#x955C;&#x50CF;&#x7AEF;&#x53E3;&#x7684;RX&#x8BA1;&#x6570;&#x589E;&#x957F;
+</code></pre><ol>
+<li>&#x6570;&#x636E;&#x5305;&#x6355;&#x83B7;</li>
+</ol>
+<pre><code class="lang-bash"><span class="hljs-comment"># &#x5728;&#x955C;&#x50CF;&#x76EE;&#x6807;&#x7AEF;&#x53E3;&#x6293;&#x5305;</span>
+tcpdump -i eth1 -nn -w mirror.pcap
+</code></pre>
+<h3 id="&#x8FDB;&#x9636;&#x5B9E;&#x9A8C;&#x5EFA;&#x8BAE;">&#x8FDB;&#x9636;&#x5B9E;&#x9A8C;&#x5EFA;&#x8BAE;</h3>
+<ul>
+<li><p>&#x6761;&#x4EF6;&#x955C;&#x50CF;&#xFF1A;&#x57FA;&#x4E8E;&#x7279;&#x5B9A;&#x6D41;&#x7279;&#x5F81;&#x89E6;&#x53D1;&#x955C;&#x50CF;</p>
+</li>
+<li><p>&#x91C7;&#x6837;&#x955C;&#x50CF;&#xFF1A;&#x6BCF;N&#x4E2A;&#x5305;&#x955C;&#x50CF;1&#x4E2A;&#xFF08;&#x4F7F;&#x7528;&#x5BC4;&#x5B58;&#x5668;&#x5B9E;&#x73B0;&#x8BA1;&#x6570;&#xFF09;</p>
+</li>
+<li><p>CPU&#x955C;&#x50CF;&#xFF1A;&#x914D;&#x7F6E;&#x955C;&#x50CF;&#x76EE;&#x6807;&#x4E3A;CPU&#x7AEF;&#x53E3;</p>
+</li>
+</ul>
+<p>&#x901A;&#x8FC7;&#x672C;&#x5B9E;&#x9A8C;&#xFF0C;&#x60A8;&#x5C06;&#x638C;&#x63E1;&#x6570;&#x636E;&#x5E73;&#x9762;&#x53EF;&#x7F16;&#x7A0B;&#x955C;&#x50CF;&#x7684;&#x6838;&#x5FC3;&#x6280;&#x672F;&#xFF0C;&#x4E3A;&#x7F51;&#x7EDC;&#x76D1;&#x63A7;&#x548C;&#x6545;&#x969C;&#x6392;&#x67E5;&#x63D0;&#x4F9B;&#x5F3A;&#x5927;&#x5DE5;&#x5177;&#x3002;</p>
+<h2 id="simplel2">simple_l2</h2>
+<h3 id="&#x5B9E;&#x9A8C;&#x76EE;&#x6807;">&#x5B9E;&#x9A8C;&#x76EE;&#x6807;</h3>
+<p>&#x5F00;&#x53D1;&#x9AD8;&#x7EA7;API&#x6765;&#x52A8;&#x6001;&#x63A7;&#x5236;&#x4E00;&#x4E2A;&#x652F;&#x6301;VLAN&#x7684;&#x7B80;&#x6613;L2&#x8F6C;&#x53D1;&#x5E73;&#x9762;&#xFF0C;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<ul>
+<li><p>MAC&#x5730;&#x5740;&#x5B66;&#x4E60;</p>
+</li>
+<li><p>&#x8001;&#x5316;&#x673A;&#x5236;</p>
+</li>
+<li><p>VLAN&#x5185;&#x672A;&#x77E5;&#x5730;&#x5740;&#x7684;&#x6CDB;&#x6D2A;</p>
+</li>
+</ul>
+<h3 id="&#x6838;&#x5FC3;&#x67B6;&#x6784;">&#x6838;&#x5FC3;&#x67B6;&#x6784;</h3>
+<ol>
+<li>&#x6570;&#x636E;&#x5E73;&#x9762;&#x5173;&#x952E;&#x7EC4;&#x4EF6;</li>
+</ol>
+<pre><code class="lang-p4">#define AGEING_TIME 300  // 300&#x79D2;&#x8001;&#x5316;&#x65F6;&#x95F4;
+
+table mac_learning_table {
+    key = {
+        vlan.vid : exact;
+        ethernet.srcAddr : exact;
+    }
+    actions = {
+        update_timestamp;
+        no_op;
+    }
+}
+
+table mac_forwarding_table {
+    key = {
+        vlan.vid : exact;
+        ethernet.dstAddr : exact;
+    }
+    actions = {
+        forward_to_port;
+        flood_in_vlan;  // VLAN&#x5185;&#x6CDB;&#x6D2A;
+        send_to_cpu;    // &#x7279;&#x6B8A;&#x5904;&#x7406;
+    }
+    const default_action = flood_in_vlan;
+}
+</code></pre>
+<ol>
+<li>&#x63A7;&#x5236;&#x5E73;&#x9762;API&#x8BBE;&#x8BA1;</li>
+</ol>
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">L2Controller</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, bfrt_info)</span>:</span>
+        <span class="hljs-comment"># &#x521D;&#x59CB;&#x5316;&#x8868;&#x5BF9;&#x8C61;</span>
+        self.mac_table = bfrt_info.table_get(<span class="hljs-string">&quot;mac_forwarding_table&quot;</span>)
+        self.learn_table = bfrt_info.table_get(<span class="hljs-string">&quot;mac_learning_table&quot;</span>)
+
+        <span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x8001;&#x5316;&#x7EBF;&#x7A0B;</span>
+        self.ageing_thread = threading.Thread(target=self._age_entries)
+        self.ageing_thread.daemon = <span class="hljs-keyword">True</span>
+        self.ageing_thread.start()
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_age_entries</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;&#x540E;&#x53F0;&#x8001;&#x5316;&#x7EBF;&#x7A0B;&quot;&quot;&quot;</span>
+        <span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:
+            time.sleep(<span class="hljs-number">60</span>)  <span class="hljs-comment"># &#x6BCF;&#x5206;&#x949F;&#x68C0;&#x67E5;&#x4E00;&#x6B21;</span>
+            self._remove_stale_entries()
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add_static_entry</span><span class="hljs-params">(self, vlan, mac, port)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;&#x6DFB;&#x52A0;&#x9759;&#x6001;&#x8F6C;&#x53D1;&#x8868;&#x9879;&quot;&quot;&quot;</span>
+        self.mac_table.entry_add(
+            [self.mac_table.make_key(
+                KeyTuple(<span class="hljs-string">&apos;vlan.vid&apos;</span>, vlan),
+                KeyTuple(<span class="hljs-string">&apos;ethernet.dstAddr&apos;</span>, mac)
+            ],
+            [self.mac_table.make_data(
+                DataTuple(<span class="hljs-string">&apos;port&apos;</span>, port))
+            ]
+        )
+</code></pre>
+<h3 id="&#x5173;&#x952E;&#x5B9E;&#x73B0;&#x673A;&#x5236;">&#x5173;&#x952E;&#x5B9E;&#x73B0;&#x673A;&#x5236;</h3>
+<ol>
+<li><p>MAC&#x5B66;&#x4E60;&#x6D41;&#x7A0B;</p>
+<pre><code class="lang-P4">control Ingress {
+ apply {``
+     if (ethernet.isValid() &amp;&amp; vlan.isValid()) {
+         // &#x6E90;MAC&#x5B66;&#x4E60;
+         mac_learning_table.apply();
+
+         // &#x76EE;&#x6807;MAC&#x67E5;&#x627E;
+         mac_forwarding_table.apply();
+     }
+ }
+}
+</code></pre>
+</li>
+<li><p>&#x8001;&#x5316;&#x673A;&#x5236;&#x5B9E;&#x73B0;</p>
+</li>
+</ol>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_remove_stale_entries</span><span class="hljs-params">(self)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;&#x5220;&#x9664;&#x8D85;&#x65F6;&#x8868;&#x9879;&quot;&quot;&quot;</span>
+    now = time.time()
+    resp = self.learn_table.entry_get()
+
+    <span class="hljs-keyword">for</span> entry <span class="hljs-keyword">in</span> resp:
+        vlan = entry.key[<span class="hljs-string">&apos;vlan.vid&apos;</span>]
+        mac = entry.key[<span class="hljs-string">&apos;ethernet.srcAddr&apos;</span>]
+        timestamp = entry.data[<span class="hljs-string">&apos;timestamp&apos;</span>]
+
+        <span class="hljs-keyword">if</span> now - timestamp &gt; AGEING_TIME:
+            self.mac_table.entry_del(
+                [self.mac_table.make_key(
+                    KeyTuple(<span class="hljs-string">&apos;vlan.vid&apos;</span>, vlan),
+                    KeyTuple(<span class="hljs-string">&apos;ethernet.dstAddr&apos;</span>, mac)
+                )]
+            )
+</code></pre>
+<h3 id="&#x5B9E;&#x73B0;&#x9A8C;&#x8BC1;&#x65B9;&#x6CD5;">&#x5B9E;&#x73B0;&#x9A8C;&#x8BC1;&#x65B9;&#x6CD5;</h3>
+<ol>
+<li>&#x57FA;&#x7840;&#x529F;&#x80FD;&#x6D4B;&#x8BD5;</li>
+</ol>
+<pre><code class="lang-bash"><span class="hljs-comment"># &#x6DFB;&#x52A0;&#x9759;&#x6001;&#x6761;&#x76EE;</span>
+python controller.py add-static 100 00:11:22:33:44:55 1
+
+<span class="hljs-comment"># &#x67E5;&#x770B;&#x8F6C;&#x53D1;&#x8868;</span>
+python controller.py show-table
+</code></pre>
+<ol>
+<li><p>&#x52A8;&#x6001;&#x5B66;&#x4E60;&#x9A8C;&#x8BC1;</p>
+</li>
+<li><p>&#x5728;&#x7AEF;&#x53E3;1&#x53D1;&#x9001;&#x6E90;MAC&#x4E3A;00:11:22:33:44:55&#x7684;&#x5305;</p>
+</li>
+<li><p>&#x68C0;&#x67E5;&#x8F6C;&#x53D1;&#x8868;&#x662F;&#x5426;&#x81EA;&#x52A8;&#x5B66;&#x4E60;</p>
+</li>
+<li><p>5&#x5206;&#x949F;&#x540E;&#x9A8C;&#x8BC1;&#x8001;&#x5316;&#x673A;&#x5236;&#x662F;&#x5426;&#x751F;&#x6548;</p>
+</li>
+</ol>
+<h3 id="&#x8FDB;&#x9636;&#x5B9E;&#x9A8C;&#x5EFA;&#x8BAE;">&#x8FDB;&#x9636;&#x5B9E;&#x9A8C;&#x5EFA;&#x8BAE;</h3>
+<ul>
+<li><p>VLAN&#x9694;&#x79BB;&#x6D4B;&#x8BD5;&#xFF1A;&#x9A8C;&#x8BC1;&#x4E0D;&#x540C;VLAN&#x7684;&#x5E7F;&#x64AD;&#x57DF;&#x9694;&#x79BB;</p>
+</li>
+<li><p>&#x6027;&#x80FD;&#x4F18;&#x5316;&#xFF1A;&#x5B9E;&#x73B0;&#x6279;&#x91CF;&#x8001;&#x5316;&#x64CD;&#x4F5C;&#x51CF;&#x5C11;&#x63A7;&#x5236;&#x5E73;&#x9762;&#x8D1F;&#x8F7D;</p>
+</li>
+<li><p>&#x5B89;&#x5168;&#x6269;&#x5C55;&#xFF1A;&#x6DFB;&#x52A0;MAC&#x9632;&#x6F02;&#x79FB;&#x4FDD;&#x62A4;&#x673A;&#x5236;</p>
+</li>
+</ul>
+<p>&#x8FD9;&#x4E2A;&#x5B9E;&#x9A8C;&#x6846;&#x67B6;&#x63D0;&#x4F9B;&#x4E86;L2&#x7F51;&#x7EDC;&#x7684;&#x6838;&#x5FC3;&#x529F;&#x80FD;&#xFF0C;&#x53EF;&#x4F5C;&#x4E3A;&#x66F4;&#x590D;&#x6742;&#x529F;&#x80FD;&#x7684;&#x5F00;&#x53D1;&#x57FA;&#x7840;&#x3002;&#x901A;&#x8FC7;&#x5B9E;&#x8DF5;&#x5C06;&#x6DF1;&#x5165;&#x7406;&#x89E3;&#x4EA4;&#x6362;&#x82AF;&#x7247;&#x7684;&#x6570;&#x636E;&#x5E73;&#x9762;&#x7F16;&#x7A0B;&#x8303;&#x5F0F;&#x3002;</p>
+<h2 id="simplel3vrf">simple_l3_vrf</h2>
+<h3 id="&#x961F;&#x5217;&#x7BA1;&#x7406;lab">&#x961F;&#x5217;&#x7BA1;&#x7406;lab</h3>
+<p>&#x76F8;&#x5173;&#x6587;&#x4EF6;&#xFF1A;</p>
+<p><code>BMv2</code></p>
+<ul>
+<li><p>Cache&#xFF1A;&#x7B97;&#x529B;&#x8C03;&#x5EA6;</p>
+</li>
+<li><p>Codel&#xFF1A;Codel&#x7B97;&#x6CD5;</p>
+</li>
+<li>NWHHD&#xFF1A;Count-Min Sketch&#x8BA1;&#x6570;</li>
+<li>PI&#xFF1A;PI&#x7B97;&#x6CD5;</li>
+<li>RED&#xFF1A;RED&#x7B97;&#x6CD5;</li>
+<li>aqm_v1/aqm_dqn&#xFF1A;AQM&#x7B97;&#x6CD5;</li>
+<li>cfn_bgp&#xFF1A;BGP&#x534F;&#x8BAE;&#x914D;&#x7F6E;</li>
+<li>multi_queue_v1&#xFF1A;&#x591A;&#x961F;&#x5217;&#x7BA1;&#x7406;&#x7B97;&#x6CD5;</li>
+</ul>
+<p><code>Tofino</code></p>
+<ul>
+<li>tofino_example&#xFF1A;&#x5B98;&#x65B9;&#x4EE3;&#x7801;&#x793A;&#x4F8B;</li>
+<li>tofino&#xFF1A;&#x786C;&#x4EF6;&#x4EA4;&#x6362;&#x673A;&#x547D;&#x4EE4;&#x3001;&#x4E09;&#x5C42;&#x8F6C;&#x53D1;&#x3001;&#x7B97;&#x529B;&#x8C03;&#x5EA6;</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="TableGen.html" class="navigation navigation-prev " aria-label="Previous page: TableGen 的用法">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="MLIR_Dialect.html" class="navigation navigation-next " aria-label="Next page: Dialect基础">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"P4基础","level":"1.4","depth":1,"next":{"title":"Dialect基础","level":"1.5","depth":1,"path":"MLIR_Dialect.md","ref":"MLIR_Dialect.md","articles":[]},"previous":{"title":"TableGen 的用法","level":"1.3","depth":1,"path":"TableGen.md","ref":"TableGen.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"}},"file":{"path":"P4tutorial.md","mtime":"2025-10-16T02:23:10.824Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-10-16T02:23:46.454Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

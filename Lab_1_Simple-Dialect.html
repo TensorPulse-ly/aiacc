@@ -1,0 +1,974 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Dialect入门一配套Lab1 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Lab_2_Simple-Dialect.html" />
+    
+    
+    <link rel="prev" href="MLIR_Dialect_Notes_module1.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Example_Page.html">
+            
+                <a href="Example_Page.html">
+            
+                    
+                    Example Page
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="TableGen.html">
+            
+                <a href="TableGen.html">
+            
+                    
+                    TableGen 的用法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="P4tutorial.html">
+            
+                <a href="P4tutorial.html">
+            
+                    
+                    P4基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="MLIR_Dialect.html">
+            
+                <a href="MLIR_Dialect.html">
+            
+                    
+                    Dialect基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="FIFO_study.html">
+            
+                <a href="FIFO_study.html">
+            
+                    
+                    FIFO学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="TPU_MLIR_study.html">
+            
+                <a href="TPU_MLIR_study.html">
+            
+                    
+                    TPU-MLIR代码学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="MLIR_Dialect_Notes_module1.html">
+            
+                <a href="MLIR_Dialect_Notes_module1.html">
+            
+                    
+                    Dialect入门一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.9" data-path="Lab_1_Simple-Dialect.html">
+            
+                <a href="Lab_1_Simple-Dialect.html">
+            
+                    
+                    Dialect入门一配套Lab1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="Lab_2_Simple-Dialect.html">
+            
+                <a href="Lab_2_Simple-Dialect.html">
+            
+                    
+                    Dialect入门一配套Lab2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="MLIR_Dialect_Notes_module2.html">
+            
+                <a href="MLIR_Dialect_Notes_module2.html">
+            
+                    
+                    Dialect入门二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="Lab_4_Builtin_Dialect.html">
+            
+                <a href="Lab_4_Builtin_Dialect.html">
+            
+                    
+                    Dialect入门二配套Lab4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="Lab_5_Arith.html">
+            
+                <a href="Lab_5_Arith.html">
+            
+                    
+                    Dialect入门二配套Lab5
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="Lab_6.html">
+            
+                <a href="Lab_6.html">
+            
+                    
+                    Dialect入门二配套Lab6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="Lab_7_mem.html">
+            
+                <a href="Lab_7_mem.html">
+            
+                    
+                    Dialect入门二配套Lab7
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="Lab_8_Tensor.html">
+            
+                <a href="Lab_8_Tensor.html">
+            
+                    
+                    Dialect入门二配套Lab8
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="Lab_9_Linalg.html">
+            
+                <a href="Lab_9_Linalg.html">
+            
+                    
+                    Dialect入门二配套Lab9
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="MLIR_Dialect_Notes_module3.html">
+            
+                <a href="MLIR_Dialect_Notes_module3.html">
+            
+                    
+                    Dialect入门三
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="Lab_10_Optimization.html">
+            
+                <a href="Lab_10_Optimization.html">
+            
+                    
+                    Dialect入门三配套Lab10
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="Lab_Project_Sheet.html">
+            
+                <a href="Lab_Project_Sheet.html">
+            
+                    
+                    TPU-MLIR Lab Project
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="FIFO_study.html">
+            
+                <a href="FIFO_study.html">
+            
+                    
+                    FIFO学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="TPU_MLIR_study.html">
+            
+                <a href="TPU_MLIR_study.html">
+            
+                    
+                    TPU-MLIR代码学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="Linux_Command_Line.html">
+            
+                <a href="Linux_Command_Line.html">
+            
+                    
+                    Linux系统(服务器)常用指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="shell_study.html">
+            
+                <a href="shell_study.html">
+            
+                    
+                    .sh文件解释/Shell脚本常用语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="VCS_coverage_report_read.html">
+            
+                <a href="VCS_coverage_report_read.html">
+            
+                    
+                    VCS_coverage_report_read
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" >
+            
+                <a target="_blank" href="https://github.com/seclabBupt/aiacc/blob/main/docs/TPU-MLIR%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%80%EF%BC%89.md">
+            
+                    
+                    TPU-MLIR学习记录（一）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" >
+            
+                <a target="_blank" href="https://github.com/seclabBupt/aiacc/blob/main/docs/TPU-MLIR%20%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%BA%8C%EF%BC%89.md">
+            
+                    
+                    TPU-MLIR学习记录（二）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" >
+            
+                <a target="_blank" href="https://github.com/seclabBupt/aiacc/blob/main/docs/TPU-MLIR%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%89%EF%BC%89.md">
+            
+                    
+                    TPU-MLIR学习记录（三）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Dialect入门一配套Lab1</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="lab-1-simple-dialect-&#x57FA;&#x7840;&#x4E0A;&#x624B;-mlir-&#x81EA;&#x5B9A;&#x4E49;-dialect">Lab 1 Simple-Dialect: &#x57FA;&#x7840;&#x4E0A;&#x624B; MLIR &#x81EA;&#x5B9A;&#x4E49; Dialect</h1>
+<h2 id="&#x5B9E;&#x9A8C;&#x76EE;&#x6807;">&#x5B9E;&#x9A8C;&#x76EE;&#x6807;</h2>
+<p>&#x901A;&#x8FC7;&#x672C;&#x5B9E;&#x9A8C;&#xFF0C;&#x4F60;&#x5C06;&#x5B66;&#x4F1A;&#xFF1A;</p>
+<ul>
+<li>&#x7406;&#x89E3; MLIR Dialect &#x7684;&#x57FA;&#x672C;&#x6982;&#x5FF5;&#x548C;&#x67B6;&#x6784;</li>
+<li>&#x638C;&#x63E1;&#x521B;&#x5EFA;&#x81EA;&#x5B9A;&#x4E49; Dialect &#x7684;&#x5B8C;&#x6574;&#x6D41;&#x7A0B;</li>
+<li>&#x5B66;&#x4F1A;&#x5B9A;&#x4E49;&#x81EA;&#x5B9A;&#x4E49;&#x64CD;&#x4F5C;&#xFF08;Operations&#xFF09;&#x5E76;&#x7406;&#x89E3;&#x5176;&#x7EC4;&#x6210;&#x90E8;&#x5206;</li>
+<li>&#x4E86;&#x89E3; MLIR &#x7684;&#x7F16;&#x8BD1;&#x548C;&#x6D4B;&#x8BD5;&#x6D41;&#x7A0B;</li>
+<li>&#x719F;&#x6089; MLIR &#x7684;&#x57FA;&#x672C;&#x5DE5;&#x5177;&#x94FE;&#x4F7F;&#x7528;</li>
+</ul>
+<h2 id="&#x524D;&#x7F6E;&#x6761;&#x4EF6;">&#x524D;&#x7F6E;&#x6761;&#x4EF6;</h2>
+<ul>
+<li>&#x5DF2;&#x5B89;&#x88C5; LLVM/MLIR &#x5DE5;&#x5177;&#x94FE;&#xFF08;&#x7248;&#x672C; 15 &#x6216;&#x66F4;&#x9AD8;&#xFF09;</li>
+<li>&#x80FD;&#x591F;&#x6210;&#x529F;&#x8FD0;&#x884C; <code>mlir-opt</code> &#x547D;&#x4EE4;</li>
+<li>&#x57FA;&#x672C;&#x7684; C++ &#x7F16;&#x7A0B;&#x77E5;&#x8BC6;</li>
+<li>&#x719F;&#x6089;&#x547D;&#x4EE4;&#x884C;&#x64CD;&#x4F5C;</li>
+</ul>
+<h2 id="&#x5B9E;&#x9A8C;&#x5185;&#x5BB9;">&#x5B9E;&#x9A8C;&#x5185;&#x5BB9;</h2>
+<h3 id="&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x9A8C;&#x8BC1;&#x57FA;&#x7840;&#x73AF;&#x5883;">&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x9A8C;&#x8BC1;&#x57FA;&#x7840;&#x73AF;&#x5883;</h3>
+<p>&#x5728;&#x5F00;&#x59CB;&#x7F16;&#x5199;&#x81EA;&#x5B9A;&#x4E49; Dialect &#x4E4B;&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x786E;&#x8BA4; MLIR &#x73AF;&#x5883;&#x662F;&#x5426;&#x6B63;&#x786E;&#x5B89;&#x88C5;&#x548C;&#x914D;&#x7F6E;&#x3002;</p>
+<p><strong>&#x4EFB;&#x52A1;&#x8BF4;&#x660E;&#xFF1A;</strong></p>
+<ol>
+<li>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684; MLIR &#x6587;&#x4EF6;</li>
+<li>&#x4F7F;&#x7528; <code>mlir-opt</code> &#x9A8C;&#x8BC1;&#x8BED;&#x6CD5;</li>
+<li>&#x5C1D;&#x8BD5;&#x8F6C;&#x6362;&#x4E3A; LLVM IR</li>
+</ol>
+<p><strong>&#x64CD;&#x4F5C;&#x6B65;&#x9AA4;&#xFF1A;</strong></p>
+<pre><code class="lang-bash"><span class="hljs-comment"># &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6D4B;&#x8BD5;&#x7528;&#x7684; MLIR &#x6587;&#x4EF6;</span>
+cat &gt; hello.mlir &lt;&lt; <span class="hljs-string">&apos;EOF&apos;</span>
+module {
+  func.func @main() -&gt; i32 {
+    %0 = arith.constant 42 : i32
+    <span class="hljs-built_in">return</span> %0 : i32
+  }
+}
+EOF
+
+<span class="hljs-comment"># &#x9A8C;&#x8BC1;&#x8BED;&#x6CD5;&#x662F;&#x5426;&#x6B63;&#x786E;</span>
+mlir-opt hello.mlir
+
+<span class="hljs-comment"># &#x5C1D;&#x8BD5;&#x8F6C;&#x6362;&#x4E3A; LLVM IR</span>
+mlir-opt --convert-func-to-llvm --convert-arith-to-llvm --reconcile-unrealized-casts hello.mlir | mlir-translate --mlir-to-llvmir
+</code></pre>
+<p><strong>&#x671F;&#x671B;&#x7ED3;&#x679C;&#xFF1A;</strong></p>
+<ul>
+<li>&#x5982;&#x679C;&#x73AF;&#x5883;&#x914D;&#x7F6E;&#x6B63;&#x786E;&#xFF0C;&#x4F60;&#x5E94;&#x8BE5;&#x80FD;&#x770B;&#x5230; LLVM IR &#x8F93;&#x51FA;</li>
+<li>&#x5982;&#x679C;&#x51FA;&#x73B0;&#x9519;&#x8BEF;&#xFF0C;&#x8BF7;&#x68C0;&#x67E5; LLVM/MLIR &#x7684;&#x5B89;&#x88C5;&#x8DEF;&#x5F84;</li>
+</ul>
+<h3 id="&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x7406;&#x89E3;&#x6211;&#x4EEC;&#x8981;&#x5B9E;&#x73B0;&#x7684;&#x76EE;&#x6807;">&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x7406;&#x89E3;&#x6211;&#x4EEC;&#x8981;&#x5B9E;&#x73B0;&#x7684;&#x76EE;&#x6807;</h3>
+<p><strong>&#x4EFB;&#x52A1;&#x8BF4;&#x660E;&#xFF1A;</strong>
+&#x6211;&#x4EEC;&#x5C06;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x540D;&#x4E3A; <code>simple</code> &#x7684; Dialect&#xFF0C;&#x5B83;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684; <code>hello</code> &#x64CD;&#x4F5C;&#x3002;</p>
+<p><strong>&#x76EE;&#x6807;&#x6548;&#x679C;&#xFF1A;</strong></p>
+<pre><code class="lang-mlir">module {
+  simple.hello
+}
+</code></pre>
+<p><strong>&#x5173;&#x952E;&#x6982;&#x5FF5;&#x7406;&#x89E3;&#xFF1A;</strong></p>
+<ul>
+<li><code>simple</code> &#x662F;&#x6211;&#x4EEC; Dialect &#x7684;&#x540D;&#x79F0;&#x7A7A;&#x95F4;</li>
+<li><code>hello</code> &#x662F;&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x7684;&#x64CD;&#x4F5C;&#x540D;</li>
+<li>&#x8FD9;&#x4E2A;&#x64CD;&#x4F5C;&#x4E0D;&#x63A5;&#x53D7;&#x4EFB;&#x4F55;&#x8F93;&#x5165;&#xFF0C;&#x4E5F;&#x4E0D;&#x4EA7;&#x751F;&#x4EFB;&#x4F55;&#x8F93;&#x51FA;</li>
+<li>&#x5B83;&#x7684;&#x552F;&#x4E00;&#x4F5C;&#x7528;&#x662F;&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#x88AB;&#x8BC6;&#x522B;&#x4E3A;&#x6709;&#x6548;&#x7684; MLIR &#x64CD;&#x4F5C;</li>
+</ul>
+<h3 id="&#x7B2C;&#x4E09;&#x6B65;&#xFF1A;&#x521B;&#x5EFA;&#x9879;&#x76EE;&#x7ED3;&#x6784;">&#x7B2C;&#x4E09;&#x6B65;&#xFF1A;&#x521B;&#x5EFA;&#x9879;&#x76EE;&#x7ED3;&#x6784;</h3>
+<p><strong>&#x4EFB;&#x52A1;&#x8BF4;&#x660E;&#xFF1A;</strong>
+&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x6E05;&#x6670;&#x7684;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#xFF0C;&#x4E3A;&#x540E;&#x7EED;&#x5F00;&#x53D1;&#x505A;&#x51C6;&#x5907;&#x3002;</p>
+<p><strong>&#x64CD;&#x4F5C;&#x6B65;&#x9AA4;&#xFF1A;</strong></p>
+<pre><code class="lang-bash"><span class="hljs-comment"># &#x521B;&#x5EFA;&#x4E3B;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;</span>
+mkdir simple-dialect &amp;&amp; <span class="hljs-built_in">cd</span> simple-dialect
+
+<span class="hljs-comment"># &#x521B;&#x5EFA;&#x6211;&#x4EEC;&#x7684;&#x76EE;&#x6807;&#x6D4B;&#x8BD5;&#x6587;&#x4EF6;</span>
+cat &gt; simple.mlir &lt;&lt; <span class="hljs-string">&apos;EOF&apos;</span>
+module {
+  simple.hello
+}
+EOF
+</code></pre>
+<h3 id="&#x7B2C;&#x56DB;&#x6B65;&#xFF1A;&#x7406;&#x89E3;-dialect-&#x7684;&#x7EC4;&#x6210;&#x90E8;&#x5206;">&#x7B2C;&#x56DB;&#x6B65;&#xFF1A;&#x7406;&#x89E3; Dialect &#x7684;&#x7EC4;&#x6210;&#x90E8;&#x5206;</h3>
+<p><strong>&#x4EFB;&#x52A1;&#x8BF4;&#x660E;&#xFF1A;</strong>
+&#x5728;&#x5F00;&#x59CB;&#x7F16;&#x7801;&#x524D;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7406;&#x89E3;&#x4E00;&#x4E2A; MLIR Dialect &#x5305;&#x542B;&#x54EA;&#x4E9B;&#x6838;&#x5FC3;&#x7EC4;&#x4EF6;&#x3002;</p>
+<p><strong>Dialect &#x7684;&#x57FA;&#x672C;&#x7EC4;&#x6210;&#xFF1A;</strong></p>
+<ol>
+<li><strong>Dialect &#x7C7B;</strong>&#xFF1A;&#x7BA1;&#x7406;&#x6574;&#x4E2A; Dialect &#x7684;&#x6CE8;&#x518C;&#x548C;&#x521D;&#x59CB;&#x5316;</li>
+<li><strong>Operation &#x7C7B;</strong>&#xFF1A;&#x5B9A;&#x4E49;&#x5177;&#x4F53;&#x7684;&#x64CD;&#x4F5C;&#x884C;&#x4E3A;</li>
+<li><strong>&#x89E3;&#x6790;&#x5668;&#x548C;&#x6253;&#x5370;&#x5668;</strong>&#xFF1A;&#x5904;&#x7406;&#x6587;&#x672C;&#x5F62;&#x5F0F;&#x7684; IR &#x8BFB;&#x5199;</li>
+<li><strong>&#x9A8C;&#x8BC1;&#x5668;</strong>&#xFF1A;&#x786E;&#x4FDD;&#x64CD;&#x4F5C;&#x7684;&#x8BED;&#x4E49;&#x6B63;&#x786E;&#x6027;</li>
+</ol>
+<p><strong>&#x6211;&#x4EEC;&#x7684;&#x8BBE;&#x8BA1;&#x51B3;&#x7B56;&#xFF1A;</strong></p>
+<ul>
+<li>Dialect &#x540D;&#x79F0;&#xFF1A;<code>simple</code></li>
+<li>&#x64CD;&#x4F5C;&#x540D;&#x79F0;&#xFF1A;<code>hello</code></li>
+<li>&#x64CD;&#x4F5C;&#x7279;&#x6027;&#xFF1A;&#x96F6;&#x8F93;&#x5165;&#x3001;&#x96F6;&#x8F93;&#x51FA;&#x3001;&#x65E0;&#x526F;&#x4F5C;&#x7528;</li>
+</ul>
+<h3 id="&#x7B2C;&#x4E94;&#x6B65;&#xFF1A;&#x8BBE;&#x8BA1;&#x5934;&#x6587;&#x4EF6;&#x7ED3;&#x6784;">&#x7B2C;&#x4E94;&#x6B65;&#xFF1A;&#x8BBE;&#x8BA1;&#x5934;&#x6587;&#x4EF6;&#x7ED3;&#x6784;</h3>
+<p><strong>&#x4EFB;&#x52A1;&#x8BF4;&#x660E;&#xFF1A;</strong>
+&#x8BBE;&#x8BA1; <code>SimpleDialect.h</code> &#x5934;&#x6587;&#x4EF6;&#xFF0C;&#x5B9A;&#x4E49;&#x6211;&#x4EEC;&#x7684; Dialect &#x548C; Operation &#x7C7B;&#x3002;</p>
+<p><strong>&#x8BBE;&#x8BA1;&#x8981;&#x70B9;&#xFF1A;</strong></p>
+<ol>
+<li>&#x7EE7;&#x627F;&#x6B63;&#x786E;&#x7684; MLIR &#x57FA;&#x7C7B;</li>
+<li>&#x6B63;&#x786E;&#x5B9A;&#x4E49;&#x64CD;&#x4F5C;&#x7684;&#x7279;&#x5F81;&#xFF08;Traits&#xFF09;</li>
+<li>&#x58F0;&#x660E;&#x5FC5;&#x8981;&#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;</li>
+<li>&#x5305;&#x542B;&#x9002;&#x5F53;&#x7684;&#x5934;&#x6587;&#x4EF6;</li>
+</ol>
+<p><strong>&#x5173;&#x952E;&#x6982;&#x5FF5;&#xFF1A;</strong></p>
+<ul>
+<li><code>mlir::Dialect</code>&#xFF1A;&#x6240;&#x6709; Dialect &#x7684;&#x57FA;&#x7C7B;</li>
+<li><code>mlir::Op</code>&#xFF1A;&#x6240;&#x6709;&#x64CD;&#x4F5C;&#x7684;&#x57FA;&#x7C7B;</li>
+<li><code>OpTrait::ZeroOperands</code>&#xFF1A;&#x8868;&#x793A;&#x64CD;&#x4F5C;&#x4E0D;&#x63A5;&#x53D7;&#x8F93;&#x5165;</li>
+<li><code>OpTrait::ZeroResults</code>&#xFF1A;&#x8868;&#x793A;&#x64CD;&#x4F5C;&#x4E0D;&#x4EA7;&#x751F;&#x8F93;&#x51FA;</li>
+</ul>
+<h3 id="&#x7B2C;&#x516D;&#x6B65;&#xFF1A;&#x5B9E;&#x73B0;-dialect-&#x7C7B;">&#x7B2C;&#x516D;&#x6B65;&#xFF1A;&#x5B9E;&#x73B0; Dialect &#x7C7B;</h3>
+<p><strong>&#x4EFB;&#x52A1;&#x8BF4;&#x660E;&#xFF1A;</strong>
+&#x521B;&#x5EFA; <code>SimpleDialect.cpp</code> &#x5B9E;&#x73B0;&#x6587;&#x4EF6;&#xFF0C;&#x5B9E;&#x73B0; Dialect &#x7684;&#x5177;&#x4F53;&#x529F;&#x80FD;&#x3002;</p>
+<p><strong>&#x5B9E;&#x73B0;&#x8981;&#x70B9;&#xFF1A;</strong></p>
+<ol>
+<li>&#x6B63;&#x786E;&#x521D;&#x59CB;&#x5316; Dialect</li>
+<li>&#x6CE8;&#x518C;&#x6211;&#x4EEC;&#x7684;&#x64CD;&#x4F5C;</li>
+<li>&#x8BBE;&#x7F6E;&#x6B63;&#x786E;&#x7684;&#x547D;&#x540D;&#x7A7A;&#x95F4;</li>
+</ol>
+<p><strong>&#x5173;&#x952E;&#x65B9;&#x6CD5;&#x7406;&#x89E3;&#xFF1A;</strong></p>
+<ul>
+<li>&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF1A;&#x521D;&#x59CB;&#x5316; Dialect &#x5E76;&#x8BBE;&#x7F6E;&#x5176;&#x5C5E;&#x6027;</li>
+<li><code>initialize()</code>&#xFF1A;&#x6CE8;&#x518C; Dialect &#x5305;&#x542B;&#x7684;&#x6240;&#x6709;&#x64CD;&#x4F5C;</li>
+<li><code>addOperations&lt;&gt;()</code>&#xFF1A;&#x5C06;&#x64CD;&#x4F5C;&#x7C7B;&#x6DFB;&#x52A0;&#x5230; Dialect &#x4E2D;</li>
+</ul>
+<h3 id="&#x7B2C;&#x4E03;&#x6B65;&#xFF1A;&#x521B;&#x5EFA;&#x6D4B;&#x8BD5;&#x5DE5;&#x5177;">&#x7B2C;&#x4E03;&#x6B65;&#xFF1A;&#x521B;&#x5EFA;&#x6D4B;&#x8BD5;&#x5DE5;&#x5177;</h3>
+<p><strong>&#x4EFB;&#x52A1;&#x8BF4;&#x660E;&#xFF1A;</strong>
+&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x6D4B;&#x8BD5;&#x5DE5;&#x5177; <code>simple-opt.cpp</code>&#xFF0C;&#x7528;&#x4E8E;&#x52A0;&#x8F7D;&#x548C;&#x6D4B;&#x8BD5;&#x6211;&#x4EEC;&#x7684; Dialect&#x3002;</p>
+<p><strong>&#x5DE5;&#x5177;&#x529F;&#x80FD;&#xFF1A;</strong></p>
+<ol>
+<li>&#x6CE8;&#x518C;&#x6211;&#x4EEC;&#x7684; Dialect</li>
+<li>&#x63D0;&#x4F9B;&#x547D;&#x4EE4;&#x884C;&#x63A5;&#x53E3;</li>
+<li>&#x96C6;&#x6210; MLIR &#x7684;&#x6807;&#x51C6;&#x4F18;&#x5316;&#x6846;&#x67B6;</li>
+</ol>
+<p><strong>&#x4E3A;&#x4EC0;&#x4E48;&#x9700;&#x8981;&#x8FD9;&#x4E2A;&#x5DE5;&#x5177;&#xFF1A;</strong></p>
+<ul>
+<li><code>mlir-opt</code> &#x9ED8;&#x8BA4;&#x4E0D;&#x5305;&#x542B;&#x6211;&#x4EEC;&#x7684;&#x81EA;&#x5B9A;&#x4E49; Dialect</li>
+<li>&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x80FD;&#x591F;&#x8BC6;&#x522B; <code>simple</code> Dialect &#x7684;&#x5DE5;&#x5177;</li>
+<li>&#x8FD9;&#x4E2A;&#x5DE5;&#x5177;&#x53EF;&#x4EE5;&#x6269;&#x5C55;&#x652F;&#x6301;&#x66F4;&#x591A;&#x81EA;&#x5B9A;&#x4E49;&#x529F;&#x80FD;</li>
+</ul>
+<h3 id="&#x7B2C;&#x516B;&#x6B65;&#xFF1A;&#x7F16;&#x8BD1;&#x9879;&#x76EE;">&#x7B2C;&#x516B;&#x6B65;&#xFF1A;&#x7F16;&#x8BD1;&#x9879;&#x76EE;</h3>
+<p><strong>&#x4EFB;&#x52A1;&#x8BF4;&#x660E;&#xFF1A;</strong>
+&#x4F7F;&#x7528;&#x9002;&#x5F53;&#x7684;&#x7F16;&#x8BD1;&#x5668;&#x9009;&#x9879;&#x7F16;&#x8BD1;&#x6211;&#x4EEC;&#x7684;&#x9879;&#x76EE;&#x3002;</p>
+<p><strong>&#x7F16;&#x8BD1;&#x8981;&#x70B9;&#xFF1A;</strong></p>
+<ol>
+<li>&#x6B63;&#x786E;&#x94FE;&#x63A5; MLIR &#x5E93;</li>
+<li>&#x8BBE;&#x7F6E;&#x6B63;&#x786E;&#x7684;&#x5305;&#x542B;&#x8DEF;&#x5F84;</li>
+<li>&#x4F7F;&#x7528;&#x5408;&#x9002;&#x7684; C++ &#x6807;&#x51C6;</li>
+</ol>
+<p><strong>&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#xFF1A;</strong></p>
+<ul>
+<li>LLVM &#x8DEF;&#x5F84;&#x53EF;&#x80FD;&#x56E0;&#x7CFB;&#x7EDF;&#x800C;&#x5F02;</li>
+<li>&#x67D0;&#x4E9B;&#x7CFB;&#x7EDF;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x989D;&#x5916;&#x7684;&#x5E93;&#x4F9D;&#x8D56;</li>
+<li>&#x7F16;&#x8BD1;&#x9519;&#x8BEF;&#x901A;&#x5E38;&#x6307;&#x5411;&#x8DEF;&#x5F84;&#x6216;&#x4F9D;&#x8D56;&#x95EE;&#x9898;</li>
+</ul>
+<h3 id="&#x7B2C;&#x4E5D;&#x6B65;&#xFF1A;&#x6D4B;&#x8BD5;&#x548C;&#x9A8C;&#x8BC1;">&#x7B2C;&#x4E5D;&#x6B65;&#xFF1A;&#x6D4B;&#x8BD5;&#x548C;&#x9A8C;&#x8BC1;</h3>
+<p><strong>&#x4EFB;&#x52A1;&#x8BF4;&#x660E;&#xFF1A;</strong>
+&#x8FD0;&#x884C;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x7684;&#x5DE5;&#x5177;&#xFF0C;&#x9A8C;&#x8BC1; Dialect &#x662F;&#x5426;&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;&#x3002;</p>
+<p><strong>&#x6D4B;&#x8BD5;&#x5185;&#x5BB9;&#xFF1A;</strong></p>
+<ol>
+<li>&#x57FA;&#x672C;&#x529F;&#x80FD;&#x6D4B;&#x8BD5;&#xFF1A;&#x80FD;&#x5426;&#x89E3;&#x6790;&#x6211;&#x4EEC;&#x7684; MLIR &#x6587;&#x4EF6;</li>
+<li>&#x9519;&#x8BEF;&#x5904;&#x7406;&#x6D4B;&#x8BD5;&#xFF1A;&#x9519;&#x8BEF;&#x8BED;&#x6CD5;&#x662F;&#x5426;&#x80FD;&#x88AB;&#x6B63;&#x786E;&#x8BC6;&#x522B;</li>
+<li>&#x8BCA;&#x65AD;&#x529F;&#x80FD;&#x6D4B;&#x8BD5;&#xFF1A;&#x9A8C;&#x8BC1;&#x5668;&#x662F;&#x5426;&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;</li>
+</ol>
+<p><strong>&#x671F;&#x671B;&#x7ED3;&#x679C;&#xFF1A;</strong></p>
+<ul>
+<li>&#x6B63;&#x786E;&#x7684; MLIR &#x6587;&#x4EF6;&#x5E94;&#x8BE5;&#x88AB;&#x6210;&#x529F;&#x89E3;&#x6790;</li>
+<li>&#x9519;&#x8BEF;&#x7684;&#x8BED;&#x6CD5;&#x5E94;&#x8BE5;&#x4EA7;&#x751F;&#x6709;&#x610F;&#x4E49;&#x7684;&#x9519;&#x8BEF;&#x4FE1;&#x606F;</li>
+</ul>
+<hr>
+<h2 id="reference-code-&#x53C2;&#x8003;&#x4EE3;&#x7801;">Reference Code (&#x53C2;&#x8003;&#x4EE3;&#x7801;)</h2>
+<h3 id="simpledialecth">SimpleDialect.h</h3>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">ifndef</span> SIMPLE_DIALECT_H</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> SIMPLE_DIALECT_H</span>
+
+<span class="hljs-comment">// &#x5305;&#x542B; MLIR &#x6838;&#x5FC3;&#x5934;&#x6587;&#x4EF6;</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;mlir/IR/Dialect.h&quot;</span>          // Dialect &#x57FA;&#x7C7B;</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;mlir/IR/OpDefinition.h&quot;</span>     // Operation &#x5B9A;&#x4E49;&#x76F8;&#x5173;</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;mlir/IR/OpImplementation.h&quot;</span> // Operation &#x5B9E;&#x73B0;&#x76F8;&#x5173;</span>
+
+<span class="hljs-keyword">namespace</span> simple {
+
+<span class="hljs-comment">/**
+ * SimpleDialect &#x7C7B;
+ * &#x7EE7;&#x627F;&#x81EA; mlir::Dialect&#xFF0C;&#x7BA1;&#x7406;&#x6574;&#x4E2A; simple dialect &#x7684;&#x751F;&#x547D;&#x5468;&#x671F;
+ */</span>
+<span class="hljs-keyword">class</span> SimpleDialect : <span class="hljs-keyword">public</span> mlir::Dialect {
+<span class="hljs-keyword">public</span>:
+  <span class="hljs-comment">// &#x6784;&#x9020;&#x51FD;&#x6570;&#xFF1A;&#x63A5;&#x53D7; MLIR &#x4E0A;&#x4E0B;&#x6587;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;</span>
+  <span class="hljs-function"><span class="hljs-keyword">explicit</span> <span class="hljs-title">SimpleDialect</span><span class="hljs-params">(mlir::MLIRContext *ctx)</span></span>;
+
+  <span class="hljs-comment">// &#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF1A;&#x8FD4;&#x56DE; dialect &#x7684;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x5B57;&#x7B26;&#x4E32;</span>
+  <span class="hljs-comment">// &#x8FD9;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x4F1A;&#x6210;&#x4E3A;&#x6240;&#x6709;&#x64CD;&#x4F5C;&#x7684;&#x524D;&#x7F00;&#xFF08;&#x5982; &quot;simple.hello&quot;&#xFF09;</span>
+  <span class="hljs-keyword">static</span> llvm::<span class="hljs-function">StringRef <span class="hljs-title">getDialectNamespace</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;simple&quot;</span>; }
+
+  <span class="hljs-comment">// &#x521D;&#x59CB;&#x5316;&#x65B9;&#x6CD5;&#xFF1A;&#x6CE8;&#x518C; dialect &#x5305;&#x542B;&#x7684;&#x6240;&#x6709;&#x64CD;&#x4F5C;&#x3001;&#x7C7B;&#x578B;&#x7B49;</span>
+  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">initialize</span><span class="hljs-params">()</span></span>;
+};
+
+<span class="hljs-comment">/**
+ * HelloOp &#x7C7B;
+ * &#x5B9A;&#x4E49; &quot;simple.hello&quot; &#x64CD;&#x4F5C;
+ * 
+ * &#x6A21;&#x677F;&#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;
+ * - HelloOp: &#x64CD;&#x4F5C;&#x7C7B;&#x672C;&#x8EAB;&#xFF08;CRTP &#x6A21;&#x5F0F;&#xFF09;
+ * - mlir::OpTrait::ZeroOperands: &#x8868;&#x793A;&#x6B64;&#x64CD;&#x4F5C;&#x4E0D;&#x63A5;&#x53D7;&#x4EFB;&#x4F55;&#x8F93;&#x5165;&#x64CD;&#x4F5C;&#x6570;
+ * - mlir::OpTrait::ZeroResults: &#x8868;&#x793A;&#x6B64;&#x64CD;&#x4F5C;&#x4E0D;&#x4EA7;&#x751F;&#x4EFB;&#x4F55;&#x7ED3;&#x679C;
+ */</span>
+<span class="hljs-keyword">class</span> HelloOp : <span class="hljs-keyword">public</span> mlir::Op&lt;HelloOp, 
+                                mlir::OpTrait::ZeroOperands, 
+                                mlir::OpTrait::ZeroResults&gt; {
+<span class="hljs-keyword">public</span>:
+  <span class="hljs-comment">// &#x4F7F;&#x7528;&#x57FA;&#x7C7B;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;</span>
+  <span class="hljs-keyword">using</span> Op::Op;
+
+  <span class="hljs-comment">// &#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF1A;&#x8FD4;&#x56DE;&#x64CD;&#x4F5C;&#x7684;&#x5B8C;&#x6574;&#x540D;&#x79F0;</span>
+  <span class="hljs-comment">// &#x683C;&#x5F0F;&#x4E3A; &quot;namespace.operation&quot;</span>
+  <span class="hljs-keyword">static</span> llvm::<span class="hljs-function">StringRef <span class="hljs-title">getOperationName</span><span class="hljs-params">()</span> </span>{ 
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;simple.hello&quot;</span>; 
+  }
+
+  <span class="hljs-comment">// &#x6784;&#x5EFA;&#x65B9;&#x6CD5;&#xFF1A;&#x7528;&#x4E8E;&#x7A0B;&#x5E8F;&#x5316;&#x521B;&#x5EFA;&#x6B64;&#x64CD;&#x4F5C;&#x7684;&#x5B9E;&#x4F8B;</span>
+  <span class="hljs-comment">// &#x7531;&#x4E8E;&#x6211;&#x4EEC;&#x7684;&#x64CD;&#x4F5C;&#x4E0D;&#x9700;&#x8981;&#x4EFB;&#x4F55;&#x53C2;&#x6570;&#xFF0C;&#x6240;&#x4EE5;&#x5B9E;&#x73B0;&#x4E3A;&#x7A7A;</span>
+  <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">build</span><span class="hljs-params">(mlir::OpBuilder &amp;, mlir::OperationState &amp;state)</span> </span>{}
+
+  <span class="hljs-comment">// &#x8FD4;&#x56DE;&#x6B64;&#x64CD;&#x4F5C;&#x652F;&#x6301;&#x7684;&#x5C5E;&#x6027;&#x540D;&#x79F0;&#x5217;&#x8868;</span>
+  <span class="hljs-comment">// &#x6211;&#x4EEC;&#x7684;&#x7B80;&#x5355;&#x64CD;&#x4F5C;&#x4E0D;&#x9700;&#x8981;&#x4EFB;&#x4F55;&#x5C5E;&#x6027;</span>
+  <span class="hljs-keyword">static</span> llvm::ArrayRef&lt;llvm::StringRef&gt; getAttributeNames() {
+    <span class="hljs-keyword">return</span> {};
+  }
+
+  <span class="hljs-comment">// &#x6253;&#x5370;&#x65B9;&#x6CD5;&#xFF1A;&#x5B9A;&#x4E49;&#x64CD;&#x4F5C;&#x5982;&#x4F55;&#x5728; MLIR &#x6587;&#x672C;&#x4E2D;&#x663E;&#x793A;</span>
+  <span class="hljs-comment">// &#x6211;&#x4EEC;&#x53EA;&#x6253;&#x5370;&#x4E00;&#x4E2A;&#x7A7A;&#x683C;&#xFF0C;&#x4FDD;&#x6301;&#x7B80;&#x6D01;</span>
+  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">(mlir::OpAsmPrinter &amp;p)</span> </span>{
+    p &lt;&lt; <span class="hljs-string">&quot; &quot;</span>;
+  }
+
+  <span class="hljs-comment">// &#x89E3;&#x6790;&#x65B9;&#x6CD5;&#xFF1A;&#x5B9A;&#x4E49;&#x5982;&#x4F55;&#x4ECE; MLIR &#x6587;&#x672C;&#x89E3;&#x6790;&#x6B64;&#x64CD;&#x4F5C;</span>
+  <span class="hljs-comment">// &#x6211;&#x4EEC;&#x7684;&#x64CD;&#x4F5C;&#x683C;&#x5F0F;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x89E3;&#x6790;&#x4EFB;&#x4F55;&#x989D;&#x5916;&#x5185;&#x5BB9;</span>
+  <span class="hljs-keyword">static</span> mlir::<span class="hljs-function">ParseResult <span class="hljs-title">parse</span><span class="hljs-params">(mlir::OpAsmParser &amp;parser, 
+                                mlir::OperationState &amp;result)</span> </span>{
+    <span class="hljs-keyword">return</span> mlir::success();
+  }
+};
+
+} <span class="hljs-comment">// namespace simple</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span></span>
+</code></pre>
+<h3 id="simpledialectcpp">SimpleDialect.cpp</h3>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;SimpleDialect.h&quot;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;mlir/IR/Builders.h&quot;</span>  // &#x7528;&#x4E8E;&#x6784;&#x5EFA; MLIR &#x7ED3;&#x6784;</span>
+
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> mlir;
+
+<span class="hljs-keyword">namespace</span> simple {
+
+<span class="hljs-comment">/**
+ * SimpleDialect &#x6784;&#x9020;&#x51FD;&#x6570;
+ * 
+ * &#x53C2;&#x6570;&#xFF1A;
+ * - ctx: MLIR &#x4E0A;&#x4E0B;&#x6587;&#xFF0C;&#x7BA1;&#x7406;&#x6240;&#x6709; MLIR &#x76F8;&#x5173;&#x7684;&#x5185;&#x5B58;&#x548C;&#x72B6;&#x6001;
+ * 
+ * &#x57FA;&#x7C7B;&#x6784;&#x9020;&#x51FD;&#x6570;&#x53C2;&#x6570;&#xFF1A;
+ * - getDialectNamespace(): &#x8FD4;&#x56DE; &quot;simple&quot; &#x5B57;&#x7B26;&#x4E32;
+ * - ctx: &#x4F20;&#x9012;&#x4E0A;&#x4E0B;&#x6587;
+ * - TypeID::get&lt;SimpleDialect&gt;(): &#x4E3A;&#x8FD9;&#x4E2A; dialect &#x521B;&#x5EFA;&#x552F;&#x4E00;&#x6807;&#x8BC6;&#x7B26;
+ */</span>
+SimpleDialect::SimpleDialect(MLIRContext *ctx)
+    : Dialect(getDialectNamespace(), ctx, TypeID::get&lt;SimpleDialect&gt;()) {
+  <span class="hljs-comment">// &#x8C03;&#x7528;&#x521D;&#x59CB;&#x5316;&#x65B9;&#x6CD5;&#x6CE8;&#x518C;&#x6240;&#x6709;&#x64CD;&#x4F5C;</span>
+  initialize();
+}
+
+<span class="hljs-comment">/**
+ * &#x521D;&#x59CB;&#x5316;&#x65B9;&#x6CD5;
+ * &#x5411; dialect &#x6CE8;&#x518C;&#x6240;&#x6709;&#x5305;&#x542B;&#x7684;&#x64CD;&#x4F5C;
+ * 
+ * addOperations&lt;&gt;() &#x662F;&#x4E00;&#x4E2A;&#x6A21;&#x677F;&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x4E00;&#x6B21;&#x6CE8;&#x518C;&#x591A;&#x4E2A;&#x64CD;&#x4F5C;&#x7C7B;&#x578B;
+ * &#x76EE;&#x524D;&#x6211;&#x4EEC;&#x53EA;&#x6709;&#x4E00;&#x4E2A; HelloOp &#x64CD;&#x4F5C;
+ */</span>
+<span class="hljs-keyword">void</span> SimpleDialect::initialize() {
+  addOperations&lt;HelloOp&gt;();
+}
+
+} <span class="hljs-comment">// namespace simple</span>
+</code></pre>
+<h3 id="simple-optcpp">simple-opt.cpp</h3>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;SimpleDialect.h&quot;</span>                           // &#x6211;&#x4EEC;&#x7684;&#x81EA;&#x5B9A;&#x4E49; dialect</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;mlir/IR/MLIRContext.h&quot;</span>                    // MLIR &#x4E0A;&#x4E0B;&#x6587;</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-string">&quot;mlir/Tools/mlir-opt/MlirOptMain.h&quot;</span>        // mlir-opt &#x4E3B;&#x51FD;&#x6570;</span>
+
+<span class="hljs-comment">/**
+ * &#x4E3B;&#x51FD;&#x6570;&#xFF1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7C7B;&#x4F3C; mlir-opt &#x7684;&#x5DE5;&#x5177;&#xFF0C;&#x4F46;&#x5305;&#x542B;&#x6211;&#x4EEC;&#x7684;&#x81EA;&#x5B9A;&#x4E49; dialect
+ * 
+ * &#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;&#xFF1A;
+ * 1. &#x521B;&#x5EFA; dialect &#x6CE8;&#x518C;&#x8868;
+ * 2. &#x6CE8;&#x518C;&#x6211;&#x4EEC;&#x7684; SimpleDialect
+ * 3. &#x8C03;&#x7528; MLIR &#x7684;&#x6807;&#x51C6;&#x4E3B;&#x51FD;&#x6570;&#x5904;&#x7406;&#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570;&#x548C;&#x6587;&#x4EF6;
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">char</span> **argv)</span> </span>{
+  <span class="hljs-comment">// &#x521B;&#x5EFA; dialect &#x6CE8;&#x518C;&#x8868;</span>
+  <span class="hljs-comment">// &#x8FD9;&#x4E2A;&#x6CE8;&#x518C;&#x8868;&#x544A;&#x8BC9; MLIR &#x7CFB;&#x7EDF;&#x6709;&#x54EA;&#x4E9B; dialect &#x53EF;&#x7528;</span>
+  mlir::DialectRegistry registry;
+
+  <span class="hljs-comment">// &#x5C06;&#x6211;&#x4EEC;&#x7684; SimpleDialect &#x6CE8;&#x518C;&#x5230;&#x7CFB;&#x7EDF;&#x4E2D;</span>
+  <span class="hljs-comment">// &#x6CE8;&#x518C;&#x540E;&#xFF0C;MLIR &#x5C31;&#x80FD;&#x8BC6;&#x522B; &quot;simple.*&quot; &#x683C;&#x5F0F;&#x7684;&#x64CD;&#x4F5C;</span>
+  registry.insert&lt;simple::SimpleDialect&gt;();
+
+  <span class="hljs-comment">// &#x8C03;&#x7528; MLIR &#x63D0;&#x4F9B;&#x7684;&#x6807;&#x51C6;&#x4E3B;&#x51FD;&#x6570;</span>
+  <span class="hljs-comment">// &#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x4F1A;&#xFF1A;</span>
+  <span class="hljs-comment">// - &#x89E3;&#x6790;&#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570;</span>
+  <span class="hljs-comment">// - &#x8BFB;&#x53D6;&#x8F93;&#x5165;&#x6587;&#x4EF6;</span>
+  <span class="hljs-comment">// - &#x5E94;&#x7528;&#x6307;&#x5B9A;&#x7684;&#x4F18;&#x5316; pass</span>
+  <span class="hljs-comment">// - &#x8F93;&#x51FA;&#x7ED3;&#x679C;</span>
+  <span class="hljs-keyword">return</span> mlir::asMainReturnCode(
+      mlir::MlirOptMain(argc, argv, <span class="hljs-string">&quot;Simple dialect test\n&quot;</span>, registry));
+}
+</code></pre>
+<h3 id="&#x7F16;&#x8BD1;&#x811A;&#x672C;-compilesh">&#x7F16;&#x8BD1;&#x811A;&#x672C; (compile.sh)</h3>
+<pre><code class="lang-bash"><span class="hljs-meta">#!/bin/bash
+</span>
+<span class="hljs-comment"># &#x8BBE;&#x7F6E; LLVM &#x5B89;&#x88C5;&#x8DEF;&#x5F84;</span>
+<span class="hljs-comment"># &#x8BF7;&#x6839;&#x636E;&#x4F60;&#x7684;&#x7CFB;&#x7EDF;&#x8C03;&#x6574;&#x8FD9;&#x4E2A;&#x8DEF;&#x5F84;</span>
+<span class="hljs-built_in">export</span> LLVM_DIR=/usr/<span class="hljs-built_in">local</span>/Cellar/llvm@15/15.0.7
+
+<span class="hljs-comment"># &#x68C0;&#x67E5; LLVM &#x76EE;&#x5F55;&#x662F;&#x5426;&#x5B58;&#x5728;</span>
+<span class="hljs-keyword">if</span> [ ! <span class="hljs-_">-d</span> <span class="hljs-string">&quot;<span class="hljs-variable">$LLVM_DIR</span>&quot;</span> ]; <span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;&#x9519;&#x8BEF;&#xFF1A;LLVM &#x76EE;&#x5F55;&#x4E0D;&#x5B58;&#x5728;&#xFF1A;<span class="hljs-variable">$LLVM_DIR</span>&quot;</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;&#x8BF7;&#x4FEE;&#x6539; LLVM_DIR &#x53D8;&#x91CF;&#x6307;&#x5411;&#x6B63;&#x786E;&#x7684; LLVM &#x5B89;&#x88C5;&#x76EE;&#x5F55;&quot;</span>
+    <span class="hljs-built_in">exit</span> 1
+<span class="hljs-keyword">fi</span>
+
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;&#x4F7F;&#x7528; LLVM &#x76EE;&#x5F55;&#xFF1A;<span class="hljs-variable">$LLVM_DIR</span>&quot;</span>
+
+<span class="hljs-comment"># &#x7F16;&#x8BD1;&#x547D;&#x4EE4;</span>
+<span class="hljs-comment"># -std=c++17: &#x4F7F;&#x7528; C++17 &#x6807;&#x51C6;</span>
+<span class="hljs-comment"># -I: &#x6DFB;&#x52A0;&#x5934;&#x6587;&#x4EF6;&#x641C;&#x7D22;&#x8DEF;&#x5F84;</span>
+<span class="hljs-comment"># -L: &#x6DFB;&#x52A0;&#x5E93;&#x6587;&#x4EF6;&#x641C;&#x7D22;&#x8DEF;&#x5F84;</span>
+clang++ -std=c++17 \
+  -I<span class="hljs-variable">$LLVM_DIR</span>/include \
+  -L<span class="hljs-variable">$LLVM_DIR</span>/lib \
+  $(ls <span class="hljs-variable">$LLVM_DIR</span>/lib/libMLIR*.a | grep -E <span class="hljs-string">&quot;(OptLib|Parser|IR|Support)&quot;</span> | tr <span class="hljs-string">&apos;\n&apos;</span> <span class="hljs-string">&apos; &apos;</span>) \
+  <span class="hljs-_">-l</span>LLVMSupport <span class="hljs-_">-l</span>LLVMCore <span class="hljs-_">-l</span>LLVMDemangle \
+  -lncurses -lz -lpthread \
+  SimpleDialect.cpp simple-opt.cpp -o simple-opt
+
+<span class="hljs-comment"># &#x68C0;&#x67E5;&#x7F16;&#x8BD1;&#x662F;&#x5426;&#x6210;&#x529F;</span>
+<span class="hljs-keyword">if</span> [ $? <span class="hljs-_">-eq</span> 0 ]; <span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;&#x7F16;&#x8BD1;&#x6210;&#x529F;&#xFF01;&#x751F;&#x6210;&#x4E86; simple-opt &#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&quot;</span>
+<span class="hljs-keyword">else</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;&#x7F16;&#x8BD1;&#x5931;&#x8D25;&#xFF0C;&#x8BF7;&#x68C0;&#x67E5;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&quot;</span>
+<span class="hljs-keyword">fi</span>
+</code></pre>
+<h3 id="&#x6D4B;&#x8BD5;&#x811A;&#x672C;-testsh">&#x6D4B;&#x8BD5;&#x811A;&#x672C; (test.sh)</h3>
+<pre><code class="lang-bash"><span class="hljs-meta">#!/bin/bash
+</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;=== &#x6D4B;&#x8BD5;&#x81EA;&#x5B9A;&#x4E49; Dialect ===&quot;</span>
+
+<span class="hljs-comment"># &#x6D4B;&#x8BD5; 1&#xFF1A;&#x57FA;&#x672C;&#x529F;&#x80FD;&#x6D4B;&#x8BD5;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;&#x6D4B;&#x8BD5; 1&#xFF1A;&#x57FA;&#x672C;&#x529F;&#x80FD;&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;&#x8F93;&#x5165;&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#xFF1A;&quot;</span>
+cat simple.mlir
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;&#x89E3;&#x6790;&#x7ED3;&#x679C;&#xFF1A;&quot;</span>
+./simple-opt simple.mlir
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;&quot;</span>
+
+<span class="hljs-comment"># &#x6D4B;&#x8BD5; 2&#xFF1A;&#x9A8C;&#x8BC1;&#x8BCA;&#x65AD;&#x529F;&#x80FD;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;&#x6D4B;&#x8BD5; 2&#xFF1A;&#x9A8C;&#x8BC1;&#x8BCA;&#x65AD;&quot;</span>
+./simple-opt --verify-diagnostics simple.mlir
+<span class="hljs-keyword">if</span> [ $? <span class="hljs-_">-eq</span> 0 ]; <span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;&#x2713; &#x8BCA;&#x65AD;&#x6D4B;&#x8BD5;&#x901A;&#x8FC7;&quot;</span>
+<span class="hljs-keyword">else</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;&#x2717; &#x8BCA;&#x65AD;&#x6D4B;&#x8BD5;&#x5931;&#x8D25;&quot;</span>
+<span class="hljs-keyword">fi</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;&quot;</span>
+
+<span class="hljs-comment"># &#x6D4B;&#x8BD5; 3&#xFF1A;&#x9519;&#x8BEF;&#x5904;&#x7406;&#x6D4B;&#x8BD5;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;&#x6D4B;&#x8BD5; 3&#xFF1A;&#x9519;&#x8BEF;&#x5904;&#x7406;&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;module { simple.hello extra_stuff }&quot;</span> &gt; wrong.mlir
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;&#x9519;&#x8BEF;&#x8F93;&#x5165;&#xFF1A;&quot;</span>
+cat wrong.mlir
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;&#x9519;&#x8BEF;&#x5904;&#x7406;&#x7ED3;&#x679C;&#xFF1A;&quot;</span>
+./simple-opt wrong.mlir
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;&quot;</span>
+
+<span class="hljs-comment"># &#x6E05;&#x7406;&#x4E34;&#x65F6;&#x6587;&#x4EF6;</span>
+rm <span class="hljs-_">-f</span> wrong.mlir
+
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;=== &#x6D4B;&#x8BD5;&#x5B8C;&#x6210; ===&quot;</span>
+</code></pre>
+<hr>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="MLIR_Dialect_Notes_module1.html" class="navigation navigation-prev " aria-label="Previous page: Dialect入门一">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Lab_2_Simple-Dialect.html" class="navigation navigation-next " aria-label="Next page: Dialect入门一配套Lab2">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Dialect入门一配套Lab1","level":"1.9","depth":1,"next":{"title":"Dialect入门一配套Lab2","level":"1.10","depth":1,"path":"Lab_2_Simple-Dialect.md","ref":"Lab_2_Simple-Dialect.md","articles":[]},"previous":{"title":"Dialect入门一","level":"1.8","depth":1,"path":"MLIR_Dialect_Notes_module1.md","ref":"MLIR_Dialect_Notes_module1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"}},"file":{"path":"Lab_1_Simple-Dialect.md","mtime":"2025-10-16T02:23:10.812Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-10-16T02:23:46.454Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

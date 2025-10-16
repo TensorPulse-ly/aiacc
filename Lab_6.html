@@ -1,0 +1,992 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Dialect入门二配套Lab6 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Lab_7_mem.html" />
+    
+    
+    <link rel="prev" href="Lab_5_Arith.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Example_Page.html">
+            
+                <a href="Example_Page.html">
+            
+                    
+                    Example Page
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="TableGen.html">
+            
+                <a href="TableGen.html">
+            
+                    
+                    TableGen 的用法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="P4tutorial.html">
+            
+                <a href="P4tutorial.html">
+            
+                    
+                    P4基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="MLIR_Dialect.html">
+            
+                <a href="MLIR_Dialect.html">
+            
+                    
+                    Dialect基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="FIFO_study.html">
+            
+                <a href="FIFO_study.html">
+            
+                    
+                    FIFO学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="TPU_MLIR_study.html">
+            
+                <a href="TPU_MLIR_study.html">
+            
+                    
+                    TPU-MLIR代码学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="MLIR_Dialect_Notes_module1.html">
+            
+                <a href="MLIR_Dialect_Notes_module1.html">
+            
+                    
+                    Dialect入门一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="Lab_1_Simple-Dialect.html">
+            
+                <a href="Lab_1_Simple-Dialect.html">
+            
+                    
+                    Dialect入门一配套Lab1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="Lab_2_Simple-Dialect.html">
+            
+                <a href="Lab_2_Simple-Dialect.html">
+            
+                    
+                    Dialect入门一配套Lab2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="MLIR_Dialect_Notes_module2.html">
+            
+                <a href="MLIR_Dialect_Notes_module2.html">
+            
+                    
+                    Dialect入门二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="Lab_4_Builtin_Dialect.html">
+            
+                <a href="Lab_4_Builtin_Dialect.html">
+            
+                    
+                    Dialect入门二配套Lab4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="Lab_5_Arith.html">
+            
+                <a href="Lab_5_Arith.html">
+            
+                    
+                    Dialect入门二配套Lab5
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.14" data-path="Lab_6.html">
+            
+                <a href="Lab_6.html">
+            
+                    
+                    Dialect入门二配套Lab6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="Lab_7_mem.html">
+            
+                <a href="Lab_7_mem.html">
+            
+                    
+                    Dialect入门二配套Lab7
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="Lab_8_Tensor.html">
+            
+                <a href="Lab_8_Tensor.html">
+            
+                    
+                    Dialect入门二配套Lab8
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="Lab_9_Linalg.html">
+            
+                <a href="Lab_9_Linalg.html">
+            
+                    
+                    Dialect入门二配套Lab9
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="MLIR_Dialect_Notes_module3.html">
+            
+                <a href="MLIR_Dialect_Notes_module3.html">
+            
+                    
+                    Dialect入门三
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="Lab_10_Optimization.html">
+            
+                <a href="Lab_10_Optimization.html">
+            
+                    
+                    Dialect入门三配套Lab10
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="Lab_Project_Sheet.html">
+            
+                <a href="Lab_Project_Sheet.html">
+            
+                    
+                    TPU-MLIR Lab Project
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="FIFO_study.html">
+            
+                <a href="FIFO_study.html">
+            
+                    
+                    FIFO学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="TPU_MLIR_study.html">
+            
+                <a href="TPU_MLIR_study.html">
+            
+                    
+                    TPU-MLIR代码学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="Linux_Command_Line.html">
+            
+                <a href="Linux_Command_Line.html">
+            
+                    
+                    Linux系统(服务器)常用指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="shell_study.html">
+            
+                <a href="shell_study.html">
+            
+                    
+                    .sh文件解释/Shell脚本常用语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="VCS_coverage_report_read.html">
+            
+                <a href="VCS_coverage_report_read.html">
+            
+                    
+                    VCS_coverage_report_read
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" >
+            
+                <a target="_blank" href="https://github.com/seclabBupt/aiacc/blob/main/docs/TPU-MLIR%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%80%EF%BC%89.md">
+            
+                    
+                    TPU-MLIR学习记录（一）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" >
+            
+                <a target="_blank" href="https://github.com/seclabBupt/aiacc/blob/main/docs/TPU-MLIR%20%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%BA%8C%EF%BC%89.md">
+            
+                    
+                    TPU-MLIR学习记录（二）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" >
+            
+                <a target="_blank" href="https://github.com/seclabBupt/aiacc/blob/main/docs/TPU-MLIR%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%89%EF%BC%89.md">
+            
+                    
+                    TPU-MLIR学习记录（三）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Dialect入门二配套Lab6</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="lab-6-mlir-scf-dialect-&#x7ED3;&#x6784;&#x5316;&#x63A7;&#x5236;&#x6D41;&#x5B9E;&#x9A8C;">Lab 6: MLIR <code>scf</code> Dialect &#x7ED3;&#x6784;&#x5316;&#x63A7;&#x5236;&#x6D41;&#x5B9E;&#x9A8C;</h1>
+<h2 id="&#x5B9E;&#x9A8C;&#x76EE;&#x6807;">&#x5B9E;&#x9A8C;&#x76EE;&#x6807;</h2>
+<p>&#x5B8C;&#x6210;&#x672C;&#x5B9E;&#x9A8C;&#x540E;&#xFF0C;&#x4F60;&#x5E94;&#x80FD;&#x591F;&#xFF1A;</p>
+<ol>
+<li><strong>&#x7406;&#x89E3;</strong> <code>scf</code> Dialect &#x7684;&#x6838;&#x5FC3;&#x4F5C;&#x7528;&#xFF0C;&#x5373;&#x5728; MLIR &#x4E2D;&#x8868;&#x8FBE;&#x7ED3;&#x6784;&#x5316;&#x7684;&#x63A7;&#x5236;&#x6D41;&#xFF08;&#x5FAA;&#x73AF;&#x548C;&#x5206;&#x652F;&#xFF09;</li>
+<li><strong>&#x638C;&#x63E1;</strong> <code>scf.for</code> &#x7684;&#x57FA;&#x672C;&#x8BED;&#x6CD5;&#xFF0C;&#x5E76;&#x7528;&#x5B83;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x6C42;&#x548C;&#x5FAA;&#x73AF;</li>
+<li><strong>&#x638C;&#x63E1;</strong> <code>scf.if</code> &#x7684;&#x57FA;&#x672C;&#x8BED;&#x6CD5;&#xFF0C;&#x5E76;&#x7528;&#x5B83;&#x5B9E;&#x73B0;&#x6761;&#x4EF6;&#x5206;&#x652F;&#x903B;&#x8F91;</li>
+<li><strong>&#x5B66;&#x4F1A;</strong> &#x5982;&#x4F55;&#x5C06; <code>scf</code> &#x4E0E; <code>arith</code> Dialect &#x7ED3;&#x5408;&#xFF0C;&#x5B9E;&#x73B0;&#x6709;&#x610F;&#x4E49;&#x7684;&#x8BA1;&#x7B97;&#x548C;&#x903B;&#x8F91;&#x5224;&#x65AD;</li>
+<li><strong>&#x7406;&#x89E3;</strong> <code>scf.yield</code> &#x7684;&#x7528;&#x6CD5;&#xFF0C;&#x4ECE;&#x63A7;&#x5236;&#x6D41;&#x5757;&#x4E2D;&#x8FD4;&#x56DE;&#x503C;</li>
+<li><strong>&#x638C;&#x63E1;</strong> MLIR &#x4E2D;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#xFF08;<code>i32</code> &#x4E0E; <code>index</code> &#x7C7B;&#x578B;&#x95F4;&#x7684;&#x8F6C;&#x6362;&#xFF09;</li>
+</ol>
+<h2 id="&#x524D;&#x7F6E;&#x6761;&#x4EF6;">&#x524D;&#x7F6E;&#x6761;&#x4EF6;</h2>
+<p>&#x5728;&#x5F00;&#x59CB;&#x672C;&#x5B9E;&#x9A8C;&#x524D;&#xFF0C;&#x4F60;&#x5E94;&#x5DF2;&#x638C;&#x63E1;&#xFF1A;</p>
+<ul>
+<li>MLIR &#x7684;&#x57FA;&#x672C;&#x8BED;&#x6CD5;&#x548C;&#x7ED3;&#x6784;&#xFF08;SSA &#x53D8;&#x91CF;&#x3001;Op&#x3001;Type&#xFF09;</li>
+<li><code>builtin</code> Dialect &#x7684;&#x6838;&#x5FC3;&#x6982;&#x5FF5;&#xFF08;<code>module</code>, <code>func.func</code>&#xFF09;</li>
+<li><code>arith</code> Dialect &#x7684;&#x57FA;&#x672C;&#x64CD;&#x4F5C;&#xFF1A;<code>arith.constant</code>&#x3001;<code>arith.addi</code>&#x3001;<code>arith.subi</code>&#x3001;<code>arith.cmpi</code></li>
+<li>&#x57FA;&#x672C;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x7F16;&#x8BD1;&#x548C;&#x8FD0;&#x884C;&#x6280;&#x80FD;</li>
+</ul>
+<h2 id="&#x7406;&#x8BBA;&#x80CC;&#x666F;">&#x7406;&#x8BBA;&#x80CC;&#x666F;</h2>
+<h3 id="scf-dialect-&#x7B80;&#x4ECB;"><code>scf</code> Dialect &#x7B80;&#x4ECB;</h3>
+<p><code>scf</code>&#xFF08;Structured Control Flow&#xFF09;Dialect &#x662F; MLIR &#x7684;&#x7ED3;&#x6784;&#x5316;&#x63A7;&#x5236;&#x6D41;&#x65B9;&#x8A00;&#xFF0C;&#x63D0;&#x4F9B;&#x4E86;&#x9AD8;&#x7EA7;&#x7684;&#x63A7;&#x5236;&#x6D41;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x64CD;&#x4F5C;</th>
+<th>&#x529F;&#x80FD;</th>
+<th>&#x57FA;&#x672C;&#x8BED;&#x6CD5;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>scf.for</code></td>
+<td>&#x8BA1;&#x6570;&#x5FAA;&#x73AF;</td>
+<td><code>scf.for %i = %start to %end step %step { ... }</code></td>
+</tr>
+<tr>
+<td><code>scf.if</code></td>
+<td>&#x6761;&#x4EF6;&#x5206;&#x652F;</td>
+<td><code>scf.if %condition { ... } else { ... }</code></td>
+</tr>
+<tr>
+<td><code>scf.yield</code></td>
+<td>&#x8FD4;&#x56DE;&#x503C;</td>
+<td><code>scf.yield %value : type</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="&#x5173;&#x952E;&#x6982;&#x5FF5;">&#x5173;&#x952E;&#x6982;&#x5FF5;</h3>
+<ol>
+<li><strong>&#x5FAA;&#x73AF;&#x53D8;&#x91CF;&#x7C7B;&#x578B;</strong>&#xFF1A;<code>scf.for</code> &#x4E2D;&#x7684;&#x5FAA;&#x73AF;&#x53D8;&#x91CF;&#x5FC5;&#x987B;&#x662F; <code>index</code> &#x7C7B;&#x578B;</li>
+<li><strong>iter_args</strong>&#xFF1A;&#x5FAA;&#x73AF;&#x8FED;&#x4EE3;&#x53C2;&#x6570;&#xFF0C;&#x7528;&#x4E8E;&#x5728;&#x5FAA;&#x73AF;&#x8FC7;&#x7A0B;&#x4E2D;&#x4F20;&#x9012;&#x548C;&#x66F4;&#x65B0;&#x503C;</li>
+<li><strong>&#x6761;&#x4EF6;&#x8FD4;&#x56DE;&#x503C;</strong>&#xFF1A;<code>scf.if</code> &#x53EF;&#x4EE5;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x9700;&#x8981;&#x5728; <code>then</code> &#x548C; <code>else</code> &#x5757;&#x4E2D;&#x90FD;&#x4F7F;&#x7528; <code>scf.yield</code></li>
+<li><strong>&#x7C7B;&#x578B;&#x8F6C;&#x6362;</strong>&#xFF1A;&#x7ECF;&#x5E38;&#x9700;&#x8981;&#x5728; <code>i32</code> &#x548C; <code>index</code> &#x7C7B;&#x578B;&#x4E4B;&#x95F4;&#x8F6C;&#x6362;</li>
+</ol>
+<h2 id="&#x4EFB;&#x52A1;&#x4E00;&#xFF1A;&#x5B9E;&#x73B0;&#x6C42;&#x548C;&#x5FAA;&#x73AF;-scffor">&#x4EFB;&#x52A1;&#x4E00;&#xFF1A;&#x5B9E;&#x73B0;&#x6C42;&#x548C;&#x5FAA;&#x73AF; (<code>scf.for</code>)</h2>
+<h3 id="&#x76EE;&#x6807;">&#x76EE;&#x6807;</h3>
+<p>&#x4F7F;&#x7528; <code>scf.for</code> &#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x6C42;&#x548C;&#x51FD;&#x6570;&#xFF0C;&#x8BA1;&#x7B97;&#x4ECE; 1 &#x5230; n &#x7684;&#x6240;&#x6709;&#x6574;&#x6570;&#x7684;&#x548C;&#xFF08;&#x5373;&#x5B9E;&#x73B0;&#x6570;&#x5B66;&#x516C;&#x5F0F;&#xFF1A;1 + 2 + 3 + ... + n&#xFF09;&#x3002;</p>
+<h3 id="&#x5206;&#x6790;&#x9700;&#x6C42;">&#x5206;&#x6790;&#x9700;&#x6C42;</h3>
+<p>&#x4F60;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x51FD;&#x6570; <code>@sum_loop_example</code>&#xFF0C;&#x5B83;&#xFF1A;</p>
+<ul>
+<li>&#x63A5;&#x53D7;&#x4E00;&#x4E2A; <code>i32</code> &#x7C7B;&#x578B;&#x7684;&#x53C2;&#x6570; <code>%n</code></li>
+<li>&#x8FD4;&#x56DE;&#x4E00;&#x4E2A; <code>i32</code> &#x7C7B;&#x578B;&#x7684;&#x7ED3;&#x679C;</li>
+<li>&#x8BA1;&#x7B97;&#x4ECE; 1 &#x5230; n &#x7684;&#x7D2F;&#x52A0;&#x548C;</li>
+</ul>
+<h3 id="&#x8BBE;&#x8BA1;&#x601D;&#x8DEF;">&#x8BBE;&#x8BA1;&#x601D;&#x8DEF;</h3>
+<p><strong>&#x6B65;&#x9AA4;1&#xFF1A;&#x7406;&#x89E3;&#x7C7B;&#x578B;&#x7EA6;&#x675F;</strong></p>
+<ul>
+<li>&#x601D;&#x8003;&#xFF1A;&#x4E3A;&#x4EC0;&#x4E48; <code>scf.for</code> &#x7684;&#x5FAA;&#x73AF;&#x53D8;&#x91CF;&#x5FC5;&#x987B;&#x662F; <code>index</code> &#x7C7B;&#x578B;&#xFF1F;</li>
+<li>&#x4F60;&#x9700;&#x8981;&#x54EA;&#x4E9B;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x64CD;&#x4F5C;&#xFF1F;</li>
+</ul>
+<p><strong>&#x6B65;&#x9AA4;2&#xFF1A;&#x8BBE;&#x8BA1;&#x5FAA;&#x73AF;&#x7ED3;&#x6784;</strong></p>
+<ul>
+<li>&#x5FAA;&#x73AF;&#x5E94;&#x8BE5;&#x4ECE;&#x54EA;&#x91CC;&#x5F00;&#x59CB;&#xFF1F;&#x5230;&#x54EA;&#x91CC;&#x7ED3;&#x675F;&#xFF1F;</li>
+<li>&#x5982;&#x4F55;&#x5728;&#x5FAA;&#x73AF;&#x4E2D;&#x7EF4;&#x62A4;&#x7D2F;&#x52A0;&#x548C;&#xFF1F;</li>
+<li>&#x4EC0;&#x4E48;&#x662F; <code>iter_args</code>&#xFF1F;&#x5B83;&#x5982;&#x4F55;&#x5DE5;&#x4F5C;&#xFF1F;</li>
+</ul>
+<p><strong>&#x6B65;&#x9AA4;3&#xFF1A;&#x7F16;&#x5199;&#x4EE3;&#x7801;&#x6846;&#x67B6;</strong>
+&#x5C1D;&#x8BD5;&#x586B;&#x5199;&#x4EE5;&#x4E0B;&#x6846;&#x67B6;&#xFF1A;</p>
+<pre><code class="lang-mlir">module {
+  func.func @sum_loop_example(%n: i32) -&gt; i32 {
+    // 1. &#x7C7B;&#x578B;&#x8F6C;&#x6362;&#xFF1A;&#x5C06; %n &#x4ECE; i32 &#x8F6C;&#x6362;&#x4E3A; index &#x7C7B;&#x578B;
+    %n_idx = arith._____ %n : i32 to _____
+
+    // 2. &#x5B9A;&#x4E49;&#x6240;&#x9700;&#x5E38;&#x91CF;
+    %c0_i32 = arith.constant __ : i32      // &#x521D;&#x59CB;&#x548C;&#x503C;&#x662F;&#x591A;&#x5C11;&#xFF1F;
+    %c1_idx = arith.constant __ : index    // &#x5FAA;&#x73AF;&#x6B65;&#x957F;&#x548C;&#x8D77;&#x59CB;&#x503C;&#x662F;&#x591A;&#x5C11;&#xFF1F;
+
+    // 3. &#x8BA1;&#x7B97;&#x5FAA;&#x73AF;&#x4E0A;&#x754C;&#xFF08;&#x63D0;&#x793A;&#xFF1A;&#x4ECE;1&#x5230;n+1&#xFF0C;&#x4E0D;&#x5305;&#x542B;&#x4E0A;&#x754C;&#xFF09;
+    %n_plus_1_idx = arith._____ %n_idx, %c1_idx : index
+
+    // 4. &#x7F16;&#x5199; for &#x5FAA;&#x73AF;
+    %final_sum = scf.for %i = _____ to _____ step _____
+        iter_args(______ = ______) -&gt; (i32) {
+
+        // 5. &#x5FAA;&#x73AF;&#x4F53;&#xFF1A;&#x8FDB;&#x884C;&#x7D2F;&#x52A0;&#x8BA1;&#x7B97;
+        // &#x63D0;&#x793A;&#xFF1A;&#x9700;&#x8981;&#x5C06; %i &#x8F6C;&#x6362;&#x56DE; i32 &#x7C7B;&#x578B;
+
+        scf.yield _____ : i32
+    }
+
+    return %final_sum : i32
+  }
+}
+</code></pre>
+<h3 id="&#x601D;&#x8003;&#x9898;">&#x601D;&#x8003;&#x9898;</h3>
+<ol>
+<li>&#x4E3A;&#x4EC0;&#x4E48;&#x9700;&#x8981;&#x8BA1;&#x7B97; <code>%n_plus_1_idx</code> &#x4F5C;&#x4E3A;&#x5FAA;&#x73AF;&#x4E0A;&#x754C;&#xFF1F;</li>
+<li><code>iter_args</code> &#x4E2D;&#x7684;&#x521D;&#x59CB;&#x503C;&#x5E94;&#x8BE5;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;</li>
+<li>&#x5FAA;&#x73AF;&#x4F53;&#x5185;&#x90E8;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x54EA;&#x4E9B;&#x8BA1;&#x7B97;&#xFF1F;</li>
+</ol>
+<h2 id="&#x4EFB;&#x52A1;&#x4E8C;&#xFF1A;&#x5B9E;&#x73B0;&#x6761;&#x4EF6;&#x5206;&#x652F;-scfif">&#x4EFB;&#x52A1;&#x4E8C;&#xFF1A;&#x5B9E;&#x73B0;&#x6761;&#x4EF6;&#x5206;&#x652F; (<code>scf.if</code>)</h2>
+<h3 id="&#x76EE;&#x6807;">&#x76EE;&#x6807;</h3>
+<p>&#x4F7F;&#x7528; <code>scf.if</code> &#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x6761;&#x4EF6;&#x51FD;&#x6570;&#xFF1A;</p>
+<ul>
+<li>&#x5982;&#x679C; <code>a &lt; b</code>&#xFF0C;&#x8FD4;&#x56DE; <code>a + b</code></li>
+<li>&#x5426;&#x5219;&#x8FD4;&#x56DE; <code>a - b</code></li>
+</ul>
+<h3 id="&#x5206;&#x6790;&#x9700;&#x6C42;">&#x5206;&#x6790;&#x9700;&#x6C42;</h3>
+<p>&#x4F60;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x51FD;&#x6570; <code>@if_else_example</code>&#xFF0C;&#x5B83;&#xFF1A;</p>
+<ul>
+<li>&#x63A5;&#x53D7;&#x4E24;&#x4E2A; <code>i32</code> &#x7C7B;&#x578B;&#x7684;&#x53C2;&#x6570; <code>%a</code> &#x548C; <code>%b</code></li>
+<li>&#x6839;&#x636E;&#x6BD4;&#x8F83;&#x7ED3;&#x679C;&#x6267;&#x884C;&#x4E0D;&#x540C;&#x7684;&#x8BA1;&#x7B97;</li>
+<li>&#x8FD4;&#x56DE;&#x4E00;&#x4E2A; <code>i32</code> &#x7C7B;&#x578B;&#x7684;&#x7ED3;&#x679C;</li>
+</ul>
+<h3 id="&#x8BBE;&#x8BA1;&#x601D;&#x8DEF;">&#x8BBE;&#x8BA1;&#x601D;&#x8DEF;</h3>
+<p><strong>&#x6B65;&#x9AA4;1&#xFF1A;&#x521B;&#x5EFA;&#x6BD4;&#x8F83;&#x6761;&#x4EF6;</strong></p>
+<ul>
+<li>&#x4F7F;&#x7528;&#x4EC0;&#x4E48;&#x64CD;&#x4F5C;&#x6765;&#x6BD4;&#x8F83;&#x4E24;&#x4E2A;&#x6574;&#x6570;&#xFF1F;</li>
+<li>&#x6BD4;&#x8F83;&#x64CD;&#x4F5C;&#x7684;&#x7ED3;&#x679C;&#x662F;&#x4EC0;&#x4E48;&#x7C7B;&#x578B;&#xFF1F;</li>
+</ul>
+<p><strong>&#x6B65;&#x9AA4;2&#xFF1A;&#x8BBE;&#x8BA1;&#x5206;&#x652F;&#x7ED3;&#x6784;</strong></p>
+<ul>
+<li><code>scf.if</code> &#x5982;&#x4F55;&#x8FD4;&#x56DE;&#x503C;&#xFF1F;</li>
+<li>&#x4E24;&#x4E2A;&#x5206;&#x652F;&#x4E2D;&#x90FD;&#x9700;&#x8981;&#x4EC0;&#x4E48;&#x64CD;&#x4F5C;&#xFF1F;</li>
+</ul>
+<p><strong>&#x6B65;&#x9AA4;3&#xFF1A;&#x7F16;&#x5199;&#x4EE3;&#x7801;&#x6846;&#x67B6;</strong>
+&#x5C1D;&#x8BD5;&#x586B;&#x5199;&#x4EE5;&#x4E0B;&#x6846;&#x67B6;&#xFF1A;</p>
+<pre><code class="lang-mlir">module {
+  func.func @if_else_example(%a: i32, %b: i32) -&gt; i32 {
+    // 1. &#x521B;&#x5EFA;&#x6BD4;&#x8F83;&#x6761;&#x4EF6;&#xFF1A;a &lt; b
+    %condition = arith._____ _____, %a, %b : i32
+
+    // 2. &#x4F7F;&#x7528; scf.if &#x6267;&#x884C;&#x6761;&#x4EF6;&#x5206;&#x652F;
+    %result = scf.if %condition -&gt; (_____) {
+      // then &#x5206;&#x652F;&#xFF1A;&#x8BA1;&#x7B97; a + b
+      %sum = arith._____ %a, %b : i32
+      scf._____ %sum : i32
+    } else {
+      // else &#x5206;&#x652F;&#xFF1A;&#x8BA1;&#x7B97; a - b  
+      %diff = arith._____ %a, %b : i32
+      scf._____ %diff : i32
+    }
+
+    return %result : i32
+  }
+}
+</code></pre>
+<h3 id="&#x601D;&#x8003;&#x9898;">&#x601D;&#x8003;&#x9898;</h3>
+<ol>
+<li><code>arith.cmpi</code> &#x7684; <code>slt</code> &#x53C2;&#x6570;&#x8868;&#x793A;&#x4EC0;&#x4E48;&#x610F;&#x601D;&#xFF1F;</li>
+<li>&#x4E3A;&#x4EC0;&#x4E48; <code>scf.if</code> &#x9700;&#x8981;&#x6307;&#x5B9A; <code>-&gt; (i32)</code>&#xFF1F;</li>
+<li>&#x5982;&#x679C;&#x5FD8;&#x8BB0;&#x5199; <code>scf.yield</code> &#x4F1A;&#x53D1;&#x751F;&#x4EC0;&#x4E48;&#xFF1F;</li>
+</ol>
+<h2 id="&#x5B9E;&#x9A8C;&#x6B65;&#x9AA4;">&#x5B9E;&#x9A8C;&#x6B65;&#x9AA4;</h2>
+<h3 id="&#x6B65;&#x9AA4;&#x4E00;&#xFF1A;&#x73AF;&#x5883;&#x51C6;&#x5907;">&#x6B65;&#x9AA4;&#x4E00;&#xFF1A;&#x73AF;&#x5883;&#x51C6;&#x5907;</h3>
+<pre><code class="lang-bash"><span class="hljs-comment"># &#x521B;&#x5EFA;&#x5B9E;&#x9A8C;&#x76EE;&#x5F55;</span>
+mkdir lab6-scf &amp;&amp; <span class="hljs-built_in">cd</span> lab6-scf
+
+<span class="hljs-comment"># &#x521B;&#x5EFA;&#x6240;&#x9700;&#x6587;&#x4EF6;</span>
+touch sum_loop.mlir
+touch <span class="hljs-keyword">if</span>_else.mlir
+</code></pre>
+<h3 id="&#x6B65;&#x9AA4;&#x4E8C;&#xFF1A;&#x5B9E;&#x73B0;&#x5E76;&#x6D4B;&#x8BD5;&#x6C42;&#x548C;&#x5FAA;&#x73AF;">&#x6B65;&#x9AA4;&#x4E8C;&#xFF1A;&#x5B9E;&#x73B0;&#x5E76;&#x6D4B;&#x8BD5;&#x6C42;&#x548C;&#x5FAA;&#x73AF;</h3>
+<ol>
+<li><strong>&#x7F16;&#x5199;</strong> <code>sum_loop.mlir</code>&#xFF0C;&#x6309;&#x7167;&#x4EFB;&#x52A1;&#x4E00;&#x7684;&#x6307;&#x5BFC;&#x5B8C;&#x6210;&#x4EE3;&#x7801;</li>
+<li><strong>&#x9A8C;&#x8BC1;&#x8BED;&#x6CD5;</strong>&#xFF1A;<pre><code class="lang-bash">mlir-opt sum_loop.mlir
+</code></pre>
+</li>
+<li><p><strong>&#x7F16;&#x8BD1;&#x548C;&#x6D4B;&#x8BD5;</strong>&#xFF1A;</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># &#x8F6C;&#x6362;&#x4E3A; LLVM IR</span>
+mlir-opt --convert-scf-to-cf --convert-arith-to-llvm --convert-func-to-llvm --reconcile-unrealized-casts sum_loop.mlir | mlir-translate --mlir-to-llvmir &gt; sum_loop.ll
+
+<span class="hljs-comment"># &#x7F16;&#x8BD1;&#x6D4B;&#x8BD5;&#x7A0B;&#x5E8F;&#xFF08;&#x6D4B;&#x8BD5;&#x7A0B;&#x5E8F;&#x89C1;&#x53C2;&#x8003;&#x4EE3;&#x7801;&#xFF09;</span>
+clang++ -O0 sum_loop.ll <span class="hljs-built_in">test</span>_sum_loop.cpp -o <span class="hljs-built_in">test</span>_sum_loop
+
+<span class="hljs-comment"># &#x8FD0;&#x884C;&#x6D4B;&#x8BD5;</span>
+./<span class="hljs-built_in">test</span>_sum_loop
+</code></pre>
+</li>
+</ol>
+<h3 id="&#x6B65;&#x9AA4;&#x4E09;&#xFF1A;&#x5B9E;&#x73B0;&#x5E76;&#x6D4B;&#x8BD5;&#x6761;&#x4EF6;&#x5206;&#x652F;">&#x6B65;&#x9AA4;&#x4E09;&#xFF1A;&#x5B9E;&#x73B0;&#x5E76;&#x6D4B;&#x8BD5;&#x6761;&#x4EF6;&#x5206;&#x652F;</h3>
+<ol>
+<li><strong>&#x7F16;&#x5199;</strong> <code>if_else.mlir</code>&#xFF0C;&#x6309;&#x7167;&#x4EFB;&#x52A1;&#x4E8C;&#x7684;&#x6307;&#x5BFC;&#x5B8C;&#x6210;&#x4EE3;&#x7801;</li>
+<li><strong>&#x9A8C;&#x8BC1;&#x8BED;&#x6CD5;</strong>&#xFF1A;<pre><code class="lang-bash">mlir-opt <span class="hljs-keyword">if</span>_else.mlir
+</code></pre>
+</li>
+<li><p><strong>&#x7F16;&#x8BD1;&#x548C;&#x6D4B;&#x8BD5;</strong>&#xFF1A;</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># &#x8F6C;&#x6362;&#x4E3A; LLVM IR</span>
+mlir-opt --convert-scf-to-cf --convert-arith-to-llvm --convert-func-to-llvm --reconcile-unrealized-casts <span class="hljs-keyword">if</span>_else.mlir | mlir-translate --mlir-to-llvmir &gt; <span class="hljs-keyword">if</span>_else.ll
+
+<span class="hljs-comment"># &#x7F16;&#x8BD1;&#x6D4B;&#x8BD5;&#x7A0B;&#x5E8F;</span>
+clang++ -O0 <span class="hljs-keyword">if</span>_else.ll <span class="hljs-built_in">test</span>_<span class="hljs-keyword">if</span>_else.cpp -o <span class="hljs-built_in">test</span>_<span class="hljs-keyword">if</span>_<span class="hljs-keyword">else</span>
+
+<span class="hljs-comment"># &#x8FD0;&#x884C;&#x6D4B;&#x8BD5;</span>
+./<span class="hljs-built_in">test</span>_<span class="hljs-keyword">if</span>_<span class="hljs-keyword">else</span>
+</code></pre>
+</li>
+</ol>
+<h2 id="&#x6D4B;&#x8BD5;&#x9A8C;&#x8BC1;">&#x6D4B;&#x8BD5;&#x9A8C;&#x8BC1;</h2>
+<h3 id="&#x6C42;&#x548C;&#x5FAA;&#x73AF;&#x6D4B;&#x8BD5;">&#x6C42;&#x548C;&#x5FAA;&#x73AF;&#x6D4B;&#x8BD5;</h3>
+<p><strong>&#x671F;&#x671B;&#x7ED3;&#x679C;</strong>&#xFF1A;</p>
+<pre><code>Testing sum_loop_example(10)
+Result: 55
+Expected: 55
+Test PASSED!
+</code></pre><p><strong>&#x9A8C;&#x8BC1;&#x516C;&#x5F0F;</strong>&#xFF1A;1 + 2 + ... + n = n(n+1)/2</p>
+<ul>
+<li>&#x5BF9;&#x4E8E; n=10&#xFF1A;10&#xD7;11/2 = 55</li>
+</ul>
+<h3 id="&#x6761;&#x4EF6;&#x5206;&#x652F;&#x6D4B;&#x8BD5;">&#x6761;&#x4EF6;&#x5206;&#x652F;&#x6D4B;&#x8BD5;</h3>
+<p><strong>&#x671F;&#x671B;&#x7ED3;&#x679C;</strong>&#xFF1A;</p>
+<pre><code>if_else_example(5, 10) -&gt; 15
+Expected: 15
+--------------------
+if_else_example(20, 10) -&gt; 10
+Expected: 10
+</code></pre><p><strong>&#x9A8C;&#x8BC1;&#x903B;&#x8F91;</strong>&#xFF1A;</p>
+<ul>
+<li>&#x6D4B;&#x8BD5;1&#xFF1A;5 &lt; 10 &#x4E3A;&#x771F;&#xFF0C;&#x8FD4;&#x56DE; 5 + 10 = 15</li>
+<li>&#x6D4B;&#x8BD5;2&#xFF1A;20 &lt; 10 &#x4E3A;&#x5047;&#xFF0C;&#x8FD4;&#x56DE; 20 - 10 = 10</li>
+</ul>
+<h2 id="&#x8C03;&#x8BD5;&#x63D0;&#x793A;">&#x8C03;&#x8BD5;&#x63D0;&#x793A;</h2>
+<h3 id="&#x5E38;&#x89C1;&#x7F16;&#x8BD1;&#x9519;&#x8BEF;">&#x5E38;&#x89C1;&#x7F16;&#x8BD1;&#x9519;&#x8BEF;</h3>
+<ol>
+<li><p><strong>&#x7C7B;&#x578B;&#x4E0D;&#x5339;&#x914D;&#x9519;&#x8BEF;</strong></p>
+<pre><code>error: &apos;scf.for&apos; op expects loop variable to be an index
+</code></pre><p><strong>&#x89E3;&#x51B3;</strong>&#xFF1A;&#x68C0;&#x67E5;&#x5FAA;&#x73AF;&#x53D8;&#x91CF;&#x662F;&#x5426;&#x4E3A; <code>index</code> &#x7C7B;&#x578B;</p>
+</li>
+<li><p><strong>&#x64CD;&#x4F5C;&#x6570;&#x7C7B;&#x578B;&#x9519;&#x8BEF;</strong></p>
+<pre><code>error: operand type mismatch
+</code></pre><p><strong>&#x89E3;&#x51B3;</strong>&#xFF1A;&#x68C0;&#x67E5;&#x662F;&#x5426;&#x9700;&#x8981;&#x7C7B;&#x578B;&#x8F6C;&#x6362;</p>
+</li>
+<li><p><strong>&#x7F3A;&#x5C11; yield &#x9519;&#x8BEF;</strong></p>
+<pre><code>error: expected &apos;scf.yield&apos; at the end of the region
+</code></pre><p><strong>&#x89E3;&#x51B3;</strong>&#xFF1A;&#x5728;&#x5206;&#x652F;&#x6216;&#x5FAA;&#x73AF;&#x5757;&#x672B;&#x5C3E;&#x6DFB;&#x52A0; <code>scf.yield</code></p>
+</li>
+</ol>
+<h3 id="&#x8C03;&#x8BD5;&#x65B9;&#x6CD5;">&#x8C03;&#x8BD5;&#x65B9;&#x6CD5;</h3>
+<ol>
+<li><strong>&#x9010;&#x6B65;&#x9A8C;&#x8BC1;</strong>&#xFF1A;&#x5148;&#x5199;&#x57FA;&#x672C;&#x7ED3;&#x6784;&#xFF0C;&#x518D;&#x9010;&#x6B65;&#x6DFB;&#x52A0;&#x7EC6;&#x8282;</li>
+<li><strong>&#x7C7B;&#x578B;&#x68C0;&#x67E5;</strong>&#xFF1A;&#x786E;&#x4FDD;&#x6BCF;&#x4E2A;&#x64CD;&#x4F5C;&#x7684;&#x8F93;&#x5165;&#x8F93;&#x51FA;&#x7C7B;&#x578B;&#x5339;&#x914D;</li>
+<li><strong>&#x8BED;&#x6CD5;&#x9A8C;&#x8BC1;</strong>&#xFF1A;&#x9891;&#x7E41;&#x4F7F;&#x7528; <code>mlir-opt</code> &#x68C0;&#x67E5;&#x8BED;&#x6CD5;</li>
+</ol>
+<h2 id="&#x5E38;&#x89C1;&#x95EE;&#x9898;">&#x5E38;&#x89C1;&#x95EE;&#x9898;</h2>
+<h3 id="q1&#xFF1A;&#x4E3A;&#x4EC0;&#x4E48;-scffor-&#x8981;&#x6C42;&#x5FAA;&#x73AF;&#x53D8;&#x91CF;&#x662F;-index-&#x7C7B;&#x578B;&#xFF1F;">Q1&#xFF1A;&#x4E3A;&#x4EC0;&#x4E48; <code>scf.for</code> &#x8981;&#x6C42;&#x5FAA;&#x73AF;&#x53D8;&#x91CF;&#x662F; <code>index</code> &#x7C7B;&#x578B;&#xFF1F;</h3>
+<p><strong>A</strong>&#xFF1A;<code>index</code> &#x7C7B;&#x578B;&#x662F; MLIR &#x4E13;&#x95E8;&#x4E3A;&#x7D22;&#x5F15;&#x548C;&#x5FAA;&#x73AF;&#x8BBE;&#x8BA1;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x53EF;&#x4EE5;&#x9002;&#x5E94;&#x4E0D;&#x540C;&#x76EE;&#x6807;&#x5E73;&#x53F0;&#x7684;&#x6307;&#x9488;&#x5BBD;&#x5EA6;&#x3002;</p>
+<h3 id="q2&#xFF1A;iterargs-&#x7684;&#x4F5C;&#x7528;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;">Q2&#xFF1A;<code>iter_args</code> &#x7684;&#x4F5C;&#x7528;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;</h3>
+<p><strong>A</strong>&#xFF1A;<code>iter_args</code> &#x7528;&#x4E8E;&#x5728;&#x5FAA;&#x73AF;&#x8FED;&#x4EE3;&#x95F4;&#x4F20;&#x9012;&#x72B6;&#x6001;&#x3002;&#x6BCF;&#x6B21;&#x8FED;&#x4EE3;&#x5F00;&#x59CB;&#x65F6;&#x63A5;&#x6536;&#x4E0A;&#x6B21;&#x7684;&#x503C;&#xFF0C;&#x7ED3;&#x675F;&#x65F6;&#x901A;&#x8FC7; <code>scf.yield</code> &#x4F20;&#x9012;&#x7ED9;&#x4E0B;&#x6B21;&#x8FED;&#x4EE3;&#x3002;</p>
+<h3 id="q3&#xFF1A;scfif-&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x9700;&#x8981;&#x8FD4;&#x56DE;&#x503C;&#xFF1F;">Q3&#xFF1A;<code>scf.if</code> &#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x9700;&#x8981;&#x8FD4;&#x56DE;&#x503C;&#xFF1F;</h3>
+<p><strong>A</strong>&#xFF1A;&#x5F53;&#x4F60;&#x9700;&#x8981;&#x6839;&#x636E;&#x6761;&#x4EF6;&#x9009;&#x62E9;&#x4E0D;&#x540C;&#x7684;&#x503C;&#x65F6;&#x3002;&#x5982;&#x679C;&#x53EA;&#x662F;&#x6267;&#x884C;&#x4E0D;&#x540C;&#x7684;&#x526F;&#x4F5C;&#x7528;&#x64CD;&#x4F5C;&#xFF0C;&#x53EF;&#x4EE5;&#x4E0D;&#x8FD4;&#x56DE;&#x503C;&#x3002;</p>
+<h3 id="q4&#xFF1A;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x64CD;&#x4F5C;&#x6709;&#x54EA;&#x4E9B;&#xFF1F;">Q4&#xFF1A;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x64CD;&#x4F5C;&#x6709;&#x54EA;&#x4E9B;&#xFF1F;</h3>
+<p><strong>A</strong>&#xFF1A;&#x4E3B;&#x8981;&#x6709; <code>arith.index_cast</code>&#xFF08;<code>i32</code> &#x2194; <code>index</code>&#xFF09;&#x3001;<code>arith.extsi</code>&#xFF08;&#x7B26;&#x53F7;&#x6269;&#x5C55;&#xFF09;&#x3001;<code>arith.trunci</code>&#xFF08;&#x622A;&#x65AD;&#xFF09;&#x7B49;&#x3002;</p>
+<h2 id="&#x53C2;&#x8003;&#x4EE3;&#x7801;">&#x53C2;&#x8003;&#x4EE3;&#x7801;</h2>
+<h1 id="lab-6-&#x53C2;&#x8003;&#x4EE3;&#x7801;">Lab 6: &#x53C2;&#x8003;&#x4EE3;&#x7801;</h1>
+<h2 id="1-sumloopmlir---&#x6C42;&#x548C;&#x5FAA;&#x73AF;&#x5B9E;&#x73B0;">1. sum_loop.mlir - &#x6C42;&#x548C;&#x5FAA;&#x73AF;&#x5B9E;&#x73B0;</h2>
+<p>module {
+  func.func @sum_loop_example(%n: i32) -&gt; i32 {
+    // ---- Type Conversion Section ----
+    // Cast the input %n from i32 to index type for loop control.
+    %n_idx = arith.index_cast %n : i32 to index</p>
+<pre><code>// ---- Loop Constants (now using &apos;index&apos; type) ----
+%c0_i32 = arith.constant 0 : i32 // For initializing the sum (i32)
+%c1_idx = arith.constant 1 : index // For loop step and bounds (index)
+
+// Calculate upper bound using index types
+%n_plus_1_idx = arith.addi %n_idx, %c1_idx : index
+
+// ---- The Loop (now correctly using &apos;index&apos; types) ----
+// The loop variable %i is now of type &apos;index&apos;.
+// The initial sum %sum_iter is correctly initialized from an i32 constant.
+%final_sum = scf.for %i = %c1_idx to %n_plus_1_idx step %c1_idx
+    iter_args(%sum_iter = %c0_i32) -&gt; (i32) {
+
+  // ---- Calculation inside loop ----
+  // Cast the loop variable %i from index back to i32 for the addition.
+  %i_i32 = arith.index_cast %i : index to i32
+  %next_sum = arith.addi %sum_iter, %i_i32 : i32
+  scf.yield %next_sum : i32
+}
+
+return %final_sum : i32
+</code></pre><p>  }
+}</p>
+<h2 id="2-testsumloopcpp---&#x6C42;&#x548C;&#x5FAA;&#x73AF;&#x6D4B;&#x8BD5;">2. test_sum_loop.cpp - &#x6C42;&#x548C;&#x5FAA;&#x73AF;&#x6D4B;&#x8BD5;</h2>
+<h1 id="include-">include <iostream></iostream></h1>
+<p>// &#x58F0;&#x660E;&#x5C06;&#x5728; MLIR &#x4E2D;&#x5B9A;&#x4E49;&#x7684; C &#x51FD;&#x6570;
+extern &quot;C&quot; {
+    int sum_loop_example(int n);
+}</p>
+<p>int main() {
+    // &#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#xFF1A;&#x8BA1;&#x7B97; 1 &#x5230; 10 &#x7684;&#x548C;
+    int n = 10;
+    int expected_sum = 55; // 1+2+...+10 = 55</p>
+<pre><code>int result = sum_loop_example(n);
+
+std::cout &lt;&lt; &quot;Testing sum_loop_example(&quot; &lt;&lt; n &lt;&lt; &quot;)&quot; &lt;&lt; std::endl;
+std::cout &lt;&lt; &quot;Result: &quot; &lt;&lt; result &lt;&lt; std::endl;
+std::cout &lt;&lt; &quot;Expected: &quot; &lt;&lt; expected_sum &lt;&lt; std::endl;
+
+if (result == expected_sum) {
+    std::cout &lt;&lt; &quot;Test PASSED!&quot; &lt;&lt; std::endl;
+} else {
+    std::cout &lt;&lt; &quot;Test FAILED!&quot; &lt;&lt; std::endl;
+}
+
+return 0;
+</code></pre><p>}</p>
+<h2 id="3-ifelsemlir---&#x6761;&#x4EF6;&#x5206;&#x652F;&#x5B9E;&#x73B0;">3. if_else.mlir - &#x6761;&#x4EF6;&#x5206;&#x652F;&#x5B9E;&#x73B0;</h2>
+<p>module {
+  // &#x51FD;&#x6570;&#x5B9A;&#x4E49;&#xFF1A;&#x63A5;&#x6536;&#x4E24;&#x4E2A; i32&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A; i32&#x3002;
+  // &#x5982;&#x679C; a &lt; b, &#x8FD4;&#x56DE; a + b
+  // &#x5426;&#x5219;, &#x8FD4;&#x56DE; a - b
+  func.func @if_else_example(%a: i32, %b: i32) -&gt; i32 {
+    // 1. &#x4F7F;&#x7528; <code>arith.cmpi</code> &#x521B;&#x5EFA;&#x6761;&#x4EF6;&#x3002;
+    %condition = arith.cmpi slt, %a, %b : i32</p>
+<pre><code>// 2. &#x4F7F;&#x7528; `scf.if` &#x6267;&#x884C;&#x6761;&#x4EF6;&#x5206;&#x652F;&#x5E76;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x3002;
+%result = scf.if %condition -&gt; (i32) {
+  %sum = arith.addi %a, %b : i32
+  scf.yield %sum : i32
+} else {
+  %diff = arith.subi %a, %b : i32
+  scf.yield %diff : i32
+}
+
+// 3. &#x8FD4;&#x56DE;&#x7531; `scf.if` &#x64CD;&#x4F5C;&#x4EA7;&#x751F;&#x7684;&#x7ED3;&#x679C;&#x3002;
+return %result : i32
+</code></pre><p>  }
+}</p>
+<h2 id="4-testifelsecpp---&#x6761;&#x4EF6;&#x5206;&#x652F;&#x6D4B;&#x8BD5;">4. test_if_else.cpp - &#x6761;&#x4EF6;&#x5206;&#x652F;&#x6D4B;&#x8BD5;</h2>
+<h1 id="include-">include <iostream></iostream></h1>
+<p>// &#x4F7F;&#x7528; extern &quot;C&quot; &#x6765;&#x544A;&#x8BC9; C++ &#x7F16;&#x8BD1;&#x5668;&#xFF0C;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x662F;&#x7528; C &#x8BED;&#x8A00;&#x7684;&#x89C4;&#x5219;&#x6765;&#x94FE;&#x63A5;&#x7684;&#xFF0C;
+// &#x4EE5;&#x9632;&#x6B62; C++ &#x7684;&#x540D;&#x79F0;&#x4FEE;&#x9970;&#xFF08;name mangling&#xFF09;&#x95EE;&#x9898;&#x3002;
+// &#x51FD;&#x6570;&#x7B7E;&#x540D;&#x5FC5;&#x987B;&#x4E0E; MLIR &#x4E2D;&#x7684;&#x51FD;&#x6570;&#x5B8C;&#x5168;&#x5339;&#x914D;&#x3002;
+extern &quot;C&quot; {
+    int if_else_example(int a, int b);
+}</p>
+<p>int main() {
+    // &#x6D4B;&#x8BD5;&#x7528;&#x4F8B; 1: 5 &lt; 10, &#x5E94;&#x8BE5;&#x8FD4;&#x56DE; 5 + 10 = 15
+    int result1 = if_else_example(5, 10);
+    std::cout &lt;&lt; &quot;if_else_example(5, 10) -&gt; &quot; &lt;&lt; result1 &lt;&lt; std::endl;
+    std::cout &lt;&lt; &quot;Expected: 15&quot; &lt;&lt; std::endl;
+    std::cout &lt;&lt; &quot;--------------------&quot; &lt;&lt; std::endl;</p>
+<pre><code>// &#x6D4B;&#x8BD5;&#x7528;&#x4F8B; 2: 20 &gt; 10, &#x5E94;&#x8BE5;&#x8FD4;&#x56DE; 20 - 10 = 10
+int result2 = if_else_example(20, 10);
+std::cout &lt;&lt; &quot;if_else_example(20, 10) -&gt; &quot; &lt;&lt; result2 &lt;&lt; std::endl;
+std::cout &lt;&lt; &quot;Expected: 10&quot; &lt;&lt; std::endl;
+
+return 0;
+</code></pre><p>}</p>
+<h2 id="5-&#x7F16;&#x8BD1;&#x811A;&#x672C;-compilesh">5. &#x7F16;&#x8BD1;&#x811A;&#x672C; compile.sh</h2>
+<h1 id="binbash">!/bin/bash</h1>
+<p>echo &quot;=== Lab 6: SCF Dialect &#x7F16;&#x8BD1;&#x811A;&#x672C; ===&quot;</p>
+<h1 id="&#x7F16;&#x8BD1;&#x6C42;&#x548C;&#x5FAA;&#x73AF;">&#x7F16;&#x8BD1;&#x6C42;&#x548C;&#x5FAA;&#x73AF;</h1>
+<p>echo &quot;&#x7F16;&#x8BD1;&#x6C42;&#x548C;&#x5FAA;&#x73AF;...&quot;
+mlir-opt --convert-scf-to-cf --convert-arith-to-llvm --convert-func-to-llvm --reconcile-unrealized-casts sum_loop.mlir | mlir-translate --mlir-to-llvmir &gt; sum_loop.ll</p>
+<p>if [ ! -f sum_loop.ll ]; then
+    echo &quot;&#x2717; &#x6C42;&#x548C;&#x5FAA;&#x73AF; MLIR-&gt;LLVM &#x8F6C;&#x6362;&#x5931;&#x8D25;&quot;
+    exit 1
+fi</p>
+<p>clang++ -O0 sum_loop.ll test_sum_loop.cpp -o test_sum_loop</p>
+<p>if [ $? -eq 0 ]; then
+    echo &quot;&#x2713; &#x6C42;&#x548C;&#x5FAA;&#x73AF;&#x7F16;&#x8BD1;&#x6210;&#x529F;&quot;
+else
+    echo &quot;&#x2717; &#x6C42;&#x548C;&#x5FAA;&#x73AF;&#x7F16;&#x8BD1;&#x5931;&#x8D25;&quot;
+    exit 1
+fi</p>
+<h1 id="&#x7F16;&#x8BD1;&#x6761;&#x4EF6;&#x5206;&#x652F;">&#x7F16;&#x8BD1;&#x6761;&#x4EF6;&#x5206;&#x652F;</h1>
+<p>echo &quot;&#x7F16;&#x8BD1;&#x6761;&#x4EF6;&#x5206;&#x652F;...&quot;
+mlir-opt --convert-scf-to-cf --convert-arith-to-llvm --convert-func-to-llvm --reconcile-unrealized-casts if_else.mlir | mlir-translate --mlir-to-llvmir &gt; if_else.ll</p>
+<p>if [ ! -f if_else.ll ]; then
+    echo &quot;&#x2717; &#x6761;&#x4EF6;&#x5206;&#x652F; MLIR-&gt;LLVM &#x8F6C;&#x6362;&#x5931;&#x8D25;&quot;
+    exit 1
+fi</p>
+<p>clang++ -O0 if_else.ll test_if_else.cpp -o test_if_else</p>
+<p>if [ $? -eq 0 ]; then
+    echo &quot;&#x2713; &#x6761;&#x4EF6;&#x5206;&#x652F;&#x7F16;&#x8BD1;&#x6210;&#x529F;&quot;
+else
+    echo &quot;&#x2717; &#x6761;&#x4EF6;&#x5206;&#x652F;&#x7F16;&#x8BD1;&#x5931;&#x8D25;&quot;
+    exit 1
+fi</p>
+<p>echo &quot;=== &#x7F16;&#x8BD1;&#x5B8C;&#x6210;&#xFF01;===&quot;</p>
+<h2 id="6-&#x6D4B;&#x8BD5;&#x811A;&#x672C;-testsh">6. &#x6D4B;&#x8BD5;&#x811A;&#x672C; test.sh</h2>
+<h1 id="binbash">!/bin/bash</h1>
+<p>echo &quot;=== Lab 6: SCF Dialect &#x6D4B;&#x8BD5;&#x811A;&#x672C; ===&quot;</p>
+<h1 id="&#x6D4B;&#x8BD5;&#x6C42;&#x548C;&#x5FAA;&#x73AF;">&#x6D4B;&#x8BD5;&#x6C42;&#x548C;&#x5FAA;&#x73AF;</h1>
+<p>echo &quot;&#x6D4B;&#x8BD5;&#x6C42;&#x548C;&#x5FAA;&#x73AF;&#xFF1A;&quot;
+if [ -f test_sum_loop ]; then
+    ./test_sum_loop
+else
+    echo &quot;&#x9519;&#x8BEF;&#xFF1A;test_sum_loop &#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x8BF7;&#x5148;&#x8FD0;&#x884C;&#x7F16;&#x8BD1;&#x811A;&#x672C;&quot;
+fi
+echo &quot;&quot;</p>
+<h1 id="&#x6D4B;&#x8BD5;&#x6761;&#x4EF6;&#x5206;&#x652F;">&#x6D4B;&#x8BD5;&#x6761;&#x4EF6;&#x5206;&#x652F;</h1>
+<p>echo &quot;&#x6D4B;&#x8BD5;&#x6761;&#x4EF6;&#x5206;&#x652F;&#xFF1A;&quot;
+if [ -f test_if_else ]; then
+    ./test_if_else
+else
+    echo &quot;&#x9519;&#x8BEF;&#xFF1A;test_if_else &#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x8BF7;&#x5148;&#x8FD0;&#x884C;&#x7F16;&#x8BD1;&#x811A;&#x672C;&quot;
+fi
+echo &quot;&quot;</p>
+<p>echo &quot;=== &#x6240;&#x6709;&#x6D4B;&#x8BD5;&#x5B8C;&#x6210;&#xFF01;===&quot;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Lab_5_Arith.html" class="navigation navigation-prev " aria-label="Previous page: Dialect入门二配套Lab5">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Lab_7_mem.html" class="navigation navigation-next " aria-label="Next page: Dialect入门二配套Lab7">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Dialect入门二配套Lab6","level":"1.14","depth":1,"next":{"title":"Dialect入门二配套Lab7","level":"1.15","depth":1,"path":"Lab_7_mem.md","ref":"Lab_7_mem.md","articles":[]},"previous":{"title":"Dialect入门二配套Lab5","level":"1.13","depth":1,"path":"Lab_5_Arith.md","ref":"Lab_5_Arith.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"}},"file":{"path":"Lab_6.md","mtime":"2025-10-16T02:23:10.813Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-10-16T02:23:46.454Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
