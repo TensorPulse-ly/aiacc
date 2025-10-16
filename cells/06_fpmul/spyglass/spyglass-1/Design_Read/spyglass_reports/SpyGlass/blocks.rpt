@@ -1,0 +1,12 @@
+fp32_multiplier@@@@fpmul.\fpmul_lanes[0].u_fp32_mul 
+fp16_multiplier@@@@fpmul.\fpmul_lanes[0].u_fp16_mul_low 
+fp16_multiplier@@@@fpmul.\fpmul_lanes[0].u_fp16_mul_high 
+fp32_multiplier@@@@fpmul.\fpmul_lanes[1].u_fp32_mul 
+fp16_multiplier@@@@fpmul.\fpmul_lanes[1].u_fp16_mul_low 
+fp16_multiplier@@@@fpmul.\fpmul_lanes[1].u_fp16_mul_high 
+fp32_multiplier@@@@fpmul.\fpmul_lanes[2].u_fp32_mul 
+fp16_multiplier@@@@fpmul.\fpmul_lanes[2].u_fp16_mul_low 
+fp16_multiplier@@@@fpmul.\fpmul_lanes[2].u_fp16_mul_high 
+fp32_multiplier@@@@fpmul.\fpmul_lanes[3].u_fp32_mul 
+fp16_multiplier@@@@fpmul.\fpmul_lanes[3].u_fp16_mul_low 
+fp16_multiplier@@@@fpmul.\fpmul_lanes[3].u_fp16_mul_high 

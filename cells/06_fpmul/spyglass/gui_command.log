@@ -1,0 +1,22 @@
+read_file -type verilog ../vsrc/fpmul.v
+
+
+
+current_goal Design_Read -alltop
+
+
+link_design -force
+
+set_option designread_enable_synthesis yes
+compile_design -force
+
+
+
+current_goal lint/lint_rtl -alltop
+run_goal
+
+
+
+
+gui_exit
+gui_exit

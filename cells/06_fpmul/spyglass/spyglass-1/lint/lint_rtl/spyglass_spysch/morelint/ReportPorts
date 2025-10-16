@@ -1,0 +1,7 @@
+SCHEMA@@PName@@Dir@@Msb@@Lsb@@Desc@@DU@@DU_BBOX
+VALUE@@clk@@INPUT@@0@@0@@全局信号@@fpmul@@No
+VALUE@@rst_n@@INPUT@@0@@0@@-@@fpmul@@No
+VALUE@@dvr_fpmul_s0@@INPUT@@127@@0@@-@@fpmul@@No
+VALUE@@dvr_fpmul_s1@@INPUT@@127@@0@@-@@fpmul@@No
+VALUE@@cru_fpmul@@INPUT@@2@@0@@-@@fpmul@@No
+VALUE@@dr_fpmul_d@@OUTPUT@@127@@0@@-@@fpmul@@No
