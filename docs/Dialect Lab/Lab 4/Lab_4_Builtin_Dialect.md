@@ -55,27 +55,23 @@ mlir-opt --help | head -5
 
 **操作步骤：**
 1. 创建`basic.mlir`，包含最简单的module结构
-2. 创建`nested_module_test.mlir`，测试module嵌套（应该失败）
-3. 创建`no_module_test.mlir`，测试缺少module的情况（应该失败）
+2. 创建`nested_module_test.mlir`，测试module嵌套
+3. 创建`no_module_test.mlir`，测试缺少module的情况
 
 **测试命令：**
 ```bash
 mlir-opt basic.mlir --verify-diagnostics
-mlir-opt nested_module_test.mlir  # 应该失败
-mlir-opt no_module_test.mlir      # 应该失败
+mlir-opt nested_module_test.mlir
+mlir-opt no_module_test.mlir
 ```
 
 **思考问题：**
 
-1. **为什么module不能嵌套？**
-   
-   **答案：** module在MLIR中被设计为顶层编译单元，类似于文件或编译模块的概念。允许嵌套会带来复杂的命名空间和符号解析问题，违背了MLIR"简单而强大"的设计理念。每个module代表一个独立的编译单元，有自己的符号表和优化边界。
-
-2. **为什么所有MLIR代码都必须在module内？**
+1. **为什么所有MLIR代码都必须在module内？**
    
    **答案：** module提供了必要的上下文环境，包括符号管理、内存管理和编译单元边界。没有module，MLIR无法正确管理函数的可见性、进行符号解析，也无法为优化Pass提供明确的作用域。module是MLIR工具链（如mlir-opt）处理IR的基本单位。
 
-3. **module与其他编程语言中的"文件"概念有什么相似之处？**
+2. **module与其他编程语言中的"文件"概念有什么相似之处？**
    
    **答案：** 
    - **作用域边界**：就像C++的源文件定义了编译单元边界，module定义了MLIR的编译单元
