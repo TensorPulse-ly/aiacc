@@ -1067,6 +1067,7 @@ public:
 #include "mlir/IR/PatternMatch.h"
 #include "mlir/Dialect/MemRef/IR/MemRef.h"
 #include "mlir/Dialect/Arith/IR/Arith.h"
+#include "mlir/Dialect/Func/IR/FuncOps.h"
 
 using namespace mlir;
 
@@ -1086,6 +1087,7 @@ struct MemoryToMemRefPass : public PassWrapper<MemoryToMemRefPass, OperationPass
   void getDependentDialects(DialectRegistry &registry) const override {
     registry.insert<memref::MemRefDialect>();
     registry.insert<arith::ArithDialect>();
+    registry.insert<func::FuncDialect>();
   }
   
   void runOnOperation() override {
@@ -1093,6 +1095,9 @@ struct MemoryToMemRefPass : public PassWrapper<MemoryToMemRefPass, OperationPass
     SmallVector<SetElementOp, 4> setOps;  
     SmallVector<GetElementOp, 4> getOps;
     SmallVector<PrintMatrixOp, 4> printOps;
+    
+    // 用于记录每个函数中分配的 memref
+    DenseMap<func::FuncOp, SmallVector<Value, 4>> funcToAllocs;
     
     getOperation().walk([&](Operation *op) {
       if (auto createOp = dyn_cast<CreateMatrixOp>(op))
@@ -1114,6 +1119,12 @@ struct MemoryToMemRefPass : public PassWrapper<MemoryToMemRefPass, OperationPass
       
       auto allocOp = builder.create<memref::AllocOp>(
           op.getLoc(), resultType, operands);
+      
+      // 记录这个 alloc 属于哪个函数
+      auto parentFunc = op->getParentOfType<func::FuncOp>();
+      if (parentFunc) {
+        funcToAllocs[parentFunc].push_back(allocOp.getResult());
+      }
       
       op->getResult(0).replaceAllUsesWith(allocOp.getResult());
       op->erase();
@@ -1160,6 +1171,38 @@ struct MemoryToMemRefPass : public PassWrapper<MemoryToMemRefPass, OperationPass
     for (auto op : printOps) {
       llvm::outs() << "Removed memory.print (debug operation)\n";
       op->erase();
+    }
+    
+    // ===== 在每个函数的返回前插入 dealloc =====
+    int totalDeallocs = 0;
+    for (auto &entry : funcToAllocs) {
+      func::FuncOp funcOp = entry.first;
+      auto &allocs = entry.second;
+      
+      if (allocs.empty())
+        continue;
+      
+      // 遍历函数中的所有 block，找到 return 语句
+      funcOp.walk([&](Block *block) {
+        Operation *terminator = block->getTerminator();
+        
+        // 如果是 return 语句，在其前面插入 dealloc
+        if (terminator && isa<func::ReturnOp>(terminator)) {
+          OpBuilder builder(terminator);
+          
+          // 为该函数中所有分配的 memref 插入 dealloc
+          for (auto memref : allocs) {
+            builder.create<memref::DeallocOp>(
+                terminator->getLoc(), memref);
+            totalDeallocs++;
+          }
+        }
+      });
+    }
+    
+    if (totalDeallocs > 0) {
+      llvm::outs() << "Inserted " << totalDeallocs 
+                   << " memref.dealloc operation(s)\n";
     }
   }
 };
@@ -1656,3 +1699,4 @@ cl /std:c++17 /MD ^
 **由于llvm版本的不同，源码可能会有很少部分的修改。**使用llvm22.0版本的lab源码如上。
 
 省略了部分不需要编译的lab
+
