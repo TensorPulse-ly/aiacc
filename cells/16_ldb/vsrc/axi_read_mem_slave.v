@@ -4,7 +4,7 @@
 module axi_read_mem_slave #(
     parameter integer AXI_ADDR_W = 64,
     parameter integer AXI_DATA_W = 128,
-    parameter integer MEM_DEPTH = 1024,
+    parameter integer MEM_DEPTH = 2048,
     parameter integer MAX_OUTSTANDING = 4
 )(
     input wire clk,
@@ -185,7 +185,7 @@ always @(posedge clk or negedge rst_n) begin
             word_idx = current_request.addr >> ADDR_LSB;
             
             if (current_request.addr >= (MEM_DEPTH << ADDR_LSB)) begin
-                rdata <= {AXI_DATA_W{1'bx}};
+                rdata <= {AXI_DATA_W{1'b1}};
                 rresp <= 2'b10; // SLVERR
             end else begin
                 rdata <= mem[word_idx];

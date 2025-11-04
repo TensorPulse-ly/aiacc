@@ -1,18 +1,19 @@
 //---------------------------------------------------------------------
 // Filename: ldb.v
 // Author: cypher、hamid
-// Date: 2025-9-10
+// Date: 2025-11-4
 // Version: 1.3
 // Description: This is a module that supports burst data transfer initiation, selective byte masking, and interleaved address calculation for SMC.
 //---------------------------------------------------------------------
 
 `timescale 1ns/1ps
+
 `default_nettype none
 
 module ldb #(
     parameter param_ur_byte_cnt = 16,
-    parameter param_gr_intlv_addr = 64,
-    parameter param_smc_cnt = 1,
+    parameter param_gr_intlv_addr = 32,
+    parameter param_smc_cnt = 64,
     parameter ur_addr_w = 11,
     parameter gr_addr_w = 64,
     parameter brst_w = 16
@@ -39,6 +40,7 @@ module ldb #(
     
     // UR接口
     output reg ur_we,
+    output reg [5:0] smc_index, // SMC索引输出
     output reg [ur_addr_w-1:0] ur_addr,
     output reg [param_ur_byte_cnt*8-1:0] ur_wdata,
     
@@ -50,13 +52,16 @@ module ldb #(
 // 常量定义
 localparam ur_data_width = param_ur_byte_cnt * 8;
 localparam BYTE_PER_BEAT = 16;
+localparam MAX_SMC_COUNT = 64;
 
 // 状态定义
-typedef enum logic [2:0] {
+typedef enum logic [3:0] {
     IDLE,
     PARSE,
+    PROCESS_SMC,
     WAIT_AXI,
     DATA,
+    NEXT_SMC,
     DONE
 } state_t;
 
@@ -69,6 +74,15 @@ reg [3:0] byte_strb_q;
 reg [5:0] smc_strb_q;
 reg [7:0] ur_id_q;
 reg is_last_beat;
+
+// SMC处理相关寄存器
+reg [5:0] current_smc_idx_q;
+reg [5:0] num_smc_q; // 要使能的SMC数量
+reg processing_smc_q;
+
+// 新增：原始值寄存器
+reg [brst_w-1:0] original_burst_cnt_q;
+reg [ur_addr_w-1:0] original_ur_addr_q;
 
 // 组合逻辑变量
 state_t state_d;
@@ -85,6 +99,15 @@ reg axi_req_valid_d;
 reg [gr_addr_w-1:0] axi_req_addr_d;
 reg [8:0] axi_req_len_d;
 reg [1:0] crd_ldb_o_d;
+
+// SMC处理相关组合逻辑变量
+reg [5:0] current_smc_idx_d;
+reg [5:0] num_smc_d;
+reg processing_smc_d;
+
+// 新增：原始值组合逻辑变量
+reg [brst_w-1:0] original_burst_cnt_d;
+reg [ur_addr_w-1:0] original_ur_addr_d;
 
 // 字节使能掩码查找表
 function [15:0] get_byte_mask;
@@ -107,6 +130,7 @@ function [15:0] get_byte_mask;
             4'hD: get_byte_mask = 16'h1FFF;
             4'hE: get_byte_mask = 16'h3FFF;
             4'hF: get_byte_mask = 16'h7FFF;
+            default: get_byte_mask = 16'hFFFF; 
         endcase
     end
 endfunction
@@ -116,9 +140,12 @@ function string state2str(input state_t s);
     case (s)
         IDLE: state2str = "IDLE";
         PARSE: state2str = "PARSE";
+        PROCESS_SMC: state2str = "PROCESS_SMC";
         WAIT_AXI: state2str = "WAIT_AXI";
         DATA: state2str = "DATA";
+        NEXT_SMC: state2str = "NEXT_SMC";
         DONE: state2str = "DONE";
+        default: state2str = "UNKNOWN";
     endcase
 endfunction
 
@@ -140,6 +167,15 @@ always @* begin
     axi_req_len_d = burst_cnt_q;
     crd_ldb_o_d = 2'b00;
     
+    // SMC处理相关信号的默认值
+    current_smc_idx_d = current_smc_idx_q;
+    num_smc_d = num_smc_q;
+    processing_smc_d = processing_smc_q;
+    
+    // 新增：原始值默认值
+    original_burst_cnt_d = original_burst_cnt_q;
+    original_ur_addr_d = original_ur_addr_q;
+    
     case (state_q)
         IDLE: begin
             if (cru_ldb_i[127]) begin
@@ -150,13 +186,32 @@ always @* begin
         
         PARSE: begin
             // 解析指令包
-            burst_cnt_d = cru_ldb_i[116:101];
+            original_burst_cnt_d = cru_ldb_i[116:101];  // 保存原始burst长度
+            original_ur_addr_d = cru_ldb_i[28:18];      // 保存原始UR地址
+            burst_cnt_d = cru_ldb_i[116:101];           // 当前burst长度
             byte_strb_d = cru_ldb_i[120:117];
             smc_strb_d = cru_ldb_i[126:121];
-            byte_addr_d = {cru_ldb_i[100:37], 4'b0};
             ur_id_d = cru_ldb_i[36:29];
             ur_addr_d = cru_ldb_i[28:18];
             
+            // 计算要使能的SMC数量: N = smc_strb + 1
+            num_smc_d = smc_strb_d + 1;
+            current_smc_idx_d = 0; // 从SMC0开始
+            processing_smc_d = 1'b0;
+            state_d = PROCESS_SMC;
+        end
+        
+        PROCESS_SMC: begin
+            // 重置burst计数和UR地址为原始值
+            burst_cnt_d = original_burst_cnt_q;
+            ur_addr_d = original_ur_addr_q;
+            
+            // 计算当前SMC的基地址
+            byte_addr_d = {cru_ldb_i[100:37] + (current_smc_idx_q * param_gr_intlv_addr), 4'b0};
+            
+            $display("[LDB_SMC_ADDR] time=%0t: 处理SMC%d, 基地址=%h", 
+                        $time, current_smc_idx_q, byte_addr_d);
+
             // 设置is_last_beat
             if (burst_cnt_d == 0) begin
                 is_last_beat_d = 1'b1;
@@ -166,8 +221,8 @@ always @* begin
             
             // 发起AXI读取请求
             axi_req_valid_d = 1'b1;
-            axi_req_addr_d = {cru_ldb_i[100:37], 4'b0};
-            axi_req_len_d = burst_cnt_d;
+            axi_req_addr_d = byte_addr_d;
+            axi_req_len_d = burst_cnt_d; // 使用原始burst长度
             state_d = WAIT_AXI;
         end
         
@@ -178,6 +233,7 @@ always @* begin
             end else begin
                 // 继续等待
                 axi_req_valid_d = 1'b1;
+                state_d = WAIT_AXI;
             end
         end
         
@@ -196,34 +252,43 @@ always @* begin
                     // 全字节写入
                     ur_wdata_d = axi_data;
                 end
-                
-                // 生成写使能
-                ur_we_d = smc_strb_q[0];
-                
+
+                // 生成写使能 - 针对当前SMC
+                ur_we_d = 1'b1;
+
                 // 更新计数和地址
-                if (burst_cnt_q > 1) begin
-                    burst_cnt_d = burst_cnt_q - 1'b1;
-                    byte_addr_d = byte_addr_q + BYTE_PER_BEAT;
-                    ur_addr_d = ur_addr_q + 1;
-                    is_last_beat_d = (burst_cnt_d == 1);
+                burst_cnt_d = burst_cnt_q - 1'b1;
+                byte_addr_d = byte_addr_q + BYTE_PER_BEAT;
+                ur_addr_d = ur_addr_q + 1;
+                is_last_beat_d = (burst_cnt_d == 1);
+
+                // 检查是否完成当前SMC的所有burst
+                if (burst_cnt_d == 0) begin
+                    state_d = NEXT_SMC; // 所有burst完成，处理下一个SMC
                 end else begin
-                    // 这是最后一个beat，更新地址并完成
-                    burst_cnt_d = 0;
-                    byte_addr_d = byte_addr_q + BYTE_PER_BEAT;  // 更新字节地址
-                    ur_addr_d = ur_addr_q + 1;                  // 更新UR地址
-                    state_d = DONE;
-                    $display("[LDB_DATA] time=%0t: 最后一个beat处理完成，转换到DONE", $time);
+                    state_d = DATA; // 继续接收数据
                 end
-                
-                // 显示地址更新信息
-                $display("[LDB_ADDR_UPDATE] time=%0t: byte_addr=%h -> %h, ur_addr=%h -> %h", 
-                    $time, byte_addr_q, byte_addr_d, ur_addr_q, ur_addr_d);
-                
-                // 显示进度
-                $display("[LDB_PROGRESS] time=%0t: 剩余beat数=%d", $time, burst_cnt_d);
             end else begin
-                // 没有数据时保持状态
+                // 没有数据时保持状态，等待有效数据
                 state_d = DATA;
+            end
+        end
+                
+        NEXT_SMC: begin
+            // 增加当前SMC索引
+            current_smc_idx_d = current_smc_idx_q + 1;
+            
+            // 调试信息：在组合逻辑中打印当前值
+            $display("[LDB_NEXT_SMC] time=%0t: current_smc_idx_d=%d, num_smc_q=%d", 
+                $time, current_smc_idx_d, num_smc_q);
+            
+            // 检查是否还有更多SMC需要处理
+            if (current_smc_idx_d < num_smc_q) begin
+                // 处理下一个SMC
+                state_d = PROCESS_SMC;
+            end else begin
+                // 所有SMC处理完成
+                state_d = DONE;
             end
         end
         
@@ -238,9 +303,7 @@ always @* begin
             // 清除内部状态
             burst_cnt_d = 0;
             axi_req_valid_d = 1'b0;
-            
-            // 添加调试信息
-            $display("[LDB_DONE] time=%0t: 事务完成，返回IDLE", $time);
+            processing_smc_d = 1'b0;
             
             // 如果AXI传输出错，打印错误信息
             if (axi_req_err) begin
@@ -266,12 +329,22 @@ always @(posedge clk or negedge rst_n) begin
         ur_id_q <= '0;
         is_last_beat <= 1'b0;
         ur_we <= '0;
+        smc_index <= '0;
         ur_addr <= '0;
         ur_wdata <= '0;
         axi_req_valid <= 1'b0;
         axi_req_addr <= '0;
         axi_req_len <= '0;
         crd_ldb_o <= 2'b00;
+        
+        // SMC处理相关寄存器复位
+        current_smc_idx_q <= '0;
+        num_smc_q <= '0;
+        processing_smc_q <= 1'b0;
+        
+        // 新增：原始值寄存器复位
+        original_burst_cnt_q <= '0;
+        original_ur_addr_q <= '0;
     end else begin
         state_q <= state_d;
         burst_cnt_q <= burst_cnt_d;
@@ -282,12 +355,22 @@ always @(posedge clk or negedge rst_n) begin
         ur_id_q <= ur_id_d;
         is_last_beat <= is_last_beat_d;
         ur_we <= ur_we_d;
+        smc_index <= current_smc_idx_q; // 输出当前SMC索引
         ur_addr <= ur_addr_d;
         ur_wdata <= ur_wdata_d;
         axi_req_valid <= axi_req_valid_d;
         axi_req_addr <= axi_req_addr_d;
         axi_req_len <= axi_req_len_d;
         crd_ldb_o <= crd_ldb_o_d;
+        
+        // 更新SMC处理相关寄存器
+        current_smc_idx_q <= current_smc_idx_d;
+        num_smc_q <= num_smc_d;
+        processing_smc_q <= processing_smc_d;
+        
+        // 新增：更新原始值寄存器
+        original_burst_cnt_q <= original_burst_cnt_d;
+        original_ur_addr_q <= original_ur_addr_d;
     end
 end
 
@@ -304,31 +387,49 @@ always @(posedge clk) begin
     // 监控状态转换
     if (state_q != state_d) begin
         $display("[LDB_STATE_CHANGE] time=%0t: %s -> %s",
-            $time, state2str(state_q), state2str(state_d));
+                 $time, state2str(state_q), state2str(state_d));
     end
     
     // 监控AXI请求
-    if (axi_req_valid_d && !axi_req_valid) begin
+    if (axi_req_valid_d) begin
         $display("[LDB_AXI_REQ] time=%0t: 发起AXI请求: addr=%h, len=%d",
-            $time, axi_req_addr_d, axi_req_len_d);
+                 $time, axi_req_addr_d, axi_req_len_d);
     end
     
     // 监控AXI数据接收
-    if (axi_data_valid && state_q == DATA) begin
+    if (axi_data_valid) begin
         $display("[LDB_DATA_RCV] time=%0t: 接收到AXI数据: data=%h, last=%b",
-            $time, axi_data, axi_data_last);
+                 $time, axi_data, axi_data_last);
     end
     
     // 监控UR写入
     if (ur_we_d) begin
-        $display("[LDB_UR_WRITE] time=%0t: 写入UR_RAM: addr=%h, data=%h",
-            $time, ur_addr_d, ur_wdata_d);
+        $display("[LDB_UR_WRITE] time=%0t: 写入SMC%d的UR: addr=%h, data=%h",
+                 $time, current_smc_idx_q, ur_addr_d, ur_wdata_d);
     end
     
     // 监控burst计数
     if (burst_cnt_q != burst_cnt_d) begin
         $display("[LDB_BURST_CNT] time=%0t: burst_cnt %d -> %d",
-            $time, burst_cnt_q, burst_cnt_d);
+                 $time, burst_cnt_q, burst_cnt_d);
+    end
+    
+    // 监控SMC处理进度
+    if (current_smc_idx_q != current_smc_idx_d) begin
+        $display("[LDB_SMC_PROGRESS] time=%0t: 处理SMC%d -> SMC%d",
+                 $time, current_smc_idx_q, current_smc_idx_d);
+    end
+    
+    // 监控SMC数量
+    if (num_smc_q != num_smc_d) begin
+        $display("[LDB_SMC_COUNT] time=%0t: num_smc %d -> %d",
+                 $time, num_smc_q, num_smc_d);
+    end
+    
+    // 监控原始burst长度
+    if (original_burst_cnt_q != original_burst_cnt_d) begin
+        $display("[LDB_ORIG_BURST] time=%0t: orig_burst_cnt %d -> %d",
+                 $time, original_burst_cnt_q, original_burst_cnt_d);
     end
 end
 

@@ -1,17 +1,19 @@
 //---------------------------------------------------------------------
 // Filename: inttofp.v
 // Author: cypher
-// Date: 2025-8-15
-// Version: 1.0
+// Date: 2025-11-4
+// Version: 1.3
 // Description: This is a module that supports convert to floating point type.
 //---------------------------------------------------------------------
 
 module inttofp (
-    input  wire        clk,
-    input  wire        rst_n,
-    input  wire [127:0] dvr_inttofp_s,
-    input  wire [5:0]   cru_inttofp,
-    output reg  [127:0] dr_inttofp_d
+    input  wire        clk,          // 时钟
+    input  wire        rst_n,        // 低电平复位
+    input  wire [4:0]  smc_id,       // 新增：SMC编号（5bit，文档5规范）
+    input  wire [127:0] dvr_inttofp_s,// 输入整数数据（128bit）
+    input  wire [5:0]   cru_inttofp,  // 输入：INTtoFP上行微指令（6bit，表35）
+    output reg  [127:0] dr_inttofp_d, // 输出浮点数据（128bit）
+    output reg  [5:0]   cru_inttofp_o // 新增：INTtoFP上行指令输出（6bit寄存器，表33）
 );
 
     // 微指令字段
@@ -102,26 +104,43 @@ module inttofp (
         end
     endgenerate
 
-    // 输出映射
-    always @(posedge clk or negedge rst_n) begin
-        if (!rst_n) begin
-            dr_inttofp_d <= 128'd0;
-        end else if (valid) begin
-            if (src_is_32b && dst_is_32b) begin
-                dr_inttofp_d <= {fp32[3], fp32[2], fp32[1], fp32[0]};
-            end else if (!src_is_32b && !dst_is_32b) begin
-                dr_inttofp_d <= {fp16[7], fp16[6], fp16[5], fp16[4],
-                                 fp16[3], fp16[2], fp16[1], fp16[0]};
-            end else if (!src_is_32b && dst_is_32b) begin
-                dr_inttofp_d <= {fp32_16[3], fp32_16[2], fp32_16[1], fp32_16[0]};
-            end else begin // 32→16
-                if (dst_high) begin
-                    dr_inttofp_d <= {fp16_32[7], fp16_32[5], fp16_32[3], fp16_32[1]};
-                end else begin
-                    dr_inttofp_d <= {fp16_32[6], fp16_32[4], fp16_32[2], fp16_32[0]};
+always @(posedge clk or negedge rst_n) begin
+    if (!rst_n) begin
+        // 复位时：输出数据和CRU-O均置0
+        dr_inttofp_d <= 128'd0;
+        cru_inttofp_o <= 6'd0;  // 复位时CRU输出寄存器清零
+    end else begin
+        // -------------------------- 新增：CRU-INTtoFP-O传递逻辑 --------------------------
+        if (smc_id == 5'd0) begin
+            // 最南侧SMC：CRU输入来自SMI命令队列，直接传递给输出
+            cru_inttofp_o <= cru_inttofp;
+        end else begin
+            // 其他SMC：CRU输入来自南侧SMC的CRU-O，继续传递给北侧SMC
+            cru_inttofp_o <= cru_inttofp;
+        end
+
+        // -------------------------- 原有：输出映射逻辑（保持不变） --------------------------
+        if (valid) begin  // valid由cru_inttofp[5]控制（原逻辑）
+            case ({src_is_32b, dst_is_32b})
+                2'b11: dr_inttofp_d <= {fp32[3], fp32[2], fp32[1], fp32[0]};    // 32→32
+                2'b00: dr_inttofp_d <= {fp16[7], fp16[6], fp16[5], fp16[4],     // 16→16
+                                       fp16[3], fp16[2], fp16[1], fp16[0]};
+                2'b01: dr_inttofp_d <= {fp32_16[3], fp32_16[2], fp32_16[1], fp32_16[0]}; // 16→32
+                2'b10: begin  // 32→16（根据dst_high选择高低位）
+                    if (dst_high) begin
+                        dr_inttofp_d <= {fp16_32[7], fp16_32[5], fp16_32[3], fp16_32[1]};
+                    end else begin
+                        dr_inttofp_d <= {fp16_32[6], fp16_32[4], fp16_32[2], fp16_32[0]};
+                    end
                 end
-            end
+                default: dr_inttofp_d <= 128'hxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx;
+            endcase
+        end else begin
+            // valid=0时，输出保持不变（原逻辑）
+            dr_inttofp_d <= dr_inttofp_d;
+            $display("[inttofp] valid=0，输出保持为：%h", dr_inttofp_d);
         end
     end
+end
 
 endmodule

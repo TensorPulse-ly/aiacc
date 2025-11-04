@@ -29,8 +29,13 @@ SOFTFLOAT_INCLUDE="${ROOT_DIR}/berkeley-softfloat-3/source/include"
 
 # Verilog 源文件
 VSRC_FILES=(
-    "${CELL_DIR}/vsrc/logical.v"
-    "${CELL_DIR}/vsrc/tb_logical.v"
+    "${CELL_DIR}/vsrc/axi_protocol_checker.v"
+    "${CELL_DIR}/vsrc/tb_ldb.v"
+    "${CELL_DIR}/vsrc/ldb.v"
+    "${CELL_DIR}/vsrc/axi_read_mem_slave.v"
+    "${CELL_DIR}/vsrc/axi_top.v"
+    "${CELL_DIR}/vsrc/ldb_axi_read_master.v"
+    "${CELL_DIR}/vsrc/ur_ram.v"
 )
 
 # 仿真选项
