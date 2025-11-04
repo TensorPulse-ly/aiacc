@@ -9,7 +9,7 @@ module int2fp32 (
     reg [7:0]  exp;
     reg [22:0] mant;
 
-    reg [31:0] tmp;
+    reg [30:0] tmp;
     reg [23:0] man_ext;
     reg        guard, sticky, round_up;
     integer    i;

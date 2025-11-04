@@ -1,3 +1,10 @@
+//---------------------------------------------------------------------
+// Filename: inttofp.v
+// Author: cypher
+// Date: 2025-11-4
+// Version: 1.3
+// Description: This is a module that supports fp16+fp16 or fp32+fp32.
+//---------------------------------------------------------------------
 `timescale 1ns/1ps
 
 module fpadd #(
@@ -5,11 +12,17 @@ module fpadd #(
 )(
     input  wire        clk,
     input  wire        rst_n,
+    // 新增：SMC编号（5bit，符合AIACC架构v0.2.7定义，取值0~31）
+    input  wire [4:0]  smc_id,
+    // 原有输入：源操作数与微指令
     input  wire [127:0] dvr_fpadd_s0,  // 源操作数0
     input  wire [127:0] dvr_fpadd_s1,  // 源操作数1
+    input  wire [3:0]   cru_fpadd,     // 4bit微指令：[3]更新状态,[2]目的精度,[1]源精度,[0]指令有效
+    // 原有输出：加法结果与状态
     output reg  [127:0] dr_fpadd_d,    // 加法结果输出
     output reg  [127:0] dr_fpadd_st,   // 状态寄存器输出
-    input  wire [3:0]   cru_fpadd      // 4bit微指令：[3]更新状态,[2]目的精度,[1]源精度,[0]指令有效
+    // 新增：CRU-FPADD上行输出（4bit寄存器，符合AIACC架构v0.2.7的CRU级联逻辑）
+    output reg  [3:0]   cru_fpadd_o    
 );
 
     // 微指令解析（不变）
@@ -20,7 +33,7 @@ module fpadd #(
     wire inst_trigger   = inst_valid;  // 指令触发条件
     wire mode_flag      = src_prec;  // 0=16bit模式，1=32bit模式（仅触发时有效）
 
-    // 状态机定义（恢复为原3个状态，不新增STATE_WAIT_1，无额外资源）
+    // 状态机定义（不变）
     parameter STATE_IDLE = 2'b00;  // 空闲
     parameter STATE_WAIT = 2'b01;  // 等待加法结果（仅停留1拍，与计算并行）
     parameter STATE_DONE = 2'b10;  // 结果输出
@@ -35,7 +48,6 @@ module fpadd #(
 
     // --------------------------- 比较函数（完全不变） ---------------------------
     function [2:0] cmp_fp16;
-        // 原代码完全保留，无修改
         input [15:0] a, b;
         reg a_s, b_s;
         reg [4:0] a_e, b_e;
@@ -64,7 +76,6 @@ module fpadd #(
     endfunction
 
     function [2:0] cmp_fp32;
-        // 原代码完全保留，无修改
         input [31:0] a, b;
         reg a_s, b_s;
         reg [7:0] a_e, b_e;
@@ -92,7 +103,7 @@ module fpadd #(
         end
     endfunction
 
-    // --------------------------- 时序逻辑（核心修改：输入锁存与状态机并行） ---------------------------
+    // --------------------------- 时序逻辑（仅新增cru_fpadd_o处理） ---------------------------
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             current_state <= STATE_IDLE;
@@ -102,24 +113,28 @@ module fpadd #(
             result_reg    <= 128'b0;
             dr_fpadd_d    <= 128'b0;
             dr_fpadd_st   <= 128'b0;
+            // 新增：cru_fpadd_o复位为0（符合寄存器输出初始态）
+            cru_fpadd_o   <= 4'b0000;
         end else begin
             current_state <= next_state;
 
-            // 核心修改1：输入锁存不依赖IDLE状态，inst_trigger有效时直接锁存（与状态机跳转并行）
-            // 目的：让subword_adder在输入锁存的同一时钟周期开始计算，无需等待状态跳转
+            // 核心修改1：输入锁存不依赖IDLE状态，inst_trigger有效时直接锁存（原有逻辑不变）
             if (inst_trigger) begin
                 src0_reg      <= dvr_fpadd_s0;
                 src1_reg      <= dvr_fpadd_s1;
                 mode_flag_reg <= mode_flag;
             end
 
-            // 核心修改2：result_reg在WAIT状态锁存（此时subword_result已就绪）
-            // 原因：输入锁存后，subword_adder经过1个时钟周期计算，WAIT状态时结果已更新
+            // 核心修改2：result_reg在WAIT状态锁存（原有逻辑不变）
             if (current_state == STATE_WAIT) begin
                 result_reg <= subword_result;
             end
 
-            // 结果输出（完全不变）
+            // 核心修改3：新增cru_fpadd_o级联逻辑（符合AIACC架构v0.2.7）
+            // 逻辑：本SMC的CRU输出 = 本SMC的CRU输入（上游SMC已驱动cru_fpadd输入）
+            cru_fpadd_o <= cru_fpadd;
+
+            // 结果输出（原有逻辑不变）
             if (current_state == STATE_DONE) begin
                 dr_fpadd_d  <= result_reg;
                 dr_fpadd_st <= 128'b0;
@@ -139,20 +154,17 @@ module fpadd #(
         end
     end
 
-    // --------------------------- 状态机逻辑（核心修改：压缩状态跳转，无额外状态） ---------------------------
+    // --------------------------- 状态机逻辑（完全不变） ---------------------------
     always @(*) begin
         next_state = current_state;
         case (current_state)
             STATE_IDLE:  begin
-                // 核心修改3：inst_trigger有效时直接跳WAIT（无需等待，输入已并行锁存）
                 next_state = inst_trigger ? STATE_WAIT : STATE_IDLE;
             end
             STATE_WAIT:  begin
-                // WAIT状态仅停留1拍，此时result_reg已锁存正确结果，直接跳DONE
                 next_state = STATE_DONE;
             end
             STATE_DONE:  begin
-                // 输出完成后回IDLE，完全不变
                 next_state = STATE_IDLE;
             end
             default:     next_state = STATE_IDLE;

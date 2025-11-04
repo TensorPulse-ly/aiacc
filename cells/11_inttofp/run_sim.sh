@@ -29,8 +29,10 @@ SOFTFLOAT_INCLUDE="${ROOT_DIR}/berkeley-softfloat-3/source/include"
 
 # Verilog 源文件
 VSRC_FILES=(
-    "${CELL_DIR}/vsrc/logical.v"
-    "${CELL_DIR}/vsrc/tb_logical.v"
+    "${CELL_DIR}/vsrc/inttofp.v"
+    "${CELL_DIR}/vsrc/int2fp16.v"
+    "${CELL_DIR}/vsrc/int2fp32.v"
+    "${CELL_DIR}/vsrc/tb_inttofp.v"
 )
 
 # 仿真选项

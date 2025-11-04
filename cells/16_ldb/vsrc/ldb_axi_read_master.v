@@ -6,7 +6,7 @@ module ldb_axi_read_master #(
     parameter integer AXI_DATA_W = 128,
     parameter integer AXI_ID_W = 4,
     parameter integer MAX_LEN = 255,
-    parameter integer MEM_DEPTH = 1024,
+    parameter integer MEM_DEPTH = 2048,
     parameter integer MAX_OUTSTANDING = 1
 )(
     input wire clk,
@@ -136,6 +136,7 @@ always @(posedge clk or negedge rst_n) begin
                 if (arready) begin
                     arvalid <= 1'b0;
                     state_next <= S_DATA;
+                    $display("[AXI_MASTER] time=%0t: AXI地址握手完成, 地址=%h", $time, araddr);
                 end else begin
                     // 添加超时处理
                     if (timeout_counter > 1000) begin
@@ -143,6 +144,7 @@ always @(posedge clk or negedge rst_n) begin
                         state_next <= S_IDLE;
                         req_done <= 1'b1;
                         req_err <= 1'b1;
+                        $display("[AXI_MASTER] time=%0t: AXI地址握手超时", $time);
                     end else begin
                         timeout_counter <= timeout_counter + 1;
                     end
