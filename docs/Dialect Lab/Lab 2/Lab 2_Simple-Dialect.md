@@ -485,6 +485,8 @@ struct SimpleToArithPass : public PassWrapper<SimpleToArithPass, OperationPass<M
   StringRef getArgument() const final {
     return "convert-simple-to-arith";
   }
+
+MLIR_DEFINE_EXPLICIT_INTERNAL_INLINE_TYPE_ID(SimpleToArithPass)
   
   /**
    * 返回 Pass 的描述信息
