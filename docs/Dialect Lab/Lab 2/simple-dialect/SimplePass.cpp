@@ -1,6 +1,7 @@
 #include "SimplePass.h"
 #include "SimpleDialect.h"
 #include "mlir/IR/PatternMatch.h"
+#include "mlir/Dialect/Arith/IR/Arith.h"
 
 using namespace mlir;
 
@@ -13,6 +14,8 @@ struct SimpleToArithPass : public PassWrapper<SimpleToArithPass, OperationPass<M
   StringRef getArgument() const final {
     return "convert-simple-to-arith";
   }
+
+MLIR_DEFINE_EXPLICIT_INTERNAL_INLINE_TYPE_ID(SimpleToArithPass)
   
   StringRef getDescription() const final {
     return "Convert simple dialect operations to arith dialect";
