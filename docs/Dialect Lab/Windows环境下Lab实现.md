@@ -1340,7 +1340,7 @@ int main() {
 @echo off
 echo === Lab 6: SCF Dialect sum_loop 测试 (Windows) ===
 
-REM 配置 MLIR 工具路径
+REM 配置 MLIR 工具路径    这里修改为你自己的LLVM路径
 set MLIR_BIN=D:\LLVM-offical\llvm-project\build\Debug\bin
 
 REM ==========================
@@ -1699,4 +1699,5 @@ cl /std:c++17 /MD ^
 **由于llvm版本的不同，源码可能会有很少部分的修改。**使用llvm22.0版本的lab源码如上。
 
 省略了部分不需要编译的lab
+
 
