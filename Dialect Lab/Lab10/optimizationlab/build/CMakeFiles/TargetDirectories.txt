@@ -1,0 +1,12 @@
+/Users/Henry/Downloads/Dialect Lab/Lab10/optimizationlab/build/CMakeFiles/intrinsics_gen.dir
+/Users/Henry/Downloads/Dialect Lab/Lab10/optimizationlab/build/CMakeFiles/vt_gen.dir
+/Users/Henry/Downloads/Dialect Lab/Lab10/optimizationlab/build/CMakeFiles/omp_gen.dir
+/Users/Henry/Downloads/Dialect Lab/Lab10/optimizationlab/build/CMakeFiles/acc_gen.dir
+/Users/Henry/Downloads/Dialect Lab/Lab10/optimizationlab/build/CMakeFiles/target_parser_gen.dir
+/Users/Henry/Downloads/Dialect Lab/Lab10/optimizationlab/build/CMakeFiles/mlir-tablegen-targets.dir
+/Users/Henry/Downloads/Dialect Lab/Lab10/optimizationlab/build/CMakeFiles/mlir-headers.dir
+/Users/Henry/Downloads/Dialect Lab/Lab10/optimizationlab/build/CMakeFiles/mlir-generic-headers.dir
+/Users/Henry/Downloads/Dialect Lab/Lab10/optimizationlab/build/CMakeFiles/mlir-doc.dir
+/Users/Henry/Downloads/Dialect Lab/Lab10/optimizationlab/build/CMakeFiles/my-opt.dir
+/Users/Henry/Downloads/Dialect Lab/Lab10/optimizationlab/build/CMakeFiles/edit_cache.dir
+/Users/Henry/Downloads/Dialect Lab/Lab10/optimizationlab/build/CMakeFiles/rebuild_cache.dir
