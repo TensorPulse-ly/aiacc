@@ -1,57 +1,79 @@
 #!/usr/bin/env bash
 
-#  仿真脚本
-# ----------------------------------------------------------------------------
+# 仿真脚本
+# ============================================================================
 # 说明：
-#   - 将“可配置项（宏）”集中在顶部，便于他人修改适配
-#   - 下方“固定逻辑区”尽量不要改动
+# - 将"可配置项（宏）"集中在顶部，便于他人修改适配
+# - 下方"固定逻辑区"尽量不要改动
 # ============================================================================
 
 set -euo pipefail
 
 # ============================= 可配置项 =============================
+
 # 工程根目录
 ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+
 # 本 cell 目录
 CELL_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 # 输出目录
 OUT_DIR="sim_output"
 
-# DPI 配置
-ENABLE_DPI=1
-DPI_COMPILE_SCRIPT="${ROOT_DIR}/compile_softfloat_dpi.sh"    # 外部一体化编译脚本
-DPI_SRC="${CELL_DIR}/csrc/softfloat_dpi.c"      # DPI 源文件
-DPI_LIB_BASENAME="fpmul_softfloat"              # 生成 lib${BASENAME}.so 并链接 -l${BASENAME}
+# DPI 配置（如果不需要可以关闭）
+ENABLE_DPI=0  # 修改为0，因为当前设计不需要DPI
+DPI_COMPILE_SCRIPT="${ROOT_DIR}/compile_softfloat_dpi.sh"
+DPI_SRC="${CELL_DIR}/csrc/softfloat_dpi.c"
+DPI_LIB_BASENAME="fpmul_softfloat"
 
-# 头文件路径
-SOFTFLOAT_INCLUDE="${ROOT_DIR}/berkeley-softfloat-3/source/include"
+# 头文件路径（新增DesignWare头文件路径）
+DESIGNWARE_INCLUDE="${CELL_DIR}/vsrc"
 
-# Verilog 源文件
+# Verilog 源文件（完全重构）
 VSRC_FILES=(
+    # DesignWare头文件（需要先编译）
+    "${CELL_DIR}/vsrc/DW_axi_gm_constants.vh"
+    "${CELL_DIR}/vsrc/DW_axi_gm_cc_constants.vh"
+    "${CELL_DIR}/vsrc/DW_axi_gm_bcm_params.vh"
+    "${CELL_DIR}/vsrc/DW_axi_gm_all_includes.vh"
+    
+    # DesignWare基础模块
+    "${CELL_DIR}/vsrc/DW_axi_gm_bcm57.v"
+    "${CELL_DIR}/vsrc/DW_axi_gm_bcm06.v"
+    "${CELL_DIR}/vsrc/DW_axi_gm_bcm65.v"
+    
+    # DesignWare核心模块
+    "${CELL_DIR}/vsrc/DW_axi_gm_core.v"
+    "${CELL_DIR}/vsrc/DW_axi_gm.v"
+    
+    # 用户设计模块
+    "${CELL_DIR}/vsrc/ldb.v"                    # 修改后的LDB核心
+    "${CELL_DIR}/vsrc/ldb_axi_top.v"            # 新增：集成顶层模块
+    
+    # 测试平台和支持模块
     "${CELL_DIR}/vsrc/axi_protocol_checker.v"
-    "${CELL_DIR}/vsrc/tb_ldb.v"
-    "${CELL_DIR}/vsrc/ldb.v"
     "${CELL_DIR}/vsrc/axi_read_mem_slave.v"
-    "${CELL_DIR}/vsrc/axi_top.v"
-    "${CELL_DIR}/vsrc/ldb_axi_read_master.v"
     "${CELL_DIR}/vsrc/ur_ram.v"
+    "${CELL_DIR}/vsrc/tb_ldb_axi_top.v"         # 修改：新的测试平台
 )
 
 # 仿真选项
-ENABLE_COVERAGE=1     # 1 收集覆盖率；0 不收集
+ENABLE_COVERAGE=1    # 1 收集覆盖率；0 不收集
 ENABLE_FSDB=1        # 1 使能 +fsdb；0 关闭
 ENABLE_KDB=1         # 1 使能 -kdb；0 关闭
-RUN_URG=1            # 1 生成 URG 报告；0 跳过
-TIMESCALE="1ns/1ps"  # 仿真时间精度
+RUN_URG=1           # 1 生成 URG 报告；0 跳过
+TIMESCALE="1ns/1ps" # 仿真时间精度
+
 # =========================== 可配置项结束 ===========================
 
-
 # ============================== 固定逻辑区 ===============================
+
 echo "准备仿真环境..."
+
 rm -rf "${OUT_DIR}"
 mkdir -p "${OUT_DIR}"
 cd "${OUT_DIR}"
+
 LIB_PATH="$(pwd)"
 
 # 编译 DPI 共享库（如果需要）
@@ -70,6 +92,9 @@ export LD_LIBRARY_PATH=".:${PWD}:${LD_LIBRARY_PATH:-}"
 # 构建 VCS 编译命令
 VCS_CMD=(vcs -sverilog +v2k -full64 -debug_access+all -timescale="${TIMESCALE}")
 
+# 添加头文件包含路径（关键修改）
+VCS_CMD+=(+incdir+"${DESIGNWARE_INCLUDE}")
+
 # 添加覆盖率选项
 if [[ ${ENABLE_COVERAGE} -eq 1 ]]; then
     VCS_CMD+=(-cm line+cond+fsm+tgl+branch -cm_dir coverage_db)
@@ -87,7 +112,6 @@ fi
 
 # 添加 DPI 相关编译选项
 if [[ ${ENABLE_DPI} -eq 1 ]]; then
-    # 重要：VCS 最终链接发生在 sim_output/csrc 下，使用绝对路径避免 -L. 找不到库
     VCS_CMD+=(-CFLAGS "-fPIC -I${SOFTFLOAT_INCLUDE}" \
               -LDFLAGS "-Wl,-rpath,${LIB_PATH}" \
               -LDFLAGS "-L${LIB_PATH}" \
@@ -98,7 +122,14 @@ fi
 VCS_CMD+=("${VSRC_FILES[@]}" -o simv)
 
 echo "编译 RTL..."
+echo "编译命令: ${VCS_CMD[@]}"
 "${VCS_CMD[@]}"
+
+# 检查编译是否成功
+if [[ $? -ne 0 ]]; then
+    echo "错误: RTL编译失败"
+    exit 1
+fi
 
 # 运行仿真
 echo "运行仿真..."
@@ -109,8 +140,11 @@ RUN_CMD=(./simv)
 [[ ${ENABLE_FSDB} -eq 1 ]] && RUN_CMD+=(+fsdb+autoflush)
 
 # 执行仿真并检查结果
+echo "仿真命令: ${RUN_CMD[@]}"
 if ! "${RUN_CMD[@]}" > sim_output.log 2>&1; then
     echo "错误: 仿真失败，详情见 $(pwd)/sim_output.log"
+    echo "=== 错误日志开头 ==="
+    head -20 sim_output.log
     exit 1
 fi
 
@@ -124,8 +158,7 @@ if [[ ${ENABLE_COVERAGE} -eq 1 && ${RUN_URG} -eq 1 ]] && command -v urg >/dev/nu
 fi
 
 echo "=================================================="
-echo "                     仿真完成"
+echo " 仿真完成"
 echo " 输出目录: $(pwd)"
+echo " 日志文件: sim_output.log"
 echo "=================================================="
-
-# ============================ 固定逻辑区 结束 ============================
