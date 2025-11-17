@@ -1,0 +1,14 @@
+// component: (top level)
+// library: work
+// files:
+/home/cypher/AIACC/test/LDB/DW_axi_gm_constants.vh
+/home/cypher/AIACC/test/LDB/DW_axi_gm_cc_constants.vh
+/home/cypher/AIACC/test/LDB/DW_axi_gm_bcm_params.vh
+/home/cypher/AIACC/test/LDB/DW_axi_gm_all_includes.vh
+/home/cypher/AIACC/test/LDB/DW_axi_gm_bcm57.v
+/home/cypher/AIACC/test/LDB/DW_axi_gm_bcm06.v
+/home/cypher/AIACC/test/LDB/DW_axi_gm_bcm65.v
+/home/cypher/AIACC/test/LDB/DW_axi_gm_core.v
+/home/cypher/AIACC/test/LDB/DW_axi_gm.v
+/home/cypher/AIACC/test/LDB/DW_axi_gm-undef.v
+
