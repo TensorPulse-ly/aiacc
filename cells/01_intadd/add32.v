@@ -1,15 +1,32 @@
+`timescale 1ns / 1ps
 module add32 (
-    input         clk,
-    input         rst_n,
+    // input          clk,
+    // input          rst_n,
     input  [127:0] src0,
     input  [127:0] src1,
     input          sign_s0,
     input          sign_s1,
+    input          i_sign_d,
     output [127:0] dst,
-    output wire [127:0] st
+    output [127:0] st
 );
-
+    
     genvar i;
+    generate
+        for (i = 0; i < 4; i++) begin
+            add32_comb u_add32_comb(
+                .src0           (src0[32*i +: 32]),
+                .src1           (src1[32*i +: 32]),
+                .sign_s0        (sign_s0),
+                .sign_s1        (sign_s1),
+                .i_sign_d       (i_sign_d),
+                .dst            (dst[32*i +: 32])
+                //.st             (st[32*i +: 32])
+            );
+        end
+    endgenerate
+
+    /*    genvar i;
     // 组合产生每组的 result -> dst（dst 是 wire）
     generate
         for (i = 0; i < 4; i = i + 1) begin : gen_add32
@@ -33,7 +50,7 @@ module add32 (
 
             assign dst[i*32 +: 32] = result;
         end
-    endgenerate
+    endgenerate*/
 
     // 为每组 32 位数据生成 3 位状态信号
     reg [127:0] st_temp; // 使用reg类型确保所有位都有明确的驱动

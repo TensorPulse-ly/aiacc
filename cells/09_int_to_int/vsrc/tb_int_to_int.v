@@ -74,7 +74,7 @@ begin
     // 解析控制信号并应用
     {src_prec, dst_prec, src_signed, dst_signed, src_pos, dst_pos, instr_vld} = tv.ctrl;
     in_reg = tv.data;
-    #1;
+    #1
     
     // DPI参考结果
     dpi_result = dpi_int_to_int_convert(tv.data, src_prec, dst_prec, 
@@ -93,7 +93,7 @@ begin
         $fdisplay(log_file, "  result_vld: %b (期望: %b)", result_vld, instr_vld);
     end
     
-    instr_vld = 0; #1;
+    instr_vld = 1'b0; #1;
 end
 endtask
 
@@ -178,7 +178,7 @@ endtask
 task run_random_tests(input integer num_tests);
     integer i;
     test_vector_t rand_tv;
-    reg [31:0] rand_seed = 32'h12345678;
+    static reg [31:0] rand_seed = 32'h12345678;
 begin
     $fdisplay(log_file, "\n========================================");
     $fdisplay(log_file, "         随机测试 (%0d 个测试用例)", num_tests);
@@ -220,7 +220,7 @@ begin
     test_count++;
     {in_reg, src_prec, dst_prec, src_signed, dst_signed, src_pos, dst_pos, instr_vld} 
         = {32'h00007FFF, 1'b1, 1'b1, 1'b1, 1'b1, 1'b0, 1'b0, 1'b1};
-    #1;
+    #1
     
     if (result_vld === 1'b1) begin
         pass_count++;
@@ -234,7 +234,7 @@ begin
     test_count++;
     {in_reg, src_prec, dst_prec, src_signed, dst_signed, src_pos, dst_pos, instr_vld} 
         = {32'h00007FFF, 1'b1, 1'b1, 1'b1, 1'b1, 1'b0, 1'b0, 1'b0};
-    #1;
+    #1
     
     if (out_reg === 32'h00000000 && result_vld === 1'b0) begin
         pass_count++;
@@ -250,7 +250,7 @@ endtask
 
 // 测试报告
 task print_test_summary();
-    real pass_rate = (pass_count * 100.0) / test_count;
+    static real pass_rate = (pass_count * 100.0) / test_count;
 begin
     $fdisplay(log_file, "\n");
     $fdisplay(log_file, "========================================");
@@ -279,8 +279,17 @@ endtask
 
 initial begin
     // 初始化信号
-    {in_reg, instr_vld, src_prec, dst_prec, src_signed, dst_signed, src_pos, dst_pos} = 0;
-    #10;
+    //{in_reg, instr_vld, src_prec, dst_prec, src_signed, dst_signed, src_pos, dst_pos} = 0;
+    in_reg     = 32'd0;
+    instr_vld  = 1'b0;
+    src_prec   = 1'b0;
+    dst_prec   = 1'b0;
+    src_signed = 1'b0;
+    dst_signed = 1'b0;
+    src_pos    = 1'b0;
+    dst_pos    = 1'b0;
+
+    #10
     
     // 打开日志文件
     log_file = $fopen("int_to_int_test.log", "w");
@@ -304,7 +313,7 @@ initial begin
     run_random_tests(NUM_RANDOM_TESTS);
     test_invld_instruction();
     
-    #10;
+    #10
     print_test_summary();
     $finish;
 end

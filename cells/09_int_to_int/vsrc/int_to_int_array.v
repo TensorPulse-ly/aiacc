@@ -13,7 +13,9 @@ module int_to_int_array
 
     input wire [127:0] dvr_inttoint_s_in,    // 输入数据寄存器
     input wire [6:0]   cru_inttoint_in,      // 上行指令寄存器
-    output reg [127:0] dr_inttoint_d_out     // 输出数据寄存器
+    output reg [127:0] dr_inttoint_d_out,     // 输出数据寄存器
+    output reg [6:0]   cru_inttoint_out,
+    input wire [4:0]   smc_id_in
 );
 
 // 微指令解析
@@ -92,12 +94,20 @@ int_to_int unit_3 (
 // 输出寄存器更新
 always @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin
-        dr_inttoint_d_out <= 128'b0;
+        dr_inttoint_d_out <= 7'd0;
     end else begin
-        dr_inttoint_d_out[127:96] <= out_reg_0;
-        dr_inttoint_d_out[95:64] <= out_reg_1;
-        dr_inttoint_d_out[63:32] <= out_reg_2;
-        dr_inttoint_d_out[31:0] <= out_reg_3;
+        dr_inttoint_d_out[127:96]   <= out_reg_0;
+        dr_inttoint_d_out[95:64]    <= out_reg_1;
+        dr_inttoint_d_out[63:32]    <= out_reg_2;
+        dr_inttoint_d_out[31:0]     <= out_reg_3;
+    end
+end
+
+always @(posedge clk or negedge rst_n) begin
+    if (!rst_n) begin
+        cru_inttoint_out <= 128'd0;
+    end else begin
+        cru_inttoint_out <= cru_inttoint_in;
     end
 end
 

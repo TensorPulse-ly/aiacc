@@ -9,15 +9,46 @@
 
 module tb_int_to_int_array;
 
+// DPI-C函数导入
+import "DPI-C" function int dpi_int_to_int_convert(
+    input int in_data, input byte src_prec, input byte dst_prec, 
+    input byte src_signed, input byte dst_signed, input byte src_pos, input byte dst_pos
+);
+
 // 测试信号定义
-reg         clk;
-reg         rst_n;
-reg [127:0] dvr_inttoint_s_in;
-reg [6:0]   cru_inttoint_in;
+reg          clk;
+reg          rst_n;
+reg [127:0]  dvr_inttoint_s_in;
+reg [6:0]    cru_inttoint_in;
 wire [127:0] dr_inttoint_d_out;
+wire [6:0]   cru_inttoint_out;
+reg  [4:0]   smc_id_in;
+
+reg [31:0]   conv_data_3;
+reg [31:0]   conv_data_2;
+reg [31:0]   conv_data_1;
+reg [31:0]   conv_data_0;
+
+reg         instr_vld  ;
+reg         src_prec   ;
+reg         dst_prec   ;
+reg         src_signed ;
+reg         dst_signed ;
+reg         src_pos    ;
+reg         dst_pos    ;
+
+wire [31:0] out_reg_0  ;
+wire [31:0] out_reg_1  ;
+wire [31:0] out_reg_2  ;
+wire [31:0] out_reg_3  ;
+wire [31:0] in_reg_0   ;
+wire [31:0] in_reg_1   ;
+wire [31:0] in_reg_2   ;
+wire [31:0] in_reg_3   ;
 
 // 日志文件句柄
 integer log_file;
+integer pass_cnt, total_cnt;
 
 // 时钟生成
 always #5 clk = ~clk;
@@ -28,29 +59,24 @@ int_to_int_array uut (
     .rst_n(rst_n),
     .dvr_inttoint_s_in(dvr_inttoint_s_in),
     .cru_inttoint_in(cru_inttoint_in),
-    .dr_inttoint_d_out(dr_inttoint_d_out)
+    .dr_inttoint_d_out(dr_inttoint_d_out),
+    .cru_inttoint_out(cru_inttoint_out),
+    .smc_id_in(smc_id_in)
 );
 
-// 微指令信号解析
-wire instr_vld = cru_inttoint_in[6];
-wire src_prec = cru_inttoint_in[5];
-wire dst_prec = cru_inttoint_in[4];
-wire src_signed = cru_inttoint_in[3];
-wire dst_signed = cru_inttoint_in[2];
-wire src_pos = cru_inttoint_in[1];
-wire dst_pos = cru_inttoint_in[0];
+
 
 // 输出数据拆分
-wire [31:0] out_reg_0 = dr_inttoint_d_out[127:96];
-wire [31:0] out_reg_1 = dr_inttoint_d_out[95:64];
-wire [31:0] out_reg_2 = dr_inttoint_d_out[63:32];
-wire [31:0] out_reg_3 = dr_inttoint_d_out[31:0];
+assign out_reg_0 = dr_inttoint_d_out[127:96];
+assign out_reg_1 = dr_inttoint_d_out[95:64];
+assign out_reg_2 = dr_inttoint_d_out[63:32];
+assign out_reg_3 = dr_inttoint_d_out[31:0];
 
 // 输入数据拆分
-wire [31:0] in_reg_0 = dvr_inttoint_s_in[127:96];
-wire [31:0] in_reg_1 = dvr_inttoint_s_in[95:64];
-wire [31:0] in_reg_2 = dvr_inttoint_s_in[63:32];
-wire [31:0] in_reg_3 = dvr_inttoint_s_in[31:0];
+assign in_reg_0 = dvr_inttoint_s_in[127:96];
+assign in_reg_1 = dvr_inttoint_s_in[95:64];
+assign in_reg_2 = dvr_inttoint_s_in[63:32];
+assign in_reg_3 = dvr_inttoint_s_in[31:0];
 
 // 测试任务
 task test_array_conversion;
@@ -62,6 +88,11 @@ task test_array_conversion;
     input test_src_pos;
     input test_dst_pos;
     input [255:0] test_name;
+
+    reg [31:0] dpi_result0;
+    reg [31:0] dpi_result1;
+    reg [31:0] dpi_result2;
+    reg [31:0] dpi_result3;
 begin
     
     // 设置微指令
@@ -74,6 +105,15 @@ begin
     // 等待时钟边沿
     @(posedge clk);
     #1; // 稍作延迟确保稳定
+
+    dpi_result0 = dpi_int_to_int_convert(test_input_0, test_src_precision, test_dst_precision, 
+                                      test_src_signed, test_dst_signed, test_src_pos, test_dst_pos);
+    dpi_result1 = dpi_int_to_int_convert(test_input_1, test_src_precision, test_dst_precision, 
+                                      test_src_signed, test_dst_signed, test_src_pos, test_dst_pos);
+    dpi_result2 = dpi_int_to_int_convert(test_input_2, test_src_precision, test_dst_precision, 
+                                      test_src_signed, test_dst_signed, test_src_pos, test_dst_pos);
+    dpi_result3 = dpi_int_to_int_convert(test_input_3, test_src_precision, test_dst_precision, 
+                                      test_src_signed, test_dst_signed, test_src_pos, test_dst_pos);
     
     $fdisplay(log_file, "阵列测试: %s", test_name);
     $fdisplay(log_file, "  源精度: %s, 目的精度: %s", 
@@ -82,15 +122,25 @@ begin
     $fdisplay(log_file, "  源符号: %s, 目的符号: %s", 
              test_src_signed ? "有符号" : "无符号",
              test_dst_signed ? "有符号" : "无符号");
-    $fdisplay(log_file, "  输入0: 0x%08X -> 输出0: 0x%08X", test_input_0, out_reg_0);
-    $fdisplay(log_file, "  输入1: 0x%08X -> 输出1: 0x%08X", test_input_1, out_reg_1);
-    $fdisplay(log_file, "  输入2: 0x%08X -> 输出2: 0x%08X", test_input_2, out_reg_2);
-    $fdisplay(log_file, "  输入3: 0x%08X -> 输出3: 0x%08X", test_input_3, out_reg_3);
+    $fdisplay(log_file, "  输入0: 0x%08X -> 输出0: 0x%08X -> C输出0: 0x%08X", test_input_0, out_reg_0, dpi_result0);
+    $fdisplay(log_file, "  输入1: 0x%08X -> 输出1: 0x%08X -> C输出1: 0x%08X", test_input_1, out_reg_1, dpi_result1);
+    $fdisplay(log_file, "  输入2: 0x%08X -> 输出2: 0x%08X -> C输出2: 0x%08X", test_input_2, out_reg_2, dpi_result2);
+    $fdisplay(log_file, "  输入3: 0x%08X -> 输出3: 0x%08X -> C输出3: 0x%08X", test_input_3, out_reg_3, dpi_result3);
+    if((out_reg_0 == dpi_result0) && (out_reg_1 == dpi_result1) && (out_reg_2 == dpi_result2) && (out_reg_3 == dpi_result3))
+        $fdisplay(log_file, "  PASS");
+    else
+        $fdisplay(log_file, "  FAIL");
+
     $fdisplay(log_file, "");
+
+    if(out_reg_0 == dpi_result0)
+        pass_cnt++;
+    total_cnt++;
 end
 endtask
 
 // 主测试过程
+integer i;
 initial begin
     // 打开日志文件
     log_file = $fopen("int_to_int_array_test.log", "w");
@@ -98,11 +148,21 @@ initial begin
         $display("错误: 无法创建日志文件");
         $finish;
     end
-    
+
+    // 微指令信号解析
+    instr_vld  = cru_inttoint_in[6];
+    src_prec   = cru_inttoint_in[5];
+    dst_prec   = cru_inttoint_in[4];
+    src_signed = cru_inttoint_in[3];
+    dst_signed = cru_inttoint_in[2];
+    src_pos    = cru_inttoint_in[1];
+    dst_pos    = cru_inttoint_in[0];
+
     // 初始化时钟和复位
-    clk = 0;
-    rst_n = 0;
-    
+    clk = 1'b0;
+    rst_n = 1'b0;
+    pass_cnt = 0;
+    total_cnt = 0;
     // 初始化输入
     dvr_inttoint_s_in = 128'h0;
     cru_inttoint_in = 7'h0;
@@ -126,7 +186,7 @@ initial begin
         1'b1, 1'b1, 1'b1, 1'b1, 1'b0, 1'b0,
         "s32 -> s32 转换"
     );
-    
+
     // =================== 测试2: s32 -> u32 ===================
     test_array_conversion(
         32'h0000007F,  // 127 -> 127
@@ -136,6 +196,8 @@ initial begin
         1'b1, 1'b1, 1'b1, 1'b0, 1'b0, 1'b0,
         "s32 -> u32 转换"
     );
+    
+
     
     // =================== 测试3: u32 -> s32 ===================
     test_array_conversion(
@@ -346,12 +408,58 @@ initial begin
     cru_inttoint_in = 7'h0; // 指令无效
     dvr_inttoint_s_in = {32'h00007FFF, 32'hFFFFFF80, 32'h7FFFFFFF, 32'h80000000};
     @(posedge clk);
-    #1;
+    #1
     $fdisplay(log_file, "阵列测试: 指令无效");
     $fdisplay(log_file, "  指令无效时输出为0");
     $fdisplay(log_file, "  输出0: 0x%08X, 输出1: 0x%08X", out_reg_0, out_reg_1);
     $fdisplay(log_file, "  输出2: 0x%08X, 输出3: 0x%08X", out_reg_2, out_reg_3);
     $fdisplay(log_file, "");
+
+    // =================== 测试18: 随机测试 ===================
+    for (i = 0; i < 10000; i++) begin
+        conv_data_0 = $random;
+        conv_data_1 = $random;
+        conv_data_2 = $random;
+        conv_data_3 = $random;
+        src_prec    = $random & 1'b1;
+        dst_prec    = $random & 1'b1;
+        src_signed  = $random & 1'b1;
+        dst_signed  = $random & 1'b1;
+        src_pos     = $random & 1'b1;
+        dst_pos     = $random & 1'b1;
+
+        test_array_conversion(
+          conv_data_3[31:0], conv_data_2[31:0], conv_data_1[31:0], conv_data_0[31:0], 
+          src_prec, dst_prec, src_signed, dst_signed, src_pos, dst_pos,
+          "随机测试  转换"
+        );
+    end
+
+    #20 rst_n = 0;
+    #20 rst_n = 1;
+    // =================== 测试19: 随机测试 ===================
+    for (i = 0; i < 10000; i++) begin
+        conv_data_0 = $random;
+        conv_data_1 = $random;
+        conv_data_2 = $random;
+        conv_data_3 = $random;
+        src_prec    = $random & 1'b1;
+        dst_prec    = $random & 1'b1;
+        src_signed  = $random & 1'b1;
+        dst_signed  = $random & 1'b1;
+        src_pos     = $random & 1'b1;
+        dst_pos     = $random & 1'b1;
+
+        test_array_conversion(
+          conv_data_3[31:0], conv_data_2[31:0], conv_data_1[31:0], conv_data_0[31:0], 
+          src_prec, dst_prec, src_signed, dst_signed, src_pos, dst_pos,
+          "随机测试 转换"
+        );
+    end
+
+
+    $fdisplay(log_file, "==== SUMMARY ====");
+    $fdisplay(log_file, "PASS: %0d / TOTAL: %0d", pass_cnt, total_cnt);
     
     // 测试完成信息
     $fdisplay(log_file, "========================================");

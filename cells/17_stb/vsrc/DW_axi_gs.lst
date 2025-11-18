@@ -1,0 +1,18 @@
+// component: (top level)
+// library: work
+// files:
+/datahdd/riscv/zhuzhenglong/axi_gen/config3/src/DW_axi_gs_cc_constants.vh
+/datahdd/riscv/zhuzhenglong/axi_gen/config3/src/DW_axi_gs_constants.vh
+/datahdd/riscv/zhuzhenglong/axi_gen/config3/src/DW_axi_gs_bcm_params.vh
+/datahdd/riscv/zhuzhenglong/axi_gen/config3/src/DW_axi_gs_all_includes.vh
+/datahdd/riscv/zhuzhenglong/axi_gen/config3/src/DW_axi_gs_bcm57.v
+/datahdd/riscv/zhuzhenglong/axi_gen/config3/src/DW_axi_gs_bcm06.v
+/datahdd/riscv/zhuzhenglong/axi_gen/config3/src/DW_axi_gs_bcm65.v
+/datahdd/riscv/zhuzhenglong/axi_gen/config3/src/DW_axi_gs_fifo.v
+/datahdd/riscv/zhuzhenglong/axi_gen/config3/src/DW_axi_gs_sm.v
+/datahdd/riscv/zhuzhenglong/axi_gen/config3/src/DW_axi_gs_exclusive.v
+/datahdd/riscv/zhuzhenglong/axi_gen/config3/src/DW_axi_gs_req.v
+/datahdd/riscv/zhuzhenglong/axi_gen/config3/src/DW_axi_gs_resp.v
+/datahdd/riscv/zhuzhenglong/axi_gen/config3/src/DW_axi_gs.v
+/datahdd/riscv/zhuzhenglong/axi_gen/config3/src/DW_axi_gs-undef.v
+

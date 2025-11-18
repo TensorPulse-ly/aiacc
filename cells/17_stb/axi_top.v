@@ -38,7 +38,13 @@ module axi_top #(
     output [3:0]            error_code,     // 错误代码
     
     // 调试信号（连接测试平台，监控burst_store状态）
-    output [2:0]            burst_store_state
+    output [2:0]            burst_store_state,
+
+    //input random data
+    input [DATA_WIDTH-1 : 0]  src_data,
+
+    //output data
+    output [DATA_WIDTH-1 : 0] dst_data
 );
 
 // 内部信号定义（模块间连接桥梁）
@@ -117,7 +123,8 @@ ur_model #(
     .err_addr_mask(ur_err_addr_mask),
     .read_count(),
     .write_count(),
-    .error_count()
+    .error_count(),
+    .src_data(src_data)
 );
 
 // 2. 实例化burst_store（指令解析+随机数据中继）
@@ -254,7 +261,8 @@ axi_mem_model #(
     .axi_wready(m_wready),
     .axi_bvalid(m_bvalid),
     .axi_bresp(m_bresp),
-    .axi_bready(m_bready)
+    .axi_bready(m_bready),
+    .dst_data(dst_data)
     // 未使用的UR接口（注释避免多驱动）
     // .ur_re(),
     // .ur_addr(),

@@ -1,16 +1,37 @@
+`timescale 1ns / 1ps
+
 module add8 (
-    input         clk,
-    input         rst_n,
+    // input          clk,
+    // input          rst_n,
     input  [127:0] src0,
     input  [127:0] src1,
     input  [127:0] src2,
     input          sign_s0,
     input          sign_s1,
     input          sign_s2,
+    input          i_sign_d,
     output [127:0] dst0,
     output [127:0] dst1
 );
 
+    genvar i;
+    generate
+        for(i=0; i<32; i++) begin
+            add8_comb u_add8_comb(
+                .src0        (src0[i*4 +: 4]),
+                .src1        (src1[i*4 +: 4]),
+                .src2        (src2[i*4 +: 4]),
+                // .sign_s0     (sign_s0),
+                .sign_s1     (sign_s1),
+                .sign_s2     (sign_s2),
+                .i_sign_d    (i_sign_d),
+                .dst0        (dst0[i*4 +: 4]),
+                .dst1        (dst1[i*4 +: 4])
+            );
+        end
+    endgenerate
+
+/*
     // 精确匹配C接口函数的实现，使用16位有符号整数模拟C代码行为
     genvar i;
     generate
@@ -19,6 +40,7 @@ module add8 (
             wire [3:0] u0 = src0[i*4 +: 4];
             wire [3:0] u1 = src1[i*4 +: 4];
             wire [3:0] u2 = src2[i*4 +: 4];
+  
 
             // 将u2和u1连接成8位值
             wire [7:0] concat_val = {u2, u1};
@@ -45,6 +67,7 @@ module add8 (
             assign dst0[i*4 +: 4] = sum_clipped[3:0];
             assign dst1[i*4 +: 4] = sum_clipped[7:4];
         end
-    endgenerate
+    endgenerate */
+    
 
 endmodule

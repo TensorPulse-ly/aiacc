@@ -42,22 +42,22 @@ reg clk_gen;
 reg rst_n_gen;
 reg tb_en_gen;
 initial begin
-    clk_gen = 0;
-    rst_n_gen = 0;
-    tb_en_gen = 0;
+    clk_gen   = 1'b0;
+    rst_n_gen = 1'b0;
+    tb_en_gen = 1'b0;
     
     // 复位序列（100ns低电平）
-    #100;
-    rst_n_gen = 1;
+    #100
+    rst_n_gen = 1'b1;
     $display("[TB] 时间%0t: 复位释放，准备启动测试", $time);
     
     // 启动测试（延迟100ns确保模块稳定）
-    #100;
-    tb_en_gen = 1;
+    #100
+    tb_en_gen = 1'b1;
     $display("[TB] 时间%0t: tb_en置1，开始执行测试用例", $time);
     
     // 仿真超时保护（1ms未完成则强制结束）
-    #1000000;
+    #1000000
     $display("[TB] 时间%0t: 仿真超时（1ms），强制结束", $time);
     $finish;
 end
@@ -147,13 +147,13 @@ always @(posedge clk or negedge rst_n) begin
                     test_case <= 4'd1;
                 end
             
-            // 测试用例1：单次burst（1拍），SMC0使能，写入地址0x1000
+            // 测试用例1：单次burst（1拍），SMC0-SMC1使能，写入地址0x1000
             4'd1:
                 begin
                     $display("[TB] 时间%0t: 测试用例1启动 - 单次burst写入（1拍）", $time);
                     // 配置STB指令参数
                     stb_u_valid        = 1'b1;
-                    stb_u_smc_strb     = 6'b000001;  // SMC0使能
+                    stb_u_smc_strb     = 6'b000001;  // SMC0-SMC1使能
                     stb_u_byte_strb    = 4'h0;       // 全16字节有效
                     stb_u_brst         = 2'b00;      // burst长度=1拍
                     stb_u_gr_base_addr = 32'h00001000;  // 内存写入基地址（0x1000）
@@ -161,7 +161,7 @@ always @(posedge clk or negedge rst_n) begin
                     stb_u_ur_addr      = 11'h000;    // 目标UR地址=0x000（读取随机数据）
                     
                     $display("[TB] 时间%0t: STB指令参数配置完成 - 基地址=0x1000，UR地址=0x000，SMC0使能", $time);
-                    @(posedge clk); // 等待时钟上升沿，确保指令被接收
+                    @(posedge clk) // 等待时钟上升沿，确保指令被接收
                     stb_u_valid        = 1'b0; // 清除指令有效
                     $display("[TB] 时间%0t: 等待burst_store指令完成（stb_d_done=1）", $time);
                     
@@ -173,7 +173,7 @@ always @(posedge clk or negedge rst_n) begin
                         begin: wait_done
                             // 监控状态变化，一旦检测到DONE状态（4）之后回到IDLE状态（0），就认为完成
                             while (1) begin
-                                @(posedge clk);
+                                @(posedge clk)
                                 if (prev_burst_store_state == 4 && burst_store_state == 0) begin
                                     $display("[TB_DEBUG] 时间%0t: 检测到burst_store已完成（状态从4→0）", $time);
                                     disable timeout;
@@ -182,7 +182,7 @@ always @(posedge clk or negedge rst_n) begin
                             end
                         end
                         begin: timeout
-                            repeat(1000) @(posedge clk);
+                            repeat(1000) @(posedge clk)
                             disable wait_done;
                             $display("[TB_DEBUG] 时间%0t: 等待超时", $time);
                             $display("[TB] 时间%0t: 测试用例1超时（未检测到状态转换完成）", $time);
@@ -194,7 +194,7 @@ always @(posedge clk or negedge rst_n) begin
                     if (test_case == 4'd1) begin
                         $display("[TB] 时间%0t: 测试用例1完成 - burst_store状态已从DONE→IDLE", $time);
                         // 导出内存内容（验证随机数据是否写入0x1000）
-                        #10;
+                        #10
                         $display("[TB] 时间%0t: 导出测试用例1内存内容到 sim_output/mem_case1.txt", $time);
                         u_axi_top.axi_mem_model_inst.export_memory(1);
                         test_case <= 4'd2;
@@ -214,7 +214,7 @@ always @(posedge clk or negedge rst_n) begin
                     stb_u_gr_base_addr = 32'h00002000;  // 基地址=0x2000
                     stb_u_ur_id        = 4'd1;       // UR ID=1
                     stb_u_ur_addr      = 11'h010;    // UR地址=0x010
-                    @(posedge clk);
+                    @(posedge clk)
                     stb_u_valid        = 1'b0;
                     $display("[TB] 时间%0t: 等待burst_store指令完成", $time);
                     
@@ -223,7 +223,7 @@ always @(posedge clk or negedge rst_n) begin
                         begin: wait_done_case2
                             // 监控状态变化，一旦检测到DONE状态（4）之后回到IDLE状态（0），就认为完成
                             while (1) begin
-                                @(posedge clk);
+                                @(posedge clk)
                                 if (prev_burst_store_state == 4 && burst_store_state == 0) begin
                                     $display("[TB_DEBUG] 时间%0t: 检测到burst_store已完成（状态从4→0）", $time);
                                     disable timeout_case2;
@@ -232,7 +232,7 @@ always @(posedge clk or negedge rst_n) begin
                             end
                         end
                         begin: timeout_case2
-                            repeat(2000) @(posedge clk);
+                            repeat(2000) @(posedge clk)
                             disable wait_done_case2;
                             $display("[TB_DEBUG] 时间%0t: 等待超时", $time);
                             $display("[TB] 时间%0t: 测试用例2超时（未检测到状态转换完成）", $time);
@@ -245,7 +245,7 @@ always @(posedge clk or negedge rst_n) begin
                         $display("[TB] 时间%0t: 测试用例2完成 - burst_store状态已从DONE→IDLE", $time);
                         // 等待足够的时间，确保AXI事务真正完成
                         $display("[TB] 时间%0t: 等待50个时钟周期，确保AXI事务完成", $time);
-                        repeat(50) @(posedge clk);
+                        repeat(50) @(posedge clk)
                         $display("[TB] 时间%0t: 导出测试用例2内存内容到 sim_output/mem_case2.txt", $time);
                         u_axi_top.axi_mem_model_inst.export_memory(2);
                         test_case <= 4'd3;
@@ -264,7 +264,7 @@ always @(posedge clk or negedge rst_n) begin
                     stb_u_gr_base_addr = 32'h00003000;  // 基地址=0x3000
                     stb_u_ur_id        = 4'd2;
                     stb_u_ur_addr      = 11'h020;
-                    @(posedge clk);
+                    @(posedge clk)
                     stb_u_valid        = 1'b0;
                     $display("[TB] 时间%0t: 等待burst_store指令完成", $time);
                     
@@ -273,7 +273,7 @@ always @(posedge clk or negedge rst_n) begin
                         begin: wait_done_case3
                             // 监控状态变化，一旦检测到DONE状态（4）之后回到IDLE状态（0），就认为完成
                             while (1) begin
-                                @(posedge clk);
+                                @(posedge clk)
                                 if (prev_burst_store_state == 4 && burst_store_state == 0) begin
                                     $display("[TB_DEBUG] 时间%0t: 检测到burst_store已完成（状态从4→0）", $time);
                                     disable timeout_case3;
@@ -282,7 +282,7 @@ always @(posedge clk or negedge rst_n) begin
                             end
                         end
                         begin: timeout_case3
-                            repeat(3000) @(posedge clk);
+                            repeat(3000) @(posedge clk)
                             disable wait_done_case3;
                             $display("[TB_DEBUG] 时间%0t: 等待超时", $time);
                             $display("[TB] 时间%0t: 测试用例3超时（未检测到状态转换完成）", $time);
@@ -296,7 +296,7 @@ always @(posedge clk or negedge rst_n) begin
                         // 等待足够的时间，确保AXI事务真正完成
                         $display("[TB] 时间%0t: 测试用例3检测到状态转换完成，但AXI事务可能尚未完成", $time);
                         $display("[TB] 时间%0t: 等待500个时钟周期，确保AXI事务完成（包括实际数据写入）", $time);
-                        repeat(500) @(posedge clk);
+                        repeat(500) @(posedge clk)
                         $display("[TB] 时间%0t: 等待完成，现在导出测试用例3内存内容到 sim_output/mem_case3.txt", $time);
                         u_axi_top.axi_mem_model_inst.export_memory(3);
                         test_case <= 4'd4;
@@ -315,7 +315,7 @@ always @(posedge clk or negedge rst_n) begin
                     stb_u_gr_base_addr = 32'h00004000;  // 基地址=0x4000
                     stb_u_ur_id        = 4'd3;
                     stb_u_ur_addr      = 11'h030;
-                    @(posedge clk);
+                    @(posedge clk)
                     stb_u_valid        = 1'b0;
                     $display("[TB] 时间%0t: 等待burst_store指令完成", $time);
                     
@@ -324,7 +324,7 @@ always @(posedge clk or negedge rst_n) begin
                         begin: wait_done_case4
                             // 监控状态变化，一旦检测到DONE状态（4）之后回到IDLE状态（0），就认为完成
                             while (1) begin
-                                @(posedge clk);
+                                @(posedge clk)
                                 if (prev_burst_store_state == 4 && burst_store_state == 0) begin
                                     $display("[TB_DEBUG] 时间%0t: 检测到burst_store已完成（状态从4→0）", $time);
                                     disable timeout_case4;
@@ -333,7 +333,7 @@ always @(posedge clk or negedge rst_n) begin
                             end
                         end
                         begin: timeout_case4
-                            repeat(1000) @(posedge clk);
+                            repeat(1000) @(posedge clk)
                             disable wait_done_case4;
                             $display("[TB_DEBUG] 时间%0t: 等待超时", $time);
                             $display("[TB] 时间%0t: 测试用例4超时（未检测到状态转换完成）", $time);
@@ -363,7 +363,7 @@ always @(posedge clk or negedge rst_n) begin
                     stb_u_gr_base_addr = 32'h00005000;  // 基地址=0x5000
                     stb_u_ur_id        = 4'd4;       // UR ID=4
                     stb_u_ur_addr      = 11'h020;    // UR地址=0x020
-                    @(posedge clk);
+                    @(posedge clk)
                     stb_u_valid        = 1'b0;
                     $display("[TB] 时间%0t: 等待burst_store指令完成", $time);
                     
@@ -372,7 +372,7 @@ always @(posedge clk or negedge rst_n) begin
                         begin: wait_done_case5
                             // 监控状态变化，一旦检测到DONE状态（4）之后回到IDLE状态（0），就认为完成
                             while (1) begin
-                                @(posedge clk);
+                                @(posedge clk)
                                 if (prev_burst_store_state == 4 && burst_store_state == 0) begin
                                     $display("[TB_DEBUG] 时间%0t: 检测到burst_store已完成（状态从4→0）", $time);
                                     disable timeout_case5;
@@ -381,7 +381,7 @@ always @(posedge clk or negedge rst_n) begin
                             end
                         end
                         begin: timeout_case5
-                            repeat(3000) @(posedge clk);
+                            repeat(3000) @(posedge clk)
                             disable wait_done_case5;
                             $display("[TB_DEBUG] 时间%0t: 等待超时", $time);
                             $display("[TB] 时间%0t: 测试用例5超时（未检测到状态转换完成）", $time);
@@ -395,7 +395,7 @@ always @(posedge clk or negedge rst_n) begin
                         // 等待足够的时间，确保AXI事务真正完成
                         $display("[TB] 时间%0t: 测试用例5检测到状态转换完成，但AXI事务可能尚未完成", $time);
                         $display("[TB] 时间%0t: 等待500个时钟周期，确保AXI事务完成（包括实际数据写入）", $time);
-                        repeat(500) @(posedge clk);
+                        repeat(500) @(posedge clk)
                         $display("[TB] 时间%0t: 等待完成，现在导出测试用例5内存内容到 sim_output/mem_case5.txt", $time);
                     u_axi_top.axi_mem_model_inst.export_memory(5);
                     test_case <= 4'd6;
@@ -415,7 +415,7 @@ always @(posedge clk or negedge rst_n) begin
                     stb_u_gr_base_addr = 32'h00006000;  // 基地址=0x6000
                     stb_u_ur_id        = 4'd5;       // UR ID=5
                     stb_u_ur_addr      = 11'h030;    // UR地址=0x030
-                    @(posedge clk);
+                    @(posedge clk)
                     stb_u_valid        = 1'b0;
                     $display("[TB] 时间%0t: 等待burst_store指令完成", $time);
                     
@@ -424,7 +424,7 @@ always @(posedge clk or negedge rst_n) begin
                         begin: wait_done_case6
                             // 监控状态变化，一旦检测到DONE状态（4）之后回到IDLE状态（0），就认为完成
                             while (1) begin
-                                @(posedge clk);
+                                @(posedge clk)
                                 if (prev_burst_store_state == 4 && burst_store_state == 0) begin
                                     $display("[TB_DEBUG] 时间%0t: 检测到burst_store已完成（状态从4→0）", $time);
                                     disable timeout_case6;
@@ -433,7 +433,7 @@ always @(posedge clk or negedge rst_n) begin
                             end
                         end
                         begin: timeout_case6
-                            repeat(5000) @(posedge clk);
+                            repeat(5000) @(posedge clk)
                             disable wait_done_case6;
                             $display("[TB_DEBUG] 时间%0t: 等待超时", $time);
                             $display("[TB] 时间%0t: 测试用例6超时（未检测到状态转换完成）", $time);
@@ -445,7 +445,7 @@ always @(posedge clk or negedge rst_n) begin
                     if (test_case == 4'd6) begin
                         $display("[TB] 时间%0t: 测试用例6完成 - burst_store状态已从DONE→IDLE", $time);
                         $display("[TB] 时间%0t: 等待500个时钟周期，确保AXI事务完成", $time);
-                        repeat(500) @(posedge clk);
+                        repeat(500) @(posedge clk)
                         $display("[TB] 时间%0t: 导出测试用例6内存内容到 sim_output/mem_case6.txt", $time);
                         u_axi_top.axi_mem_model_inst.export_memory(6);
                         test_case <= 4'd7;
@@ -465,7 +465,7 @@ always @(posedge clk or negedge rst_n) begin
                     stb_u_gr_base_addr = 32'h00007000;  // 基地址=0x7000
                     stb_u_ur_id        = 4'd6;       // UR ID=6
                     stb_u_ur_addr      = 11'h040;    // UR地址=0x040
-                    @(posedge clk);
+                    @(posedge clk)
                     stb_u_valid        = 1'b0;
                     $display("[TB] 时间%0t: 等待burst_store指令完成", $time);
                     
@@ -474,7 +474,7 @@ always @(posedge clk or negedge rst_n) begin
                         begin: wait_done_case7
                             // 监控状态变化，一旦检测到DONE状态（4）之后回到IDLE状态（0），就认为完成
                             while (1) begin
-                                @(posedge clk);
+                                @(posedge clk)
                                 if (prev_burst_store_state == 4 && burst_store_state == 0) begin
                                     $display("[TB_DEBUG] 时间%0t: 检测到burst_store已完成（状态从4→0）", $time);
                                     disable timeout_case7;
@@ -483,7 +483,7 @@ always @(posedge clk or negedge rst_n) begin
                             end
                         end
                         begin: timeout_case7
-                            repeat(5000) @(posedge clk);
+                            repeat(5000) @(posedge clk)
                             disable wait_done_case7;
                             $display("[TB_DEBUG] 时间%0t: 等待超时", $time);
                             $display("[TB] 时间%0t: 测试用例7超时（未检测到状态转换完成）", $time);
@@ -495,7 +495,7 @@ always @(posedge clk or negedge rst_n) begin
                     if (test_case == 4'd7) begin
                         $display("[TB] 时间%0t: 测试用例7完成 - burst_store状态已从DONE→IDLE", $time);
                         $display("[TB] 时间%0t: 等待500个时钟周期，确保AXI事务完成", $time);
-                        repeat(500) @(posedge clk);
+                        repeat(500) @(posedge clk)
                         $display("[TB] 时间%0t: 导出测试用例7内存内容到 sim_output/mem_case7.txt", $time);
                         u_axi_top.axi_mem_model_inst.export_memory(7);
                         test_case <= 4'd8;
@@ -515,7 +515,7 @@ always @(posedge clk or negedge rst_n) begin
                     stb_u_gr_base_addr = 32'h00008000;  // 基地址=0x8000
                     stb_u_ur_id        = 4'd7;       // UR ID=7
                     stb_u_ur_addr      = 11'h050;    // UR地址=0x050
-                    @(posedge clk);
+                    @(posedge clk)
                     stb_u_valid        = 1'b0;
                     $display("[TB] 时间%0t: 等待burst_store指令完成", $time);
                     
@@ -524,7 +524,7 @@ always @(posedge clk or negedge rst_n) begin
                         begin: wait_done_case8
                             // 监控状态变化，一旦检测到DONE状态（4）之后回到IDLE状态（0），就认为完成
                             while (1) begin
-                                @(posedge clk);
+                                @(posedge clk)
                                 if (prev_burst_store_state == 4 && burst_store_state == 0) begin
                                     $display("[TB_DEBUG] 时间%0t: 检测到burst_store已完成（状态从4→0）", $time);
                                     disable timeout_case8;
@@ -533,7 +533,7 @@ always @(posedge clk or negedge rst_n) begin
                             end
                         end
                         begin: timeout_case8
-                            repeat(5000) @(posedge clk);
+                            repeat(5000) @(posedge clk)
                             disable wait_done_case8;
                             $display("[TB_DEBUG] 时间%0t: 等待超时", $time);
                             $display("[TB] 时间%0t: 测试用例8超时（未检测到状态转换完成）", $time);
@@ -545,7 +545,7 @@ always @(posedge clk or negedge rst_n) begin
                     if (test_case == 4'd8) begin
                         $display("[TB] 时间%0t: 测试用例8完成 - burst_store状态已从DONE→IDLE", $time);
                         $display("[TB] 时间%0t: 等待500个时钟周期，确保AXI事务完成", $time);
-                        repeat(500) @(posedge clk);
+                        repeat(500) @(posedge clk)
                         $display("[TB] 时间%0t: 导出测试用例8内存内容到 sim_output/mem_case8.txt", $time);
                         u_axi_top.axi_mem_model_inst.export_memory(8);
                         test_case <= 4'd9;
@@ -565,7 +565,7 @@ always @(posedge clk or negedge rst_n) begin
                     stb_u_gr_base_addr = 32'hF0000000;  // 高地址空间
                     stb_u_ur_id        = 4'd8;       // UR ID=8
                     stb_u_ur_addr      = 11'h060;    // UR地址=0x060
-                    @(posedge clk);
+                    @(posedge clk)
                     stb_u_valid        = 1'b0;
                     $display("[TB] 时间%0t: 等待burst_store指令完成", $time);
                     
@@ -574,7 +574,7 @@ always @(posedge clk or negedge rst_n) begin
                         begin: wait_done_case9
                             // 监控状态变化，一旦检测到DONE状态（4）之后回到IDLE状态（0），就认为完成
                             while (1) begin
-                                @(posedge clk);
+                                @(posedge clk)
                                 if (prev_burst_store_state == 4 && burst_store_state == 0) begin
                                     $display("[TB_DEBUG] 时间%0t: 检测到burst_store已完成（状态从4→0）", $time);
                                     disable timeout_case9;
@@ -583,7 +583,7 @@ always @(posedge clk or negedge rst_n) begin
                             end
                         end
                         begin: timeout_case9
-                            repeat(5000) @(posedge clk);
+                            repeat(5000) @(posedge clk)
                             disable wait_done_case9;
                             $display("[TB_DEBUG] 时间%0t: 等待超时", $time);
                             $display("[TB] 时间%0t: 测试用例9超时（未检测到状态转换完成）", $time);
@@ -595,7 +595,7 @@ always @(posedge clk or negedge rst_n) begin
                     if (test_case == 4'd9) begin
                         $display("[TB] 时间%0t: 测试用例9完成 - burst_store状态已从DONE→IDLE", $time);
                         $display("[TB] 时间%0t: 等待500个时钟周期，确保AXI事务完成", $time);
-                        repeat(500) @(posedge clk);
+                        repeat(500) @(posedge clk)
                         $display("[TB] 时间%0t: 导出测试用例9内存内容到 sim_output/mem_case9.txt", $time);
                         u_axi_top.axi_mem_model_inst.export_memory(9);
                         test_case <= 4'd10;
@@ -613,7 +613,7 @@ always @(posedge clk or negedge rst_n) begin
                     // 导出最终波形文件（便于调试）
                     $dumpfile("sim_output/axi_top_waveform.vcd");
                     $dumpvars(0, u_axi_top);
-                    #100;
+                    #100
                     $finish; // 结束仿真
                 end
         endcase

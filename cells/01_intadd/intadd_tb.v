@@ -6,7 +6,7 @@ module intadd_tb;
     import "DPI-C" function void add32_128bit(
         input longint unsigned src0_high, input longint unsigned src0_low,
         input longint unsigned src1_high, input longint unsigned src1_low,
-        input int sign_s0, input int sign_s1,
+        input int sign_s0, input int sign_s1, input int sign_d,
         output longint unsigned dst_high, output longint unsigned dst_low,
         output longint unsigned st_high, output longint unsigned st_low
     );
@@ -14,20 +14,37 @@ module intadd_tb;
         input longint unsigned src0_high, input longint unsigned src0_low,
         input longint unsigned src1_high, input longint unsigned src1_low,
         input longint unsigned src2_high, input longint unsigned src2_low,
-        input int sign_s0, input int sign_s1, input int sign_s2,
+        input int sign_s0, input int sign_s1, input int sign_s2, input int sign_d,
         output longint unsigned dst0_high, output longint unsigned dst0_low,
         output longint unsigned dst1_high, output longint unsigned dst1_low,
         output longint unsigned st_high, output longint unsigned st_low
     );
+    import "DPI-C" function void add_int(
+        input longint unsigned src0_high,  input longint unsigned src0_low, 
+        input longint unsigned src1_high,  input longint unsigned src1_low, 
+        input longint unsigned src2_high,  input longint unsigned src2_low, 
+        input int cru_intadd, input int i_smc_id,
+        output longint unsigned dst0_high,  output longint unsigned dst0_low, 
+        output longint unsigned dst1_high,  output longint unsigned dst1_low, 
+        output longint unsigned st_high,    output longint unsigned st_low, 
+        output int o_cru_intadd
+);
 
     reg [127:0] src_reg0, src_reg1, src_reg2;
     reg [1:0]   precision_s0, precision_s1, precision_s2;
-    reg         sign_s0, sign_s1, sign_s2;
+    reg         sign_s0, sign_s1, sign_s2, sign_d;
     reg         inst_valid, update_st;
     reg         clk, rst_n;
-    reg [10:0]  cru_intadd; // 微指令控制信号
+    reg [11:0]  cru_intadd; // 微指令控制信号
 
     wire [127:0] dst_reg0, dst_reg1, st;
+
+`ifndef FSDB_GENERAL
+    initial begin
+        $fsdbDumpfile("intadd.fsdb");
+        $fsdbDumpvars(0, uut);
+    end
+`endif
 
     // 时钟
     always #5 clk = ~clk;
@@ -52,11 +69,11 @@ module intadd_tb;
     // 初始化
     task init_inputs;
     begin
-        src_reg0 = 0; src_reg1 = 0; src_reg2 = 0;
-        precision_s0 = 0; precision_s1 = 0; precision_s2 = 0;
-        sign_s0 = 0; sign_s1 = 0; sign_s2 = 0;
-        inst_valid = 0; update_st = 0;
-        cru_intadd = 11'd0;
+        src_reg0 = 128'd0; src_reg1 = 128'd0; src_reg2 = 128'd0;
+        precision_s0 = 2'b00; precision_s1 = 2'b00; precision_s2 = 2'b00;
+        sign_s0 = 1'b0; sign_s1 = 1'b0; sign_s2 = 1'b0; sign_d = 1'b0;
+        inst_valid = 1'b0; update_st = 1'b0;
+        cru_intadd = 12'd0;
     end
     endtask
 
@@ -76,7 +93,8 @@ module intadd_tb;
         input [127:0] src0,
         input [127:0] src1,
         input bit s0,
-        input bit s1
+        input bit s1,
+        input bit d
     );
         longint unsigned c_dst_high, c_dst_low;
         longint unsigned c_st_high, c_st_low;
@@ -86,7 +104,7 @@ module intadd_tb;
             // 调用参考模型
             add32_128bit(src0[127:64], src0[63:0],
                          src1[127:64], src1[63:0],
-                         s0, s1,
+                         s0, s1, d,
                          c_dst_high, c_dst_low,
                          c_st_high, c_st_low);
             c_dst = combine_128(c_dst_high, c_dst_low);
@@ -95,12 +113,17 @@ module intadd_tb;
             // 比较 - 只在失败时记录到result.txt
             if (c_dst !== rtl_dst || c_st_reg !== rtl_st) begin
                 fhandle = $fopen("result.txt", "a");
-                $fdisplay(fhandle, "[TEST][32bit] time=%0t src0=%h src1=%h sign_s=[%0b,%0b]", $time, src0, src1, s0, s1);
+                $fdisplay(fhandle, "[TEST][32bit] time=%0t src0=%h src1=%h sign_s=[%0b,%0b] sign_d=[%d]", $time, src0, src1, s0, s1, d);
                 $fdisplay(fhandle, "[FAIL][32bit] RTL_dst=%h C_dst=%h RTL_st=%h C_st=%h",
                           rtl_dst, c_dst, rtl_st, c_st_reg);
                 $fclose(fhandle);
                 compare_and_log_32bit = 0;
             end else begin
+                // fhandle = $fopen("result.txt", "a");
+                // $fdisplay(fhandle, "[TEST][32bit] time=%0t src0=%h src1=%h sign_s=[%0b,%0b] sign_d=[%d]", $time, src0, src1, s0, s1, d);
+                // $fdisplay(fhandle, "[SUCCESS][32bit] RTL_dst=%h C_dst=%h RTL_st=%h C_st=%h",
+                //           rtl_dst, c_dst, rtl_st, c_st_reg);
+                // $fclose(fhandle);
                 compare_and_log_32bit = 1;
             end
         end
@@ -116,7 +139,8 @@ module intadd_tb;
         input [127:0] src2,
         input bit s0,
         input bit s1,
-        input bit s2
+        input bit s2,
+        input bit d
     );
         longint unsigned c_dst0_high, c_dst0_low;
         longint unsigned c_dst1_high, c_dst1_low;
@@ -128,7 +152,7 @@ module intadd_tb;
             add8_128bit(src0[127:64], src0[63:0],
                         src1[127:64], src1[63:0],
                         src2[127:64], src2[63:0],
-                        s0, s1, s2,
+                        s0, s1, s2, d,
                         c_dst0_high, c_dst0_low,
                         c_dst1_high, c_dst1_low,
                         c_st_high, c_st_low);
@@ -146,25 +170,92 @@ module intadd_tb;
                 $fclose(fh);
                 compare_and_log_4_8bit = 0;
             end else begin
+                // fh = $fopen("result.txt", "a");
+                // $fdisplay(fh, "[TEST][4+8bit] time=%0t src0=%h src1=%h src2=%h sign_s=[%0b,%0b,%0b]",
+                //       $time, src0, src1, src2, s0, s1, s2);
+                // $fdisplay(fh, "[SUCCESS][4+8bit] RTL_dst0=%h C_dst0=%h RTL_dst1=%h C_dst1=%h RTL_st=%h C_st=%h",
+                //           rtl_dst0, c_dst0, rtl_dst1, c_dst1, rtl_st, c_st_reg);
+                // $fclose(fh);
                 compare_and_log_4_8bit = 1;
             end
         end
     endfunction
 
+    //new add -zhuzl 20251027
+    function automatic int compare_and_log_intadd(
+        input [127:0] rtl_dst0,
+        input [127:0] rtl_dst1,
+        input [127:0] rtl_st,
+        input [127:0] src0,
+        input [127:0] src1,
+        input [127:0] src2,
+        input [11:0]  cru_intadd,
+        input [4:0]   i_smc_id
+    );
+
+    longint unsigned c_dst0_high, c_dst0_low;
+    longint unsigned c_dst1_high, c_dst1_low;
+    longint unsigned c_st_high, c_st_low;
+    longint unsigned c_cru_intadd;
+
+    reg [127:0] c_dst0, c_dst1, c_st_reg;
+    integer fh;
+    begin
+      add_int(src0[127:64], src0[63:0],
+              src1[127:64], src1[63:0],
+              src2[127:64], src2[63:0],
+              cru_intadd[11:0], i_smc_id[4:0],
+              c_dst0_high, c_dst0_low,
+              c_dst1_high, c_dst1_low,
+              c_st_high, c_st_low,
+              c_cru_intadd);
+        
+        c_dst0 = combine_128(c_dst0_high, c_dst0_low);
+        c_dst1 = combine_128(c_dst1_high, c_dst1_low);
+        c_st_reg = combine_128(c_st_high, c_st_low);
+
+        if((c_dst0 !== rtl_dst0) || (c_dst1 !== rtl_dst1) || (c_st_reg !== rtl_st)) begin
+            fh = $fopen("result.txt", "a");
+            $fdisplay(fh, "[TEST][ADDINT] time=%0t src0=%h src1=%h src2=%h sign_s=[%0b,%0b,%0b] ",
+                      $time, src0, src1, src2, cru_intadd[4], cru_intadd[3], cru_intadd[2]);
+            $fdisplay(fh, "[TEST][ADDINT] precision_s0=%0b precision_s1=%0b precision_s2=%0b inst_valid=%0b update_st=%0b ",
+                      cru_intadd[10:9], cru_intadd[8:7], cru_intadd[6:5], cru_intadd[11], cru_intadd[0]);
+            $fdisplay(fh, "[FAIL][ADDINT] RTL_dst0=%h C_dst0=%h RTL_dst1=%h C_dst1=%h",
+                      rtl_dst0, c_dst0, rtl_dst1, c_dst1);
+            $fdisplay(fh, "[FAIL][ADDINT] RTL_st=%h C_st=%h",
+                      rtl_st, c_st_reg);
+            $fclose(fh);
+            compare_and_log_intadd = 0;
+        end else begin
+            // fh = $fopen("result.txt", "a");
+            // $fdisplay(fh, "[TEST][ADDINT] time=%0t src0=%h src1=%h src2=%h sign_s=[%0b,%0b,%0b] ",
+            //           $time, src0, src1, src2, cru_intadd[4], cru_intadd[3], cru_intadd[2]);
+            // $fdisplay(fh, "[TEST][ADDINT] precision_s0=%0b precision_s1=%0b precision_s2=%0b  inst_valid=%0b update_st=%0b ",
+            //           cru_intadd[10:9], cru_intadd[8:7], cru_intadd[6:5], cru_intadd[11], cru_intadd[0]);
+            // $fdisplay(fh, "[SUCCESS][ADDINT] RTL_dst0=%h C_dst0=%h RTL_dst1=%h C_dst1=%h",
+            //           rtl_dst0, c_dst0, rtl_dst1, c_dst1);
+            // $fdisplay(fh, "[SUCCESS][ADDINT] RTL_st=%h C_st=%h",
+            //           rtl_st, c_st_reg);
+            // $fclose(fh);
+            compare_and_log_intadd = 1;
+        end
+    end
+    endfunction
+
     // === 测试流程 ===
     integer i;
     initial begin
-        clk = 0;
-        rst_n = 0;
-        pass_cnt = 0;
-        total_cnt = 0;
+        clk = 1'b0;
+        rst_n = 1'b0;
+        pass_cnt = 32'd0;
+        total_cnt = 32'd0;
 
         result_file = $fopen("result.txt", "w");
         $fdisplay(result_file, "==== INTADD TB TEST START ====\n(仅记录失败的测试数据)\n");
         $fclose(result_file);
 
         init_inputs;
-        #10 rst_n = 1;
+        #10 rst_n = 1'b1;
 
         // 为32位测试打开文件
         fh = $fopen("result.txt", "a");
@@ -174,22 +265,23 @@ module intadd_tb;
         src_reg0 = 128'h0;
         src_reg1 = 128'h0;
         precision_s0 = 2'b11; precision_s1 = 2'b11;
-        sign_s0 = 0; sign_s1 = 0;
-        inst_valid = 1; update_st = 1;
+        sign_s0 = 1'b0; sign_s1 = 1'b0;
+        sign_s2 = 1'b0; sign_d = 1'b0;
+        inst_valid = 1'b1; update_st = 1'b1;
         cru_intadd = {inst_valid, precision_s0, precision_s1, precision_s2,
-                      sign_s0, sign_s1, sign_s2, update_st};
-        #10; // 给时钟一个周期，让状态寄存器被初始化
+                      sign_s0, sign_s1, sign_s2, sign_d, update_st};
+        #10 // 给时钟一个周期，让状态寄存器被初始化
 
         // 测试1: 32bit 正溢出
         src_reg0 = {32'h7FFFFFFF, 32'h7FFFFFFF, 32'h7FFFFFFF, 32'h7FFFFFFF};
         src_reg1 = {32'h00000001, 32'h00000001, 32'h00000001, 32'h00000001};
         precision_s0 = 2'b11; precision_s1 = 2'b11; precision_s2 = 2'b11;
-        sign_s0 = 1; sign_s1 = 1; sign_s2 = 0;
-        inst_valid = 1; update_st = 1;
+        sign_s0 = 1'b1; sign_s1 = 1'b1; sign_s2 = 1'b0; sign_d = 1'b1;
+        inst_valid = 1'b1; update_st = 1'b1;
         cru_intadd = {inst_valid, precision_s0, precision_s1, precision_s2,
-                      sign_s0, sign_s1, sign_s2, update_st};
-        #10;
-        if (compare_and_log_32bit(dst_reg0, st, src_reg0, src_reg1, sign_s0, sign_s1))
+                      sign_s0, sign_s1, sign_s2, sign_d, update_st};
+        #10
+        if (compare_and_log_32bit(dst_reg0, st, src_reg0, src_reg1, sign_s0, sign_s1, sign_d))
             pass_cnt++;
         total_cnt++;
 
@@ -197,28 +289,29 @@ module intadd_tb;
         src_reg0 = {32'h80000000, 32'h80000000, 32'h80000000, 32'h80000000};
         src_reg1 = {32'hFFFFFFFF, 32'hFFFFFFFF, 32'hFFFFFFFF, 32'hFFFFFFFF};
         precision_s0 = 2'b11; precision_s1 = 2'b11; precision_s2 = 2'b11;
-        sign_s0 = 1; sign_s1 = 1; sign_s2 = 0;
-        inst_valid = 1; update_st = 1;
+        sign_s0 = 1'b1; sign_s1 = 1'b1; sign_s2 = 1'b0; sign_d = 1'b1;
+        inst_valid = 1'b1; update_st = 1'b1;
         cru_intadd = {inst_valid, precision_s0, precision_s1, precision_s2,
-                      sign_s0, sign_s1, sign_s2, update_st};
-        #10;
-        if (compare_and_log_32bit(dst_reg0, st, src_reg0, src_reg1, sign_s0, sign_s1))
+                      sign_s0, sign_s1, sign_s2, sign_d, update_st};
+        #10
+        if (compare_and_log_32bit(dst_reg0, st, src_reg0, src_reg1, sign_s0, sign_s1, sign_d))
             pass_cnt++;
         total_cnt++;
 
         // 测试3: 4+8bit 随机
-        for (i = 0; i < 1000; i++) begin
+        //for (i = 0; i < 1000; i++) begin
+        for (i = 0; i < 10000; i++) begin
             src_reg0 = {$random, $random, $random, $random};
             src_reg1 = {$random, $random, $random, $random};
             src_reg2 = {$random, $random, $random, $random};
             precision_s0 = 2'b00; precision_s1 = 2'b00; precision_s2 = 2'b00;
-            sign_s0 = $random & 1; sign_s1 = $random & 1; sign_s2 = $random & 1;
-            inst_valid = 1; update_st = 1;
+            sign_s0 = $random & 1'b1; sign_s1 = $random & 1'b1; sign_s2 = $random & 1'b1; sign_d = $random & 1'b1;
+            inst_valid = 1'b1; update_st = 1'b1;
             cru_intadd = {inst_valid, precision_s0, precision_s1, precision_s2,
-                          sign_s0, sign_s1, sign_s2, update_st};
-            #10;
+                          sign_s0, sign_s1, sign_s2, sign_d, update_st};
+            #10
             if (compare_and_log_4_8bit(dst_reg0, dst_reg1, st, src_reg0, src_reg1, src_reg2,
-                                       sign_s0, sign_s1, sign_s2))
+                                       sign_s0, sign_s1, sign_s2, sign_d))
                 pass_cnt++;
             total_cnt++;
         end
@@ -227,15 +320,64 @@ module intadd_tb;
             src_reg0 = {$random, $random, $random, $random};
             src_reg1 = {$random, $random, $random, $random};
             precision_s0 = 2'b11; precision_s1 = 2'b11;
-            sign_s0 = $random & 1; sign_s1 = $random & 1;
-            inst_valid = 1; update_st = 1;
+            sign_s0 = $random & 1'b1; sign_s1 = $random & 1'b1; sign_d = $random & 1'b1;
+            inst_valid = 1'b1; update_st = 1'b1;
             cru_intadd = {inst_valid, precision_s0, precision_s1, precision_s2,
-                          sign_s0, sign_s1, sign_s2, update_st};
-            #10;
+                          sign_s0, sign_s1, sign_s2, sign_d, update_st};
+            #10
             
             // 只通过compare_and_log_32bit进行结果比较和记录失败信息
             if (compare_and_log_32bit(dst_reg0, st, src_reg0, src_reg1,
-                                       sign_s0, sign_s1))
+                                       sign_s0, sign_s1, sign_d))
+                pass_cnt++;
+            total_cnt++;
+        end
+        // 测试5: 测试 Toggle覆盖率  
+        src_reg0 = {32'h00000001, 32'h00000001, 32'h00000001, 32'h00000001};
+        src_reg1 = {32'h00000001, 32'h00000001, 32'h00000001, 32'h00000001};
+        precision_s0 = 2'b11; precision_s1 = 2'b11; precision_s2 = 2'b11;
+        sign_s0 = 1'b1; sign_s1 = 1'b1; sign_s2 = 1'b0; sign_d = 1'b1;
+        inst_valid = 1'b1; update_st = 1'b1;
+        cru_intadd = {inst_valid, precision_s0, precision_s1, precision_s2,
+                      sign_s0, sign_s1, sign_s2, sign_d, update_st};
+        #10
+        if (compare_and_log_32bit(dst_reg0, st, src_reg0, src_reg1, sign_s0, sign_s1, sign_d))
+            pass_cnt++;
+        total_cnt++;
+        //测试6：测试顶层随机
+        for (i = 0; i < 10000; i++) begin
+            src_reg0 = {$random, $random, $random, $random};
+            src_reg1 = {$random, $random, $random, $random};
+            src_reg2 = {$random, $random, $random, $random};
+            precision_s0 = $random & 2'b11;
+            precision_s1 = $random & 2'b11;
+            precision_s2 = $random & 2'b11;
+            sign_s0 = $random & 1'b1; sign_s1 = $random & 1'b1; sign_s2 = $random & 1'b1; sign_d = $random & 1'b1;
+            inst_valid = $random & 1'b1; update_st = $random & 1'b1;
+            cru_intadd = {inst_valid, precision_s0, precision_s1, precision_s2,
+                          sign_s0, sign_s1, sign_s2, sign_d, update_st};
+            #10
+            if(compare_and_log_intadd(dst_reg0, dst_reg1, st, src_reg0, src_reg1, src_reg2, cru_intadd, 5))
+                pass_cnt++;
+            total_cnt++;
+        end
+
+        #10 rst_n = 1'b0;
+        #10 rst_n = 1'b1;
+        //测试7：测试顶层随机
+        for (i = 0; i < 10000; i++) begin
+            src_reg0 = {$random, $random, $random, $random};
+            src_reg1 = {$random, $random, $random, $random};
+            src_reg2 = {$random, $random, $random, $random};
+            precision_s0 = $random & 2'b11;
+            precision_s1 = $random & 2'b11;
+            precision_s2 = $random & 2'b11;
+            sign_s0 = $random & 1'b1; sign_s1 = $random & 1'b1; sign_s2 = $random & 1'b1; sign_d = $random & 1'b1;
+            inst_valid = $random & 1'b1; update_st = $random & 1'b1;
+            cru_intadd = {inst_valid, precision_s0, precision_s1, precision_s2,
+                          sign_s0, sign_s1, sign_s2, sign_d, update_st};
+            #10
+            if(compare_and_log_intadd(dst_reg0, dst_reg1, st, src_reg0, src_reg1, src_reg2, cru_intadd, 5))
                 pass_cnt++;
             total_cnt++;
         end

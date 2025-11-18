@@ -110,7 +110,7 @@ always @(posedge clk or negedge rst_n) begin
                         state <= FORWARD_W;
                     end else begin
                         // 地址转发超时保护
-                        wait_cnt <= wait_cnt + 1;
+                        wait_cnt <= wait_cnt + 7'd1;
                         if (wait_cnt >= 7'd100) begin
                             $display("[AXI_STB_S] 时间%0t: 地址转发超时，强制回到空闲", $time);
                             m_awvalid <= 1'b0;
@@ -150,7 +150,7 @@ always @(posedge clk or negedge rst_n) begin
                         wait_cnt <= 7'd0;
                     end else begin
                         // 数据转发超时保护（只有上游有数据但下游长期未就绪时才触发）
-                        wait_cnt <= wait_cnt + 1;
+                        wait_cnt <= wait_cnt + 7'd1;
                         if (wait_cnt >= 7'd100) begin
                             $display("[AXI_STB_S] 时间%0t: 数据转发超时，强制回到空闲", $time);
                             m_wvalid <= 1'b0;
@@ -182,7 +182,7 @@ always @(posedge clk or negedge rst_n) begin
                     
                     // 响应转发超时保护
                     if (!m_bvalid && !s_bvalid) begin
-                        wait_cnt <= wait_cnt + 1;
+                        wait_cnt <= wait_cnt + 7'd1;
                         if (wait_cnt >= 7'd100) begin
                             $display("[AXI_STB_S] 时间%0t: 响应转发超时，强制回到空闲", $time);
                             m_bready <= 1'b0;

@@ -1,0 +1,316 @@
+`timescale 1ns/1ps
+module stb_shell_state_test_tb #(
+    parameter ADDR_WIDTH = 32,
+    parameter DATA_WIDTH = 128,
+    parameter SMC_COUNT = 6
+)(
+    // input                                clk,
+    // input                                rst_n,
+    
+    // output reg                           i_micro_inst_u_valid,
+    // output reg [5:0]                     i_micro_inst_u_smc_strb,
+    // output reg [3:0]                     i_micro_inst_u_byte_strb,
+    // output reg [1:0]                     i_micro_inst_u_brst,           // （2bit：00=1，01=2，10=4，11=8）
+    // output reg [ADDR_WIDTH-1:0]          i_micro_inst_u_gr_base_addr,   // outside sram addr
+    // output reg [3:0]                     i_micro_inst_u_ur_id,
+    // output reg [10:0]                    i_micro_inst_u_ur_addr,        //user addr
+    // input                                o_micro_inst_d_valid,
+    // input                                o_micro_inst_d_done,
+
+    // output reg  [DATA_WIDTH-1:0]         i_src_random_data,
+    // input       [4:0]                    o_state
+);
+
+localparam   TEST_IDLE          = 4'b0001;
+localparam   TEST_START         = 4'b0010;
+localparam   TEST_WAIT          = 4'b0100;
+localparam   TEST_NEXT          = 4'b1000;
+
+localparam   RANDOM_TEST_TIMES  = 16'd1000;
+
+reg [3:0]                     test_state;
+reg [15:0]                    r_random_cnt;
+
+wire                          clk;
+wire                          rst_n;
+
+reg                           i_micro_inst_u_valid;
+reg [5:0]                     i_micro_inst_u_smc_strb;
+reg [3:0]                     i_micro_inst_u_byte_strb;
+reg [1:0]                     i_micro_inst_u_brst;           // （2bit：00=1，01=2，10=4，11=8）
+reg [ADDR_WIDTH-1:0]          i_micro_inst_u_gr_base_addr;   // outside sram addr
+reg [3:0]                     i_micro_inst_u_ur_id;
+reg [10:0]                    i_micro_inst_u_ur_addr;        //user addr
+wire                          o_micro_inst_d_valid;
+wire                          o_micro_inst_d_done;
+reg  [DATA_WIDTH-1:0]         i_src_random_data;
+wire [4:0]                    o_state;
+
+// 时钟与复位生成（自动驱动）
+reg clk_gen;
+reg rst_n_gen;
+// reg tb_en_gen;
+
+reg [3:0]                     r_test_case;
+reg [4:0]                     r_state_prev;
+
+integer i;
+
+initial begin
+    clk_gen   = 1'b0;
+    rst_n_gen = 1'b0;
+    // tb_en_gen = 1'b0;
+    
+    // 复位序列（100ns低电平）
+    #100
+    rst_n_gen = 1'b1;
+    $display("[TB] 时间%0t: 复位释放，准备启动测试", $time);
+    
+    // 启动测试（延迟100ns确保模块稳定）
+    // #100
+    // tb_en_gen = 1'b1;
+    // $display("[TB] 时间%0t: tb_en置1，开始执行测试用例", $time);
+    fork
+        begin :rst_state
+            wait((o_state == 5'b0_1000) && (r_test_case == 4'd4)) begin
+                $display("[TB] 时间%0t: 检测到复位条件满足，执行复位", $time);
+
+                rst_n_gen = 1'b0;
+                #100
+                rst_n_gen = 1'b1;
+
+                disable rst_state;
+            end
+        end
+
+        begin
+            #10000000;
+            $display("[TB] 时间%0t: 仿真超时（1ms），强制结束", $time);
+            $finish;
+        end
+    join
+    
+    // 仿真超时保护（10ms未完成则强制结束）
+    // #10000000
+    // $display("[TB] 时间%0t: 仿真超时（1ms），强制结束", $time);
+    // $finish;
+end
+
+// 50MHz时钟（周期20ns）
+always #10 clk_gen = ~clk_gen;
+
+// 信号连接：测试平台→axi_top
+assign clk = clk_gen;
+assign rst_n = rst_n_gen;
+// assign tb_en = tb_en_gen;
+
+`ifndef FSDB_GENERAL
+    initial begin
+        $fsdbDumpfile("stb_state_idle.fsdb");
+        $fsdbDumpvars(0, u_stb_shell);
+    end
+`endif
+
+stb_shell #(
+    .UR_ADDR_WIDTH      (11),
+    .ADDR_WIDTH         (32),
+    .ATA_WIDTH          (128),
+    .INTLV_STEP         (128)     //SMC  interleave step
+) u_stb_shell(
+    .clk                                 (clk),
+    .rst_n                               (rst_n),
+    .i_micro_inst_u_valid                (i_micro_inst_u_valid),
+    .i_micro_inst_u_smc_strb             (i_micro_inst_u_smc_strb),
+    .i_micro_inst_u_byte_strb            (i_micro_inst_u_byte_strb),
+    .i_micro_inst_u_brst                 (i_micro_inst_u_brst),
+    .i_micro_inst_u_gr_base_addr         (i_micro_inst_u_gr_base_addr),
+    .i_micro_inst_u_ur_id                (i_micro_inst_u_ur_id),
+    .i_micro_inst_u_ur_addr              (i_micro_inst_u_ur_addr),
+    .o_micro_inst_d_valid                (o_micro_inst_d_valid),
+    .o_micro_inst_d_done                 (o_micro_inst_d_done),
+    .i_src_random_data                   (i_src_random_data),
+    .o_state                             (o_state)
+);
+
+always @(posedge clk) begin
+    r_state_prev    <= o_state;
+end
+
+always @(posedge clk or negedge rst_n) begin
+    if(!rst_n) begin
+        i_micro_inst_u_valid             <= 1'b0;
+        i_micro_inst_u_smc_strb          <= 6'd0;
+        i_micro_inst_u_byte_strb         <= 4'd0;
+        i_micro_inst_u_brst              <= 2'd0;
+        i_micro_inst_u_gr_base_addr      <= 32'd0;
+        i_micro_inst_u_ur_id             <= 4'd0;
+        i_micro_inst_u_ur_addr           <= 11'd0;
+        i_src_random_data                <= 128'd0;
+        r_test_case                      <= 4'd0;
+        test_state                       <= 4'b0001;
+        r_random_cnt                     <= 16'd0;
+    end else begin
+        case (test_state)
+            TEST_IDLE: begin
+                case(r_test_case)
+                    4'd0: begin
+                        $display("\n==================================================");
+                        $display("[TB] 时间%0t: 测试初始化完成，准备执行测试用例1（随机数据写入）", $time);
+                        $display("==================================================\n");
+
+                        i_src_random_data        <= 128'd1;
+                        r_test_case              <= 4'd1;
+                    end
+
+                    // 测试用例1：单次burst（1拍），SMC0使能，写入地址0x1000
+                    4'd1: begin
+                        $display("[TB] 时间%0t: 测试用例1启动", $time);
+                        config_test_case(6'b000000, 4'h0, 2'b00, 32'h0000_1000, 4'd0, 11'h000);
+
+                        test_state              <= TEST_START;
+                    end
+
+                    // 测试用例2：在INIT状态下复位
+                    4'd2: begin
+                        $display("[TB] INIT->IDLE  状态机跳转测试开始");
+                        config_test_case(6'b000000, 4'h0, 2'b00, 32'h0000_1000, 4'd0, 11'h000);
+
+                        test_state              <= TEST_START;
+                    end
+
+                    // 测试用例3：单次burst（1拍），SMC0使能，写入地址0x1000
+                    4'd3: begin
+                        $display("[TB] 时间%0t: 测试用例3启动", $time);
+                        config_test_case(6'b000000, 4'h0, 2'b00, 32'h0000_1000, 4'd0, 11'h000);
+
+                        test_state              <= TEST_START;
+                    end
+
+                    // 测试用例4：在ACCEPT_DATA状态下复位
+                    4'd4: begin
+                        $display("[TB] ACCEPT_DATA->IDLE  状态机跳转测试开始");
+                        config_test_case(6'b000000, 4'h0, 2'b00, 32'h0000_1000, 4'd0, 11'h000);
+
+                        test_state              <= TEST_START;
+                    end
+
+                    // 测试用例5：单次burst（1拍），SMC0使能，写入地址0x1000
+                    4'd5: begin
+                        $display("[TB] 时间%0t: 测试用例5启动", $time);
+                        config_test_case(6'b000000, 4'h0, 2'b00, 32'h0000_1000, 4'd0, 11'h000);
+
+                        test_state              <= TEST_START;
+                    end
+
+                    // 测试用例6：在SMC_DET状态下复位
+                    4'd6: begin
+                        $display("[TB] SMC_DET->IDLE  状态机跳转测试开始");
+                        config_test_case(6'b000000, 4'h0, 2'b00, 32'h0000_1000, 4'd0, 11'h000);
+
+                        test_state              <= TEST_START;
+                    end
+
+                    // 测试用例7：单次burst（1拍），SMC0使能，写入地址0x1000
+                    4'd7: begin
+                        $display("[TB] SMC_DET->IDLE  状态机跳转测试开始");
+                        config_test_case(6'b000000, 4'h0, 2'b00, 32'h0000_1000, 4'd0, 11'h000);
+
+                        test_state              <= TEST_START;
+                    end
+
+                    4'd8: begin
+                        $display("\n==================================================");
+                        $display("[TB] 所有测试用例执行完成");
+                        $display("==================================================\n");
+                        #100
+                        $finish; // 结束仿真
+                    end
+                endcase
+            end
+
+            TEST_START: begin
+                i_micro_inst_u_valid            <= 1'b1;
+
+                test_state                      <= TEST_WAIT;
+            end
+
+            TEST_WAIT: begin
+                i_micro_inst_u_valid            <= 1'b0;
+                // i_src_random_data               <= {$random, $random, $random, $random};
+                i_src_random_data               <= i_src_random_data + 128'd1;
+
+                if (r_state_prev == 5'b1_0000 && o_state == 5'b0_0001) begin
+                    $display("[TB] r_test_case = [%h]", r_test_case);
+                    test_state                  <= TEST_NEXT;
+                // end else if ((o_state == 5'b0_0010) && (r_test_case == 4'd2)) begin
+                //     // test_state                  <= TEST_IDLE;
+                //     // r_test_case                 <= r_test_case + 4'd1;
+                //     $display("[TB] r_test_case = [%h]", r_test_case);
+                //     $display("[TB] register_data = [%h]", i_src_random_data);
+                //     $display("[TB] ACCEPT_DATA->IDLE  状态机跳转测试结束");
+                //     $display("");
+                end else if ((o_state == 5'b0_1000) && (r_test_case == 4'd4)) begin
+                    // test_state                  <= TEST_IDLE;
+                    // r_test_case                 <= r_test_case + 4'd1;
+                    $display("[TB] r_test_case = [%h]", r_test_case);
+                    $display("[TB] register_data = [%h]", i_src_random_data);
+                    $display("[TB] INIT->IDLE  状态机跳转测试结束");
+                    $display("");
+                // end else if ((o_state == 5'b0_1000) && (r_test_case == 4'd6)) begin
+                //     // test_state                  <= TEST_IDLE;
+                //     // r_test_case                 <= r_test_case + 4'd1;
+                //     $display("[TB] r_test_case = [%h]", r_test_case);
+                //     $display("[TB] register_data = [%h]", i_src_random_data);
+                //     $display("[TB] SMC_DET->IDLE  状态机跳转测试结束");
+                //     $display("");
+                end
+            end
+
+            TEST_NEXT: begin
+                if (r_test_case < 4'd8) begin
+                    r_test_case                  <= r_test_case + 1;
+                end
+
+                test_state                      <= TEST_IDLE;
+            end
+        endcase
+    end
+end
+
+task automatic config_test_case(
+    input  [5:0]          smc_strb,
+    input  [3:0]          byte_strb,
+    input  [1:0]          brst,
+    input  [31:0]         gr_base_addr,
+    input  [3:0]          ur_id,
+    input  [10:0]         ur_addr
+);
+    begin
+        i_micro_inst_u_smc_strb       <= smc_strb;
+        i_micro_inst_u_byte_strb      <= byte_strb;
+        i_micro_inst_u_brst           <= brst;
+        i_micro_inst_u_gr_base_addr   <= gr_base_addr;
+        i_micro_inst_u_ur_id          <= ur_id;
+        i_micro_inst_u_ur_addr        <= ur_addr;
+
+        $display("[TB]   SMC使能   : 6'b%b", smc_strb);
+        $display("[TB]   字节使能  : 4'b%b", byte_strb);
+        $display("[TB]   Burst长度 : %0d拍", get_burst_length(brst));
+        $display("[TB]   基地址    : 0x%h", gr_base_addr);
+        $display("[TB]   UR地址    : 0x%h", ur_addr);
+    end
+endtask
+
+function integer get_burst_length;
+    input  [1:0] burst;
+    begin
+        case(burst)
+            2'b00: get_burst_length    = 1;
+            2'b01: get_burst_length    = 2;
+            2'b10: get_burst_length    = 4;
+            2'b11: get_burst_length    = 8;
+        endcase
+    end
+endfunction
+
+endmodule

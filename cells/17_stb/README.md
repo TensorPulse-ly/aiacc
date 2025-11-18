@@ -1,126 +1,21 @@
-# 多数据源AXI总线批量写入系统
+build.sh: 
+    lint rtl
+    run simulation
+    generate fsdb
+    configure DPI
+    generate coverage rate report
+    generate urg report
 
-## 项目概述
-本项目实现了一个基于AXI协议的多数据源批量写入系统，支持多SMC（数据源）的UR寄存器数据通过AXI协议突发传输写入内存，支持地址交错、字节掩码控制与操作响应。
+build_state_reset.sh
+    to cover the transition from the other state to IDLE in the FSM (when reset)
 
-## 系统架构
-本系统由以下核心模块组成：
-1. `ur_model`：独立随机数据生成模块
-2. `burst_store`：业务逻辑核心，协调多SMC数据读取与写入
-3. `axi_stb`：AXI主控制器，驱动突发传输
-4. `axi_stb_s`：AXI从→主桥接模块
-5. `axi_mem_model`：内存模型，存储写入数据
-6. `axi_protocol_checker`：AXI协议检查器
-7. `burst_store_tb`：基础测试平台
-8. `burst_store_tb_coverage`：覆盖率测试平台
-9. `axi_top`：顶层模块，连接所有功能模块
+comp.sh
+    lint rtl
 
-## 目录结构
-```
-/home/zwz/zts/17_stb/
-├── README.md         # 项目说明文档
-├── R.md              # 项目参考文档
-├── axi_top.v         # 顶层模块
-├── burst_store.v     # 业务逻辑核心模块
-├── axi_stb.v         # AXI主控制器
-├── axi_stb_s.v       # AXI从→主桥接模块
-├── ur_model.v        # 随机数据生成模块
-├── axi_mem_model.v   # 内存模型
-├── axi_protocol_checker.v # AXI协议检查器
-├── burst_store_tb.v  # 基础测试平台
-├── burst_store_tb_coverage.v # 覆盖率测试平台
-├── run_sim.sh        # 基础仿真脚本
-├── run_coverage.sh   # 覆盖率测试脚本
-├── sim_output/       # 基础仿真输出目录
-├── sim_output2/      # 覆盖率测试输出目录
-└── csrc/             # C源代码目录
-```
+compare.sh
+    the source data is saved in the file sim_output\src.txt
+    the destination data is saved in the file sim_output\dst.txt
+    compare the data in src.txt and dst.txt
 
-## 功能特性
-1. **多SMC支持**：支持6个SMC，通过掩码控制使能
-2. **地址交错**：每个SMC拥有独立的地址空间，避免数据重叠
-3. **灵活的字节控制**：支持16字节数据中的任意字节组合写入
-4. **多种突发长度**：支持1、2、4、8拍突发传输
-5. **AXI协议合规**：严格遵循AXI写协议，包含协议检查器
-6. **全自动化测试**：提供完整的测试脚本，覆盖多种场景
-7. **覆盖率分析**：支持代码覆盖率收集和报告生成
 
-## 使用指南
-### 环境要求
-- VCS仿真工具
-- Unix/Linux操作系统
-- Bash shell
 
-### 运行基础仿真
-1. 进入项目目录
-```bash
-cd /home/zwz/zts/17_stb
-```
-
-2. 执行基础仿真脚本
-```bash
-./run_sim.sh
-```
-
-### 运行覆盖率测试
-1. 进入项目目录
-```bash
-cd /home/zwz/zts/17_stb
-```
-
-2. 执行覆盖率测试脚本
-```bash
-./run_coverage.sh
-```
-
-### 脚本功能
-#### run_sim.sh
-自动化脚本`run_sim.sh`会完成以下操作：
-1. 清理并创建输出目录
-2. 编译RTL代码和测试平台
-3. 执行仿真（非交互模式）
-4. 生成覆盖率报告
-5. 检查仿真结果和协议错误
-
-#### run_coverage.sh
-自动化脚本`run_coverage.sh`会完成以下操作：
-1. 清理旧的覆盖率测试文件
-2. 创建输出目录
-3. 复制ucli.key文件到输出目录
-4. 编译覆盖率测试平台（直接使用绝对路径指定源文件）
-5. 运行覆盖率增强测试
-6. 生成覆盖率报告
-7. 输出覆盖率摘要
-
-## 测试用例
-系统包含以下基础测试用例：
-1. 单次写入（burst长度=1）
-2. 突发写入（burst长度=4）
-3. 多SMC写入（SMC0~SMC2）
-4. 部分字节写入（低2字节）
-
-覆盖率测试平台（burst_store_tb_coverage.v）还包含更多测试用例，包括：
-5. 最大burst长度测试
-6. 高地址访问测试
-7. 地址边界测试
-8. 多SMC交错写入测试
-9. 随机测试（2000次，包含边界条件测试）
-10. 错误注入测试（50次，现调整为1000次）
-
-## 结果验证
-仿真完成后，可以在相应的输出目录下查看：
-- `sim.log`：仿真日志
-- `compile.log`：编译日志
-- `coverage_report/`：覆盖率报告
-- `mem.txt`：内存内容导出文件
-- 各测试用例对应的内存输出文件
-
-## 注意事项
-1. 确保环境变量设置正确，特别是VCS的路径
-2. 第一次运行可能需要较长时间，请耐心等待
-3. 如遇编译错误，请检查代码是否完整或环境是否正确配置
-4. 如需修改参数（如SMC数量、数据宽度等），请在各模块的参数定义中修改
-5. run_coverage.sh脚本已修改为直接使用绝对路径指定源文件，不再依赖file_list.f文件
-
-## 联系方式
-如有任何问题或建议，请联系项目维护人员。

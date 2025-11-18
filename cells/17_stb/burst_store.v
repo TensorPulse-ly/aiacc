@@ -56,7 +56,7 @@ reg [ADDR_WIDTH-1:0]    gr_base_addr_reg;// 锁存外部内存基地址
 reg [3:0]               ur_id_reg;       // 锁存UR ID
 reg [10:0]              ur_addr_reg;     // 锁存UR地址
 reg [SMC_COUNT-1:0]     current_smc;     // 当前处理的SMC（位掩码）
-reg [6:0]               wait_resp_cnt;   // 超时计数器（防止死锁）
+reg [7:0]               wait_resp_cnt;   // 超时计数器（防止死锁）
 
 
 
@@ -101,8 +101,8 @@ always @(posedge clk or negedge rst_n) begin
         gr_base_addr_reg <= 32'd0;
         ur_id_reg <= 4'd0;
         ur_addr_reg <= 11'd0;
-        current_smc <= 1'b1; // 从SMC0开始处理
-        wait_resp_cnt <= 7'd0;
+        current_smc <= 6'd1; // 从SMC0开始处理
+        wait_resp_cnt <= 8'd0;
     end else begin
         case (state)
             IDLE:
@@ -112,7 +112,7 @@ always @(posedge clk or negedge rst_n) begin
                     stb_d_done <= 1'b0;
                     ur_re <= 1'b0;
                     stb2stb_valid <= 1'b0;
-                    wait_resp_cnt <= 7'd0;
+                    wait_resp_cnt <= 8'd0;
                     
                     // 接收STB指令（stb_u_valid有效）
                     if (stb_u_valid) begin
@@ -124,7 +124,7 @@ always @(posedge clk or negedge rst_n) begin
                         gr_base_addr_reg <= stb_u_gr_base_addr;
                         ur_id_reg <= stb_u_ur_id;
                         ur_addr_reg <= stb_u_ur_addr;
-                        current_smc <= 1'b1; // 初始化SMC0
+                        current_smc <= 6'd1; // 初始化SMC0
                         state <= INIT;
                     end
                 end
@@ -158,7 +158,7 @@ always @(posedge clk or negedge rst_n) begin
                         // 生成字节使能掩码
                         stb2stb_wstrb <= byte_mask;
                         state <= AW_HANDSHAKE;
-                    end else if (current_smc < (1 << SMC_COUNT)) begin
+                    end else if (current_smc < (6'b000001 << SMC_COUNT)) begin
                         // 切换到下一个SMC
                         current_smc <= current_smc << 1;
                     end else begin
@@ -183,7 +183,7 @@ always @(posedge clk or negedge rst_n) begin
                         stb2stb_valid <= 1'b0; // 清除就绪标志
                         // 检查是否有其他SMC需要处理
                         next_smc = current_smc << 1;
-                        if (next_smc < (1 << SMC_COUNT) && (smc_strb_reg & next_smc)) begin
+                        if (next_smc < (6'b000001 << SMC_COUNT) && (smc_strb_reg & next_smc)) begin
                             current_smc <= next_smc;
                             state <= INIT; // 处理下一个SMC
                         end else begin
@@ -193,16 +193,16 @@ always @(posedge clk or negedge rst_n) begin
                         // 超时保护（增加超时时间以适应多SMC配置和较长的burst长度）
                         // 增加到127个时钟周期（7位计数器的最大值2^7-1），确保多SMC写入场景下有足够时间完成
                         // 注意：在多SMC场景下，即使超时也应该尝试处理下一个SMC，而不是直接进入DONE状态
-                        wait_resp_cnt <= wait_resp_cnt + 1;
-                        if (wait_resp_cnt >= 7'd127) begin
+                        wait_resp_cnt <= wait_resp_cnt + 8'd1;
+                        if (wait_resp_cnt >= 8'd127) begin
                             $display("[BURST_STORE] 时间%0t: 等待axi_stb超时，准备处理下一个SMC", $time);
                             stb2stb_valid <= 1'b0;
                             // 检查是否有其他SMC需要处理
                             next_smc = current_smc << 1;
-                            if (next_smc < (1 << SMC_COUNT) && (smc_strb_reg & next_smc)) begin
+                            if (next_smc < (6'b000001 << SMC_COUNT) && (smc_strb_reg & next_smc)) begin
                                 current_smc <= next_smc;
                                 state <= INIT; // 处理下一个SMC
-                                wait_resp_cnt <= 7'd0;
+                                wait_resp_cnt <= 8'd0;
                             end else begin
                                 state <= DONE; // 所有SMC处理完成或超时
                             end
@@ -218,8 +218,8 @@ always @(posedge clk or negedge rst_n) begin
                         state <= DONE;
                     end else begin
                         // 继续等待事务完成
-                        wait_resp_cnt <= wait_resp_cnt + 1;
-                        if (wait_resp_cnt >= 7'd255) begin
+                        wait_resp_cnt <= wait_resp_cnt + 8'd1;
+                        if (wait_resp_cnt >= 8'd255) begin
                             $display("[BURST_STORE] 时间%0t: 所有SMC事务超时完成，准备反馈上层", $time);
                             state <= DONE;
                         end

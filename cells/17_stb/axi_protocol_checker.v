@@ -84,21 +84,21 @@ always @(posedge clk or negedge rst_n) begin
     end else begin
         // AWVALID超时计数
         if (axi_awvalid && !axi_awready) begin
-            awvalid_cnt <= awvalid_cnt + 1;
+            awvalid_cnt <= awvalid_cnt + 7'd1;
         end else begin
             awvalid_cnt <= 7'd0;
         end
         
         // WVALID超时计数
         if (axi_wvalid && !axi_wready) begin
-            wvalid_cnt <= wvalid_cnt + 1;
+            wvalid_cnt <= wvalid_cnt + 7'd1;
         end else begin
             wvalid_cnt <= 7'd0;
         end
         
         // BVALID超时计数
         if (axi_bvalid && !axi_bready) begin
-            bvalid_cnt <= bvalid_cnt + 1;
+            bvalid_cnt <= bvalid_cnt + 7'd1;
         end else begin
             bvalid_cnt <= 7'd0;
         end

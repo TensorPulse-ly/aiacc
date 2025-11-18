@@ -25,7 +25,9 @@ module axi_mem_model #(
     
     output reg              axi_bvalid,     // AXI写响应有效（反馈给axi_stb_s）
     output reg [1:0]        axi_bresp,      // AXI写响应（00=成功）
-    input                   axi_bready      // AXI写响应就绪（来自axi_stb_s）
+    input                   axi_bready,      // AXI写响应就绪（来自axi_stb_s）
+
+    output reg [DATA_WIDTH-1:0] dst_data
     
     // UR读接口（未使用，注释防止多驱动）
     // input                   ur_re,
@@ -155,7 +157,7 @@ always @(posedge clk or negedge rst_n) begin
                                 memory[current_write_addr][127:120] <= axi_wdata[127:120];
                             end
                             // 打印写入信息（验证随机数据是否写入）
-                            #1; // 延迟1ns，确保内存更新完成
+                            #1 // 延迟1ns，确保内存更新完成
                             $display("[AXI_MEM_MODEL] 时间%0t: 写入内存成功，地址=0x%h，写入数据=0x%h，写入后数据=0x%h", 
                                      $time, current_write_addr, axi_wdata, memory[current_write_addr]);
                         end else begin
@@ -165,7 +167,7 @@ always @(posedge clk or negedge rst_n) begin
                         // 更新burst计数器和地址（INCR模式，地址+16字节）
                         if (burst_count > 8'd0) begin
                             current_write_addr <= current_write_addr + (DATA_WIDTH/8); // 16字节步长
-                            burst_count <= burst_count - 1;
+                            burst_count <= burst_count - 8'd1;
                         end
                         
                         // 最后一拍数据写入完成，进入响应状态
@@ -175,9 +177,11 @@ always @(posedge clk or negedge rst_n) begin
                             axi_bresp <= 2'b00; // 响应码：成功
                             state <= WRITE_RESP;
                         end
+
+                        dst_data <= memory[current_write_addr];
                     end else begin
                         // 数据接收超时保护
-                        wait_cnt <= wait_cnt + 1;
+                        wait_cnt <= wait_cnt + 7'd1;
                         if (wait_cnt >= 7'd100) begin
                             $display("[AXI_MEM_MODEL] 时间%0t: 数据接收超时，强制回到空闲", $time);
                             axi_wready <= 1'b0;
@@ -195,7 +199,7 @@ always @(posedge clk or negedge rst_n) begin
                         state <= IDLE; // 回到空闲状态
                     end else begin
                         // 响应发送超时保护
-                        wait_cnt <= wait_cnt + 1;
+                        wait_cnt <= wait_cnt + 7'd1;
                         if (wait_cnt >= 7'd100) begin
                             $display("[AXI_MEM_MODEL] 时间%0t: 响应发送超时，强制回到空闲", $time);
                             axi_bvalid <= 1'b0;
@@ -215,7 +219,7 @@ task export_memory;
     reg [3:0] case_id_reg;
     
     // 处理默认case_id（未连接时为0）
-    case_id_reg = (^case_id === 1'bx) ? 0 : case_id;
+    case_id_reg = (^case_id === 1'bx) ? 4'd0 : case_id;
     
     // 确保sim_output目录存在
     $system("mkdir -p /home/zwz/zts/17_stb/sim_output");

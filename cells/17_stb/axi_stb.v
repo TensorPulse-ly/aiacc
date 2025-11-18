@@ -45,7 +45,7 @@ localparam B_TRANSFER  = 2'd3;  // 响应阶段（AXI B通道握手）
 // 内部寄存器
 reg [1:0]                state;          // 状态机状态
 reg [7:0]                burst_count;    // burst传输计数器（跟踪剩余拍数）
-reg [6:0]                wait_cnt;       // 超时计数器（防止死锁）
+reg [15:0]                wait_cnt;       // 超时计数器（防止死锁）
 
 // 状态机逻辑（核心：事务包→AXI信号转换，随机数据透传）
 // 修复：确保在处理完一个事务后再接收下一个事务
@@ -65,11 +65,11 @@ always @(posedge clk or negedge rst_n) begin
         axi_wlast <= 1'b0;
         axi_bready <= 1'b0;
         burst_count <= 8'd0;
-        wait_cnt <= 7'd0;
+        wait_cnt <= 16'd0;
     end else begin
         // 默认清除完成标志和超时计数器
         stb2stb_done <= 1'b0;
-        wait_cnt <= 7'd0;
+        wait_cnt <= 16'd0;
         
         case (state)
             IDLE:
@@ -112,8 +112,8 @@ always @(posedge clk or negedge rst_n) begin
                         state <= W_TRANSFER;
                     end else begin
                         // 地址握手超时保护（增加到1000个时钟周期以适应多SMC场景）
-                        wait_cnt <= wait_cnt + 1;
-                        if (wait_cnt >= 7'd1000) begin
+                        wait_cnt <= wait_cnt + 16'd1;
+                        if (wait_cnt >= 16'd1000) begin
                             $display("[AXI_STB] 时间%0t: AXI地址握手超时，强制回到空闲", $time);
                             axi_awvalid <= 1'b0;
                             state <= IDLE;
@@ -138,7 +138,7 @@ always @(posedge clk or negedge rst_n) begin
                                 // 非最后一拍，设置wlast为0
                                 axi_wlast <= 1'b0;
                             end
-                            burst_count <= burst_count - 1;
+                            burst_count <= burst_count - 8'd1;
                             // 直接使用ur_model生成的随机数据，不再进行异或操作
                             axi_wdata <= stb2stb_data;
                             axi_wstrb <= stb2stb_wstrb;
@@ -150,8 +150,8 @@ always @(posedge clk or negedge rst_n) begin
                         end
                     end else begin
                         // 数据握手超时保护
-                        wait_cnt <= wait_cnt + 1;
-                        if (wait_cnt >= 7'd1000) begin
+                        wait_cnt <= wait_cnt + 16'd1;
+                        if (wait_cnt >= 16'd1000) begin
                             $display("[AXI_STB] 时间%0t: AXI数据握手超时，强制回到空闲", $time);
                             state <= IDLE;
                             axi_wvalid <= 1'b0;
@@ -174,8 +174,8 @@ always @(posedge clk or negedge rst_n) begin
                         state <= IDLE; // 回到空闲状态，等待下一个事务包
                     end else begin
                         // 响应握手超时保护
-                        wait_cnt <= wait_cnt + 1;
-                        if (wait_cnt >= 7'd1000) begin
+                        wait_cnt <= wait_cnt + 16'd1;
+                        if (wait_cnt >= 16'd1000) begin
                             $display("[AXI_STB] 时间%0t: AXI响应握手超时，强制回到空闲", $time);
                             axi_bready <= 1'b0;
                             // 清除之前的地址和数据，确保下一个事务使用新值

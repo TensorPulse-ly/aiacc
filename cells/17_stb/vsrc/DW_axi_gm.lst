@@ -1,0 +1,14 @@
+// component: (top level)
+// library: work
+// files:
+/datahdd/riscv/zhuzhenglong/axi_gen/config2/src/DW_axi_gm_constants.vh
+/datahdd/riscv/zhuzhenglong/axi_gen/config2/src/DW_axi_gm_cc_constants.vh
+/datahdd/riscv/zhuzhenglong/axi_gen/config2/src/DW_axi_gm_bcm_params.vh
+/datahdd/riscv/zhuzhenglong/axi_gen/config2/src/DW_axi_gm_all_includes.vh
+/datahdd/riscv/zhuzhenglong/axi_gen/config2/src/DW_axi_gm_bcm57.v
+/datahdd/riscv/zhuzhenglong/axi_gen/config2/src/DW_axi_gm_bcm06.v
+/datahdd/riscv/zhuzhenglong/axi_gen/config2/src/DW_axi_gm_bcm65.v
+/datahdd/riscv/zhuzhenglong/axi_gen/config2/src/DW_axi_gm_core.v
+/datahdd/riscv/zhuzhenglong/axi_gen/config2/src/DW_axi_gm.v
+/datahdd/riscv/zhuzhenglong/axi_gen/config2/src/DW_axi_gm-undef.v
+

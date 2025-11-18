@@ -28,7 +28,9 @@ module ur_model #(
     // 统计输出（可选）
     output reg [31:0]       read_count,
     output reg [31:0]       write_count,
-    output reg [31:0]       error_count
+    output reg [31:0]       error_count,
+
+    input  [DATA_WIDTH-1:0] src_data
 );
 // 存储每个ID的LFSR状态
 reg [LFSR_WIDTH-1:0] lfsr [0:MAX_ID-1];
@@ -65,13 +67,13 @@ always @(posedge clk or negedge rst_n) begin
                 memory[i] <= {DATA_WIDTH{1'b0}};
             end
             // 初始化统计计数器
-            read_count <= 0;
-            write_count <= 0;
-            error_count <= 0;
+            read_count  <= 32'd0;
+            write_count <= 32'd0;
+            error_count <= 32'd0;
             // 初始化错误注入
-            err_inject_active <= 0;
-            active_err_type <= 0;
-            active_err_addr_mask <= 0;
+            err_inject_active    <= 1'b0;
+            active_err_type      <= 4'd0;
+            active_err_addr_mask <= {ADDR_WIDTH{1'b0}};
             // 初始化测试用例3和5的数据记录变量
             smc0_data <= {DATA_WIDTH{1'b0}};
             smc1_data <= {DATA_WIDTH{1'b0}};
@@ -82,18 +84,18 @@ always @(posedge clk or negedge rst_n) begin
     end else begin
         // 更新错误注入状态
         if (err_inject) begin
-            err_inject_active <= 1;
+            err_inject_active <= 1'b1;
             active_err_type <= err_type;
             active_err_addr_mask <= err_addr_mask;
         end
         // 处理读操作（响应burst_store的ur_re请求）
-        if (ur_re && ur_addr <= ADDR_MAX) begin
+        if (ur_re && (ur_addr <= ADDR_MAX[ADDR_WIDTH-1:0])) begin
             read_count <= read_count + 1;
             // 标准LFSR更新
             lfsr[ur_id] <= {lfsr[ur_id][LFSR_WIDTH-2:0], ^(lfsr[ur_id] & lfsr_taps)};
         end
         // 处理写操作（可选，未使用）
-        if (ur_we && ur_addr <= ADDR_MAX) begin
+        if (ur_we && (ur_addr <= ADDR_MAX[ADDR_WIDTH-1:0])) begin
             write_count <= write_count + 1;
             // 字节使能写入：直接写入到传入的地址
             for (i = 0; i < DATA_WIDTH/8; i = i + 1) begin
@@ -124,16 +126,18 @@ end
 
 // 生成输出数据（随机数据通过ur_rdata输出到burst_store）
 always @(posedge clk) begin
-    if (ur_re && ur_addr <= ADDR_MAX) begin
+    if (ur_re && (ur_addr <= ADDR_MAX[ADDR_WIDTH-1:0])) begin
         // 基础数据：LFSR状态与地址混合
         reg [DATA_WIDTH-1:0] base_data;
-        reg [LFSR_WIDTH-1:0] mixed_lfsr;
+        // reg [LFSR_WIDTH-1:0] mixed_lfsr;
         
-        // 增强的LFSR与地址混合逻辑
-        mixed_lfsr = lfsr[ur_id] ^ ur_addr ^ (lfsr[ur_id] >> 8) ^ (lfsr[ur_id] << 8);
-        // 生成128位基础数据（匹配DATA_WIDTH=128）
-        base_data = {mixed_lfsr, mixed_lfsr ^ (ur_addr << 4) ^ (ur_addr >> 4), 
-                    mixed_lfsr ^ lfsr[(ur_id+2)%MAX_ID], mixed_lfsr ^ lfsr[(ur_id+4)%MAX_ID]};
+        // // 增强的LFSR与地址混合逻辑
+        // mixed_lfsr = lfsr[ur_id] ^ ur_addr ^ (lfsr[ur_id] >> 8) ^ (lfsr[ur_id] << 8);
+        // // 生成128位基础数据（匹配DATA_WIDTH=128）
+        // base_data = {mixed_lfsr, mixed_lfsr ^ (ur_addr << 4) ^ (ur_addr >> 4), 
+        //             mixed_lfsr ^ lfsr[(ur_id+2)%MAX_ID], mixed_lfsr ^ lfsr[(ur_id+4)%MAX_ID]};
+
+        base_data = src_data;
         
         // 应用错误注入（可选，默认关闭）
         if (err_inject_active && (ur_addr & active_err_addr_mask) == 0) begin
@@ -176,7 +180,7 @@ always @(posedge clk) begin
         
         // 调试信息保持不变
         $display("[UR_DEBUG] 时间%0t: 写入memory[0x%h] = 0x%h, ur_id=%d", $time, ur_addr, base_data, ur_id);
-    end else if (ur_we && ur_addr <= ADDR_MAX) begin
+    end else if (ur_we && (ur_addr <= ADDR_MAX[ADDR_WIDTH-1:0])) begin
         ur_rdata <= ur_wdata; // 写操作时返回写入数据
     end else begin
         ur_rdata <= ur_rdata; // 无操作时保持输出
@@ -187,7 +191,7 @@ end
 function [DATA_WIDTH-1:0] get_memory;
     input [ADDR_WIDTH-1:0] addr;
     begin
-        if (addr <= ADDR_MAX) begin
+        if (addr <= ADDR_MAX[ADDR_WIDTH-1:0]) begin
             get_memory = memory[addr];
         end else begin
             get_memory = {DATA_WIDTH{1'b0}};
@@ -199,7 +203,7 @@ endfunction
 function [LFSR_WIDTH-1:0] get_lfsr;
     input [3:0] id;
     begin
-        if (id < MAX_ID) begin
+        if (id < MAX_ID[3:0]) begin
             get_lfsr = lfsr[id];
         end else begin
             get_lfsr = {LFSR_WIDTH{1'b0}};
